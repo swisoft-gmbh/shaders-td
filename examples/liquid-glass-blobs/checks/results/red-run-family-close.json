@@ -1,0 +1,195 @@
+{
+  "what": "Family close (G1, G2, G6) for Liquid Glass Blobs: the new and changed tests run against the c94e849 tree (git archive c94e849 of liquid-glass-blobs, liquid-glass and liquid-glass-lit, the new checks/test_study.py copied in; the G1 preview tests run alone against that tree through the preview served from it).",
+  "date": "2026-11-02",
+  "unit_tests_on_c94e849": {
+    "ran": 71,
+    "result": "FAILED (failures=3, errors=3)",
+    "failing": [
+      {
+        "test": "test_g1_core_has_the_same_world_scale",
+        "class": "FamilyClose",
+        "kind": "ERROR",
+        "reason": "ValueError: c94e849's core had no worldScale() function (the cube root sat inside wobbleNormal)"
+      },
+      {
+        "test": "test_g1_fit_uses_the_family_reference_radius",
+        "class": "FamilyClose",
+        "kind": "ERROR",
+        "reason": "KeyError: 'REFERENCE_RADIUS' (c94e849's Fit divided by nothing: blobs_geo scaled 3 gave Object size 3)"
+      },
+      {
+        "test": "test_fit_object_size_reads_the_world_transform",
+        "class": "NativeDiagnostics",
+        "kind": "ERROR",
+        "reason": "KeyError: 'radius' (changed expectation: 2 / 1.45 at scale 2, was 2)"
+      },
+      {
+        "test": "test_g1_film_follows_object_size_and_world_scale",
+        "class": "FamilyClose",
+        "kind": "FAIL",
+        "reason": "the film lookup was valueNoise(pObj * 2.5 + ...): no worldScale(), no uFilm.w"
+      },
+      {
+        "test": "test_g2_centre_line_tie_break_is_the_familys",
+        "class": "FamilyClose",
+        "kind": "FAIL",
+        "reason": "c94e849's core screenSign(vec3 camPoint, mat4 proj) had no centre-line tie-break (+1 on ties)"
+      },
+      {
+        "test": "test_object_size_is_a_setup_control_feeding_scene_unit_uniforms",
+        "class": "Recipe",
+        "kind": "FAIL",
+        "reason": "(1.0, True) != (0.6896551724137931, True) (changed expectation: default 1 / 1.45, was 1)"
+      }
+    ],
+    "pass_on_c94e849_too (guards, not red)": [
+      "test_g1_presets_keep_their_look_on_the_demo (the demo's scene-unit values are unchanged by design)",
+      "test_g1_shape_stays_in_box_units (the shape was already in box units)",
+      "test_object_size_one_is_exactly_u_and_other_sizes_scale (setup line added: Object size 1)"
+    ]
+  },
+  "preview_tests_on_c94e849": {
+    "passed": 2,
+    "total": 3,
+    "results": [
+      {
+        "name": "object_size_carries_presets",
+        "ok": true,
+        "evidence": {
+          "sapphire_drops_object_size_fit": {
+            "max": 44,
+            "pixelsOver2": 9
+          },
+          "sapphire_drops_object_size_default": {
+            "max": 249,
+            "pixelsOver2": 54178
+          },
+          "frosted_milk_object_size_fit": {
+            "max": 18,
+            "pixelsOver2": 12
+          },
+          "frosted_milk_object_size_default": {
+            "max": 185,
+            "pixelsOver2": 86296
+          }
+        }
+      },
+      {
+        "name": "fit_size_carries_presets_over_comp_scale",
+        "ok": true,
+        "evidence": {
+          "aqua_jelly_normal": {
+            "comp_scale_0.1": {
+              "max": 1,
+              "pixelsOver2": 0
+            },
+            "comp_scale_10": {
+              "max": 1,
+              "pixelsOver2": 0
+            }
+          },
+          "oil_slick_film": {
+            "comp_scale_0.1": {
+              "max": 1,
+              "pixelsOver2": 0
+            },
+            "comp_scale_10": {
+              "max": 1,
+              "pixelsOver2": 0
+            }
+          },
+          "aqua_jelly_final": {
+            "comp_scale_0.1": {
+              "max": 24,
+              "pixelsOver2": 3
+            },
+            "comp_scale_10": {
+              "max": 34,
+              "pixelsOver2": 4
+            }
+          },
+          "oil_slick_final": {
+            "comp_scale_0.1": {
+              "max": 2,
+              "pixelsOver2": 0
+            },
+            "comp_scale_10": {
+              "max": 3,
+              "pixelsOver2": 1
+            }
+          },
+          "sapphire_drops_final": {
+            "comp_scale_0.1": {
+              "max": 66,
+              "pixelsOver2": 10
+            },
+            "comp_scale_10": {
+              "max": 66,
+              "pixelsOver2": 8
+            }
+          },
+          "frosted_milk_final": {
+            "comp_scale_0.1": {
+              "max": 20,
+              "pixelsOver2": 14
+            },
+            "comp_scale_10": {
+              "max": 20,
+              "pixelsOver2": 15
+            }
+          }
+        }
+      },
+      {
+        "name": "comp_scale_at_default_object_size_gives_k_times_the_film_bands",
+        "ok": false,
+        "evidence": {
+          "film": {
+            "unscaled": {
+              "glass_pairs": 55897,
+              "per_1000": 29.14
+            },
+            "comp_10_default_size": {
+              "glass_pairs": 55897,
+              "per_1000": 29.14
+            },
+            "comp_0_1_default_size": {
+              "glass_pairs": 55897,
+              "per_1000": 29.14
+            },
+            "comp_10_fit_size": {
+              "glass_pairs": 55897,
+              "per_1000": 29.14
+            },
+            "ratio_comp_10_default_size": 1,
+            "ratio_comp_0_1_default_size": 1,
+            "ratio_comp_10_fit_size": 1
+          },
+          "ripples": {
+            "unscaled": {
+              "glass_pairs": 46684,
+              "per_1000": 16.34
+            },
+            "comp_10_default_size": {
+              "glass_pairs": 46684,
+              "per_1000": 16.39
+            },
+            "comp_0_1_default_size": {
+              "glass_pairs": 46684,
+              "per_1000": 16.39
+            },
+            "comp_10_fit_size": {
+              "glass_pairs": 46684,
+              "per_1000": 16.39
+            },
+            "ratio_comp_10_default_size": 1.003,
+            "ratio_comp_0_1_default_size": 1.003,
+            "ratio_comp_10_fit_size": 1.003
+          }
+        }
+      }
+    ],
+    "note": "comp_scale_at_default_object_size_gives_k_times_the_film_bands is the red one: the film stayed in box units (ratio 1 everywhere). object_size_carries_presets and fit_size_carries_presets_over_comp_scale pass on c94e849 too: the box route already carried presets over a COMP scale when Object size equalled the scale; they guard that this stays true with the family's numbers."
+  },
+  "after": "checks/results/unit-tests.txt and checks/results/preview-tests.json (all pass)."
+}

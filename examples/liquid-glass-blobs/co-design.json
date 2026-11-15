@@ -1,0 +1,288 @@
+{
+  "purpose": "Raymarched liquid-glass blobs for TouchDesigner, one member of the liquid-glass family, with a companion tutorial.",
+  "choices_origin": "Family brief from the user (supplied); this member's direction from the workflow brief; remaining details delegated by the user and inferred here. No questions were asked: the user delegated design choices within the brief.",
+  "requested_workflows": [
+    "research",
+    "build",
+    "explain",
+    "review"
+  ],
+  "answers": [
+    {
+      "topic": "family priority",
+      "origin": "user",
+      "value": "Universality first (any object, scene, camera, least wiring), then match to the four reference images (look, not shape)."
+    },
+    {
+      "topic": "controls",
+      "origin": "user",
+      "value": "Adjustable glass colour and reflection, translucency, opacity, overall glass style."
+    },
+    {
+      "topic": "dithering",
+      "origin": "user",
+      "value": "No dithering; continuous only."
+    },
+    {
+      "topic": "presets",
+      "origin": "user",
+      "value": "12-style presets: a menu that loads editable values, plus an A/B morph."
+    },
+    {
+      "topic": "inputs",
+      "origin": "user",
+      "value": "Separate Refraction TOP and Reflection TOP where the route uses them."
+    },
+    {
+      "topic": "audience",
+      "origin": "user",
+      "value": "TouchDesigner users new to GLSL."
+    },
+    {
+      "topic": "target",
+      "origin": "user",
+      "value": "TouchDesigner 2025.x, GLSL 4.60, macOS Apple Silicon."
+    },
+    {
+      "topic": "direction",
+      "origin": "delegated default (workflow brief)",
+      "value": "Smooth-min blobs and capsules that drift, merge and split, optional droplets, raymarched in a GLSL MAT on a proxy bounding box, writing gl_FragDepth."
+    },
+    {
+      "topic": "layout source",
+      "origin": "inference",
+      "value": "Procedural by default; optional Layout TOP (pixel i = x, y, z, radius) so a CHOP or Table DAT can drive it through CHOP to TOP. Chosen over the GLSL MAT Arrays page because its per-row parameter names are not documented."
+    },
+    {
+      "topic": "proxy",
+      "origin": "inference",
+      "value": "A Box SOP of size 2 inside blobs_geo; blobs live in -1..1; scale the Geometry COMP to resize. Back faces are rendered so the camera may be inside the box."
+    },
+    {
+      "topic": "preset count and content",
+      "origin": "user (count: the family brief asks for 12-style presets) + inference (content)",
+      "value": "Twelve presets: four matching the references, four variations (mercury, amber, frosted, soap film) and four adapted from the core study's looks of the same names (emerald bottle, rose quartz, oil slick, aqua jelly), each with its own blob shape. Presets include blob shape; Count and Droplets are fractional so they morph. Until verifier finding V1 (2026-11-02) this study shipped eight and recorded the count as an inference; that was a shortfall against the brief, not a free choice."
+    },
+    {
+      "topic": "edge quality",
+      "origin": "inference",
+      "value": "Analytic silhouette coverage, because Render TOP multisampling cannot smooth a raymarched edge inside the box."
+    },
+    {
+      "topic": "demo scene",
+      "origin": "inference",
+      "value": "A thin orange ring passing through the blobs, so depth sorting is visible; backdrop with a bold type band, checkerboard, logo tile and discs."
+    },
+    {
+      "topic": "location",
+      "origin": "workflow brief",
+      "value": "studies/liquid-glass-blobs/ (not examples/, which hold real native exports)."
+    },
+    {
+      "topic": "independent review round",
+      "origin": "workflow brief",
+      "value": "Verify and fix the 21 findings of two independent reviewers; the user delegated design choices within this brief; no questions asked."
+    },
+    {
+      "topic": "blobs too big for the box",
+      "origin": "inference",
+      "value": "Cut flat by the box walls (a flat glass face), not shrunk to fit: Radius keeps its meaning, and the README explains how to avoid the cut."
+    },
+    {
+      "topic": "transparent Refraction TOP",
+      "origin": "inference",
+      "value": "Keep its alpha: the covered share refracts, the uncovered share blends like zero-wiring mode, so both old behaviours are special cases."
+    },
+    {
+      "topic": "long-running time",
+      "origin": "inference",
+      "value": "Fold running time forward and back over an hour (no jump; the blobs reverse direction once an hour) rather than wrapping with a jump or adding a CHOP accumulator. Superseded in the family sync by the integrated drift clock (see below)."
+    },
+    {
+      "topic": "draw order",
+      "origin": "inference",
+      "value": "blobs_geo Draw Priority -1, set leniently; no Write depth toggle, because depth sorting is the main promise."
+    },
+    {
+      "topic": "input TOP defaults",
+      "origin": "inference",
+      "value": "Plain relative paths (scene, demo_env, layout_top) with an empty default, so Reset to Default empties them. Changed in the family sync to the core's convention: the default is the demo node, Reset to Default restores it, clearing the text empties the field."
+    },
+    {
+      "topic": "family sync scope",
+      "origin": "workflow brief (supplied)",
+      "value": "Apply the core's audit rounds 2-3 items (R1-R9) and the family merge items (C1-C9) that fit a depth-writing proxy box; take core code only from commit 6a58487; keep this study's own better mechanisms; no questions asked (design choices delegated)."
+    },
+    {
+      "topic": "drift clock",
+      "origin": "inference",
+      "value": "Three integrated drift phases (layout, ripple, film) with the layout's wave speeds rounded to multiples of 1/128 so the layout repeats after 256 pi of phase. Each phase wraps without a jump. Only the blob layout loops exactly, every 256 pi / Speed s (38 min at 0.35); the ripple repeats every 20 pi / (0.4 + Speed) s (84 s) and the film swirl every 256 / (0.015 + 0.045 Speed) s (about 2.3 h), so the whole image does not repeat exactly. Replaces reversing once an hour."
+    },
+    {
+      "topic": "fan-gap level",
+      "origin": "inference from measurement",
+      "value": "A quarter of the gap between neighbouring colour samples, chosen with the core's B7 method against a 64-sample reference (the whole gap measured twice as far off as no level)."
+    },
+    {
+      "topic": "Flip V",
+      "origin": "inference (brief said 'UV-only override')",
+      "value": "Flip V flips the screen UV and the measured vertical sign together: with measured screen orientation, flipping only the UV would mirror every vertical bend for an upside-down Refraction TOP. In the case the core's UV-only rule was written for, the result is identical."
+    },
+    {
+      "topic": "Object size",
+      "origin": "brief (supplied: control, setup, fit pulse) + inference (which controls it scales)",
+      "value": "Scales Tint density (divide), Backdrop distance and the Frost disc (multiply), the controls measured in scene units; Fit uses the cube root of |det| of blobs_geo's world transform."
+    },
+    {
+      "topic": "demo backdrops",
+      "origin": "brief (supplied: Checker default, Type from prism) + inference",
+      "value": "Checker is this study's own backdrop (the presets were tuned on it), not the core's checker image; Type is prism's page, identical across the family."
+    },
+    {
+      "topic": "Energy conserving and Colour parameters",
+      "origin": "brief (supplied)",
+      "value": "Energy conserving off by default (presets unchanged); Colour parameters Auto by default."
+    },
+    {
+      "topic": "verifier fixes (2026-11-02)",
+      "origin": "workflow brief (supplied)",
+      "value": "Fix the eight verified issues V1-V8 in this study with the smallest change, a test that fails without each fix, and updated docs; design choices delegated, no questions asked."
+    },
+    {
+      "topic": "four new presets (V1)",
+      "origin": "inference (the verifier suggested these four core looks)",
+      "value": "Emerald Bottle, Rose Quartz, Oil Slick and Aqua Jelly start from the core's values at 6a58487 and were retuned by eye in the WebGL2 preview (Rose Quartz milkier and more frosted, Emerald Bottle slightly less dense, Aqua Jelly with a stronger ripple); blob shapes chosen so every preset differs from every other one by a mean of at least 10/255 on both backdrops and fits the box."
+    },
+    {
+      "topic": "normals at any object scale (V2)",
+      "origin": "inference",
+      "value": "Directions moved between the box's space and world space (hit normal, exit normal, direction inside the glass) are normalised with no length threshold; only an exact zero falls back to +Y. Tested at blobs_geo scales 0.001 and 20,000."
+    },
+    {
+      "topic": "zero-wiring demo output (V3)",
+      "origin": "core study (A9 at 6a58487)",
+      "value": "With Refraction TOP empty, the demo's behind Select TOP shows the transparent blank TOP instead of an empty path."
+    },
+    {
+      "topic": "verifier gap fixes (2026-11-02)",
+      "origin": "workflow brief (supplied)",
+      "value": "Fix two verified gaps against the core (G1 render diagnostics, G2 screen orientation) with the smallest change, a test that fails without each fix, and updated docs; reproduce first; design choices delegated, no questions asked."
+    },
+    {
+      "topic": "which renders inspect() reports (G1)",
+      "origin": "verifier suggestion (blobs_geo in the Geometry) + core study (round 3: Override Material or a Geometry COMP's Material)",
+      "value": "The component's own renders by name, and every Render or Render Pass TOP in the project that draws the blobs by path. Reported, not blocking: capture() and export() still refuse only on the component's own material and output chain, as in the core."
+    },
+    {
+      "topic": "screen orientation method (G2)",
+      "origin": "inference (the verifier allowed either switching or keeping the derivative form with a wrong-pixel test)",
+      "value": "Switched to the core's and prism's position comparison, with the derivative only on an odd-size centre line. Measured: both forms right on every tested blob pixel here (planar box faces), so the reason is one method across the family, not a visible defect. The wrong-pixel test was added too."
+    },
+    {
+      "topic": "picking branch form (P1)",
+      "origin": "verifier suggestion (adopt prism's form, or reword the comment and keep the native check) + Derivative docs (Write a GLSL MAT, Picking) + inference (the projection stays outside the branch, from prism and the exported shader on docs.derivative.ca/Syntaxhighlight)",
+      "value": "Adopted prism's form: deform and project first, the seven outputs inside '#ifndef TD_PICKING_ACTIVE', only TDWritePickingValues() in '#else'. Rewording alone was rejected because the page says only the '#else' block runs while picking, and the family should use one form. Ordinary renders unchanged (24 preset tiles pixel-identical); pick values still describe the proxy box; native pick check pending."
+    },
+    {
+      "topic": "family names (verifier gap)",
+      "origin": "supplied + inference (delegated)",
+      "value": "Supplied: the verifier's issue and its two fixes (align labels where possible, or list the mapping once in the family overview); the docs rule 'one name per thing'; universality first (scripts that work on any member). Inferred: do both; take the name most members already used (Fitglass) and the label head four of five already used ('Fit to Glass geometry'); put the one mapping in the core README, which every member links to; keep Blobs' Demobackdrop name rather than rename a preset key; make Blobs' menu a look control because its experiments' captures use the Checker."
+    },
+    {
+      "topic": "family close G1: what Object size means here",
+      "origin": "supplied (family brief: universality first; the family rule in Liquid Glass Lit decisions.json, family_rule; the critic's G1 task: align or record why the box route differs) + inference (delegated)",
+      "value": "Supplied: Object size = the object's world radius over 1.45, for the scene-unit lengths and the ripple and film lookups through worldScale(); keep this study's look on its own demo. Inferred: (1) align the number: Fit = the box's radius (1 x the Geometry COMP's scale) over 1.45, default 1 / 1.45, the unscaled demo's fit, as Liquid Glass Flow chose for its radius-1 sphere; (2) keep the look on the demo by converting each preset's Backdrop distance and Frost x 1.45 and Tint density / 1.45 once, as Liquid Glass Prism did for its own looks, including the four looks adapted from the core (they were tuned on this demo, not copied); (3) the film, a colour pattern, follows the rule's lookup (x worldScale(), frequency / Object size) but keeps this study's 2.5 swirls per box radius instead of the family's 2.5 per Object size, because the family's count made Oil Slick's film spotty here (244/255 on 48,887 pixels); (4) the ripple stays in box units with the rest of the shape, because it moves the surface (silhouette, depth, path); (5) Fit reads the box blobs.frag marches, not the Box SOP's bounds."
+    },
+    {
+      "topic": "family close G2 and G6: confirm, do not change",
+      "origin": "supplied (critic's task: re-check G2 against the core's new tie-break; G6 already in the documented form) + inference",
+      "value": "Compared this study's screenSign() with the core's, pasted literally, on this study's scenes, one sample and four samples per pixel; kept this study's lines because they are the same tie-break (see decisions.json). Added a 4x multisampled readout to the preview so the family's multisampled check runs here too. G6: no change; the existing picking test pins the documented form."
+    },
+    {
+      "topic": "close verify fixes (BLOBS-CV1 to CV4, LIT-CV5)",
+      "origin": "supplied (the critic's findings and suggested wording; the user's rules: never weaken a test, record before and after numbers, label limits honestly) + inference (delegated)",
+      "value": "Supplied: the CV1 sentence (old components keep their own copies), the CV2 README wording (about 7.6 times the film band detail; the frequency is 10 times), CV3's option to use Fit's Object size, CV4's split into red tests and guards. Inferred: (1) for CV3, take Fit's Object size rather than only record the new numbers, and add a comparison with the demo's render so the test stays on the demo's scene; (2) in the tutorial, keep 'ten times' as the frequency and give the test's 7.6 as a measurement, with 'band detail' defined once; (3) in decisions.json, also give the measurement where the G1 consequence cites the same test; (4) LIT-CV5: no change in Lit, whose record was already fixed by its LIT-CV3; fix only this study's wrong key name; (5) update the stale checks-table counts in review.md (40 and 65) while changing the unit count."
+    },
+    {
+      "topic": "family critic: one Object size per component",
+      "origin": "inferred (family critic round, 2026-11-02; no question asked)",
+      "value": "Keep the family rule and document the three setups it does not follow (several sizes, a scale that changes after Fit, per-instance scale) with workarounds. The critic's rule change is recorded in decisions.json and left to the user, because the brief puts universality first but the change redefines Object size for the whole family."
+    },
+    {
+      "topic": "family critic: native runs",
+      "origin": "supplied (brief: TouchDesigner 2025.x, GLSL 4.60, macOS on Apple Silicon) and inferred (the record's fields)",
+      "value": "validation.json family_close.native_run targets TouchDesigner 2025.x on macOS, Apple Silicon, and waits for a run that records the build, the OS, the GPU and the Info DAT text."
+    },
+    {
+      "topic": "family critic: one Fit name",
+      "origin": "supplied (family critic's fix: rename the helper fit_glass(), keep the old name as a documented alias for one round, update the pulse callbacks)",
+      "value": "native.py defines fit_glass(); 'fit_object_size = fit_glass  # alias' follows it; preset_exec.py, the module's usage note and the README call fit_glass()."
+    },
+    {
+      "topic": "family critic: one Fit name, what keeps the old name",
+      "origin": "inferred (this round could write only in Flow and Blobs)",
+      "value": "The alias goes once Liquid Glass Lit's LIT-CV3 test calls fit_glass. Test ids that earlier red-run records cite keep their names, and earlier round records keep the name the helper had then; sources.json, the README and the usage note name fit_glass(). The native check keeps its key, native_fit_object_size, because Lit's validation.json points at it."
+    }
+  ],
+  "shader_acceptance": "pending",
+  "article_acceptance": "pending",
+  "user_feedback": [],
+  "open_questions_for_user": [
+    "Does the blob silhouette look smooth enough natively, or should a supersampled render be the default?",
+    "Should droplets orbit in the box's XY plane (current) or freely in 3D?",
+    "Is a backdrop distance slider acceptable, or should the Refraction TOP's depth drive it per pixel?",
+    "Should blobs too big for the box be cut flat at its walls (current) or shrunk to fit?",
+    "The blob layout loops every 256 pi / Speed seconds (about 38 minutes at the default Speed); the ripple and the film swirl repeat on their own periods (84 s and about 2.3 hours), so the whole image never repeats exactly. Is that acceptable for installations, or should the layout loop be longer at the cost of float precision?",
+    "Does the quarter-gap rainbow (sharper fringes, faint fine steps where the fan is widest) read better than the softer full-gap version?",
+    "Should 'Checker' in this study be replaced by the core's checker image, so both family backdrops are identical everywhere?",
+    "Flip V now flips the screen position and the measured vertical direction of the bends together, not only the screen UV as the brief says. With measured screen orientation, a UV-only flip would mirror every vertical bend for an upside-down Refraction TOP; in the case the UV-only rule was written for, both give the same image. Is the combined flip acceptable?",
+    "Do the four new presets (Emerald Bottle, Rose Quartz, Oil Slick, Aqua Jelly) read as distinct looks you want, or should any be replaced?",
+    "LOOK-B1 and LOOK-B2 (look_decisions_for_user): the film count and the ripple's unit, against the family rule. Options and a recommended answer are there.",
+    "Family critic: should Object size switch to SOP units, with the shader following the Geometry COMP's scale and each instance's scale by itself (decisions.json, Family critic: one Object size per component, option (b))? It would make animated and per-instance scale work without Fit, but changes what a typed Object size means on a scaled COMP, in every member."
+  ],
+  "look_decisions_for_user": {
+    "status": "waiting for the user",
+    "how_to_answer": "Asked through the host's question tool, one decision per question with the recommended option first. In a host without a question tool, answer in text by naming a decision and an option, for example 'LOOK-B1 B'. Each option says what it changes. Until you answer, the code stays as delivered.",
+    "rule": "Until the user answers, the option in the code stays there: checks/test_study.py, LookDecisions, fails if it changes. After an answer, record it here (origin user, with the user's words), change the code, set in_code to the chosen option and update that test's IN_CODE and its check of the code.",
+    "decisions": [
+      {
+        "id": "LOOK-B1",
+        "question": "Which film count should Blobs use?",
+        "what_changed": "Nothing changed on the demo: the presets render as at c94e849 (0 to 1/255). The difference is with the family rule. The rule gives 2.5 film swirls per Object size. Blobs gives 2.5 per box radius, which is 2.5 / 1.45 = 1.724 per Object size (uFilm.w = 2.5 / (1.45 x Object size)). So its film bands are 1.45 times as wide as the rule's.",
+        "evidence": [
+          "captures/review-look-decisions.png",
+          "checks/results/look-decisions.json"
+        ],
+        "options": {
+          "A": "Keep 2.5 per box radius (in the code now). No code change.",
+          "B": "Use the family's 2.5 per Object size: 1.45 times as many bands. Measured on the demo at time 3: Oil Slick 244/255 on 48,887 pixels over 8/255, Soap Bubbles 234 on 43,868, Prism Clear 135 on 28,667, Type Lens 62 on 6,913. On Oil Slick the finer noise cells show as round spots. Changes: the uFilm.w expression in study.json, the shader comment, the film tests, captures."
+        },
+        "recommended": "A",
+        "recommended_origin": "inference (the look-acceptance round, 2026-11-02; the user has not answered)",
+        "why_recommended": "The finer count looks spotty on Oil Slick (captures/review-look-decisions.png). Fit already makes the film follow any box size, so universality does not depend on this number. The reference image with rainbow bands shows thin, dense bands that neither count reproduces, so the references do not settle it.",
+        "in_code": "A",
+        "status": "waiting for the user",
+        "answer": null
+      },
+      {
+        "id": "LOOK-B2",
+        "question": "Should the ripple follow Object size, like the core's ripples, or the box, like the blob shape?",
+        "what_changed": "Nothing changed on the demo. Ripple and Ripple scale stay in box units: blobField() adds ripple(p) with p in box coordinates, and uMotion.z is Ripple scale with no Object size or worldScale(). In the core, Wobble scale is divided by Object size and its lookup multiplied by worldScale().",
+        "evidence": [
+          "checks/results/look-decisions.json",
+          "decisions.json (Family close G1)"
+        ],
+        "options": {
+          "A": "Keep box units (in the code now). The ripple moves the surface (the silhouette, the depth and the measured path), so it stays part of the shape, like Radius and Merge. No code change.",
+          "B": "Follow the rule: Ripple scale counts ripples per Object size, as the core's Wobble scale does, with the presets' Ripple scale divided by 1.45 once so the demo keeps its look. Once Fit is pressed both give the same image. They differ only when Object size does not match the box (typed by hand, or a Geometry COMP scaled without pressing Fit): then the ripple count changes with Object size, as the core's does. Changes: ripple() in blobs.frag, uMotion in study.json, presets.json, the box-unit tests."
+        },
+        "recommended": "A",
+        "recommended_origin": "inference (the look-acceptance round, 2026-11-02; the user has not answered)",
+        "why_recommended": "Both give the same image whenever Fit is pressed, and A keeps every shape control in one unit.",
+        "in_code": "A",
+        "status": "waiting for the user",
+        "answer": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "field",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "field",
+      "Warp": 0.65,
+      "Bands": 18,
+      "Width": 0.075
+    },
+    "question": "Where do the contours come from?",
+    "prediction": "Two overlapping smooth hills and a bounded fold form one scalar field.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-field.png"
+  },
+  {
+    "id": "lines",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "lines",
+      "Warp": 0.65,
+      "Bands": 18,
+      "Width": 0.075
+    },
+    "question": "How does a scalar become a line?",
+    "prediction": "Periodic thresholding draws equal-height bands.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-lines.png"
+  },
+  {
+    "id": "dense",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "lines",
+      "Warp": 0.65,
+      "Bands": 36,
+      "Width": 0.075
+    },
+    "question": "What does doubling the count change?",
+    "prediction": "Contour frequency doubles without changing the underlying hills.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-dense.png"
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Warp": 0.65,
+      "Bands": 18,
+      "Width": 0.075
+    },
+    "question": "What does composition add?",
+    "prediction": "The same line mask reveals a woven warm/cool pigment field.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-final.png"
+  }
+]

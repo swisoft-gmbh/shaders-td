@@ -1,0 +1,15 @@
+[
+  {
+    "goal": "Make two lit helical density ribbons suspended in a dark volume. Teach view transmission and light visibility as different quantities, and test step-size consistency with a homogeneous slab.",
+    "alternatives": "Summing density without a step-length factor makes brightness depend on sample count. Using the light-path transmission as the cumulative view transmission conflates two rays. A full multiple-scattering model would add complexity outside this fixture.",
+    "evidence": "The article and corresponding module introduce Beer attenuation and then a light march. Their historical accumulation is not transferred verbatim: the new shader uses density times extinction times segment length and keeps view transmission distinct from light visibility.",
+    "choice": "Use segmentT=exp(-sigma*rho*ds), accumulate T*(1-segmentT)*source, and then multiply T by segmentT. Treat the light result only as a factor of the source.",
+    "consequence": "A constant slab has an analytic reference and should stay consistent as the view step count changes. The result is still an artistic single-scattering approximation with bounded light sampling, not a validated atmospheric renderer.",
+    "status": "implemented; see review and native receipts for tests"
+  },
+  {
+    "goal": "Review the actual native behavior",
+    "observation_and_change": "The implementation separates view transmission from light visibility and includes segment length from the beginning. This is a documented adaptation of the archived algorithm, not a claimed failure discovered in this session.",
+    "evidence": "../../validation/five-mechanisms/mechanism-tests.json"
+  }
+]

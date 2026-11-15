@@ -1,0 +1,66 @@
+[
+  {
+    "id": "source",
+    "parameters": {
+      "Pause": false,
+      "Stage": "source",
+      "Reset": false,
+      "Threshold": 0.018,
+      "Lifetime": 0.65,
+      "Pitch": 9
+    },
+    "question": "What changes between frames?",
+    "prediction": "An orbiting disc and ring provide controlled brightness changes.",
+    "reset": true,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters. This capture freezes a controlled input sequence; the live preset starts a new sequence. It is not an isolated matched-time comparison of different lifetimes.",
+    "capture": "captures/native-source.png"
+  },
+  {
+    "id": "motion",
+    "parameters": {
+      "Pause": false,
+      "Stage": "motion",
+      "Reset": false,
+      "Threshold": 0.018,
+      "Lifetime": 0.65,
+      "Pitch": 9
+    },
+    "question": "Does change mean velocity?",
+    "prediction": "Only brightness changes appear; direction is not encoded.",
+    "reset": true,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters. This capture freezes a controlled input sequence; the live preset starts a new sequence. It is not an isolated matched-time comparison of different lifetimes.",
+    "capture": "captures/native-motion.png"
+  },
+  {
+    "id": "trail",
+    "parameters": {
+      "Pause": false,
+      "Stage": "trail",
+      "Reset": false,
+      "Threshold": 0.018,
+      "Lifetime": 0.65,
+      "Pitch": 9
+    },
+    "question": "How does history bridge frames?",
+    "prediction": "Trail survives local motion and decays at the declared simulation step.",
+    "reset": true,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters. This capture freezes a controlled input sequence; the live preset starts a new sequence. It is not an isolated matched-time comparison of different lifetimes.",
+    "capture": "captures/native-trail.png"
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": false,
+      "Stage": "final",
+      "Reset": false,
+      "Threshold": 0.018,
+      "Lifetime": 0.65,
+      "Pitch": 9
+    },
+    "question": "Can the same state become a new material?",
+    "prediction": "Diagonal hatching renders older motion warm and fresh motion cool.",
+    "reset": true,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters. This capture freezes a controlled input sequence; the live preset starts a new sequence. It is not an isolated matched-time comparison of different lifetimes.",
+    "capture": "captures/native-final.png"
+  }
+]

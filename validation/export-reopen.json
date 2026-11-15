@@ -1,0 +1,121 @@
+{
+  "contour-loom": {
+    "export": "examples/contour-loom/native/study.tox",
+    "bytes": 6806,
+    "sha256": "b45a50a8656ec68170ff40e3ef2e1df475ccebf679131ee00b74406282eb4a96",
+    "loaded_component": "/project1/mh_final_reopen/contour_loom",
+    "report": {
+      "time_unix": 1792513333.951484,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_final_reopen/contour_loom",
+      "resolution": [
+        640,
+        640
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Bands": 18.0,
+        "Warp": 0.65,
+        "Width": 0.075,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_render": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "source_dats_identical": true,
+    "internal_references_valid": true,
+    "finite": true,
+    "max_image_difference": 0.0,
+    "image_comparison_scope": "Fixed-time stateless equality",
+    "passed": true
+  },
+  "phosphor-memory": {
+    "export": "examples/phosphor-memory/native/study.tox",
+    "bytes": 7902,
+    "sha256": "5c697d50cb51470d9946ebf9332f8e90387ea2a0037f3aeb9e529efb45162dea",
+    "loaded_component": "/project1/mh_final_reopen/phosphor_memory",
+    "report": {
+      "time_unix": 1792513334.046091,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_final_reopen/phosphor_memory",
+      "resolution": [
+        640,
+        640
+      ],
+      "parameters": {
+        "Pause": false,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Threshold": 0.018,
+        "Lifetime": 0.65,
+        "Pitch": 9.0,
+        "Reset": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_state": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_source": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_display": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "source_dats_identical": true,
+    "internal_references_valid": true,
+    "finite": true,
+    "max_image_difference": 0.0,
+    "image_comparison_scope": "Informational only: active feedback history resets on reopen; temporal behavior tested separately",
+    "passed": true
+  },
+  "contour-material": {
+    "export": "examples/contour-material/native/study.tox",
+    "bytes": 7326,
+    "sha256": "6680584a801e860d7820143d9e6505286a4c857282a45ee3f4ab112581bea4f9",
+    "loaded_component": "/project1/mh_final_reopen/contour_material",
+    "report": {
+      "time_unix": 1792513334.126786,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_final_reopen/contour_material",
+      "resolution": [
+        640,
+        640
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Bands": 18.0,
+        "Warp": 0.65,
+        "Width": 0.075,
+        "Turn": 25.0,
+        "Stretch": 1.0,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "source_dats_identical": true,
+    "internal_references_valid": true,
+    "finite": true,
+    "max_image_difference": 0.0,
+    "image_comparison_scope": "Fixed-time stateless equality",
+    "passed": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "nodes": 28,
+  "wires": 2,
+  "experiments": 16,
+  "errors": [],
+  "scope": "Static recipe contracts; no native compilation or visual certification."
+}

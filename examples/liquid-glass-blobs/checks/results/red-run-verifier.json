@@ -1,0 +1,96 @@
+{
+  "what": "Red/green evidence for the verifier fixes V1-V3 (2026-11-02). 'before' is this study as the family sync left it (blobs.frag with safeDirection() on the transformed vectors, study.json with the empty 'behind' fallback, eight presets); 'after' is the delivered state. WebGL2 (SwiftShader) preview and plain Python only, not TouchDesigner.",
+  "V2_normals_at_scale": {
+    "draw": "One sphere (Count 1, Radius 0.6, Spread 0, Stretch 0, Ripple 0, Droplets 0), Prism Clear at t = 3 s, UV-ramp backdrop, blobs_geo scaled by s with camera distance 5 s, near 0.1 s, far 100 s and Object size s; each stage compared with s = 1 on every glass pixel (largest per-channel difference).",
+    "before": {
+      "normal_0.001": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1e-05,
+        "over1e3": 0
+      },
+      "normal_20000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 0.99446,
+        "over1e3": 43020
+      },
+      "normal_1000000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 0.99446,
+        "over1e3": 43020
+      },
+      "refraction_0.001": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 5e-05,
+        "over1e3": 0
+      },
+      "refraction_20000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1.06634,
+        "over1e3": 43020
+      },
+      "refraction_1000000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1.06634,
+        "over1e3": 43020
+      }
+    },
+    "after": {
+      "normal_0.001": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1e-05,
+        "over1e3": 0
+      },
+      "normal_20000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1e-05,
+        "over1e3": 0
+      },
+      "normal_1000000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 1e-05,
+        "over1e3": 0
+      },
+      "refraction_0.001": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 5e-05,
+        "over1e3": 0
+      },
+      "refraction_20000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 5e-05,
+        "over1e3": 0
+      },
+      "refraction_1000000": {
+        "pixels": 43020,
+        "missing": 0,
+        "worst": 5e-05,
+        "over1e3": 0
+      }
+    },
+    "note": "Before the fix, at s = 20,000, 19,638 of the 43,020 normal-stage pixels read exactly +Y (0.5, 1, 0.5); the rest are +Y laid back into the view plane by faceCamera(). The thickness stage itself cannot be compared at that scale: it shows chord x 0.5 in scene units, which the 1024 output cap clips."
+  },
+  "V3_behind_fallback": {
+    "test": "test_behind_falls_back_to_blank_without_a_refraction_top",
+    "before": "FAIL: AssertionError: '' is not namespace(name='blank')",
+    "after": "ok"
+  },
+  "V1_twelve_presets": {
+    "tests": [
+      "test_twelve_complete_presets (unit)",
+      "presets_stay_distinct (preview)"
+    ],
+    "before": "8 presets: both tests fail on the count.",
+    "after": "12 presets; closest pair at t = 3 s: Checker 13.27/255 (sapphire_drops, oil_slick), Type 12.91/255 (sapphire_drops, oil_slick); threshold 10/255."
+  }
+}

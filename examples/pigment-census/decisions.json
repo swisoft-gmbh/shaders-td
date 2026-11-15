@@ -1,0 +1,15 @@
+[
+  {
+    "goal": "Turn an original grainy, layered landscape into broader pigment patches. Compare variance-selected quadrants with ordinary box averaging on a controlled edge and constant image.",
+    "alternatives": "An anisotropic tensor pipeline is available in the archive but would obscure the first statistical mechanism. Uniform box blur is cheaper to explain but mixes across every edge. A neural style filter would not test the archived kernel reasoning.",
+    "evidence": "The article begins with a local kernel visualizer, then shows the whole-image result. Its basic module calculates the first and second moments and chooses the minimum-variance sector. This study adopts the mechanism with explicit native texel addressing.",
+    "choice": "Start with four inclusive (radius+1)^2 quadrants, clamp integer fetches at boundaries, clamp tiny negative roundoff in variance, and make zero radius a valid identity case.",
+    "consequence": "Strong edges can be preserved while fine grain is averaged. Axis-aligned patches and switching artifacts remain visible limitations; this is not the Papari or anisotropic extension. The selected weighted channel variance is not the same as variance of scalar luminance.",
+    "status": "implemented; see review and native receipts for tests"
+  },
+  {
+    "goal": "Review the actual native behavior",
+    "observation_and_change": "Native visual inspection found that the procedural hill layer order hid earlier bands. Reversing the source composition order revealed them. The filter mechanism was unchanged.",
+    "evidence": "../../validation/five-mechanisms/mechanism-tests.json"
+  }
+]

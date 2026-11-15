@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+    "url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+    "lines": [
+      47,
+      198
+    ],
+    "use": "Signal, pattern and composition separated",
+    "adaptation": "New native implementation and composition; source article is web-based.",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "sha256": "a5e4206639738dc4fcf4eecc938b3037852b15525c20ade17b9fb1fb267d79b1"
+  },
+  {
+    "source_id": "articles/shades-of-halftone.mdx",
+    "url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+    "lines": [
+      52,
+      202
+    ],
+    "use": "Pattern derivation and controlled threshold teaching",
+    "adaptation": "New native implementation and composition; source article is web-based.",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "sha256": "6664936762ffc7e36f37d8071c53fd929cc91e78241f2e0da3652585c33e4235"
+  }
+]

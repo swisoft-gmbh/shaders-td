@@ -1,0 +1,1272 @@
+{
+ "what": "The family-sync tests run against this study as it was at commit 6a58487 (before the sync). 'red' = fails there. Updated in the verifier round (V1 to V4, 2026-11-02): see unit.notes and preview.notes. Updated again in the verifier gap round (G1, G2, 2026-11-02): two unit and two preview tests added; see the notes.",
+ "how": {
+  "unit": "checks/test_study.py copied into a scratch copy of the 6a58487 folder (git archive), plus checks/reference/ (also 6a58487 content), with the 6a58487 core study next to it (git archive of studies/liquid-glass, for test_core_reference_is_the_current_core), run with python3 -v; failures and errors both count as red.",
+  "preview": "node checks/preview_tests.cjs <port> --reference: every flow draw, vertex run and clock step uses checks/reference (the 6a58487 shaders and study.json bindings; the preview evaluates the old clock() and menuIndex forms). The core and hybrid pages stay current, so tests comparing with the current core are red by design."
+ },
+ "unit": {
+  "total": 70,
+  "red": [
+   "BuilderDryRun.test_build_runs_and_wires_everything",
+   "FamilySync.test_c1_transmitted_returns_the_scene_alpha",
+   "FamilySync.test_c2_extra_colour_buffers_get_zeros",
+   "FamilySync.test_c4_renders_switch_dither_off",
+   "FamilySync.test_c4_shaders_never_dither",
+   "FamilySync.test_c5_colour_is_capped_before_output_alpha_is_not",
+   "FamilySync.test_c5_every_render_gets_an_info_dat",
+   "FamilySync.test_c5_normalize_never_sees_a_zero_vector",
+   "FamilySync.test_c5_render_diagnostics_reports_the_renders_that_draw_the_glass",
+   "FamilySync.test_c6_offsets_follow_the_measured_screen_orientation",
+   "FamilySync.test_c7_fog_on_the_front_pass_only",
+   "FamilySync.test_c8_object_size_is_setup_and_never_reset",
+   "FamilySync.test_c8_object_size_scales_the_lengths_and_is_exact_at_1",
+   "FamilySync.test_c9_backdrop_menu_reaches_the_demo_backdrop",
+   "FamilySync.test_g1_readme_says_what_film_swirl_0_does",
+   "FamilySync.test_r1_no_node_expression_reads_absolute_time",
+   "FamilySync.test_r1_pixel_noise_lattice_repeats_every_256",
+   "FamilySync.test_r2_occlusion_claim_has_a_preview_test",
+   "FamilySync.test_r2_readme_draws_the_glass_with_a_render_pass_top",
+   "FamilySync.test_r3_build_warnings_are_categorized",
+   "FamilySync.test_r3_inputs_are_constant_paths_to_the_demo",
+   "FamilySync.test_r5_atan_only_through_azimuth",
+   "FamilySync.test_r5_pixel_stage_hygiene",
+   "FamilySync.test_r5_smoothstep_edges_increase",
+   "FamilySync.test_r5_vertex_decides_a_zero_normal_before_transforming",
+   "FamilySync.test_r6_flat_image_blur_widens_with_the_warp",
+   "FamilySync.test_r6_frost_disc_centre_stays_near_the_middle",
+   "FamilySync.test_r7_back_face_pass_is_32_bit_and_read_texel_by_texel",
+   "FamilySync.test_r8_colour_parameters_and_energy_conserving",
+   "FamilySync.test_r9_inspect_reports_script_and_blocking_errors",
+   "FamilySync.test_r9_sampler_extend_modes_and_menu_uniforms",
+   "FitFlow.test_comp_bounds_fallback_and_notes",
+   "FitFlow.test_report_gives_the_liquid_glass_object_size",
+   "FitFlow.test_uses_the_rendered_sop_bounds",
+   "NativeApply.test_each_experiment_alone_gives_defaults_preset_and_overrides",
+   "NativeApply.test_order_does_not_matter",
+   "NativeApply.test_reset_controls_are_the_documented_ones",
+   "PresetModule.test_a_still_look_never_reads_the_clock",
+   "PresetModule.test_decode_colours",
+   "PresetModule.test_demo_spin_is_integrated",
+   "PresetModule.test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump",
+   "PresetModule.test_flow_time_is_flow_speed_added_up_and_wrapped",
+   "PresetModule.test_flow_wrap_is_a_whole_number_of_every_drift",
+   "PresetModule.test_menu_follows_the_evaluated_value",
+   "PresetModule.test_motion_stays_smooth_through_morph_and_speed_changes_after_an_hour",
+   "PresetModule.test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero",
+   "PresetModule.test_two_components_keep_their_own_motion",
+   "Recipe.test_core_reference_is_the_current_core",
+   "Recipe.test_every_preset_value_reaches_a_morphed_uniform",
+   "Recipe.test_pixel_shader_is_current_core_plus_documented_additions"
+  ],
+  "green_on_6a58487": [
+   "FamilySync.test_c2_vertex_shader_answers_picking_with_the_moved_surface",
+   "FitFlow.test_demo_sphere_fits_to_one",
+   "NativeApply.test_no_experiment_sets_a_setup_control",
+   "NativeApply.test_scene_inputs_and_flow_fit_survive",
+   "PresetCallback.test_choosing_a_preset_loads_look_and_motion",
+   "PresetCallback.test_custom_changes_nothing",
+   "PresetCallback.test_fit_pulse_runs_fit_flow",
+   "PresetModule.test_apply_writes_every_preset_value",
+   "PresetModule.test_custom_changes_nothing",
+   "PresetModule.test_morph_endpoints_and_midpoint_include_motion",
+   "Recipe.test_both_materials_share_bindings_except_pass_and_back_sampler",
+   "Recipe.test_control_defaults_are_the_default_preset",
+   "Recipe.test_core_controls_kept",
+   "Recipe.test_core_looks_unchanged",
+   "Recipe.test_experiments_use_real_presets_and_previews",
+   "Recipe.test_menus_offer_every_preset",
+   "Recipe.test_no_version_directive_and_swizzle",
+   "Recipe.test_preset_keys_are_controls",
+   "Recipe.test_shader_direction_menu_matches_shader",
+   "Recipe.test_twelve_complete_presets"
+  ],
+  "counts": {
+   "failures": 24,
+   "errors": 26,
+   "ok": 20
+  },
+  "notes": {
+   "FamilySync.test_c4_shaders_never_dither": "Red on 6a58487 only at its last gl_FragCoord assertion: the set of functions that read gl_FragCoord is {screenUV} there, {screenUV, screenSign} now, because screenSign() (C6) did not exist yet. Every no-dither assertion holds on 6a58487: no TDDither, no dither/random/noise-seed names, no fract(sin()), lattice hashes only in valueNoise() and latticeSlope(), no gl_FragCoord in the demo TOPs. Nothing dithered.",
+   "FamilySync.test_r5_vertex_decides_a_zero_normal_before_transforming": "Since the verifier round (V1) it also checks that the rest-normal fallback in flowNormal() is relative to the nudge's rest area; red on 6a58487 either way.",
+   "FitFlow.test_report_gives_the_liquid_glass_object_size": "Added in the verifier round (V2): red on 6a58487 (no torus_radius(), no liquid_glass_object_size in the report).",
+   "FamilySync.test_g1_readme_says_what_film_swirl_0_does": "Added in the verifier gap round (G1): red on 6a58487 (its uFilm row said 0: the swirl frequency was the constant 2.5 in the shader) and red on the README before the G1 fix (it said '0 freezes the swirl').",
+   "FamilySync.test_r2_occlusion_claim_has_a_preview_test": "Added in the verifier gap round (G2): red on 6a58487 (README step 5 laid the glass over the scene with an Over TOP; no occlusion claim, no preview test) and red before the G2 fix (README claim present, no preview test)."
+  }
+ },
+ "preview": {
+  "total": 42,
+  "red": [
+   "amplitude0_matches_core",
+   "pixel_stage_matches_core_while_moving",
+   "ripples_and_film_exact_after_a_week",
+   "ior1_is_invisible_with_wobble",
+   "wobble_independent_of_object_scale",
+   "faceted_fallback_is_scale_free",
+   "frost_does_not_shift_the_view",
+   "backface_thickness_matches_chord",
+   "backface_pass_adds_no_dark_fringe",
+   "energy_conserving_mirror_is_pure_reflection",
+   "srgb_colour_mode_decodes_colours",
+   "transparent_scene_stays_transparent",
+   "empty_scene_matches_no_refraction_top",
+   "output_fits_half_float",
+   "bends_follow_screen_orientation",
+   "flip_v_corrects_upside_down_inputs",
+   "fog_adds_only_the_glass_share",
+   "object_size_carries_presets_over",
+   "backdrop_menu_switches_the_demo_scene",
+   "film_swirl_frequency_0_is_one_drifting_thickness"
+  ],
+  "green_on_6a58487": [
+   "amplitude0_vertex_identity",
+   "normals_match_finite_differences",
+   "motion_matches_float64_reference",
+   "normal_mode_error_is_bounded",
+   "silhouette_coverage_changes",
+   "crack_free_keeps_coincident_vertices_together",
+   "centre_point_stays_on_sheet",
+   "moving_glass_at_ior1_is_invisible",
+   "correct_normals_changes_shading_not_silhouette",
+   "no_normals_falls_back",
+   "instance_variation",
+   "gravity_stays_world_down",
+   "flow_time_follows_speed",
+   "morph1_equals_target",
+   "morph0_is_neutral",
+   "morph_frame_is_smooth_after_an_hour",
+   "speed_change_is_smooth_after_an_hour",
+   "frost_converges_with_samples",
+   "dispersion_converges_with_samples",
+   "opaque_scene_matches_pre_sync",
+   "extra_colour_buffers_get_zeros",
+   "render_pass_keeps_foreground_in_front"
+  ],
+  "evidence": {
+   "amplitude0_matches_core": {
+    "renders": 17,
+    "worst_max_difference": 244,
+    "rows": [
+     {
+      "preset": "clear_crystal",
+      "mesh": "torus",
+      "max": 0,
+      "pixelsOver2": 0
+     },
+     {
+      "preset": "prism_chrome",
+      "mesh": "torus",
+      "max": 208,
+      "pixelsOver2": 16416
+     },
+     {
+      "preset": "prism_chrome",
+      "mesh": "sphere",
+      "max": 188,
+      "pixelsOver2": 10027
+     },
+     {
+      "preset": "violet_gel",
+      "mesh": "torus",
+      "max": 141,
+      "pixelsOver2": 9222
+     },
+     {
+      "preset": "violet_gel",
+      "mesh": "sphere",
+      "max": 151,
+      "pixelsOver2": 6855
+     },
+     {
+      "preset": "sapphire_drop",
+      "mesh": "torus",
+      "max": 156,
+      "pixelsOver2": 10832
+     },
+     {
+      "preset": "chrome_type",
+      "mesh": "torus",
+      "max": 76,
+      "pixelsOver2": 12382
+     },
+     {
+      "preset": "frosted_ice",
+      "mesh": "torus",
+      "max": 18,
+      "pixelsOver2": 15780
+     },
+     {
+      "preset": "amber_honey",
+      "mesh": "torus",
+      "max": 186,
+      "pixelsOver2": 12975
+     },
+     {
+      "preset": "emerald_bottle",
+      "mesh": "torus",
+      "max": 1,
+      "pixelsOver2": 0
+     },
+     {
+      "preset": "rose_quartz",
+      "mesh": "torus",
+      "max": 34,
+      "pixelsOver2": 15380
+     },
+     {
+      "preset": "liquid_mercury",
+      "mesh": "torus",
+      "max": 167,
+      "pixelsOver2": 12291
+     },
+     {
+      "preset": "liquid_mercury",
+      "mesh": "sphere",
+      "max": 128,
+      "pixelsOver2": 7128
+     },
+     {
+      "preset": "oil_slick",
+      "mesh": "torus",
+      "max": 244,
+      "pixelsOver2": 17968
+     },
+     {
+      "preset": "aqua_jelly",
+      "mesh": "torus",
+      "max": 201,
+      "pixelsOver2": 17629
+     },
+     {
+      "preset": "prism_chrome",
+      "mesh": "torus",
+      "object_size": 1.45,
+      "max": 240,
+      "pixelsOver2": 22522
+     },
+     {
+      "preset": "amber_honey",
+      "mesh": "torus",
+      "object_size": 1.45,
+      "max": 222,
+      "pixelsOver2": 20557
+     }
+    ],
+    "after_fit_on_the_demo_torus": {
+     "object_size_here": 1.45,
+     "liquid_glass_object_size": 1,
+     "prism_chrome": {
+      "max": 208,
+      "pixelsOver2": 16416
+     },
+     "amber_honey": {
+      "max": 186,
+      "pixelsOver2": 12975
+     }
+    }
+   },
+   "amplitude0_vertex_identity": {
+    "vertices": 4753,
+    "max_position_error": 1.7792374462644034e-07,
+    "max_normal_error": 9.387034283214746e-08
+   },
+   "normals_match_finite_differences": {
+    "tolerance_deg": {
+     "every_case": 0.5,
+     "squeezed_chrome_type_amplitude_0_5": 1
+    },
+    "displace_along": "centre",
+    "reference": "float64 central differences of the moved surface (checks/flow_reference.cjs)",
+    "cases": {
+     "busy": {
+      "flow_time": 0.9,
+      "mean": 0.00784,
+      "p99": 0.0503,
+      "max": 0.0738,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.677,
+       "under_a_quarter": 0
+      }
+     },
+     "busy_rotated_nonuniform_scale": {
+      "flow_time": 0.9,
+      "mean": 0.00563,
+      "p99": 0.035,
+      "max": 0.0623,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.677,
+       "under_a_quarter": 0
+      }
+     },
+     "finest_scales": {
+      "flow_time": 0.9,
+      "mean": 0.0152,
+      "p99": 0.0607,
+      "max": 0.0839,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.9,
+       "under_a_quarter": 0
+      }
+     },
+     "waves_own_direction": {
+      "flow_time": 1.35,
+      "mean": 0.012,
+      "p99": 0.106,
+      "max": 0.165,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.774,
+       "under_a_quarter": 0
+      }
+     },
+     "sag_and_drip": {
+      "flow_time": 2.25,
+      "mean": 0.000638,
+      "p99": 0.00331,
+      "max": 0.00953,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.854,
+       "under_a_quarter": 0
+      }
+     },
+     "instance_7_variation_1": {
+      "flow_time": 0.9,
+      "mean": 0.00677,
+      "p99": 0.0497,
+      "max": 0.0676,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.677,
+       "under_a_quarter": 0
+      }
+     },
+     "model_x10_off_origin": {
+      "flow_time": 0.9,
+      "mean": 0.00785,
+      "p99": 0.0503,
+      "max": 0.0739,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.677,
+       "under_a_quarter": 0
+      }
+     },
+     "after_24_hours": {
+      "flow_time": 38880,
+      "mean": 0.0169,
+      "p99": 0.0562,
+      "max": 0.0958,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.645,
+       "under_a_quarter": 0
+      }
+     },
+     "after_1_week_speed_0_9": {
+      "flow_time": 544320,
+      "mean": 0.0114,
+      "p99": 0.052,
+      "max": 0.082,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.745,
+       "under_a_quarter": 0
+      }
+     },
+     "squeezed_chrome_type_amplitude_0_5": {
+      "flow_time": 2,
+      "mean": 0.0399,
+      "p99": 0.455,
+      "max": 0.819,
+      "normals_over_5_deg": 0,
+      "area_ratio": {
+       "min": 0.16,
+       "under_a_quarter": 196
+      }
+     }
+    }
+   },
+   "motion_matches_float64_reference": {
+    "tolerance": {
+     "position_object_sizes": 0.001,
+     "vflow": 0.01
+    },
+    "cases": {
+     "busy": {
+      "vertices": 8385,
+      "flow_time": 0.9,
+      "position_error_object_sizes": {
+       "mean": 4.16e-06,
+       "p99": 1.43e-05,
+       "max": 1.48e-05
+      },
+      "vflow_error": {
+       "mean": 2.77e-05,
+       "p99": 9.53e-05,
+       "max": 9.87e-05
+      }
+     },
+     "busy_rotated_nonuniform_scale": {
+      "vertices": 8385,
+      "flow_time": 0.9,
+      "position_error_object_sizes": {
+       "mean": 4.3e-06,
+       "p99": 1.95e-05,
+       "max": 2.21e-05
+      },
+      "vflow_error": {
+       "mean": 2.77e-05,
+       "p99": 9.54e-05,
+       "max": 9.86e-05
+      }
+     },
+     "finest_scales": {
+      "vertices": 8385,
+      "flow_time": 0.9,
+      "position_error_object_sizes": {
+       "mean": 1.35e-06,
+       "p99": 4.77e-06,
+       "max": 4.94e-06
+      },
+      "vflow_error": {
+       "mean": 2.7e-05,
+       "p99": 9.54e-05,
+       "max": 9.9e-05
+      }
+     },
+     "waves_own_direction": {
+      "vertices": 8385,
+      "flow_time": 1.35,
+      "position_error_object_sizes": {
+       "mean": 5.72e-06,
+       "p99": 2.27e-05,
+       "max": 2.28e-05
+      },
+      "vflow_error": {
+       "mean": 4.76e-05,
+       "p99": 0.000189,
+       "max": 0.000189
+      }
+     },
+     "sag_and_drip": {
+      "vertices": 8385,
+      "flow_time": 2.25,
+      "position_error_object_sizes": {
+       "mean": 5.87e-08,
+       "p99": 1.74e-07,
+       "max": 2.63e-07
+      },
+      "vflow_error": {
+       "mean": 2.6e-07,
+       "p99": 8.22e-07,
+       "max": 1.23e-06
+      }
+     },
+     "instance_7_variation_1": {
+      "vertices": 8385,
+      "flow_time": 0.9,
+      "position_error_object_sizes": {
+       "mean": 3.91e-06,
+       "p99": 1.49e-05,
+       "max": 1.68e-05
+      },
+      "vflow_error": {
+       "mean": 2.6e-05,
+       "p99": 9.94e-05,
+       "max": 0.000112
+      }
+     },
+     "model_x10_off_origin": {
+      "vertices": 8385,
+      "flow_time": 0.9,
+      "position_error_object_sizes": {
+       "mean": 4.16e-06,
+       "p99": 1.43e-05,
+       "max": 1.48e-05
+      },
+      "vflow_error": {
+       "mean": 2.77e-05,
+       "p99": 9.54e-05,
+       "max": 9.87e-05
+      }
+     },
+     "after_24_hours": {
+      "vertices": 8385,
+      "flow_time": 38880,
+      "position_error_object_sizes": {
+       "mean": 1.38e-05,
+       "p99": 4.19e-05,
+       "max": 6.25e-05
+      },
+      "vflow_error": {
+       "mean": 9.18e-05,
+       "p99": 0.000279,
+       "max": 0.000416
+      }
+     },
+     "after_1_week_speed_0_9": {
+      "vertices": 8385,
+      "flow_time": 544320,
+      "position_error_object_sizes": {
+       "mean": 8.55e-06,
+       "p99": 2.56e-05,
+       "max": 3.86e-05
+      },
+      "vflow_error": {
+       "mean": 5.7e-05,
+       "p99": 0.000171,
+       "max": 0.000257
+      }
+     }
+    }
+   },
+   "normal_mode_error_is_bounded": {
+    "bound_at_preset_amplitudes": {
+     "p99_deg": 10,
+     "max_deg": 15
+    },
+    "cases": {
+     "sphere_busy": {
+      "normal_error_deg": {
+       "mean": 0.931,
+       "p99": 3.05,
+       "max": 4.52
+      },
+      "position_error_object_sizes_max": 1.49e-05
+     },
+     "torus_busy": {
+      "normal_error_deg": {
+       "mean": 1.57,
+       "p99": 7.25,
+       "max": 10.2
+      },
+      "position_error_object_sizes_max": 1.48e-05
+     },
+     "torus_aqua_jelly": {
+      "normal_error_deg": {
+       "mean": 1.37,
+       "p99": 6.84,
+       "max": 9.29
+      },
+      "position_error_object_sizes_max": 1.1e-06
+     },
+     "torus_liquid_mercury": {
+      "normal_error_deg": {
+       "mean": 0.887,
+       "p99": 4.31,
+       "max": 6.67
+      },
+      "position_error_object_sizes_max": 8.85e-07
+     },
+     "torus_aqua_jelly_amplitude_0_5": {
+      "normal_error_deg": {
+       "mean": 6.82,
+       "p99": 42.3,
+       "max": 63.9
+      },
+      "position_error_object_sizes_max": 2.55e-06
+     },
+     "torus_aqua_jelly_crack_free": {
+      "normal_error_deg": {
+       "mean": 0.0012,
+       "p99": 0.00739,
+       "max": 0.0134
+      },
+      "position_error_object_sizes_max": 1.09e-06
+     }
+    }
+   },
+   "silhouette_coverage_changes": {
+    "covered_px": {
+     "a0": 22435,
+     "a006": 21869,
+     "a018": 21036
+    },
+    "changed_px_vs_a0": {
+     "a006": 944,
+     "a018": 2613
+    }
+   },
+   "crack_free_keeps_coincident_vertices_together": {
+    "box_divisions": 16,
+    "crack_free": {
+     "shared_positions": 188,
+     "max_gap": 0,
+     "holes_px": 0
+    },
+    "along_normal": {
+     "shared_positions": 188,
+     "max_gap": 0.2404300695716963,
+     "holes_px": 702
+    }
+   },
+   "centre_point_stays_on_sheet": {
+    "vertices": 24897,
+    "vertex_at_centre": 12448,
+    "max_out_of_plane": 0
+   },
+   "moving_glass_at_ior1_is_invisible": {
+    "max": 0,
+    "pixelsOver2": 0
+   },
+   "pixel_stage_matches_core_while_moving": {
+    "worst_max_difference": 240,
+    "rows": [
+     {
+      "preset": "prism_chrome",
+      "max": 200,
+      "pixelsOver2": 16092
+     },
+     {
+      "preset": "sapphire_drop",
+      "max": 141,
+      "pixelsOver2": 11026
+     },
+     {
+      "preset": "oil_slick",
+      "max": 240,
+      "pixelsOver2": 17241
+     },
+     {
+      "preset": "violet_gel",
+      "max": 163,
+      "pixelsOver2": 13689
+     }
+    ]
+   },
+   "correct_normals_changes_shading_not_silhouette": {
+    "coverage_changed_px": 0,
+    "shading": {
+     "max": 90,
+     "pixelsOver2": 22329
+    }
+   },
+   "no_normals_falls_back": {
+    "max_vertex_motion": 0.22251816788460732,
+    "max_world_normal_length": 0,
+    "max_position_difference_vs_with_normals": 0,
+    "coverage_changed_px": 0,
+    "mean_rgb_sum_inside": 452
+   },
+   "instance_variation": {
+    "variation0_max_difference": 0,
+    "variation1_max_difference": 0.2554725408554077
+   },
+   "gravity_stays_world_down": {
+    "sagging_vertices": 2191,
+    "max_sag": 0.13158819088441226,
+    "angle_to_world_down_deg": {
+     "mean": 0.000281,
+     "p99": 0.0032,
+     "max": 0.00807
+    }
+   },
+   "flow_time_follows_speed": {
+    "flow_speed_0_max_motion_over_100_s": 0,
+    "flow_speed_default_max_motion_over_1_s": 0.047,
+    "morph_after_2_s": {
+     "morphing_frame_mean_travel": 0.000575,
+     "still_frame_mean_travel": 0.000134,
+     "ratio": 4.29
+    },
+    "morph_after_1_hour": {
+     "morphing_frame_mean_travel": 0.00056,
+     "still_frame_mean_travel": 0.00016,
+     "ratio": 3.5
+    },
+    "morph_after_24_hours": {
+     "morphing_frame_mean_travel": 0.000664,
+     "still_frame_mean_travel": 0.000146,
+     "ratio": 4.54
+    }
+   },
+   "morph1_equals_target": {
+    "max": 0,
+    "pixelsOver2": 0
+   },
+   "morph0_is_neutral": {
+    "max": 0,
+    "pixelsOver2": 0
+   },
+   "morph_frame_is_smooth_after_an_hour": {
+    "final_t2": {
+     "max": 114,
+     "pixelsOver8": 814,
+     "p99OfAllPixels": 7
+    },
+    "final_t3600": {
+     "max": 63,
+     "pixelsOver8": 654,
+     "p99OfAllPixels": 6
+    },
+    "film_t2": {
+     "max": 111,
+     "pixelsOver8": 272,
+     "p99OfAllPixels": 6
+    },
+    "film_t3600": {
+     "max": 71,
+     "pixelsOver8": 556,
+     "p99OfAllPixels": 7
+    }
+   },
+   "speed_change_is_smooth_after_an_hour": {
+    "steady": {
+     "max": 116,
+     "pixelsOver8": 132,
+     "p99OfAllPixels": 1
+    },
+    "nudged": {
+     "max": 116,
+     "pixelsOver8": 137,
+     "p99OfAllPixels": 1
+    }
+   },
+   "ripples_and_film_exact_after_a_week": {
+    "aqua_jelly_normal": {
+     "seconds": 605868.667,
+     "max": 83,
+     "pixelsOver8": 17113,
+     "p99OfAllPixels": 26
+    },
+    "oil_slick_film": {
+     "seconds": 597335.333,
+     "max": 255,
+     "pixelsOver8": 22211,
+     "p99OfAllPixels": 250
+    }
+   },
+   "ior1_is_invisible_with_wobble": {
+    "max": 178,
+    "pixelsOver2": 210
+   },
+   "wobble_independent_of_object_scale": {
+    "scale01": {
+     "max": 117,
+     "pixelsOver8": 21417,
+     "p99OfAllPixels": 101
+    },
+    "scale10": {
+     "max": 34,
+     "pixelsOver8": 11154,
+     "p99OfAllPixels": 19
+    }
+   },
+   "faceted_fallback_is_scale_free": {
+    "max": 81,
+    "pixelsOver8": 17407,
+    "p99OfAllPixels": 49
+   },
+   "frost_does_not_shift_the_view": [
+    {
+     "samples": 12,
+     "pixels": 10000,
+     "meanShiftPixels": 3.06
+    },
+    {
+     "samples": 24,
+     "pixels": 10000,
+     "meanShiftPixels": 3.821
+    }
+   ],
+   "frost_converges_with_samples": {
+    "max": 16,
+    "pixelsOver16": 0,
+    "p99OfAllPixels": 11
+   },
+   "dispersion_converges_with_samples": {
+    "clear_crystal_thickness_preset": {
+     "glass_pixels": 19234,
+     "mean": 0.46,
+     "max": 3,
+     "pixelsOver32": 0
+    },
+    "clear_crystal_thickness_2.5": {
+     "glass_pixels": 20503,
+     "mean": 2.02,
+     "max": 14,
+     "pixelsOver32": 0
+    },
+    "prism_chrome_thickness_preset": {
+     "glass_pixels": 19889,
+     "mean": 0.53,
+     "max": 4,
+     "pixelsOver32": 0
+    },
+    "prism_chrome_thickness_2.5": {
+     "glass_pixels": 20874,
+     "mean": 1.53,
+     "max": 10,
+     "pixelsOver32": 0
+    }
+   },
+   "backface_thickness_matches_chord": {
+    "camera_4_units": [
+     {
+      "x": 240,
+      "expected": 127.5,
+      "measured": 127,
+      "chord": 1.9999
+     },
+     {
+      "x": 260,
+      "expected": 123.4,
+      "measured": 123,
+      "chord": 1.9359
+     },
+     {
+      "x": 280,
+      "expected": 110.9,
+      "measured": 111,
+      "chord": 1.7397
+     },
+     {
+      "x": 295,
+      "expected": 94.5,
+      "measured": 94,
+      "chord": 1.482
+     },
+     {
+      "x": 304,
+      "expected": 80.3,
+      "measured": 80,
+      "chord": 1.2601
+     }
+    ],
+    "camera_50_units": [
+     {
+      "x": 240,
+      "expected": 255,
+      "measured": 255,
+      "chord": 1.9999
+     },
+     {
+      "x": 248,
+      "expected": 253.6,
+      "measured": 254,
+      "chord": 1.989
+     },
+     {
+      "x": 256,
+      "expected": 249.7,
+      "measured": 248,
+      "chord": 1.9585
+     },
+     {
+      "x": 264,
+      "expected": 243.2,
+      "measured": 241,
+      "chord": 1.9074
+     },
+     {
+      "x": 272,
+      "expected": 233.8,
+      "measured": 233,
+      "chord": 1.834
+     },
+     {
+      "x": 280,
+      "expected": 221.3,
+      "measured": 223,
+      "chord": 1.7354
+     },
+     {
+      "x": 288,
+      "expected": 204.9,
+      "measured": 206,
+      "chord": 1.6071
+     },
+     {
+      "x": 296,
+      "expected": 183.7,
+      "measured": 184,
+      "chord": 1.4411
+     },
+     {
+      "x": 304,
+      "expected": 155.8,
+      "measured": 154,
+      "chord": 1.2223
+     }
+    ],
+    "orthographic": [
+     {
+      "x": 240,
+      "expected": 255,
+      "measured": 255,
+      "chord": 1.9999
+     },
+     {
+      "x": 255,
+      "expected": 251.2,
+      "measured": 248,
+      "chord": 1.9701
+     },
+     {
+      "x": 270,
+      "expected": 239.9,
+      "measured": 231,
+      "chord": 1.8816
+     },
+     {
+      "x": 285,
+      "expected": 220,
+      "measured": 204,
+      "chord": 1.7256
+     },
+     {
+      "x": 300,
+      "expected": 188.8,
+      "measured": 169,
+      "chord": 1.4807
+     },
+     {
+      "x": 315,
+      "expected": 138.8,
+      "measured": 120,
+      "chord": 1.0885
+     },
+     {
+      "x": 322,
+      "expected": 101.9,
+      "measured": 86,
+      "chord": 0.7992
+     }
+    ]
+   },
+   "backface_pass_adds_no_dark_fringe": {
+    "max": 95,
+    "pixelsOver2": 157
+   },
+   "energy_conserving_mirror_is_pure_reflection": {
+    "max": 205,
+    "pixelsOver2": 20098
+   },
+   "srgb_colour_mode_decodes_colours": {
+    "max": 47,
+    "pixelsOver2": 20740
+   },
+   "transparent_scene_stays_transparent": {
+    "alpha_0_scene": {
+     "max": 255,
+     "alphaMax": 255,
+     "pixelsOver2": 22530
+    },
+    "alpha_0_scene_backface_pass": {
+     "max": 255,
+     "alphaMax": 255,
+     "pixelsOver2": 22530
+    }
+   },
+   "empty_scene_matches_no_refraction_top": {
+    "max": 204,
+    "alphaMax": 204,
+    "pixelsOver2": 21894
+   },
+   "opaque_scene_matches_pre_sync": {
+    "clear_crystal": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "prism_chrome": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "violet_gel": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "sapphire_drop": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "chrome_type": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "frosted_ice": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "amber_honey": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "emerald_bottle": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "rose_quartz": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "liquid_mercury": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "oil_slick": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "aqua_jelly": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "prism_chrome_backface_pass": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "violet_gel_backface_pass": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "sapphire_drop_backface_pass": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    },
+    "aqua_jelly_backface_pass": {
+     "max": 0,
+     "alphaMax": 0,
+     "centreLinePixelsOver1": 0,
+     "centreLineMax": 0
+    }
+   },
+   "extra_colour_buffers_get_zeros": {
+    "glass_pixels": 20964,
+    "buffer0_max_float_diff": 0,
+    "buffer1_pixels_not_zero": 0,
+    "buffer2_pixels_not_zero": 0
+   },
+   "output_fits_half_float": {
+    "hot_highlight": {
+     "nonFinite": 3852,
+     "maxRGB": null,
+     "maxAlpha": 1
+    },
+    "back_pass_far_away": {
+     "nonFinite": 0,
+     "maxRGB": 1.6,
+     "maxAlpha": 1501
+    }
+   },
+   "bends_follow_screen_orientation": {
+    "prism_chrome": {
+     "flipped_raster": {
+      "max": 236,
+      "pixelsOver8": 17452
+     },
+     "upside_down_inputs_flip_v": {
+      "max": 236,
+      "pixelsOver8": 17382
+     },
+     "flipped_raster_upright_inputs_flip_v": {
+      "max": 86,
+      "pixelsOver8": 293
+     }
+    },
+    "chrome_type_flat_image_backface": {
+     "flipped_raster": {
+      "max": 232,
+      "pixelsOver8": 16995
+     },
+     "upside_down_inputs_flip_v": {
+      "max": 246,
+      "pixelsOver8": 20993
+     },
+     "flipped_raster_upright_inputs_flip_v": {
+      "max": 245,
+      "pixelsOver8": 20385
+     }
+    }
+   },
+   "flip_v_corrects_upside_down_inputs": {
+    "prism_chrome": {
+     "flipped_raster": {
+      "max": 236,
+      "pixelsOver8": 17452
+     },
+     "upside_down_inputs_flip_v": {
+      "max": 236,
+      "pixelsOver8": 17382
+     },
+     "flipped_raster_upright_inputs_flip_v": {
+      "max": 86,
+      "pixelsOver8": 293
+     }
+    },
+    "chrome_type_flat_image_backface": {
+     "flipped_raster": {
+      "max": 232,
+      "pixelsOver8": 16995
+     },
+     "upside_down_inputs_flip_v": {
+      "max": 246,
+      "pixelsOver8": 20993
+     },
+     "flipped_raster_upright_inputs_flip_v": {
+      "max": 245,
+      "pixelsOver8": 20385
+     }
+    }
+   },
+   "fog_adds_only_the_glass_share": {
+    "opacity_half": {
+     "glass_pixels": 0,
+     "pixels_neither_over_2": 0
+    },
+    "opacity_0": {
+     "glass_pixels": 0,
+     "pixels_neither_over_2": 0
+    }
+   },
+   "object_size_carries_presets_over": {
+    "prism_chrome": {
+     "size_0_1": {
+      "max": 245,
+      "pixelsOver8": 20152,
+      "p99OfAllPixels": 210
+     },
+     "size_10": {
+      "max": 244,
+      "pixelsOver8": 19676,
+      "p99OfAllPixels": 206
+     }
+    },
+    "frosted_ice": {
+     "size_0_1": {
+      "max": 145,
+      "pixelsOver8": 20838,
+      "p99OfAllPixels": 108
+     },
+     "size_10": {
+      "max": 186,
+      "pixelsOver8": 20165,
+      "p99OfAllPixels": 134
+     }
+    },
+    "amber_honey": {
+     "size_0_1": {
+      "max": 213,
+      "pixelsOver8": 21713,
+      "p99OfAllPixels": 131
+     },
+     "size_10": {
+      "max": 190,
+      "pixelsOver8": 20324,
+      "p99OfAllPixels": 161
+     }
+    },
+    "sapphire_drop": {
+     "size_0_1": {
+      "max": 234,
+      "pixelsOver8": 21077,
+      "p99OfAllPixels": 192
+     },
+     "size_10": {
+      "max": 221,
+      "pixelsOver8": 15861,
+      "p99OfAllPixels": 188
+     }
+    }
+   },
+   "backdrop_menu_switches_the_demo_scene": {
+    "checker_vs_6a58487": {
+     "max": 0,
+     "alphaMax": 0,
+     "pixelsOver2": 0
+    },
+    "type": {
+     "dark_share": 0.201,
+     "white_ink_share": 0.328
+    }
+   },
+   "film_swirl_frequency_0_is_one_drifting_thickness": {
+    "swirl_0_at_2s": {
+     "sheet_pixels": 46816,
+     "colour_range": 255,
+     "colour": [
+      0,
+      0,
+      0
+     ]
+    },
+    "swirl_0_at_30s": {
+     "sheet_pixels": 46816,
+     "colour_range": 255,
+     "colour": [
+      0,
+      0,
+      0
+     ]
+    },
+    "swirl_2_5_at_2s": {
+     "sheet_pixels": 46816,
+     "colour_range": 255,
+     "colour": [
+      0,
+      0,
+      0
+     ]
+    },
+    "swirl_0_from_2s_to_30s": {
+     "sheet_pixels": 46816,
+     "max": 255,
+     "pixels_over_2": 46691
+    },
+    "swirl_0_wobble_speed_0_from_2s_to_30s": {
+     "sheet_pixels": 46816,
+     "max": 0,
+     "pixels_over_2": 0
+    }
+   },
+   "render_pass_keeps_foreground_in_front": {
+    "occluder_pixels_over_glass": 4181,
+    "render_pass_max_diff": 1,
+    "over_top_max_diff": 246,
+    "over_top_pixels_over_8": 4181
+   }
+  },
+  "notes": {
+   "rerun": "After the verifier round (2026-11-02), three tests changed and were rerun with --reference (TESTS=amplitude0_matches_core,normals_match_finite_differences,object_size_carries_presets_over): their evidence above is from that rerun. The other 37 entries are from the family-sync run; those tests did not change.",
+   "normals_match_finite_differences": "New case squeezed_chrome_type_amplitude_0_5 (V1). Green on 6a58487: its vertex shader used normalize() with no fallback, max 0.819 degrees, 0 normals over 5. The family-sync shader before the V1 fix kept the rest normal on 194 squeezed vertices: max 46.3 degrees.",
+   "amplitude0_matches_core": "Two rows added at Object size 1.45 in both components (V2), plus after_fit_on_the_demo_torus (evidence only). Red by design: the 6a58487 material has no Objectsize, so it stays at the 6a58487 look.",
+   "object_size_carries_presets_over": "Since the verifier round (V4) the test sets both Objectsize and the 6a58487 name Flowsize, so the 6a58487 material's motion scales too and the red measures only what C8 added: max 245/255, 15,861 to 21,713 px over 8/255 per case. The first record (only Objectsize set, so the old material's motion did not scale either) said 250/255 on 48,638 px.",
+   "rerun_gap_round": "Verifier gap round (2026-11-02): the two new tests ran with --reference (TESTS=film_swirl_frequency_0_is_one_drifting_thickness,render_pass_keeps_foreground_in_front); their evidence above is from that run.",
+   "film_swirl_frequency_0_is_one_drifting_thickness": "Red on 6a58487: there the shader used the constant 2.5 and ignored uFilm.w, so setting it to 0 still swirls (colour range 255 on the sheet). Delivered: one colour (range 0), (243, 254, 221) at 2 s and (189, 218, 16) at 30 s; Wobble speed 0: no change. The behaviour did not change in this round; the README's description of it did.",
+   "render_pass_keeps_foreground_in_front": "Green on 6a58487: that material also wrote depth, so drawn into the scene render the ball stays in front (max 1/255). What changed in R2 is the route; the 6a58487 route is the test's Over TOP control, which paints the glass over the ball (max 246/255 on all 4,181 ball pixels over the glass). Mutation check (scratch copies, not shipped): the pixel shader writing gl_FragDepth = 0, or the vertex shader putting the glass at the near plane, makes the Render Pass route fail too (max 246/255)."
+  }
+ }
+}

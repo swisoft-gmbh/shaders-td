@@ -1,0 +1,82 @@
+[
+  {
+    "id": "source",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "source",
+      "Radius": 5,
+      "Grain": 0.18,
+      "Input": "painting"
+    },
+    "question": "What signal enters the filter?",
+    "prediction": "An original procedural landscape contains broad color regions and fine grain.",
+    "reset": false,
+    "capture": "captures/native-source.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "variance",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "variance",
+      "Radius": 5,
+      "Grain": 0.18,
+      "Input": "painting"
+    },
+    "question": "Where is a neighborhood consistent?",
+    "prediction": "Low minimum variance identifies regions that can be averaged without crossing a strong boundary.",
+    "reset": false,
+    "capture": "captures/native-variance.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "edge-kuwahara",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Radius": 5,
+      "Grain": 0,
+      "Input": "edge"
+    },
+    "question": "Does the filter preserve an isolated edge?",
+    "prediction": "At least one quadrant stays on the same side, preserving the binary boundary.",
+    "reset": false,
+    "capture": "captures/native-edge-kuwahara.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "edge-box",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "box",
+      "Radius": 5,
+      "Grain": 0,
+      "Input": "edge"
+    },
+    "question": "What happens if every neighbor has equal influence?",
+    "prediction": "The ordinary box average blurs the boundary.",
+    "reset": false,
+    "capture": "captures/native-edge-box.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Radius": 5,
+      "Grain": 0.18,
+      "Input": "painting"
+    },
+    "question": "How does local selection change the painting?",
+    "prediction": "Fine grain forms broader patches while strong regional boundaries survive.",
+    "reset": false,
+    "capture": "captures/native-final.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  }
+]

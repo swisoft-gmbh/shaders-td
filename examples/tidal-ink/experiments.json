@@ -1,0 +1,97 @@
+[
+  {
+    "id": "seed",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Step": 0.016666666666666666,
+      "Stage": "state",
+      "Speed": 0.12,
+      "Decay": 0.15,
+      "Inject": 0.5,
+      "Seed": "pattern"
+    },
+    "question": "What data persists between frames?",
+    "prediction": "Two pigment concentrations occupy R and G; reset restores the deterministic seed.",
+    "reset": true,
+    "capture": "captures/native-seed.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md.",
+    "capture_updates": 0
+  },
+  {
+    "id": "velocity",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Step": 0.016666666666666666,
+      "Stage": "velocity",
+      "Speed": 0.12,
+      "Decay": 0.15,
+      "Inject": 0.5,
+      "Seed": "pattern"
+    },
+    "question": "Which way will the pigments travel?",
+    "prediction": "Red and green encode the prescribed signed velocity; the field is independent of pigment concentration.",
+    "reset": false,
+    "capture": "captures/native-velocity.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md.",
+    "capture_updates": 0
+  },
+  {
+    "id": "backtrace",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Step": 0.016666666666666666,
+      "Stage": "backtrace",
+      "Speed": 0.12,
+      "Decay": 0.15,
+      "Inject": 0.5,
+      "Seed": "pattern"
+    },
+    "question": "Where does each new texel look for its old value?",
+    "prediction": "The UV diagnostic shows a backward lookup, with periodic wrapping.",
+    "reset": false,
+    "capture": "captures/native-backtrace.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md.",
+    "capture_updates": 0
+  },
+  {
+    "id": "flat",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Step": 0.016666666666666666,
+      "Stage": "state",
+      "Speed": 0.12,
+      "Decay": 0,
+      "Inject": 0,
+      "Seed": "flat"
+    },
+    "question": "Can transport invent contrast in a uniform field?",
+    "prediction": "A uniform initialized field stays uniform when source and decay are off.",
+    "reset": true,
+    "capture": "captures/native-flat.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md.",
+    "capture_updates": 0
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": false,
+      "Time": 2,
+      "Step": 0.016666666666666666,
+      "Stage": "final",
+      "Speed": 0.12,
+      "Decay": 0.15,
+      "Inject": 0.5,
+      "Seed": "pattern"
+    },
+    "question": "How does transport make ribbons?",
+    "prediction": "After reset and 120 cooks, two pigments stretch into curls under a fixed prescribed field.",
+    "reset": true,
+    "capture": "captures/native-final.png",
+    "observation": "Captured after 120 controlled updates from reset at Step=1/60. The capture receipt records the warmup; wall-clock time is not the simulation clock.",
+    "capture_updates": 120
+  }
+]

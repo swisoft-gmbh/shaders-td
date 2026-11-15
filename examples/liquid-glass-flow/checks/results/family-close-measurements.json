@@ -1,0 +1,413 @@
+{
+ "scope": "Family close (2026-11-02): the 56 single WebGL previews in captures/ re-rendered from checks/capture-jobs.json at 960 x 540 (Chromium SwiftShader) and compared with the c94e849 files, per pixel, max over RGB. Not TouchDesigner captures.",
+ "at_the_new_default_object_size": {
+  "object_size": 0.6896551724137931,
+  "compared_with": "c94e849 captures (Object size 1)",
+  "per_capture": {
+   "motion/aqua_jelly-t0.png": {
+    "max": 213,
+    "pixels_over_8": 79937,
+    "pixels_changed": 96208,
+    "pixels": 530590,
+    "mean": 9.145
+   },
+   "motion/aqua_jelly-t2.png": {
+    "max": 222,
+    "pixels_over_8": 72026,
+    "pixels_changed": 89435,
+    "pixels": 530590,
+    "mean": 8.024
+   },
+   "motion/aqua_jelly-t4.png": {
+    "max": 226,
+    "pixels_over_8": 69928,
+    "pixels_changed": 91060,
+    "pixels": 530590,
+    "mean": 7.374
+   },
+   "motion/aqua_jelly-t6.png": {
+    "max": 222,
+    "pixels_over_8": 73631,
+    "pixels_changed": 86251,
+    "pixels": 530590,
+    "mean": 8.987
+   },
+   "motion/chrome_type-t0.png": {
+    "max": 213,
+    "pixels_over_8": 70124,
+    "pixels_changed": 82765,
+    "pixels": 530590,
+    "mean": 14.123
+   },
+   "motion/chrome_type-t2.png": {
+    "max": 215,
+    "pixels_over_8": 67238,
+    "pixels_changed": 81294,
+    "pixels": 530590,
+    "mean": 15.839
+   },
+   "motion/chrome_type-t4.png": {
+    "max": 216,
+    "pixels_over_8": 70285,
+    "pixels_changed": 82455,
+    "pixels": 530590,
+    "mean": 14.268
+   },
+   "motion/chrome_type-t6.png": {
+    "max": 216,
+    "pixels_over_8": 68290,
+    "pixels_changed": 81983,
+    "pixels": 530590,
+    "mean": 15.133
+   },
+   "motion/prism_chrome-t0.png": {
+    "max": 241,
+    "pixels_over_8": 81053,
+    "pixels_changed": 88010,
+    "pixels": 530590,
+    "mean": 18.84
+   },
+   "motion/prism_chrome-t2.png": {
+    "max": 244,
+    "pixels_over_8": 79979,
+    "pixels_changed": 86740,
+    "pixels": 530590,
+    "mean": 19.145
+   },
+   "motion/prism_chrome-t4.png": {
+    "max": 239,
+    "pixels_over_8": 77392,
+    "pixels_changed": 84609,
+    "pixels": 530590,
+    "mean": 16.761
+   },
+   "motion/prism_chrome-t6.png": {
+    "max": 249,
+    "pixels_over_8": 77505,
+    "pixels_changed": 85746,
+    "pixels": 530590,
+    "mean": 14.713
+   },
+   "motion/sapphire_drop-t0.png": {
+    "max": 224,
+    "pixels_over_8": 74255,
+    "pixels_changed": 95040,
+    "pixels": 530590,
+    "mean": 15.555
+   },
+   "motion/sapphire_drop-t2.png": {
+    "max": 220,
+    "pixels_over_8": 71805,
+    "pixels_changed": 93637,
+    "pixels": 530590,
+    "mean": 14.579
+   },
+   "motion/sapphire_drop-t4.png": {
+    "max": 224,
+    "pixels_over_8": 72196,
+    "pixels_changed": 92890,
+    "pixels": 530590,
+    "mean": 13.914
+   },
+   "motion/sapphire_drop-t6.png": {
+    "max": 222,
+    "pixels_over_8": 69366,
+    "pixels_changed": 93094,
+    "pixels": 530590,
+    "mean": 12.93
+   },
+   "preset-amber_honey.png": {
+    "max": 185,
+    "pixels_over_8": 69749,
+    "pixels_changed": 93277,
+    "pixels": 530590,
+    "mean": 9.925
+   },
+   "preset-aqua_jelly.png": {
+    "max": 224,
+    "pixels_over_8": 74729,
+    "pixels_changed": 87786,
+    "pixels": 530590,
+    "mean": 9.066
+   },
+   "preset-chrome_type.png": {
+    "max": 216,
+    "pixels_over_8": 67118,
+    "pixels_changed": 81166,
+    "pixels": 530590,
+    "mean": 14.747
+   },
+   "preset-clear_crystal.png": {
+    "max": 201,
+    "pixels_over_8": 48258,
+    "pixels_changed": 52414,
+    "pixels": 530590,
+    "mean": 9.815
+   },
+   "preset-emerald_bottle.png": {
+    "max": 165,
+    "pixels_over_8": 40423,
+    "pixels_changed": 47772,
+    "pixels": 530590,
+    "mean": 5.157
+   },
+   "preset-frosted_ice.png": {
+    "max": 120,
+    "pixels_over_8": 71897,
+    "pixels_changed": 86659,
+    "pixels": 530590,
+    "mean": 4.462
+   },
+   "preset-liquid_mercury.png": {
+    "max": 133,
+    "pixels_over_8": 49567,
+    "pixels_changed": 79522,
+    "pixels": 530590,
+    "mean": 3.428
+   },
+   "preset-oil_slick.png": {
+    "max": 241,
+    "pixels_over_8": 85725,
+    "pixels_changed": 89091,
+    "pixels": 530590,
+    "mean": 9.112
+   },
+   "preset-prism_chrome.png": {
+    "max": 234,
+    "pixels_over_8": 77042,
+    "pixels_changed": 83471,
+    "pixels": 530590,
+    "mean": 17.538
+   },
+   "preset-rose_quartz.png": {
+    "max": 99,
+    "pixels_over_8": 65604,
+    "pixels_changed": 85120,
+    "pixels": 530590,
+    "mean": 4.1
+   },
+   "preset-sapphire_drop.png": {
+    "max": 217,
+    "pixels_over_8": 68658,
+    "pixels_changed": 91018,
+    "pixels": 530590,
+    "mean": 14.85
+   },
+   "preset-violet_gel.png": {
+    "max": 199,
+    "pixels_over_8": 55927,
+    "pixels_changed": 86683,
+    "pixels": 530590,
+    "mean": 8.016
+   },
+   "preview-coarse_mesh.png": {
+    "max": 9,
+    "pixels_over_8": 96,
+    "pixels_changed": 79956,
+    "pixels": 530590,
+    "mean": 0.421
+   },
+   "preview-core_match.png": {
+    "max": 250,
+    "pixels_over_8": 135150,
+    "pixels_changed": 149108,
+    "pixels": 530590,
+    "mean": 22.902
+   },
+   "preview-corrected_normals.png": {
+    "max": 10,
+    "pixels_over_8": 492,
+    "pixels_changed": 83038,
+    "pixels": 530590,
+    "mean": 0.442
+   },
+   "preview-crack_free.png": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "pixels": 530590,
+    "mean": 0.0
+   },
+   "preview-cracks.png": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "pixels": 530590,
+    "mean": 0.0
+   },
+   "preview-final.png": {
+    "max": 234,
+    "pixels_over_8": 77042,
+    "pixels_changed": 83471,
+    "pixels": 530590,
+    "mean": 17.538
+   },
+   "preview-flow_refraction.png": {
+    "max": 199,
+    "pixels_over_8": 37628,
+    "pixels_changed": 42021,
+    "pixels": 530590,
+    "mean": 7.13
+   },
+   "preview-instances.png": {
+    "max": 220,
+    "pixels_over_8": 80346,
+    "pixels_changed": 106313,
+    "pixels": 530590,
+    "mean": 15.767
+   },
+   "preview-morph.png": {
+    "max": 231,
+    "pixels_over_8": 73282,
+    "pixels_changed": 89521,
+    "pixels": 530590,
+    "mean": 12.031
+   },
+   "preview-open_sheet.png": {
+    "max": 239,
+    "pixels_over_8": 105025,
+    "pixels_changed": 143371,
+    "pixels": 530590,
+    "mean": 16.408
+   },
+   "preview-ripples.png": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "pixels": 530590,
+    "mean": 0.0
+   },
+   "preview-sag_drip.png": {
+    "max": 217,
+    "pixels_over_8": 72146,
+    "pixels_changed": 93530,
+    "pixels": 530590,
+    "mean": 15.781
+   },
+   "preview-silhouette.png": {
+    "max": 231,
+    "pixels_over_8": 75090,
+    "pixels_changed": 81922,
+    "pixels": 530590,
+    "mean": 16.75
+   },
+   "preview-swell.png": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "pixels": 530590,
+    "mean": 0.0
+   },
+   "preview-waves.png": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "pixels": 530590,
+    "mean": 0.0
+   },
+   "preview-wrong_normals.png": {
+    "max": 10,
+    "pixels_over_8": 497,
+    "pixels_changed": 82856,
+    "pixels": 530590,
+    "mean": 0.443
+   },
+   "type/preset-amber_honey.png": {
+    "max": 189,
+    "pixels_over_8": 72965,
+    "pixels_changed": 94402,
+    "pixels": 530590,
+    "mean": 11.703
+   },
+   "type/preset-aqua_jelly.png": {
+    "max": 199,
+    "pixels_over_8": 75903,
+    "pixels_changed": 87478,
+    "pixels": 530590,
+    "mean": 8.957
+   },
+   "type/preset-chrome_type.png": {
+    "max": 233,
+    "pixels_over_8": 74680,
+    "pixels_changed": 79100,
+    "pixels": 530590,
+    "mean": 19.253
+   },
+   "type/preset-clear_crystal.png": {
+    "max": 227,
+    "pixels_over_8": 47829,
+    "pixels_changed": 62503,
+    "pixels": 530590,
+    "mean": 13.603
+   },
+   "type/preset-emerald_bottle.png": {
+    "max": 187,
+    "pixels_over_8": 34875,
+    "pixels_changed": 58110,
+    "pixels": 530590,
+    "mean": 7.491
+   },
+   "type/preset-frosted_ice.png": {
+    "max": 117,
+    "pixels_over_8": 72514,
+    "pixels_changed": 87839,
+    "pixels": 530590,
+    "mean": 4.025
+   },
+   "type/preset-liquid_mercury.png": {
+    "max": 142,
+    "pixels_over_8": 48764,
+    "pixels_changed": 79206,
+    "pixels": 530590,
+    "mean": 3.849
+   },
+   "type/preset-oil_slick.png": {
+    "max": 236,
+    "pixels_over_8": 86604,
+    "pixels_changed": 89130,
+    "pixels": 530590,
+    "mean": 9.601
+   },
+   "type/preset-prism_chrome.png": {
+    "max": 247,
+    "pixels_over_8": 77629,
+    "pixels_changed": 82774,
+    "pixels": 530590,
+    "mean": 21.399
+   },
+   "type/preset-rose_quartz.png": {
+    "max": 122,
+    "pixels_over_8": 69941,
+    "pixels_changed": 86265,
+    "pixels": 530590,
+    "mean": 4.579
+   },
+   "type/preset-sapphire_drop.png": {
+    "max": 226,
+    "pixels_over_8": 76160,
+    "pixels_changed": 90902,
+    "pixels": 530590,
+    "mean": 17.345
+   },
+   "type/preset-violet_gel.png": {
+    "max": 216,
+    "pixels_over_8": 58095,
+    "pixels_changed": 87222,
+    "pixels": 530590,
+    "mean": 10.771
+   }
+  },
+  "bit_identical": [
+   "preview-crack_free.png",
+   "preview-cracks.png",
+   "preview-ripples.png",
+   "preview-swell.png",
+   "preview-waves.png"
+  ]
+ },
+ "at_object_size_1": {
+  "note": "The same 56 jobs with Object size 1 (the c94e849 default) added: every capture is bit-identical to c94e849, so the visible change is the default Object size alone; G1 lookups, the G2 tie-break and the G6 picking form change nothing at an even size on an unscaled object.",
+  "bit_identical": 56,
+  "compared": 56
+ }
+}

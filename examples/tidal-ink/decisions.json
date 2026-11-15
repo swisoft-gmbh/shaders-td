@@ -1,0 +1,15 @@
+[
+  {
+    "goal": "Transport two pigment concentrations into interleaved curls. Test real persistent state, periodic sampling, initialization, pause/reset and simulated-time decay, using a prescribed field rather than a full fluid solver.",
+    "alternatives": "The earlier Phosphor Memory detects changes between input frames; it does not transport a stored signal. A full incompressible fluid solver would evolve velocity, solve pressure and impose boundary conditions. Here a prescribed divergence-free velocity isolates transport.",
+    "evidence": "The particle article separates a texture containing data from the pass that draws it. The curlFBO module illustrates offscreen simulation/render wiring; it is not evidence that this exact persistent advection algorithm exists in the archive. Shading Motion supplies explicit previous-state swapping and decay context.",
+    "choice": "Keep RG as concentrations and A as validity, implement periodic bilinear sampling explicitly, backtrace with a midpoint step, and expose decay in inverse seconds and step in simulated seconds per cook.",
+    "consequence": "Stable interpolation supports useful curls and controlled tests. It introduces numerical diffusion and does not exactly conserve pigment mass. The simulation advances per cook, so a fixed step is not wall-clock synchronization.",
+    "status": "implemented; see review and native receipts for tests"
+  },
+  {
+    "goal": "Review the actual native behavior",
+    "observation_and_change": "The first zero-velocity test measured a 2.9802e-5 drift after 20 updates because of coordinate conversion and interpolation. The state shader now directly reuses the previous texel when Speed is zero. The complete temporal test was rerun and passed.",
+    "evidence": "../../validation/five-mechanisms/tidal-tests.json"
+  }
+]

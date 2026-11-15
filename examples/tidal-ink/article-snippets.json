@@ -1,0 +1,56 @@
+[
+  {
+    "file": "seed.frag",
+    "region": "seed",
+    "lines": [
+      4,
+      12
+    ],
+    "sha256": "20619fd078c59d6b2e5cc502ad8932c1a6a6d84d23fb95808a4522df3e12cf83"
+  },
+  {
+    "file": "state.frag",
+    "region": "velocity",
+    "lines": [
+      7,
+      9
+    ],
+    "sha256": "51123d6b4be8881ef14464a9a0d1772cb4bc6a78be8a7603592ff2067895a079"
+  },
+  {
+    "file": "state.frag",
+    "region": "sample",
+    "lines": [
+      12,
+      22
+    ],
+    "sha256": "51123d6b4be8881ef14464a9a0d1772cb4bc6a78be8a7603592ff2067895a079"
+  },
+  {
+    "file": "state.frag",
+    "region": "lifecycle",
+    "lines": [
+      35,
+      36
+    ],
+    "sha256": "51123d6b4be8881ef14464a9a0d1772cb4bc6a78be8a7603592ff2067895a079"
+  },
+  {
+    "file": "state.frag",
+    "region": "transport",
+    "lines": [
+      39,
+      47
+    ],
+    "sha256": "51123d6b4be8881ef14464a9a0d1772cb4bc6a78be8a7603592ff2067895a079"
+  },
+  {
+    "file": "display.frag",
+    "region": "pigment",
+    "lines": [
+      15,
+      17
+    ],
+    "sha256": "54b5d94efecbc5868250dc596d60fa26655ce9bda38ba6c6f4a3957a6d264e87"
+  }
+]

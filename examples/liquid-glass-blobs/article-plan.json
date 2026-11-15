@@ -1,0 +1,199 @@
+[
+  {
+    "heading": "A box that holds the blobs",
+    "question": "How can a material draw a shape that is not in its mesh?",
+    "smallest_model": "A proxy box; each pixel it covers is one camera ray into the box's own space.",
+    "snippets": [
+      [
+        "blobs.vert",
+        "proxy"
+      ],
+      [
+        "blobs.frag",
+        "setup"
+      ]
+    ],
+    "experiments": [
+      "proxy"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "March a ray to the surface",
+    "question": "How does a ray find a surface that has no triangles?",
+    "smallest_model": "One sphere: step by length(p) - r until the distance is tiny.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "march"
+      ]
+    ],
+    "experiments": [
+      "sphere",
+      "steps"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Melt blobs together",
+    "question": "How do separate blobs merge like liquid instead of just overlapping?",
+    "smallest_model": "Two distances blended by a polynomial smooth minimum of width k.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "field"
+      ],
+      [
+        "blobs.frag",
+        "layout"
+      ]
+    ],
+    "experiments": [
+      "merge_hard",
+      "merge_soft",
+      "droplets",
+      "box_cut"
+    ],
+    "figures": [
+      "captures/timeline-sheet.png",
+      "captures/box-cut-before-after.png"
+    ]
+  },
+  {
+    "heading": "Normals and depth",
+    "question": "How does the glass know which way it faces, and how do other objects pass in front of it?",
+    "smallest_model": "Gradient of the field = normal; depth = (camProj * P).z / w in 0..1.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "normal"
+      ],
+      [
+        "blobs.frag",
+        "hit"
+      ]
+    ],
+    "experiments": [
+      "depth"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Go through the glass",
+    "question": "Why do the blobs shrink and flip what is behind them?",
+    "smallest_model": "Bend in, march inside to where -field reaches 0, bend out, travel to the scene.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "interior"
+      ],
+      [
+        "blobs.frag",
+        "through"
+      ],
+      [
+        "blobs.frag",
+        "bend"
+      ],
+      [
+        "blobs.frag",
+        "screen"
+      ]
+    ],
+    "experiments": [
+      "see_through",
+      "lens",
+      "backdrop_far",
+      "thickness"
+    ],
+    "figures": [
+      "figures/ray-path.svg"
+    ]
+  },
+  {
+    "heading": "Split the colours, then frost them",
+    "question": "Where do rainbow fringes come from, and how does the same loop frost the glass?",
+    "smallest_model": "One lens path per spectrum sample, each with its own IOR; a mipmap level a quarter as wide as the gap between neighbouring colours, and R2 points on the frost disc.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "dispersion"
+      ]
+    ],
+    "experiments": [
+      "dispersion",
+      "frost"
+    ],
+    "figures": [
+      "captures/review-fan-level.png"
+    ]
+  },
+  {
+    "heading": "Colour, reflection and light",
+    "question": "What makes the glass coloured, shiny and alive?",
+    "smallest_model": "Beer-Lambert over the measured path, fresnel-weighted reflection, squared Blinn-Phong, thin film.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "body"
+      ],
+      [
+        "blobs.frag",
+        "reflection"
+      ],
+      [
+        "blobs.frag",
+        "light"
+      ],
+      [
+        "blobs.frag",
+        "film"
+      ],
+      [
+        "blobs.frag",
+        "compose"
+      ]
+    ],
+    "experiments": [
+      "tint",
+      "reflection"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Drive the blobs yourself",
+    "question": "How do I place the blobs with my own data?",
+    "smallest_model": "A float TOP: pixel i = (x, y, z, radius) of blob i.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "uniforms"
+      ]
+    ],
+    "experiments": [
+      "layout_top"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Twelve looks and a morph",
+    "question": "How do presets and morphing reach the shader?",
+    "smallest_model": "Each uniform = parameter blended toward preset B by Morph.",
+    "snippets": [
+      [
+        "blobs.frag",
+        "stages"
+      ]
+    ],
+    "experiments": [
+      "morph",
+      "final"
+    ],
+    "figures": [
+      "captures/presets-sheet.png",
+      "captures/presets-sheet-type.png"
+    ]
+  }
+]

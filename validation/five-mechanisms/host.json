@@ -1,0 +1,60 @@
+{
+  "build": "2025.33230",
+  "platform": "macOS-15.8.1-arm64-arm-64bit",
+  "project": "NewProject.1.toe",
+  "children": [
+    {
+      "path": "/project1/geo1",
+      "type": "geometryCOMP"
+    },
+    {
+      "path": "/project1/out1",
+      "type": "outTOP"
+    },
+    {
+      "path": "/project1/noise1",
+      "type": "noiseCHOP"
+    },
+    {
+      "path": "/project1/chopto1",
+      "type": "choptoTOP"
+    },
+    {
+      "path": "/project1/displace1",
+      "type": "displaceTOP"
+    },
+    {
+      "path": "/project1/contour_loom",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/moviefilein1",
+      "type": "moviefileinTOP"
+    },
+    {
+      "path": "/project1/mh_final_reopen",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/phosphor_memory",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/contour_material",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/mh_shader_examples",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/mh_reopen_validation",
+      "type": "baseCOMP"
+    },
+    {
+      "path": "/project1/mh_reopen_validation1",
+      "type": "baseCOMP"
+    }
+  ],
+  "gpu_attributes": {}
+}

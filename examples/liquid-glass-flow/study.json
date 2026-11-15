@@ -1,0 +1,2188 @@
+{
+  "id": "liquid-glass-flow",
+  "title": "Liquid Glass Flow",
+  "route": "GLSL MAT (vertex displacement + Liquid Glass pixel stage)",
+  "derived_from": {
+    "study": "studies/liquid-glass",
+    "commit": "6a58487",
+    "state": "core working tree after family-sync merge, on 6a58487"
+  },
+  "controls": [
+    {
+      "name": "Preset",
+      "label": "Preset",
+      "type": "menu",
+      "page": "Glass",
+      "default": "prism_chrome",
+      "names": [
+        "custom",
+        "clear_crystal",
+        "prism_chrome",
+        "violet_gel",
+        "sapphire_drop",
+        "chrome_type",
+        "frosted_ice",
+        "amber_honey",
+        "emerald_bottle",
+        "rose_quartz",
+        "liquid_mercury",
+        "oil_slick",
+        "aqua_jelly"
+      ],
+      "labels": [
+        "Custom (keep values)",
+        "Clear Crystal",
+        "Prism Chrome",
+        "Violet Gel",
+        "Sapphire Drop",
+        "Chrome Type",
+        "Frosted Ice",
+        "Amber Honey",
+        "Emerald Bottle",
+        "Rose Quartz",
+        "Liquid Mercury",
+        "Oil Slick",
+        "Aqua Jelly"
+      ],
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Applypreset",
+      "label": "Apply preset again",
+      "type": "pulse",
+      "page": "Glass",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Morphtarget",
+      "label": "Morph target (preset B)",
+      "type": "menu",
+      "page": "Glass",
+      "default": "violet_gel",
+      "names": [
+        "clear_crystal",
+        "prism_chrome",
+        "violet_gel",
+        "sapphire_drop",
+        "chrome_type",
+        "frosted_ice",
+        "amber_honey",
+        "emerald_bottle",
+        "rose_quartz",
+        "liquid_mercury",
+        "oil_slick",
+        "aqua_jelly"
+      ],
+      "labels": [
+        "Clear Crystal",
+        "Prism Chrome",
+        "Violet Gel",
+        "Sapphire Drop",
+        "Chrome Type",
+        "Frosted Ice",
+        "Amber Honey",
+        "Emerald Bottle",
+        "Rose Quartz",
+        "Liquid Mercury",
+        "Oil Slick",
+        "Aqua Jelly"
+      ],
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Morph",
+      "label": "Morph toward preset B",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Glass",
+      "default": 0.0
+    },
+    {
+      "name": "Glasscolorr",
+      "label": "Glass colour",
+      "type": "rgb",
+      "group": "Glasscolor",
+      "component": 0,
+      "page": "Glass",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Glasscolorg",
+      "label": "Glass colour",
+      "type": "rgb",
+      "group": "Glasscolor",
+      "component": 1,
+      "page": "Glass",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Glasscolorb",
+      "label": "Glass colour",
+      "type": "rgb",
+      "group": "Glasscolor",
+      "component": 2,
+      "page": "Glass",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Density",
+      "label": "Tint density",
+      "type": "float",
+      "min": 0.0,
+      "max": 6.0,
+      "page": "Glass",
+      "default": 0.0
+    },
+    {
+      "name": "Edgetint",
+      "label": "Edge tint",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Glass",
+      "default": 0.0
+    },
+    {
+      "name": "Translucency",
+      "label": "Translucency",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Glass",
+      "default": 1.0
+    },
+    {
+      "name": "Opacity",
+      "label": "Opacity",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Glass",
+      "default": 1.0
+    },
+    {
+      "name": "Frost",
+      "label": "Frost (blur)",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Glass",
+      "default": 0.0
+    },
+    {
+      "name": "Amplitude",
+      "label": "Amplitude (x flow size; 0 = still glass)",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.16,
+      "min": 0.0,
+      "max": 0.5
+    },
+    {
+      "name": "Flowspeed",
+      "label": "Flow speed",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.45,
+      "min": 0.0,
+      "max": 3.0
+    },
+    {
+      "name": "Swell",
+      "label": "Swell (big slow bulges)",
+      "type": "float",
+      "page": "Flow",
+      "default": 1.0,
+      "min": 0.0,
+      "max": 1.5
+    },
+    {
+      "name": "Swellscale",
+      "label": "Swell scale (bulges per flow size)",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.75,
+      "min": 0.2,
+      "max": 4.0
+    },
+    {
+      "name": "Ripples",
+      "label": "Ripples (fine, fast)",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.08,
+      "min": 0.0,
+      "max": 1.5
+    },
+    {
+      "name": "Ripplescale",
+      "label": "Ripple scale (ripples per flow size)",
+      "type": "float",
+      "page": "Flow",
+      "default": 3.5,
+      "min": 1.0,
+      "max": 16.0
+    },
+    {
+      "name": "Waves",
+      "label": "Travelling waves",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.5
+    },
+    {
+      "name": "Wavelength",
+      "label": "Wave length (flow sizes)",
+      "type": "float",
+      "page": "Flow",
+      "default": 1.5,
+      "min": 0.1,
+      "max": 4.0
+    },
+    {
+      "name": "Wavedirx",
+      "label": "Wave direction (object space)",
+      "type": "xyz",
+      "group": "Wavedir",
+      "component": 0,
+      "page": "Flow",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 1.0,
+      "setup": true
+    },
+    {
+      "name": "Wavediry",
+      "label": "Wave direction (object space)",
+      "type": "xyz",
+      "group": "Wavedir",
+      "component": 1,
+      "page": "Flow",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.3,
+      "setup": true
+    },
+    {
+      "name": "Wavedirz",
+      "label": "Wave direction (object space)",
+      "type": "xyz",
+      "group": "Wavedir",
+      "component": 2,
+      "page": "Flow",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Sag",
+      "label": "Sag (gravity pull)",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 2.0
+    },
+    {
+      "name": "Drip",
+      "label": "Drip (gather sag into drops)",
+      "type": "float",
+      "page": "Flow",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    {
+      "name": "Fitglass",
+      "label": "Fit to Glass geometry (sets Flow centre, Flow size and Object size)",
+      "type": "pulse",
+      "page": "Flow fit",
+      "default": 0,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Displacealong",
+      "label": "Displace along",
+      "type": "menu",
+      "page": "Flow fit",
+      "default": "centre",
+      "min": 0,
+      "max": 1,
+      "names": [
+        "normal",
+        "centre"
+      ],
+      "labels": [
+        "Normal (smooth meshes, open surfaces)",
+        "Away from centre (crack-free)"
+      ]
+    },
+    {
+      "name": "Flowcentrex",
+      "label": "Flow centre (object space)",
+      "type": "xyz",
+      "group": "Flowcentre",
+      "component": 0,
+      "page": "Flow fit",
+      "min": -10.0,
+      "max": 10.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Flowcentrey",
+      "label": "Flow centre (object space)",
+      "type": "xyz",
+      "group": "Flowcentre",
+      "component": 1,
+      "page": "Flow fit",
+      "min": -10.0,
+      "max": 10.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Flowcentrez",
+      "label": "Flow centre (object space)",
+      "type": "xyz",
+      "group": "Flowcentre",
+      "component": 2,
+      "page": "Flow fit",
+      "min": -10.0,
+      "max": 10.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Flowsize",
+      "label": "Flow size (about its radius, SOP units; 1 = the demo sphere)",
+      "type": "float",
+      "page": "Flow fit",
+      "default": 1.0,
+      "min": 0.001,
+      "max": 100.0,
+      "setup": true
+    },
+    {
+      "name": "Objectsize",
+      "label": "Object size (world radius / 1.45; the demo sphere fits to 0.69)",
+      "type": "float",
+      "page": "Flow fit",
+      "default": 0.6896551724137931,
+      "min": 0.001,
+      "max": 100.0,
+      "setup": true
+    },
+    {
+      "name": "Gravityx",
+      "label": "Gravity direction (world space)",
+      "type": "xyz",
+      "group": "Gravity",
+      "component": 0,
+      "page": "Flow fit",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Gravityy",
+      "label": "Gravity direction (world space)",
+      "type": "xyz",
+      "group": "Gravity",
+      "component": 1,
+      "page": "Flow fit",
+      "min": -1.0,
+      "max": 1.0,
+      "default": -1.0,
+      "setup": true
+    },
+    {
+      "name": "Gravityz",
+      "label": "Gravity direction (world space)",
+      "type": "xyz",
+      "group": "Gravity",
+      "component": 2,
+      "page": "Flow fit",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.0,
+      "setup": true
+    },
+    {
+      "name": "Instancevary",
+      "label": "Instance variation",
+      "type": "float",
+      "page": "Flow fit",
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "setup": true
+    },
+    {
+      "name": "Correctnormals",
+      "label": "Correct normals (off only to compare)",
+      "type": "toggle",
+      "page": "Flow fit",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Ior",
+      "label": "Index of refraction",
+      "type": "float",
+      "min": 1.0,
+      "max": 2.5,
+      "page": "Optics",
+      "default": 1.6
+    },
+    {
+      "name": "Thickness",
+      "label": "Thickness (x Object size)",
+      "type": "float",
+      "min": 0.0,
+      "max": 3.0,
+      "page": "Optics",
+      "default": 1.0
+    },
+    {
+      "name": "Dispersion",
+      "label": "Dispersion (rainbow split)",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Optics",
+      "default": 1.0
+    },
+    {
+      "name": "Saturation",
+      "label": "Saturation",
+      "type": "float",
+      "min": 0.0,
+      "max": 2.0,
+      "page": "Optics",
+      "default": 1.5
+    },
+    {
+      "name": "Samples",
+      "label": "Samples (quality vs speed)",
+      "type": "int",
+      "min": 1,
+      "max": 32,
+      "page": "Optics",
+      "default": 12
+    },
+    {
+      "name": "Reflectmode",
+      "label": "Reflection map",
+      "type": "menu",
+      "page": "Reflection",
+      "default": "panorama",
+      "names": [
+        "panorama",
+        "screen",
+        "studio"
+      ],
+      "labels": [
+        "360 panorama TOP",
+        "Flat image TOP (screen-mapped)",
+        "Built-in studio"
+      ],
+      "min": 0,
+      "max": 1,
+      "setup": true
+    },
+    {
+      "name": "Reflectcolorr",
+      "label": "Reflection colour",
+      "type": "rgb",
+      "group": "Reflectcolor",
+      "component": 0,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Reflectcolorg",
+      "label": "Reflection colour",
+      "type": "rgb",
+      "group": "Reflectcolor",
+      "component": 1,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Reflectcolorb",
+      "label": "Reflection colour",
+      "type": "rgb",
+      "group": "Reflectcolor",
+      "component": 2,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Reflection",
+      "label": "Reflection amount",
+      "type": "float",
+      "min": 0.0,
+      "max": 3.0,
+      "page": "Reflection",
+      "default": 1.1
+    },
+    {
+      "name": "Mirror",
+      "label": "Mirror (reflect everywhere)",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Reflection",
+      "default": 0.15
+    },
+    {
+      "name": "Conserve",
+      "label": "Energy conserving (reflection hides what is behind)",
+      "type": "toggle",
+      "page": "Reflection",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Reflectblur",
+      "label": "Reflection blur",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Reflection",
+      "default": 0.0
+    },
+    {
+      "name": "Envrotate",
+      "label": "Panorama rotation (degrees)",
+      "type": "float",
+      "min": -180.0,
+      "max": 180.0,
+      "page": "Reflection",
+      "default": 0.0
+    },
+    {
+      "name": "Screenwarp",
+      "label": "Flat image warp",
+      "type": "float",
+      "min": 0.0,
+      "max": 2.0,
+      "page": "Reflection",
+      "default": 0.6
+    },
+    {
+      "name": "Fresnelpower",
+      "label": "Fresnel falloff",
+      "type": "float",
+      "min": 0.5,
+      "max": 10.0,
+      "page": "Reflection",
+      "default": 2.5
+    },
+    {
+      "name": "Rimcolorr",
+      "label": "Rim colour",
+      "type": "rgb",
+      "group": "Rimcolor",
+      "component": 0,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Rimcolorg",
+      "label": "Rim colour",
+      "type": "rgb",
+      "group": "Rimcolor",
+      "component": 1,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Rimcolorb",
+      "label": "Rim colour",
+      "type": "rgb",
+      "group": "Rimcolor",
+      "component": 2,
+      "page": "Reflection",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Rim",
+      "label": "Rim glow",
+      "type": "float",
+      "min": 0.0,
+      "max": 3.0,
+      "page": "Reflection",
+      "default": 0.6
+    },
+    {
+      "name": "Lightdirx",
+      "label": "Light direction",
+      "type": "xyz",
+      "group": "Lightdir",
+      "component": 0,
+      "page": "Light",
+      "min": -1.0,
+      "max": 1.0,
+      "default": -0.5
+    },
+    {
+      "name": "Lightdiry",
+      "label": "Light direction",
+      "type": "xyz",
+      "group": "Lightdir",
+      "component": 1,
+      "page": "Light",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.8
+    },
+    {
+      "name": "Lightdirz",
+      "label": "Light direction",
+      "type": "xyz",
+      "group": "Lightdir",
+      "component": 2,
+      "page": "Light",
+      "min": -1.0,
+      "max": 1.0,
+      "default": 0.6
+    },
+    {
+      "name": "Lightcolorr",
+      "label": "Light colour",
+      "type": "rgb",
+      "group": "Lightcolor",
+      "component": 0,
+      "page": "Light",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Lightcolorg",
+      "label": "Light colour",
+      "type": "rgb",
+      "group": "Lightcolor",
+      "component": 1,
+      "page": "Light",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Lightcolorb",
+      "label": "Light colour",
+      "type": "rgb",
+      "group": "Lightcolor",
+      "component": 2,
+      "page": "Light",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 1.0
+    },
+    {
+      "name": "Specular",
+      "label": "Specular",
+      "type": "float",
+      "min": 0.0,
+      "max": 5.0,
+      "page": "Light",
+      "default": 2.5
+    },
+    {
+      "name": "Shininess",
+      "label": "Shininess",
+      "type": "float",
+      "min": 1.0,
+      "max": 512.0,
+      "page": "Light",
+      "default": 120.0
+    },
+    {
+      "name": "Diffuse",
+      "label": "Diffuse",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Light",
+      "default": 0.05
+    },
+    {
+      "name": "Iridescence",
+      "label": "Iridescence (oil film)",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Liquid",
+      "default": 0.45
+    },
+    {
+      "name": "Filmthickness",
+      "label": "Film thickness (nm)",
+      "type": "float",
+      "min": 100.0,
+      "max": 1500.0,
+      "page": "Liquid",
+      "default": 520.0
+    },
+    {
+      "name": "Filmvariation",
+      "label": "Film variation",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Liquid",
+      "default": 0.8
+    },
+    {
+      "name": "Wobble",
+      "label": "Wobble",
+      "type": "float",
+      "min": 0.0,
+      "max": 1.0,
+      "page": "Liquid",
+      "default": 0.1
+    },
+    {
+      "name": "Wobblescale",
+      "label": "Wobble scale",
+      "type": "float",
+      "min": 0.1,
+      "max": 8.0,
+      "page": "Liquid",
+      "default": 1.5
+    },
+    {
+      "name": "Wobblespeed",
+      "label": "Wobble speed",
+      "type": "float",
+      "min": 0.0,
+      "max": 3.0,
+      "page": "Liquid",
+      "default": 0.3
+    },
+    {
+      "name": "Refractiontop",
+      "label": "Refraction TOP (scene behind)",
+      "type": "top",
+      "page": "Inputs",
+      "default": null,
+      "demo_target": "demo_backdrop",
+      "setup": true
+    },
+    {
+      "name": "Reflectiontop",
+      "label": "Reflection TOP",
+      "type": "top",
+      "page": "Inputs",
+      "default": null,
+      "demo_target": "demo_env",
+      "setup": true
+    },
+    {
+      "name": "Culling",
+      "label": "Faces",
+      "type": "menu",
+      "page": "Inputs",
+      "default": "back",
+      "names": [
+        "back",
+        "none"
+      ],
+      "labels": [
+        "Front only (closed objects)",
+        "Both sides (open surfaces)"
+      ],
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Backface",
+      "label": "Back-face pass (measured thickness)",
+      "type": "toggle",
+      "page": "Inputs",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Camera",
+      "label": "Camera (back-face pass)",
+      "type": "comp",
+      "page": "Inputs",
+      "default": null,
+      "demo_target": "demo_cam",
+      "setup": true
+    },
+    {
+      "name": "Glassgeo",
+      "label": "Glass geometry (back-face pass and Fit; one or more)",
+      "type": "object",
+      "page": "Inputs",
+      "default": null,
+      "demo_target": "demo_geo",
+      "setup": true
+    },
+    {
+      "name": "Flipv",
+      "label": "Flip screen V (if refraction is upside down)",
+      "type": "toggle",
+      "page": "Inputs",
+      "default": false,
+      "min": 0,
+      "max": 1,
+      "setup": true
+    },
+    {
+      "name": "Colourspace",
+      "label": "Colour parameters",
+      "type": "menu",
+      "page": "Inputs",
+      "default": "auto",
+      "names": [
+        "auto",
+        "raw",
+        "srgb"
+      ],
+      "labels": [
+        "Auto (follow the project's colour space)",
+        "As typed (no conversion)",
+        "sRGB, convert to linear"
+      ],
+      "min": 0,
+      "max": 1,
+      "setup": true
+    },
+    {
+      "name": "Pause",
+      "label": "Pause / fixed time",
+      "type": "toggle",
+      "page": "Study",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Fixed time (seconds)",
+      "type": "float",
+      "page": "Study",
+      "default": 2.0,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Stage",
+      "label": "Teaching stage",
+      "type": "menu",
+      "page": "Study",
+      "default": "final",
+      "names": [
+        "final",
+        "normal",
+        "refraction",
+        "body",
+        "reflection",
+        "fresnel",
+        "thickness",
+        "film",
+        "screenuv",
+        "displacement"
+      ],
+      "labels": [
+        "Final",
+        "Normal",
+        "Refraction only",
+        "Glass body",
+        "Reflection only",
+        "Fresnel",
+        "Thickness",
+        "Iridescence film",
+        "Screen UV",
+        "Displacement (out orange, in blue)"
+      ],
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Demospin",
+      "label": "Demo spin (degrees per second)",
+      "type": "float",
+      "page": "Study",
+      "default": 12.0,
+      "min": -90,
+      "max": 90
+    },
+    {
+      "name": "Demoobject",
+      "label": "Demo object",
+      "type": "menu",
+      "page": "Study",
+      "default": "sphere",
+      "min": 0,
+      "max": 1,
+      "names": [
+        "sphere",
+        "torus",
+        "box",
+        "grid"
+      ],
+      "labels": [
+        "Sphere",
+        "Torus",
+        "Box (hard edges)",
+        "Grid (open sheet)"
+      ]
+    },
+    {
+      "name": "Demodetail",
+      "label": "Demo detail (rows)",
+      "type": "int",
+      "page": "Study",
+      "default": 128,
+      "min": 8,
+      "max": 256
+    },
+    {
+      "name": "Backdrop",
+      "label": "Demo backdrop",
+      "type": "menu",
+      "page": "Study",
+      "default": "checker",
+      "names": [
+        "checker",
+        "type"
+      ],
+      "labels": [
+        "Checkerboard with discs",
+        "Bold type on black"
+      ],
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Demo",
+      "label": "Demo render (turn off once you use your own scene)",
+      "type": "toggle",
+      "page": "Study",
+      "default": true,
+      "min": 0,
+      "max": 1,
+      "setup": true
+    }
+  ],
+  "preset_keys": [
+    "Glasscolorr",
+    "Glasscolorg",
+    "Glasscolorb",
+    "Density",
+    "Edgetint",
+    "Translucency",
+    "Opacity",
+    "Frost",
+    "Ior",
+    "Thickness",
+    "Dispersion",
+    "Saturation",
+    "Reflectcolorr",
+    "Reflectcolorg",
+    "Reflectcolorb",
+    "Reflection",
+    "Mirror",
+    "Reflectblur",
+    "Fresnelpower",
+    "Rimcolorr",
+    "Rimcolorg",
+    "Rimcolorb",
+    "Rim",
+    "Lightcolorr",
+    "Lightcolorg",
+    "Lightcolorb",
+    "Specular",
+    "Shininess",
+    "Diffuse",
+    "Iridescence",
+    "Filmthickness",
+    "Filmvariation",
+    "Wobble",
+    "Wobblescale",
+    "Wobblespeed",
+    "Amplitude",
+    "Flowspeed",
+    "Swell",
+    "Swellscale",
+    "Ripples",
+    "Ripplescale",
+    "Waves",
+    "Wavelength",
+    "Sag",
+    "Drip"
+  ],
+  "nodes": [
+    {
+      "id": "vertex",
+      "type": "textDAT",
+      "position": [
+        -450,
+        350
+      ],
+      "purpose": "GLSL MAT vertex shader: moves the surface and rebuilds its normals",
+      "source": "liquid_flow.vert"
+    },
+    {
+      "id": "pixel",
+      "type": "textDAT",
+      "position": [
+        -250,
+        350
+      ],
+      "purpose": "GLSL MAT pixel shader: the Liquid Glass look on the moved surface",
+      "source": "liquid_flow.frag"
+    },
+    {
+      "id": "material",
+      "type": "glslMAT",
+      "position": [
+        0,
+        350
+      ],
+      "purpose": "THE liquid glass flow material: put it on your glass through a Render Pass TOP's Override Material (or a Geometry COMP's Material)",
+      "parameters": {
+        "glslversion": "glsl460",
+        "blending": true,
+        "srcblend": "one",
+        "destblend": "omsa",
+        "separatealphafunc": false,
+        "postmultalpha": false,
+        "depthtest": true,
+        "depthwriting": true
+      },
+      "expressions": {
+        "cullface": "'backfaces' if parent().par.Culling.eval() == 'back' else 'neither'"
+      },
+      "uniforms": [
+        {
+          "name": "uGlass",
+          "values": [
+            "op('presets').module.u(parent().par.Glasscolorr)",
+            "op('presets').module.u(parent().par.Glasscolorg)",
+            "op('presets').module.u(parent().par.Glasscolorb)",
+            "op('presets').module.u(parent().par.Density) / parent().par.Objectsize.eval()"
+          ]
+        },
+        {
+          "name": "uBody",
+          "values": [
+            "op('presets').module.u(parent().par.Translucency)",
+            "op('presets').module.u(parent().par.Frost) * parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Opacity)",
+            "op('presets').module.u(parent().par.Edgetint)"
+          ]
+        },
+        {
+          "name": "uOptics",
+          "values": [
+            "op('presets').module.u(parent().par.Ior)",
+            "op('presets').module.u(parent().par.Thickness) * parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Dispersion)",
+            "op('presets').module.u(parent().par.Saturation)"
+          ]
+        },
+        {
+          "name": "uReflect",
+          "values": [
+            "op('presets').module.u(parent().par.Reflectcolorr)",
+            "op('presets').module.u(parent().par.Reflectcolorg)",
+            "op('presets').module.u(parent().par.Reflectcolorb)",
+            "op('presets').module.u(parent().par.Reflection)"
+          ]
+        },
+        {
+          "name": "uEnv",
+          "values": [
+            "op('presets').module.menu(parent().par.Reflectmode)",
+            "parent().par.Envrotate * 0.0174533",
+            "op('presets').module.u(parent().par.Reflectblur)",
+            "parent().par.Screenwarp"
+          ]
+        },
+        {
+          "name": "uSurface",
+          "values": [
+            "op('presets').module.u(parent().par.Mirror)",
+            "op('presets').module.u(parent().par.Fresnelpower)",
+            "op('presets').module.u(parent().par.Diffuse)",
+            "1 if parent().par.Conserve.eval() else 0"
+          ]
+        },
+        {
+          "name": "uRim",
+          "values": [
+            "op('presets').module.u(parent().par.Rimcolorr)",
+            "op('presets').module.u(parent().par.Rimcolorg)",
+            "op('presets').module.u(parent().par.Rimcolorb)",
+            "op('presets').module.u(parent().par.Rim)"
+          ]
+        },
+        {
+          "name": "uLight",
+          "values": [
+            "parent().par.Lightdirx",
+            "parent().par.Lightdiry",
+            "parent().par.Lightdirz",
+            "op('presets').module.u(parent().par.Specular)"
+          ]
+        },
+        {
+          "name": "uLightColor",
+          "values": [
+            "op('presets').module.u(parent().par.Lightcolorr)",
+            "op('presets').module.u(parent().par.Lightcolorg)",
+            "op('presets').module.u(parent().par.Lightcolorb)",
+            "op('presets').module.u(parent().par.Shininess)"
+          ]
+        },
+        {
+          "name": "uFilm",
+          "values": [
+            "op('presets').module.u(parent().par.Iridescence)",
+            "op('presets').module.u(parent().par.Filmthickness)",
+            "op('presets').module.u(parent().par.Filmvariation)",
+            "2.5 / parent().par.Objectsize.eval()"
+          ]
+        },
+        {
+          "name": "uWobble",
+          "values": [
+            "op('presets').module.u(parent().par.Wobble)",
+            "op('presets').module.u(parent().par.Wobblescale) / parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Wobblespeed)",
+            0
+          ]
+        },
+        {
+          "name": "uPhase",
+          "values": [
+            "op('presets').module.phase(parent(), 0.6)",
+            "op('presets').module.phase(parent(), 0.4)",
+            "op('presets').module.phase(parent(), -0.3)",
+            "op('presets').module.phase(parent(), 0.15)"
+          ]
+        },
+        {
+          "name": "uState",
+          "values": [
+            "op('presets').module.menu(parent().par.Stage)",
+            0,
+            "parent().par.Samples",
+            "1 if parent().par.Flipv.eval() else 0"
+          ]
+        },
+        {
+          "name": "uInputs",
+          "values": [
+            "1 if parent().par.Refractiontop.eval() else 0",
+            "1 if parent().par.Reflectiontop.eval() else 0",
+            "1 if parent().par.Backface.eval() else 0",
+            "op('presets').module.decode_colours(parent())"
+          ]
+        },
+        {
+          "name": "uFlow",
+          "values": [
+            "op('presets').module.u(parent().par.Amplitude)",
+            0,
+            "op('presets').module.menu(parent().par.Displacealong)",
+            "op('presets').module.flow_time(parent())"
+          ]
+        },
+        {
+          "name": "uFlowShape",
+          "values": [
+            "op('presets').module.u(parent().par.Swell)",
+            "op('presets').module.u(parent().par.Swellscale)",
+            "op('presets').module.u(parent().par.Ripples)",
+            "op('presets').module.u(parent().par.Ripplescale)"
+          ]
+        },
+        {
+          "name": "uFlowWave",
+          "values": [
+            "op('presets').module.u(parent().par.Waves)",
+            "op('presets').module.u(parent().par.Wavelength)",
+            "op('presets').module.u(parent().par.Sag)",
+            "op('presets').module.u(parent().par.Drip)"
+          ]
+        },
+        {
+          "name": "uFlowAxis",
+          "values": [
+            "parent().par.Wavedirx",
+            "parent().par.Wavediry",
+            "parent().par.Wavedirz",
+            "1 if parent().par.Correctnormals.eval() else 0"
+          ]
+        },
+        {
+          "name": "uFlowSpace",
+          "values": [
+            "parent().par.Flowcentrex",
+            "parent().par.Flowcentrey",
+            "parent().par.Flowcentrez",
+            "parent().par.Flowsize"
+          ]
+        },
+        {
+          "name": "uFlowGravity",
+          "values": [
+            "parent().par.Gravityx",
+            "parent().par.Gravityy",
+            "parent().par.Gravityz",
+            "parent().par.Instancevary"
+          ]
+        },
+        {
+          "name": "sRefraction",
+          "kind": "sampler",
+          "filter": "mipmaplinear",
+          "extendu": "mirror",
+          "extendv": "mirror",
+          "values": [
+            "parent().par.Refractiontop.eval() or op('blank')"
+          ]
+        },
+        {
+          "name": "sReflection",
+          "kind": "sampler",
+          "filter": "mipmaplinear",
+          "extendu": "repeat",
+          "extendv": "hold",
+          "values": [
+            "parent().par.Reflectiontop.eval() or op('blank')"
+          ]
+        },
+        {
+          "name": "sBackface",
+          "kind": "sampler",
+          "filter": "nearest",
+          "extendu": "hold",
+          "extendv": "hold",
+          "values": [
+            "op('render_back') if parent().par.Backface.eval() else op('blank')"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "material_back",
+      "type": "glslMAT",
+      "position": [
+        0,
+        180
+      ],
+      "purpose": "Same shaders for the optional back-face pass (moves identically): inner surfaces, alpha = distance",
+      "parameters": {
+        "glslversion": "glsl460",
+        "blending": false,
+        "postmultalpha": false,
+        "cullface": "frontfaces",
+        "depthtest": true,
+        "depthwriting": true
+      },
+      "uniforms": [
+        {
+          "name": "uGlass",
+          "values": [
+            "op('presets').module.u(parent().par.Glasscolorr)",
+            "op('presets').module.u(parent().par.Glasscolorg)",
+            "op('presets').module.u(parent().par.Glasscolorb)",
+            "op('presets').module.u(parent().par.Density) / parent().par.Objectsize.eval()"
+          ]
+        },
+        {
+          "name": "uBody",
+          "values": [
+            "op('presets').module.u(parent().par.Translucency)",
+            "op('presets').module.u(parent().par.Frost) * parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Opacity)",
+            "op('presets').module.u(parent().par.Edgetint)"
+          ]
+        },
+        {
+          "name": "uOptics",
+          "values": [
+            "op('presets').module.u(parent().par.Ior)",
+            "op('presets').module.u(parent().par.Thickness) * parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Dispersion)",
+            "op('presets').module.u(parent().par.Saturation)"
+          ]
+        },
+        {
+          "name": "uReflect",
+          "values": [
+            "op('presets').module.u(parent().par.Reflectcolorr)",
+            "op('presets').module.u(parent().par.Reflectcolorg)",
+            "op('presets').module.u(parent().par.Reflectcolorb)",
+            "op('presets').module.u(parent().par.Reflection)"
+          ]
+        },
+        {
+          "name": "uEnv",
+          "values": [
+            "op('presets').module.menu(parent().par.Reflectmode)",
+            "parent().par.Envrotate * 0.0174533",
+            "op('presets').module.u(parent().par.Reflectblur)",
+            "parent().par.Screenwarp"
+          ]
+        },
+        {
+          "name": "uSurface",
+          "values": [
+            "op('presets').module.u(parent().par.Mirror)",
+            "op('presets').module.u(parent().par.Fresnelpower)",
+            "op('presets').module.u(parent().par.Diffuse)",
+            "1 if parent().par.Conserve.eval() else 0"
+          ]
+        },
+        {
+          "name": "uRim",
+          "values": [
+            "op('presets').module.u(parent().par.Rimcolorr)",
+            "op('presets').module.u(parent().par.Rimcolorg)",
+            "op('presets').module.u(parent().par.Rimcolorb)",
+            "op('presets').module.u(parent().par.Rim)"
+          ]
+        },
+        {
+          "name": "uLight",
+          "values": [
+            "parent().par.Lightdirx",
+            "parent().par.Lightdiry",
+            "parent().par.Lightdirz",
+            "op('presets').module.u(parent().par.Specular)"
+          ]
+        },
+        {
+          "name": "uLightColor",
+          "values": [
+            "op('presets').module.u(parent().par.Lightcolorr)",
+            "op('presets').module.u(parent().par.Lightcolorg)",
+            "op('presets').module.u(parent().par.Lightcolorb)",
+            "op('presets').module.u(parent().par.Shininess)"
+          ]
+        },
+        {
+          "name": "uFilm",
+          "values": [
+            "op('presets').module.u(parent().par.Iridescence)",
+            "op('presets').module.u(parent().par.Filmthickness)",
+            "op('presets').module.u(parent().par.Filmvariation)",
+            "2.5 / parent().par.Objectsize.eval()"
+          ]
+        },
+        {
+          "name": "uWobble",
+          "values": [
+            "op('presets').module.u(parent().par.Wobble)",
+            "op('presets').module.u(parent().par.Wobblescale) / parent().par.Objectsize.eval()",
+            "op('presets').module.u(parent().par.Wobblespeed)",
+            0
+          ]
+        },
+        {
+          "name": "uPhase",
+          "values": [
+            "op('presets').module.phase(parent(), 0.6)",
+            "op('presets').module.phase(parent(), 0.4)",
+            "op('presets').module.phase(parent(), -0.3)",
+            "op('presets').module.phase(parent(), 0.15)"
+          ]
+        },
+        {
+          "name": "uState",
+          "values": [
+            "op('presets').module.menu(parent().par.Stage)",
+            1,
+            "parent().par.Samples",
+            "1 if parent().par.Flipv.eval() else 0"
+          ]
+        },
+        {
+          "name": "uInputs",
+          "values": [
+            "1 if parent().par.Refractiontop.eval() else 0",
+            "1 if parent().par.Reflectiontop.eval() else 0",
+            "1 if parent().par.Backface.eval() else 0",
+            "op('presets').module.decode_colours(parent())"
+          ]
+        },
+        {
+          "name": "uFlow",
+          "values": [
+            "op('presets').module.u(parent().par.Amplitude)",
+            0,
+            "op('presets').module.menu(parent().par.Displacealong)",
+            "op('presets').module.flow_time(parent())"
+          ]
+        },
+        {
+          "name": "uFlowShape",
+          "values": [
+            "op('presets').module.u(parent().par.Swell)",
+            "op('presets').module.u(parent().par.Swellscale)",
+            "op('presets').module.u(parent().par.Ripples)",
+            "op('presets').module.u(parent().par.Ripplescale)"
+          ]
+        },
+        {
+          "name": "uFlowWave",
+          "values": [
+            "op('presets').module.u(parent().par.Waves)",
+            "op('presets').module.u(parent().par.Wavelength)",
+            "op('presets').module.u(parent().par.Sag)",
+            "op('presets').module.u(parent().par.Drip)"
+          ]
+        },
+        {
+          "name": "uFlowAxis",
+          "values": [
+            "parent().par.Wavedirx",
+            "parent().par.Wavediry",
+            "parent().par.Wavedirz",
+            "1 if parent().par.Correctnormals.eval() else 0"
+          ]
+        },
+        {
+          "name": "uFlowSpace",
+          "values": [
+            "parent().par.Flowcentrex",
+            "parent().par.Flowcentrey",
+            "parent().par.Flowcentrez",
+            "parent().par.Flowsize"
+          ]
+        },
+        {
+          "name": "uFlowGravity",
+          "values": [
+            "parent().par.Gravityx",
+            "parent().par.Gravityy",
+            "parent().par.Gravityz",
+            "parent().par.Instancevary"
+          ]
+        },
+        {
+          "name": "sRefraction",
+          "kind": "sampler",
+          "filter": "mipmaplinear",
+          "extendu": "mirror",
+          "extendv": "mirror",
+          "values": [
+            "parent().par.Refractiontop.eval() or op('blank')"
+          ]
+        },
+        {
+          "name": "sReflection",
+          "kind": "sampler",
+          "filter": "mipmaplinear",
+          "extendu": "repeat",
+          "extendv": "hold",
+          "values": [
+            "parent().par.Reflectiontop.eval() or op('blank')"
+          ]
+        },
+        {
+          "name": "sBackface",
+          "kind": "sampler",
+          "filter": "nearest",
+          "extendu": "hold",
+          "extendv": "hold",
+          "values": [
+            "op('blank')"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "render_back",
+      "type": "renderTOP",
+      "position": [
+        250,
+        180
+      ],
+      "purpose": "Optional back-face pass (moves identically); renders only while Back-face pass is on; 32-bit float distances; Dither off",
+      "parameters": {
+        "outputresolution": "custom",
+        "format": "rgba32float",
+        "antialias": "aa1",
+        "bgcolorr": 0,
+        "bgcolorg": 0,
+        "bgcolorb": 0,
+        "bgcolora": 0,
+        "premultrgbbyalpha": false
+      },
+      "expressions": {
+        "camera": "parent().par.Camera.eval() or ''",
+        "geometry": "' '.join(o.path for o in parent().par.Glassgeo.evalOPs())",
+        "resolutionw": "parent().par.Refractiontop.eval().width if parent().par.Refractiontop.eval() else 1280",
+        "resolutionh": "parent().par.Refractiontop.eval().height if parent().par.Refractiontop.eval() else 720"
+      },
+      "lenient_expressions": {
+        "render": "1 if parent().par.Backface.eval() else 0"
+      },
+      "lenient_parameters": {
+        "dither": false
+      }
+    },
+    {
+      "id": "blank",
+      "type": "constantTOP",
+      "position": [
+        250,
+        350
+      ],
+      "lenient": true,
+      "purpose": "Transparent black stand-in for any unconnected sampler",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 4,
+        "resolutionh": 4,
+        "colorr": 0,
+        "colorg": 0,
+        "colorb": 0,
+        "alpha": 0
+      }
+    },
+    {
+      "id": "presets_data",
+      "type": "textDAT",
+      "position": [
+        -450,
+        120
+      ],
+      "purpose": "The 12 preset looks with their motion (presets.json)",
+      "source": "presets.json"
+    },
+    {
+      "id": "presets",
+      "type": "textDAT",
+      "position": [
+        -250,
+        120
+      ],
+      "purpose": "Preset loader and morph (module)",
+      "source": "presets.py"
+    },
+    {
+      "id": "preset_exec",
+      "type": "parameterexecuteDAT",
+      "position": [
+        -250,
+        -20
+      ],
+      "purpose": "Loads a preset when the Preset menu changes; runs Fit to Glass geometry",
+      "source": "preset_exec.py",
+      "parameters": {
+        "pars": "Preset Applypreset Fitglass",
+        "valuechange": true,
+        "onpulse": true,
+        "custom": true,
+        "builtin": false
+      },
+      "expressions": {
+        "op": "parent()"
+      }
+    },
+    {
+      "id": "backdrop_shader",
+      "type": "textDAT",
+      "position": [
+        -450,
+        -250
+      ],
+      "purpose": "Demo backdrop GLSL",
+      "source": "backdrop.frag",
+      "demo": true
+    },
+    {
+      "id": "demo_backdrop",
+      "type": "glslTOP",
+      "position": [
+        -250,
+        -250
+      ],
+      "purpose": "Demo refraction input (Study > Backdrop: checkerboard or bold type on black)",
+      "demo": true,
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 1280,
+        "resolutionh": 720,
+        "format": "rgba16float"
+      },
+      "uniforms": [
+        {
+          "name": "uBackdrop",
+          "values": [
+            "op('presets').module.menu(parent().par.Backdrop)",
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "env_shader",
+      "type": "textDAT",
+      "position": [
+        -450,
+        -400
+      ],
+      "purpose": "Demo panorama GLSL",
+      "source": "env.frag",
+      "demo": true
+    },
+    {
+      "id": "demo_env",
+      "type": "glslTOP",
+      "position": [
+        -250,
+        -400
+      ],
+      "purpose": "Demo reflection input (2:1 panorama)",
+      "demo": true,
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 1024,
+        "resolutionh": 512,
+        "format": "rgba16float"
+      }
+    },
+    {
+      "id": "demo_geo",
+      "type": "geometryCOMP",
+      "position": [
+        0,
+        -250
+      ],
+      "purpose": "Demo object; the render's Override Material puts the glass on it; Study > Demo object picks the shape",
+      "demo": true,
+      "expressions": {
+        "rx": "20",
+        "ry": "op('presets').module.spin(parent())"
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      }
+    },
+    {
+      "id": "demo_geo/sphere",
+      "type": "sphereSOP",
+      "position": [
+        0,
+        0
+      ],
+      "demo": true,
+      "purpose": "Demo sphere (mesh with normals); Demo detail sets its rows",
+      "parameters": {
+        "type": "mesh",
+        "radx": 1.0,
+        "rady": 1.0,
+        "radz": 1.0,
+        "normals": true
+      },
+      "expressions": {
+        "rows": "parent(2).par.Demodetail.eval()",
+        "cols": "2 * parent(2).par.Demodetail.eval()"
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/torus",
+      "type": "torusSOP",
+      "position": [
+        0,
+        -150
+      ],
+      "purpose": "Demo torus with normals",
+      "demo": true,
+      "parameters": {
+        "type": "mesh",
+        "orient": "z",
+        "radx": 1.0,
+        "rady": 0.45,
+        "rows": 128,
+        "cols": 64,
+        "normals": true
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_face",
+      "type": "gridSOP",
+      "position": [
+        -300,
+        -300
+      ],
+      "demo": true,
+      "purpose": "One face of the demo box: a grid of 1.5 x 1.5 units facing +Z; Demo detail sets its points",
+      "parameters": {
+        "type": "mesh",
+        "orient": "xy",
+        "sizex": 1.5,
+        "sizey": 1.5,
+        "normals": true
+      },
+      "expressions": {
+        "rows": "max(2, parent(2).par.Demodetail.eval() // 4) + 1",
+        "cols": "max(2, parent(2).par.Demodetail.eval() // 4) + 1"
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_front",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -230
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's front face (rotate, then move)",
+      "parameters": {
+        "tz": 0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_back",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -260
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's back face (rotate, then move)",
+      "parameters": {
+        "ry": 180,
+        "tz": -0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_right",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -290
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's right face (rotate, then move)",
+      "parameters": {
+        "ry": 90,
+        "tx": 0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_left",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -320
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's left face (rotate, then move)",
+      "parameters": {
+        "ry": -90,
+        "tx": -0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_top",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -350
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's top face (rotate, then move)",
+      "parameters": {
+        "rx": -90,
+        "ty": 0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box_bottom",
+      "type": "transformSOP",
+      "position": [
+        -150,
+        -380
+      ],
+      "demo": true,
+      "purpose": "Turns the face grid into the box's bottom face (rotate, then move)",
+      "parameters": {
+        "rx": 90,
+        "ty": -0.75
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/box",
+      "type": "mergeSOP",
+      "position": [
+        0,
+        -300
+      ],
+      "demo": true,
+      "purpose": "Demo box: six separate faces, so edges and corners repeat each position with different normals (crack test)",
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/grid",
+      "type": "gridSOP",
+      "position": [
+        0,
+        -450
+      ],
+      "demo": true,
+      "purpose": "Demo open sheet facing the camera (use Displace along = Normal, Faces = both)",
+      "parameters": {
+        "type": "mesh",
+        "orient": "xy",
+        "sizex": 3.0,
+        "sizey": 2.0,
+        "normals": true
+      },
+      "expressions": {
+        "rows": "parent(2).par.Demodetail.eval()",
+        "cols": "parent(2).par.Demodetail.eval() * 3 // 2"
+      },
+      "flags": {
+        "display": false,
+        "render": false
+      }
+    },
+    {
+      "id": "demo_geo/pick",
+      "type": "switchSOP",
+      "position": [
+        250,
+        -200
+      ],
+      "demo": true,
+      "purpose": "Shows the shape chosen in Study > Demo object",
+      "expressions": {
+        "input": "parent(2).op('presets').module.menu(parent(2).par.Demoobject)"
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      }
+    },
+    {
+      "id": "demo_cam",
+      "type": "cameraCOMP",
+      "position": [
+        0,
+        -400
+      ],
+      "purpose": "Demo camera on +Z, 4 units from the object",
+      "demo": true,
+      "parameters": {
+        "tz": 4
+      }
+    },
+    {
+      "id": "render",
+      "type": "renderTOP",
+      "position": [
+        250,
+        -250
+      ],
+      "purpose": "Renders the demo glass alone (transparent background); Override Material = material; Dither off (no dithering)",
+      "demo": true,
+      "parameters": {
+        "outputresolution": "custom",
+        "format": "rgba16float",
+        "antialias": "aa4",
+        "bgcolorr": 0,
+        "bgcolorg": 0,
+        "bgcolorb": 0,
+        "bgcolora": 0,
+        "premultrgbbyalpha": false
+      },
+      "expressions": {
+        "resolutionw": "parent().par.Refractiontop.eval().width if parent().par.Refractiontop.eval() else 1280",
+        "resolutionh": "parent().par.Refractiontop.eval().height if parent().par.Refractiontop.eval() else 720",
+        "render": "1 if parent().par.Demo.eval() else 0"
+      },
+      "lenient_parameters": {
+        "dither": false
+      }
+    },
+    {
+      "id": "behind",
+      "type": "selectTOP",
+      "position": [
+        250,
+        -400
+      ],
+      "purpose": "Whatever the Refraction TOP is",
+      "demo": true,
+      "expressions": {
+        "top": "parent().par.Refractiontop.eval() or op('blank')"
+      }
+    },
+    {
+      "id": "over",
+      "type": "overTOP",
+      "position": [
+        450,
+        -300
+      ],
+      "purpose": "Glass over the scene behind it",
+      "demo": true
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        650,
+        -300
+      ],
+      "purpose": "Demo output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_front",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_back",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_right",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_left",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_top",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_face",
+      "to": "demo_geo/box_bottom",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_front",
+      "to": "demo_geo/box",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/box_back",
+      "to": "demo_geo/box",
+      "input": 1
+    },
+    {
+      "from": "demo_geo/box_right",
+      "to": "demo_geo/box",
+      "input": 2
+    },
+    {
+      "from": "demo_geo/box_left",
+      "to": "demo_geo/box",
+      "input": 3
+    },
+    {
+      "from": "demo_geo/box_top",
+      "to": "demo_geo/box",
+      "input": 4
+    },
+    {
+      "from": "demo_geo/box_bottom",
+      "to": "demo_geo/box",
+      "input": 5
+    },
+    {
+      "from": "demo_geo/sphere",
+      "to": "demo_geo/pick",
+      "input": 0
+    },
+    {
+      "from": "demo_geo/torus",
+      "to": "demo_geo/pick",
+      "input": 1
+    },
+    {
+      "from": "demo_geo/box",
+      "to": "demo_geo/pick",
+      "input": 2
+    },
+    {
+      "from": "demo_geo/grid",
+      "to": "demo_geo/pick",
+      "input": 3
+    },
+    {
+      "from": "render",
+      "to": "over",
+      "input": 0
+    },
+    {
+      "from": "behind",
+      "to": "over",
+      "input": 1
+    },
+    {
+      "from": "over",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "material",
+      "parameter": "vdat",
+      "target": "vertex",
+      "previous_frame": false
+    },
+    {
+      "node": "material",
+      "parameter": "pdat",
+      "target": "pixel",
+      "previous_frame": false
+    },
+    {
+      "node": "material_back",
+      "parameter": "vdat",
+      "target": "vertex",
+      "previous_frame": false
+    },
+    {
+      "node": "material_back",
+      "parameter": "pdat",
+      "target": "pixel",
+      "previous_frame": false
+    },
+    {
+      "node": "render_back",
+      "parameter": "overridemat",
+      "target": "material_back",
+      "previous_frame": false
+    },
+    {
+      "node": "demo_backdrop",
+      "parameter": "pixeldat",
+      "target": "backdrop_shader",
+      "previous_frame": false
+    },
+    {
+      "node": "demo_env",
+      "parameter": "pixeldat",
+      "target": "env_shader",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "camera",
+      "target": "demo_cam",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "geometry",
+      "target": "demo_geo",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "overridemat",
+      "target": "material",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "The liquid field and the displacement are computed in the SOP's object space, in units of Flow size (the object's radius in SOP units) measured from Flow centre, then go through TDDeform (positions) and TDDeformNorm (normals), so object transforms, non-uniform scale and instances apply after the motion; a zero normal stays zero (decided before TDDeformNorm); the rebuilt normal keeps the rest normal only where the moved patch is squeezed to under a thousandth of its rest area (a fold) or is NaN. Gravity is given in world space and brought into object space with uTDMats[].worldInverse and the inverse of TDInstanceMat3(), so it stays world-down for rotated instances. Flow time is Flow speed added up per frame in Python (presets.advance(), double precision) and wrapped at 25600; the shader folds every noise drift into one 256-cell repeat of its lattice. The pixel stage is the Liquid Glass contract: world-space normals, eye and light; camera-space refraction offset projected with the camera's own projection and the measured screen orientation (screenSign); screen UV from gl_FragCoord and uTDGeneral.viewport (TD texture convention, v up); distances along the view ray (Euclidean for perspective, depth for orthographic cameras); ripples and film looked up at the rest position (object space) times the Geometry COMP's world scale (worldScale()), so they stick to the object and count in world-sized steps (uPhase drift, 256-unit lattice), ripple slope rescaled so Wobble does not depend on that scale; screen orientation measured per pixel (projected against raster position, the projected position's screen derivative on a centre-line tie); equirectangular panorama in this study's convention (u = 0 toward +X, then +Z), not yet compared natively. Two sizes, one job each. Flow size (SOP units, the demo sphere = 1) scales the motion, which happens before TDDeform. Object size follows the Liquid Glass family rule (Liquid Glass Lit decisions.json, family_rule): the object's world radius over 1.45, the core's demo torus. It multiplies Thickness and Frost and divides Tint density, Wobble scale and the film swirl frequency; with worldScale() in the pattern lookups, the glass looks the same whether the object is sized in its SOP or by its Geometry COMP. Fit to Glass geometry sets both from the same object.",
+  "color_contract": "Colour parameters are artistic values passed as data vectors. Colour parameters (Auto) follows project.workingColorSpace: pass-through keeps them as typed; a linear working space converts them from sRGB to linear in the shader (transfer curve only, no gamut conversion). Output is premultiplied alpha; the material blends with One / One Minus Source Alpha. The back-face pass is a data texture (rgba32float, alpha = distance) read with texelFetch.",
+  "schema_version": 1,
+  "target_build": "Inspect host; written for TouchDesigner 2025.x (GLSL 4.60), not yet run natively",
+  "external_dependencies": [],
+  "native_status": "pending: not compiled or rendered in TouchDesigner yet; see validation.json"
+}

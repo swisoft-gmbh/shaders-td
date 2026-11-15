@@ -1,0 +1,53 @@
+{
+  "repository": {
+    "name": "design-system",
+    "repository": "MaximeHeckel/design-system",
+    "url": "https://github.com/MaximeHeckel/design-system",
+    "commit_sha": "54a19e07f016d67f349e19e064278bd00ae549c4",
+    "description": "My personal design system",
+    "source_root": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4",
+    "capture_record": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/capture.json",
+    "scope": "One current default-branch snapshot; no history, branches, issues or releases",
+    "captured_at": "2026-10-04T14:16:12.856135+00:00",
+    "license_paths": [],
+    "category_id": "01"
+  },
+  "token_sources": [
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/themes/dark.ts",
+      "source_path": "src/lib/themes/dark.ts",
+      "sha256": "312e282ff46baba879c0fa5d003cae1a430d66b5b720808856d17b7c05e6bbbb",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/themes/dark.ts"
+    },
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/themes/light.ts",
+      "source_path": "src/lib/themes/light.ts",
+      "sha256": "35b2ac386f68982b1b75a307c4541a473cf961ad9f4b9301ec79559b14d3a8e8",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/themes/light.ts"
+    },
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/radii.ts",
+      "source_path": "src/lib/tokens/radii.ts",
+      "sha256": "bf25105c96d243407829f687f78e1e4d6173b03e5d917d4740c71980fec285ef",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/radii.ts"
+    },
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/shadows.ts",
+      "source_path": "src/lib/tokens/shadows.ts",
+      "sha256": "be94b9737bd37b679b716e18aac6308b72e4ffa099caa8a34ef25a6f1ad4f6ab",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/shadows.ts"
+    },
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/spaces.ts",
+      "source_path": "src/lib/tokens/spaces.ts",
+      "sha256": "773a22e96afdb8f6722eaa6798a9b537e8965d66be4da0388b0db8f5eab8b3a5",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/spaces.ts"
+    },
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/design-system/design-system-54a19e07f016d67f349e19e064278bd00ae549c4.zip.unpacked/design-system-54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/typography.ts",
+      "source_path": "src/lib/tokens/typography.ts",
+      "sha256": "6936d92dec72611100b0660b518d67dc0d11f79bc98ded255fe60e7890e0da61",
+      "url": "https://github.com/MaximeHeckel/design-system/blob/54a19e07f016d67f349e19e064278bd00ae549c4/src/lib/tokens/typography.ts"
+    }
+  ]
+}

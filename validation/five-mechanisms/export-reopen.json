@@ -1,0 +1,253 @@
+{
+  "orbital-relic": {
+    "passed": true,
+    "export": "examples/orbital-relic/native/study.tox",
+    "sha256": "69607467538c079cd781bd74d7d37ffb1a61143e4d81cb515a03b9e07c78371b",
+    "bytes": 8750,
+    "reopened_component": "/project1/mh_five_release_reopen/orbital_relic",
+    "native": {
+      "time_unix": 1792515023.4266481,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_reopen/orbital_relic",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Blend": 0.23,
+        "Turn": 0.4,
+        "Budget": 128.0,
+        "Single": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_surface": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "embedded_text_matches_source": {
+      "surface_code": true,
+      "study_spec": true,
+      "study_experiments": true,
+      "study_tools": true,
+      "study_article": true
+    },
+    "internal_references": {
+      "surface.pixeldat": true
+    },
+    "max_pixel_difference": 0.0,
+    "comparison_scope": "Fixed-time final preset after fresh source build and reload under a different parent.",
+    "reference_method": "Compare native OP-parameter evalOPs() with the intended target in the loaded component. OP parameter strings resolve relative to their parent network."
+  },
+  "lantern-fog": {
+    "passed": true,
+    "export": "examples/lantern-fog/native/study.tox",
+    "sha256": "ae224e50ffeaaa4b98ea657a766c8cbb359488a133686fe43c236cac0eed0cfb",
+    "bytes": 8414,
+    "reopened_component": "/project1/mh_five_release_reopen/lantern_fog",
+    "native": {
+      "time_unix": 1792515023.5523179,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_reopen/lantern_fog",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Extinction": 2.2,
+        "Steps": 64.0,
+        "Light": 1.0,
+        "Slab": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_volume": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "embedded_text_matches_source": {
+      "volume_code": true,
+      "study_spec": true,
+      "study_experiments": true,
+      "study_tools": true,
+      "study_article": true
+    },
+    "internal_references": {
+      "volume.pixeldat": true
+    },
+    "max_pixel_difference": 0.0,
+    "comparison_scope": "Fixed-time final preset after fresh source build and reload under a different parent.",
+    "reference_method": "Compare native OP-parameter evalOPs() with the intended target in the loaded component. OP parameter strings resolve relative to their parent network."
+  },
+  "pigment-census": {
+    "passed": true,
+    "export": "examples/pigment-census/native/study.tox",
+    "sha256": "eec830b6ee88495cdccf6dba91da537eaf5262545493e34c7349b26d9b5321a0",
+    "bytes": 8718,
+    "reopened_component": "/project1/mh_five_release_reopen/pigment_census",
+    "native": {
+      "time_unix": 1792515023.722764,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_reopen/pigment_census",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Radius": 5.0,
+        "Grain": 0.18,
+        "Input": "painting",
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_filter": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_source": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "embedded_text_matches_source": {
+      "source_code": true,
+      "filter_code": true,
+      "study_spec": true,
+      "study_experiments": true,
+      "study_tools": true,
+      "study_article": true
+    },
+    "internal_references": {
+      "source.pixeldat": true,
+      "filter.pixeldat": true
+    },
+    "max_pixel_difference": 0.0,
+    "comparison_scope": "Fixed-time final preset after fresh source build and reload under a different parent.",
+    "reference_method": "Compare native OP-parameter evalOPs() with the intended target in the loaded component. OP parameter strings resolve relative to their parent network."
+  },
+  "resonant-foil": {
+    "passed": true,
+    "export": "examples/resonant-foil/native/study.tox",
+    "sha256": "662b7fb08bda5bceebeccaffcacbaec210433b013fcbc3b07c364b5b86fdeda2",
+    "bytes": 8718,
+    "reopened_component": "/project1/mh_five_release_reopen/resonant_foil",
+    "native": {
+      "time_unix": 1792515023.938462,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_reopen/resonant_foil",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.0166667,
+        "Amplitude": 0.18,
+        "Frequency": 7.0,
+        "Correct": true,
+        "Turn": 25.0,
+        "Stretch": 1.0,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "embedded_text_matches_source": {
+      "vertex": true,
+      "pixel": true,
+      "study_spec": true,
+      "study_experiments": true,
+      "study_tools": true,
+      "study_article": true
+    },
+    "internal_references": {
+      "material.vdat": true,
+      "material.pdat": true,
+      "geometry.material": true,
+      "render.camera": true,
+      "render.geometry": true
+    },
+    "max_pixel_difference": 0.0,
+    "comparison_scope": "Fixed-time final preset after fresh source build and reload under a different parent.",
+    "reference_method": "Compare native OP-parameter evalOPs() with the intended target in the loaded component. OP parameter strings resolve relative to their parent network."
+  },
+  "tidal-ink": {
+    "passed": true,
+    "export": "examples/tidal-ink/native/study.tox",
+    "sha256": "ac7cdb4f7a56717ad3a09c966556163c06e69aa63aedbc9860c6bf136425fdba",
+    "bytes": 9534,
+    "reopened_component": "/project1/mh_five_release_reopen/tidal_ink",
+    "native": {
+      "time_unix": 1792515024.1571898,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_reopen/tidal_ink",
+      "resolution": [
+        384,
+        384
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Reset": true,
+        "Speed": 0.12,
+        "Decay": 0.15,
+        "Inject": 0.5,
+        "Seed": "pattern",
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_seed": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_state": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_display": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "embedded_text_matches_source": {
+      "seed_code": true,
+      "state_code": true,
+      "display_code": true,
+      "study_spec": true,
+      "study_experiments": true,
+      "study_tools": true,
+      "study_article": true
+    },
+    "internal_references": {
+      "seed.pixeldat": true,
+      "state.pixeldat": true,
+      "display.pixeldat": true,
+      "history.top": true
+    },
+    "max_pixel_difference": 0.0,
+    "comparison_scope": "Both source and reopened component explicitly reset to seed with pause enabled; evolving history compared separately.",
+    "reference_method": "Compare native OP-parameter evalOPs() with the intended target in the loaded component. OP parameter strings resolve relative to their parent network."
+  }
+}

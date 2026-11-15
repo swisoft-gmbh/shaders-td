@@ -1,0 +1,146 @@
+[
+  {
+    "file": "liquid_prism.vert",
+    "region": "transforms",
+    "lines": [
+      16,
+      33
+    ],
+    "sha256": "fe976a04c37f9f9b7da61f6f686aa3262d3d5b15f828a6dae93f41c5533c225d"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "screen",
+    "lines": [
+      70,
+      173
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "interfaces",
+    "lines": [
+      374,
+      397
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "setup",
+    "lines": [
+      829,
+      875
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "surface",
+    "lines": [
+      177,
+      217
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "exit",
+    "lines": [
+      401,
+      437
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "backnormal",
+    "lines": [
+      221,
+      236
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "backpass",
+    "lines": [
+      441,
+      505
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "diagnostics",
+    "lines": [
+      749,
+      777
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "bounce",
+    "lines": [
+      668,
+      687
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "spectrum",
+    "lines": [
+      330,
+      370
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "sliceexit",
+    "lines": [
+      509,
+      526
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "trace",
+    "lines": [
+      691,
+      745
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "caustic",
+    "lines": [
+      543,
+      560
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "compose",
+    "lines": [
+      879,
+      941
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  },
+  {
+    "file": "liquid_prism.frag",
+    "region": "uniforms",
+    "lines": [
+      27,
+      51
+    ],
+    "sha256": "b67f812980c7d2d33e48b9d46d273f3a9d117c4623efa0129e9899155e1aa03c"
+  }
+]

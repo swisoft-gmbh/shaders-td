@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "id": "pigment-census",
+  "title": "Pigment Census",
+  "route": "Multi-pass image filtering",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause",
+      "type": "toggle",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Time",
+      "type": "float",
+      "default": 2,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "type": "float",
+      "default": 0.016666666666666666,
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Radius",
+      "label": "Radius",
+      "type": "float",
+      "default": 5,
+      "min": 0,
+      "max": 8
+    },
+    {
+      "name": "Grain",
+      "label": "Grain",
+      "type": "float",
+      "default": 0.18,
+      "min": 0,
+      "max": 0.4
+    },
+    {
+      "name": "Input",
+      "label": "Input",
+      "type": "menu",
+      "default": "painting",
+      "names": [
+        "painting",
+        "edge",
+        "flat"
+      ],
+      "labels": [
+        "Painting",
+        "Edge",
+        "Flat"
+      ]
+    },
+    {
+      "name": "Stage",
+      "label": "Stage",
+      "type": "menu",
+      "default": "final",
+      "names": [
+        "final",
+        "source",
+        "variance",
+        "box"
+      ],
+      "labels": [
+        "Final",
+        "Source",
+        "Variance",
+        "Box"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source_code",
+      "type": "textDAT",
+      "source": "source.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "source",
+      "type": "glslTOP",
+      "purpose": "source pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 512,
+        "resolutionh": 512,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uSource",
+          "values": [
+            "parent().par.Grain",
+            "parent().par.Input.menuIndex",
+            0,
+            0
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "id": "filter_code",
+      "type": "textDAT",
+      "source": "filter.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        460,
+        0
+      ]
+    },
+    {
+      "id": "filter",
+      "type": "glslTOP",
+      "purpose": "filter pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 512,
+        "resolutionh": 512,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uFilter",
+          "values": [
+            "parent().par.Radius",
+            "parent().par.Stage.menuIndex",
+            0,
+            0
+          ]
+        }
+      ],
+      "position": [
+        690,
+        0
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        920,
+        0
+      ],
+      "purpose": "Final output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "source",
+      "to": "filter",
+      "input": 0
+    },
+    {
+      "from": "filter",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "source",
+      "parameter": "pixeldat",
+      "target": "source_code",
+      "previous_frame": false
+    },
+    {
+      "node": "filter",
+      "parameter": "pixeldat",
+      "target": "filter_code",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Input texels define kernel radius; explicit clamped integer fetches; artistic RGB, opaque; variance is weighted channel variance.",
+  "external_dependencies": [],
+  "target_build": "TouchDesigner 2025.33230 on macOS; verify other builds",
+  "native_status": "Tested on TouchDesigner 2025.33230 macOS; see validation.json for exact scope."
+}

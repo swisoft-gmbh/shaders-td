@@ -1,0 +1,50 @@
+{
+ "what": "Family critic (low): the tutorial's pointer to main(). Red run of the new TutorialPointers test on the article before the fix and on three copies that each undo one of the three pointer edits.",
+ "date": "2026-11-02",
+ "how": "Today's checks/test_study.py on scratch copies of this study (scratchpad agents/core-main-pointer/family-runs). Each copy sits in a folder named liquid-glass next to links to the four member studies, so the family tests read them as they do here. 'unfixed' is article.source.md as the critic found it, with all three pointers by position; each 'undo_*' copy undoes one edit. Every copy re-renders article.md with article.py render. Plain Python; nothing ran in TouchDesigner.",
+ "edits": {
+  "main_pointer": {
+   "before": "(its `main()` comes back in the last section)",
+   "after": "(its `main()` comes back in \"Use it in your own scene\")"
+  },
+  "backface_pointer": {
+   "before": "The back-face pass (last section) stores",
+   "after": "The back-face pass (see \"Measure thickness with the back-face pass\") stores"
+  },
+  "bend_pointer": {
+   "before": "exactly the plain bend from the last section.",
+   "after": "exactly the plain bend from \"Bend the light\"."
+  }
+ },
+ "unit_tests": {
+  "unfixed": {
+   "tests_run": 72,
+   "failing": [
+    "test_pointers_name_the_section_that_shows_the_code"
+   ]
+  },
+  "undo_main_pointer": {
+   "tests_run": 72,
+   "failing": [
+    "test_pointers_name_the_section_that_shows_the_code"
+   ]
+  },
+  "undo_backface_pointer": {
+   "tests_run": 72,
+   "failing": [
+    "test_pointers_name_the_section_that_shows_the_code"
+   ]
+  },
+  "undo_bend_pointer": {
+   "tests_run": 72,
+   "failing": [
+    "test_pointers_name_the_section_that_shows_the_code"
+   ]
+  },
+  "fixed": {
+   "tests_run": 72,
+   "failing": []
+  }
+ },
+ "note": "On every copy that keeps a pointer by position, only TutorialPointers.test_pointers_name_the_section_that_shows_the_code fails; the other 71 pass. With all three edits: 72 of 72 (checks/results/unit-tests.txt)."
+}

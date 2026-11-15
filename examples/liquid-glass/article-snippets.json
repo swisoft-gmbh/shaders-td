@@ -1,0 +1,137 @@
+[
+  {
+    "file": "liquid_glass.vert",
+    "region": "transforms",
+    "lines": [
+      14,
+      24
+    ],
+    "sha256": "833510ac2805089588e54c9b0dfdeaac99138585368318e4b528dae0f51f18d0"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "screen",
+    "lines": [
+      57,
+      106
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "bend",
+    "lines": [
+      277,
+      285
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "setup",
+    "lines": [
+      493,
+      531
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "surface",
+    "lines": [
+      110,
+      143
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "dispersion",
+    "lines": [
+      289,
+      361
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "body",
+    "lines": [
+      365,
+      391
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "compose",
+    "lines": [
+      535,
+      598
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "reflection",
+    "lines": [
+      395,
+      474
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "light",
+    "lines": [
+      478,
+      487
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "liquid",
+    "lines": [
+      147,
+      208
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "film",
+    "lines": [
+      212,
+      232
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "backface",
+    "lines": [
+      236,
+      273
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.frag",
+    "region": "uniforms",
+    "lines": [
+      16,
+      38
+    ],
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb"
+  },
+  {
+    "file": "liquid_glass.vert",
+    "region": "picking",
+    "lines": [
+      30,
+      41
+    ],
+    "sha256": "833510ac2805089588e54c9b0dfdeaac99138585368318e4b528dae0f51f18d0"
+  }
+]

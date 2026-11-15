@@ -1,0 +1,275 @@
+{
+  "what": "Mutation run for liquid_prism.frag: each mutant is a copy of the study with one deliberate defect, run through the full preview suite (checks/preview_tests.cjs) and the unit tests.",
+  "method": "Copies of the study (snapshot before the final background-test update), one mutant each, two at a time. The finiteness sweep ran 2 of its 8 stages (100 of 400 renders) to save time; fewer renders can only miss a kill, so the counts are lower bounds. WebGL2 preview (Chromium SwiftShader), not TouchDesigner. Scripts kept in the maintainer's scratch space, not in the study.",
+  "date": "2026-11-01",
+  "mutants": 18,
+  "killed": 18,
+  "killed_by_preview_tests": 18,
+  "reviewer_set": {
+    "mutants": 12,
+    "killed_by_old_suite_as_reported_by_the_reviewers": 3,
+    "killed_by_current_suite": 12,
+    "note": "The reviewers' original mutants were applied to the old shader; here the same 12 defects were re-expressed on the current code. The old-suite figure was not rerun here."
+  },
+  "results": [
+    {
+      "mutant": "M1 exit refraction ignored",
+      "patch": [
+        [
+          "        vec3 hit = exit.point + leave.xyz * uPrism.x",
+          "        vec3 hit = exit.point + inside * uPrism.x"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "refraction_lookup_follows_snell",
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M2 rainbow colours reversed",
+      "patch": [
+        [
+          "vec3 weight = mix(vec3(1.0), spectrum(w), colourSplit);",
+          "vec3 weight = mix(vec3(1.0), spectrum(1.0 - w), colourSplit);"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M12 slice IOR reversed",
+      "patch": [
+        [
+          "        float ior = sliceIor(w);",
+          "        float ior = sliceIor(1.0 - w);"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M3 bend direction inverted",
+      "patch": [
+        [
+          "vec2 unfolded = uv + projectOffset(hit, vWorldPos, cam);",
+          "vec2 unfolded = uv - projectOffset(hit, vWorldPos, cam);"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "refraction_lookup_follows_snell",
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M15 Scene depth times 0",
+      "patch": [
+        [
+          "        vec3 hit = exit.point + leave.xyz * uPrism.x",
+          "        vec3 hit = exit.point + leave.xyz * (0.0 * uPrism.x)"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "refraction_lookup_follows_snell",
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M17 exit point = entry point",
+      "patch": [
+        [
+          "        vec3 hit = exit.point + leave.xyz",
+          "        vec3 hit = vWorldPos + leave.xyz"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "refraction_lookup_follows_snell",
+        "rainbow_in_the_image_follows_snell"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M7 TIR ignored in the image",
+      "patch": [
+        [
+          "        sumBehind += (1.0 - leave.w) * weight",
+          "        sumBehind += weight"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "rainbow_in_the_image_follows_snell",
+        "trapped_light_is_not_transmitted",
+        "bends_follow_screen_orientation"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M6 bounce = 0",
+      "patch": [
+        [
+          "    bounce = uPrism.z * sumBounce / weightSum;",
+          "    bounce = vec3(0.0);"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "trapped_light_returns_as_bounce"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M8 caustic on the light-facing side",
+      "patch": [
+        [
+          "dot(exitNormal, -lightDir)",
+          "dot(exitNormal, lightDir)"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "caustic_glow_faces_away_from_light"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M4 TIR guard removed",
+      "patch": [
+        [
+          "    if (sin2T > 1.0) return vec4(inside, 1.0);       // trapped: total internal reflection\n",
+          ""
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "tir_beyond_critical_angle_only",
+        "tir_area_below_and_beyond",
+        "fallback_without_backpass_stays_finite",
+        "backpass_stays_finite",
+        "rainbow_in_the_image_follows_snell",
+        "trapped_light_returns_as_bounce",
+        "geometry_without_normals"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M5 exit march removed",
+      "patch": [
+        [
+          "    for (int i = 0; i < 4; i++) {\n        vec3 q = p + ray * t;",
+          "    for (int i = 0; i < 0; i++) {\n        vec3 q = p + ray * t;"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "flat_guess_matches_measured_slab",
+        "ball_never_traps_any_wavelength"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "M16 rp = rs",
+      "patch": [
+        [
+          "    float rp = (cosI - ior * cosT) / max(cosI + ior * cosT, 1e-6);",
+          "    float rp = rs;"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "tir_beyond_critical_angle_only",
+        "rainbow_in_the_image_follows_snell",
+        "trapped_light_is_not_transmitted"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "N1 shared exit normal (M2 fix undone)",
+      "patch": [
+        [
+          "    if (uOptics.z <= 0.0) return exit.normal;\n    if (exit.measured < 0.5)",
+          "    return exit.normal;\n    if (exit.measured < 0.5)"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "ball_never_traps_any_wavelength"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "N2 screen sign fixed at +1 (T7 fix undone)",
+      "patch": [
+        [
+          "    cam.screenSign = vec2(dFdx(ndc.x) < 0.0 ? -1.0 : 1.0, dFdy(ndc.y) < 0.0 ? -1.0 : 1.0);",
+          "    cam.screenSign = vec2(1.0);"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "bends_follow_screen_orientation"
+      ],
+      "killed_by_unit_tests": [
+        "test_derivatives_only_in_uniform_control_flow"
+      ]
+    },
+    {
+      "mutant": "N4 footprint mip level removed (T1 fix undone)",
+      "patch": [
+        [
+          "    return max(base, 0.5 * log2(max(max(dot(dx, dx), dot(dy, dy)), 1.0)));",
+          "    return base;"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "large_scene_depth_stays_smooth"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "N5 positive distance encoding (T5 fix undone)",
+      "patch": [
+        [
+          "-surfaceDistance));",
+          "surfaceDistance));"
+        ],
+        [
+          "        if (b.a < 0.0) {\n            sum += vec4(b.xyz, -b.a) * (g.x * g.y);",
+          "        if (b.a > 0.0) {\n            sum += b * (g.x * g.y);"
+        ]
+      ],
+      "killed_by_preview_tests": [],
+      "killed_by_unit_tests": [
+        "test_backface_pass_is_a_float_data_target"
+      ],
+      "killed_by_preview_tests_after_update": [
+        "backface_background_reads_as_empty"
+      ],
+      "note": "In the run only a unit test caught it; backface_background_reads_as_empty then compared the whole sphere, and a rerun of the updated preview suite on this copy fails that test (33 of 34 pass)."
+    },
+    {
+      "mutant": "N6 two-step march from view thickness (M3 fix undone)",
+      "patch": [
+        [
+          "    float t = min(max(viewThickness, fallback.path), limit);\n    for (int i = 0; i < 4; i++) {",
+          "    float t = viewThickness;\n    for (int i = 0; i < 2; i++) {"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "ball_never_traps_any_wavelength"
+      ],
+      "killed_by_unit_tests": []
+    },
+    {
+      "mutant": "N9 sheet path = ball path (M9 fix undone)",
+      "patch": [
+        [
+          "    e.path = uOptics.y * mix(cosA, 1.0 / max(cosA, 0.2), max(-tilt, 0.0));",
+          "    e.path = uOptics.y * cosA;"
+        ]
+      ],
+      "killed_by_preview_tests": [
+        "flat_guess_matches_measured_slab"
+      ],
+      "killed_by_unit_tests": []
+    }
+  ]
+}

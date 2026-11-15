@@ -1,0 +1,431 @@
+{
+ "what": "The family-sync tests run against the 6a58487 blobs code (shaders, recipe, presets.py, native.py, builder.py, preset_exec.py from git show 6a58487), to show which fail before the sync.",
+ "how": "Scratch copy of the study at 6a58487 with the new checks/ copied in. The preview harness needed a small adapter there (it evaluates the old expression forms 'parent().par.X.menuIndex' and the folded absTime, and stands in a one-entry Demobackdrop list); nothing else in the harness or the tests changed. Run on 2026-11-02 in Chromium SwiftShader; not TouchDesigner.",
+ "unit_tests": {
+  "total": 57,
+  "ok": 21,
+  "failed_or_error": [
+   "BuilderInputs.test_demo_inputs_are_constant_paths_with_reset_to_default",
+   "BuilderInputs.test_unresolved_or_missing_demo_input_warns_under_inputs",
+   "BuilderInputs.test_warning_categories",
+   "NativeApply.test_each_experiment_alone_gives_defaults_preset_and_overrides",
+   "NativeApply.test_order_does_not_matter",
+   "NativeApply.test_reset_controls_are_the_documented_ones",
+   "NativeDiagnostics.test_fit_object_size_reads_the_world_transform",
+   "NativeDiagnostics.test_inspect_reports_scripts_blocking_errors_and_every_render",
+   "PresetCallback.test_fit_pulse_runs_the_fit",
+   "PresetModule.test_decode_colours",
+   "PresetModule.test_demo_spin_is_integrated",
+   "PresetModule.test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump",
+   "PresetModule.test_drift_stays_smooth_through_morph_and_speed_changes_after_an_hour",
+   "PresetModule.test_menu_follows_the_evaluated_value",
+   "PresetModule.test_object_size_one_is_exactly_u_and_other_sizes_scale",
+   "PresetModule.test_paused_phase_is_rate_times_fixed_time",
+   "PresetModule.test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero",
+   "PresetModule.test_phase_periods_are_where_the_shader_repeats",
+   "Recipe.test_colour_mode_and_energy_toggle",
+   "Recipe.test_demo_backdrop_menu",
+   "Recipe.test_every_preset_value_reaches_the_shader_morphed",
+   "Recipe.test_every_render_top_has_dither_off",
+   "Recipe.test_experiments_use_real_presets_and_have_previews",
+   "Recipe.test_info_dats_on_render_tops",
+   "Recipe.test_menu_uniforms_follow_the_evaluated_menu",
+   "Recipe.test_no_expression_reads_absolute_time",
+   "Recipe.test_object_size_is_a_setup_control_feeding_scene_unit_uniforms",
+   "Recipe.test_samplers_set_filter_and_extend_modes",
+   "ShaderSource.test_atan_only_through_azimuth",
+   "ShaderSource.test_colours_go_through_param_colour",
+   "ShaderSource.test_extra_colour_buffers_are_zeroed_with_constant_indices",
+   "ShaderSource.test_frost_uses_the_r2_disc_and_flat_blur_widens_with_warp",
+   "ShaderSource.test_hit_normal_faces_the_camera_without_a_flip",
+   "ShaderSource.test_output_is_capped_and_goes_through_one_place",
+   "ShaderSource.test_screen_sign_is_measured_before_any_branch",
+   "ShaderSource.test_smoothstep_edges_increase_in_every_shader"
+  ],
+  "note": "Recipe.test_experiments_use_real_presets_and_have_previews fails in the scratch copy only because captures/ was not copied; it passes on 6a58487 itself."
+ },
+ "compile": "checks/compile_glsl.py passes on 6a58487 too: a single fragColor compiles with TD_NUM_COLOR_BUFFERS defined, it just leaves buffers 1..N unwritten. ShaderSource.test_extra_colour_buffers_are_zeroed_with_constant_indices is the red test for that.",
+ "preview_tests": {
+  "passed": 25,
+  "total": 37,
+  "failed": {
+   "morph_frame_is_smooth_after_an_hour": {
+    "t3": {
+     "max": 251,
+     "p99": 59
+    },
+    "t3600": {
+     "max": 251,
+     "p99": 232
+    }
+   },
+   "speed_change_is_smooth_after_an_hour": {
+    "steady": {
+     "max": 247,
+     "p99": 7
+    },
+    "nudged": {
+     "max": 252,
+     "p99": 235
+    }
+   },
+   "rim_chords_stay_physical": {
+    "ior_1.55": {
+     "hits": 43020,
+     "grazingChord": 0.9169,
+     "shortestChord": 0.003,
+     "pixelsBelow80pc": 144
+    },
+    "ior_1.2": {
+     "hits": 43020,
+     "grazingChord": 0.6633,
+     "shortestChord": 0.003,
+     "pixelsBelow80pc": 144
+    }
+   },
+   "frost_does_not_shift_the_view": [
+    {
+     "samples": 12,
+     "pixels": 14400,
+     "meanShiftPixels": 10.419
+    },
+    {
+     "samples": 24,
+     "pixels": 14400,
+     "meanShiftPixels": 12.303
+    }
+   ],
+   "frost_converges_with_samples": {
+    "pixelsThatDiffer": 85244,
+    "mean": 5.6,
+    "p99": 18,
+    "max": 38
+   },
+   "dispersion_converges_with_samples": {
+    "prism_clear": {
+     "samples_12": {
+      "rainbowPixels": 45680,
+      "meanError": 13.88,
+      "over32": 5751
+     },
+     "samples_24": {
+      "rainbowPixels": 45680,
+      "meanError": 3.16,
+      "over32": 58
+     }
+    },
+    "type_lens": {
+     "samples_12": {
+      "rainbowPixels": 52085,
+      "meanError": 11.35,
+      "over32": 5422
+     },
+     "samples_24": {
+      "rainbowPixels": 52085,
+      "meanError": 2.93,
+      "over32": 131
+     }
+    }
+   },
+   "srgb_colour_mode_decodes_colours": {
+    "srgbVersusLinearTyped": {
+     "max": 125,
+     "pixelsOver2": 58420
+    },
+    "srgbVersusAsTyped": {
+     "max": 0,
+     "pixelsOver2": 0
+    }
+   },
+   "energy_conserving_mirror_is_pure_reflection": {
+    "pixels": 65832,
+    "conservingVersusReflection": 292.46,
+    "withoutConservingVersusReflection": 292.5
+   },
+   "colour_is_capped_for_half_float": {
+    "largestColour": 2999145,
+    "largestAlpha": 1
+   },
+   "bends_follow_screen_orientation": {
+    "lens": {
+     "pixels": 43156,
+     "bentMoreThan5px": 43133,
+     "flippedRasterWorstPx": 531.168,
+     "upsideDownInputWithFlipVWorstPx": 531.166
+    },
+    "defaultImageFlippedRaster": {
+     "max": 254,
+     "pixelsOver8": 54312
+    }
+   },
+   "flip_v_corrects_upside_down_inputs": {
+    "pixels": 43156,
+    "bentMoreThan5px": 43133,
+    "flippedRasterWorstPx": 531.168,
+    "upsideDownInputWithFlipVWorstPx": 531.166
+   },
+   "object_size_carries_presets": {
+    "sapphire_drops_size3": {
+     "max": 249,
+     "pixelsOver2": 54378
+    },
+    "sapphire_drops_size1": {
+     "max": 249,
+     "pixelsOver2": 54378
+    },
+    "frosted_milk_size3": {
+     "max": 185,
+     "pixelsOver2": 86121
+    },
+    "frosted_milk_size1": {
+     "max": 185,
+     "pixelsOver2": 86121
+    }
+   }
+  },
+  "passed_new_tests": [
+   "drift_wraps_without_a_jump"
+  ],
+  "note": "drift_wraps_without_a_jump passes on 6a58487 because that code has no drift phase to wrap (it ignores the test's fixed phases); it guards the new mechanism. Mutant: the current shader without the 1/128 rounding (loopRate returns its input) changes 68,352 pixels of the normal stage across the layout wrap, so the test fails on it."
+ },
+ "mutants_current_code": {
+  "no_loopRate_rounding": {
+   "layout": {
+    "normalStage": {
+     "max": 251,
+     "pixelsOver2": 68352
+    }
+   }
+  },
+  "no_box_cut_in_blobField (independent review M1), adapted blobs_cut_by_the_box_have_no_holes": [
+   {
+    "label": "radius 0.9 stretch 0.8",
+    "hits": 64108,
+    "missesInsideRuns": 88093
+   },
+   {
+    "label": "slider maxima",
+    "hits": 60655,
+    "missesInsideRuns": 30225
+   }
+  ]
+ },
+ "c3_fan_level_measurement": {
+  "ref64_no_fan_level:refraction-prism_clear": {
+   "rainbow_pixels": 45509,
+   "off": {
+    "mean": 8.34,
+    "over32": 1412
+   },
+   "k0.125": {
+    "mean": 7.95,
+    "over32": 1232
+   },
+   "k0.25": {
+    "mean": 7.3,
+    "over32": 1344
+   },
+   "k0.35": {
+    "mean": 7.21,
+    "over32": 1644
+   },
+   "k0.5": {
+    "mean": 8.0,
+    "over32": 2380
+   },
+   "on": {
+    "mean": 16.64,
+    "over32": 6973
+   }
+  },
+  "ref64_no_fan_level:refraction-type_lens": {
+   "rainbow_pixels": 52078,
+   "off": {
+    "mean": 7.09,
+    "over32": 1626
+   },
+   "k0.125": {
+    "mean": 6.65,
+    "over32": 1230
+   },
+   "k0.25": {
+    "mean": 6.36,
+    "over32": 1355
+   },
+   "k0.35": {
+    "mean": 6.62,
+    "over32": 1763
+   },
+   "k0.5": {
+    "mean": 7.85,
+    "over32": 3101
+   },
+   "on": {
+    "mean": 14.36,
+    "over32": 7365
+   }
+  },
+  "ref64_no_fan_level:final-prism_clear": {
+   "rainbow_pixels": 41036,
+   "off": {
+    "mean": 7.23,
+    "over32": 1059
+   },
+   "k0.125": {
+    "mean": 6.88,
+    "over32": 939
+   },
+   "k0.25": {
+    "mean": 6.33,
+    "over32": 993
+   },
+   "k0.35": {
+    "mean": 6.2,
+    "over32": 1180
+   },
+   "k0.5": {
+    "mean": 6.82,
+    "over32": 1673
+   },
+   "on": {
+    "mean": 14.02,
+    "over32": 5067
+   }
+  },
+  "ref64_no_fan_level:final-type_lens": {
+   "rainbow_pixels": 43290,
+   "off": {
+    "mean": 6.44,
+    "over32": 1213
+   },
+   "k0.125": {
+    "mean": 6.05,
+    "over32": 904
+   },
+   "k0.25": {
+    "mean": 5.8,
+    "over32": 1012
+   },
+   "k0.35": {
+    "mean": 6.04,
+    "over32": 1343
+   },
+   "k0.5": {
+    "mean": 7.25,
+    "over32": 2423
+   },
+   "on": {
+    "mean": 13.37,
+    "over32": 5983
+   }
+  },
+  "ref64_full_gap:refraction-prism_clear": {
+   "rainbow_pixels": 45591,
+   "off": {
+    "mean": 8.63,
+    "over32": 1629
+   },
+   "k0.125": {
+    "mean": 7.97,
+    "over32": 1224
+   },
+   "k0.25": {
+    "mean": 6.75,
+    "over32": 917
+   },
+   "k0.35": {
+    "mean": 6.44,
+    "over32": 1019
+   },
+   "k0.5": {
+    "mean": 7.12,
+    "over32": 1716
+   },
+   "on": {
+    "mean": 15.87,
+    "over32": 6676
+   }
+  },
+  "ref64_full_gap:refraction-type_lens": {
+   "rainbow_pixels": 52177,
+   "off": {
+    "mean": 7.56,
+    "over32": 1935
+   },
+   "k0.125": {
+    "mean": 6.59,
+    "over32": 1107
+   },
+   "k0.25": {
+    "mean": 5.51,
+    "over32": 637
+   },
+   "k0.35": {
+    "mean": 5.57,
+    "over32": 704
+   },
+   "k0.5": {
+    "mean": 6.81,
+    "over32": 2095
+   },
+   "on": {
+    "mean": 13.5,
+    "over32": 6826
+   }
+  },
+  "ref64_full_gap:final-prism_clear": {
+   "rainbow_pixels": 41142,
+   "off": {
+    "mean": 7.48,
+    "over32": 1176
+   },
+   "k0.125": {
+    "mean": 6.91,
+    "over32": 922
+   },
+   "k0.25": {
+    "mean": 5.88,
+    "over32": 735
+   },
+   "k0.35": {
+    "mean": 5.61,
+    "over32": 771
+   },
+   "k0.5": {
+    "mean": 6.16,
+    "over32": 1222
+   },
+   "on": {
+    "mean": 13.48,
+    "over32": 4834
+   }
+  },
+  "ref64_full_gap:final-type_lens": {
+   "rainbow_pixels": 43384,
+   "off": {
+    "mean": 6.88,
+    "over32": 1452
+   },
+   "k0.125": {
+    "mean": 5.97,
+    "over32": 827
+   },
+   "k0.25": {
+    "mean": 5.01,
+    "over32": 485
+   },
+   "k0.35": {
+    "mean": 5.09,
+    "over32": 534
+   },
+   "k0.5": {
+    "mean": 6.3,
+    "over32": 1652
+   },
+   "on": {
+    "mean": 12.62,
+    "over32": 5559
+   }
+  }
+ }
+}

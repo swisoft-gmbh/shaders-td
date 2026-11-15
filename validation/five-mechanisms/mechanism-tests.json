@@ -1,0 +1,290 @@
+{
+  "orbital-relic": {
+    "checks": [
+      {
+        "name": "SDF sphere silhouette agrees with analytic ray intersection",
+        "passed": true,
+        "iou": 0.9962269523741725,
+        "threshold": 0.995
+      },
+      {
+        "name": "SDF normals agree with analytic sphere interior",
+        "passed": true,
+        "mean_dot": 0.9999993676743124
+      },
+      {
+        "name": "A limited step budget does not invent hits",
+        "passed": true,
+        "low_hits": 42294,
+        "high_hits": 48562
+      },
+      {
+        "name": "Smooth union changes the actual shape/shading",
+        "passed": true,
+        "mean_absolute_difference": 0.005074542015790939
+      },
+      {
+        "name": "Fixed time changes rigid scene rotation",
+        "passed": true,
+        "mean_absolute_difference": 0.021296601742506027
+      },
+      {
+        "name": "Wide render preserves a round sphere silhouette",
+        "passed": true,
+        "pixel_aspect": 1.0,
+        "output": [
+          640,
+          320
+        ]
+      },
+      {
+        "name": "Final native diagnostics have no reported errors",
+        "passed": true,
+        "errors": ""
+      }
+    ],
+    "passed": true,
+    "native": {
+      "time_unix": 1792514448.91556,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_mechanisms/orbital_relic",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Blend": 0.23,
+        "Turn": 0.4,
+        "Budget": 128.0,
+        "Single": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_surface": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "cook_wall_observations_ms": [
+      0.11962500138906762
+    ],
+    "timing_scope": "Wall time forcing this branch, excludes readback. Not isolated GPU execution or steady-state FPS."
+  },
+  "lantern-fog": {
+    "checks": [
+      {
+        "name": "Homogeneous slab matches Beer-Lambert at three step counts",
+        "passed": true,
+        "expected": 0.09071795328941247,
+        "observed": [
+          0.09071788191795349,
+          0.09071766585111618,
+          0.09071722626686096
+        ],
+        "max_error": 7.270225515082496e-07
+      },
+      {
+        "name": "Zero extinction transmits all background light",
+        "passed": true,
+        "max_error": 0.0
+      },
+      {
+        "name": "View integration converges toward the 128-step reference",
+        "passed": true,
+        "error32": 2.0800183847313747e-05,
+        "error64": 1.1046677172998898e-05
+      },
+      {
+        "name": "Light-path attenuation changes scattering",
+        "passed": true,
+        "mean_absolute_difference": 0.007172323297709227
+      },
+      {
+        "name": "Increasing extinction never raises transmission",
+        "passed": true,
+        "mean_low": 0.966657817363739,
+        "mean_high": 0.8940098881721497
+      },
+      {
+        "name": "Final native diagnostics have no reported errors",
+        "passed": true,
+        "errors": ""
+      }
+    ],
+    "passed": true,
+    "native": {
+      "time_unix": 1792514448.981638,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_mechanisms/lantern_fog",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Extinction": 2.2,
+        "Steps": 64.0,
+        "Light": 1.0,
+        "Slab": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_volume": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "cook_wall_observations_ms": [
+      0.08391599840251729,
+      0.14716699661221355,
+      0.1065420001395978,
+      0.10070900316350162,
+      0.12962500477442518,
+      0.149583000165876
+    ],
+    "timing_scope": "Wall time forcing this branch, excludes readback. Not isolated GPU execution or steady-state FPS."
+  },
+  "pigment-census": {
+    "checks": [
+      {
+        "name": "Constant RGB survives a maximum-radius filter",
+        "passed": true,
+        "max_error": 4.982948303422496e-07
+      },
+      {
+        "name": "Zero-radius filtering is identity",
+        "passed": true,
+        "max_error": 0.0
+      },
+      {
+        "name": "Variance selection preserves an edge better than box blur",
+        "passed": true,
+        "kuwahara_mae": 0.0,
+        "box_mae": 0.003995067905634642
+      },
+      {
+        "name": "Filtering reduces grain in a controlled sky region",
+        "passed": true,
+        "noisy_mae": 0.04351397231221199,
+        "filtered_mae": 0.008377952501177788
+      },
+      {
+        "name": "Final native diagnostics have no reported errors",
+        "passed": true,
+        "errors": ""
+      }
+    ],
+    "passed": true,
+    "native": {
+      "time_unix": 1792514449.080083,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_mechanisms/pigment_census",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Radius": 5.0,
+        "Grain": 0.18,
+        "Input": "painting",
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_filter": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_source": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "cook_wall_observations_ms": [
+      52.59220799780451,
+      0.1204169966513291
+    ],
+    "timing_scope": "Wall time forcing this branch, excludes readback. Not isolated GPU execution or steady-state FPS."
+  },
+  "resonant-foil": {
+    "checks": [
+      {
+        "name": "Vertex displacement changes coverage",
+        "passed": true,
+        "alpha_mae": 0.029967308044433594
+      },
+      {
+        "name": "Corrected normals change lighting without changing geometry",
+        "passed": true,
+        "rgb_mae": 0.01505278330296278
+      },
+      {
+        "name": "Normal correction reduces to identity at zero displacement",
+        "passed": true,
+        "max_error": 0.0
+      },
+      {
+        "name": "Jacobian normal matches independent finite-difference tangents under scale",
+        "passed": true,
+        "min_dot": 0.9999999999999998,
+        "scope": "CPU equation check; native shader control/render checks are separate"
+      },
+      {
+        "name": "Native world normal view responds to object rotation/scale",
+        "passed": true,
+        "mean_absolute_difference": 0.11363019794225693
+      },
+      {
+        "name": "Final native diagnostics have no reported errors",
+        "passed": true,
+        "errors": ""
+      }
+    ],
+    "passed": true,
+    "native": {
+      "time_unix": 1792514621.089395,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_mechanisms/resonant_foil",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Amplitude": 0.18,
+        "Frequency": 7.0,
+        "Correct": true,
+        "Turn": 25.0,
+        "Stretch": 1.0,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "cook_wall_observations_ms": [
+      227.01212499669055
+    ],
+    "timing_scope": "Wall time forcing this branch, excludes readback. Not isolated GPU execution or steady-state FPS."
+  }
+}

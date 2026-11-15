@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquid Glass Lit Preview</title>
+<style>
+  :root { color-scheme: dark; --bg: #101114; --fg: #e8e8ea; --muted: #9a9ca3; --line: #2a2c31; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 16px; }
+  canvas { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  form { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; align-items: center; }
+  label { color: var(--muted); }
+  select, input { margin-left: 6px; }
+  p { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <canvas id="view" width="960" height="540"></canvas>
+  <form id="controls">
+    <label>Preset <select name="preset"></select></label>
+    <label>Stage <select name="stage"></select></label>
+    <label>Object <select name="mesh"><option>torus</option><option>knot</option><option>blob</option></select></label>
+    <label>Demo lights <select name="lights"><option value="both">key + rim</option><option value="key">key</option><option value="rim">rim</option><option value="none">none (built-in)</option></select></label>
+    <label>Environment Light <input type="checkbox" name="env" checked></label>
+    <label>Animate <input type="checkbox" name="animate" checked></label>
+  </form>
+  <p>WebGL2 preview of the delivered GLSL with stand-ins for TouchDesigner built-ins, including stand-in light functions. A look-development aid, not a TouchDesigner render.</p>
+</main>
+<script src="preview.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  // ?size=480x270 renders smaller (quick checks); the tests and captures use the default 960x540.
+  if (params.has('size')) {
+    const [w, h] = params.get('size').split('x').map(Number);
+    Object.assign(document.getElementById('view'), { width: w, height: h });
+  }
+  window.previewReady = createPreview(document.getElementById('view')).then((preview) => {
+    window.preview = preview;
+    if (params.has('harness')) return preview;  // driven by the capture script
+    const form = document.getElementById('controls');
+    for (const name of preview.presets.order) form.preset.add(new Option(preview.presets.presets[name].label, name));
+    form.preset.value = preview.presets.default;
+    for (const name of preview.study.controls.find((c) => c.name === 'Stage').names) form.stage.add(new Option(name, name));
+    const start = performance.now();
+    const frame = () => {
+      const t = form.animate.checked ? (performance.now() - start) / 1000 : 2;
+      preview.draw({ preset: form.preset.value, mesh: form.mesh.value, time: t,
+        overrides: { Stage: form.stage.value, Demolights: form.lights.value, Demoenv: form.env.checked } });
+      requestAnimationFrame(frame);
+    };
+    frame();
+    return preview;
+  }).catch((e) => { document.body.insertAdjacentHTML('beforeend', '<pre>' + e.message + '</pre>'); throw e; });
+</script>
+</body>
+</html>

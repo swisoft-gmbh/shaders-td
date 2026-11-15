@@ -1,0 +1,129 @@
+[
+  {
+    "heading": "Start from still glass",
+    "question": "What does the flow material keep from Liquid Glass, and how can we be sure nothing else changed?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "rest"
+      ],
+      [
+        "liquid_flow.vert",
+        "transforms"
+      ]
+    ],
+    "experiments": [
+      "core_match"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Paint a liquid field on the surface",
+    "question": "How does one number per point become something that looks like liquid?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "field"
+      ],
+      [
+        "liquid_flow.frag",
+        "flowstage"
+      ]
+    ],
+    "experiments": [
+      "swell",
+      "ripples",
+      "waves"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Push the points: which way?",
+    "question": "Which way should a point move, and why do some meshes tear?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "direction"
+      ],
+      [
+        "liquid_flow.vert",
+        "offset"
+      ],
+      [
+        "liquid_flow.vert",
+        "move"
+      ]
+    ],
+    "experiments": [
+      "silhouette",
+      "cracks",
+      "crack_free",
+      "open_sheet"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Let gravity pull",
+    "question": "How do we make the liquid hang and drip?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "sag"
+      ]
+    ],
+    "experiments": [
+      "sag_drip"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Rebuild the normal",
+    "question": "Why does a moved surface still shade like the old one, and how do we fix it for any field?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "normals"
+      ]
+    ],
+    "experiments": [
+      "wrong_normals",
+      "corrected_normals",
+      "flow_refraction"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "How many points does liquid need?",
+    "question": "Why does the shape fall apart on a coarse mesh, and what does the motion cost?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "noise"
+      ]
+    ],
+    "experiments": [
+      "coarse_mesh"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Twelve looks that move",
+    "question": "How do the presets and the morph reach the motion?",
+    "snippets": [
+      [
+        "liquid_flow.vert",
+        "flow_uniforms"
+      ]
+    ],
+    "experiments": [
+      "morph",
+      "final"
+    ],
+    "figures": [
+      "captures/presets-sheet.png",
+      "captures/flow-strip.png"
+    ]
+  }
+]

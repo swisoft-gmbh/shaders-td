@@ -1,0 +1,1377 @@
+{
+ "scope": "Family close (after commit c94e849). WebGL2 preview of the delivered GLSL in headless Chromium (SwiftShader), 960 x 540 unless stated; c94e849 = a copy of this study at that commit, served alongside. Not TouchDesigner renders.",
+ "date": "2026-11-02",
+ "g1_fit_on_the_core_torus_scaled_3": {
+  "rule": 3.0,
+  "c94e849": 3.4383,
+  "now": 3.0,
+  "how": "native.fit_glass() on fake objects: SOP bounds 2.9 x 2.9 x 0.9 (Torus SOP 1 + 0.45), worldTransform determinant 27 (unit test test_g1_object_size_follows_the_family_rule)."
+ },
+ "g1_demo_object_size": {
+  "c94e849_default": 1,
+  "now_default": 0.872517,
+  "demo_radius": 1.2651489979526238,
+  "reference_radius": 1.45
+ },
+ "g1_preset_mapping": {
+  "f_lengths": 1.1461100647801314,
+  "w_ripples": 1.0344827586206897,
+  "rows": {
+   "spectral_prism": {
+    "before": {
+     "Thickness": 1.0,
+     "Frost": 0.0,
+     "Scenedepth": 2.2,
+     "Density": 0.0,
+     "Wobblescale": 1.5
+    },
+    "after": {
+     "Thickness": 1.146,
+     "Frost": 0.0,
+     "Scenedepth": 2.521,
+     "Density": 0.0,
+     "Wobblescale": 1.552
+    }
+   },
+   "type_lens": {
+    "before": {
+     "Thickness": 1.3,
+     "Frost": 0.0,
+     "Scenedepth": 1.3,
+     "Density": 0.0,
+     "Wobblescale": 1.5
+    },
+    "after": {
+     "Thickness": 1.49,
+     "Frost": 0.0,
+     "Scenedepth": 1.49,
+     "Density": 0.0,
+     "Wobblescale": 1.552
+    }
+   },
+   "diamond_fire": {
+    "before": {
+     "Thickness": 1.2,
+     "Frost": 0.0,
+     "Scenedepth": 1.2,
+     "Density": 0.0,
+     "Wobblescale": 1.5
+    },
+    "after": {
+     "Thickness": 1.375,
+     "Frost": 0.0,
+     "Scenedepth": 1.375,
+     "Density": 0.0,
+     "Wobblescale": 1.552
+    }
+   },
+   "trapped_light": {
+    "before": {
+     "Thickness": 1.0,
+     "Frost": 0.0,
+     "Scenedepth": 1.0,
+     "Density": 0.0,
+     "Wobblescale": 1.5
+    },
+    "after": {
+     "Thickness": 1.146,
+     "Frost": 0.0,
+     "Scenedepth": 1.146,
+     "Density": 0.0,
+     "Wobblescale": 1.552
+    }
+   },
+   "caustic_heart": {
+    "before": {
+     "Thickness": 1.1,
+     "Frost": 0.0,
+     "Scenedepth": 1.0,
+     "Density": 1.0,
+     "Wobblescale": 1.5
+    },
+    "after": {
+     "Thickness": 1.261,
+     "Frost": 0.0,
+     "Scenedepth": 1.146,
+     "Density": 0.873,
+     "Wobblescale": 1.552
+    }
+   },
+   "lavender_prism": {
+    "before": {
+     "Thickness": 0.9,
+     "Frost": 0.0,
+     "Scenedepth": 1.2,
+     "Density": 1.0,
+     "Wobblescale": 1.2
+    },
+    "after": {
+     "Thickness": 1.031,
+     "Frost": 0.0,
+     "Scenedepth": 1.375,
+     "Density": 0.873,
+     "Wobblescale": 1.241
+    }
+   }
+  }
+ },
+ "g1_comp_scale_fitted": {
+  "how": "Geometry COMP scale [k, k, 0.6k] with k = 0.1 and 10, camera at 5k (near 0.1k, far 100k), Object size = k x each tree's demo size, against the unscaled demo; max per-channel difference / pixels over 8/255 (preview test fit_size_carries_presets_over_comp_scale).",
+  "rows": {
+   "lavender_prism_normal": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 1,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 1,
+      "pixelsOver8": 0
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 21,
+      "pixelsOver8": 10326
+     },
+     "comp_scale_10": {
+      "max": 14,
+      "pixelsOver8": 5762
+     }
+    }
+   },
+   "prism_chrome_film": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 1,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 4,
+      "pixelsOver8": 0
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 255,
+      "pixelsOver8": 98410
+     },
+     "comp_scale_10": {
+      "max": 255,
+      "pixelsOver8": 99216
+     }
+    }
+   },
+   "spectral_prism_final": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 3,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 12,
+      "pixelsOver8": 3
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 252,
+      "pixelsOver8": 73815
+     },
+     "comp_scale_10": {
+      "max": 251,
+      "pixelsOver8": 72923
+     }
+    }
+   },
+   "lavender_prism_final": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 1,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 15,
+      "pixelsOver8": 6
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 246,
+      "pixelsOver8": 55606
+     },
+     "comp_scale_10": {
+      "max": 231,
+      "pixelsOver8": 52820
+     }
+    }
+   },
+   "prism_chrome_final": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 5,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 7,
+      "pixelsOver8": 0
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 252,
+      "pixelsOver8": 81507
+     },
+     "comp_scale_10": {
+      "max": 248,
+      "pixelsOver8": 85375
+     }
+    }
+   },
+   "frosted_ice_final": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 1,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 12,
+      "pixelsOver8": 2
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 1,
+      "pixelsOver8": 0
+     },
+     "comp_scale_10": {
+      "max": 3,
+      "pixelsOver8": 0
+     }
+    }
+   },
+   "spectral_prism_final_backpass": {
+    "new": {
+     "comp_scale_0_1": {
+      "max": 13,
+      "pixelsOver8": 2
+     },
+     "comp_scale_10": {
+      "max": 3,
+      "pixelsOver8": 0
+     }
+    },
+    "c94e849": {
+     "comp_scale_0_1": {
+      "max": 253,
+      "pixelsOver8": 68141
+     },
+     "comp_scale_10": {
+      "max": 251,
+      "pixelsOver8": 68406
+     }
+    }
+   }
+  }
+ },
+ "g1_wobble_test_expectation": {
+  "old_expectation_on_new_shader": {
+   "scale_0_1": {
+    "max": 50,
+    "pixelsOver8": 70554
+   },
+   "scale_10": {
+    "max": 80,
+    "pixelsOver8": 81915
+   }
+  },
+  "new_expectation": {
+   "scale_0_1": {
+    "max": 1,
+    "pixelsOver8": 0
+   },
+   "scale_10": {
+    "max": 1,
+    "pixelsOver8": 0
+   }
+  },
+  "how": "wobble_independent_of_object_scale: Lavender Prism, normal stage, Wobble 0.6, COMP scale 0.1 and 10. Old: Object size left at the demo's; new: Object size = scale x the demo's."
+ },
+ "g1_demo_before_after": {
+  "how": "Each preset on the demo torus over the checkerboard at time 2, each tree at its own defaults (c94e849: Object size 1; now: 0.872517), c94e849 against now. film_off sets Iridescence 0 on both, to isolate the length mapping.",
+  "film_off": {
+   "spectral_prism": {
+    "max": 6,
+    "pixelsOver8": 0,
+    "pixelsChanged": 17076,
+    "meanOfChanged": 1.1
+   },
+   "type_lens": {
+    "max": 1,
+    "pixelsOver8": 0,
+    "pixelsChanged": 2130,
+    "meanOfChanged": 1
+   },
+   "diamond_fire": {
+    "max": 10,
+    "pixelsOver8": 4,
+    "pixelsChanged": 6148,
+    "meanOfChanged": 1.63
+   },
+   "trapped_light": {
+    "max": 3,
+    "pixelsOver8": 0,
+    "pixelsChanged": 6002,
+    "meanOfChanged": 1.09
+   },
+   "caustic_heart": {
+    "max": 1,
+    "pixelsOver8": 0,
+    "pixelsChanged": 6310,
+    "meanOfChanged": 1
+   },
+   "lavender_prism": {
+    "max": 8,
+    "pixelsOver8": 0,
+    "pixelsChanged": 15394,
+    "meanOfChanged": 1.14
+   },
+   "clear_crystal": {
+    "max": 223,
+    "pixelsOver8": 39598,
+    "pixelsChanged": 47344,
+    "meanOfChanged": 61.97
+   },
+   "prism_chrome": {
+    "max": 248,
+    "pixelsOver8": 59892,
+    "pixelsChanged": 83459,
+    "meanOfChanged": 51.48
+   },
+   "violet_gel": {
+    "max": 190,
+    "pixelsOver8": 35263,
+    "pixelsChanged": 68355,
+    "meanOfChanged": 31.09
+   },
+   "sapphire_drop": {
+    "max": 236,
+    "pixelsOver8": 36099,
+    "pixelsChanged": 68775,
+    "meanOfChanged": 34.38
+   },
+   "chrome_type": {
+    "max": 231,
+    "pixelsOver8": 34953,
+    "pixelsChanged": 45366,
+    "meanOfChanged": 66.74
+   },
+   "frosted_ice": {
+    "max": 187,
+    "pixelsOver8": 49208,
+    "pixelsChanged": 94408,
+    "meanOfChanged": 15.71
+   }
+  },
+  "default": {
+   "spectral_prism": {
+    "max": 73,
+    "pixelsOver8": 5018,
+    "pixelsChanged": 81108,
+    "meanOfChanged": 3.37
+   },
+   "type_lens": {
+    "max": 1,
+    "pixelsOver8": 0,
+    "pixelsChanged": 2130,
+    "meanOfChanged": 1
+   },
+   "diamond_fire": {
+    "max": 10,
+    "pixelsOver8": 4,
+    "pixelsChanged": 6148,
+    "meanOfChanged": 1.63
+   },
+   "trapped_light": {
+    "max": 3,
+    "pixelsOver8": 0,
+    "pixelsChanged": 6002,
+    "meanOfChanged": 1.09
+   },
+   "caustic_heart": {
+    "max": 1,
+    "pixelsOver8": 0,
+    "pixelsChanged": 6310,
+    "meanOfChanged": 1
+   },
+   "lavender_prism": {
+    "max": 8,
+    "pixelsOver8": 0,
+    "pixelsChanged": 38650,
+    "meanOfChanged": 1.07
+   },
+   "clear_crystal": {
+    "max": 223,
+    "pixelsOver8": 39598,
+    "pixelsChanged": 47344,
+    "meanOfChanged": 61.97
+   },
+   "prism_chrome": {
+    "max": 246,
+    "pixelsOver8": 68050,
+    "pixelsChanged": 96337,
+    "meanOfChanged": 47.02
+   },
+   "violet_gel": {
+    "max": 190,
+    "pixelsOver8": 35285,
+    "pixelsChanged": 74705,
+    "meanOfChanged": 28.54
+   },
+   "sapphire_drop": {
+    "max": 235,
+    "pixelsOver8": 36502,
+    "pixelsChanged": 83208,
+    "meanOfChanged": 28.78
+   },
+   "chrome_type": {
+    "max": 230,
+    "pixelsOver8": 36632,
+    "pixelsChanged": 79970,
+    "meanOfChanged": 38.94
+   },
+   "frosted_ice": {
+    "max": 187,
+    "pixelsOver8": 49208,
+    "pixelsChanged": 94408,
+    "meanOfChanged": 15.71
+   }
+  }
+ },
+ "g2_centre_line_survey": {
+  "how": "The family's survey (Lit's and the core's screen_orientation test): twelve presets at their own poses (spin 13.7k, tilt 20 + 2.5k), torus (demo scale), knot and sphere (scale 1), normal and flipped raster, 480 x 270 and 481 x 271; single = glass alone in a float target, multisampled = the 4x antialiased canvas. 'prism' = this study's screenSign() and cam.viewSign; 'core' = the core's screenSign() pasted in literally with its own camera-space projected point and derivatives (scratch measure_g2.cjs).",
+  "rows": {
+   "prism": {
+    "torus_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 215287,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 218027,
+      "wrong_sign_pixels": 2,
+      "of_them_within_a_pixel_of_a_centre_line": 2
+     },
+     "single_wrong_at": []
+    },
+    "torus_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 215291,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 218006,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "knot_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 226117,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 229549,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "knot_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 226123,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 229533,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "sphere_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 166800,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 168716,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "sphere_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 166799,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 168726,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "torus_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 216938,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 219599,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "torus_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 216934,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 219572,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "knot_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 227797,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 231240,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "knot_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 227796,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "multisampled": {
+      "glass_pixels": 231222,
+      "wrong_sign_pixels": 2,
+      "of_them_within_a_pixel_of_a_centre_line": 2
+     },
+     "single_wrong_at": [
+      [
+       9,
+       280,
+       135
+      ]
+     ]
+    },
+    "sphere_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 168223,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 169836,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "sphere_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 168223,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 169828,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    }
+   },
+   "core": {
+    "torus_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 215287,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 218027,
+      "wrong_sign_pixels": 2,
+      "of_them_within_a_pixel_of_a_centre_line": 2
+     },
+     "single_wrong_at": []
+    },
+    "torus_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 215291,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 218006,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "knot_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 226117,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 229549,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "knot_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 226123,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 229533,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "sphere_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 166800,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 168716,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "sphere_flipped_raster_480x270": {
+     "size": [
+      480,
+      270
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 166799,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 168726,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "torus_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 216938,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 219599,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "torus_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 216934,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 219572,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "single_wrong_at": []
+    },
+    "knot_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 227797,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 231240,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "knot_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 227796,
+      "wrong_sign_pixels": 1,
+      "of_them_within_a_pixel_of_a_centre_line": 1
+     },
+     "multisampled": {
+      "glass_pixels": 231222,
+      "wrong_sign_pixels": 2,
+      "of_them_within_a_pixel_of_a_centre_line": 2
+     },
+     "single_wrong_at": [
+      [
+       9,
+       280,
+       135
+      ]
+     ]
+    },
+    "sphere_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 168223,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 169836,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    },
+    "sphere_flipped_raster_481x271": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "single_sample": {
+      "glass_pixels": 168223,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "multisampled": {
+      "glass_pixels": 169828,
+      "wrong_sign_pixels": 0,
+      "of_them_within_a_pixel_of_a_centre_line": 0
+     },
+     "single_wrong_at": []
+    }
+   }
+  }
+ },
+ "captures_c94e849_vs_now": {
+  "how": "All 52 capture jobs re-rendered (checks/capture_jobs.py) and compared with the committed c94e849 files: max per-channel difference, pixels over 8/255, pixels changed. 48 changed and were replaced with their receipts; 4 rendered bit-identical and were kept.",
+  "rows": {
+   "preset-caustic_heart-backpass": {
+    "max": 89,
+    "pixels_over_8": 62,
+    "pixels_changed": 6285,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-caustic_heart-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels_changed": 6317,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-caustic_heart": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels_changed": 6461,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-chrome_type-backpass": {
+    "max": 224,
+    "pixels_over_8": 48602,
+    "pixels_changed": 82797,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-chrome_type-type": {
+    "max": 219,
+    "pixels_over_8": 31456,
+    "pixels_changed": 83561,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-chrome_type": {
+    "max": 230,
+    "pixels_over_8": 37781,
+    "pixels_changed": 83584,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-clear_crystal-backpass": {
+    "max": 228,
+    "pixels_over_8": 30939,
+    "pixels_changed": 51534,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-clear_crystal-type": {
+    "max": 218,
+    "pixels_over_8": 42212,
+    "pixels_changed": 60329,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-clear_crystal": {
+    "max": 220,
+    "pixels_over_8": 41700,
+    "pixels_changed": 51613,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-diamond_fire-backpass": {
+    "max": 196,
+    "pixels_over_8": 510,
+    "pixels_changed": 17006,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-diamond_fire-type": {
+    "max": 9,
+    "pixels_over_8": 1,
+    "pixels_changed": 10368,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-diamond_fire": {
+    "max": 8,
+    "pixels_over_8": 0,
+    "pixels_changed": 7138,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-frosted_ice-backpass": {
+    "max": 142,
+    "pixels_over_8": 34643,
+    "pixels_changed": 88528,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-frosted_ice-type": {
+    "max": 181,
+    "pixels_over_8": 57888,
+    "pixels_changed": 97223,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-frosted_ice": {
+    "max": 185,
+    "pixels_over_8": 50306,
+    "pixels_changed": 97154,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-lavender_prism-backpass": {
+    "max": 238,
+    "pixels_over_8": 42544,
+    "pixels_changed": 88179,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-lavender_prism-type": {
+    "max": 11,
+    "pixels_over_8": 6,
+    "pixels_changed": 41804,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-lavender_prism": {
+    "max": 6,
+    "pixels_over_8": 0,
+    "pixels_changed": 39671,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-prism_chrome-backpass": {
+    "max": 241,
+    "pixels_over_8": 70704,
+    "pixels_changed": 89655,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-prism_chrome-type": {
+    "max": 248,
+    "pixels_over_8": 62330,
+    "pixels_changed": 98198,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-prism_chrome": {
+    "max": 243,
+    "pixels_over_8": 69741,
+    "pixels_changed": 99386,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-sapphire_drop-backpass": {
+    "max": 208,
+    "pixels_over_8": 44882,
+    "pixels_changed": 89756,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-sapphire_drop-type": {
+    "max": 211,
+    "pixels_over_8": 32077,
+    "pixels_changed": 83080,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-sapphire_drop": {
+    "max": 232,
+    "pixels_over_8": 37548,
+    "pixels_changed": 86381,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-spectral_prism-backpass": {
+    "max": 246,
+    "pixels_over_8": 61993,
+    "pixels_changed": 89859,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-spectral_prism-type": {
+    "max": 40,
+    "pixels_over_8": 4809,
+    "pixels_changed": 84774,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-spectral_prism": {
+    "max": 52,
+    "pixels_over_8": 4732,
+    "pixels_changed": 83840,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-trapped_light-backpass": {
+    "max": 126,
+    "pixels_over_8": 50,
+    "pixels_changed": 5657,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-trapped_light-type": {
+    "max": 5,
+    "pixels_over_8": 0,
+    "pixels_changed": 8959,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-trapped_light": {
+    "max": 2,
+    "pixels_over_8": 0,
+    "pixels_changed": 6843,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-type_lens-backpass": {
+    "max": 34,
+    "pixels_over_8": 10,
+    "pixels_changed": 2673,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-type_lens-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels_changed": 2681,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-type_lens": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels_changed": 2188,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-violet_gel-backpass": {
+    "max": 227,
+    "pixels_over_8": 39568,
+    "pixels_changed": 89486,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-violet_gel-type": {
+    "max": 208,
+    "pixels_over_8": 39667,
+    "pixels_changed": 78818,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preset-violet_gel": {
+    "max": 182,
+    "pixels_over_8": 36933,
+    "pixels_changed": 77711,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-backface": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels_changed": 309,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-backface_path": {
+    "max": 13,
+    "pixels_over_8": 84098,
+    "pixels_changed": 101291,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-bend_twice": {
+    "max": 218,
+    "pixels_over_8": 33718,
+    "pixels_changed": 50596,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-bounce": {
+    "max": 4,
+    "pixels_over_8": 0,
+    "pixels_changed": 8168,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-caustic": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-critical_high": {
+    "max": 5,
+    "pixels_over_8": 0,
+    "pixels_changed": 115,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-critical_low": {
+    "max": 2,
+    "pixels_over_8": 0,
+    "pixels_changed": 119,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-deviation": {
+    "max": 40,
+    "pixels_over_8": 3,
+    "pixels_changed": 634,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-dispersion": {
+    "max": 10,
+    "pixels_over_8": 1,
+    "pixels_changed": 24140,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-exit_ball": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-exit_flat": {
+    "max": 220,
+    "pixels_over_8": 20025,
+    "pixels_changed": 35905,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-exit_tilt": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-final": {
+    "max": 40,
+    "pixels_over_8": 4809,
+    "pixels_changed": 84774,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-morph": {
+    "max": 31,
+    "pixels_over_8": 2060,
+    "pixels_changed": 72826,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-scene_depth": {
+    "max": 231,
+    "pixels_over_8": 42383,
+    "pixels_changed": 64998,
+    "size": [
+     547,
+     970
+    ]
+   },
+   "preview-see_through": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels_changed": 0,
+    "size": [
+     547,
+     970
+    ]
+   }
+  }
+ }
+}

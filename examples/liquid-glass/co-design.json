@@ -1,0 +1,235 @@
+{
+  "purpose": "Universal liquid-glass GLSL material for any 3D object in TouchDesigner, with a companion tutorial.",
+  "choices_origin": "user answers in two question rounds; remaining details inferred and listed",
+  "requested_workflows": [
+    "research",
+    "build",
+    "explain",
+    "review"
+  ],
+  "answers": [
+    {
+      "topic": "minimum controls",
+      "origin": "user",
+      "value": "Colour and reflection, translucency, opacity, and the general glass theming; add more controls if useful."
+    },
+    {
+      "topic": "dithering",
+      "origin": "user",
+      "quote": "Dithered was actually the wrong term here. Ignore: it should not be dithered. It should, of course, be continuous but I like that you present presets. Maybe do 12 different presets with different ideas of what a liquid glass could look like: tinted, frosted, maybe different colors as well, of the glass itself",
+      "value": "No dithering; 12 presets including glass body colours."
+    },
+    {
+      "topic": "inputs",
+      "origin": "user",
+      "quote": "We have two different tops, actually: one for the reflection part and one for the refraction part.",
+      "value": "Separate Refraction TOP and Reflection TOP."
+    },
+    {
+      "topic": "extra controls",
+      "origin": "user",
+      "value": "Dispersion + iridescence, liquid wobble, frost/blur, fresnel rim + specular, and more if needed."
+    },
+    {
+      "topic": "deliverable",
+      "origin": "user",
+      "value": "GLSL MAT + builder + usage guide + full tutorial."
+    },
+    {
+      "topic": "preset behaviour",
+      "origin": "user",
+      "value": "Both: menu loads editable values, plus an A/B morph slider."
+    },
+    {
+      "topic": "reflection TOP mapping",
+      "origin": "user",
+      "quote": "Both. The best is if I can choose but usually just images, or 3D objects, or stuff like that.",
+      "value": "Switchable: 360 panorama or flat screen-mapped image (plus built-in studio)."
+    },
+    {
+      "topic": "tutorial audience",
+      "origin": "user",
+      "value": "TouchDesigner user new to GLSL."
+    },
+    {
+      "topic": "thickness",
+      "origin": "user",
+      "quote": "Choose the simple single pass plus thickness slider but add an optional backface pass as well. Really keep it optional.",
+      "value": "Single pass by default; optional back-face pass that only cooks when enabled."
+    },
+    {
+      "topic": "target build",
+      "origin": "inference",
+      "value": "TouchDesigner 2025.x, GLSL 4.60, macOS Apple Silicon (the plugin's tested host)."
+    },
+    {
+      "topic": "location",
+      "origin": "inference",
+      "value": "studies/liquid-glass/ (not examples/, which hold real native exports)."
+    },
+    {
+      "topic": "added controls",
+      "origin": "inference",
+      "value": "Mirror, reflection blur, panorama rotation, flat-image warp, edge tint, saturation, samples, film thickness/variation, light colour, faces, flip V, teaching stages. Audit round 2 added Energy conserving (off by default, so presets are unchanged), Colour parameters (Auto follows the project's colour space) and Demo render."
+    },
+    {
+      "topic": "family sync: judging priority",
+      "origin": "user",
+      "value": "Universality first (any object, scene, camera, least wiring), then the match to the four reference images (look, not shape)."
+    },
+    {
+      "topic": "family sync: what to merge",
+      "origin": "user (delegated through the workflow brief)",
+      "value": "C1 Refraction TOP alpha, C2 picking and colour buffers, C3 fan-gap dispersion only if measured better, C4 no dithering, C5 numeric and diagnostic hardening, C6 measured screen orientation, C7 fog, C8 Object size with Fit to Glass geometry, C9 comparable demo backdrops; not the negative back-face encoding, footprintLod, two-surface optics, scene lights or the flow vertex stage."
+    },
+    {
+      "topic": "family sync: C3",
+      "origin": "inference (measured)",
+      "value": "Rejected: the fan-gap mip level doubled the error against 64- and 128-sample references (decisions.json)."
+    },
+    {
+      "topic": "family sync: C6 measurement",
+      "origin": "inference",
+      "value": "The orientation is measured by comparing the pixel's projected position with its raster position, not with dFdx/dFdy as in Prism: derivatives misread a few silhouette pixels (up to 50/255 against the old image)."
+    },
+    {
+      "topic": "family sync: Flip V",
+      "origin": "inference (differs from the supplied wording)",
+      "quote": "Flip V stays as the UV-only override.",
+      "value": "Flip V flips the base UV and the measured vertical direction together. With a measured direction, a UV-only Flip V breaks both cases Flip V exists for, including the round-1 case (about 72,000 wrong pixels in the preview); flipping both gives the round-1 result exactly and also fixes upside-down inputs in a normal raster. Revisit if the user prefers the literal wording."
+    },
+    {
+      "topic": "family sync: Object size unit",
+      "origin": "inference",
+      "value": "Object size is relative to the demo torus the presets were tuned on (1 = the same size, 1.45 units in radius), so Fit on the demo gives exactly 1; Fit multiplies the SOP's half size by the Geometry COMP's world scale. One control cannot keep both the bend (scene units) and the ripples (on the SOP) right for a scaled Geometry COMP while Object size 1 changes nothing; the ripple side is documented."
+    },
+    {
+      "topic": "family sync: Backdrop and experiments",
+      "origin": "inference",
+      "value": "Backdrop is a Study control that experiments reset (their predictions describe the checkerboard); Object size is a setup control that nothing resets."
+    },
+    {
+      "topic": "family sync: transparent scenes",
+      "origin": "inference",
+      "value": "The Liquid Glass Blobs formula as is; the variant that subtracts the destination was not adopted (it assumes the Refraction TOP is exactly the image the glass is drawn over). Partly covered pixels count the scene twice (documented limit)."
+    },
+    {
+      "topic": "family sync fix V1: transparent scenes with the back-face pass",
+      "origin": "inference",
+      "value": "Supplied: the user's priority (universality first) and the verifier's preferred fix. Inferred: take the fix, not the documented limit. Where the back-face pass covers the view, the colour comes from it and the coverage from the Refraction TOP's alpha at the same spot, so a transparent scene stays transparent with the pass on, and opaque scenes render exactly as before. Not adopted: storing coverage in the back-face pass (its alpha holds the distance; another channel or a sign encoding would need a native check)."
+    },
+    {
+      "topic": "family sync fix V2: Dither note in hand wiring",
+      "origin": "inference",
+      "value": "The Dither note becomes hand-wiring step 6, naming every Render TOP that draws the glass (the back-face pass included, as the builder does), so the uniform table stays whole."
+    },
+    {
+      "topic": "family sync fix V3: dispersion claim",
+      "origin": "inference",
+      "value": "README and tutorial give both measured bounds of dispersion_converges_with_samples: under 1/255 on average at the presets' own Thickness, under 2/255 at Thickness 2.5."
+    },
+    {
+      "topic": "family sync gap round: audit-round guard tests in the core",
+      "origin": "inference",
+      "value": "Supplied: the verifier's issue and fix (port Flow's test_r3_*, test_r5_* and test_r9_*) and the rule never to weaken a test. Inferred: port them fitted to the core and tightened where the core allows (symbolic smoothstep forms, band() softness, every menu uniform, every warning category, paths leaving the component, inspect() run on a fake component); prove each guard with a single-fix mutation; change no shader, recipe or capture."
+    },
+    {
+      "topic": "family names (verifier gap)",
+      "origin": "supplied + inference (delegated)",
+      "value": "Supplied: the verifier's issue and its two fixes (align labels where possible, or list the mapping once in the family overview); the docs rule 'one name per thing'; universality first (scripts that work on any member). Inferred: do both; take the name most members already used (Fitglass) and the label head four of five already used ('Fit to Glass geometry'); put the one mapping in the core README, which every member links to; keep Blobs' Demobackdrop name rather than rename a preset key; make Blobs' menu a look control because its experiments' captures use the Checker."
+    },
+    {
+      "topic": "family close G1: Object size",
+      "origin": "supplied + inference",
+      "value": "Supplied: the family rule (Liquid Glass Lit decisions.json, family_rule), its two-line shader change, the port of fit_size_carries_presets_over_comp_scale and the docstring fix; universality first. Inferred: keep the uniforms, Fit and presets as they are; change the wobble test's expectation (Object size set to the COMP scale, as Lit did) and record before/after numbers; drop the Transform SOP workaround from the docs."
+    },
+    {
+      "topic": "family close G2: centre-line tie-break",
+      "origin": "supplied + inference (measured)",
+      "value": "Supplied: port Lit's tie-break and test after comparing it with Prism's V2 form; keep the measurably better one. Measured: identical on every row on this study, so neither is better; inferred: take Lit's, which keeps the projection's sign inside screenSign() as the core did. This supersedes the 'family sync: C6 measurement' answer above only on the centre lines: elsewhere the comparison still uses the pixel's own values."
+    },
+    {
+      "topic": "family close G3 and G5: records",
+      "origin": "supplied",
+      "value": "Prism's wording for uFilm.w = 0; the quarter gap added to C3 with Flow's, Prism's and Lit's measurements. Inferred: measure the quarter gap on this study too, and port Flow's film-swirl preview test as evidence for the corrected wording."
+    },
+    {
+      "topic": "family close G4: occlusion test",
+      "origin": "supplied + inference",
+      "value": "Supplied: port Flow's or Prism's occluder test with its Over TOP control. Inferred: Prism's ball and placement (its camera is also at z 5)."
+    },
+    {
+      "topic": "family close G6: picking form",
+      "origin": "supplied + inference",
+      "value": "Supplied: the documented '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif'; keep compile variants and negative tests; fix the header comment. Inferred: place the point before the branch (Blobs, Prism, Derivative's exported shader) and move the four outputs into passToPixelStage(), so the tutorial's two vertex excerpts stay whole instead of splitting an #ifndef across sections."
+    },
+    {
+      "topic": "family close verifier V1: direction of the G1 look change",
+      "origin": "supplied + inference",
+      "value": "Supplied: the critic's wording (k times as many ripples and film bands at Object size 1: finer when scaled up, coarser when scaled down) for README, decisions.json G1 and review.md, and dropping the Transform SOP clause from the merge risk. Inferred: the merge risk also names objects already Fit to a COMP scale, which move to the preset's look (c94e849 gave them 1/k as many; measured: COMP 10, Object size 10, ripples 4.87 vs 22.4 per 1000 pixels); add a preview test that pins the direction, since the wording had no test. Lit's V1 entry needs the same correction; it is outside this study's folder and is routed, not edited."
+    },
+    {
+      "topic": "family close verifier V2: Flow's red suite",
+      "origin": "supplied + inference",
+      "value": "Supplied: name Flow's failing test_core_reference_is_the_current_core in review.md (Not done here, Risk of merging today) and validation.json family_close; merge with Flow's refresh or in the same round. Inferred: do not refresh Flow in this fix. A scratch refresh (both shaders copied, the core's pixel-stage diff applied to liquid_flow.frag) turned four Flow unit tests and Flow's wobble_independent_of_object_scale red, because Flow's Object size is in SOP units; that is Flow's own units decision (its G1 share), not a records fix. Flow's folder is left unchanged, and the records say what its refresh involves."
+    },
+    {
+      "topic": "family close verifier V3 to V5: records",
+      "origin": "supplied + inference",
+      "value": "Supplied: the critic's wording for the Object size bullet (this study and Lit follow the family rule; Prism, Flow and Blobs do not yet), the picking header ('the point is still placed, and of the branch only the #else block runs') with test_g6's pinned phrase, 'the same values in a different order' in G6, and like-for-like C3 numbers. Inferred: also correct the same picking wording in the README notes, the #else comment, the tutorial sentence and the native check; measure this study with Blobs' metric instead of only citing the B7 numbers (0.62 to 0.68/255 against Blobs' 6.44 to 8.63)."
+    },
+    {
+      "topic": "family close second verifier pass (CORE-V1): what to change",
+      "origin": "supplied (workflow task: the family critic's CORE-V1)",
+      "value": "Flow row: 'Flow centre, Flow size and Object size' and 'next to the three values it sets'. Object size bullet: Prism and Flow follow the rule since their family closes; Flow keeps a separate Flow size, in SOP units, for its motion. Leave Blobs to its own close. Consider comparing the What Fit sets column with each member's Fitglass label in a test."
+    },
+    {
+      "topic": "family close second verifier pass: Blobs in the bullet",
+      "origin": "inferred (delegated; do not ask questions)",
+      "value": "A neutral pointer to Blobs' README (it draws raymarched blobs inside a proxy box and keeps its own record), not 'does not yet' (its close aligned its Fit number) and not 'follows' (its ripple stays in box units). The bullet keeps 'not yet one meaning in all five'."
+    },
+    {
+      "topic": "family close second verifier pass: how the bullet is tested",
+      "origin": "inferred",
+      "value": "Measure instead of pinning a sentence: run each mesh member's own Fit on the demo torus at COMP scales 0.1, 3 and 10 and read its pixel shader's two pattern lookups; the bullet must name exactly the members that pass."
+    },
+    {
+      "topic": "family close critic fixes: labels (PV4) and the family note (PV3)",
+      "origin": "supplied: the findings and their suggested fixes (a family critic, relayed by the workflow); inferred: the exact wording and that the core changes too",
+      "value": "Thickness reads 'Thickness (x Object size)' and Object size 'Object size (world radius / 1.45; the demo torus fits to 1)', the wording Flow and Blobs already used, so the core matches its members ('ideally family-wide' in the finding). PV3 needed no change: the second verifier pass had already fixed the bullet."
+    },
+    {
+      "topic": "family critic: one Object size per component",
+      "origin": "inferred (family critic round, 2026-11-02; no question asked)",
+      "value": "Keep the family rule and document the three setups it does not follow (several sizes, a scale that changes after Fit, per-instance scale) with workarounds. The critic's rule change is recorded in decisions.json and left to the user, because the brief puts universality first but the change redefines Object size for the whole family."
+    },
+    {
+      "topic": "family critic: native runs",
+      "origin": "supplied (brief: TouchDesigner 2025.x, GLSL 4.60, macOS on Apple Silicon) and inferred (the record's fields)",
+      "value": "validation.json family_close.native_run targets TouchDesigner 2025.x on macOS, Apple Silicon, and waits for a run that records the build, the OS, the GPU and the Info DAT text."
+    },
+    {
+      "topic": "the tutorial's pointer to main() (family critic, same defect as Lit's LIT-CV1)",
+      "origin": "supplied (family critic: name the heading 'Use it in your own scene', then render and check) + inferred (this round, 2026-11-02; no question asked)",
+      "value": "Supplied: the main() pointer names 'Use it in your own scene'. Inferred: quote the heading, as Lit's and Prism's tutorials do; also name the two other pointers that could read as Credits (the back-face pass, the plain bend); keep 'the next section' and 'a later section', which are right, and check all of them in a unit test against the section order."
+    },
+    {
+      "topic": "family critic: the COMP-scale test's threshold",
+      "origin": "supplied (family critic: add a clause of max at most 2/255 for the core, Flow and Lit; Prism and Blobs keep theirs) + inferred (this round, 2026-11-02; no question asked)",
+      "value": "Supplied: x.max <= 2 in fit_size_carries_presets_over_comp_scale; Prism (15/255) and Blobs (66/255, 15 pixels over 2/255) unchanged. Inferred: keep the shared clause of at most 50 pixels over 8/255, so the test reads the same in every member; reproduce the gap with a worldScale() exponent of 0.3333 on a scratch copy; pin the condition with a unit test that also compares the core, Flow and Lit."
+    },
+    {
+      "topic": "family critic: the antialiased centre-line residual",
+      "origin": "supplied (family critic: keep it a family open question until a native check shows whether the residual is visible; if it is, try a centroid-qualified vertex output for the projected position in one member first) + inferred (this round, 2026-11-02; no question asked)",
+      "value": "Supplied: the open question, the native check, the centroid output tried in one member first and only if the residual is visible. Inferred: Liquid Glass Lit is that member (it measured form (e)); the question has the same words in all four members; the native check compares the delivered material with a copy whose orientation is set to the right value (Composite TOP Difference, Analyze TOP Maximum in RGB, then a look at 100% zoom); the preview measures the residual's size in the final image (checks/results/centre-line-residual.json); the preview test's bound tightens from 20 to 10 wrong multisampled pixels per row, so the question's range stays guarded; no shader changes."
+    }
+  ],
+  "shader_acceptance": "pending",
+  "article_acceptance": "pending",
+  "user_feedback": [],
+  "added_controls_family_sync": "Inputs > Object size and Fit to Glass geometry; Study > Backdrop. Glass geometry now also feeds Fit.",
+  "open_questions": [
+    "Family critic: should Object size switch to SOP units, with the shader following the Geometry COMP's scale and each instance's scale by itself (decisions.json, Family critic: one Object size per component, option (b))? It would make animated and per-instance scale work without Fit, but changes what a typed Object size means on a scaled COMP, in every member.",
+    "Family open question (centre-line residual): with antialiasing, a few silhouette pixels near the render's centre row or column still take the wrong screen orientation, so they bend the wrong way. In the WebGL preview each member's survey finds up to 8 of them per row of twelve renders; in the final image they change at most 7 pixels per row, by up to 43/255 in an emulated flipped raster and up to 38/255 in TouchDesigner's usual one. Are they visible in TouchDesigner? The native check centre_line_residual (validation.json, family_close.native_run) answers it. If they are, try a centroid-qualified vertex output for the projected position in Liquid Glass Lit first (form (e) of Lit's survey), then bring it to the core and the other members. Until then no member changes its shader for it."
+  ]
+}

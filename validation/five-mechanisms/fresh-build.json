@@ -1,0 +1,166 @@
+{
+  "orbital-relic": {
+    "component": "/project1/mh_five_release_source/orbital_relic",
+    "passed": true,
+    "diagnostics": {
+      "time_unix": 1792515023.368196,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_source/orbital_relic",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Blend": 0.23,
+        "Turn": 0.4,
+        "Budget": 128.0,
+        "Single": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_surface": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "pixel_std": 0.11077528446912766
+  },
+  "lantern-fog": {
+    "component": "/project1/mh_five_release_source/lantern_fog",
+    "passed": true,
+    "diagnostics": {
+      "time_unix": 1792515023.498507,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_source/lantern_fog",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Extinction": 2.2,
+        "Steps": 64.0,
+        "Light": 1.0,
+        "Slab": false,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_volume": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "pixel_std": 0.09306879341602325
+  },
+  "pigment-census": {
+    "component": "/project1/mh_five_release_source/pigment_census",
+    "passed": true,
+    "diagnostics": {
+      "time_unix": 1792515023.646986,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_source/pigment_census",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Radius": 5.0,
+        "Grain": 0.18,
+        "Input": "painting",
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_filter": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_source": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "pixel_std": 0.24166475236415863
+  },
+  "resonant-foil": {
+    "component": "/project1/mh_five_release_source/resonant_foil",
+    "passed": true,
+    "diagnostics": {
+      "time_unix": 1792515023.8445382,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_source/resonant_foil",
+      "resolution": [
+        512,
+        512
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Amplitude": 0.18,
+        "Frequency": 7.0,
+        "Correct": true,
+        "Turn": 25.0,
+        "Stretch": 1.0,
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "pixel_std": 0.14934512972831726
+  },
+  "tidal-ink": {
+    "component": "/project1/mh_five_release_source/tidal_ink",
+    "passed": true,
+    "diagnostics": {
+      "time_unix": 1792515024.0629408,
+      "build": "2025.33230",
+      "version": "099",
+      "platform": "macOS-15.8.1-arm64-arm-64bit",
+      "component": "/project1/mh_five_release_source/tidal_ink",
+      "resolution": [
+        384,
+        384
+      ],
+      "parameters": {
+        "Pause": true,
+        "Time": 2.0,
+        "Step": 0.016666666666666666,
+        "Reset": true,
+        "Speed": 0.12,
+        "Decay": 0.15,
+        "Inject": 0.5,
+        "Seed": "pattern",
+        "Stage": "final"
+      },
+      "errors": "",
+      "warnings": "",
+      "compile_reports": {
+        "info_seed": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_state": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+        "info_display": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+      },
+      "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+    },
+    "pixel_std": 0.2593110501766205
+  }
+}

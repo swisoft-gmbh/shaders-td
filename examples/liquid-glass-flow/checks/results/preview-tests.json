@@ -1,0 +1,1671 @@
+{
+  "ok": true,
+  "errors": [],
+  "results": [
+    {
+      "name": "amplitude0_matches_core",
+      "ok": true,
+      "claim": "With Amplitude 0, every one of the 12 presets renders bit-identically to the current core Liquid Glass shaders (checks/core_reference: the core working tree after the family close) at the same settings on the core demo torus; three of them also on a sphere; two also with Object size 1.45 in both. Family close: three on the torus scaled 3 by its Geometry COMP, each at the Object size its own Fit sets there (3 in both: one meaning), and three at the odd size 481 x 271 in a flipped raster, where the centre row is decided by the core's centre-line tie-break.",
+      "evidence": {
+        "renders": 23,
+        "worst_max_difference": 0,
+        "rows": [
+          {
+            "preset": "clear_crystal",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "prism_chrome",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "prism_chrome",
+            "mesh": "sphere",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "violet_gel",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "violet_gel",
+            "mesh": "sphere",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "sapphire_drop",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "chrome_type",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "frosted_ice",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "amber_honey",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "emerald_bottle",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "rose_quartz",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "liquid_mercury",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "liquid_mercury",
+            "mesh": "sphere",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "oil_slick",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "aqua_jelly",
+            "mesh": "torus",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "prism_chrome",
+            "mesh": "torus",
+            "object_size": 1.45,
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "amber_honey",
+            "mesh": "torus",
+            "object_size": 1.45,
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "aqua_jelly",
+            "mesh": "torus",
+            "comp_scale": 3,
+            "object_size": 3,
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "oil_slick",
+            "mesh": "torus",
+            "comp_scale": 3,
+            "object_size": 3,
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "prism_chrome",
+            "mesh": "torus",
+            "comp_scale": 3,
+            "object_size": 3,
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "prism_chrome",
+            "mesh": "torus",
+            "odd_size_flipped_raster": "481x271",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "chrome_type",
+            "mesh": "torus",
+            "odd_size_flipped_raster": "481x271",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "sapphire_drop",
+            "mesh": "torus",
+            "odd_size_flipped_raster": "481x271",
+            "max": 0,
+            "pixelsOver2": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "amplitude0_vertex_identity",
+      "ok": true,
+      "claim": "With Amplitude 0, each vertex lands exactly at its transformed rest position, with the inverse-transpose normal (non-uniform scale 1.5, 0.8, 1.2).",
+      "evidence": {
+        "vertices": 4753,
+        "max_position_error": 1.7792374462644034e-7,
+        "max_normal_error": 9.387034283214746e-8
+      }
+    },
+    {
+      "name": "normals_match_finite_differences",
+      "ok": true,
+      "claim": "In crack-free mode, the shader normal of every vertex of the displaced sphere is within 0.5 degrees of the float64 finite-difference normal of the moved surface: busy field, rotation with non-uniform scale, the finest control scales, an instance with variation, a 10x model away from the origin, and after 24 hours and a week of flow. At the Amplitude maximum (Chrome Type motion at 0.5, flow time 2), where the field squeezes some vertices to under a quarter of their rest area without folding the surface, every normal is within 1 degree: squeezed points keep their rebuilt normal.",
+      "evidence": {
+        "tolerance_deg": {
+          "every_case": 0.5,
+          "squeezed_chrome_type_amplitude_0_5": 1
+        },
+        "displace_along": "centre",
+        "reference": "float64 central differences of the moved surface (checks/flow_reference.cjs)",
+        "cases": {
+          "busy": {
+            "flow_time": 0.9,
+            "mean": 0.00784,
+            "p99": 0.0503,
+            "max": 0.0738,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.677,
+              "under_a_quarter": 0
+            }
+          },
+          "busy_rotated_nonuniform_scale": {
+            "flow_time": 0.9,
+            "mean": 0.00563,
+            "p99": 0.035,
+            "max": 0.0623,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.677,
+              "under_a_quarter": 0
+            }
+          },
+          "finest_scales": {
+            "flow_time": 0.9,
+            "mean": 0.0152,
+            "p99": 0.0607,
+            "max": 0.0839,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.9,
+              "under_a_quarter": 0
+            }
+          },
+          "waves_own_direction": {
+            "flow_time": 1.35,
+            "mean": 0.012,
+            "p99": 0.106,
+            "max": 0.165,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.774,
+              "under_a_quarter": 0
+            }
+          },
+          "sag_and_drip": {
+            "flow_time": 2.25,
+            "mean": 0.000638,
+            "p99": 0.00331,
+            "max": 0.00953,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.854,
+              "under_a_quarter": 0
+            }
+          },
+          "instance_7_variation_1": {
+            "flow_time": 0.9,
+            "mean": 0.00677,
+            "p99": 0.0497,
+            "max": 0.0676,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.677,
+              "under_a_quarter": 0
+            }
+          },
+          "model_x10_off_origin": {
+            "flow_time": 0.9,
+            "mean": 0.00785,
+            "p99": 0.0503,
+            "max": 0.0739,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.677,
+              "under_a_quarter": 0
+            }
+          },
+          "after_24_hours": {
+            "flow_time": 38880,
+            "mean": 0.0169,
+            "p99": 0.0562,
+            "max": 0.0958,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.645,
+              "under_a_quarter": 0
+            }
+          },
+          "after_1_week_speed_0_9": {
+            "flow_time": 544320,
+            "mean": 0.0114,
+            "p99": 0.052,
+            "max": 0.082,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.745,
+              "under_a_quarter": 0
+            }
+          },
+          "squeezed_chrome_type_amplitude_0_5": {
+            "flow_time": 2,
+            "mean": 0.0399,
+            "p99": 0.455,
+            "max": 0.819,
+            "normals_over_5_deg": 0,
+            "area_ratio": {
+              "min": 0.16,
+              "under_a_quarter": 196
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "motion_matches_float64_reference",
+      "ok": true,
+      "claim": "Every vertex moves where the float64 field puts it, and the Displacement stage value (vFlow) matches, for each ingredient, the wave direction, drip, instance seed, Object size and Flow centre, a transformed object, and long run times (the wrapped flow time and folded noise drift give the same surface as the unwrapped field).",
+      "evidence": {
+        "tolerance": {
+          "position_object_sizes": 0.001,
+          "vflow": 0.01
+        },
+        "cases": {
+          "busy": {
+            "vertices": 8385,
+            "flow_time": 0.9,
+            "position_error_object_sizes": {
+              "mean": 0.00000416,
+              "p99": 0.0000143,
+              "max": 0.0000148
+            },
+            "vflow_error": {
+              "mean": 0.0000277,
+              "p99": 0.0000953,
+              "max": 0.0000987
+            }
+          },
+          "busy_rotated_nonuniform_scale": {
+            "vertices": 8385,
+            "flow_time": 0.9,
+            "position_error_object_sizes": {
+              "mean": 0.0000043,
+              "p99": 0.0000195,
+              "max": 0.0000221
+            },
+            "vflow_error": {
+              "mean": 0.0000277,
+              "p99": 0.0000954,
+              "max": 0.0000986
+            }
+          },
+          "finest_scales": {
+            "vertices": 8385,
+            "flow_time": 0.9,
+            "position_error_object_sizes": {
+              "mean": 0.00000135,
+              "p99": 0.00000477,
+              "max": 0.00000494
+            },
+            "vflow_error": {
+              "mean": 0.000027,
+              "p99": 0.0000954,
+              "max": 0.000099
+            }
+          },
+          "waves_own_direction": {
+            "vertices": 8385,
+            "flow_time": 1.35,
+            "position_error_object_sizes": {
+              "mean": 0.00000572,
+              "p99": 0.0000227,
+              "max": 0.0000228
+            },
+            "vflow_error": {
+              "mean": 0.0000476,
+              "p99": 0.000189,
+              "max": 0.000189
+            }
+          },
+          "sag_and_drip": {
+            "vertices": 8385,
+            "flow_time": 2.25,
+            "position_error_object_sizes": {
+              "mean": 5.87e-8,
+              "p99": 1.74e-7,
+              "max": 2.63e-7
+            },
+            "vflow_error": {
+              "mean": 2.6e-7,
+              "p99": 8.22e-7,
+              "max": 0.00000123
+            }
+          },
+          "instance_7_variation_1": {
+            "vertices": 8385,
+            "flow_time": 0.9,
+            "position_error_object_sizes": {
+              "mean": 0.00000391,
+              "p99": 0.0000149,
+              "max": 0.0000168
+            },
+            "vflow_error": {
+              "mean": 0.000026,
+              "p99": 0.0000994,
+              "max": 0.000112
+            }
+          },
+          "model_x10_off_origin": {
+            "vertices": 8385,
+            "flow_time": 0.9,
+            "position_error_object_sizes": {
+              "mean": 0.00000416,
+              "p99": 0.0000143,
+              "max": 0.0000148
+            },
+            "vflow_error": {
+              "mean": 0.0000277,
+              "p99": 0.0000954,
+              "max": 0.0000987
+            }
+          },
+          "after_24_hours": {
+            "vertices": 8385,
+            "flow_time": 38880,
+            "position_error_object_sizes": {
+              "mean": 0.0000138,
+              "p99": 0.0000419,
+              "max": 0.0000625
+            },
+            "vflow_error": {
+              "mean": 0.0000918,
+              "p99": 0.000279,
+              "max": 0.000416
+            }
+          },
+          "after_1_week_speed_0_9": {
+            "vertices": 8385,
+            "flow_time": 544320,
+            "position_error_object_sizes": {
+              "mean": 0.00000855,
+              "p99": 0.0000256,
+              "max": 0.0000386
+            },
+            "vflow_error": {
+              "mean": 0.000057,
+              "p99": 0.000171,
+              "max": 0.000257
+            }
+          },
+          "squeezed_chrome_type_amplitude_0_5": {
+            "vertices": 8385,
+            "flow_time": 2,
+            "position_error_object_sizes": {
+              "mean": 0.0000306,
+              "p99": 0.0000945,
+              "max": 0.0000947
+            },
+            "vflow_error": {
+              "mean": 0.0000611,
+              "p99": 0.000189,
+              "max": 0.000189
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "normal_mode_error_is_bounded",
+      "ok": true,
+      "claim": "Displace along Normal moves points exactly as defined, but rebuilds normals as if the surface were locally flat, so they are approximate: at preset amplitudes on the demo sphere and torus, 99% of vertices are within 10 degrees and all within 15 of the true normal of the moved surface; the error grows with Amplitude and curvature (recorded at 0.5, the control maximum). Crack-free mode on the same torus stays within 0.5 degrees.",
+      "evidence": {
+        "bound_at_preset_amplitudes": {
+          "p99_deg": 10,
+          "max_deg": 15
+        },
+        "cases": {
+          "sphere_busy": {
+            "normal_error_deg": {
+              "mean": 0.931,
+              "p99": 3.05,
+              "max": 4.52
+            },
+            "position_error_object_sizes_max": 0.0000149
+          },
+          "torus_busy": {
+            "normal_error_deg": {
+              "mean": 1.57,
+              "p99": 7.25,
+              "max": 10.2
+            },
+            "position_error_object_sizes_max": 0.0000148
+          },
+          "torus_aqua_jelly": {
+            "normal_error_deg": {
+              "mean": 1.37,
+              "p99": 6.84,
+              "max": 9.29
+            },
+            "position_error_object_sizes_max": 0.0000011
+          },
+          "torus_liquid_mercury": {
+            "normal_error_deg": {
+              "mean": 0.887,
+              "p99": 4.31,
+              "max": 6.67
+            },
+            "position_error_object_sizes_max": 8.85e-7
+          },
+          "torus_aqua_jelly_amplitude_0_5": {
+            "normal_error_deg": {
+              "mean": 6.82,
+              "p99": 42.3,
+              "max": 63.9
+            },
+            "position_error_object_sizes_max": 0.00000255
+          },
+          "torus_aqua_jelly_crack_free": {
+            "normal_error_deg": {
+              "mean": 0.0012,
+              "p99": 0.00739,
+              "max": 0.0134
+            },
+            "position_error_object_sizes_max": 0.00000109
+          }
+        }
+      }
+    },
+    {
+      "name": "silhouette_coverage_changes",
+      "ok": true,
+      "claim": "The rendered alpha coverage (the silhouette) changes when Amplitude rises from 0, and changes more at a larger amplitude.",
+      "evidence": {
+        "covered_px": {
+          "a0": 22435,
+          "a006": 21869,
+          "a018": 21036
+        },
+        "changed_px_vs_a0": {
+          "a006": 944,
+          "a018": 2613
+        }
+      }
+    },
+    {
+      "name": "crack_free_keeps_coincident_vertices_together",
+      "ok": true,
+      "claim": "On a box whose edges and corners repeat each position with different normals, crack-free mode moves all copies of a position identically (gap under 1e-5) and the render has no holes; along-the-normal mode separates them and holes appear.",
+      "evidence": {
+        "box_divisions": 16,
+        "crack_free": {
+          "shared_positions": 188,
+          "max_gap": 0,
+          "holes_px": 0
+        },
+        "along_normal": {
+          "shared_positions": 188,
+          "max_gap": 0.2404300695716963,
+          "holes_px": 702
+        }
+      }
+    },
+    {
+      "name": "centre_point_stays_on_sheet",
+      "ok": true,
+      "claim": "On the demo grid through Flow centre, crack-free mode only slides points within the sheet: no vertex leaves the plane, including the one exactly at the centre (its direction fades to zero there).",
+      "evidence": {
+        "vertices": 24897,
+        "vertex_at_centre": 12448,
+        "max_out_of_plane": 0
+      }
+    },
+    {
+      "name": "moving_glass_at_ior1_is_invisible",
+      "ok": true,
+      "claim": "Even while the surface moves (busy field), glass with IOR 1 and no tint, dispersion or light terms shows exactly the refraction TOP.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "pixel_stage_matches_core_while_moving",
+      "ok": true,
+      "claim": "With the surface moving, the flow pixel shader renders the final image bit-identically to the current core pixel shader (checks/core_reference) fed by the same flow vertex shader, with the back-face pass off and on: the additions change nothing outside the Displacement stage.",
+      "evidence": {
+        "worst_max_difference": 0,
+        "rows": [
+          {
+            "preset": "prism_chrome",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "sapphire_drop",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "oil_slick",
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          {
+            "preset": "violet_gel",
+            "max": 0,
+            "pixelsOver2": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "correct_normals_changes_shading_not_silhouette",
+      "ok": true,
+      "claim": "Turning Correct normals off keeps the same moved outline (identical coverage) but changes the normals, so shading differs.",
+      "evidence": {
+        "coverage_changed_px": 0,
+        "shading": {
+          "max": 93,
+          "pixelsOver2": 22330
+        }
+      }
+    },
+    {
+      "name": "no_normals_falls_back",
+      "ok": true,
+      "claim": "A sphere with zero normals still moves, exactly like one with normals in crack-free mode, hands a zero normal to the pixel stage (which builds faceted normals), keeps the same outline and renders a lit, non-black object.",
+      "evidence": {
+        "max_vertex_motion": 0.22251816788460732,
+        "max_world_normal_length": 0,
+        "max_position_difference_vs_with_normals": 0,
+        "coverage_changed_px": 0,
+        "mean_rgb_sum_inside": 453.6
+      }
+    },
+    {
+      "name": "instance_variation",
+      "ok": true,
+      "claim": "With Instance variation 0, instance 7 moves exactly like instance 0; with variation 1 it moves differently.",
+      "evidence": {
+        "variation0_max_difference": 0,
+        "variation1_max_difference": 0.2554725408554077
+      }
+    },
+    {
+      "name": "gravity_stays_world_down",
+      "ok": true,
+      "claim": "With Sag only, on a spinning, tilted, unevenly scaled object drawn as a rotated and scaled instance, every vertex sinks straight down in world space (within 0.5 degrees).",
+      "evidence": {
+        "sagging_vertices": 2191,
+        "max_sag": 0.13158819088441226,
+        "angle_to_world_down_deg": {
+          "mean": 0.000281,
+          "p99": 0.0032,
+          "max": 0.00807
+        }
+      }
+    },
+    {
+      "name": "flow_time_follows_speed",
+      "ok": true,
+      "claim": "Flow time is Flow speed added up frame by frame: with Flow speed 0 the surface stands still, and during an animated Morph between presets with different speeds the surface moves about as fast after an hour or a day of uptime as after 2 seconds (per-frame travel within 2x of it, and under 10x a frame of the half-way look held still).",
+      "evidence": {
+        "flow_speed_0_max_motion_over_100_s": 0,
+        "flow_speed_default_max_motion_over_1_s": 0.047,
+        "morph_after_2_s": {
+          "morphing_frame_mean_travel": 0.000575,
+          "still_frame_mean_travel": 0.000134,
+          "ratio": 4.29
+        },
+        "morph_after_1_hour": {
+          "morphing_frame_mean_travel": 0.00056,
+          "still_frame_mean_travel": 0.00016,
+          "ratio": 3.5
+        },
+        "morph_after_24_hours": {
+          "morphing_frame_mean_travel": 0.000664,
+          "still_frame_mean_travel": 0.000146,
+          "ratio": 4.54
+        }
+      }
+    },
+    {
+      "name": "morph1_equals_target",
+      "ok": true,
+      "claim": "Morph 1 toward a preset renders that preset, motion included.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph0_is_neutral",
+      "ok": true,
+      "claim": "Morph 0 leaves the current look and motion unchanged.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph_frame_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "Family sync R1. One frame of a 100-frame A/B morph (Morph 0.50 to 0.51 in 1/60 s, Prism Chrome to Violet Gel: Flow speed and Wobble speed both change) changes the image no more after an hour than after 2 s: flow time and the ripple and film drift are integrated, so changing a speed never throws the pattern.",
+      "evidence": {
+        "final_t2": {
+          "max": 116,
+          "pixelsOver8": 332,
+          "p99OfAllPixels": 5
+        },
+        "final_t3600": {
+          "max": 63,
+          "pixelsOver8": 418,
+          "p99OfAllPixels": 6
+        },
+        "film_t2": {
+          "max": 106,
+          "pixelsOver8": 498,
+          "p99OfAllPixels": 6
+        },
+        "film_t3600": {
+          "max": 118,
+          "pixelsOver8": 1078,
+          "p99OfAllPixels": 8
+        }
+      }
+    },
+    {
+      "name": "speed_change_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "Family sync R1. After an hour, nudging Wobble speed and Flow speed from 0.60 to 0.61 changes one frame no more than one frame of motion at a fixed speed does (Aqua Jelly, normal stage).",
+      "evidence": {
+        "steady": {
+          "max": 116,
+          "pixelsOver8": 122,
+          "p99OfAllPixels": 1
+        },
+        "nudged": {
+          "max": 116,
+          "pixelsOver8": 130,
+          "p99OfAllPixels": 2
+        }
+      }
+    },
+    {
+      "name": "ripples_and_film_exact_after_a_week",
+      "ok": true,
+      "claim": "Family sync R1. About a week into a session (a whole number of drift periods later), the ripples (Aqua Jelly, normal stage) and the oil film (Oil Slick, film stage) render exactly as at 2 s: the drift reaches the shader wrapped to 0..256, so float32 never rounds it. (Amplitude 0 isolates the pixel stage; the liquid motion has its own week-long test, normals_match_finite_differences.)",
+      "evidence": {
+        "aqua_jelly_normal": {
+          "seconds": 605868.667,
+          "max": 0,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        },
+        "oil_slick_film": {
+          "seconds": 597335.333,
+          "max": 0,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        }
+      }
+    },
+    {
+      "name": "ior1_is_invisible_with_wobble",
+      "ok": true,
+      "claim": "Family sync R5. Ripples do not undo the silhouette fix: at IOR 1 the moving, rippled glass is still invisible (normals are turned toward the camera again after the wobble).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "wobble_independent_of_object_scale",
+      "ok": true,
+      "claim": "Family sync R5. With the Geometry COMP scaled 0.1 or 10, the camera moved with it and Object size set to the scale times the default (what Fit to Glass geometry sets since the family close), the moving, rippled sphere looks the same as at scale 1 (normal stage): Wobble tilts the normals by the same amount at any object scale.",
+      "evidence": {
+        "scale01": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        },
+        "scale10": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        }
+      }
+    },
+    {
+      "name": "faceted_fallback_is_scale_free",
+      "ok": true,
+      "claim": "Family sync R5. A moving sphere without normals gets the same faceted normals at Geometry COMP scale 0.1 as at 1 (derivatives taken at the top of main(), relative degeneracy threshold).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver8": 0,
+        "p99OfAllPixels": 0
+      }
+    },
+    {
+      "name": "frost_does_not_shift_the_view",
+      "ok": true,
+      "claim": "Family sync R6. Frost 1 blurs the view through the moving sphere without moving it: over a UV-ramp scene at IOR 1, the mean sampled position stays within 1.5 pixels of the unfrosted one at 12 and 24 samples (R2 disc). The 6a58487 golden-angle disc put its samples on one spiral arm, whose average sits off centre.",
+      "evidence": [
+        {
+          "samples": 12,
+          "pixels": 10000,
+          "meanShiftPixels": 1.198
+        },
+        {
+          "samples": 24,
+          "pixels": 10000,
+          "meanShiftPixels": 0.138
+        }
+      ]
+    },
+    {
+      "name": "frost_converges_with_samples",
+      "ok": true,
+      "claim": "Family sync R6. Frost 0.6 is a continuous blur on the moving sphere: 12 and 32 samples agree within 24/255 at every pixel (99% of pixels within 12/255). Without the mipmap level as wide as the gap between samples, separate copies show (see review.md for the mutant). The core's bound of 16/255, measured on its torus, does not hold on this sphere: 19 now, 16 with the 6a58487 disc.",
+      "evidence": {
+        "max": 19,
+        "pixelsOver16": 118,
+        "p99OfAllPixels": 12
+      }
+    },
+    {
+      "name": "dispersion_converges_with_samples",
+      "ok": true,
+      "claim": "Family sync C3 (rejected). Dispersion 1 at the default 12 samples agrees with a 64-sample render on the moving sphere: no glass pixel differs by more than 32/255, and the mean difference stays within 1/255 (2.5/255 with Thickness 2.5), on Clear Crystal and Prism Chrome (refraction stage). The fan-gap mip level measured worse (checks/results/c3-fan-gap.json).",
+      "evidence": {
+        "clear_crystal_thickness_preset": {
+          "glass_pixels": 19234,
+          "mean": 0.46,
+          "max": 3,
+          "pixelsOver32": 0
+        },
+        "clear_crystal_thickness_2.5": {
+          "glass_pixels": 20503,
+          "mean": 2.02,
+          "max": 14,
+          "pixelsOver32": 0
+        },
+        "prism_chrome_thickness_preset": {
+          "glass_pixels": 19937,
+          "mean": 0.54,
+          "max": 4,
+          "pixelsOver32": 0
+        },
+        "prism_chrome_thickness_2.5": {
+          "glass_pixels": 20861,
+          "mean": 1.57,
+          "max": 10,
+          "pixelsOver32": 0
+        }
+      }
+    },
+    {
+      "name": "backface_thickness_matches_chord",
+      "ok": true,
+      "claim": "Family sync R7. With the back-face pass (Amplitude 0, unit sphere), measured thickness equals the exact chord along each pixel's ray: 4 units away within 3/255, 50 units away with a narrow lens within 2/255 (distances stored as 32-bit floats), and along the parallel rays of an orthographic camera within 3/255.",
+      "evidence": {
+        "camera_4_units": [
+          {
+            "x": 240,
+            "expected": 127.5,
+            "measured": 127,
+            "chord": 1.9999
+          },
+          {
+            "x": 260,
+            "expected": 123.4,
+            "measured": 123,
+            "chord": 1.9359
+          },
+          {
+            "x": 280,
+            "expected": 110.9,
+            "measured": 111,
+            "chord": 1.7397
+          },
+          {
+            "x": 295,
+            "expected": 94.5,
+            "measured": 94,
+            "chord": 1.482
+          },
+          {
+            "x": 304,
+            "expected": 80.3,
+            "measured": 80,
+            "chord": 1.2601
+          }
+        ],
+        "camera_50_units": [
+          {
+            "x": 240,
+            "expected": 255,
+            "measured": 255,
+            "chord": 1.9999
+          },
+          {
+            "x": 248,
+            "expected": 253.6,
+            "measured": 254,
+            "chord": 1.989
+          },
+          {
+            "x": 256,
+            "expected": 249.7,
+            "measured": 250,
+            "chord": 1.9585
+          },
+          {
+            "x": 264,
+            "expected": 243.2,
+            "measured": 243,
+            "chord": 1.9074
+          },
+          {
+            "x": 272,
+            "expected": 233.8,
+            "measured": 234,
+            "chord": 1.834
+          },
+          {
+            "x": 280,
+            "expected": 221.3,
+            "measured": 221,
+            "chord": 1.7354
+          },
+          {
+            "x": 288,
+            "expected": 204.9,
+            "measured": 205,
+            "chord": 1.6071
+          },
+          {
+            "x": 296,
+            "expected": 183.7,
+            "measured": 184,
+            "chord": 1.4411
+          },
+          {
+            "x": 304,
+            "expected": 155.8,
+            "measured": 156,
+            "chord": 1.2223
+          }
+        ],
+        "orthographic": [
+          {
+            "x": 240,
+            "expected": 255,
+            "measured": 255,
+            "chord": 1.9999
+          },
+          {
+            "x": 255,
+            "expected": 251.2,
+            "measured": 251,
+            "chord": 1.9701
+          },
+          {
+            "x": 270,
+            "expected": 239.9,
+            "measured": 240,
+            "chord": 1.8816
+          },
+          {
+            "x": 285,
+            "expected": 220,
+            "measured": 220,
+            "chord": 1.7256
+          },
+          {
+            "x": 300,
+            "expected": 188.8,
+            "measured": 189,
+            "chord": 1.4807
+          },
+          {
+            "x": 315,
+            "expected": 138.8,
+            "measured": 139,
+            "chord": 1.0885
+          },
+          {
+            "x": 322,
+            "expected": 101.9,
+            "measured": 102,
+            "chord": 0.7992
+          }
+        ]
+      }
+    },
+    {
+      "name": "backface_pass_adds_no_dark_fringe",
+      "ok": true,
+      "claim": "Family sync R7. Over a uniform grey scene, clear moving glass with the back-face pass stays exactly grey: the back-face lookup (texelFetch, bilinear over covered texels only) never blends in the empty background (knot, IOR 1.5).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "energy_conserving_mirror_is_pure_reflection",
+      "ok": true,
+      "claim": "Family sync R8. With Energy conserving on and Mirror 1, nothing shows through the moving glass: the final image equals the reflection stage.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "srgb_colour_mode_decodes_colours",
+      "ok": true,
+      "claim": "Family sync R8. Colour parameters set to sRGB render like the same colours converted to linear by hand (Violet Gel, body stage).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "transparent_scene_stays_transparent",
+      "ok": true,
+      "claim": "Family sync C1. Over a Refraction TOP with a transparent background (alpha 0), invisible moving glass (IOR 1, no tint or light terms, busy field) leaves the image exactly as the scene, colour and alpha, with the back-face pass off and on. The 6a58487 material wrote alpha 1 and turned the empty background opaque black.",
+      "evidence": {
+        "alpha_0_scene": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0
+        },
+        "alpha_0_scene_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0
+        }
+      }
+    },
+    {
+      "name": "empty_scene_matches_no_refraction_top",
+      "ok": true,
+      "claim": "Family sync C1. Where the Refraction TOP is empty (alpha 0), the moving glass blends exactly as with no Refraction TOP connected (Violet Gel, colour and alpha): one formula covers both.",
+      "evidence": {
+        "max": 0,
+        "alphaMax": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "opaque_scene_matches_pre_sync",
+      "ok": true,
+      "claim": "Family sync C1, C5, C6, C7, C8. Over the opaque demo scene, with Object size 1 and fog off, each of the twelve moving presets renders as the core's 6a58487 pixel stage does on the same moving surface (sphere; four presets also with the back-face pass): within 1/255 everywhere off the screen's two centre columns and rows, and at most 2 pixels over 1/255 on them (one Liquid Mercury silhouette pixel, 8/255, where the measured screen orientation flips the horizontal bend). The scene alpha, output cap, fog and Object size change nothing.",
+      "evidence": {
+        "clear_crystal": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "prism_chrome": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "violet_gel": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "sapphire_drop": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "chrome_type": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "frosted_ice": {
+          "max": 1,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "amber_honey": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "emerald_bottle": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "rose_quartz": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "liquid_mercury": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 1,
+          "centreLineMax": 8
+        },
+        "oil_slick": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "aqua_jelly": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "prism_chrome_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "violet_gel_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "sapphire_drop_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        },
+        "aqua_jelly_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "centreLinePixelsOver1": 0,
+          "centreLineMax": 0
+        }
+      }
+    },
+    {
+      "name": "extra_colour_buffers_get_zeros",
+      "ok": true,
+      "claim": "Family sync C2. In a render with three colour buffers (TD_NUM_COLOR_BUFFERS 3, cleared to 0.5, blending off), buffer 0 holds exactly the single-buffer glass and buffers 1 and 2 hold zeros wherever the moving glass is drawn.",
+      "evidence": {
+        "glass_pixels": 20964,
+        "buffer0_max_float_diff": 0,
+        "buffer1_pixels_not_zero": 0,
+        "buffer2_pixels_not_zero": 0
+      }
+    },
+    {
+      "name": "output_fits_half_float",
+      "ok": true,
+      "claim": "Family sync C5. A light colour of 200,000 still gives finite colour no higher than 1024 in an rgba16float render (half floats end at 65504). The cap is on colour only: the back-face pass of a sphere 1500 units away still stores distances above 1400 in alpha.",
+      "evidence": {
+        "hot_highlight": {
+          "nonFinite": 0,
+          "maxRGB": 1024,
+          "maxAlpha": 1
+        },
+        "back_pass_far_away": {
+          "nonFinite": 0,
+          "maxRGB": 1.6,
+          "maxAlpha": 1501
+        }
+      }
+    },
+    {
+      "name": "bends_follow_screen_orientation",
+      "ok": true,
+      "claim": "Family sync C6. A build whose screen y runs opposite to the projection (emulated: the rasteriser flips y, and the scene render and back-face pass come from the same build) renders the exact mirror image of the moving glass: bends, frost, the flat-image reflection and the back-face pass all follow (at most 400 pixels over 8/255 at 480 x 270, all on antialiased rims).",
+      "evidence": {
+        "prism_chrome": {
+          "flipped_raster": {
+            "max": 70,
+            "pixelsOver8": 287
+          },
+          "upside_down_inputs_flip_v": {
+            "max": 1,
+            "pixelsOver8": 0
+          },
+          "flipped_raster_upright_inputs_flip_v": {
+            "max": 70,
+            "pixelsOver8": 287
+          }
+        },
+        "chrome_type_flat_image_backface": {
+          "flipped_raster": {
+            "max": 73,
+            "pixelsOver8": 240
+          },
+          "upside_down_inputs_flip_v": {
+            "max": 1,
+            "pixelsOver8": 0
+          },
+          "flipped_raster_upright_inputs_flip_v": {
+            "max": 73,
+            "pixelsOver8": 240
+          }
+        }
+      }
+    },
+    {
+      "name": "flip_v_corrects_upside_down_inputs",
+      "ok": true,
+      "claim": "Family sync C6. If the Refraction TOP and the back-face pass arrive upside down relative to the render (normal raster, or a flipped raster with upright inputs), Flip V restores the normal image: it flips the base screen UV and every vertical offset together.",
+      "evidence": {
+        "prism_chrome": {
+          "flipped_raster": {
+            "max": 70,
+            "pixelsOver8": 287
+          },
+          "upside_down_inputs_flip_v": {
+            "max": 1,
+            "pixelsOver8": 0
+          },
+          "flipped_raster_upright_inputs_flip_v": {
+            "max": 70,
+            "pixelsOver8": 287
+          }
+        },
+        "chrome_type_flat_image_backface": {
+          "flipped_raster": {
+            "max": 73,
+            "pixelsOver8": 240
+          },
+          "upside_down_inputs_flip_v": {
+            "max": 1,
+            "pixelsOver8": 0
+          },
+          "flipped_raster_upright_inputs_flip_v": {
+            "max": 73,
+            "pixelsOver8": 240
+          }
+        }
+      }
+    },
+    {
+      "name": "fog_adds_only_the_glass_share",
+      "ok": true,
+      "claim": "Family sync C7. With full fog (preview stand-in, not TouchDesigner's fog curve) on invisible moving glass at Opacity 0.5, every glass pixel is half the scene plus half the fog colour within 2/255 (only antialiased silhouette pixels are neither), and at Opacity 0 the fogged glass leaves no trace. With fog off, TDFog changes nothing (opaque_scene_matches_pre_sync).",
+      "evidence": {
+        "opacity_half": {
+          "glass_pixels": 21457,
+          "pixels_neither_over_2": 366
+        },
+        "opacity_0": {
+          "glass_pixels": 0,
+          "pixels_neither_over_2": 0
+        }
+      }
+    },
+    {
+      "name": "object_size_carries_presets_over",
+      "ok": true,
+      "claim": "Family sync C8. A preset looks and moves the same on a sphere built with radius 0.1 or 10 (the SOP itself), with Flow size and Object size set to match (what Fit to Glass geometry measures) and the camera moved with it: motion, bend, frost, tint, ripples and film all follow (final image, at most 50 pixels over 8/255).",
+      "evidence": {
+        "prism_chrome": {
+          "size_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice": {
+          "size_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "amber_honey": {
+          "size_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "sapphire_drop": {
+          "size_0_1": {
+            "max": 4,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "backdrop_menu_switches_the_demo_scene",
+      "ok": true,
+      "claim": "Family sync C9. Study > Backdrop: Checker (the default) is the 6a58487 backdrop exactly; Type is a black page with heavy white type (most pixels dark, at least 5% white ink), the Liquid Glass Prism backdrop, so the family's contact sheets compare.",
+      "evidence": {
+        "checker_vs_6a58487": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0
+        },
+        "type": {
+          "dark_share": 0.678,
+          "white_ink_share": 0.21
+        }
+      }
+    },
+    {
+      "name": "film_swirl_frequency_0_is_one_drifting_thickness",
+      "ok": true,
+      "claim": "Verifier gap round G1. uFilm.w = 0 (film swirl frequency, set by hand) gives one film thickness over the whole object, no swirl: on a flat sheet seen at one angle the film stage is a single colour (within 2/255), where the default 2.5 swirls it. That one thickness still drifts with uPhase.w: from 2 s to 30 s every sheet pixel changes colour (Prism Chrome, Wobble speed 0.3). Wobble speed 0 stops the drift (no pixel changes). So 0 does not freeze the film; Wobble speed 0 does.",
+      "evidence": {
+        "swirl_0_at_2s": {
+          "sheet_pixels": 46816,
+          "colour_range": 0,
+          "colour": [
+            243,
+            254,
+            221
+          ]
+        },
+        "swirl_0_at_30s": {
+          "sheet_pixels": 46816,
+          "colour_range": 0,
+          "colour": [
+            189,
+            218,
+            16
+          ]
+        },
+        "swirl_2_5_at_2s": {
+          "sheet_pixels": 46816,
+          "colour_range": 255,
+          "colour": [
+            0,
+            0,
+            0
+          ]
+        },
+        "swirl_0_from_2s_to_30s": {
+          "sheet_pixels": 46816,
+          "max": 205,
+          "pixels_over_2": 46816
+        },
+        "swirl_0_wobble_speed_0_from_2s_to_30s": {
+          "sheet_pixels": 46816,
+          "max": 0,
+          "pixels_over_2": 0
+        }
+      }
+    },
+    {
+      "name": "render_pass_keeps_foreground_in_front",
+      "ok": true,
+      "claim": "Verifier gap round G2 (family sync R2). An opaque ball between the camera and the moving glass: with the README's Render Pass TOP route (the glass drawn into the scene render, whose depth is kept), the image shows the ball exactly as the scene render does wherever it covers the glass. Control: laid over the scene with an Over TOP (the fallback, and the 6a58487 route), the glass is drawn over the ball. Same emulation and thresholds as Liquid Glass Prism's test.",
+      "evidence": {
+        "occluder_pixels_over_glass": 4181,
+        "render_pass_max_diff": 1,
+        "over_top_max_diff": 246,
+        "over_top_pixels_over_8": 4041
+      }
+    },
+    {
+      "name": "fit_size_carries_presets_over_comp_scale",
+      "ok": true,
+      "claim": "Family close G1. A moving preset looks the same on the demo sphere scaled 0.1 or 10 by its Geometry COMP, with the camera moved with it and the sizes Fit to Glass geometry sets there: Object size 0.1 or 10 times its default (the family rule: world radius / 1.45) and Flow size unchanged (SOP units). The ripples (normal stage), the film bands (film stage) and the final image stay within 2/255 at every pixel (measured: 1/255), and so within 8/255 but for at most 50 pixels (the family's shared clause). Same cases and thresholds as Liquid Glass Lit and the core, with the motion on.",
+      "evidence": {
+        "aqua_jelly_normal": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "oil_slick_film": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "aqua_jelly_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "oil_slick_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "prism_chrome_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "screen_orientation_has_no_wrong_pixels",
+      "ok": true,
+      "claim": "Family close G2. The measured screen orientation is right at every glass pixel but a known few, on the centre lines too: the twelve moving presets (each at its own pose) on the sphere, the torus and the knot, in a normal and a flipped raster, at 480 x 270 and at the odd size 481 x 271. One sample per pixel (the glass alone): at most 2 wrong pixels per row of twelve renders. Four samples (the canvas, like an antialiased Render TOP): at most 10 per row (20 until the family critic's centre-line round; measured: at most 5). The few left are a centre-line pixel on a nearly edge-on surface (the tie keeps +1) and silhouette pixels where the glass covers one to three samples of four: the pixel is shaded at its centre, outside its triangle, so its point can project to the other side of a centre line (this study's C6 finding). Whether they are visible in TouchDesigner is a family open question with a pending native check (co-design.json; validation.json, centre_line_residual). Same test and thresholds as Liquid Glass Lit and the core. The c94e849 pixel stage kept +1 on ties and was wrong on the whole centre row of the odd size in a flipped raster; the 6a58487 material assumed the usual orientation and is wrong at every pixel of a flipped raster.",
+      "evidence": {
+        "sphere_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 275077,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 277372,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 275077,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 277372,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "torus_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 381744,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 385142,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 381744,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 385107,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 1
+          }
+        },
+        "knot_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 349482,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 354075,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 1
+          }
+        },
+        "knot_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 349491,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 354011,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "sphere_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 277143,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 279402,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 1
+          }
+        },
+        "sphere_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 277133,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 279443,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "torus_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 384547,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 388008,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 384547,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 387964,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 1
+          }
+        },
+        "knot_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 352064,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          },
+          "multisampled": {
+            "glass_pixels": 356570,
+            "wrong_sign_pixels": 0,
+            "of_them_within_a_pixel_of_a_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "single_sample": {
+            "glass_pixels": 352069,
+            "wrong_sign_pixels": 1,
+            "of_them_within_a_pixel_of_a_centre_line": 1
+          },
+          "multisampled": {
+            "glass_pixels": 356562,
+            "wrong_sign_pixels": 5,
+            "of_them_within_a_pixel_of_a_centre_line": 4
+          }
+        }
+      }
+    }
+  ],
+  "material": "delivered",
+  "scope": "Shader maths and study.json bindings in WebGL2 (SwiftShader). Not a TouchDesigner render."
+}

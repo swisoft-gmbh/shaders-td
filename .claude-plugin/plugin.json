@@ -1,0 +1,25 @@
+{
+  "name": "shaders-td",
+  "displayName": "Shaders for TouchDesigner",
+  "version": "1.0.0",
+  "description": "Research, build, explain and review original TouchDesigner shaders, with Maxime Heckel's published articles as the knowledge base.",
+  "author": {
+    "name": "Swisoft GmbH",
+    "email": "plugins@swisoft.ch",
+    "url": "https://marcoleder.ch/shaders-td/"
+  },
+  "homepage": "https://marcoleder.ch/shaders-td/",
+  "repository": "https://github.com/swisoft-gmbh/shaders-td",
+  "license": "CC-BY-NC-4.0 AND MIT",
+  "keywords": [
+    "TouchDesigner",
+    "GLSL",
+    "shaders",
+    "tutorials",
+    "creative coding"
+  ],
+  "icon": "./assets/icon-light.png",
+  "supportUrl": "https://marcoleder.ch/shaders-td/#support",
+  "privacyPolicyUrl": "https://marcoleder.ch/shaders-td/#privacy",
+  "termsOfServiceUrl": "https://marcoleder.ch/shaders-td/#terms"
+}

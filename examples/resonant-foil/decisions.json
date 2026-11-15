@@ -1,0 +1,15 @@
+[
+  {
+    "goal": "Deform an actual sphere mesh into moving foil folds. Keep displacement, normal correction and lighting independently inspectable, including a deliberately uncorrected comparison.",
+    "alternatives": "Changing color alone would leave the silhouette intact. A fragment normal map would add apparent detail but not move geometry. Screen derivatives give faceted geometric normals; an analytic correction provides a smooth, testable result for this specific map.",
+    "evidence": "The archived blob displaces geometry and sends a displacement varying to its fragment shader. The explicit Jacobian and corrected-normal comparison here are new engineering additions, not a claim that the archived blob taught this derivation.",
+    "choice": "Use F(x,y,z)=(x,y+g(x,z),z), transform n to (nx-gx*ny,ny,nz-gz*ny), normalize and then use TDDeformNorm. At zero amplitude keep n exactly.",
+    "consequence": "The surface and its lighting agree under object rotation and nonuniform scale. Sampling the map on a finite sphere mesh still limits detail, and this Jacobian formula only applies to this displacement map.",
+    "status": "implemented; see review and native receipts for tests"
+  },
+  {
+    "goal": "Review the actual native behavior",
+    "observation_and_change": "Native inspection found a tightly framed silhouette; the camera and shader eye position were moved together. A zero-amplitude comparison then measured a 6.6757e-6 maximum RGB difference from repeated normalization. The shader now keeps the original normal exactly at zero amplitude; the affected tests were rerun and passed.",
+    "evidence": "../../validation/five-mechanisms/mechanism-tests.json"
+  }
+]

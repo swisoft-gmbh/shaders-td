@@ -1,0 +1,47 @@
+[
+  {
+    "file": "surface.frag",
+    "region": "scene",
+    "lines": [
+      8,
+      21
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db"
+  },
+  {
+    "file": "surface.frag",
+    "region": "march",
+    "lines": [
+      24,
+      36
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db"
+  },
+  {
+    "file": "surface.frag",
+    "region": "normal",
+    "lines": [
+      39,
+      44
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db"
+  },
+  {
+    "file": "surface.frag",
+    "region": "march",
+    "lines": [
+      24,
+      36
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db"
+  },
+  {
+    "file": "surface.frag",
+    "region": "shade",
+    "lines": [
+      60,
+      65
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db"
+  }
+]

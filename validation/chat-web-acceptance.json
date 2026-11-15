@@ -1,0 +1,15 @@
+{
+  "version": "0.3.0",
+  "target": "ordinary ChatGPT Chat on the web, without Work/Codex/desktop",
+  "actual_target_host_test": "not-run",
+  "reason": "This session has no connected browser control or ordinary-Chat session creation tool.",
+  "cases": {
+    "research": "not-run",
+    "build": "not-run",
+    "explain": "not-run",
+    "review": "not-run",
+    "tool-boundary": "not-run"
+  },
+  "portable_checks": "passed; local helper/static checks only",
+  "acceptance_instructions": "chat-web-acceptance.md"
+}

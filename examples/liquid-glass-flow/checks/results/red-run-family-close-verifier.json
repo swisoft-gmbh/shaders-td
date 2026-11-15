@@ -1,0 +1,35 @@
+{
+ "scope": "Verifier fixes after the family close (FLOW-V1 to FLOW-V3, 2026-11-02). The new FamilyCloseVerifier tests run on a scratch copy of the five studies in which this round's record edits were reverted to the text the family close first delivered (review.md Open risks row and Not done paragraph; validation.json fit_native and family_close; the test_study.py docstrings; red-run-family-close.json without changed_preview_tests_on_c94e849); the new tests kept. Plain Python; nothing ran in TouchDesigner.",
+ "unit_first_delivery": {
+  "summary": [
+   "Ran 80 tests in 0.329s",
+   "FAILED (failures=3, errors=1)"
+  ],
+  "failing": {
+   "test_v2_red_run_claims_match_the_record": {
+    "class": "FamilyCloseVerifier",
+    "kind": "ERROR",
+    "message": "KeyError: 'changed_preview_tests_on_c94e849'"
+   },
+   "test_v1_fit_checklists_match_what_fit_flow_returns [review.md, Open risks]": {
+    "class": "FamilyCloseVerifier",
+    "kind": "FAIL",
+    "message": "AssertionError: Lists differ: ['liquid_glass_object_size'] != []"
+   },
+   "test_v1_fit_checklists_match_what_fit_flow_returns [validation.json fit_native]": {
+    "class": "FamilyCloseVerifier",
+    "kind": "FAIL",
+    "message": "AssertionError: 'flow_size' not found in []"
+   },
+   "test_v3_not_done_paragraph_matches_the_family_records": {
+    "class": "FamilyCloseVerifier",
+    "kind": "FAIL",
+    "message": "AssertionError: 'members_2026_11_02' not found in ['film_swirls_per_object_size', 'lengths_times_object_size', 'members_at_c94e849', 'members_family_close', 'name', 'object_size', 'pattern_lookup', 'per_length_divided_by_object_size', 'reference_object', 'reference_radius', 'world_radius', 'world_sc"
+   }
+  },
+  "note": "All three new tests are red. test_v2 errors on the first-delivered record (no changed_preview_tests_on_c94e849). Its three guards were also checked one at a time on a copy of today's tree: appending 'Every new or changed test fails on c94e849.' to family_close.scope, putting 'Each test fails on c94e849.' back into the FamilyClose docstring, or listing wobble_independent_of_object_scale (red on c94e849) as green by design each make it fail.",
+  "what": "The whole unit suite (today's checks/test_study.py) on the reverted copy: only the three new tests fail."
+ },
+ "after": "Ran 80 tests: OK (checks/results/unit-tests.txt).",
+ "changed_preview_tests": "The new run of the changed preview tests on c94e849 is in red-run-family-close.json (changed_preview_tests_on_c94e849): 4 red, 8 green (7 changed tests plus backface_pass_adds_no_dark_fringe, which shares a block)."
+}

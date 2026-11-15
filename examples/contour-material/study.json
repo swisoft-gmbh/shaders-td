@@ -1,0 +1,262 @@
+{
+  "id": "contour-material",
+  "title": "Contour Material",
+  "route": "GLSL MAT",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause / fixed time",
+      "default": true,
+      "type": "toggle",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Fixed time (seconds)",
+      "default": 2.0,
+      "type": "float",
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "default": 0.016666666666666666,
+      "type": "float",
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Bands",
+      "label": "Contour count",
+      "default": 18,
+      "type": "float",
+      "min": 1,
+      "max": 60
+    },
+    {
+      "name": "Warp",
+      "label": "Field warp",
+      "default": 0.65,
+      "type": "float",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "name": "Width",
+      "label": "Line half-width",
+      "default": 0.075,
+      "type": "float",
+      "min": 0.015,
+      "max": 0.3
+    },
+    {
+      "name": "Turn",
+      "label": "Object rotation (degrees)",
+      "default": 25,
+      "type": "float",
+      "min": -180,
+      "max": 180
+    },
+    {
+      "name": "Stretch",
+      "label": "Object X scale",
+      "default": 1,
+      "type": "float",
+      "min": 0.4,
+      "max": 2
+    },
+    {
+      "name": "Stage",
+      "label": "Teaching stage",
+      "default": "final",
+      "type": "menu",
+      "min": 0,
+      "max": 1,
+      "names": [
+        "final",
+        "field",
+        "normal",
+        "lines"
+      ],
+      "labels": [
+        "Final",
+        "Field",
+        "Normal",
+        "Lines"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "vertex",
+      "type": "textDAT",
+      "position": [
+        -250,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "vertex.vert"
+    },
+    {
+      "id": "pixel",
+      "type": "textDAT",
+      "position": [
+        0,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "pixel.frag"
+    },
+    {
+      "id": "material",
+      "type": "glslMAT",
+      "position": [
+        0,
+        0
+      ],
+      "purpose": "Object-space contour material; world-space geometric normal",
+      "parameters": {
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uControls",
+          "values": [
+            "parent().par.Bands",
+            "parent().par.Warp",
+            "parent().par.Width",
+            "parent().par.Stage.menuIndex"
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "type": "geometryCOMP",
+      "position": [
+        -250,
+        0
+      ],
+      "purpose": "Isolated study geometry",
+      "expressions": {
+        "ry": "parent().par.Turn",
+        "sx": "parent().par.Stretch"
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      }
+    },
+    {
+      "id": "geometry/sphere",
+      "type": "sphereSOP",
+      "position": [
+        0,
+        0
+      ],
+      "purpose": "Faceted geometric surface",
+      "parameters": {
+        "type": "mesh",
+        "rows": 48,
+        "cols": 96
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      }
+    },
+    {
+      "id": "camera",
+      "type": "cameraCOMP",
+      "position": [
+        -250,
+        -200
+      ],
+      "purpose": "Camera on positive Z",
+      "parameters": {
+        "tz": 4.5
+      }
+    },
+    {
+      "id": "render",
+      "type": "renderTOP",
+      "position": [
+        250,
+        0
+      ],
+      "purpose": "Scene rendering",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "antialias": "aa4"
+      }
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        500,
+        0
+      ],
+      "purpose": "Scene output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "render",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "material",
+      "parameter": "vdat",
+      "target": "vertex",
+      "previous_frame": false
+    },
+    {
+      "node": "material",
+      "parameter": "pdat",
+      "target": "pixel",
+      "previous_frame": false
+    },
+    {
+      "node": "geometry",
+      "parameter": "material",
+      "target": "material",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "camera",
+      "target": "camera",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "geometry",
+      "target": "geometry",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Object-space scalar field, world-space derivative normal and world-space directional light.",
+  "schema_version": 1,
+  "target_build": "Inspect host; initially tested on macOS 2025.33230",
+  "external_dependencies": [],
+  "native_status": "tested on macOS TouchDesigner 2025.33230; see validation.json for scope"
+}

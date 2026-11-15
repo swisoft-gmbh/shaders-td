@@ -1,0 +1,113 @@
+{
+  "tool": "Glslang Version: 11:15.1.0",
+  "ok": true,
+  "results": [
+    {
+      "shader": "liquid_flow.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_flow.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_flow.vert"
+    },
+    {
+      "shader": "liquid_flow.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": "",
+      "defines": "TD_PICKING_ACTIVE"
+    },
+    {
+      "shader": "liquid_flow.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_flow.vert",
+      "defines": "TD_PICKING_ACTIVE"
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_flow.frag"
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": "",
+      "defines": "TD_NUM_COLOR_BUFFERS 3"
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_flow.frag",
+      "defines": "TD_NUM_COLOR_BUFFERS 3"
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": "",
+      "defines": "TD_NUM_COLOR_BUFFERS 8"
+    },
+    {
+      "shader": "liquid_flow.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_flow.frag",
+      "defines": "TD_NUM_COLOR_BUFFERS 8"
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "backdrop.frag"
+    },
+    {
+      "shader": "env.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "env.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "env.frag"
+    }
+  ],
+  "negative_test": {
+    "shader": "liquid_flow.vert with 'uniform vec4 uFlow;' removed",
+    "expect": "compile fails and the log names uFlow",
+    "compiled": false,
+    "names_uFlow": true,
+    "ok": true,
+    "output": "broken_liquid_flow.vert\nERROR: 0:134: 'uFlow' : undeclared identifier \nERROR: 0:134: 'z' : vector swizzle selection out of range \nERROR: 0:134: '=' :  cannot convert from ' temp float' to ' temp bool'"
+  },
+  "negative_test_picking": {
+    "shader": "liquid_flow.vert, TD_PICKING_ACTIVE, TDWritePickingValues() stand-in removed",
+    "expect": "compile fails and the log names TDWritePickingValues",
+    "compiled": false,
+    "names_it": true,
+    "ok": true,
+    "output": "liquid_flow.vert\nERROR: 0:254: 'TDWritePickingValues' : no matching overloaded function found \nERROR: 0:254: '' : missing #endif "
+  },
+  "scope": "Valid GLSL 4.60 against documented TD stand-ins; not a TouchDesigner compile."
+}

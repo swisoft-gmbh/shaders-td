@@ -1,0 +1,3226 @@
+[
+  {
+    "slug": "vaporwave-3d-scene-with-threejs",
+    "title": "Building a Vaporwave scene with Three.js",
+    "url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+    "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "VaporwaveThreejsDisclaimer",
+        "import": "./Widgets/VaporwaveThreejs/CalloutGPUTier",
+        "source_prefix": "blog/core/components/MDX/Widgets/VaporwaveThreejs/CalloutGPUTier"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "import": "./Widgets/VaporwaveThreejs/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/VaporwaveThreejs/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script1"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script2"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script3"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script4"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script5"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script6"
+      },
+      {
+        "component": "VaporwaveThreejsSandpacks",
+        "selector_property": "script",
+        "selector": "script7"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 41
+      },
+      {
+        "heading": "Setting up the scene",
+        "start": 42,
+        "end": 285
+      },
+      {
+        "heading": "Building the terrain",
+        "start": 286,
+        "end": 289
+      },
+      {
+        "heading": "Deconstructing the original scene",
+        "start": 290,
+        "end": 308
+      },
+      {
+        "heading": "Texture",
+        "start": 309,
+        "end": 335
+      },
+      {
+        "heading": "Terrain",
+        "start": 336,
+        "end": 381
+      },
+      {
+        "heading": "Animating the scene",
+        "start": 382,
+        "end": 385
+      },
+      {
+        "heading": "Animation patterns and Frame Rate",
+        "start": 386,
+        "end": 441
+      },
+      {
+        "heading": "Making the scene endless",
+        "start": 442,
+        "end": 523
+      },
+      {
+        "heading": "Adding post-processing effects",
+        "start": 524,
+        "end": 622
+      },
+      {
+        "heading": "Let there be light!",
+        "start": 623,
+        "end": 695
+      },
+      {
+        "heading": "Conclusion",
+        "start": 696,
+        "end": 715
+      }
+    ]
+  },
+  {
+    "slug": "the-study-of-shaders-with-react-three-fiber",
+    "title": "The Study of Shaders with React Three Fiber",
+    "url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+    "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "FragmentShaderVisualizer",
+        "import": "./Widgets/ShaderReactThreeFiber/FragmentShaderVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/FragmentShaderVisualizer"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "import": "./Widgets/ShaderReactThreeFiber/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "R3FShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 70
+      },
+      {
+        "heading": "Shaders in React Three Fiber",
+        "start": 71,
+        "end": 119
+      },
+      {
+        "heading": "What is a shader?",
+        "start": 120,
+        "end": 158
+      },
+      {
+        "heading": "Vertex Shader",
+        "start": 159,
+        "end": 187
+      },
+      {
+        "heading": "Fragment Shader",
+        "start": 188,
+        "end": 213
+      },
+      {
+        "heading": "Why are shaders so hard to use?",
+        "start": 214,
+        "end": 221
+      },
+      {
+        "heading": "Dynamic Shaders with uniforms and varyings",
+        "start": 222,
+        "end": 225
+      },
+      {
+        "heading": "Uniforms",
+        "start": 226,
+        "end": 347
+      },
+      {
+        "heading": "Varyings",
+        "start": 348,
+        "end": 422
+      },
+      {
+        "heading": "Combining uniforms and varyings",
+        "start": 423,
+        "end": 432
+      },
+      {
+        "heading": "Advanced Interactive Shaders",
+        "start": 433,
+        "end": 436
+      },
+      {
+        "heading": "Let's make some noise 🤘!",
+        "start": 437,
+        "end": 470
+      },
+      {
+        "heading": "Blob",
+        "start": 471,
+        "end": 512
+      },
+      {
+        "heading": "Gradient",
+        "start": 513,
+        "end": 534
+      },
+      {
+        "heading": "Composable shader layers with Lamina",
+        "start": 535,
+        "end": 639
+      },
+      {
+        "heading": "Conclusion",
+        "start": 640,
+        "end": 646
+      }
+    ]
+  },
+  {
+    "slug": "the-magical-world-of-particles-with-react-three-fiber-and-shaders",
+    "title": "The magical world of Particles with React Three Fiber and Shaders",
+    "url": "https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/",
+    "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "AttributesVisualizer",
+        "import": "./Widgets/ParticlesReactThreeFiber/AttributesVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/AttributesVisualizer"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "import": "./Widgets/ParticlesReactThreeFiber/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "ParticlesShaderSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 74
+      },
+      {
+        "heading": "An introduction to attributes",
+        "start": 75,
+        "end": 78
+      },
+      {
+        "heading": "What are attributes?",
+        "start": 79,
+        "end": 112
+      },
+      {
+        "heading": "Playing with attributes",
+        "start": 113,
+        "end": 164
+      },
+      {
+        "heading": "Attributes with Shaders",
+        "start": 165,
+        "end": 194
+      },
+      {
+        "heading": "Particles in React Three Fiber",
+        "start": 195,
+        "end": 198
+      },
+      {
+        "heading": "Our first scene with Particles",
+        "start": 199,
+        "end": 235
+      },
+      {
+        "heading": "Using BufferGeometry and attributes to create custom geometries",
+        "start": 236,
+        "end": 333
+      },
+      {
+        "heading": "Customizing and animating Particles with Shaders",
+        "start": 334,
+        "end": 344
+      },
+      {
+        "heading": "Animating Particles with attributes",
+        "start": 345,
+        "end": 385
+      },
+      {
+        "heading": "How to animate our particles with a vertex shader",
+        "start": 386,
+        "end": 485
+      },
+      {
+        "heading": "How to change the size and appearance of our particles with shaders",
+        "start": 486,
+        "end": 563
+      },
+      {
+        "heading": "Going beyond with Frame Buffer Objects",
+        "start": 564,
+        "end": 587
+      },
+      {
+        "heading": "How does a Frame Buffer Object work with particles?",
+        "start": 588,
+        "end": 791
+      },
+      {
+        "heading": "Creating magical scenes with FBO",
+        "start": 792,
+        "end": 824
+      },
+      {
+        "heading": "Conclusion",
+        "start": 825,
+        "end": 832
+      }
+    ]
+  },
+  {
+    "slug": "refraction-dispersion-and-other-shader-light-effects",
+    "title": "Refraction, dispersion, and other shader light effects",
+    "url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "ColorChannelSummary",
+        "import": "./Widgets/RefractionDispersionReactThreeFiber/ColorChannelSummary",
+        "source_prefix": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/ColorChannelSummary"
+      },
+      {
+        "component": "RGBShiftVisualizer",
+        "import": "./Widgets/RefractionDispersionReactThreeFiber/RGBShiftVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/RGBShiftVisualizer"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "import": "./Widgets/RefractionDispersionReactThreeFiber/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "RefractionDispersionSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 85
+      },
+      {
+        "heading": "Bending light with refraction",
+        "start": 86,
+        "end": 97
+      },
+      {
+        "heading": "Transparent mesh with FBO",
+        "start": 98,
+        "end": 225
+      },
+      {
+        "heading": "Refraction",
+        "start": 226,
+        "end": 321
+      },
+      {
+        "heading": "Chromatic Dispersion",
+        "start": 322,
+        "end": 334
+      },
+      {
+        "heading": "Splitting colors with Chromatic Aberration",
+        "start": 335,
+        "end": 399
+      },
+      {
+        "heading": "Additional samples for a smoother dispersion",
+        "start": 400,
+        "end": 464
+      },
+      {
+        "heading": "Saturating and expanding our color space",
+        "start": 465,
+        "end": 468
+      },
+      {
+        "heading": "How to saturate a color in GLSL",
+        "start": 469,
+        "end": 519
+      },
+      {
+        "heading": "From RGB to rygcbv and back",
+        "start": 520,
+        "end": 560
+      },
+      {
+        "heading": "Adding volume and shininess to our dispersion",
+        "start": 561,
+        "end": 569
+      },
+      {
+        "heading": "Specular & Diffuse light",
+        "start": 570,
+        "end": 656
+      },
+      {
+        "heading": "Reflection with the Fresnel effect",
+        "start": 657,
+        "end": 695
+      },
+      {
+        "heading": "Backside rendering",
+        "start": 696,
+        "end": 774
+      },
+      {
+        "heading": "Conclusion",
+        "start": 775,
+        "end": 781
+      }
+    ]
+  },
+  {
+    "slug": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+    "title": "Beautiful and mind-bending effects with WebGL Render Targets",
+    "url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+    "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "RenderTargetsSandpack",
+        "import": "./Widgets/RenderTargetsReactThreeFiber/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "RenderTargetsSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 84
+      },
+      {
+        "heading": "Render Targets in React Three Fiber",
+        "start": 85,
+        "end": 174
+      },
+      {
+        "heading": "Offscreen scenes",
+        "start": 175,
+        "end": 178
+      },
+      {
+        "heading": "A quick introduction to createPortal",
+        "start": 179,
+        "end": 215
+      },
+      {
+        "heading": "createPortal in combination with render target",
+        "start": 216,
+        "end": 276
+      },
+      {
+        "heading": "Using shader materials",
+        "start": 277,
+        "end": 303
+      },
+      {
+        "heading": "Using Drei's RenderTexture component",
+        "start": 304,
+        "end": 328
+      },
+      {
+        "heading": "Render targets with screen coordinates",
+        "start": 329,
+        "end": 334
+      },
+      {
+        "heading": "UV coordinates VS screen coordinates.",
+        "start": 335,
+        "end": 383
+      },
+      {
+        "heading": "Swapping materials and geometries in the render loop",
+        "start": 384,
+        "end": 476
+      },
+      {
+        "heading": "A more advanced Portal scene",
+        "start": 477,
+        "end": 501
+      },
+      {
+        "heading": "An alternative to EffectComposer for post-processing effects",
+        "start": 502,
+        "end": 625
+      },
+      {
+        "heading": "Transition gracefully between scenes",
+        "start": 626,
+        "end": 681
+      },
+      {
+        "heading": "Conclusion",
+        "start": 682,
+        "end": 687
+      }
+    ]
+  },
+  {
+    "slug": "painting-with-math-a-gentle-study-of-raymarching",
+    "title": "Painting with Math: A Gentle Study of Raymarching",
+    "url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "RaymarchingSandpack",
+        "import": "./Widgets/Raymarching/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Raymarching/Sandpack"
+      },
+      {
+        "component": "RaymarchingVisualizer",
+        "import": "./Widgets/Raymarching/RaymarchingVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Raymarching/RaymarchingVisualizer"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene10"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 49
+      },
+      {
+        "heading": "Snapshots of Math: demystifying the concept of Raymarching",
+        "start": 50,
+        "end": 55
+      },
+      {
+        "heading": "Marching rays",
+        "start": 56,
+        "end": 73
+      },
+      {
+        "heading": "Defining the World with Signed Distance Fields",
+        "start": 74,
+        "end": 134
+      },
+      {
+        "heading": "Our first Raymarched scene",
+        "start": 135,
+        "end": 149
+      },
+      {
+        "heading": "The canvas",
+        "start": 150,
+        "end": 244
+      },
+      {
+        "heading": "Beaming rays",
+        "start": 245,
+        "end": 295
+      },
+      {
+        "heading": "Adding some depth with light",
+        "start": 296,
+        "end": 371
+      },
+      {
+        "heading": "SDF operations, complex scenes, and fractals",
+        "start": 372,
+        "end": 379
+      },
+      {
+        "heading": "Combining SDFs",
+        "start": 380,
+        "end": 452
+      },
+      {
+        "heading": "Moving, rotating, and scaling",
+        "start": 453,
+        "end": 555
+      },
+      {
+        "heading": "Scaling to infinity",
+        "start": 556,
+        "end": 645
+      },
+      {
+        "heading": "Building Worlds with Raymarching and noise derivatives",
+        "start": 646,
+        "end": 651
+      },
+      {
+        "heading": "Composing noise with Fractal Brownian Motion",
+        "start": 652,
+        "end": 722
+      },
+      {
+        "heading": "Noise derivatives",
+        "start": 723,
+        "end": 833
+      },
+      {
+        "heading": "Sky, fog, and Martian landscape",
+        "start": 834,
+        "end": 914
+      },
+      {
+        "heading": "Final thoughts",
+        "start": 915,
+        "end": 927
+      }
+    ]
+  },
+  {
+    "slug": "real-time-cloudscapes-with-volumetric-raymarching",
+    "title": "Real-time dreamy Cloudscapes with Volumetric Raymarching",
+    "url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+    "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "RaymarchingSandpack",
+        "import": "./Widgets/Raymarching/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Raymarching/Sandpack"
+      },
+      {
+        "component": "VolumetricRaymarchingVisualizer",
+        "import": "./Widgets/Raymarching/VolumetricRaymarchingVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Raymarching/VolumetricRaymarchingVisualizer"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene11"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene12"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene13"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene14"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene15"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene16"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene17"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene18"
+      },
+      {
+        "component": "RaymarchingSandpack",
+        "selector_property": "scene",
+        "selector": "scene19"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 49
+      },
+      {
+        "heading": "Volumetric rendering: Raymarching with a twist",
+        "start": 50,
+        "end": 58
+      },
+      {
+        "heading": "How to sample a volume",
+        "start": 59,
+        "end": 104
+      },
+      {
+        "heading": "Our first Volumetric Raymarching scene",
+        "start": 105,
+        "end": 182
+      },
+      {
+        "heading": "Drawing Fluffy Raymarched Clouds",
+        "start": 183,
+        "end": 186
+      },
+      {
+        "heading": "Noisy Volume",
+        "start": 187,
+        "end": 277
+      },
+      {
+        "heading": "Adding light",
+        "start": 278,
+        "end": 405
+      },
+      {
+        "heading": "Morphing clouds",
+        "start": 406,
+        "end": 458
+      },
+      {
+        "heading": "Performance optimization",
+        "start": 459,
+        "end": 471
+      },
+      {
+        "heading": "Blue noise dithering",
+        "start": 472,
+        "end": 563
+      },
+      {
+        "heading": "Upscaling with Bicubic filtering",
+        "start": 564,
+        "end": 607
+      },
+      {
+        "heading": "Physically accurate Clouds",
+        "start": 608,
+        "end": 621
+      },
+      {
+        "heading": "Beer's Law",
+        "start": 622,
+        "end": 695
+      },
+      {
+        "heading": "Sampling light",
+        "start": 696,
+        "end": 786
+      },
+      {
+        "heading": "Anisotropic scattering and phase function",
+        "start": 787,
+        "end": 881
+      },
+      {
+        "heading": "Conclusion",
+        "start": 882,
+        "end": 888
+      }
+    ]
+  },
+  {
+    "slug": "caustics-in-webgl",
+    "title": "Shining a light on Caustics with Shaders and React Three Fiber",
+    "url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+    "source_id": "articles/caustics-in-webgl.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "CausticsSandpack",
+        "import": "./Widgets/Caustics/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Caustics/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "CausticsSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "CausticsSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "CausticsSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "CausticsSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "CausticsSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 44
+      },
+      {
+        "heading": "Anatomy of a Caustic Effect in WebGL",
+        "start": 45,
+        "end": 81
+      },
+      {
+        "heading": "Extracting Normals",
+        "start": 82,
+        "end": 212
+      },
+      {
+        "heading": "Building our Caustics material",
+        "start": 213,
+        "end": 222
+      },
+      {
+        "heading": "Calculating caustics intensity",
+        "start": 223,
+        "end": 411
+      },
+      {
+        "heading": "Creating beautiful swirls of light",
+        "start": 412,
+        "end": 526
+      },
+      {
+        "heading": "Scaling and positioning our Caustic Plane",
+        "start": 527,
+        "end": 543
+      },
+      {
+        "heading": "Building a \"bounding cube\" for our mesh",
+        "start": 544,
+        "end": 602
+      },
+      {
+        "heading": "Projecting the vertices of the bounding cube and positioning our plane",
+        "start": 603,
+        "end": 645
+      },
+      {
+        "heading": "Fitting our caustic pattern inside the plane",
+        "start": 646,
+        "end": 699
+      },
+      {
+        "heading": "Dynamic Caustics",
+        "start": 700,
+        "end": 816
+      },
+      {
+        "heading": "Conclusion",
+        "start": 817,
+        "end": 825
+      }
+    ]
+  },
+  {
+    "slug": "moebius-style-post-processing",
+    "title": "Moebius-style post-processing and other stylized shaders",
+    "url": "https://blog.maximeheckel.com/posts/moebius-style-post-processing/",
+    "source_id": "articles/moebius-style-post-processing.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "MoebiusSandpack",
+        "import": "./Widgets/Moebius/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Moebius/Sandpack"
+      },
+      {
+        "component": "ShadingVisualizer",
+        "import": "./Widgets/Moebius/ShadingVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Moebius/ShadingVisualizer"
+      },
+      {
+        "component": "SobelVisualizer",
+        "import": "./Widgets/Moebius/SobelVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Moebius/SobelVisualizer"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      },
+      {
+        "component": "MoebiusSandpack",
+        "selector_property": "scene",
+        "selector": "scene10"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 56
+      },
+      {
+        "heading": "Setting up the stage for post-processing",
+        "start": 57,
+        "end": 218
+      },
+      {
+        "heading": "Drawing outlines with shaders for our React Three Fiber scene",
+        "start": 219,
+        "end": 229
+      },
+      {
+        "heading": "Getting the Depth Buffer of our scene",
+        "start": 230,
+        "end": 331
+      },
+      {
+        "heading": "Getting the Normal Buffer of our scene",
+        "start": 332,
+        "end": 410
+      },
+      {
+        "heading": "Edge detection with Sobel filters",
+        "start": 411,
+        "end": 581
+      },
+      {
+        "heading": "Stylized outlines, shadows, and lighting patterns",
+        "start": 582,
+        "end": 591
+      },
+      {
+        "heading": "Giving our outlines an hand-drawn look in GLSL",
+        "start": 592,
+        "end": 665
+      },
+      {
+        "heading": "Adding custom shadow patterns to our post-processing effect",
+        "start": 666,
+        "end": 734
+      },
+      {
+        "heading": "Crosshatched and raster shadow patterns",
+        "start": 735,
+        "end": 806
+      },
+      {
+        "heading": "Custom Stylized Lighting",
+        "start": 807,
+        "end": 903
+      },
+      {
+        "heading": "A Moebius-worthy WebGL scene and some final thoughts",
+        "start": 904,
+        "end": 1020
+      }
+    ]
+  },
+  {
+    "slug": "on-crafting-painterly-shaders",
+    "title": "On Crafting Painterly Shaders",
+    "url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+    "source_id": "articles/on-crafting-painterly-shaders.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "KernelVisualizer",
+        "import": "./Widgets/PainterlyShaders/KernelVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/PainterlyShaders/KernelVisualizer"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "import": "./Widgets/PainterlyShaders/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/PainterlyShaders/Sandpack"
+      },
+      {
+        "component": "KuwaharaVisualizer",
+        "import": "./Widgets/PainterlyShaders/KuwaharaVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/PainterlyShaders/KuwaharaVisualizer"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene0"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "KuwaharaSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 45
+      },
+      {
+        "heading": "Painterly post-processing with the Kuwahara filter",
+        "start": 46,
+        "end": 61
+      },
+      {
+        "heading": "Characteristics of the Kuwahara filter",
+        "start": 62,
+        "end": 111
+      },
+      {
+        "heading": "Our first implementation of the Kuwahara filter as a post-processing effect",
+        "start": 112,
+        "end": 212
+      },
+      {
+        "heading": "The Papari extension",
+        "start": 213,
+        "end": 223
+      },
+      {
+        "heading": "Circular kernel",
+        "start": 224,
+        "end": 293
+      },
+      {
+        "heading": "A better weighting of colors",
+        "start": 294,
+        "end": 384
+      },
+      {
+        "heading": "Fixing a performance pitfall",
+        "start": 385,
+        "end": 425
+      },
+      {
+        "heading": "From Structure Tensor to Anisotropic Kuwahara filter",
+        "start": 426,
+        "end": 471
+      },
+      {
+        "heading": "Sobel operator and partial derivatives",
+        "start": 472,
+        "end": 580
+      },
+      {
+        "heading": "From Structure Tensor to flow",
+        "start": 581,
+        "end": 690
+      },
+      {
+        "heading": "Deriving and applying anisotropy to our filter",
+        "start": 691,
+        "end": 830
+      },
+      {
+        "heading": "Final touches and conclusion",
+        "start": 831,
+        "end": 965
+      }
+    ]
+  },
+  {
+    "slug": "the-art-of-dithering-and-retro-shading-web",
+    "title": "The Art of Dithering and Retro Shading for the Web",
+    "url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+    "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "DitheringVisualizer",
+        "import": "./Widgets/Retro/DitheringVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Retro/DitheringVisualizer"
+      },
+      {
+        "component": "QuantizationVisualizer",
+        "import": "./Widgets/Retro/QuantizationVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/Retro/QuantizationVisualizer"
+      },
+      {
+        "component": "RetroSandpack",
+        "import": "./Widgets/Retro/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Retro/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene10"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene11"
+      },
+      {
+        "component": "RetroSandpack",
+        "selector_property": "scene",
+        "selector": "scene12"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 37
+      },
+      {
+        "heading": "Dithering techniques",
+        "start": 38,
+        "end": 62
+      },
+      {
+        "heading": "A first pass at dithering in React Three Fiber",
+        "start": 63,
+        "end": 178
+      },
+      {
+        "heading": "Ordered Dithering and Bayer Matrix",
+        "start": 179,
+        "end": 269
+      },
+      {
+        "heading": "Blue noise dithering",
+        "start": 270,
+        "end": 307
+      },
+      {
+        "heading": "Color Quantization",
+        "start": 308,
+        "end": 318
+      },
+      {
+        "heading": "Shades of gray and colors",
+        "start": 319,
+        "end": 391
+      },
+      {
+        "heading": "Custom color palettes",
+        "start": 392,
+        "end": 438
+      },
+      {
+        "heading": "Hue-lightness-based color quantization",
+        "start": 439,
+        "end": 455
+      },
+      {
+        "heading": "Pixelization",
+        "start": 456,
+        "end": 526
+      },
+      {
+        "heading": "Cathode-Ray Tube effect",
+        "start": 527,
+        "end": 540
+      },
+      {
+        "heading": "RGB Cells",
+        "start": 541,
+        "end": 623
+      },
+      {
+        "heading": "Curving the display",
+        "start": 624,
+        "end": 668
+      },
+      {
+        "heading": "Scanlines, distortion, and final touches",
+        "start": 669,
+        "end": 762
+      },
+      {
+        "heading": "Conclusion",
+        "start": 763,
+        "end": 767
+      }
+    ]
+  },
+  {
+    "slug": "post-processing-as-a-creative-medium",
+    "title": "Post-Processing Shaders as a Creative Medium",
+    "url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+    "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "PixelizationVisualizer",
+        "import": "./Widgets/PostProcessing/PixelizationVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/PostProcessing/PixelizationVisualizer"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "import": "./Widgets/PostProcessing/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/PostProcessing/Sandpack"
+      },
+      {
+        "component": "ThresholdVisualizer",
+        "import": "./Widgets/PostProcessing/ThresholdVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/PostProcessing/ThresholdVisualizer"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene10"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene11"
+      },
+      {
+        "component": "PostProcessingSandpack",
+        "selector_property": "scene",
+        "selector": "scene12"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 46
+      },
+      {
+        "heading": "Intricate Pixel Patterns",
+        "start": 47,
+        "end": 52
+      },
+      {
+        "heading": "Pixelating your scene",
+        "start": 53,
+        "end": 102
+      },
+      {
+        "heading": "Shaping pixels",
+        "start": 103,
+        "end": 307
+      },
+      {
+        "heading": "Complex pixel patterns",
+        "start": 308,
+        "end": 442
+      },
+      {
+        "heading": "Trompe l'œil and other optical illusions",
+        "start": 443,
+        "end": 449
+      },
+      {
+        "heading": "Stagged LED cell panel",
+        "start": 450,
+        "end": 532
+      },
+      {
+        "heading": "Woven Crochet Effect",
+        "start": 533,
+        "end": 592
+      },
+      {
+        "heading": "Lego bricks",
+        "start": 593,
+        "end": 641
+      },
+      {
+        "heading": "Fluted & frosted glass",
+        "start": 642,
+        "end": 732
+      },
+      {
+        "heading": "Dynamic and interactive post-processing",
+        "start": 733,
+        "end": 736
+      },
+      {
+        "heading": "Progressive Depixelation",
+        "start": 737,
+        "end": 787
+      },
+      {
+        "heading": "Pixelating Mouse Trail",
+        "start": 788,
+        "end": 890
+      },
+      {
+        "heading": "Final Thoughts",
+        "start": 891,
+        "end": 898
+      }
+    ]
+  },
+  {
+    "slug": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+    "title": "On Shaping Light",
+    "url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+    "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "VolumetricLightingSandpack",
+        "import": "./Widgets/VolumetricLighting/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/VolumetricLighting/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene9"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene10"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene11"
+      },
+      {
+        "component": "VolumetricLightingSandpack",
+        "selector_property": "scene",
+        "selector": "scene12"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 45
+      },
+      {
+        "heading": "Raymarching Light with Post-Processing",
+        "start": 46,
+        "end": 51
+      },
+      {
+        "heading": "Coordinate systems and transformations",
+        "start": 52,
+        "end": 115
+      },
+      {
+        "heading": "Our first light ray",
+        "start": 116,
+        "end": 253
+      },
+      {
+        "heading": "Depth-based stopping",
+        "start": 254,
+        "end": 299
+      },
+      {
+        "heading": "Shaping our light ray",
+        "start": 300,
+        "end": 353
+      },
+      {
+        "heading": "Shadow Mapping",
+        "start": 354,
+        "end": 361
+      },
+      {
+        "heading": "Creating a shadow map of our scene",
+        "start": 362,
+        "end": 455
+      },
+      {
+        "heading": "Calculating shadows and occlusion",
+        "start": 456,
+        "end": 613
+      },
+      {
+        "heading": "Light Scattering and other improvements",
+        "start": 614,
+        "end": 617
+      },
+      {
+        "heading": "Phase function and noise",
+        "start": 618,
+        "end": 782
+      },
+      {
+        "heading": "Performance improvements",
+        "start": 783,
+        "end": 838
+      },
+      {
+        "heading": "Elevating your work with light",
+        "start": 839,
+        "end": 844
+      },
+      {
+        "heading": "Arches",
+        "start": 845,
+        "end": 878
+      },
+      {
+        "heading": "Asteroid Belt",
+        "start": 879,
+        "end": 929
+      },
+      {
+        "heading": "Beyond",
+        "start": 930,
+        "end": 1095
+      }
+    ]
+  },
+  {
+    "slug": "field-guide-to-tsl-and-webgpu",
+    "title": "Field Guide to TSL and WebGPU",
+    "url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+    "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "EffectCompute",
+        "import": "./Widgets/TSLWebGPU/EffectCompute",
+        "source_prefix": "blog/core/components/MDX/Widgets/TSLWebGPU/EffectCompute"
+      },
+      {
+        "component": "ParticleCompute",
+        "import": "./Widgets/TSLWebGPU/ParticleCompute",
+        "source_prefix": "blog/core/components/MDX/Widgets/TSLWebGPU/ParticleCompute"
+      },
+      {
+        "component": "SimpleCompute",
+        "import": "./Widgets/TSLWebGPU/SimpleCompute",
+        "source_prefix": "blog/core/components/MDX/Widgets/TSLWebGPU/SimpleCompute"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "import": "./Widgets/TSLWebGPU/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/TSLWebGPU/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene5"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene6"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene7"
+      },
+      {
+        "component": "TSLWebGPUSandpack",
+        "selector_property": "scene",
+        "selector": "scene8"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 48
+      },
+      {
+        "heading": "Terminology",
+        "start": 49,
+        "end": 52
+      },
+      {
+        "heading": "TSL and WebGPU",
+        "start": 53,
+        "end": 156
+      },
+      {
+        "heading": "The Node System",
+        "start": 157,
+        "end": 185
+      },
+      {
+        "heading": "Writing Shaders for WebGPU with TSL",
+        "start": 186,
+        "end": 189
+      },
+      {
+        "heading": "Using the WebGPU renderer",
+        "start": 190,
+        "end": 254
+      },
+      {
+        "heading": "Displacement and Normals",
+        "start": 255,
+        "end": 478
+      },
+      {
+        "heading": "Glass Material",
+        "start": 479,
+        "end": 738
+      },
+      {
+        "heading": "Compute Shaders",
+        "start": 739,
+        "end": 772
+      },
+      {
+        "heading": "Creating Compute Shaders in TSL",
+        "start": 773,
+        "end": 819
+      },
+      {
+        "heading": "Leveraging compute shaders for your 3D scene",
+        "start": 820,
+        "end": 961
+      },
+      {
+        "heading": "Workgroup and dispatch sizes",
+        "start": 962,
+        "end": 1018
+      },
+      {
+        "heading": "Powering Particles with Compute Shaders",
+        "start": 1019,
+        "end": 1037
+      },
+      {
+        "heading": "Setting up our Particle System with Compute Shaders",
+        "start": 1038,
+        "end": 1126
+      },
+      {
+        "heading": "Attractors with Compute Shaders",
+        "start": 1127,
+        "end": 1199
+      },
+      {
+        "heading": "Post-Processing with TSL",
+        "start": 1200,
+        "end": 1205
+      },
+      {
+        "heading": "Setting up custom post-processing effects with TSL on React Three Fiber",
+        "start": 1206,
+        "end": 1327
+      },
+      {
+        "heading": "Post-processing effects with Compute Shaders",
+        "start": 1328,
+        "end": 1418
+      },
+      {
+        "heading": "Final thoughts and what's next",
+        "start": 1419,
+        "end": 1546
+      }
+    ]
+  },
+  {
+    "slug": "shades-of-halftone",
+    "title": "Shades of Halftone",
+    "url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+    "source_id": "articles/shades-of-halftone.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "CMYKHalftoneDemo",
+        "import": "./Widgets/Halftone/CMYKHalftoneDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/CMYKHalftoneDemo"
+      },
+      {
+        "component": "ColorBlending",
+        "import": "./Widgets/Halftone/ColorBlending",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/ColorBlending"
+      },
+      {
+        "component": "GooeyDemo",
+        "import": "./Widgets/Halftone/GooeyDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/GooeyDemo"
+      },
+      {
+        "component": "GridDotsDemo",
+        "import": "./Widgets/Halftone/GridDotsDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/GridDotsDemo"
+      },
+      {
+        "component": "HalftoneSandpack",
+        "import": "./Widgets/Halftone/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/Sandpack"
+      },
+      {
+        "component": "MoireDemo",
+        "import": "./Widgets/Halftone/MoireDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/MoireDemo"
+      },
+      {
+        "component": "PatternDemo",
+        "import": "./Widgets/Halftone/PatternDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/PatternDemo"
+      },
+      {
+        "component": "Reflectance",
+        "import": "./Widgets/Halftone/Reflectance",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/Reflectance"
+      },
+      {
+        "component": "RingDemo",
+        "import": "./Widgets/Halftone/RingDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/RingDemo"
+      },
+      {
+        "component": "SimpleGridDemo",
+        "import": "./Widgets/Halftone/SimpleGridDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/SimpleGridDemo"
+      },
+      {
+        "component": "WhiteDots",
+        "import": "./Widgets/Halftone/WhiteDots",
+        "source_prefix": "blog/core/components/MDX/Widgets/Halftone/WhiteDots"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "HalftoneSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "HalftoneSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "HalftoneSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "HalftoneSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 35
+      },
+      {
+        "heading": "Behind the Dot Pattern",
+        "start": 36,
+        "end": 51
+      },
+      {
+        "heading": "Rendering a grid of dots",
+        "start": 52,
+        "end": 111
+      },
+      {
+        "heading": "Applying Halftone",
+        "start": 112,
+        "end": 203
+      },
+      {
+        "heading": "Not just dots",
+        "start": 204,
+        "end": 284
+      },
+      {
+        "heading": "Multichannel Halftoning and Interferences",
+        "start": 285,
+        "end": 290
+      },
+      {
+        "heading": "Moiré Pattern",
+        "start": 291,
+        "end": 354
+      },
+      {
+        "heading": "Digital vs Physical color blending",
+        "start": 355,
+        "end": 397
+      },
+      {
+        "heading": "CMYK halftone",
+        "start": 398,
+        "end": 521
+      },
+      {
+        "heading": "Breaking the Grid",
+        "start": 522,
+        "end": 525
+      },
+      {
+        "heading": "Cell wall",
+        "start": 526,
+        "end": 595
+      },
+      {
+        "heading": "Gooey halftone",
+        "start": 596,
+        "end": 615
+      },
+      {
+        "heading": "Displaced dots",
+        "start": 616,
+        "end": 676
+      },
+      {
+        "heading": "Final Thoughts",
+        "start": 677,
+        "end": 739
+      }
+    ]
+  },
+  {
+    "slug": "shading-motion",
+    "title": "Shading Motion",
+    "url": "https://blog.maximeheckel.com/posts/shading-motion/",
+    "source_id": "articles/shading-motion.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "BlobTracking",
+        "import": "./Widgets/ShadingMotion/BlobTracking",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShadingMotion/BlobTracking"
+      },
+      {
+        "component": "DecorativeMotion",
+        "import": "./Widgets/ShadingMotion/DecorativeMotion",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShadingMotion/DecorativeMotion"
+      },
+      {
+        "component": "DitheredMotionMaskDemo",
+        "import": "./Widgets/ShadingMotion/DitheredMotionMaskDemo",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShadingMotion/DitheredMotionMaskDemo"
+      },
+      {
+        "component": "MotionMask",
+        "import": "./Widgets/ShadingMotion/MotionMask",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShadingMotion/MotionMask"
+      },
+      {
+        "component": "SDFShapes",
+        "import": "./Widgets/SDFShapes",
+        "source_prefix": "blog/core/components/MDX/Widgets/SDFShapes"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "import": "./Widgets/ShadingMotion/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/ShadingMotion/Sandpack"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "asciiMotionMask"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "blobTracking"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "blobTrackingSegments"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "blobTrackingEffects"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "opticalFlow"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "velocityMap"
+      },
+      {
+        "component": "ShadingMotionSandpack",
+        "selector_property": "scene",
+        "selector": "objectSmear"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 32
+      },
+      {
+        "heading": "Detecting, Extracting, and Stylizing Motion",
+        "start": 33,
+        "end": 57
+      },
+      {
+        "heading": "Comparing frames",
+        "start": 58,
+        "end": 115
+      },
+      {
+        "heading": "Smooting out the motion",
+        "start": 116,
+        "end": 158
+      },
+      {
+        "heading": "Stylizing the motion",
+        "start": 159,
+        "end": 279
+      },
+      {
+        "heading": "Blob Tracking",
+        "start": 280,
+        "end": 311
+      },
+      {
+        "heading": "Detecting motion blobs",
+        "start": 312,
+        "end": 453
+      },
+      {
+        "heading": "Drawing blobs",
+        "start": 454,
+        "end": 539
+      },
+      {
+        "heading": "Using blobs as masks",
+        "start": 540,
+        "end": 637
+      },
+      {
+        "heading": "Optical Flow",
+        "start": 638,
+        "end": 647
+      },
+      {
+        "heading": "Extracting the direction of motion",
+        "start": 648,
+        "end": 746
+      },
+      {
+        "heading": "Drawing a motion field",
+        "start": 747,
+        "end": 805
+      },
+      {
+        "heading": "Motion Blur",
+        "start": 806,
+        "end": 814
+      },
+      {
+        "heading": "Capturing object motion",
+        "start": 815,
+        "end": 948
+      },
+      {
+        "heading": "Wagon-wheel effect",
+        "start": 949,
+        "end": 1017
+      },
+      {
+        "heading": "Afterword",
+        "start": 1018,
+        "end": 1080
+      }
+    ]
+  },
+  {
+    "slug": "on-rendering-the-sky-sunsets-and-planets",
+    "title": "On Rendering the Sky, Sunsets, and Planets",
+    "url": "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/",
+    "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+    "role": "article",
+    "widgets": [
+      {
+        "component": "AtmosphericScatteringSandpack",
+        "import": "./Widgets/AtmosphericScattering/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/Sandpack"
+      },
+      {
+        "component": "Density",
+        "import": "./Widgets/AtmosphericScattering/Density",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/Density"
+      },
+      {
+        "component": "LightDensity",
+        "import": "./Widgets/AtmosphericScattering/LightDensity",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/LightDensity"
+      },
+      {
+        "component": "Lightmarching",
+        "import": "./Widgets/AtmosphericScattering/Lightmarching",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/Lightmarching"
+      },
+      {
+        "component": "MieOzoneDensity",
+        "import": "./Widgets/AtmosphericScattering/MieOzoneDensity",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/MieOzoneDensity"
+      },
+      {
+        "component": "RaySphereIntersect",
+        "import": "./Widgets/AtmosphericScattering/RaySphereIntersect",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/RaySphereIntersect"
+      },
+      {
+        "component": "RaySphereIntersectPlanet",
+        "import": "./Widgets/AtmosphericScattering/RaySphereIntersect",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/RaySphereIntersect"
+      },
+      {
+        "component": "RayleighDensity",
+        "import": "./Widgets/AtmosphericScattering/RayleighDensity",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/RayleighDensity"
+      },
+      {
+        "component": "TransmittanceLUT",
+        "import": "./Widgets/AtmosphericScattering/TransmittanceLUT",
+        "source_prefix": "blog/core/components/MDX/Widgets/AtmosphericScattering/TransmittanceLUT"
+      }
+    ],
+    "embedded_scenes": [
+      {
+        "component": "AtmosphericScatteringSandpack",
+        "selector_property": "scene",
+        "selector": "scene1"
+      },
+      {
+        "component": "AtmosphericScatteringSandpack",
+        "selector_property": "scene",
+        "selector": "scene2"
+      },
+      {
+        "component": "AtmosphericScatteringSandpack",
+        "selector_property": "scene",
+        "selector": "scene3"
+      },
+      {
+        "component": "AtmosphericScatteringSandpack",
+        "selector_property": "scene",
+        "selector": "scene4"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 53
+      },
+      {
+        "heading": "How to Render a Sky",
+        "start": 54,
+        "end": 61
+      },
+      {
+        "heading": "Sampling Atmospheric Density",
+        "start": 62,
+        "end": 196
+      },
+      {
+        "heading": "Mie Scattering and Ozone",
+        "start": 197,
+        "end": 311
+      },
+      {
+        "heading": "Light and Transmittance",
+        "start": 312,
+        "end": 375
+      },
+      {
+        "heading": "Planetary Atmosphere",
+        "start": 376,
+        "end": 383
+      },
+      {
+        "heading": "World-space reconstruction, Depth, and Atmospheric Fog",
+        "start": 384,
+        "end": 494
+      },
+      {
+        "heading": "Rendering Planets",
+        "start": 495,
+        "end": 669
+      },
+      {
+        "heading": "Handling eclipses",
+        "start": 670,
+        "end": 764
+      },
+      {
+        "heading": "Outer-Worldly Atmosphere",
+        "start": 765,
+        "end": 814
+      },
+      {
+        "heading": "LUT Based Atmospheric Scattering",
+        "start": 815,
+        "end": 842
+      },
+      {
+        "heading": "Transmittance LUT",
+        "start": 843,
+        "end": 931
+      },
+      {
+        "heading": "Sky View and Aerial Perspective LUTs",
+        "start": 932,
+        "end": 1078
+      },
+      {
+        "heading": "Composition",
+        "start": 1079,
+        "end": 1145
+      },
+      {
+        "heading": "Final Thoughts",
+        "start": 1146,
+        "end": 1202
+      }
+    ]
+  },
+  {
+    "slug": "learning-in-public",
+    "title": "Learning in public",
+    "url": "https://blog.maximeheckel.com/posts/learning-in-public/",
+    "source_id": "articles/learning-in-public.mdx",
+    "role": "method-context",
+    "widgets": [],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 25
+      },
+      {
+        "heading": "How I plan to share what I learn",
+        "start": 26,
+        "end": 33
+      },
+      {
+        "heading": "My list",
+        "start": 34,
+        "end": 161
+      }
+    ]
+  },
+  {
+    "slug": "config-2025",
+    "title": "Speaking at Figma Config 2025",
+    "url": "https://blog.maximeheckel.com/posts/config-2025/",
+    "source_id": "articles/config-2025.mdx",
+    "role": "method-context",
+    "widgets": [],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 17
+      },
+      {
+        "heading": "Talk",
+        "start": 18,
+        "end": 30
+      },
+      {
+        "heading": "Resources",
+        "start": 31,
+        "end": 34
+      },
+      {
+        "heading": "Paid Courses",
+        "start": 35,
+        "end": 42
+      },
+      {
+        "heading": "Free resources and inspiring work around the Web",
+        "start": 43,
+        "end": 56
+      },
+      {
+        "heading": "Discord servers",
+        "start": 57,
+        "end": 60
+      }
+    ]
+  },
+  {
+    "slug": "building-a-design-system-from-scratch",
+    "title": "Building a Design System from scratch",
+    "url": "https://blog.maximeheckel.com/posts/building-a-design-system-from-scratch/",
+    "source_id": "articles/building-a-design-system-from-scratch.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "DesignSystemColorTokens",
+        "import": "./Widgets/DesignSystem/ColorTokens",
+        "source_prefix": "blog/core/components/MDX/Widgets/DesignSystem/ColorTokens"
+      },
+      {
+        "component": "DesignSystemFlexGridShowcase",
+        "import": "./Widgets/DesignSystem/FlexGridShowcase",
+        "source_prefix": "blog/core/components/MDX/Widgets/DesignSystem/FlexGridShowcase"
+      },
+      {
+        "component": "DesignSystemMicroInteractionShowcase",
+        "import": "./Widgets/DesignSystem/MicroInteractionShowcase",
+        "source_prefix": "blog/core/components/MDX/Widgets/DesignSystem/MicroInteractionShowcase"
+      },
+      {
+        "component": "DesignSystemTextShowcase",
+        "import": "./Widgets/DesignSystem/TextShowcase",
+        "source_prefix": "blog/core/components/MDX/Widgets/DesignSystem/TextShowcase"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 51
+      },
+      {
+        "heading": "Context: Why would I even choose to build my own design system?",
+        "start": 52,
+        "end": 66
+      },
+      {
+        "heading": "Tokens",
+        "start": 67,
+        "end": 70
+      },
+      {
+        "heading": "Color system",
+        "start": 71,
+        "end": 100
+      },
+      {
+        "heading": "Other tokens",
+        "start": 101,
+        "end": 151
+      },
+      {
+        "heading": "Lessons learned",
+        "start": 152,
+        "end": 160
+      },
+      {
+        "heading": "Component patterns",
+        "start": 161,
+        "end": 180
+      },
+      {
+        "heading": "Variant driven components",
+        "start": 181,
+        "end": 303
+      },
+      {
+        "heading": "Utility components",
+        "start": 304,
+        "end": 342
+      },
+      {
+        "heading": "Compound components",
+        "start": 343,
+        "end": 410
+      },
+      {
+        "heading": "Polymorphism and composition",
+        "start": 411,
+        "end": 502
+      },
+      {
+        "heading": "Make it shine!",
+        "start": 503,
+        "end": 516
+      },
+      {
+        "heading": "Packaging and shipping",
+        "start": 517,
+        "end": 524
+      },
+      {
+        "heading": "Versioning",
+        "start": 525,
+        "end": 541
+      },
+      {
+        "heading": "File structure",
+        "start": 542,
+        "end": 545
+      },
+      {
+        "heading": "Bundling",
+        "start": 546,
+        "end": 637
+      },
+      {
+        "heading": "Releasing",
+        "start": 638,
+        "end": 665
+      },
+      {
+        "heading": "Conclusion",
+        "start": 666,
+        "end": 679
+      }
+    ]
+  },
+  {
+    "slug": "cubic-bezier-from-math-to-motion",
+    "title": "Cubic Bézier: from math to motion",
+    "url": "https://blog.maximeheckel.com/posts/cubic-bezier-from-math-to-motion/",
+    "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "BezierCurve",
+        "import": "./Widgets/BezierCurve",
+        "source_prefix": "blog/core/components/MDX/Widgets/BezierCurve"
+      },
+      {
+        "component": "CubicBezierVisualizer",
+        "import": "./Widgets/CubicBezierVisualizer",
+        "source_prefix": "blog/core/components/MDX/Widgets/CubicBezierVisualizer"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 34
+      },
+      {
+        "heading": "The math behind Bézier curves",
+        "start": 35,
+        "end": 44
+      },
+      {
+        "heading": "Linear Interpolation",
+        "start": 45,
+        "end": 68
+      },
+      {
+        "heading": "Quadratic Bézier",
+        "start": 69,
+        "end": 132
+      },
+      {
+        "heading": "Cubic Bézier",
+        "start": 133,
+        "end": 200
+      },
+      {
+        "heading": "Visualizing the motion",
+        "start": 201,
+        "end": 265
+      },
+      {
+        "heading": "Easing functions",
+        "start": 266,
+        "end": 269
+      },
+      {
+        "heading": "Cubic Béziers, Cubic Béziers everywhere",
+        "start": 270,
+        "end": 289
+      },
+      {
+        "heading": "Cubic Bézier in Framer Motion",
+        "start": 290,
+        "end": 328
+      },
+      {
+        "heading": "Conclusion",
+        "start": 329,
+        "end": 359
+      }
+    ]
+  },
+  {
+    "slug": "the-physics-behind-spring-animations",
+    "title": "The physics behind spring animations",
+    "url": "https://blog.maximeheckel.com/posts/the-physics-behind-spring-animations/",
+    "source_id": "articles/the-physics-behind-spring-animations.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "SpringAnimationSandpack",
+        "import": "./Widgets/SpringAnimation/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/SpringAnimation/Sandpack"
+      },
+      {
+        "component": "SpringPhysics",
+        "import": "./Widgets/SpringAnimation/SpringPhysics",
+        "source_prefix": "blog/core/components/MDX/Widgets/SpringAnimation/SpringPhysics"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 34
+      },
+      {
+        "heading": "Hooke's Law",
+        "start": 35,
+        "end": 117
+      },
+      {
+        "heading": "Translating the maths to Javascript",
+        "start": 118,
+        "end": 173
+      },
+      {
+        "heading": "Taking damping into account",
+        "start": 174,
+        "end": 257
+      },
+      {
+        "heading": "A real-life example",
+        "start": 258,
+        "end": 282
+      }
+    ]
+  },
+  {
+    "slug": "scrollspy-demystified",
+    "title": "Scrollspy demystified",
+    "url": "https://blog.maximeheckel.com/posts/scrollspy-demystified/",
+    "source_id": "articles/scrollspy-demystified.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "HighlightSection",
+        "import": "./Widgets/Scrollspy/HighlightSection",
+        "source_prefix": "blog/core/components/MDX/Widgets/Scrollspy/HighlightSection"
+      },
+      {
+        "component": "ScrollSpySandpack",
+        "import": "./Widgets/Scrollspy/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/Scrollspy/Sandpack"
+      },
+      {
+        "component": "ScrollSpyWidget",
+        "import": "./Widgets/Scrollspy/ScrollSpyWidget",
+        "source_prefix": "blog/core/components/MDX/Widgets/Scrollspy/ScrollSpyWidget"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 42
+      },
+      {
+        "heading": "It's all about knowing what's intersecting the viewport",
+        "start": 43,
+        "end": 48
+      },
+      {
+        "heading": "What is the Intersection Observer API?",
+        "start": 49,
+        "end": 58
+      },
+      {
+        "heading": "How can it be used in the context of a Scrollspy?",
+        "start": 59,
+        "end": 82
+      },
+      {
+        "heading": "Why use this rather than a scroll event and detecting if the element's scroll position fits in the viewport?",
+        "start": 83,
+        "end": 107
+      },
+      {
+        "heading": "Abstracting the implementation in a React Hook",
+        "start": 108,
+        "end": 120
+      },
+      {
+        "heading": "First steps with Intersection Observers",
+        "start": 121,
+        "end": 153
+      },
+      {
+        "heading": "Building an efficient Hook",
+        "start": 154,
+        "end": 270
+      },
+      {
+        "heading": "Handling offsets and custom settings",
+        "start": 271,
+        "end": 389
+      },
+      {
+        "heading": "Markdown and MDX integration",
+        "start": 390,
+        "end": 407
+      },
+      {
+        "heading": "My solution to this: sectionize my content with remark plugins",
+        "start": 408,
+        "end": 469
+      },
+      {
+        "heading": "Wiring up everything",
+        "start": 470,
+        "end": 539
+      }
+    ]
+  },
+  {
+    "slug": "guide-animations-spark-joy-framer-motion",
+    "title": "Guide to creating animations that spark joy with Framer Motion",
+    "url": "https://blog.maximeheckel.com/posts/guide-animations-spark-joy-framer-motion/",
+    "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "AnimationTypes",
+        "import": "./Widgets/GuideToFramerMotion/AnimationTypes",
+        "source_prefix": "blog/core/components/MDX/Widgets/GuideToFramerMotion/AnimationTypes"
+      },
+      {
+        "component": "ClipboardAnimationDetails",
+        "import": "./Widgets/GuideToFramerMotion/ClipboardAnimationDetails",
+        "source_prefix": "blog/core/components/MDX/Widgets/GuideToFramerMotion/ClipboardAnimationDetails"
+      },
+      {
+        "component": "GuideToFramerMotionSandpack",
+        "import": "./Widgets/GuideToFramerMotion/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/GuideToFramerMotion/Sandpack"
+      },
+      {
+        "component": "Orchestration",
+        "import": "./Widgets/GuideToFramerMotion/Orchestration",
+        "source_prefix": "blog/core/components/MDX/Widgets/GuideToFramerMotion/Orchestration"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 40
+      },
+      {
+        "heading": "Anatomy of an animation",
+        "start": 41,
+        "end": 122
+      },
+      {
+        "heading": "Using variants",
+        "start": 123,
+        "end": 211
+      },
+      {
+        "heading": "Advanced animations using Motion Values",
+        "start": 212,
+        "end": 221
+      },
+      {
+        "heading": "Motion Values",
+        "start": 222,
+        "end": 232
+      },
+      {
+        "heading": "Dissecting the \"Copy To Clipboard\" animation",
+        "start": 233,
+        "end": 372
+      },
+      {
+        "heading": "Orchestration",
+        "start": 373,
+        "end": 379
+      },
+      {
+        "heading": "Delays and repetition",
+        "start": 380,
+        "end": 394
+      },
+      {
+        "heading": "Parent-Children",
+        "start": 395,
+        "end": 494
+      },
+      {
+        "heading": "Conclusion",
+        "start": 495,
+        "end": 513
+      }
+    ]
+  },
+  {
+    "slug": "advanced-animation-patterns-with-framer-motion",
+    "title": "Advanced animation patterns with Framer Motion",
+    "url": "https://blog.maximeheckel.com/posts/advanced-animation-patterns-with-framer-motion/",
+    "source_id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "AdvancedFramerMotionSandpack",
+        "import": "./Widgets/AdvancedFramerMotion/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/Sandpack"
+      },
+      {
+        "component": "FramerMotionAnimatePresence",
+        "import": "./Widgets/AdvancedFramerMotion/FramerMotionAnimatePresence",
+        "source_prefix": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionAnimatePresence"
+      },
+      {
+        "component": "FramerMotionAnimationLayout",
+        "import": "./Widgets/AdvancedFramerMotion/FramerMotionAnimationLayout",
+        "source_prefix": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionAnimationLayout"
+      },
+      {
+        "component": "FramerMotionPropagation",
+        "import": "./Widgets/AdvancedFramerMotion/FramerMotionPropagation",
+        "source_prefix": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionPropagation"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 37
+      },
+      {
+        "heading": "Propagation",
+        "start": 38,
+        "end": 94
+      },
+      {
+        "heading": "Animate components when they are unmounting",
+        "start": 95,
+        "end": 191
+      },
+      {
+        "heading": "Layout animations",
+        "start": 192,
+        "end": 208
+      },
+      {
+        "heading": "What is a \"layout animation\"?",
+        "start": 209,
+        "end": 236
+      },
+      {
+        "heading": "Shared Layout Animation",
+        "start": 237,
+        "end": 323
+      },
+      {
+        "heading": "Conclusion",
+        "start": 324,
+        "end": 342
+      }
+    ]
+  },
+  {
+    "slug": "framer-motion-layout-animations",
+    "title": "Everything about Framer Motion layout animations",
+    "url": "https://blog.maximeheckel.com/posts/framer-motion-layout-animations/",
+    "source_id": "articles/framer-motion-layout-animations.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "FramerMotionAdvanceReorderExample",
+        "import": "./Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample"
+      },
+      {
+        "component": "FramerMotionArrowListSandpack",
+        "import": "./Widgets/FramerMotionLayoutAnimations/SandpackArrowList",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackArrowList"
+      },
+      {
+        "component": "FramerMotionDistortions",
+        "import": "./Widgets/FramerMotionLayoutAnimations/Distortions",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/Distortions"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationListLayoutGroup",
+        "import": "./Widgets/FramerMotionLayoutAnimations/ListLayoutGroup",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/ListLayoutGroup"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationsBasic",
+        "import": "./Widgets/FramerMotionLayoutAnimations/Basic",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/Basic"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationsLayoutPosition",
+        "import": "./Widgets/FramerMotionLayoutAnimations/LayoutPosition",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/LayoutPosition"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationsLayoutProp",
+        "import": "./Widgets/FramerMotionLayoutAnimations/LayoutProp",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/LayoutProp"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationsSharedLayoutAnimationDetails",
+        "import": "./Widgets/FramerMotionLayoutAnimations/SharedLayoutAnimationDetails",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SharedLayoutAnimationDetails"
+      },
+      {
+        "component": "FramerMotionLayoutAnimationsTabsLayoutGroup",
+        "import": "./Widgets/FramerMotionLayoutAnimations/TabsLayoutGroup",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/TabsLayoutGroup"
+      },
+      {
+        "component": "FramerMotionTabsSandpack",
+        "import": "./Widgets/FramerMotionLayoutAnimations/SandpackTabs",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackTabs"
+      },
+      {
+        "component": "FramerMotionToastNotificationSandpack",
+        "import": "./Widgets/FramerMotionLayoutAnimations/SandpackNotification",
+        "source_prefix": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackNotification"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 48
+      },
+      {
+        "heading": "Layout animations fundamentals",
+        "start": 49,
+        "end": 52
+      },
+      {
+        "heading": "A brief refresher on layout animations",
+        "start": 53,
+        "end": 104
+      },
+      {
+        "heading": "Fixing distortions",
+        "start": 105,
+        "end": 119
+      },
+      {
+        "heading": "More about the layout prop",
+        "start": 120,
+        "end": 150
+      },
+      {
+        "heading": "Shared layout animations and LayoutGroup",
+        "start": 151,
+        "end": 167
+      },
+      {
+        "heading": "Shared layout animations",
+        "start": 168,
+        "end": 206
+      },
+      {
+        "heading": "LayoutGroup: the namespacing use case",
+        "start": 207,
+        "end": 239
+      },
+      {
+        "heading": "LayoutGroup: the grouping use case",
+        "start": 240,
+        "end": 273
+      },
+      {
+        "heading": "Reorder",
+        "start": 274,
+        "end": 359
+      },
+      {
+        "heading": "Combining everything",
+        "start": 360,
+        "end": 437
+      },
+      {
+        "heading": "Conclusion",
+        "start": 438,
+        "end": 447
+      }
+    ]
+  },
+  {
+    "slug": "the-power-of-composition-with-css-variables",
+    "title": "The Power of Composition with CSS Variables",
+    "url": "https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/",
+    "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+    "role": "method-context",
+    "widgets": [
+      {
+        "component": "CSSCompositionSandpack",
+        "import": "./Widgets/CSSComposition/Sandpack",
+        "source_prefix": "blog/core/components/MDX/Widgets/CSSComposition/Sandpack"
+      },
+      {
+        "component": "HSLAShowcase",
+        "import": "./Widgets/CSSComposition/HSLAShowcase",
+        "source_prefix": "blog/core/components/MDX/Widgets/CSSComposition/HSLAShowcase"
+      },
+      {
+        "component": "PaletteGenerator",
+        "import": "./Widgets/CSSComposition/PaletteGenerator",
+        "source_prefix": "blog/core/components/MDX/Widgets/CSSComposition/PaletteGenerator"
+      },
+      {
+        "component": "ThemePicker",
+        "import": "./Widgets/CSSComposition/ThemePicker",
+        "source_prefix": "blog/core/components/MDX/Widgets/CSSComposition/ThemePicker"
+      }
+    ],
+    "embedded_scenes": [],
+    "sections": [
+      {
+        "heading": "Introduction",
+        "start": 1,
+        "end": 31
+      },
+      {
+        "heading": "Building good CSS habits by using CSS variables and HSLA colors",
+        "start": 32,
+        "end": 33
+      },
+      {
+        "heading": "Overreliance on ThemeProviders to manage my themes and colors",
+        "start": 34,
+        "end": 61
+      },
+      {
+        "heading": "A mess of HEX and RGBA",
+        "start": 62,
+        "end": 128
+      },
+      {
+        "heading": "Defining meaningful colors through composition",
+        "start": 129,
+        "end": 160
+      },
+      {
+        "heading": "Color scale",
+        "start": 161,
+        "end": 200
+      },
+      {
+        "heading": "Organizing variables: giving meaning to colors",
+        "start": 201,
+        "end": 266
+      },
+      {
+        "heading": "Advanced composition patterns",
+        "start": 267,
+        "end": 336
+      },
+      {
+        "heading": "Conclusion",
+        "start": 337,
+        "end": 343
+      }
+    ]
+  }
+]

@@ -1,0 +1,237 @@
+[
+  {
+    "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+    "lines": [
+      159,
+      187
+    ],
+    "sha256": "37622428de83df3fc1ab3b60ddc524fc7e68482793e3194d1b9d8e68be948a3a",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The vertex shader's job: move each vertex (y = sin(x * 4.0) * 0.2 on a plane).",
+    "adaptation": "Same role for the GLSL MAT vertex stage. TouchDesigner supplies TDPos, TDDeform and TDWorldToProj instead of modelMatrix, viewMatrix and projectionMatrix."
+  },
+  {
+    "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+    "lines": [
+      471,
+      512
+    ],
+    "sha256": "37622428de83df3fc1ab3b60ddc524fc7e68482793e3194d1b9d8e68be948a3a",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Blob: Perlin noise of the position displaces vertices along the normal; the displacement goes to the fragment shader as a varying and colours the sphere; an intensity uniform sets the amplitude.",
+    "adaptation": "Kept: noise of the position, amplitude uniform, displacement varying for a teaching stage (vFlow, 'displacement' stage). Changed: object-size units and a flow centre, several field ingredients (swell, ripples, travelling waves, sag), a crack-free direction mode and rebuilt normals (the archived blob does not rebuild normals; its colour does not need them)."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+    "lines": [
+      87,
+      123
+    ],
+    "sha256": "2cb104063e845b9ac16cfedc156ce0d97828ecd2a608ce01577796b948265821",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The archived Blob shaders: vDisplacement = cnoise(position + vec3(2.0 * u_time)); newPosition = position + normal * (u_intensity * vDisplacement); colour from the displacement.",
+    "adaptation": "Our field reads object position relative to a flow centre, in object sizes, with its own gradient noise (a hash lattice, no copied Perlin code). The displacement stage colours out/in like the blob's colour-by-displacement."
+  },
+  {
+    "source_id": "articles/caustics-in-webgl.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+    "lines": [
+      700,
+      816
+    ],
+    "sha256": "abda9de8898b7f6620cdab3fb51976669a7446d7731d07414805d2f87e9857d8",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Displaced meshes need recomputed normals. Marco Fugaro's method: build a tangent with orthogonal(normal), a bitangent, displace two neighbours and cross the displaced tangent and bitangent.",
+    "adaptation": "Kept: orthogonal() and the neighbour idea. Changed: central differences (four neighbours, both sides) instead of one-sided, offsets computed relative to the point so precision does not depend on how far the object sits from the origin, a sign check that keeps the normal outside, and neighbours that use the same direction rule as the point (so in crack-free mode the result is the exact normal of the moved surface). The archived code writes vNormal = displacedNormal * normalMatrix (vector on the left); we use TDDeformNorm, TouchDesigner's normal transform."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/Caustics/dynamicCaustics.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/dynamicCaustics.ts",
+    "lines": [
+      86,
+      126
+    ],
+    "sha256": "427ed10311ecacfc37885f14cd6366c54ab93ac0167edfa448a2393db9f7665e",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The archived implementation of the neighbour method (offset 4.0/256.0, displace along the normal).",
+    "adaptation": "Nudge reduced to 1e-3 object sizes and taken on both sides."
+  },
+  {
+    "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+    "lines": [
+      255,
+      434
+    ],
+    "sha256": "9326b33cdaeacf75257fef5d38fd48e65e088c28dc174879cb211a6da0c1ac55",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Displacement and Normals in TSL: positionNode adds a noise of the position to the position (a displacement that depends on position only), normalNode receives normals rebuilt with the same neighbour method, flipped when they face away from the original normal.",
+    "adaptation": "The position-only displacement is the idea behind our crack-free mode (vertices that share a position move together). The flip test is kept in flowNormal()."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/TSLWebGPU/glassblob.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/glassblob.ts",
+    "lines": [
+      189,
+      300
+    ],
+    "sha256": "05df981dc728c7a7ff452472db89cc547c87fd8a45b751dbcf416220b73ea55c",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The archived glass blob: a displaced, normal-corrected sphere with screen-space refraction, per-channel dispersion and fresnel. The closest archived precedent for this study.",
+    "adaptation": "Its refraction jitters samples with rand(viewportUV), a dither; the brief excludes dithering, so the pixel stage is the core Liquid Glass (continuous spectral samples and mipmap frost) instead."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      98,
+      773
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Everything in the pixel stage: refraction through a render of the scene, dispersion, saturation, squared Blinn-Phong specular, fresnel, back faces.",
+    "adaptation": "Inherited unchanged from the core study, which lists each range and adaptation in its own sources.json (studies/liquid-glass/sources.json at a6f95c6)."
+  },
+  {
+    "source_id": "studies/liquid-glass (commit a6f95c6)",
+    "source_url": null,
+    "lines": null,
+    "sha256": {
+      "liquid_glass.frag": "cb57c3884feb9747ce60473c1df19eb6cf883fccd549035489813746b393422d",
+      "liquid_glass.vert": "8830e4b4d4669a35d3e2055586cdf68f0104985f482331388f290550bb1ec901",
+      "presets.json": "57ebf853ad8f5b70ec2f389916eb38253b531ae65f9c01321f41ba0180e928da",
+      "study.json": "0061bf59a558adca9d372ae67cab95f31ccca7da75eac82917d2ec3137d902b0",
+      "builder.py": "720f8f655a893537ca1558418381dbd5a56a8908896eed2196f174363117678a",
+      "presets.py": "5e63e18ec34c434e78a8274fbfc5d65ab7a1b4cfadc7cf480a5c63846a1889e8",
+      "preset_exec.py": "1c9447387a4cc634adabd8dbf559dc5da8b1a4ccf73b22fb9eb4c90d4229bc8b",
+      "native.py": "d259739dbb48a4754d4dee516569272f42d015ccfd31e3c947630d4ca1ffa9b5",
+      "backdrop.frag": "f5b55194e35afbadfe8cdc3ea1a1296cb77f840102972ede424b82eec85c5606",
+      "env.frag": "64379210ce2dacc2585526c171c300626eee259379b9ea92288c1fcd87f4c3df"
+    },
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "The family's reference implementation: pixel shader, 12 presets, preset loader and morph, builder, native helpers, demo inputs, preview and checks.",
+    "adaptation": "liquid_flow.frag is the core pixel shader plus vFlow and one teaching stage (test_pixel_shader_is_core_plus_documented_additions). Presets keep every core look value and add ten flow values. builder.py, presets.py, preset_exec.py and native.py are the core files with small changes (lenient demo wiring, names). The frozen core files used by the amplitude-0 test live in checks/core_reference/. backdrop.frag is unchanged; env.frag differs only in one comment (it names liquid_flow.frag). Superseded by the family sync: the pixel stage now follows the core working tree after its family-sync merge (entry below)."
+  },
+  {
+    "source_id": "examples/resonant-foil/vertex.vert",
+    "source_url": null,
+    "lines": [
+      17,
+      30
+    ],
+    "sha256": "5c448e5fdf18416e304cb8539a12661a59b9dbf9a97be86f9dfe4ce619855ca4",
+    "commit": "f76f6fa3b004917516ae2e7d69417a077d408353",
+    "role": "Plugin example: a displaced GLSL MAT whose normal is corrected with the inverse transpose of the map's Jacobian, then TDDeformNorm; an exact zero-amplitude branch.",
+    "adaptation": "Its formula is exact but specific to one map. For an arbitrary field we measure the Jacobian along two tangents with finite differences instead (cross(J t1, J t2) = cofactor(J) n). Kept: object space first, TDDeformNorm after, and the exact Amplitude 0 branch."
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "TDPos, TDNormal, TDDeform(vec3) returning vec4, TDDeformNorm, TDInstanceID, TDInstanceMat3, TDCameraIndex, TDWorldToProj, uTDMats[] including worldInverse, cam, camForNormals and worldForNormals; Picking (TD_PICKING_ACTIVE, TDWritePickingValues, vTDPickVert members); Multiple Render Targets (fragColor[TD_NUM_COLOR_BUFFERS], 'ensure you are not writing beyond the number of buffers'). Read 2026-11-01 (oldid 38399), raw text rechecked during the independent review.",
+    "adaptation": "Used as documented; stand-ins in checks/compile_glsl.py follow these signatures, with two extra compile variants (TD_PICKING_ACTIVE, TD_NUM_COLOR_BUFFERS 8). Extra buffers are written with constant indices 1-7 under #if. The page does not say what TDNormal returns for a SOP without normals (we treat a zero-length normal as 'no normal'), nor what TDInstanceMat3 returns with instancing off (identity assumed; the shader skips a singular matrix)."
+  },
+  {
+    "source_id": "docs.derivative.ca/Box_SOP, Sphere_SOP, Grid_SOP, Transform_SOP, Merge_SOP, Switch_SOP",
+    "source_url": "https://docs.derivative.ca/Box_SOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Demo shapes. Box SOP: 6 separate faces by default (24 points, 4 per corner); Use Divisions (dodivs): 'Boxes divided in this way do not appear when rendered because the Divisions consist of open polygons.' Sphere SOP: type mesh, rows, cols, radx/y/z, normals; Grid SOP: type, orient, sizex/y, t (centre), rows, cols, normals; Transform SOP: t, r; Merge SOP: any number of inputs; Switch SOP: input (read 2026-11-01).",
+    "adaptation": "The demo box is one Grid SOP turned onto six faces by Transform SOPs and merged: dense faces whose edges repeat each position with different normals, exactly the crack case the crack-free mode solves (a divided Box SOP would not render). Demo nodes are built leniently: a renamed parameter becomes a stored warning."
+  },
+  {
+    "source_id": "docs.derivative.ca/SOP_Class, GeometryCOMP_Class, Bounds_Class, AbsTime_Class",
+    "source_url": "https://docs.derivative.ca/SOP_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "SOP.bounds(display=False, render=False) returns a Bounds (min, max, center, size as Positions) of the SOP's geometry; geometryCOMP.bounds(display, render, selected, recurse); absTime.seconds is a float of seconds since the process started (read 2026-11-01).",
+    "adaptation": "native.fit_glass() (named fit_flow() until the family critic's one-name fix) sets Flow centre, Flow size and Object size from the rendered SOP's bounds (Fit to Glass geometry pulse). presets.advance() (the core's, since the family sync; earlier presets.clock()) adds speed x elapsed absTime.seconds in Python floats, so animated speeds never jump the pattern."
+  },
+  {
+    "source_id": "studies/liquid-glass (core working tree after family-sync merge, on 6a58487)",
+    "source_url": null,
+    "lines": null,
+    "sha256": {
+      "liquid_glass.frag": "ff296c8fc00321dc2410742d783f99e10043e7bef5d7041aadefbf2a9709144c",
+      "liquid_glass.vert": "1190f94419060ce32b8376c0bbdfe47136e47b0bcc4ddae112847a3aca706155",
+      "presets.json": "57ebf853ad8f5b70ec2f389916eb38253b531ae65f9c01321f41ba0180e928da",
+      "study.json": "beae301037215ced002250a66643226782e4b5f4ec05027d8d5e7ff43f6d9ad5"
+    },
+    "commit": "6a58487 + working tree (2026-11-02)",
+    "role": "The core study after its audit rounds 2 and 3 and the family merge (C1 to C9): pixel shader, presets module (advance, phase, spin, menu, decode_colours), native helpers (look_defaults, render diagnostics), builder (link_demo_inputs, categorized warnings, lenient Dither), demo backdrop with the Type branch, env.frag. Its own sources.json lists the origins of each piece.",
+    "adaptation": "Family sync: liquid_flow.frag is this pixel shader plus vFlow and the Displacement stage (checks/core_reference holds the copies). presets.py adds flow_time() on the same advance(); native.py's fit_glass() also sets Flow centre and the motion's size (the family sync renamed it fit_flow(), with Object size in SOP units; family close G1 gave Object size the core's meaning and the motion its own Flow size, and the one-name fix restored the core's name, keeping fit_flow as an alias for one round); builder.py keeps wire() for multi-input SOPs. backdrop.frag is the core's; env.frag differs only in a comment."
+  },
+  {
+    "source_id": "studies/liquid-glass-blobs/blobs.frag (fan-gap mip level)",
+    "source_url": null,
+    "lines": [
+      394,
+      413
+    ],
+    "sha256": null,
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Blobs: each spectral sample reads a mip level as wide as the screen gap between neighbouring colour samples (fanGap), max with the frost gap.",
+    "adaptation": "C3: measured in a scratch copy with the round-2 B7 method (checks/results/c3-fan-gap.json) and rejected: further from a 64-sample reference in all 16 cases."
+  },
+  {
+    "source_id": "Martin Roberts, The Unreasonable Effectiveness of Quasirandom Sequences (R2 sequence)",
+    "source_url": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Low-discrepancy 2D sequence built on the plastic number (steps 0.7548776662, 0.5698402910), credited by the core for its frost disc.",
+    "adaptation": "R6: inherited through the core's discPoint(); here the frosted view through the moving sphere shifts 1.2 px at 12 samples instead of 3.1 (frost_does_not_shift_the_view)."
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT (family sync recheck)",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Read 2026-11-02 (page last edited 2026-08-05): fragColor[TD_NUM_COLOR_BUFFERS] with the warning that writing past the provided buffers can corrupt output or crash the GPU (the page prints the declaration without 'out'); TD_PICKING_ACTIVE, TDWritePickingValues() and vTDPickVert members, custom values written after the call; vec4 TDFog(vec4, vec3, int), which does nothing while fog is off; vec4 TDDither(vec4), which does nothing when dithering is off in the Render TOP; mat3 TDInstanceMat3().",
+    "adaptation": "C2, C4, C7 as in the core. Family close G6 (page read again 2026-11-02: 'when picking is occuring, the define TD_PICKING_ACTIVE is set and only the code inside the #else block is executed'): the documented '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif' form; the #else block writes the moved positions and normals after TDWritePickingValues()."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_Pass_TOP",
+    "source_url": "https://docs.derivative.ca/Render_Pass_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Read 2026-11-02 (page last edited 2024-10-07): parameters dither (Dither), cleardepth (Clear Depth Buffer), cleartocamcolor (Clear to Camera Color), overridemat (Override Material).",
+    "adaptation": "R2: README and tutorial route; C4: Dither off advice (the component's own renders set dither off leniently)."
+  },
+  {
+    "source_id": "studies/liquid-glass-lit/decisions.json (family_rule)",
+    "source_url": null,
+    "lines": null,
+    "sha256": null,
+    "commit": "working tree, 2026-11-02",
+    "role": "The family rule for Object size: world radius / 1.45 (the core's demo torus), lengths x Object size, ripple and film lookups x worldScale() = cube root of |det(mat3(world))|; Fit reads half the largest side of the rendered SOP's bounds times the COMP's world scale.",
+    "adaptation": "Family close G1: Object size follows the rule through the core's pixel stage and fit_glass() (then named fit_flow()); the motion keeps its own SOP-unit size, Flow size, because it happens before TDDeform."
+  },
+  {
+    "source_id": "studies/liquid-glass (core working tree after its family close)",
+    "source_url": null,
+    "lines": null,
+    "sha256": "liquid_glass.frag b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb; liquid_glass.vert 833510ac2805089588e54c9b0dfdeaac99138585368318e4b528dae0f51f18d0",
+    "commit": "working tree on c94e849, 2026-11-02",
+    "role": "The pixel stage this study copies (G1 worldScale() lookups, G2 centre-line tie-break from Liquid Glass Lit, G3 comment) and its preview tests fit_size_carries_presets_over_comp_scale and screen_orientation_has_no_wrong_pixels (both from Lit), and its unit-test helper preprocessed() (from Liquid Glass Blobs).",
+    "adaptation": "liquid_flow.frag rebuilt with this study's two additions; checks/core_reference refreshed; both preview tests ported with the motion on."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP, Composite_TOP, Analyze_TOP (centre-line residual native check)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Render TOP: Anti-Alias (antialias; 1x (Off) aa1, 2x aa2, 4x aa4, ...), Override Material (overridemat). Composite TOP: Operation (operand), Difference (difference): absoluteValue(input1.rgb - input2.rgb), alpha 1. Analyze TOP: Operation (op), Maximum in RGB (maxrgb); with Full Image scope the result is one pixel. Read 2026-11-02.",
+    "adaptation": "The native check centre_line_residual (validation.json, family_close.native_run): render the delivered material and a copy with the orientation set to the right value, take the difference and its maximum."
+  }
+]

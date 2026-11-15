@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "Start with density, not a translucent surface",
+    "question": "Start with density, not a translucent surface?",
+    "snippets": [
+      [
+        "volume.frag",
+        "density"
+      ]
+    ],
+    "experiments": [
+      "density"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Transmission belongs to the view ray",
+    "question": "Transmission belongs to the view ray?",
+    "snippets": [
+      [
+        "volume.frag",
+        "integrate"
+      ]
+    ],
+    "experiments": [
+      "transmission"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Light takes a different journey",
+    "question": "Light takes a different journey?",
+    "snippets": [
+      [
+        "volume.frag",
+        "light"
+      ]
+    ],
+    "experiments": [
+      "light"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Use a slab to challenge the equation",
+    "question": "Use a slab to challenge the equation?",
+    "snippets": [
+      [
+        "volume.frag",
+        "integrate"
+      ]
+    ],
+    "experiments": [
+      "slab"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Composite what survives",
+    "question": "Composite what survives?",
+    "snippets": [
+      [
+        "volume.frag",
+        "composite"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

@@ -1,0 +1,338 @@
+{
+  "made": "2026-11-02 by hand for review.md (Family close); not written by run_all.sh",
+  "kind": "Python unit tests, glslang compile and preprocess, Python measurement. No TouchDesigner, no image claims beyond the WebGL capture comparison.",
+  "how": "The final checks/test_study.py, checks/compile_glsl.py and checks/core_reference/ were laid over two copies of the c94e849 files (git archive c94e849) in the session scratchpad (agents/lit-family-close). Run A: c94e849 lit next to the c94e849 core. Run B: c94e849 lit next to the core after its family close (= this study before this round's change). test_docs_state_the_suite_sizes fails in both because the docs there state 80 unit tests; test_c2_vertex_shader_answers_picking is the changed expectation (review.md, Family close).",
+  "run_A_c94e849_lit_and_core": {
+    "unit": {
+      "ran": 86,
+      "failed": 7,
+      "failures": [
+        "DocumentedCounts.test_docs_state_the_suite_sizes",
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [../liquid-glass]",
+        "FamilyClose.test_g1_readme_family_table_is_current",
+        "FamilyClose.test_g2_screen_orientation_is_the_cores [../liquid-glass]",
+        "FamilyClose.test_g6_pick_render_runs_only_the_documented_picking_block",
+        "FamilyClose.test_g6_vertex_shader_is_the_cores",
+        "SyncC.test_c2_vertex_shader_answers_picking"
+      ],
+      "first_assertion": {
+        "test_docs_state_the_suite_sizes": "AssertionError: {'rev[109 chars] [('80', '80')], 'README compiles': [('58', '4[158 chars]80']} != {'rev[109 chars] [('86', '86')], 'README compiles': [('58', '4[158 chars]86']}",
+        "test_g1_fit_and_patterns_match_the_core [../liquid-glass]": "AssertionError: 'worldScale' not found in {'screenUV': '\\n    vec2 uv = (gl_FragCoord.xy - uTDGeneral.viewport.xy) * uTDGeneral.viewport.zw;\\n    if (uState.w > 0.5) uv.y = 1.0 - uv.y;  \\n    return uv;', 'screenSign': '",
+        "test_g1_readme_family_table_is_current": "AssertionError: 'Fit makes the ripples and film s times larger' unexpectedly found in \"\\n\\nThis study's Object size is the family's rule ([decisions.json](decisions.json), `family_rule`): the object's radius in the world",
+        "test_g2_screen_orientation_is_the_cores [../liquid-glass]": "AssertionError: 'vec2 raster = 2.0 * (gl_FragCoord.xy - uTDGe[516 chars]ent;' != 'vec4 clip = proj * vec4(camPoint, 1.0); vec2[399 chars]ent;'",
+        "test_g6_pick_render_runs_only_the_documented_picking_block": "AssertionError: '#ifdef TD_PICKING_ACTIVE' unexpectedly found in '\\n\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vObjPos;       \\nflat out int vCamIndex; \\n\\nvoid main()\\n{\\n    \\n    vObjPos = ",
+        "test_g6_vertex_shader_is_the_cores": "AssertionError: \"Same code as the core study's vertex shader\" not found in \"Liquid Glass Lit: GLSL MAT vertex shader for TouchDesigner (GLSL 4.60). Pair it with liquid_glass_lit.frag. It only moves data to the pixel stag",
+        "test_c2_vertex_shader_answers_picking": "AssertionError: Regex didn't match: '\\\\n#ifndef TD_PICKING_ACTIVE\\\\n[\\\\s\\\\S]*\\\\n#else\\\\s+TDWritePickingValues\\\\(\\\\);\\\\s+#endif\\\\n' not found in '\\n\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vO"
+      }
+    },
+    "compile": {
+      "ok": false,
+      "compiles": "58 of 58",
+      "negative_tests_ok": 4,
+      "picking_preprocessed": [
+        {
+          "variant": "ordinary render",
+          "ok": false,
+          "statements": 7,
+          "main_statements": [
+            "vObjPos = TDPos()",
+            "vec4 world = TDDeform(vObjPos)",
+            "vWorldPos = world.xyz",
+            "vec3 objNormal = TDNormal()",
+            "vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDeformNorm(objNormal) : vec3(0.0)",
+            "vCamIndex = TDCameraIndex()",
+            "gl_Position = TDWorldToProj(world)"
+          ]
+        },
+        {
+          "variant": "pick render",
+          "ok": false,
+          "statements": 8,
+          "main_statements": [
+            "vObjPos = TDPos()",
+            "vec4 world = TDDeform(vObjPos)",
+            "vWorldPos = world.xyz",
+            "vec3 objNormal = TDNormal()",
+            "vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDeformNorm(objNormal) : vec3(0.0)",
+            "vCamIndex = TDCameraIndex()",
+            "gl_Position = TDWorldToProj(world)",
+            "TDWritePickingValues()"
+          ]
+        }
+      ]
+    }
+  },
+  "run_B_c94e849_lit_with_the_family_close_core": {
+    "unit": {
+      "ran": 86,
+      "failed": 5,
+      "failures": [
+        "DocumentedCounts.test_docs_state_the_suite_sizes",
+        "FamilyClose.test_g1_readme_family_table_is_current",
+        "FamilyClose.test_g6_pick_render_runs_only_the_documented_picking_block",
+        "FamilyClose.test_g6_vertex_shader_is_the_cores",
+        "SyncC.test_c2_vertex_shader_answers_picking"
+      ],
+      "first_assertion": {
+        "test_docs_state_the_suite_sizes": "AssertionError: {'rev[109 chars] [('80', '80')], 'README compiles': [('58', '4[158 chars]80']} != {'rev[109 chars] [('86', '86')], 'README compiles': [('58', '4[158 chars]86']}",
+        "test_g1_readme_family_table_is_current": "AssertionError: 'Fit makes the ripples and film s times larger' unexpectedly found in \"\\n\\nThis study's Object size is the family's rule ([decisions.json](decisions.json), `family_rule`): the object's radius in the world",
+        "test_g6_pick_render_runs_only_the_documented_picking_block": "AssertionError: '#ifdef TD_PICKING_ACTIVE' unexpectedly found in '\\n\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vObjPos;       \\nflat out int vCamIndex; \\n\\nvoid main()\\n{\\n    \\n    vObjPos = ",
+        "test_g6_vertex_shader_is_the_cores": "AssertionError: \"Same code as the core study's vertex shader\" not found in \"Liquid Glass Lit: GLSL MAT vertex shader for TouchDesigner (GLSL 4.60). Pair it with liquid_glass_lit.frag. It only moves data to the pixel stag",
+        "test_c2_vertex_shader_answers_picking": "AssertionError: Regex didn't match: '\\\\n#ifndef TD_PICKING_ACTIVE\\\\n[\\\\s\\\\S]*\\\\n#else\\\\s+TDWritePickingValues\\\\(\\\\);\\\\s+#endif\\\\n' not found in '\\n\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vO"
+      }
+    },
+    "compile": {
+      "ok": false,
+      "compiles": "58 of 58",
+      "negative_tests_ok": 4,
+      "picking_preprocessed": [
+        {
+          "variant": "ordinary render",
+          "ok": false,
+          "statements": 7,
+          "main_statements": [
+            "vObjPos = TDPos()",
+            "vec4 world = TDDeform(vObjPos)",
+            "vWorldPos = world.xyz",
+            "vec3 objNormal = TDNormal()",
+            "vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDeformNorm(objNormal) : vec3(0.0)",
+            "vCamIndex = TDCameraIndex()",
+            "gl_Position = TDWorldToProj(world)"
+          ]
+        },
+        {
+          "variant": "pick render",
+          "ok": false,
+          "statements": 8,
+          "main_statements": [
+            "vObjPos = TDPos()",
+            "vec4 world = TDDeform(vObjPos)",
+            "vWorldPos = world.xyz",
+            "vec3 objNormal = TDNormal()",
+            "vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDeformNorm(objNormal) : vec3(0.0)",
+            "vCamIndex = TDCameraIndex()",
+            "gl_Position = TDWorldToProj(world)",
+            "TDWritePickingValues()"
+          ]
+        }
+      ]
+    }
+  },
+  "run_C_this_round_lit_with_the_c94e849_core": {
+    "unit": {
+      "ran": 86,
+      "failed": 3,
+      "failures": [
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [../liquid-glass]",
+        "FamilyClose.test_g2_screen_orientation_is_the_cores [../liquid-glass]",
+        "FamilyClose.test_g6_vertex_shader_is_the_cores [../liquid-glass]"
+      ]
+    },
+    "note": "What merging this study's change without the core's family close does: the three tests that compare with ../liquid-glass fail; against checks/core_reference they pass."
+  },
+  "g6_code_comparison_on_c94e849": {
+    "lit_vert_equals_core_vert_as_code": false,
+    "note": "test_g6_vertex_shader_is_the_cores stops at its header check on c94e849; the code comparison it makes next is also false there."
+  },
+  "after_this_round": {
+    "unit": "86 of 86 pass (checks/results/unit-tests.txt)",
+    "compile": "58 of 58, 4 of 4 negative tests, picking_preprocessed ok (checks/results/compile.json)"
+  },
+  "fit_and_patterns_measurement": {
+    "script": "family_fit.py (scratchpad agents/lit-family-close): each member's own Fit code on the core's demo torus in a Geometry COMP scaled s; 1 = the family rule",
+    "c94e849": {
+      "liquid-glass": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          0.1,
+          1.0,
+          3.0,
+          10.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          0.1,
+          1.0,
+          3.0,
+          10.0
+        ]
+      },
+      "liquid-glass-lit": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "liquid-glass-prism": {
+        "fit_at_comp_scale_3": 3.43833,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.1461,
+          1.1461,
+          1.1461,
+          1.1461
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          0.1146,
+          1.1461,
+          3.4383,
+          11.4611
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          0.1146,
+          1.1461,
+          3.4383,
+          11.4611
+        ]
+      },
+      "liquid-glass-flow": {
+        "fit_at_comp_scale_3": 1.45,
+        "thickness_vs_rule_0.1_1_3_10": [
+          14.5,
+          1.45,
+          0.4833,
+          0.145
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.45,
+          1.45,
+          1.45,
+          1.45
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.45,
+          1.45,
+          1.45,
+          1.45
+        ]
+      }
+    },
+    "after_the_family_close": {
+      "liquid-glass": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "liquid-glass-lit": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "liquid-glass-prism": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "liquid-glass-flow": {
+        "fit_at_comp_scale_3": 3.0,
+        "thickness_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "ripple_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "film_period_vs_rule_0.1_1_3_10": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "captures_after_the_vertex_change": {
+    "rendered": 43,
+    "bit_identical_to_committed": 40,
+    "differ_from_committed": {
+      "setup-fallback.png": {
+        "max": 1,
+        "changed": 5,
+        "over8": 0
+      },
+      "setup-lights.png": {
+        "max": 1,
+        "changed": 3,
+        "over8": 0
+      },
+      "setup-lights_env.png": {
+        "max": 1,
+        "changed": 11,
+        "over8": 0
+      }
+    },
+    "same_three_from_the_old_vertex_shader_in_the_same_session": "bit-identical to the new renders: the 1/255 differences are between render sessions, not from the change"
+  }
+}

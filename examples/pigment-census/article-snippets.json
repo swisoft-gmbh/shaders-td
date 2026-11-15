@@ -1,0 +1,47 @@
+[
+  {
+    "file": "source.frag",
+    "region": "fixture",
+    "lines": [
+      9,
+      24
+    ],
+    "sha256": "5ecfbcb657005321afef8b427ab1137457cb0468cec6458d6c3893575bc37d24"
+  },
+  {
+    "file": "filter.frag",
+    "region": "moments",
+    "lines": [
+      5,
+      15
+    ],
+    "sha256": "8d0c7ba6c373d0d915ddab008bbc078fbf3dfc7a08eda1c24d5fbc944eeeeabd"
+  },
+  {
+    "file": "filter.frag",
+    "region": "select",
+    "lines": [
+      21,
+      26
+    ],
+    "sha256": "8d0c7ba6c373d0d915ddab008bbc078fbf3dfc7a08eda1c24d5fbc944eeeeabd"
+  },
+  {
+    "file": "filter.frag",
+    "region": "comparison",
+    "lines": [
+      33,
+      38
+    ],
+    "sha256": "8d0c7ba6c373d0d915ddab008bbc078fbf3dfc7a08eda1c24d5fbc944eeeeabd"
+  },
+  {
+    "file": "filter.frag",
+    "region": "select",
+    "lines": [
+      21,
+      26
+    ],
+    "sha256": "8d0c7ba6c373d0d915ddab008bbc078fbf3dfc7a08eda1c24d5fbc944eeeeabd"
+  }
+]

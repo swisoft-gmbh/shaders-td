@@ -1,0 +1,15 @@
+{
+ "what": "Family close critic fixes (PV1 to PV4): red run of the new FamilyCloseCritic tests on the text before the fix.",
+ "date": "2026-11-02",
+ "how": "The study folders as they were at 11:50 UTC on 2026-11-02, before these fixes (scratchpad agents/family-pv-fix/pre: the five members, so the cross-study reads see the family as it was; captures linked from the working tree), with only today's checks/test_study.py copied in. Plain Python; nothing ran in TouchDesigner.",
+ "unit_tests_before_fix": {
+  "summary": [
+   "Ran 69 tests",
+   "FAILED (failures=1)"
+  ],
+  "failing": [
+   "FamilyCloseCritic.test_pv4_labels_say_what_object_size_does ('scene units' unexpectedly found in 'Thickness (scene units)')"
+  ],
+  "note": "The new test fails; the other 68 pass. After the fix: 69 of 69 (checks/results/unit-tests.txt). PV3 needed no new test: test_v3_names_section_says_who_follows_the_family_rule (second verifier pass) already measures it and passes."
+ }
+}

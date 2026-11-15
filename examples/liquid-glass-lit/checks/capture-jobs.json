@@ -1,0 +1,536 @@
+[
+  {
+    "name": "preview-see_through",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Ior": 1.0,
+        "Dispersion": 0.0,
+        "Frost": 0.0,
+        "Density": 0.0,
+        "Edgetint": 0.0,
+        "Saturation": 1.0,
+        "Translucency": 1.0,
+        "Specular": 0.0,
+        "Diffuse": 0.0,
+        "Reflection": 0.0,
+        "Rim": 0.0,
+        "Iridescence": 0.0,
+        "Wobble": 0.0
+      }
+    }
+  },
+  {
+    "name": "preview-dispersion",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "refraction",
+        "Dispersion": 1.0
+      }
+    }
+  },
+  {
+    "name": "preview-scene_lights",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "lights",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Diffuse": 0.6
+      }
+    }
+  },
+  {
+    "name": "preview-fallback",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Demolights": "none",
+        "Demoenv": false
+      }
+    }
+  },
+  {
+    "name": "preview-blackout",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "sources",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Demodimmer": 0.0
+      }
+    }
+  },
+  {
+    "name": "preview-rim_only",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "lights",
+        "Demolights": "rim",
+        "Demoenv": true,
+        "Diffuse": 0.6
+      }
+    }
+  },
+  {
+    "name": "preview-highlight_size",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "lights",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Diffuse": 0.6,
+        "Highlightsize": 0.45
+      }
+    }
+  },
+  {
+    "name": "preview-env_reflection",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "reflection",
+        "Demolights": "none",
+        "Demoenv": true
+      }
+    }
+  },
+  {
+    "name": "preview-env_rotate",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "environment",
+        "Demolights": "none",
+        "Demoenv": true,
+        "Demoenvrotate": 90.0
+      }
+    }
+  },
+  {
+    "name": "preview-env_roughness",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "environment",
+        "Demolights": "none",
+        "Demoenv": true,
+        "Roughness": 0.6
+      }
+    }
+  },
+  {
+    "name": "preview-env_seam",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "environment",
+        "Demolights": "none",
+        "Demoenv": true,
+        "Roughness": 0.7,
+        "Demoenvrotate": 90.0
+      }
+    }
+  },
+  {
+    "name": "preview-body_light",
+    "draw": {
+      "preset": "rose_quartz",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "body",
+        "Demolights": "key",
+        "Demoenv": true,
+        "Translucency": 0.35
+      }
+    }
+  },
+  {
+    "name": "preview-morph",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Morphtarget": "violet_gel",
+        "Morph": 0.5
+      }
+    }
+  },
+  {
+    "name": "preview-final",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Demolights": "both",
+        "Demoenv": true
+      }
+    }
+  },
+  {
+    "name": "preview-occluder",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Demooccluder": true
+      }
+    }
+  },
+  {
+    "name": "preview-type_backdrop",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "overrides": {
+        "Stage": "final",
+        "Demolights": "both",
+        "Demoenv": true,
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "preset-clear_crystal",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-prism_chrome",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-violet_gel",
+    "draw": {
+      "preset": "violet_gel",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-sapphire_drop",
+    "draw": {
+      "preset": "sapphire_drop",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-chrome_type",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-frosted_ice",
+    "draw": {
+      "preset": "frosted_ice",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-amber_honey",
+    "draw": {
+      "preset": "amber_honey",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-emerald_bottle",
+    "draw": {
+      "preset": "emerald_bottle",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-rose_quartz",
+    "draw": {
+      "preset": "rose_quartz",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-liquid_mercury",
+    "draw": {
+      "preset": "liquid_mercury",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-oil_slick",
+    "draw": {
+      "preset": "oil_slick",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "preset-aqua_jelly",
+    "draw": {
+      "preset": "aqua_jelly",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25
+    }
+  },
+  {
+    "name": "type-clear_crystal",
+    "draw": {
+      "preset": "clear_crystal",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-prism_chrome",
+    "draw": {
+      "preset": "prism_chrome",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-violet_gel",
+    "draw": {
+      "preset": "violet_gel",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-sapphire_drop",
+    "draw": {
+      "preset": "sapphire_drop",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-chrome_type",
+    "draw": {
+      "preset": "chrome_type",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-frosted_ice",
+    "draw": {
+      "preset": "frosted_ice",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-amber_honey",
+    "draw": {
+      "preset": "amber_honey",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-emerald_bottle",
+    "draw": {
+      "preset": "emerald_bottle",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-rose_quartz",
+    "draw": {
+      "preset": "rose_quartz",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-liquid_mercury",
+    "draw": {
+      "preset": "liquid_mercury",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-oil_slick",
+    "draw": {
+      "preset": "oil_slick",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "type-aqua_jelly",
+    "draw": {
+      "preset": "aqua_jelly",
+      "time": 2.0,
+      "mesh": "knot",
+      "spin": 0,
+      "tilt": 25,
+      "overrides": {
+        "Backdrop": "type"
+      }
+    }
+  },
+  {
+    "name": "setup-fallback",
+    "draw": {
+      "preset": "sapphire_drop",
+      "time": 2.0,
+      "mesh": "blob",
+      "spin": 0,
+      "tilt": 10,
+      "overrides": {
+        "Demolights": "none",
+        "Demoenv": false
+      }
+    }
+  },
+  {
+    "name": "setup-lights",
+    "draw": {
+      "preset": "sapphire_drop",
+      "time": 2.0,
+      "mesh": "blob",
+      "spin": 0,
+      "tilt": 10,
+      "overrides": {
+        "Demolights": "both",
+        "Demoenv": false
+      }
+    }
+  },
+  {
+    "name": "setup-lights_env",
+    "draw": {
+      "preset": "sapphire_drop",
+      "time": 2.0,
+      "mesh": "blob",
+      "spin": 0,
+      "tilt": 10,
+      "overrides": {
+        "Demolights": "both",
+        "Demoenv": true
+      }
+    }
+  }
+]

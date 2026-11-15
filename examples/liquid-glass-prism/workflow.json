@@ -1,0 +1,395 @@
+{
+ "research": {
+  "status": "completed",
+  "skill": "shader-research",
+  "outputs": [
+   "research.md",
+   "sources.json",
+   "brief.md",
+   "decisions.json"
+  ],
+  "steps_applied": [
+   "Read SKILL.md and references native-scope, method, native-techniques, native-api, chat-web, chat-source-index, source-formats, teaching-evidence in full.",
+   "Step 1: goals, inputs, output and audience taken from the family brief; co-design delegated, inferences recorded in co-design.json.",
+   "Steps 2-3: corpus.py verify (393 files, no errors); corpus.py search 'backside', 'total internal reflection', 'multiple render targets', 'chromatic aberration caustics'; corpus.py article caustics-in-webgl; corpus.py read of the refraction article 226-470 and 696-781, the caustics article 45-470, the render-targets article 329-384; demos.py list for both articles; demos.py show and export of refraction ...::scene9 and caustics-in-webgl::scene2 into scratch (web reference code, not executed).",
+   "Step 4: 2-4 focused mechanisms reported with source id, lines, hash, commit, limitation and native adaptation (sources.json, research.md).",
+   "Step 5: native API checked on docs.derivative.ca (Write a GLSL MAT oldid 38399, Render TOP oldid 36456, Render Select TOP oldid 23988); no installed build available, so stated as an assumption.",
+   "Step 6: routes compared in viewer terms (research.md) and back-face storage options compared (decisions.json).",
+   "Source-format cautions applied: one coordinate space (world) for normals and eye vector; no WebGL colour includes ported; per-pixel random noise in the caustics demo deliberately not ported.",
+   "Independent review round (2026-11-01): re-read all four SKILL.md files and their listed references; corpus.py verify (393 files, no errors); corpus.py read of RefractionDispersionReactThreeFiber/final.ts 44-56, 128-135 and 230-275 (M8 line ranges) and of the refraction article 426-436 (bounded offsets, T1); native API re-checked on docs.derivative.ca (Write a GLSL MAT: picking, TDWorldToProj projections, multi-camera, proj Z range; Par Class evalOPs; Network Path; Render TOP background and render modes; Color Space Workflows)."
+  ]
+ },
+ "build": {
+  "status": "completed",
+  "skill": "shader-build",
+  "outputs": [
+   "liquid_prism.vert",
+   "liquid_prism.frag",
+   "backdrop.frag",
+   "env.frag",
+   "study.json",
+   "build.py",
+   "builder.py",
+   "native.py",
+   "presets.json",
+   "presets.py",
+   "preset_exec.py",
+   "experiments.json",
+   "captures/",
+   "checks/"
+  ],
+  "native_evidence": null,
+  "steps_applied": [
+   "Read SKILL.md and references co-design, material-route, native-delivery, dossier (plus feedback for completeness).",
+   "Web-chat contract: no native host, so source plus in-host builder, native steps marked pending; every image labelled as a WebGL preview.",
+   "Step 1 foundation: same-camera Refraction TOP, screen UV contract, premultiplied alpha, float back target, sampler bindings documented in study.json.",
+   "Step 2 mechanism: debug stages for exit normal, deviation, trapped share, bounce and caustic, plus the core's stages; fixed time via Pause.",
+   "Step 3 composition: two-surface tracing composed with the core's tint, reflection, light, liquid and film; new controls and presets.",
+   "Step 4 feedback: delegated; preview images inspected against the references at each look round instead of asking the user (co-design.json open questions).",
+   "Step 5 challenge: failing first TIR test isolated (0.03-degree pixel ray tilt near the critical angle), dark trapped bands traced to the environment-only bounce, invisible caustic traced to a pin-point spot size; each fixed with one causal change.",
+   "Step 6 measure: no GPU timing taken; performance marked pending.",
+   "Material route: SOP to Geometry COMP to MAT to camera to Render TOP; normals via TDDeformNorm; non-uniform demo scale tested in the preview with an inverse-transpose normal matrix; orthographic camera tested.",
+   "Native delivery: build.py/builder.py create a new component, strict core and lenient demo nodes, warnings stored on the component; native.py apply/inspect/capture/export with refusal to overwrite.",
+   "Independent review round: core reuse still derived only from commit a6f95c6 (decisions.json); shader fixes for T1, T5, T6, T7/M6, T8, M2, M3, M7, M9; recipe fixes for T3 (builder prints and stores the material path) and T4 (evalOPs geometry, demo-default warnings); each fix tested first on a scratch copy against a measurement of the defect, one causal change at a time (material-route: derivative normals, screen orientation, transforms)."
+  ]
+ },
+ "explain": {
+  "status": "completed",
+  "skill": "shader-explain",
+  "outputs": [
+   "article.source.md",
+   "article.md",
+   "article-plan.json",
+   "article-snippets.json",
+   "figures/network.svg",
+   "figures/two-surfaces.svg"
+  ],
+  "steps_applied": [
+   "Read SKILL.md and references teaching-contract and teaching-evidence.",
+   "Step 1: wrote from the delivered GLSL, recipe, experiments and previews; no invented experiments or anecdotes (the TIR test and bounce fixes are described as they happened).",
+   "Step 2: each of 9 sections follows reader question, smallest model, real excerpt, experiment, labelled preview observation.",
+   "Steps 3-4: article.py render expands 15 bounded regions; two schematic figures labelled as schematics.",
+   "Step 5: 16 experiments in experiments.json with fixed time, one varied control, prediction and pending native observation.",
+   "Step 6: decisions explained as goal, options, evidence, choice, consequence; upstream sources and researchers credited.",
+   "Step 7: article.py check passes (9 sections, 15 excerpts).",
+   "Independent review round: tutorial text corrected from the delivered code (Scene depth as lens strength, 530 nm middle, per-slice exit normal with a new sliceexit excerpt, exit march, negated distance, Exit tilt with the pass on, compositing holdout, limits); article.py render and check rerun; affected previews re-rendered and labelled as WebGL previews."
+  ]
+ },
+ "review": {
+  "status": "completed",
+  "skill": "shader-review",
+  "outputs": [
+   "review.md",
+   "validation.json",
+   "checks/results/"
+  ],
+  "native_export_evidence": null,
+  "steps_applied": [
+   "Read SKILL.md and references/review.md.",
+   "Step 1 source truth: corpus.py verify; cited ranges re-read.",
+   "Step 2 static contract: check_study.py passes.",
+   "Steps 3-4, 7 native, temporal and delivery: pending (no host); the study has no feedback state.",
+   "Step 5 geometry: normal transforms, non-uniform scale and orthographic camera exercised in the preview; native check pending.",
+   "Step 6 teaching: article.py check passes; previews inspected for every experiment.",
+   "Step 8: findings ranked by impact in review.md; fixed issues rerun; limits stated; self-review, not independent.",
+   "Independent review round: each of 19 findings first refuted or confirmed by re-reading code, a scratch experiment or the docs (review.md, Independent review); every confirmed finding fixed; credible native risks given cheap mitigations plus a pending native check (validation.json).",
+   "Step 1 source truth: corpus.py verify; M8 line ranges checked with corpus.py read.",
+   "Step 2 static contract: check_study.py rerun.",
+   "Step 5 geometry: geometry without normals, screen orientation (emulated flipped raster), Flip V, orthographic camera, objects in front of the glass exercised in the preview; native checks listed.",
+   "Step 6 teaching: article.py check rerun; images re-rendered.",
+   "Step 8: findings, verdicts and actions recorded by impact; image-level property tests added and a mutation run (22 broken copies) records which tests catch which defect; limits stated. This round's fixes were made by the study's maintainer, not by the reviewers."
+  ]
+ },
+ "family_sync": {
+  "status": "completed",
+  "date": "2026-11-02",
+  "skills": [
+   "shader-research",
+   "shader-build",
+   "shader-explain",
+   "shader-review"
+  ],
+  "outputs": [
+   "liquid_prism.frag",
+   "liquid_prism.vert",
+   "backdrop.frag",
+   "env.frag",
+   "study.json",
+   "builder.py",
+   "native.py",
+   "presets.py",
+   "preset_exec.py",
+   "checks/",
+   "checks/reference/",
+   "captures/",
+   "README.md",
+   "article.source.md",
+   "article.md",
+   "decisions.json",
+   "validation.json",
+   "sources.json",
+   "co-design.json",
+   "research.md",
+   "review.md",
+   "figures/network.svg"
+  ],
+  "steps_applied": [
+   "Read in full: skills/build/SKILL.md (+ references material-route, native-delivery, co-design, dossier), skills/review/SKILL.md (+ references/review.md), skills/explain/SKILL.md (+ references/teaching-contract.md), skills/research/SKILL.md (+ references/native-api.md).",
+   "shader-research step 5 (native API from official sources): re-read Write a GLSL MAT (oldid 38399: picking, fragColor[TD_NUM_COLOR_BUFFERS], TDFog, TDDither), Render TOP (oldid 36456: dither) and Render Pass TOP (oldid 32225: cleardepth, cleartocamcolor, overridemat, dither) on docs.derivative.ca, 2026-11-02; no installed build available, stated as an assumption.",
+   "shader-build: read this member in full and the core implementation of every R and C item; inspect-before-change by measuring first on scratch copies (screen orientation methods, fan-gap level, footprint variants against supersampled renders, the back-face filter at silhouettes); one causal change per item; material-route checks (normals through TDDeformNorm with a zero-normal guard, faceted normals, wobble under COMP scale, Render Pass TOP occlusion); native steps kept pending; every image labelled a WebGL preview.",
+   "shader-build native delivery: builder strict for core nodes and lenient with categorized warnings for demo and optional settings; Inputs fields in constant mode; Dither off on both renders; Info DATs on every render; inspect() with script errors, blocking errors and render diagnostics.",
+   "shader-review step 2 (static contract): check_study.py; step 5 (geometry): COMP scale 0.1/10, a 1/20-size mesh without normals, flipped raster, Render Pass TOP occluder; numerics: ordered smoothstep edges, guarded normalisation, output cap, finite output; review criteria 'Correctness fixes should not silently change accepted artistic choices': every look change is listed in review.md with before/after numbers.",
+   "shader-review step 8: every applied item has a test that fails on the 6a58487 code (unit red run and preview_tests.cjs --reference); limits and pending native checks stated in validation.json.",
+   "shader-explain: tutorial sections that changed were rewritten from the delivered code (screen orientation, normals, frost, footprint level, covered alpha, energy conserving, fog, Object size, uPhase, own-scene route, limits); article.py render and check rerun; figures re-rendered and labelled."
+  ]
+ },
+ "family_sync_verifier_fixes": {
+  "status": "completed",
+  "date": "2026-11-02",
+  "skills": [
+   "shader-build",
+   "shader-review",
+   "shader-explain",
+   "shader-research"
+  ],
+  "outputs": [
+   "liquid_prism.frag",
+   "checks/preview/preview.js",
+   "checks/preview_tests.cjs",
+   "checks/test_study.py",
+   "checks/results/",
+   "README.md",
+   "article.source.md",
+   "article.md",
+   "article-snippets.json",
+   "study.json",
+   "decisions.json",
+   "validation.json",
+   "sources.json",
+   "co-design.json",
+   "research.md",
+   "review.md#verifier-round-after-the-sync"
+  ],
+  "steps_applied": [
+   "Family sync, verifier round (V1 to V6). Read in full before working: skills/build/SKILL.md, skills/review/SKILL.md and references/review.md, skills/explain/SKILL.md and references/teaching-contract.md; consulted skills/research/SKILL.md and references/native-api.md for the TouchDesigner facts touched (GLSL MAT pixel contract, TDCheckDiscard).",
+   "shader-research step 5 (native API from official sources): re-read Write a GLSL MAT on docs.derivative.ca (oldid 38399, 2026-11-02) for TDCheckDiscard: it discards pixels for order-independent transparency and dual-paraboloid rendering, and the page advises calling it at the start for speed; the trade-off is recorded in decisions.json (R5) and co-design.json. No installed build available, stated as an assumption.",
+   "shader-review step 8 (report by impact, fix, rerun): each issue reproduced first on a scratch copy of the pre-fix study (V1: flat-image offset sign under a mirrored projection, 0 of 98,796 pixels agreeing; V2: 1,524 and 1,548 wrong centre-row pixels at 481 x 271; V3: line order plus the docs; V4: fan-gap fractions; V5: capture pixel diff; V6: filmThickness()).",
+   "shader-build Challenge (isolate a real limitation at fixed conditions, keep the baseline): the centre-line tie-break was measured over 192 renders at 481 x 271 against the tie rule and an unguarded derivative before choosing the edge-on guard; numbers in checks/results/family-sync-measurements.json (verifier_fixes).",
+   "shader-review step 5 (geometry: orientation under rotation): new preview option projFlipY (a mirrored projection matrix) and an odd render size added to the orientation tests; the --reference run against the 6a58487 shaders and a run on the pre-fix shader both fail the new cases.",
+   "shader-review numerics and native criteria: derivatives only in uniform control flow, now also before TDCheckDiscard in both passes (unit test with a mutant that fails); native OIT check added (validation.json native_oit_discard) and native_flip_v extended.",
+   "shader-review criterion 'correctness fixes should not silently change accepted artistic choices': all 52 capture jobs re-rendered with the fixed shader and compared with captures/: 0/255 everywhere, so no capture or receipt changed and the 12 presets stay as accepted; the sheets were looked at again against the four reference images.",
+   "shader-explain step 4 and 7: article.source.md paragraphs for screenSign(), the setup block and the compose block rewritten from the delivered code; article.py render and check rerun.",
+   "Records: decisions.json (C3, C6, R5, T6, T7 entries), review.md (Family sync table, Expectations changed on purpose, Verifier round), validation.json, co-design.json (supplied vs inferred choices), research.md, sources.json, study.json coordinate contract, README (uFilm.w row, OIT note, test counts). Images remain WebGL previews; every native step stays pending."
+  ]
+ },
+ "family_sync_gap_fix": {
+  "status": "completed",
+  "date": "2026-11-02",
+  "skills": [
+   "shader-build",
+   "shader-review",
+   "shader-explain",
+   "shader-research"
+  ],
+  "outputs": [
+   "checks/test_study.py",
+   "checks/results/unit-tests.txt",
+   "checks/results/unit-tests-6a58487.txt",
+   "checks/results/family-sync-measurements.json",
+   "review.md#gap-fix-after-the-verifier-round",
+   "decisions.json",
+   "validation.json",
+   "co-design.json",
+   "workflow.json"
+  ],
+  "steps_applied": [
+   "Gap fix (one low-severity issue: the C3 unit test did not test what its name said). Read in full before working: skills/build/SKILL.md, skills/review/SKILL.md and references/review.md, skills/explain/SKILL.md and references/teaching-contract.md; consulted skills/research/SKILL.md and references/native-api.md. No TouchDesigner API fact was touched, so no documentation page was re-read.",
+   "shader-review step 8 (report by impact, fix, rerun): reproduced first on a scratch copy. Five compiling shader mutants that change a lookup level passed the old test and the whole unit suite; the renamed test checks the level expressions and fails on all five; the red run on the 6a58487 copy was repeated (39 of 65 fail, unchanged).",
+   "shader-review criterion 'do not inflate test counts into claims': review.md says what the test checks and what it cannot (the image), and names the preview test that guards the image.",
+   "shader-build: no shader, recipe or control changed, so no capture was re-rendered; the presets sheets were looked at again against the four reference images and the 12 presets stay distinct.",
+   "shader-explain step 4 and 7: the tutorial names no unit test and no excerpt changed; article.py render and check rerun.",
+   "Records: review.md (Family sync C3 row, Expectations changed on purpose, Gap fix), decisions.json (C3 alternatives wording and status), validation.json (unit_tests, family_sync), co-design.json (inferred choice), family-sync-measurements.json (gap_fix_c3_unit_test). Every image remains a WebGL preview; every native step stays pending."
+  ]
+ },
+ "family_names_fix": {
+  "part_of": "family sync",
+  "status": "completed (outside TouchDesigner; native checks pending)",
+  "date": "2026-11-02",
+  "items": "Family names (verifier, low): one name per thing across the five members (Fit pulse, Demo backdrop menu).",
+  "change": "No recipe change: Prism already used `Fitglass`, 'Fit to Glass geometry (sets Object size)' and a Demo backdrop look control. README's Inputs table names `Fitglass` and links to the core's Names across the family.",
+  "skills": {
+   "shader-research": [
+    "Read SKILL.md and references/native-api.md (Page class: custom parameters have a name and a label).",
+    "Step 5: re-read the Par Class page on docs.derivative.ca (modified 2026-08-19, read 2026-11-02) for pulse(); whether a scripted pulse fires the Parameter Execute callback is not stated there, so it is a pending native check."
+   ],
+   "shader-build": [
+    "Read SKILL.md: recipe (study.json), callback (preset_exec.py) and helpers kept consistent; parameter names and labels are the native delivery surface, so they were changed in the recipe, never in a built network.",
+    "Challenge: the divergence was reproduced first by a script over the five study.json files (three Fit names, two label heads, two backdrop classes).",
+    "No TouchDesigner host: native checks of the renamed pulse and labels stay pending (validation.json, family_names)."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md: one name per thing in the tutorial; article.py render and check rerun."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md (Host: valid parameter names and menus; Teaching: matching presets and docs).",
+    "Steps 2, 6 and 8: check_study.py, article.py check, review.md (Family names). Red run before the fix: checks/results/red-run-family-names.json. Steps 3 and 7 impossible without TouchDesigner."
+   ]
+  }
+ },
+ "family_close": {
+  "part_of": "family close after commit c94e849",
+  "status": "completed (outside TouchDesigner; native checks pending)",
+  "date": "2026-11-02",
+  "items": "This study's share of the family critic's gaps: G1 (Object size has one meaning: the family rule), G2 (one centre-line tie-break family-wide), G6 (documented picking form). G3 to G5 belong to the core; this study already had prism's film wording (G3) and the occluder test (G4), and its C3 record already listed the quarter gap (G5).",
+  "change": "G1: worldScale() on the ripple and film lookups; fit_glass() over REFERENCE_RADIUS = 1.45; Object size default 0.872517 (the demo's own fit); the six prism looks mapped once (lengths x 1.146, Tint density / 1.146, Wobble scale x 1.0345); Thickness and Scene depth labels say x Object size. G2: compared, no change (the core's and Lit's lines are this study's). G6: vObjPos written inside '#ifndef TD_PICKING_ACTIVE'; header says what a pick render runs.",
+  "skills": {
+   "shader-research": [
+    "Read SKILL.md and references/native-api.md (Write a GLSL MAT: picking; Render TOP: one camera per pass).",
+    "Step 5: re-read Write a GLSL MAT on docs.derivative.ca (modified 2026-08-05, read 2026-11-02): '#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif' and 'only the code inside the #else block is executed'. ObjectCOMP worldTransform as quoted in the family rule (Lit decisions.json)."
+   ],
+   "shader-build": [
+    "Read SKILL.md and references/material-route.md (object-space patterns move with the object; non-uniform scale needs its own path, here averaged by the cube root and recorded as a limit). Changes land in the recipe (study.json, presets.json, native.py) and the GLSL files, never in a built network.",
+    "Challenge: each gap reproduced at fixed conditions against a c94e849 copy kept as the baseline (scratch: Fit on the core torus scaled 3 gives 3.4383; COMP scale 0.1 and 10 at the fitted size; the pick render's statements; the centre-line survey with both forms).",
+    "Measure: WebGL2 preview (Chromium SwiftShader), sizes and metrics stated; no performance claim. Teach: experiments and captures re-rendered where the look changed."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md: the transforms excerpt regenerated with the picking comment; the compose section says what Object size means and names its test; experiment wording uses units of Object size.",
+    "Steps 4, 6 and 7: article.py render and check; decisions written as goal, options, evidence, choice, consequence."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md (Geometry: orientation under a flipped raster and scaled COMPs; Numerics; Teaching: claims tied to tests).",
+    "Steps 2, 5, 6 and 8: check_study.py, the COMP-scale and centre-line surveys, article.py check, review.md (Family close). Red runs on c94e849: checks/results/red-run-family-close.json. Steps 3 and 7 impossible without TouchDesigner."
+   ]
+  }
+ },
+ "family_close_critic_fixes": {
+  "part_of": "family close after commit c94e849 (critic fixes)",
+  "status": "completed (outside TouchDesigner; native label check pending)",
+  "date": "2026-11-02",
+  "items": "PV1 (docs called the demo torus smaller), PV2 (validation.json said 6 changed expectations, not 5), PV3 (this study's Not done note after the core fixed its family note), PV4 (Object size label in the family's one wording). PV3's core change and PV4's core and Flow labels are recorded in those studies.",
+  "change": "README step 6, article.source.md (compose), review.md (G1 mapping and a new Family close critic fixes section), decisions.json (G1 consequence wording; a PV4 entry), validation.json (counts, family_close.critic_fixes), co-design.json, the Object size label in study.json, and the FamilyCloseCritic unit tests.",
+  "skills": {
+   "shader-research": [
+    "Read SKILL.md and references/native-api.md (Page class: custom parameter labels are set per parameter; the running build is authoritative). No new native API fact was needed: a label is text on an existing parameter."
+   ],
+   "shader-build": [
+    "Read SKILL.md. Changes land in the recipe (study.json) and records, never in a built network. Challenge: each finding reproduced first on the current files (scratch copy kept as the baseline, agents/family-pv-fix/pre). Measure: none needed; no image changed (shaders, presets and uniform expressions byte-identical)."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md: the compose section's claim corrected from the delivered study.json and native.demo_radius(); article.py render and check (step 4 and 7); no excerpt edited by hand."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md (Teaching: claims tied to tests; report honestly, do not inflate counts). Steps 2, 6 and 8: check_study.py, article.py check, review.md (Family close critic fixes), red runs on the pre-fix text. Steps 3 and 7 impossible without TouchDesigner."
+   ]
+  }
+ },
+ "family_close_critic_native_and_object_size": {
+  "part_of": "family close (family critic: native runs and one Object size)",
+  "status": "completed outside TouchDesigner; native runs and the rule change pending",
+  "date": "2026-11-02",
+  "items": "Critic issue 1 (high): no family close result ran in TouchDesigner; not fixable here, native list and record template added. Critic issue 2 (medium): one Object size per component; measured, documented and tested; the rule change waits for the user's decision.",
+  "outputs": [
+   "README.md",
+   "article.source.md",
+   "article.md",
+   "article-snippets.json",
+   "review.md",
+   "decisions.json",
+   "validation.json",
+   "co-design.json",
+   "workflow.json",
+   "checks/test_study.py",
+   "checks/results/red-run-family-critic.json",
+   "checks/results/"
+  ],
+  "skills": {
+   "shader-research": [
+    "Read SKILL.md and references/native-api.md (Write a GLSL MAT: TDDeform and instancing; the running build is authoritative). New API fact checked on docs.derivative.ca/App_Class (2026-11-02): the App class has build, version, osName and osVersion but no GPU member, so the native record takes the GPU by hand."
+   ],
+   "shader-build": [
+    "Read SKILL.md. Challenge: both issues reproduced at fixed conditions with this study's own Fit code on fake objects (scratchpad agents/critic-fit-native/fit_limits.py); baseline kept. Measure: no renders needed, because no shader, preset or uniform expression changed. Native execution marked pending, as the build mode requires when no host is connected."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md: one Limits point added in the article's own words, no code excerpt changed; article.py render and check rerun."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md (Geometry: instancing and scale; Teaching: docs tied to tests; Host: build, OS, GPU and Info DAT output).",
+    "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Family critic: native runs and one Object size; claims limited to what ran). Steps 3, 5 (native part) and 7 impossible without TouchDesigner."
+   ]
+  }
+ },
+ "family_close_look_decisions": {
+  "part_of": "family close",
+  "status": "completed (records and tests; outside TouchDesigner); the decisions wait for the user",
+  "date": "2026-11-02",
+  "items": "A family critic: the user has not accepted the family close's look changes; answer the open questions and change the code only after the user answers.",
+  "change": "(c). co-design.json look_decisions_for_user: LOOK-P1 (A keep the core's values, recommended; B convert the six core looks for this demo) and LOOK-P2 (A the family's 2.5 per Object size, recommended; B a Prism-only 2.586). The open question points there. README section Look decisions waiting for you with captures/review-look-decisions.png (composed from the c94e849 and current captures). Unit tests LookDecisions (2). No shader, preset, control, recipe value or capture change.",
+  "outputs": [
+   "co-design.json",
+   "README.md",
+   "review.md",
+   "decisions.json",
+   "validation.json",
+   "workflow.json",
+   "checks/test_study.py",
+   "checks/results/look-decisions.json",
+   "checks/results/red-run-look-decisions.json",
+   "captures/review-look-decisions.png"
+  ],
+  "skills": {
+   "shader-build": [
+    "Read SKILL.md and references/co-design.md: answer origins; an inferred preference is not acceptance; offer distinct options, recommend one and let the user steer; save the user's words with the change (step 4, Feedback).",
+    "Challenge: each claim of the critic reproduced at fixed conditions before writing anything (capture diffs against c94e849; the length and count factors computed from study.json).",
+    "Kept accepted and delivered looks: no shader, preset, control or capture change; the code waits for the answer."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md: step 2 (check_study.py), step 6 (article.py render and check), step 8 (review.md, Look decisions: defects by impact, evidence, remaining limits); the Teaching criterion (claims tied to receipts) and step 8's rule not to inflate test counts into claims of user acceptance.",
+    "Steps 3 and 7 (native execution, delivery) remain impossible here: no TouchDesigner."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md: steps 4 and 7 (article rendered from its source and checked). The article did not change: it describes the code, which is unchanged. One name per thing (LOOK ids, look_decisions_for_user); every image labelled as a WebGL preview."
+   ],
+   "shader-research": [
+    "Read SKILL.md and consulted references/native-api.md (step 5): no TouchDesigner API fact was used in this round."
+   ]
+  }
+ },
+ "family_close_centre_line_residual": {
+  "part_of": "family close (family critic: the antialiased centre-line residual)",
+  "status": "completed outside TouchDesigner; native check pending",
+  "date": "2026-11-02",
+  "items": "Family critic (low): a few multisampled silhouette pixels near a centre line still take the wrong orientation sign (up to 8 per row of twelve renders); the centroid fix (Lit's form (e)) needs a centroid varying no TouchDesigner build has run. Kept as a family open question with a native check; no shader changed.",
+  "change": "co-design.json: the family's open question (same words in the core, Flow, Lit and Prism) and an answers entry. validation.json: family_close.native_run check centre_line_residual, family_close.centre_line_residual, unit and preview scopes. decisions.json: the decision. checks/preview_tests.cjs: at most 10 wrong multisampled pixels per row (20 before). checks/test_study.py: CentreLineResidual (2 tests); _critic_native_run_test expects five native checks. README, tutorial, review.md, sources.json. Unit suite 84 tests (82 before). No shader, preset, uniform expression or capture changed.",
+  "outputs": [
+   "co-design.json",
+   "validation.json",
+   "decisions.json",
+   "README.md",
+   "article.source.md",
+   "article.md",
+   "review.md",
+   "sources.json",
+   "workflow.json",
+   "checks/preview_tests.cjs",
+   "checks/test_study.py",
+   "checks/results/centre-line-residual.json",
+   "checks/results/red-run-centre-line-residual.json",
+   "checks/results/"
+  ],
+  "skills": {
+   "shader-research": [
+    "Read SKILL.md and references/native-api.md (Render TOP: record antialiasing with captures). New API facts checked on docs.derivative.ca on 2026-11-02 for the native check: Render TOP Anti-Alias (antialias, aa4) and Override Material (overridemat); Composite TOP Operation Difference (operand, difference); Analyze TOP Operation Maximum in RGB (op, maxrgb). Recorded in sources.json."
+   ],
+   "shader-build": [
+    "Read SKILL.md in full. Inspect before choosing: no TouchDesigner host here, so native execution stays pending and the native check is written as a recipe. Challenge: the residual reproduced at fixed conditions (the survey's 144 renders) with the baseline kept, and its effect on the final image isolated by forcing the orientation on a scratch copy (visibility.cjs). Measure: no timing; every image labelled a WebGL preview. The centroid variant only compiled in glslang on a scratch copy of Lit, not adopted."
+   ],
+   "shader-explain": [
+    "Read SKILL.md and references/teaching-contract.md in full. Steps 4, 6 and 7: the limitation stated in the tutorial in plain words with its preview numbers and its open status; the decision written as goal, options, evidence, choice, consequence; article.py render and check; no code excerpt changed."
+   ],
+   "shader-review": [
+    "Read SKILL.md and references/review.md in full: Geometry (antialiasing, orientation at odd sizes), Numerics, Teaching (limitations explicit, claims match tests) and Host criteria.",
+    "Steps 2 (check_study.py), 5 (orientation in both rasters, single-sample and multisampled), 6 (article.py render and check) and 8 (review.md, Family critic: the antialiased centre-line residual; red runs and mutations). Steps 3 and 7 impossible without TouchDesigner."
+   ]
+  }
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "what": "Family close critic fixes (PV1 to PV4): red run of the new FamilyCloseCritic tests on the text before the fix.",
+ "date": "2026-11-02",
+ "how": "The study folders as they were at 11:50 UTC on 2026-11-02, before these fixes (scratchpad agents/family-pv-fix/pre: the five members, so the cross-study reads see the family as it was; captures linked from the working tree), with only today's checks/test_study.py copied in. Plain Python; nothing ran in TouchDesigner.",
+ "unit_tests_before_fix": {
+  "summary": [
+   "Ran 78 tests",
+   "FAILED (failures=10)"
+  ],
+  "failing": [
+   "FamilyCloseCritic.test_pv1_docs_say_why_the_demo_fits_below_1 (7 subtests: 'demo torus is smaller' in README.md, article.source.md and review.md; 'this smaller demo' in decisions.json; no 'Fit counts a non-uniform scale as its average' in the three docs)",
+   "FamilyCloseCritic.test_pv2_validation_counts_the_changed_unit_tests ('validation.json unit_tests must give both counts': it said 6 expectations changed)",
+   "FamilyCloseCritic.test_pv3_not_done_note_matches_the_family_records ('members_2026_11_02' not found in Lit's family_rule)",
+   "FamilyCloseCritic.test_pv4_labels_say_what_object_size_does (label 'Object size (1 = radius 1.45, the core's demo torus)' is not the family wording)"
+  ],
+  "note": "All 4 new tests fail; the other 74 pass. After the fix: 78 of 78 pass (checks/results/unit-tests.txt)."
+ }
+}

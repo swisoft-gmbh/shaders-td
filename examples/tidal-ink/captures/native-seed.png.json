@@ -1,0 +1,34 @@
+{
+  "time_unix": 1792514837.6241212,
+  "build": "2025.33230",
+  "version": "099",
+  "platform": "macOS-15.8.1-arm64-arm-64bit",
+  "component": "/project1/mh_five_mechanisms/tidal_ink",
+  "resolution": [
+    384,
+    384
+  ],
+  "parameters": {
+    "Pause": true,
+    "Time": 2.0,
+    "Step": 0.016666666666666666,
+    "Reset": true,
+    "Speed": 0.12,
+    "Decay": 0.15,
+    "Inject": 0.5,
+    "Seed": "pattern",
+    "Stage": "state"
+  },
+  "errors": "",
+  "warnings": "",
+  "compile_reports": {
+    "info_seed": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+    "info_state": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+    "info_display": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+  },
+  "scope": "Current cook and compile diagnostics; not visual acceptance or performance.",
+  "capture": "native-seed.png",
+  "experiment": "seed",
+  "warmup_updates": 0,
+  "method": "Explicit per-frame producer cooking; reset applied before the initial state."
+}

@@ -1,0 +1,10 @@
+{
+  "interface": {
+    "display_name": "Review a shader",
+    "short_description": "Check a TouchDesigner shader and its tutorial",
+    "default_prompt": "Use $review to check my TouchDesigner network, GLSL and tutorial."
+  },
+  "policy": {
+    "allow_implicit_invocation": true
+  }
+}

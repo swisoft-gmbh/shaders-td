@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+    "url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+    "lines": [
+      1,
+      120
+    ],
+    "use": "Vertex/fragment and coordinate foundation",
+    "adaptation": "New native implementation and composition; source article is web-based.",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "sha256": "37622428de83df3fc1ab3b60ddc524fc7e68482793e3194d1b9d8e68be948a3a"
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      226,
+      320
+    ],
+    "use": "Coordinate-space discipline",
+    "adaptation": "New native implementation and composition; source article is web-based.",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087"
+  }
+]

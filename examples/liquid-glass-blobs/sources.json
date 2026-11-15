@@ -1,0 +1,757 @@
+[
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      56,
+      134
+    ],
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Marching rays and signed distance fields: step along the ray by the distance to the nearest surface until it is under a small epsilon; the sphere SDF length(p) - r.",
+    "adaptation": "Kept as blobField() and marchSurface(). New: the march runs in the proxy box's object space and only between the box's entry and exit (slab interval), with an explicit hit flag, a step budget from the Steps control and a Newton refinement on the surface."
+  },
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      245,
+      295
+    ],
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The first raymarch loop (MAX_STEPS, MAX_DIST, SURFACE_DIST) and the ray origin and direction from a fixed camera.",
+    "adaptation": "The ray no longer comes from a fixed vec3(0, 0, 5) camera and a screen uv: each pixel of a rasterized proxy box is turned back into its camera ray with TouchDesigner's own matrices (uTDMats[].camProjInverse at depth 0 gives the point where the ray crosses the near plane), so any perspective, orthographic or blended camera, lens and object transform works, and glass nearer than the near plane is clipped. MAX_DIST becomes the box exit."
+  },
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      296,
+      371
+    ],
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Normals from the SDF gradient (getNormal with central differences) and dot-product diffuse lighting.",
+    "adaptation": "fieldNormal() uses Inigo Quilez's four-sample tetrahedron estimate (the article points to his normals article, line 325) and transforms it to world space with the inverse transpose of the object-to-world map. The glass look replaces plain diffuse."
+  },
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      380,
+      452
+    ],
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Union by min() and the polynomial smoothmin(a, b, k) that makes shapes melt together 'like liquids'.",
+    "adaptation": "smoothMin() is the same polynomial with an explicit zero-width branch (k < 1e-4 returns min), because the archived form divides by k. Each blob's k fades with it, so fractional counts grow blobs in smoothly. Property test smooth_min_stays_finite_without_holes."
+  },
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      453,
+      555
+    ],
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Move, rotate and scale a raymarched object by transforming the sampling point the opposite way; scaling needs the distance corrected.",
+    "adaptation": "Applied to the whole ray instead of each sample: the ray is moved into object space with the inverse of the Geometry COMP's affine transform (origin and axes captured through TDDeform in the vertex stage). Hits are exact in object space, so no per-sample scale correction is needed; path lengths are converted back to scene units."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/Raymarching/smoothmin.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/smoothmin.ts",
+    "lines": [
+      88,
+      137
+    ],
+    "sha256": "437bbb231672a0094a840e236131297d289086f81962dbe98fdec5d1fa4e130d",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Archived scene behind the smooth-min demo (scene5): sdSphere, smin, three spheres merging, raymarch loop and getNormal.",
+    "adaptation": "Read with demos.py show/export. The archived scene adds Perlin displacement to the distance (line 106), which can break the distance bound; here ripples use a product of sines with a known slope and the march step shrinks by that slope (stepScale())."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      98,
+      224
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Transparency by sampling a render of the scene behind the mesh at the pixel's screen position.",
+    "adaptation": "Through the core study: the Refraction TOP, sampled at gl_FragCoord * uTDGeneral.viewport.zw. The archived steps (lines 109-114) snapshot 'the entire scene (the other meshes, the background, etc.)' with the mesh hidden; that assumes an opaque background and also captures meshes in front of the glass. New in the independent review round: the Refraction TOP's alpha is kept, so a render with a transparent background passes the later composite's background through clear glass. Meshes in front still appear inside the glass (no depth test); the README says to leave them out of that render."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      226,
+      320
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "refract() of the eye vector by the surface normal, used as a screen offset.",
+    "adaptation": "Extended to two interfaces with a real path: bend in at the front surface, march inside to the far wall, bend out there (total internal reflection falls back to reflect), continue Backdrop distance, project with the camera. At IOR 1 every path stays on the pixel's own camera ray (property test ior1_is_invisible)."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      322,
+      463
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Chromatic dispersion with per-channel IORs and extra samples per loop.",
+    "adaptation": "Through the core study's spectral loop (one read per sample, smooth R/G/B weights). New: each sample reads a mipmap level as wide as the gap between neighbouring colours on screen, because real lens paths spread colours far enough to show separate copies."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      465,
+      519
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Saturation by mixing with luminance.",
+    "adaptation": "Unchanged from the core (saturateColour)."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      570,
+      694
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Squared Blinn-Phong specular and a fresnel glow.",
+    "adaptation": "Unchanged from the core (highlights)."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      696,
+      773
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Back-face rendering for the far side of the object.",
+    "adaptation": "Not used. The far wall comes from the interior march through the same distance field, so the true thickness is measured in one pass without a second render."
+  },
+  {
+    "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+    "lines": [
+      622,
+      695
+    ],
+    "sha256": "0509f160136083c4ca64bd11a58f7a7f1cc30f8dcec95b2305d7dd31610c54e3",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Beer's law: light through a medium falls off as exp(-density x distance).",
+    "adaptation": "absorption() applies it per colour channel to the measured path length inside the glass, so thick merged regions tint more than thin rims."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+    "lines": [
+      1,
+      129
+    ],
+    "sha256": "5ddbdd4d334bbd933f84ab84ba5afe45cd8c4479b919184baaea01361ca48be0",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "The archived final refraction scene (16 samples, six IORs).",
+    "adaptation": "Read through the core study; nothing copied directly."
+  },
+  {
+    "source_id": "studies/liquid-glass/liquid_glass.frag",
+    "source_url": null,
+    "lines": [
+      43,
+      328
+    ],
+    "sha256": "cb57c3884feb9747ce60473c1df19eb6cf883fccd549035489813746b393422d",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "The family's glass look: screenUV, mirrorUV, unitsToUV, spectrum, the dispersion and frost loop, saturateColour, absorption, bodyColour, the studio, panorama lookup, blurred environment, highlights, thin film.",
+    "adaptation": "Copied into blobs.frag with these changes: bendOffset (thickness slider) is replaced by lensShift (two interfaces, real chord); the transmitted loop gains the colour-gap mipmap level; the liquid normal wobble and back-face pass are dropped (the shape itself moves); film swirl uses the blob hit in object space; uniform packing changes (uBlobs, uShape, uMotion, uMarch, uState).",
+    "how_read": "git show a6f95c6:studies/liquid-glass/liquid_glass.frag (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/backdrop.frag",
+    "source_url": null,
+    "lines": [
+      1,
+      53
+    ],
+    "sha256": "f5b55194e35afbadfe8cdc3ea1a1296cb77f840102972ede424b82eec85c5606",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Demo backdrop: checkerboard, coloured discs, rows of bold type, thin line.",
+    "adaptation": "Rearranged: the type band covers only the top 40 % (so lenses do not flip a mostly black image into every blob) and a violet logo tile is added.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/backdrop.frag (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/env.frag",
+    "source_url": null,
+    "lines": [
+      1,
+      45
+    ],
+    "sha256": "64379210ce2dacc2585526c171c300626eee259379b9ea92288c1fcd87f4c3df",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Demo 360 panorama (the studio plus two coloured gels).",
+    "adaptation": "Copied; only comments changed.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/env.frag (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/builder.py",
+    "source_url": null,
+    "lines": [
+      1,
+      168
+    ],
+    "sha256": "720f8f655a893537ca1558418381dbd5a56a8908896eed2196f174363117678a",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Strict core / lenient demo builder, custom parameter pages, uniform and sampler binding, embedded DATs, Info DATs.",
+    "adaptation": "Same pattern. New: demo nodes that cannot be created are skipped with a warning (and their wires and references), flags go through the strict/lenient switch, Table DAT text from a .tsv.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/builder.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/presets.py",
+    "source_url": null,
+    "lines": [
+      1,
+      46
+    ],
+    "sha256": "5e63e18ec34c434e78a8274fbfc5d65ab7a1b4cfadc7cf480a5c63846a1889e8",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Preset loading and the per-parameter morph u(par).",
+    "adaptation": "Copied; presets now also carry blob-shape values.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/presets.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/preset_exec.py",
+    "source_url": null,
+    "lines": [
+      1,
+      14
+    ],
+    "sha256": "1c9447387a4cc634adabd8dbf559dc5da8b1a4ccf73b22fb9eb4c90d4229bc8b",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Parameter Execute callbacks for the Preset menu.",
+    "adaptation": "Copied.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/preset_exec.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/native.py",
+    "source_url": null,
+    "lines": [
+      1,
+      87
+    ],
+    "sha256": "d259739dbb48a4754d4dee516569272f42d015ccfd31e3c947630d4ca1ffa9b5",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "apply / inspect / capture / export helpers.",
+    "adaptation": "Copied; docstring examples changed.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/native.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/checks/preview/preview.js",
+    "source_url": null,
+    "lines": [
+      1,
+      389
+    ],
+    "sha256": "756a5e006c9c625e4610e17a2900fb954c526eae6e3ac47c717c720491c82243",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "WebGL2 preview that compiles the delivered GLSL behind TD stand-ins and evaluates study.json expressions.",
+    "adaptation": "New network (scene render with ring, final render with depth), Vulkan-style 0..1 projection stand-in, instancing stand-in, layout texture from blob_layout.tsv, 32-bit float readback for tests.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/checks/preview/preview.js (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/checks/compile_glsl.py",
+    "source_url": null,
+    "lines": [
+      1,
+      100
+    ],
+    "sha256": "9a23b490b196482ee09008a2635d24d1eeee92b73bd183d5e2a40671d02ae2f3",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "glslang GLSL 4.60 + Vulkan relaxed compile against TD stand-ins.",
+    "adaptation": "Stand-ins gain TDDeform(vec4) and TDInstanceID; a negative test compiles a broken copy and requires the error on the right line.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/checks/compile_glsl.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/checks/capture.cjs",
+    "source_url": null,
+    "lines": [
+      1,
+      40
+    ],
+    "sha256": "66ded60a897339b4ecf317b3a41253ed69aa7d42019c115501dd830467c8ce9b",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Playwright capture of preview PNGs with JSON receipts.",
+    "adaptation": "Copied with a longer timeout.",
+    "how_read": "git show a6f95c6:studies/liquid-glass/checks/capture.cjs (committed core, not the working tree)"
+  },
+  {
+    "source_id": "studies/liquid-glass/checks/test_study.py",
+    "source_url": null,
+    "lines": [
+      1,
+      121
+    ],
+    "sha256": "9334e5c4150484add01f9540e20d9acbb5cccf4b4be37ae372d7891fcc7beaca",
+    "commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "role": "Preset and recipe unit tests.",
+    "adaptation": "Rewritten for this recipe (layout table, strict/lenient nodes, stage menu, culling).",
+    "how_read": "git show a6f95c6:studies/liquid-glass/checks/test_study.py (committed core, not the working tree)"
+  },
+  {
+    "source_id": "examples/orbital-relic/surface.frag",
+    "source_url": null,
+    "lines": [
+      1,
+      70
+    ],
+    "sha256": "4bef18ac64e51a931695f89d6ad536909914da4f00d5e7e42454d76d8793f7db",
+    "commit": "f76f6fa",
+    "role": "The plugin's native SDF study (GLSL TOP raymarcher): explicit hit flag, zero-width smooth-min branch, conservative step multiplier, iteration and normal views.",
+    "adaptation": "The same safety habits, moved from a full-screen GLSL TOP with its own fixed camera to a GLSL MAT that uses the scene's camera and writes depth."
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "uTDMats members (cam, camInverse, camProj, camProjInverse, proj, world ...); 'proj ... The Z range will be [0,1], Vulkan style'; TDWorldToProj is listed under vertex-shader-only functions; TDDeform(vec4) returns world space and includes instancing; TDCameraIndex and TDInstanceID; uTDGeneral.viewport; TDCheckDiscard ('used in things such as order-independent transparency and dual-paraboloid rendering'); TDFog(vec4 curColor, vec3 worldSpacePos, int cameraIndex), 'will do nothing if fog is disabled'; Picking: 'when picking is occuring, the define TD_PICKING_ACTIVE is set' and TDWritePickingValues() writes default pick values (the page does not name the shader stage); TDOutputSwizzle.",
+    "read": "2026-11-01 (rechecked in the independent review round)"
+  },
+  {
+    "source_id": "docs.derivative.ca/GLSL_MAT",
+    "source_url": "https://docs.derivative.ca/GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Parameter names: glslversion, vdat, pdat, sampler{i}name/top/filter (mipmaplinear, nearest), vec{i}name/value{xyzw}, cullface (frontfaces = render back faces), depthtest, depthwriting, blending, srcblend, destblend, postmultalpha. The Arrays page lists only the sequence name 'array', not its per-row parameters, which is why the CHOP layout goes through a TOP.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/CHOP_to_TOP",
+    "source_url": "https://docs.derivative.ca/CHOP_to_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "chop, dataformat (rgba: four channels per scanline), layout (rowscropped), format (rgba32float), clamp ('Clamps CHOP values to 0-1 range', set off explicitly). 'Channels are grouped by their order in the CHOP rather than their names.'",
+    "read": "2026-11-01 (rechecked in the independent review round)"
+  },
+  {
+    "source_id": "docs.derivative.ca/DAT_to_CHOP",
+    "source_url": "https://docs.derivative.ca/DAT_to_CHOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "dat, output (chanpercol), firstrow (names), firstcolumn (values).",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/Box_SOP",
+    "source_url": "https://docs.derivative.ca/Box_SOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "sizex, sizey, sizez.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/Constant_MAT",
+    "source_url": "https://docs.derivative.ca/Constant_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "colorr, colorg, colorb (demo ring).",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "camera, geometry (accepts several objects and patterns), cullface, transparency options.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/Camera_COMP",
+    "source_url": "https://docs.derivative.ca/Camera_COMP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "viewanglemethod (horizontal or vertical FOV) and fov; the preview assumes a horizontal FOV of 45 degrees.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/COMP_Render_Page",
+    "source_url": "https://docs.derivative.ca/COMP_Render_Page",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "drawpriority (Draw Priority): 'Smaller values get drawn after larger values', compared with other components in the same parent, or with the other top-level components listed in the Render TOP's Geometry parameter. The default is not stated there.",
+    "adaptation": "blobs_geo gets Draw Priority -1, set leniently by the builder, so blending in zero-wiring mode and at Opacity < 1 sees the objects behind it. Pending a native check.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "docs.derivative.ca/Transparency",
+    "source_url": "https://docs.derivative.ca/Transparency",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Sorted Draw with Blending orders transparent objects by Draw Priority ('A lower value means it will be drawn later'; a later sentence on the same page says the opposite, so the native order is pending); Order Independent Transparency needs alpha blending off in the MATs; Depth Peeling renders several layers.",
+    "adaptation": "Order Independent Transparency and Depth Peeling are listed as unsupported: the material blends and writes a depth that differs from the proxy box's own.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "github.com/KhronosGroup/MoltenVK/Docs/MoltenVK_Configuration_Parameters.md",
+    "source_url": "https://github.com/KhronosGroup/MoltenVK/blob/main/Docs/MoltenVK_Configuration_Parameters.md",
+    "lines": null,
+    "sha256": null,
+    "commit": "main, read 2026-11-01",
+    "role": "MVK_CONFIG_FAST_MATH_ENABLED, default 2: Metal shaders compile with fast math unless a shader limits it (for example SignedZeroInfNanPreserve); fast math 'may optimize floating point operations in ways that violate the IEEE 754 standard'. TouchDesigner's own MoltenVK settings are unknown.",
+    "adaptation": "The finite-check stage tests float bits instead of relying on isnan()/isinf(); its result on macOS stays pending a native positive control.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "github.com/KhronosGroup/glslang/Test/vk.relaxed.stagelink.0.*",
+    "source_url": "https://github.com/KhronosGroup/glslang/tree/main/Test",
+    "lines": null,
+    "sha256": null,
+    "commit": "main, read 2026-11-01",
+    "role": "Test shaders in TouchDesigner's generated style (uTDMats, TDDeform, TDPickVertex) for glslang's relaxed Vulkan rules. They show TDWritePickingValues() defined in the vertex stage (it writes the TDPickVertex outputs) and TDFog(vec4, vec3, int) returning the colour unchanged when fog is off. Not official documentation and not necessarily the current build.",
+    "adaptation": "blobs.vert calls TDWritePickingValues() under TD_PICKING_ACTIVE; blobs.frag applies TDFog() to the premultiplied colour. Both pending native checks.",
+    "read": "2026-11-01"
+  },
+  {
+    "source_id": "https://iquilezles.org/articles/normalsSDF/",
+    "source_url": "https://iquilezles.org/articles/normalsSDF/",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "The tetrahedron technique for SDF normals (four samples), credited through Heckel's article line 325.",
+    "adaptation": "Used as fieldNormal(); also drives the Newton refinement of hits and exits.",
+    "read": "credited, not fetched"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/presets.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "914894534685c6be5950ca5ef4f79dbc29ff060e25cf7e915bf02eb663edfb74",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Core audit rounds 2 and 3: menu(), advance() (drift integrated in Python doubles, wrapped to a period, rate x Fixed time while paused, holds at rate 0), phase(), spin(), decode_colours().",
+    "adaptation": "Copied for menu(), advance(), spin() and decode_colours(). phase(comp, which) is new here: three drift phases (layout, ripple, film) built from the morphed Speed, each wrapped where blobs.frag repeats. sized() is new (Object size).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/presets.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/native.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "b84b9d8acee8d7c30cb0c64152fd7d85ca6dd94f1fc2130b1f540852b2f94363",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "look_defaults() and apply() that reset every look control first (setup controls kept); blocking_errors(), inputs_report(), script_errors in inspect(); capture/export refuse only on blocking errors.",
+    "adaptation": "Copied, with this study's setup list (inputs, Layout TOP, Object size, Reflection map, Flip V, Colour parameters; Demo backdrop is reset, as in the core, since the family names fix) and CORE_NODES; blobs' missing_nodes report kept.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/native.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/builder.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "e604feb94736d1a1e366fac6a7d72a3ae6079ff825d5cbd934c68f550edcca3f",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "WARNING_NOTES categories (material, inputs, optional, setup, demo), link_demo_inputs() (constant relative path, checked, expression fallback), sampler filter and extend modes applied leniently.",
+    "adaptation": "Copied; blobs' lenient_parameters, skipped children of missing parents and skipped wires stay. link_demo_inputs() also warns when a demo node was not built. Info DATs are added for Render TOPs too (from liquid-glass-lit).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/builder.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/liquid_glass.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "8ffc11aa2504cbb8c7bc8b6028695b43a4d609c7f435a3abdd83c1d97bfb2707",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Round 2 shader hygiene: faceCamera(), latticeHash() wrapped at 256, discPoint() (Martin Roberts' R2 sequence), azimuth(), guarded half vector, r0 * r0, paramColour() with uInputs.w, absorption() clamping the glass colour, the Energy conserving keep factor, flat-image reflection level widened by 2.5 x Flat image warp, smoothstep(0.0, 0.7, -el).",
+    "adaptation": "Copied into blobs.frag. faceCamera() replaces the flip of the hit normal; latticeHash() wraps cells -128..127 (identical to the old hash there); the colour flag lives in uState.w and the energy flag in uSurface.w; keep multiplies blobs' covered/uncovered compose formula.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/liquid_glass.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/env.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "71bc29ebc01e2e52408eadfaba54b0368c8c55bbe64c681ee6b014774d58c1e9",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "azimuth() and the increasing smoothstep edges in the baked studio.",
+    "adaptation": "Copied into env.frag.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/env.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/backdrop.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "a43f469b50d8ec1cf7b320cb29ee624cf85939b6ab67a901b3d252fc4a55d076",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "The bold-type-on-black demo backdrop (typeBlock(), rules, arcs).",
+    "adaptation": "Ported as the 'Type' entry of Study > Demo backdrop (uBackdrop.x = 1), with its smoothstep(px, -px, d) fills rewritten as 1 - smoothstep(-px, px, d).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-prism/backdrop.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/liquid_prism.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "970377c5c92047e40dd8f6061ef8abedeaf8c7bed79d680fcc7864e88078f527",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Measured screen orientation: screenSign from dFdx/dFdy of the pixel's own NDC at the top of main(), applied to every projected offset and the flat-image reflection offset; Flip V flips it too.",
+    "adaptation": "screenSign() in blobs.frag, with a fallback to the projection's sign where a slope is under a quarter pixel or not a number. Not adopted: footprintLod() (core round 2, B7). Superseded on 2026-11-02 by gap fix G2: screenSign() now uses prism's later position comparison (entry repo:studies/liquid-glass-prism/liquid_prism.frag@working-tree-2026-11-02).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-prism/liquid_prism.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/checks/preview/preview.js@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "302532b1e56db19569dd66e08b584eb1aa2a89b1be04d68d717fc63dc352f214",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Orientation emulation for tests: uPreviewRaster.y = -1 flips the raster, the scene render is mirrored to match, culling winding follows; mirrorInputs for an upside-down Refraction TOP.",
+    "adaptation": "Adapted into checks/preview/preview.js (flipRaster, mirrorInputs) for bends_follow_screen_orientation and flip_v_corrects_upside_down_inputs.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-prism/checks/preview/preview.js)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/checks/contact_sheet.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "4e4d7c71253f2b5160bd7b58f7a1ab3f66a057a726fc6b977c0c95c312aa2867",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Labelled contact sheet with PIL.",
+    "adaptation": "Adapted as checks/contact_sheet.py (two backdrops and the timeline).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-prism/checks/contact_sheet.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-lit/study.json@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "42ef05899b5a9e6334d73a495725845630431a6a3b6bc05397a1f6061ed65b61",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "\"dither\": false on its Render and Render Pass TOPs.",
+    "adaptation": "Both demo Render TOPs here set dither false; the README tells users to do the same on their own renders.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-lit/study.json)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-lit/native.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "8f62d6a62a67c988b53221cb5794b1af2f0843a0231e303ed06197008045a61a",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "render_diagnostics: errors and warnings of every Render TOP, because each compiles its own copy of the material.",
+    "adaptation": "Copied into inspect(). Superseded on 2026-11-02 by gap fix G1: render_diagnostics() is now the core's version (entry repo:studies/liquid-glass/native.py@working-tree-2026-11-02).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-lit/native.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-lit/checks/test_study.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "8681170095fa204e461ef2d185974d34b3ca506f75f94e9666e718f189d788bb",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "smoothstep_edges() / reversed_edges() source rule and the TDDither ban.",
+    "adaptation": "Copied into checks/test_study.py, extended with a per-pixel noise ban.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-lit/checks/test_study.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-flow/native.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "c23955d8c534dd7a013240541d74cd51ca26b141e2b267fa0d58ec3bdbaf0120",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "fit_flow(): set Object size from the Glass geometry's bounds.",
+    "adaptation": "Adapted as fit_glass() (named fit_object_size() until the family critic's one-name fix; the old name stays one round as an alias): the blobs live in blobs_geo's 2 x 2 x 2 box, so the size is the cube root of the world transform's determinant (COMP bounds as a fallback).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-flow/native.py)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-flow/liquid_flow.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "61851e81a46df57fee4a07f86f6c1fca71dfcc2e849408ef18f83d618086f064",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "fragColor[TD_NUM_COLOR_BUFFERS] with buffers 1-7 zeroed under #if with constant indices (a loop failed in WebGL2).",
+    "adaptation": "Adapted into writeOutput() in blobs.frag, with an #ifndef fallback to 1 and the 1024 output cap from liquid-glass-lit.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-flow/liquid_flow.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-flow/checks/compile_glsl.py@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "e3051148e059d3ef7f5a6731e933245cfcca7d2e345eee7007ea005da531d097",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Compile variants with TD_NUM_COLOR_BUFFERS defined.",
+    "adaptation": "checks/compile_glsl.py compiles blobs.frag with 3 and 8 colour buffers.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-flow/checks/compile_glsl.py)"
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT (family sync)",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Multiple Render Targets: 'layout(location = 0) vec4 fragColor[TD_NUM_COLOR_BUFFERS];' (the page omits 'out'), 'TD_NUM_COLOR_BUFFERS will automatically be set ... Ensure you are not writing beyond the number of buffers provided, or corruption/GPU crashes may occur.' TDDither(vec4) 'does nothing if dithering is disabled in the Render TOPs parameters'. Picking: TD_PICKING_ACTIVE and TDWritePickingValues(). TDFog(vec4 curColor, vec3 worldSpacePos, int cameraIndex). Picking, reread 2026-11-02 for verifier finding P1 (oldid 38399, page modified 2026-08-05): the exported Phong MAT shader holds '#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif'; 'when picking is occuring, the define TD_PICKING_ACTIVE is set and only the code inside the #else block is executed'; custom pick values go into vTDPickVert after the call.",
+    "adaptation": "blobs.frag declares 'layout(location = 0) out vec4 fragColor[TD_NUM_COLOR_BUFFERS];' and never calls TDDither. Picking fix P1: blobs.vert wraps its seven outputs in '#ifndef TD_PICKING_ACTIVE' and calls only TDWritePickingValues() in '#else' (before: '#ifdef TD_PICKING_ACTIVE' after the whole body). No custom pick values: they would still describe the box.",
+    "read": "2026-11-02 (raw wiki text)"
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP and Render_Pass_TOP (dither)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Parameter dither (label Dither, toggle) on both pages: 'Dithers the rendering to help deal with banding and other artifacts created by precision limitations of 8-bit displays.' The default value is not stated. Render TOP page order: Render, Advanced, Crop, Vectors, Samplers, Images, Common; Dither is listed on the Advanced page (rechecked 2026-11-02 for verifier finding V4; page modified 2025-10-28).",
+    "adaptation": "render_scene and render set dither false (demo nodes, lenient). The README asks users to turn Dither off on their own renders; labelled a precaution. The README names the Advanced page.",
+    "read": "2026-11-02"
+  },
+  {
+    "source_id": "docs.derivative.ca/ObjectCOMP_Class and Matrix_Class",
+    "source_url": "https://docs.derivative.ca/ObjectCOMP_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "ObjectCOMP.worldTransform (tdu.Matrix, 'The current world transform of the Object'); Matrix.determinant(); Matrix.decompose().",
+    "adaptation": "fit_glass() uses abs(worldTransform.determinant()) ** (1/3). Not run natively.",
+    "read": "2026-11-02"
+  },
+  {
+    "source_id": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+    "source_url": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Martin Roberts' R2 low-discrepancy sequence (steps 0.7548776662 and 0.5698402910 from the plastic number), credited through the core study.",
+    "adaptation": "discPoint() for the frost disc.",
+    "read": "credited through the core study's sources.json, not fetched"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/presets.json@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "57ebf853ad8f5b70ec2f389916eb38253b531ae65f9c01321f41ba0180e928da",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "The core's Emerald Bottle, Rose Quartz, Oil Slick and Aqua Jelly preset values.",
+    "adaptation": "Four blobs presets of the same names start from these colour, reflection, light and film values, retuned in the WebGL2 preview; blob-shape values are new (verifier finding V1).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/presets.json)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/study.json@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "6ae22ff3aac3ffaf284935dcdb5b97bf78c06eea1476fb56640465c38272c089",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Demo 'behind' Select TOP: \"parent().par.Refractiontop.eval() or op('blank')\" (core fix A9).",
+    "adaptation": "Same expression on this study's 'behind' node (verifier finding V3).",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass/study.json)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-lit/liquid_glass_lit.frag@6a58487",
+    "source_url": null,
+    "lines": null,
+    "sha256": "f9b437e2dfdf408dea37243691d36696c88eae6a162a618173cb6f9d41ac217a",
+    "commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537",
+    "role": "Lines 288-291: TDLightingPBR(i, vec3(1.0), vec3(1.0), pos, n, ...) called per pixel inside a TD_NUM_LIGHTS loop.",
+    "adaptation": "Evidence that scene lights could be applied at the blob hit and normal; cited in decisions.json for the corrected scene-light reason (verifier finding V6). No code taken.",
+    "read": "2026-11-02 (git show 6a58487:studies/liquid-glass-lit/liquid_glass_lit.frag)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/native.py@working-tree-2026-11-02",
+    "source_url": null,
+    "lines": "158-201",
+    "sha256": "c6e67d598b8a211fe9ca0f43f1ae1d08f7a3a7190f23f13803034a4113ae2a55",
+    "commit": null,
+    "role": "_draws_material() and render_diagnostics() from core audit round 3: every Render and Render Pass TOP in the project that draws the material, found with op('/').findChildren(type=...).",
+    "adaptation": "Gap fix G1: _draws_blobs() also matches blobs_geo in a render's Geometry; own renders keyed by name (as before), others by path; no Back-face pass to skip. Read from the uncommitted working tree (the core's rounds 2 and 3 are not committed); the hash is the file at read time.",
+    "read": "2026-11-02 (working tree)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/liquid_prism.frag@working-tree-2026-11-02",
+    "source_url": null,
+    "lines": "88-114",
+    "sha256": "c04f16038657133fc23e6915ae7384a20230062d0de9b276e64e64b55e27bd46",
+    "commit": null,
+    "role": "screenSign(ndc, ndcStep, depthStep): the pixel's projected position against its raster position, the derivative only on an odd-size centre line where 1/w changes under 10 %; and the screen_orientation_has_no_wrong_pixels preview test.",
+    "adaptation": "Gap fix G2: copied into blobs.frag with this study's Flip V (uMarch.w); the test ported to the blobs preview (blob pixels, default view and camera inside the box). Read from the uncommitted working tree after prism's verifier fixes; the hash is the file at read time.",
+    "read": "2026-11-02 (working tree)"
+  },
+  {
+    "source_id": "docs.derivative.ca/COMP_Class (findChildren)",
+    "source_url": "https://docs.derivative.ca/COMP_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "findChildren(type=None, name=None, path=None, depth=None, maxDepth=None, ...) returns the operators that match; type takes an OP class, for example type=boxSOP.",
+    "adaptation": "render_diagnostics() searches op('/') with type=renderTOP and type=renderpassTOP.",
+    "read": "2026-11-02 (fetched; page modified 2026-05-11)"
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP (geometry, overridemat)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Geometry (geometry) chooses the Geometry COMPs a Render TOP draws; Override Material (overridemat) applies one material to every Geometry it renders.",
+    "adaptation": "_draws_blobs() reads render.par.geometry.evalOPs() and render.par.overridemat.eval().",
+    "read": "2026-11-02 (fetched; page modified 2025-10-28)"
+  },
+  {
+    "source_id": "docs.derivative.ca/Syntaxhighlight (exported MAT vertex shader)",
+    "source_url": "https://docs.derivative.ca/Syntaxhighlight",
+    "lines": null,
+    "sha256": "35c11b90122393628c3fd8e5d197628511a7cd765b1cd4f9ce7b896bcbc89399",
+    "commit": null,
+    "role": "A syntax-highlighting sample that prints an exported MAT vertex shader: 'vec4 worldSpacePos = TDDeform(P); gl_Position = TDWorldToProj(worldSpacePos);' before '#ifndef TD_PICKING_ACTIVE', the lighting outputs inside it, and '#else // TD_PICKING_ACTIVE ... TDWritePickingValues(); #endif'. Old (last edited 27 September 2017) and not a current export; it shows where the projection goes, which the Write a GLSL MAT sample leaves out.",
+    "adaptation": "Picking fix P1: blobs.vert deforms and projects before the branch, as here and in prism's liquid_prism.vert.",
+    "read": "2026-11-02 (fetched HTML, hash of the page as fetched)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-prism/liquid_prism.vert@working-tree-2026-11-02",
+    "source_url": null,
+    "lines": "11-29",
+    "sha256": "3977aa2f76c7bfdd3a2fa0e979f1031298c53479db372ef1f04b468ce37535ca",
+    "commit": null,
+    "role": "The family's documented picking form: TDDeform and gl_Position = TDWorldToProj(world) first, outputs inside '#ifndef TD_PICKING_ACTIVE', TDWritePickingValues() alone in '#else'. At 6a58487 (sha256 e5af014c980f951dd423b677156f4ec3d4e2e5810b0a7b81173b1198aaff085d) the branch has the same shape.",
+    "adaptation": "Picking fix P1: the same shape in blobs.vert around its seven outputs; no code beyond the branch structure taken. Read from the uncommitted working tree; the hash is the file at read time.",
+    "read": "2026-11-02 (working tree, read only)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass-lit/decisions.json@working-tree-2026-11-02 (family_rule)",
+    "source_url": null,
+    "lines": "290-324",
+    "sha256": "985b82e8bab6a809e461f0bce29c16e04aef9625f0e09ee528be57eb3d31e85f",
+    "commit": null,
+    "role": "The family rule for Object size: the object's world radius over reference_radius 1.45 (the core's demo torus); Thickness and Frost times Object size, Tint density and Wobble scale divided by it; the ripple and film lookups multiplied by worldScale() = pow(abs(determinant(mat3(uTDMats[vCamIndex].world))), 1.0 / 3.0); 2.5 film swirls per Object size.",
+    "adaptation": "Family close G1: the reference radius, the Fit formula (the box's radius over 1.45), the length scaling and the film lookup x worldScale() taken as stated. Kept different on purpose: the ripple stays in box units (it is shape here), and the film keeps 2.5 swirls per box radius (2.5 / (1.45 x Object size)), measured in review.md (Family close). Read from the uncommitted working tree; the hash is the file at read time.",
+    "read": "2026-11-02 (working tree, read only)"
+  },
+  {
+    "source_id": "repo:studies/liquid-glass/liquid_glass.frag@working-tree-2026-11-02",
+    "source_url": null,
+    "lines": "80-92, 181-184",
+    "sha256": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb",
+    "commit": null,
+    "role": "The core's worldScale() and its screenSign() after the family close (G1, G2): the same comparison and centre-line tie-break as this study's, with the projection's sign multiplied inside.",
+    "adaptation": "G1: worldScale() copied character for character into blobs.frag (unit test test_g1_core_has_the_same_world_scale). G2: compared, not copied; this study keeps its own screenSign() lines, which carry the same tie-break (test_g2_centre_line_tie_break_is_the_familys; scratch survey in review.md). Read from the uncommitted working tree; the hash is the file at read time.",
+    "read": "2026-11-02 (working tree, read only)"
+  },
+  {
+    "source_id": "docs.derivative.ca/Matrix_Class (determinant)",
+    "source_url": "https://docs.derivative.ca/Matrix_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "tdu.Matrix lists determinant() -> float, 'Returns the determinant of the matrix.' (page last edited 28 October 2025). fit_glass() takes the cube root of abs(worldTransform.determinant()); worldTransform is on the ObjectCOMP Class page (the family rule's world_transform_source).",
+    "adaptation": "Family close G1: Fit's world scale. Not run in TouchDesigner (validation.json native_fit_object_size).",
+    "read": "2026-11-02"
+  }
+]

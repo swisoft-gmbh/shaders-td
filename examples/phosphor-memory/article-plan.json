@@ -1,0 +1,68 @@
+[
+  {
+    "heading": "What do we mean by motion?",
+    "question": "What do we mean by motion?",
+    "snippets": [
+      [
+        "source.frag",
+        "source"
+      ]
+    ],
+    "experiments": [
+      "source"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Why must the first frame be special?",
+    "question": "Why must the first frame be special?",
+    "snippets": [
+      [
+        "state.frag",
+        "initialize"
+      ],
+      [
+        "state.frag",
+        "motion"
+      ]
+    ],
+    "experiments": [
+      "motion"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "How can an image remember?",
+    "question": "How can an image remember?",
+    "snippets": [
+      [
+        "state.frag",
+        "decay"
+      ]
+    ],
+    "experiments": [
+      "trail"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "How does memory become hatching?",
+    "question": "How does memory become hatching?",
+    "snippets": [
+      [
+        "display.frag",
+        "representation"
+      ],
+      [
+        "display.frag",
+        "diagnostics"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="Helvetica, Arial, sans-serif">
+  <title>Liquid Glass network schematic</title>
+  <defs>
+    <marker id="wire" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9dde3"/>
+    </marker>
+    <marker id="ref" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7fb3d5"/>
+    </marker>
+    <marker id="opt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8a65d"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#14161a"/>
+  <text x="30" y="40" fill="#eef0f3" font-size="22" font-weight="bold">Liquid Glass: how the pieces connect</text>
+  <text x="30" y="64" fill="#9aa1ab" font-size="14">Schematic of the recipe in study.json, not a captured TouchDesigner network.</text>
+
+  <!-- inputs -->
+  <g>
+    <rect x="30" y="100" width="270" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+    <text x="46" y="128" fill="#eef0f3" font-size="17" font-weight="bold">Refraction TOP</text>
+    <text x="46" y="150" fill="#b8c0ca" font-size="13">Your scene rendered without the glass,</text>
+    <text x="46" y="167" fill="#b8c0ca" font-size="13">same camera. Demo: demo_backdrop</text>
+
+    <rect x="30" y="210" width="270" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+    <text x="46" y="238" fill="#eef0f3" font-size="17" font-weight="bold">Reflection TOP</text>
+    <text x="46" y="260" fill="#b8c0ca" font-size="13">360 panorama, or any image (flat mode).</text>
+    <text x="46" y="277" fill="#b8c0ca" font-size="13">Demo: demo_env. Empty: built-in studio</text>
+
+    <rect x="30" y="320" width="270" height="96" rx="8" fill="#2a2219" stroke="#e8a65d" stroke-dasharray="6 4"/>
+    <text x="46" y="348" fill="#eef0f3" font-size="17" font-weight="bold">render_back (optional)</text>
+    <text x="46" y="370" fill="#d9c3a6" font-size="13">Render TOP: Glass geometry seen</text>
+    <text x="46" y="387" fill="#d9c3a6" font-size="13">from Camera with material_back.</text>
+    <text x="46" y="404" fill="#d9c3a6" font-size="13">rgb = surface, alpha = distance (32-bit)</text>
+  </g>
+
+  <!-- material -->
+  <g>
+    <rect x="370" y="150" width="270" height="200" rx="10" fill="#22303d" stroke="#d9dde3" stroke-width="1.5"/>
+    <text x="388" y="180" fill="#eef0f3" font-size="19" font-weight="bold">material</text>
+    <text x="388" y="200" fill="#b8c0ca" font-size="13">GLSL MAT, used as Override Material</text>
+    <text x="388" y="232" fill="#eef0f3" font-size="14">sRefraction</text>
+    <text x="388" y="254" fill="#eef0f3" font-size="14">sReflection</text>
+    <text x="388" y="276" fill="#e8a65d" font-size="14">sBackface (when Back-face pass is on)</text>
+    <text x="388" y="306" fill="#b8c0ca" font-size="13">Shaders: vertex, pixel Text DATs</text>
+    <text x="388" y="326" fill="#b8c0ca" font-size="13">14 vec4 uniforms from the component's</text>
+    <text x="388" y="342" fill="#b8c0ca" font-size="13">parameters, morphed by presets</text>
+  </g>
+
+  <!-- presets -->
+  <rect x="370" y="400" width="270" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+  <text x="388" y="428" fill="#eef0f3" font-size="17" font-weight="bold">presets, preset_exec</text>
+  <text x="388" y="450" fill="#b8c0ca" font-size="13">Preset menu writes the parameters;</text>
+  <text x="388" y="467" fill="#b8c0ca" font-size="13">Morph blends them toward preset B</text>
+
+  <!-- outputs -->
+  <g>
+    <rect x="710" y="100" width="260" height="78" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="128" fill="#eef0f3" font-size="17" font-weight="bold">Geometry COMP</text>
+    <text x="726" y="150" fill="#b8c0ca" font-size="13">Your glass objects, any shape;</text>
+    <text x="726" y="167" fill="#b8c0ca" font-size="13">no Material needed. Demo: demo_geo</text>
+
+    <rect x="710" y="225" width="260" height="78" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="253" fill="#eef0f3" font-size="17" font-weight="bold">Render Pass TOP</text>
+    <text x="726" y="275" fill="#b8c0ca" font-size="13">Draws the glass into your scene render.</text>
+    <text x="726" y="292" fill="#b8c0ca" font-size="13">Demo: render (glass alone)</text>
+
+    <rect x="710" y="350" width="260" height="78" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="378" fill="#eef0f3" font-size="17" font-weight="bold">Over TOP (demo only)</text>
+    <text x="726" y="400" fill="#b8c0ca" font-size="13">Demo glass over its flat backdrop:</text>
+    <text x="726" y="417" fill="#b8c0ca" font-size="13">over (input 2 via behind)</text>
+
+    <rect x="710" y="475" width="260" height="56" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="509" fill="#eef0f3" font-size="17" font-weight="bold">out</text>
+  </g>
+
+  <!-- links: parameter references (dashed blue) -->
+  <path d="M300,139 C335,139 340,228 368,228" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M300,249 C335,249 340,250 368,250" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M640,250 C675,250 680,264 708,264" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M840,178 L840,223" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M505,400 L505,352" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <!-- optional back-face pass (dashed orange) -->
+  <path d="M300,368 C335,368 340,272 368,272" fill="none" stroke="#e8a65d" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#opt)"/>
+  <!-- wires: texture data (solid) -->
+  <path d="M840,303 L840,348" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+  <path d="M840,428 L840,473" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+  <path d="M165,178 L165,196 L320,196 L320,560 L690,560 L690,400 L708,400" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+
+  <!-- legend -->
+  <g font-size="13" fill="#b8c0ca">
+    <line x1="30" y1="590" x2="70" y2="590" stroke="#d9dde3" stroke-width="2.2"/>
+    <text x="80" y="594">Wire: image data</text>
+    <line x1="230" y1="590" x2="270" y2="590" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="280" y="594">Parameter reference (sampler, override material, geometry)</text>
+    <line x1="630" y1="590" x2="670" y2="590" stroke="#e8a65d" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="680" y="594">Optional back-face pass</text>
+    <text x="30" y="620">No feedback: every reference reads the current frame.</text>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "kind": "WebGL2 preview of the delivered GLSL (not a TouchDesigner capture)",
+  "draw": {
+    "preset": "clear_crystal",
+    "time": 2,
+    "overrides": {
+      "Stage": "lights",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Diffuse": 0.6
+    }
+  },
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "floatTargets": true,
+  "size": [
+    960,
+    540
+  ],
+  "date": "2026-11-02T03:18:25.788Z"
+}

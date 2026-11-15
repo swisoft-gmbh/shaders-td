@@ -1,0 +1,212 @@
+{
+  "scope": "Red runs for the family close verifier fixes V1 to V5 (2026-11-02). WebGL2 preview (Chromium SwiftShader) and plain Python on scratch copies; not TouchDesigner.",
+  "unit_first_delivery": {
+    "what": "A copy of this study as the family close first delivered it (before these fixes), with the new checks/test_study.py copied in. Siblings absent, so 3 family-table subtests skip.",
+    "result": "Ran 67 tests: FAILED (failures=6, skipped=3)",
+    "failed": [
+      "test_g6_pick_render_runs_only_the_documented_picking_block",
+      "test_v1_docs_say_k_times_as_many_patterns",
+      "test_v2_merge_notes_name_flows_core_reference_test",
+      "test_v3_names_section_says_who_follows_the_family_rule",
+      "test_v4_picking_records_match_what_a_pick_render_runs",
+      "test_v5_c3_record_compares_like_with_like"
+    ],
+    "first_assertions": {
+      "test_v1": "'now shows k times as many ripples and film bands as before: finer if you scaled it up, coarser if you scaled it down' not found in the README troubleshooting note",
+      "test_v2": "'test_core_reference_is_the_current_core' not found in review.md, Not done here",
+      "test_v3": "'not yet one meaning' not found in the Object size bullet",
+      "test_v4": "'the same values in a different order' not found in G6's consequence",
+      "test_v5": "'Liquid Glass Lit: the same numbers as here' unexpectedly found in C3's evidence",
+      "test_g6": "'while picking, the point is still placed, and of the branch only the #else block runs' not found in the vertex header"
+    },
+    "now": "Ran 67 tests: OK"
+  },
+  "preview_c94e849": {
+    "what": "A copy of the study at c94e849 with this round's checks/preview_tests.cjs and the current preview harness (checks/preview/preview.js, index.html) copied in. 108 s.",
+    "results": 35,
+    "failed": [
+      "wobble_independent_of_object_scale",
+      "screen_orientation_has_no_wrong_pixels",
+      "fit_size_carries_presets_over_comp_scale",
+      "comp_scale_at_object_size_1_gives_k_times_the_patterns"
+    ],
+    "new_test_evidence": {
+      "ripples": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 4.87
+        },
+        "ratio_comp_10_object_size_1": 1,
+        "ratio_comp_0_1_object_size_1": 1,
+        "ratio_comp_10_object_size_10": 0.217
+      },
+      "film": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 10.35
+        },
+        "ratio_comp_10_object_size_1": 1,
+        "ratio_comp_0_1_object_size_1": 1,
+        "ratio_comp_10_object_size_10": 0.231
+      }
+    }
+  },
+  "preview_reference_6a58487": {
+    "what": "The current study's preview suite with --reference (every draw uses checks/reference, the 6a58487 material and bindings).",
+    "results": 35,
+    "failed": [
+      "transparent_scene_stays_transparent",
+      "empty_scene_matches_no_refraction_top",
+      "extra_colour_buffers_get_zeros",
+      "output_fits_half_float",
+      "bends_follow_screen_orientation",
+      "flip_v_corrects_upside_down_inputs",
+      "screen_orientation_has_no_wrong_pixels",
+      "fog_adds_only_the_glass_share",
+      "object_size_carries_presets_over",
+      "fit_size_carries_presets_over_comp_scale",
+      "comp_scale_at_object_size_1_gives_k_times_the_patterns",
+      "backdrop_menu_switches_the_demo_scene",
+      "film_swirl_frequency_0_is_one_drifting_thickness"
+    ],
+    "note": "film_swirl_frequency_0_is_one_drifting_thickness fails for a harness reason: its flat sheet renders black (colour 0, 0, 0) with the old bindings."
+  },
+  "flow_after_a_core_only_merge": {
+    "what": "Liquid Glass Flow's unit suite next to the current core (scratch copy of the tree), and next to the c94e849 core.",
+    "current": "Ran 73 tests: FAILED (failures=1): test_core_reference_is_the_current_core, AssertionError 'ff296c8fc00321dc2410742d783f99e10043e7bef5d7041aadefbf2a9709144c' != 'b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb' : liquid_glass.frag",
+    "c94e849": "Ran 73 tests: OK"
+  },
+  "flow_scratch_refresh": {
+    "what": "Scratch only; Flow's folder is unchanged. Both new core shaders copied into Flow's checks/core_reference, and this round's liquid_glass.frag diff (c94e849 to now) applied to liquid_flow.frag with patch: all 6 hunks clean (offsets 6 to 19 lines).",
+    "unit": "Ran 73 tests: FAILED (failures=4): test_c6_offsets_follow_the_measured_screen_orientation, test_c8_object_size_scales_the_lengths_and_is_exact_at_1, test_g1_readme_says_what_film_swirl_0_does, test_r5_pixel_stage_hygiene (each pins the old pixel stage, as the core's own tests did before the family close)",
+    "preview": {
+      "results": 42,
+      "passed": 41,
+      "failed": [
+        "wobble_independent_of_object_scale"
+      ],
+      "amplitude0_matches_core_worst": 0,
+      "pixel_stage_matches_core_while_moving_worst": 0,
+      "wobble_independent_of_object_scale": {
+        "scale01": {
+          "max": 57,
+          "pixelsOver8": 20624,
+          "p99OfAllPixels": 43
+        },
+        "scale10": {
+          "max": 78,
+          "pixelsOver8": 18770,
+          "p99OfAllPixels": 41
+        }
+      },
+      "size": [
+        480,
+        270
+      ]
+    },
+    "reading": "Flow's refresh is more than a copy: with this pixel stage the ripple and film patterns count the COMP's scale, while Flow's Object size is in SOP units (its motion happens there), so Flow's own wobble test at Object size 1 fails as the core's did before its expectation changed. That is Flow's units decision (its G1 share)."
+  },
+  "captures": "All 28 single captures re-rendered from their receipts (checks/capture.cjs) are bit-identical to the committed files.",
+  "second_pass_core_v1": {
+    "scope": "Second verifier pass (CORE-V1, 2026-11-02): the Names across the family table and Object size bullet after Flow's and Prism's family closes, and the FamilyClose docstring. Today's checks/test_study.py runs on a scratch copy of the five studies with this study's README and FamilyClose docstring as they were before the fix (Flow row 'Flow centre and Object size', 'next to the two values it sets'; bullet 'This study ... and Lit follow it; Prism, Flow and Blobs do not yet'; docstring 'Each test fails on c94e849'). Only the tightened test_family_table_matches_every_member and test_v3 and the new test_v6 fail. Plain Python; nothing ran in TouchDesigner.",
+    "summary": [
+      "Ran 68 tests in 0.269s",
+      "FAILED (failures=5)"
+    ],
+    "failing": {
+      "test_v3_names_section_says_who_follows_the_family_rule [liquid-glass-prism]": {
+        "class": "FamilyCloseVerifier",
+        "kind": "FAIL",
+        "message": "AssertionError: False != True : This study (since the [family close](review.md#family-close)) and Lit"
+      },
+      "test_v3_names_section_says_who_follows_the_family_rule [liquid-glass-flow]": {
+        "class": "FamilyCloseVerifier",
+        "kind": "FAIL",
+        "message": "AssertionError: False != True : This study (since the [family close](review.md#family-close)) and Lit"
+      },
+      "test_v3_names_section_says_who_follows_the_family_rule": {
+        "class": "FamilyCloseVerifier",
+        "kind": "FAIL",
+        "message": "AssertionError: '(../liquid-glass-blobs/README.md)' not found in \"- **Object size** has the same name everywhere, but not yet one meaning. The family rule in [Liquid Glass Lit's decisions.json](../liquid-glass-lit/decisions.json) (`family_rule`) gives it one: the object's radius in the world over 1."
+      },
+      "test_v6_red_claims_match_the_record": {
+        "class": "FamilyCloseVerifier",
+        "kind": "FAIL",
+        "message": "AssertionError: <re.Match object; span=(109, 135), match='Each test fails on c94e849'> is not None"
+      },
+      "test_family_table_matches_every_member [liquid-glass-flow]": {
+        "class": "FamilyNames",
+        "kind": "FAIL",
+        "message": "AssertionError: 'Flow centre and Object size' != 'Flow centre, Flow size and Object size'"
+      }
+    },
+    "members_measured": {
+      "liquid-glass": {
+        "object_size_over_rule": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "both_lookups_count_comp_scale": true,
+        "follows": true
+      },
+      "liquid-glass-flow": {
+        "object_size_over_rule": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "both_lookups_count_comp_scale": true,
+        "follows": true
+      },
+      "liquid-glass-prism": {
+        "object_size_over_rule": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "both_lookups_count_comp_scale": true,
+        "follows": true
+      },
+      "liquid-glass-lit": {
+        "object_size_over_rule": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "both_lookups_count_comp_scale": true,
+        "follows": true
+      }
+    },
+    "members_how": "Each mesh member's own Fit code (fake td module) on this study's demo torus in a Geometry COMP scaled 0.1, 1, 3 and 10, Object size divided by the rule's value; and whether its pixel shader counts the COMP's scale in both pattern lookups. The test's follows_family_rule() does the same at 0.1, 3 and 10.",
+    "after": "Ran 67 tests: OK (checks/results/unit-tests.txt)."
+  }
+}

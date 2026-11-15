@@ -1,0 +1,423 @@
+[
+  {
+    "goal": "Reuse the family's reference implementation without depending on work in progress.",
+    "alternatives": "Copy from the core study's working tree (being edited by another agent); derive from a fixed commit.",
+    "evidence": "The workflow states the core study at studies/liquid-glass is being edited concurrently.",
+    "choice": "Every reused file was read with git show a6f95c6:studies/liquid-glass/<file>; sha256 of each is in sources.json.",
+    "consequence": "This study is reproducible from commit a6f95c6. Later core fixes are not picked up automatically. Two defects inherited from a6f95c6 were fixed here, not in the core: the reversed smoothstep in the studio (a6f95c6 studies/liquid-glass/liquid_glass.frag:272) and the Over TOP composite in the README recipe (a6f95c6 studies/liquid-glass/README.md steps 4-5). Independent review, read with git show a6f95c6. Family sync (2026-11-02): the core's audit rounds 2 and 3 and its merges C1 to C9 were brought over by hand, each against the core's working tree at the time (sha256 in sources.json) and each with a test that fails on the 6a58487 files.",
+    "core_commit": "a6f95c6",
+    "status": "implemented"
+  },
+  {
+    "goal": "Drop into an existing lit scene with the least wiring (universality first).",
+    "alternatives": "Typed-in light direction and a Reflection TOP (core study); reading light COMPs through Python expressions into uniforms; TouchDesigner's own light functions inside the GLSL MAT.",
+    "evidence": "Write a GLSL MAT: the Lights parameter of the render that draws the material (Render TOP or Render Pass TOP) fills uTDLights/uTDEnvLights and TD recompiles per light setup. Heckel's Shaping light (116-177) has to copy light data by hand each frame.",
+    "choice": "Loop TDLightingPBR() over TD_NUM_LIGHTS and read Environment Light COMPs through TDEnvLightTextureLod() and TDEnvLightingPBR(). The only input left is the Refraction TOP.",
+    "consequence": "Point, cone, distant lights, attenuation and shadows come for free and stay consistent with the user's other materials. Absolute light levels depend on TouchDesigner's implementation, which the preview can only approximate.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Always render, even with no lights.",
+    "alternatives": "Render black without lights; always add the built-in light; a per-kind fallback.",
+    "evidence": "TD_NUM_LIGHTS and TD_NUM_ENV_LIGHTS are compile-time constants, so the choice costs nothing at run time.",
+    "choice": "Lights and Environment menus: Auto (scene, else built-in, decided per kind), Scene only, Built-in only. The built-in key light and the core's studio are the fallback.",
+    "consequence": "Test no_lights_equals_builtin_fallback: Auto with no lights equals Built-in only in a scene with 1 or 3 lights and an env light (difference 0). A Light sources teaching stage shows which sources are active.",
+    "status": "implemented; preview test passes"
+  },
+  {
+    "goal": "Compile for any light setup.",
+    "alternatives": "Rely on TouchDesigner declaring every helper for any count; guard env-light code with #if.",
+    "evidence": "A TouchDesigner preamble with zero lights (glslang test file) sizes arrays at 1 and does not declare TDEnvLightTextureLod.",
+    "choice": "Guard every scene-light call with #if TD_NUM_LIGHTS > 0 and every env-light call with #if TD_NUM_ENV_LIGHTS > 0. Compile matrix 0/1/3 lights x 0/1 env lights; a negative test shows the unguarded code fails with zero env lights.",
+    "consequence": "56 of 56 compiles pass against the stand-ins (light setups x colour buffers, plus the demo shaders); a 2025.x native compile per light setup is still pending. Since the family sync: 58 of 58 (a Render Pick variant of the vertex shader added) and 4 negative tests.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Call TDEnvLightingPBR with a form that exists.",
+    "alternatives": "The doc page's form (inout diffuse/specular plus a returned TDPBRResult); the 7-argument returning form; the legacy void 9-argument form.",
+    "evidence": "TouchDesigner's own preamble defines the 7-argument returning form and a void 9-argument overload; two independent projects call the 7-argument form; the doc's mixed form is defined nowhere (negative test 3 fails on it).",
+    "choice": "TDPBRResult r = TDEnvLightingPBR(i, vec3(1.0), vec3(0.0), n, toCam, 1.0, 1.0), using only r.diffuse.",
+    "consequence": "If a 2025.x build dropped that form, the compile error points at this line (README troubleshooting).",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Lights must only light what faces them.",
+    "alternatives": "Heckel's specular pow(NdotH^2, s) with no N.L gate; wrap lighting for the body (as in the core); N.L-gated terms.",
+    "evidence": "specular.ts lines 27-39 add the highlight without N.L; with lights behind the object that would light unreachable surfaces. The brief requires 'adding a light only adds energy where N.L > 0'.",
+    "choice": "The built-in key multiplies every term it adds (diffuse, specular, body) by N.L explicitly. For scene lights the material adds nothing beyond what TDLightingPBR returns; that function is expected to include N.L (TouchDesigner's preamble), which the preview can only check against its own stand-in. Back-side brightness comes only from ambient/environment light. GGX replaces squared Blinn-Phong.",
+    "consequence": "Test builtin_key_adds_energy_only_where_NdotL_positive (the material's own maths): 0 of 19,963 away-facing pixels change, none darken, 46,181 of 46,356 facing pixels brighten. Test light_adds_energy_only_where_NdotL_positive (scene lights through the stand-in TDLightingPBR): 0 of 15,365. The scene-light half in TouchDesigner is a pending native check (validation.json native_lighting). Light behind the glass does not shine through toward the camera (documented limit).",
+    "status": "implemented; built-in key tested in the preview; scene lights pending natively"
+  },
+  {
+    "goal": "Rough reflections without grain.",
+    "alternatives": "Random cone sampling (grainy, effectively dithering, excluded by the brief); TDEnvLightingPBR's own specular (prefiltered but fixed fresnel, no tint/film control); roughness to mip level plus a small fixed ring.",
+    "evidence": "Mipmaps blur at the cost of one read. A third-party TouchDesigner PBR shader uses roughness x mip count, but it reads an undocumented prefiltered map (sTDPrefiltEnvLight2DMaps) and takes mipCount = 1 + floor(log2(size)) from the raw map; the material reads the raw map through TDEnvLightTextureLod, so that file is not evidence for this blur curve (independent review M3).",
+    "choice": "This study's own mapping: lod = roughness x Environment blur range (default 10, the last level of a 1024-wide map), plus an 8-direction golden-angle ring of radius roughness^2 x 0.5.",
+    "consequence": "Test env_roughness_blurs_monotonically passes for env light and studio: the gradient relative to the mean brightness falls at every step and brightness never drops below 60%. The preview's mipmaps are box-filtered; how blurry TouchDesigner's raw-map levels are, and whether it wraps the panorama sideways, are native checks (env_roughness, env_seam). Low roughness (below 0.3) blurs little with the default range. Rough studio reflections get brighter (softened strips add light).",
+    "status": "implemented; native mip behaviour pending"
+  },
+  {
+    "goal": "Reflections from any Environment Light, 2D or cube.",
+    "alternatives": "Assume 2D equirectangular only; a menu for the map kind; read both and add.",
+    "evidence": "Write a GLSL MAT: each TDEnvLightTextureLod version returns black for lights without a map of that kind.",
+    "choice": "Add the cube lookup (direction) and the 2D lookup (TDCubeMapToEquirectangular(direction)), after rotate * direction.",
+    "consequence": "No user setting. Two reads per tap per env light. Rotation direction vs a PBR MAT is a pending native check.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Presets that keep working in any lighting.",
+    "alternatives": "Presets that include light colour and direction (core study); look-only presets.",
+    "evidence": "In this member the light belongs to the scene, not the material.",
+    "choice": "33 look values per preset; light sources, env intensity, blur range, shadow strength, built-in light and samples are scene settings outside presets and the morph.",
+    "consequence": "A preset never overrides the user's lighting. Unit test checks scene settings are not preset keys.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Keep this member focused and light to wire.",
+    "alternatives": "Keep the core's back-face pass, Reflection TOP and flat-image reflection mode.",
+    "evidence": "The back-face pass needs a Camera and Glass geometry parameter and a second render; the brief's priority is least wiring.",
+    "choice": "Dropped all three; Thickness stays a slider.",
+    "consequence": "No measured thickness or inner surfaces here; use the core study when you need them.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Robust demo build on unknown builds.",
+    "alternatives": "Stop on any failure; skip unavailable demo nodes with a stored warning.",
+    "evidence": "Light COMP and Environment Light COMP parameter names come from the docs, not an inspected 2025.x build.",
+    "choice": "Strict for material, shader DATs and presets; lenient for demo nodes, which are skipped with a warning if their type is unavailable, along with their wires and references.",
+    "consequence": "The material always builds strictly; a broken demo shows up in build_warnings, not as a failed build.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Objects in front of the glass must stay in front (universality first: any scene).",
+    "alternatives": "Render the glass alone and lay it over the scene with an Over TOP (previous recipe, inherited from the core); draw the glass into the scene render with a Render Pass TOP that keeps the scene's depth.",
+    "evidence": "Independent review T2. Heckel hides the mesh, renders the scene into the render target, shows the mesh and draws it in the normal depth-tested render (refraction article lines 140-154). Render Pass TOP: 'can build upon its inputs render by using the existing depth/color information in the framebuffers'. Preview test occluder_stays_in_front: 0 of 20,444 bar pixels change with the depth kept; the Over model changes 10,559.",
+    "choice": "README and tutorial recipe: scene Render TOP without the glass (also the Refraction TOP), then a Render Pass TOP with the glass, same camera and lights, Clear Depth Buffer and Clear to Camera Color off. The demo is built the same way: a backdrop card (card.vert/card.frag) at the far plane of demo_scene, an optional occluder bar, and render as a Render Pass TOP.",
+    "consequence": "Opaque objects can pass in front of the glass. An Over TOP is still fine for a flat image or video background with nothing in front. Objects in front can appear bent inside the glass near their edges, because the scene render contains them (a limit of screen-space refraction). No cook-loop warning when sampling the scene render inside the pass is a pending native check.",
+    "status": "implemented; preview test passes; native pending"
+  },
+  {
+    "goal": "Experiments must be reproducible in any order.",
+    "alternatives": "Set only each experiment's listed values (previous); reset every study control to its default first.",
+    "evidence": "Independent review T3: applied in file order, env_roughness inherited Demoenvrotate 90 and final inherited Morph 0.5.",
+    "choice": "native.apply() resets every custom parameter to its default first, except the Preset menu, the user's Refraction TOP, Flip screen V (a build correction), pulses and anything in expression, export or bind mode.",
+    "consequence": "Unit test: every experiment applied after all earlier ones equals the same experiment on a fresh component.",
+    "status": "implemented; unit tests pass; native pending"
+  },
+  {
+    "goal": "Work in renders with several colour buffers.",
+    "alternatives": "One colour output (previous; extra buffers undefined); an output per buffer with zero in the extra ones.",
+    "evidence": "Write a GLSL MAT, Multiple Render Targets: outputs declared as fragColor[TD_NUM_COLOR_BUFFERS], set from the render settings. TouchDesigner's exported PBR shader writes zero to every buffer but the first.",
+    "choice": "layout(location = 0) out vec4 fragColor[TD_NUM_COLOR_BUFFERS]; buffer 0 gets the glass, the others vec4(0). An #ifndef fallback defines 1 buffer where the define is missing.",
+    "consequence": "Compiles with the define missing, 1 and 3 (stand-ins). Extra buffers carry zero, not normals or velocity.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "A blackout must not light the glass.",
+    "alternatives": "Change the fallback rule (cannot tell a dimmed light from a missing one in the shader); document it and make it testable.",
+    "evidence": "Light COMP: lights with Dimmer below 0.001 are ignored and not calculated in a Render TOP. Whether they then leave TD_NUM_LIGHTS is undocumented (independent review T4).",
+    "choice": "A Study > Demo Light COMP dimmer control, a native experiment (blackout) and a README line: in shows that fade lights to black, set Lighting > Lights to Scene only.",
+    "consequence": "No shader change. If the native check shows Auto switching to the built-in key at 0, the advice applies; if not, Auto is safe.",
+    "status": "documented; native pending"
+  },
+  {
+    "goal": "Finite output in every stage, with any control value.",
+    "alternatives": "Trust the formulas; guard divisions and cap every stage.",
+    "evidence": "Independent review M5/M6: float32 emulation at Highlight size 0.02 gives N.H = 1.0000002 and d <= 0 in 262,984 of 2,000,000 near-peak samples; Key light direction 0,0,0 normalizes a zero vector; the Lights stage reached 74,399 in a float render (above the 16-bit float limit 65,504) without the cap.",
+    "choice": "N.H clamped to 1, GGX denominator kept above 1e-8, key and half vectors divided by max(length, 1e-6), and the 1024 cap applied to whatever stage is shown.",
+    "consequence": "Test outputs_finite_and_capped: no non-finite value and a largest value of 1024 over 18 float renders. Images unchanged (at most 1/255 against the previous captures).",
+    "status": "implemented; preview test passes"
+  },
+  {
+    "goal": "Family sync R1: ripples and film must not jump when Wobble speed changes (a morph, a slider) after hours of uptime.",
+    "alternatives": "Keep uWobble.w = absTime.seconds and t = time x speed in the shader (6a58487); integrate speed x frame time in Python (core presets.advance()); a Speed CHOP or Execute DAT.",
+    "evidence": "Preview red run on the 6a58487 material: one frame of a Prism Chrome to Aqua Jelly morph at 1 h changed the final image by up to 226/255 (p99 113) and the film stage by 255/255; a Wobble speed nudge 0.60 to 0.61 changed one frame by up to 58/255. Synced: 33/255 and 11/255 at 1 h against 25/255 and 15/255 at 2 s; the nudge 1/255, the same as one frame of steady motion.",
+    "choice": "The core's mechanism: presets.advance(), phase() and spin() integrate rate x morphed speed x frame time in double precision, wrapped to 256 (drift) or 360 (demo spin), feeding a new uPhase uniform; the noise lattice repeats every 256 units (latticeHash(c & 255)); uWobble.w is unused (0); demo_geo ry calls spin(); no node expression reads absTime. Paused: rate x Fixed time.",
+    "consequence": "The noise is re-seeded where its lattice coordinates are negative and the -0.3 drift starts at 256 - 0.18 (the same place on the 256-periodic lattice), so the wobble and film patterns differ from 6a58487 (same frequencies and strength). Before/after numbers in review.md. If the module state is lost (the DAT text changes), the next frame starts from rate x absTime once.",
+    "status": "implemented; unit and preview tests pass; native pending"
+  },
+  {
+    "goal": "Family sync R3: the Refraction TOP field behaves like an ordinary TOP field, and build warnings say what they affect.",
+    "alternatives": "Keep the field as the expression me.op('demo_scene') (6a58487); constant mode with a relative path and a default.",
+    "evidence": "Core audit A3: expression-mode fields break drag-and-drop, clearing and Reset to Default. Core builder.link_demo_inputs() and WARNING_NOTES.",
+    "choice": "Refractiontop is constant, setup, demo_target demo_scene; the builder writes the relative path, checks it resolves inside the component, sets it as the default, and falls back to the expression with an 'inputs' warning otherwise. Build warnings carry a category: material, inputs, dither, setup, demo. Lit keeps its own lenient creation of demo nodes (a missing node type becomes a demo warning).",
+    "consequence": "Users can drop their scene render on the field, clear it, or reset it to the demo. Native check pending.",
+    "status": "implemented; unit tests pass; native pending"
+  },
+  {
+    "goal": "Family sync R4: experiments reset the look, never the user's setup.",
+    "alternatives": "Reset every custom parameter except Preset, Refraction TOP and Flip screen V (6a58487, which also reset Faces); the core's look_defaults() from study.json with setup flags.",
+    "evidence": "Core round 3 X2: resetting setup controls breaks the promise to leave the user's scene alone. Lit's 6a58487 reset already made experiments order-independent, but it reset Faces.",
+    "choice": "native.look_defaults(spec) resets every control with a default that is not a pulse, Preset or marked setup (Refraction TOP, Faces, Object size, Flip screen V, Colour parameters). Lit keeps its own rule that controls driven by an expression, export or bind are skipped (the core writes .val there anyway; critic X3).",
+    "consequence": "Unit test runs every experiment after every other one (256 pairs) with a user edit in between, and checks the setup survives every experiment. The scene-light settings (Lights, Environment, intensity, blur range, shadow strength, built-in key) stay reset, because experiment predictions depend on them. Measured on the 6a58487 code (verifier V4): all 225 ordered pairs of its 15 experiments already gave the same state as the second experiment alone, so R4 changed which controls are kept, not order independence. There, test_r4_scene_setup_survives_every_experiment fails by assertion (Faces reset from 'none' to 'back'), test_r4_order_does_not_matter fails by assertion on Flip screen V only (its oracle reads the setup flags from study.json, and 6a58487 has none) and test_r4_reset_controls_are_the_documented_ones errors (no look_defaults()).",
+    "status": "implemented; unit tests pass"
+  },
+  {
+    "goal": "Family sync R5: shader hygiene from the core's audit round 2.",
+    "alternatives": "Keep a6f95c6's forms; port each core fix.",
+    "evidence": "Core audit B1, B3, B4, B10, B13, B15. Lit already had increasing smoothstep edges (T5/M4) and guarded key light and half vectors (M5).",
+    "choice": "Derivatives at the top of main() with a relative degeneracy threshold in facingNormal(); the vertex stage keeps a missing normal at exactly zero before TDDeformNorm; faceCamera() again after the wobble; wobble slope times the cube root of |det(world)|; azimuth() instead of atan(0, 0) in the studio and envmap.frag; safeNormalize() for the eye and camera axis and the environment rotation; per-sample IOR clamped to 1; f0 = r0 x r0.",
+    "consequence": "faceCamera after the wobble changes 56 to 244 silhouette pixels per wobbling preset at 480 x 270 (max 91/255); everything else is bit-identical on the demo. Tests: ior1_invisible_with_wobble (6a58487: 250/255 on 267 pixels), wobble_independent_of_object_scale, faceted_fallback_without_normals.",
+    "status": "implemented; preview tests pass"
+  },
+  {
+    "goal": "Family sync R6: frost blurs without shifting the view.",
+    "alternatives": "Golden-angle spiral (6a58487); radical inverse; Martin Roberts' R2 sequence (core).",
+    "evidence": "Centre of mass of the frost disc for 8 to 32 samples: golden spiral 0.089 to 0.155 disc radii off centre, R2 at most 0.064 (unit test test_r6_frost_disc_stays_centred). 12 vs 32 samples at Frost 0.6: max 12/255 (6a58487: 15/255; both pass frost_converges_with_samples).",
+    "choice": "discPoint() with the R2 sequence, as in the core. The flat-image reflection half of R6 does not apply: lit has no Reflection TOP or flat-image mode.",
+    "consequence": "Frosted presets change by at most 24/255 (Frosted Ice), mean 2 to 6/255 on the changed pixels.",
+    "status": "implemented; unit and preview tests pass"
+  },
+  {
+    "goal": "Family sync R8: colours that match in colour-managed projects; an optional energy-conserving mirror.",
+    "alternatives": "Plain values (6a58487); the core's Colour parameters menu and Energy conserving toggle.",
+    "evidence": "Core audit C6 and B12.",
+    "choice": "Inputs > Colour parameters (Auto / As typed / sRGB, setup) through presets.decode_colours(); paramColour() decodes the glass, reflection, rim and built-in key colours (scene light colours come from TouchDesigner). Reflection > Energy conserving (default off): keep = 1 - clamp(reflectance) scales the body and the view through the glass, and alpha. Both reach the shader in a new uOptions uniform. The glass colour is clamped to 0..1 inside absorption() only, as in the core.",
+    "consequence": "Default look unchanged in a pass-through project and in the preview. Tests: srgb_colour_mode_decodes_colours (1/255), energy_conserving_mirror_is_pure_reflection (0/255).",
+    "status": "implemented; preview tests pass; native colour management pending"
+  },
+  {
+    "goal": "Family sync R9: menus, samplers and diagnostics that follow the build.",
+    "alternatives": "Par.menuIndex, unset extend modes and an inspect() without script errors (6a58487); the core's forms.",
+    "evidence": "Core audit A10, A12, A15.",
+    "choice": "presets.menu() for Teaching stage, Lights and Environment; sRefraction Extend U and V Mirror in study.json, applied leniently as material warnings; inspect() reports script_errors, blocking_errors (material, demo_scene, render, out) and inputs; capture() and export() refuse only on blocking errors and print the rest.",
+    "consequence": "A menu driven by an expression still reaches the shader. Native check of the extend menu names pending.",
+    "status": "implemented; unit tests pass"
+  },
+  {
+    "goal": "Family sync C1: glass over a scene render with a transparent background.",
+    "alternatives": "Ignore the Refraction TOP's alpha (6a58487: clear glass turned an empty background opaque black); one premultiplied formula driven by the sampled alpha (Blobs T1, core).",
+    "evidence": "Preview: invisible glass over an alpha-0 scene max 0/255 colour and alpha (6a58487: 255/255 on 94,405 pixels); empty scene vs no Refraction TOP, Violet Gel: 0/255 (6a58487: 205/255); all twelve presets over the opaque demo scene with Frost, Wobble and Iridescence at 0 against the 6a58487 shaders: max 1/255.",
+    "choice": "transmitted() returns the average sampled alpha (covered); seeThrough = translucency x (1 - covered) x average tint; colour = (mix(body, through x tint, translucency) + glass colour x (translucency x (1 - covered) - seeThrough)) x keep + reflection + glow; alpha = 1 - seeThrough x keep.",
+    "consequence": "Partly covered scene pixels (alpha 0.5) count the scene twice: up to 72/255 brighter (measured, documented limit).",
+    "status": "implemented; preview tests pass"
+  },
+  {
+    "goal": "Family sync C2: the material in Render Pick passes and in renders with several colour buffers.",
+    "alternatives": "Lit already had fragColor[TD_NUM_COLOR_BUFFERS] with a loop zero-filling buffers 1..N (6a58487); constant indices behind #if (core); a picking branch.",
+    "evidence": "The 6a58487 loop does not compile in WebGL2 (\"array indexes for fragment outputs must be constant integral expressions\"); glslang accepted it for GLSL 4.60. Write a GLSL MAT (raw page fetched 2026-11-02): fragColor[TD_NUM_COLOR_BUFFERS], 'ensure you are not writing beyond the number of buffers'; picking defines TD_PICKING_ACTIVE and TDWritePickingValues() writes the defaults.",
+    "choice": "Buffers 1 to 7 get zeros at constant indices, each behind #if TD_NUM_COLOR_BUFFERS > k. The vertex shader calls TDWritePickingValues() under #ifdef TD_PICKING_ACTIVE after its normal outputs (the documented example puts the normal code in the #ifndef branch; writing it in both cases is harmless and keeps gl_Position from TDWorldToProj, which applies the pick adjustment).",
+    "consequence": "Compile check gains a picking variant and a negative test (without the stand-in it fails and names TDWritePickingValues). Preview: three-buffer render, buffer 0 equals the single-buffer glass exactly, buffers 1 and 2 zero on all 93,845 glass pixels. Native picking pending.",
+    "status": "implemented; the picking part is superseded by 'Family close G6' below (the documented '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif' form); compile and preview tests pass; native pending"
+  },
+  {
+    "goal": "Family sync C3 (conditional): adopt the Blobs fan-gap mip level only if the core adopted it.",
+    "alternatives": "Fan-gap level (a level as wide as the whole screen gap between neighbouring colour samples); a quarter of that gap (what Liquid Glass Blobs adopted: blobs.frag, transmitted()); keep mip 0 for dispersion.",
+    "evidence": "The core rejected the whole gap with the round-2 B7 method (core decisions.json: mean error 2.4 to 2.8 times higher than mip 0 against 64- and 128-sample references; up to 377 pixels over 32/255 at Thickness 2.5). Lit's transmitted() is the core's line for line, and dispersion_converges_with_samples gives the core's numbers exactly on lit: Clear Crystal mean 0.35 (1.83 at Thickness 2.5), Prism Chrome 0.32 (1.32), max 26/255, no pixel over 32. Quarter gap, added in the family gap round and measured on lit with the guard test's metric (960 x 540, refraction stage, torus, Dispersion 1, 12 against 64 samples; scratch run fix-gap-lit/c3_survey.cjs): at the presets' own Thickness it changes 0 pixels on Clear Crystal and Prism Chrome (mean 0.347 and 0.321, as now). At Thickness 2.5 it changes 10,678 and 630 pixels, by at most 7/255 and 1/255; the mean against 64 samples goes from 1.831 to 1.758 (Clear Crystal) and from 1.320 to 1.317 (Prism Chrome), with 0 pixels over 32. The whole gap on lit, same metric: mean 0.638 and 3.967 with 290 pixels over 32 (Clear Crystal, preset Thickness and 2.5), 0.611 and 3.613 with 394 (Prism Chrome). The other members measured the quarter gap too: Liquid Glass Flow 0 changed pixels (its decisions.json, C3), Liquid Glass Prism 0 pixels on Clear Crystal and Prism Chrome and a small gain on its Spectral Prism (mean 2.167 to 2.154/255). Liquid Glass Blobs chose it on its own measurement: there the rainbow spreads much wider (12-sample mean error 7 to 8/255 against 64 samples, here 0.3 to 1.8), and a quarter gap beat no level in all 8 of its cases.",
+    "choice": "Not adopted: neither the whole gap nor the quarter gap. The whole gap is worse in every case. The quarter gap changes no pixel at the presets' own Thickness, so it does not serve C3's goal (a continuous rainbow at the default Samples); its small gain on very thick glass (4% lower mean error on Clear Crystal at Thickness 2.5) does not pay for two extra bend computations per pixel and more code for the tutorial. dispersion_converges_with_samples added as a guard: the quarter gap passes it, the whole gap fails it.",
+    "consequence": "No look change from C3. Only Liquid Glass Blobs keeps the quarter gap, because only there does the rainbow spread wide enough for it to matter. If the core adopts it later, lit takes it with the core's transmitted().",
+    "status": "not adopted (core rejected the whole gap; quarter gap measured here: no change at preset thickness); guard test added"
+  },
+  {
+    "goal": "Family sync C4: no dithering anywhere.",
+    "alternatives": "Lit already set Dither off on both demo renders and banned TDDither in the material (6a58487).",
+    "evidence": "Render TOP and Render Pass TOP pages (raw, fetched 2026-11-02): parName=dither, label Dither.",
+    "choice": "Kept, moved to lenient_parameters with its own 'dither' warning category; the lint now covers every shader (no TDDither, no per-pixel hash or noise seeded by gl_FragCoord); README steps tell users to turn Dither off on their own renders.",
+    "consequence": "The recipe half was already in place at 6a58487 (its test passes there in substance); the README test and the per-shader lint are new.",
+    "status": "already had; extended"
+  },
+  {
+    "goal": "Family sync C5: numeric and diagnostic hardening.",
+    "alternatives": "Lit had the 1024 cap on every stage, guarded key and half vectors, Info DATs on its renders and render_diagnostics for its own renders (6a58487).",
+    "evidence": "Core's merged form scans the project for renders that draw the material.",
+    "choice": "Kept lit's cap (in compose and again on whatever stage is shown, colour only). Added safeNormalize() for the eye, camera axis and environment rotation. render_diagnostics() now also reports any render in the project whose Override Material, or one of whose Geometry COMPs' Material, is this material.",
+    "consequence": "Diagnostics reach the user's own glass passes, which is where per-light-setup compile errors show.",
+    "status": "already had; extended"
+  },
+  {
+    "goal": "Family sync C6: bends go the right way whatever the build's screen orientation.",
+    "alternatives": "Assume the usual orientation (6a58487); screenSign from screen derivatives (Prism); screenSign from the pixel's own projected point compared with gl_FragCoord (core).",
+    "evidence": "The core measured the derivative form flipping 2 to 5 silhouette pixels per preset and chose the pixel's own values; a UV-only Flip V broke both Flip V cases with a measured direction. Preview on lit: flipped raster, Prism Chrome and Chrome Type with the occluder, 657 and 668 pixels over 8/255 against the mirror image (antialiased rims); 6a58487: 72,310 and 52,404.",
+    "choice": "The core's screenSign(), computed at the top of main() in uniform control flow, scaling toUV (every bend and frost offset). Flip V flips the base UV and the measured vertical direction together, as in the core; this deviates from 'Flip V stays UV-only' in the sync brief for the measured reason above. Lit has no flat-image reflection offset to orient.",
+    "consequence": "Normal raster: orient = (1, 1) at almost every pixel. Corrected in the family gap round: not at every pixel. With multisampling, 16 silhouette pixels in 576 renders near a centre line got the wrong sign, and in a flipped raster the whole centre row of an odd-sized render did. The tie-break that fixes the second is the last entry of this file. The 960 x 540 captures were unaffected.",
+    "status": "implemented; preview tests pass; native pending; centre lines revised in the family gap round"
+  },
+  {
+    "goal": "Family sync C7: fog.",
+    "alternatives": "No fog (6a58487; TDLightingPBR does not apply fog: Write a GLSL MAT says to call TDFog at the end of the shader); TDFog on the premultiplied output (Blobs, core).",
+    "evidence": "Preview stand-in: full fog on invisible glass at Opacity 0.5 gives half scene plus half fog on every glass pixel within 2/255 except 1,100 antialiased rim pixels; Opacity 0 leaves no trace; with fog off the twelve presets match 6a58487.",
+    "choice": "After Opacity: colour = TDFog(colour) - TDFog(black) x (1 - alpha), so the glass adds only its alpha's share of the fog colour. Teaching stages are not fogged.",
+    "consequence": "The bent scene inside the glass gets the glass's fog on top of whatever fog its own render gave it (an approximation). Built-in MATs fog by themselves; a GLSL MAT only if it calls TDFog, and the demo backdrop card does not, so the demo scene render is unfogged (verifier V3). TouchDesigner's fog is a pending native check, judged by the formula, not against the card.",
+    "status": "implemented; preview test passes with a stand-in; native pending"
+  },
+  {
+    "goal": "Family sync C8: presets carry over between a 0.1-unit and a 10-unit object.",
+    "alternatives": "Scene-unit controls only (6a58487); Object size with a Fit pulse that reads Inputs > Glass geometry (core); Object size with a Fit pulse that finds the glass objects itself.",
+    "evidence": "Preview: the torus built at 0.1 and 10 units, camera and demo lights scaled with it, Object size to match: max 1/255 for Prism Chrome, Frosted Ice, Amber Honey and Oil Slick (6a58487: up to 244/255, about 90,000 pixels over 8). At Object size 1 every uniform equals the 6a58487 value exactly for all twelve presets (unit test).",
+    "choice": "Inputs > Object size (setup, default 1, min 0.001) multiplies Thickness and Frost, divides Tint density and Wobble scale, and sets the film swirl frequency 2.5 / Object size (uFilm.w). Fit to glass objects finds every Geometry COMP whose Material is this material, plus the Geometry of any render whose Override Material is it (objects outside the component win over the demo torus), reads the render-flagged SOP's bounds (the COMP's bounds without one), multiplies half the largest side by the COMP's world scale and divides by the demo torus's 1.45. Lit's own choice: no Glass geometry field (lit has no back-face pass, and least wiring comes first).",
+    "consequence": "Fit reads bounds in TouchDesigner; pending natively. Superseded in part by the V1 fix below: Fit always counted the Geometry COMP's scale, but the ripple and film patterns did not, so on a COMP-scaled object no Object size reproduced a preset. Object size is now the object's world size for the lengths and the patterns alike.",
+    "status": "implemented; unit and preview tests pass; native pending"
+  },
+  {
+    "goal": "Family sync C9: contact sheets that compare across the family.",
+    "alternatives": "Checkerboard only (6a58487); a Backdrop menu with Prism's bold type on black (core).",
+    "evidence": "Judges: the checkerboard washes out rainbow; Prism's type backdrop flatters references 1 and 4. Preview: Checker equals the 6a58487 backdrop (0/255); Type 71% dark, 23% white ink.",
+    "choice": "The core's backdrop.frag (Checker default, Type with the ordered smoothstep edges); Study > Demo backdrop drives uBackdrop through presets.menu(); experiments reset it; new experiment type_backdrop; captures/presets-sheet-type.png.",
+    "consequence": "Over Type, Prism Chrome and Chrome Type bend white letters with colour fringes, closer to references 1 and 4; the twelve presets stay distinct on both backdrops.",
+    "status": "implemented; preview test passes"
+  },
+  {
+    "goal": "Family sync: items that do not apply, and member ideas the core did not merge.",
+    "alternatives": "-",
+    "evidence": "R2: lit already drew the glass with a Render Pass TOP on the scene render (Clear Depth Buffer and Clear to Camera Color off) since its independent review (study.json node render; test occluder_stays_in_front). R7: lit has no back-face pass. Not merged into the core: Prism's negative back-face encoding and isotropic footprintLod, the two-surface optics mode, the scene-light mode (this study) and the flow vertex stage.",
+    "choice": "R2 kept in lit's own form (the glass objects' Material, not Override Material; README notes Override Material should work too). R7 not applicable. Nothing from the not-merged list is added here; this study stays the scene-light member.",
+    "consequence": "Revisit the scene-light merge into the core after the native preamble check (TDEnvLightingPBR form, TDEnvLightTextureLod with zero env lights).",
+    "status": "already had / not applicable / not merged"
+  },
+  {
+    "goal": "Verifier V1: Object size from Fit to glass objects must keep the ripple and film patterns on an object scaled by its Geometry COMP.",
+    "alternatives": "(a) Keep the patterns in object space and Object size as a world size (6a58487 sync state): Fit's value fixes the lengths but makes the patterns 1/scale times finer; (b) Fit ignores the COMP scale: the patterns stay right, the bend, frost and tint go wrong; (c) two controls, an object-space size for the patterns and a world size for the lengths: more wiring; (d) multiply the pattern frequencies by the world scale the shader already computes for the wobble slope, so Object size means world size throughout.",
+    "evidence": "Reproduced the verifier's run exactly (fix-lit scratch, comp_scale_before.json). New preview test fit_size_carries_presets_over_comp_scale, COMP scale 0.1 and 10 with Object size = scale, camera and demo lights scaled with it, against the unscaled demo (max / pixels over 8): before, Aqua Jelly normal 82/81,761 and 55/81,843; Oil Slick film 255/93,644 and 255/94,099; finals of Aqua Jelly 226, Oil Slick 245, Prism Chrome 235/236 on 62,809 to 93,095 pixels; Frosted Ice 1/0 (no ripples or film). After: every case 1/255, 0 pixels over 8. SOP scale 0.1 with Object size 0.1 stays 1/0. All 43 captures (Object size 1, unscaled demo) re-rendered: 40 bit-identical, the 3 light-setup strips at most 1/255 with 0 pixels over 8.",
+    "choice": "(d): worldScale() = cube root of |det(mat3(world))| (moved out of wobbleNormal, same maths); wobbleNormal p = vObjPos * uWobble.y * scale; filmThickness uses vObjPos * uFilm.w * worldScale(). Uniforms, Fit and presets unchanged. The verifier asked for the fix in the core first; this task may only write inside liquid-glass-lit, so it lands here first and the core still has the old form.",
+    "consequence": "A COMP scale k with Object size k (what Fit sets) or a SOP scale k with Object size k both give the demo's ripple and film count; Object size 1 on an unscaled object is unchanged. Deliberate change: an object scaled k times by its COMP at a hand-set Object size shows k times as many ripples and film bands per unit of the object as before (finer for k > 1, coarser for k < 1); Fit fixes it. So wobble_independent_of_object_scale now sets Object size to the scale (review.md, changed expectations). Non-uniform scale uses the cube root, an average. Instance transforms are not in uTDMats.world, so instanced copies scaled per instance are not followed (as before for the wobble slope). Family: the core, Flow, Blobs and Prism need the same two-line change and test; until then lit's patterns differ from the core's on COMP-scaled objects.",
+    "status": "implemented in lit; preview and unit tests pass; native pending (validation.json native_family_sync); the core, Prism and Flow took the same change in their family closes (decision 'Family close G1'). The hand-set Object size sentence was corrected by the family critic (decision 'Family critic, routed fixes'; it said 1/k, the opposite direction)"
+  },
+  {
+    "goal": "Verifier V2 and V3: say what Dither and fog actually do to the glass, and give the native fog check a target that exists.",
+    "alternatives": "Dither: keep 'the render would add noise on top' (wrong: a render dithers only shaders that call TDDither) or say why Dither should still be off. Fog: add TDFog to the demo card (the card sits at the far plane through a depth trick, so its fog distance would be arbitrary) or judge the glass by its fog formula and say the demo scene is unfogged.",
+    "evidence": "Write a GLSL MAT, section Dithering (raw page saved by the sync, 2026-11-02): TDDither applies the Render TOP's dither when called and leaves the colour unchanged otherwise; this material never calls it (test_c4_shaders_never_dither). card.frag writes the backdrop with no TDFog. Camera COMP raw page (2026-11-02): Fog menu Off, Linear, Exponential, Squared Exponential; Fog Near, Fog Far, Fog Color, Fog Alpha. Preview fog_adds_only_the_glass_share already checks the formula with a stand-in.",
+    "choice": "README step 4: the glass never calls TDDither, so Dither does not touch it; dithered built-in materials would be bent through the glass, so turn it off on both renders. Fog: no change to the demo. The native check sets linear fog with Fog Far 1 (full fog on the glass) and expects fog colour x alpha plus the scene x (1 - alpha); README, article and the compose comment say the demo scene render stays unfogged.",
+    "consequence": "No shader maths changed. New unit test test_c7_native_fog_check_matches_the_demo and a tightened test_c4_readme_tells_users_to_switch_dither_off keep the wording tied to the code.",
+    "status": "implemented; unit tests pass; native fog pending"
+  },
+  {
+    "goal": "Family gap (verifier, after the V1 fix): give Object size one meaning across the Liquid Glass family, so a typed value, a preset and Fit mean the same object size in every member.",
+    "alternatives": "(a) The core's form: Fit measures a world size over 1.45, but the ripple and film patterns stay in object space, so on a Geometry COMP scaled by s Fit makes them s times larger. (b) Flow's form: SOP units with the demo sphere (radius 1) as 1; the motion lives in the SOP, but Thickness, Frost and Tint density miss the Geometry COMP's scale. (c) Prism's form: the core's, with reference radius about 1.265 (its demo torus, 1.5 x the cube root of its Geometry COMP's sz 0.6). (d) This study's form since V1: world size over 1.45, for the lengths and the patterns alike.",
+    "evidence": "Read-only script family_size.py (scratch folder 'fix-gap-lit diverges)', 2026-11-02) on the working trees of the four mesh members. On the core's demo torus scaled 3 by its Geometry COMP, Fit gives Object size 3.0 (core), 3.0 (lit), 3.44 (Prism), 1.45 (Flow). Against the rule, the world thickness of one preset value is 1.0, 1.0, 1.15 and 0.48 times, and the ripple and film period 3.0, 1.0, 3.44 and 1.45 times. Unscaled, Flow's glass is 1.45 times thicker than the core's and Prism's 1.15 times. Lit's preview test fit_size_carries_presets_over_comp_scale measures 1/255 at COMP scale 0.1 and 10 (review.md, V1); since the fit threshold fix it fails above 2/255 (review.md, Family critic: the COMP-scale test's threshold).",
+    "choice": "(d) is the family rule. Universality comes first: the look is the same whether an object is sized in its SOP or by its Geometry COMP, with one control and one pulse. family_rule below states it once; the unit tests FamilyObjectSizeRule pin this study to every clause, including the 1.45 reference radius, which no test pinned before.",
+    "consequence": "No change to lit's shader, uniforms, Fit or presets: lit already follows the rule. The core, Prism and Flow need their own changes: the two-line shader change (worldScale() on the ripple and film lookups) with the preview test fit_size_carries_presets_over_comp_scale, then Prism's reference radius and Flow's units. This round could write only inside liquid-glass-lit, so those ports are pending in their own studies. Where they land, Object size 1 stops being bit-identical on COMP-scaled objects; lit measured that in V1 (wobble_independent_of_object_scale, old form at COMP scale 0.1 and 10 with Object size 1: 55/255 and 82/255 now). Limits of the rule: a non-uniform scale is averaged (cube root of the determinant); per-instance scale is not in uTDMats world, so instanced copies do not follow it.",
+    "status": "recorded for the family; lit implemented and unit-tested; core, Prism and Flow ports pending outside this study; native Fit check pending (validation.json native_family_sync); since the family close (2026-11-02) the core, Prism and Flow follow it too (family_rule.members_family_close; decision 'Family close G1' below); Liquid Glass Blobs takes the Object size number with two recorded exceptions, film count per box radius and ripple in box units (members_family_close; decision 'Close verify LIT-CV3' below)",
+    "family_rule": {
+      "name": "Object size",
+      "reference_radius": 1.45,
+      "reference_object": "The core's demo torus: Torus SOP, orient Z, radx 1 + rady 0.45, in an unscaled Geometry COMP. Object size 1 means this size.",
+      "world_radius": "Half the largest side of the bounds of the SOP whose render flag is on (the Geometry COMP's own bounds without one), times the cube root of |det| of the Geometry COMP's world transform (worldTransform). Several objects: the largest.",
+      "world_transform_source": "ObjectCOMP Class, https://docs.derivative.ca/ObjectCOMP_Class (read 2026-11-02): worldTransform is 'the current world transform of the Object'; localTransform is the transform 'without taking into account any parent or constraint transforms'. That parent transforms count in worldTransform, as they do in the shader's uTDMats world, is read from that contrast; native check pending (validation.json native_family_sync).",
+      "object_size": "world radius / reference_radius",
+      "lengths_times_object_size": [
+        "Thickness",
+        "Frost"
+      ],
+      "per_length_divided_by_object_size": [
+        "Density",
+        "Wobblescale"
+      ],
+      "film_swirls_per_object_size": 2.5,
+      "pattern_lookup": "The ripple and film lookups multiply the object-space position by the frequency and by worldScale(): the patterns stick to the object and count in world-sized steps.",
+      "world_scale_glsl": "pow(abs(determinant(mat3(uTDMats[vCamIndex].world))), 1.0 / 3.0)",
+      "world_scale_python": "abs(geo.worldTransform.determinant()) ** (1.0 / 3.0)",
+      "members_at_c94e849": {
+        "liquid-glass-lit": "Follows the rule (verifier V1).",
+        "liquid-glass": "World size over 1.45; ripple and film in object space (liquid_glass.frag wobbleNormal, filmThickness). Port pending.",
+        "liquid-glass-prism": "World size over about 1.265; ripple and film in object space. Port pending.",
+        "liquid-glass-flow": "SOP units, demo sphere radius 1 as 1; lengths miss the Geometry COMP's scale. Port pending.",
+        "liquid-glass-blobs": "Object size is the blobs_geo scale (raymarched blobs, not a material for your meshes). Not compared in this round."
+      },
+      "members_family_close": {
+        "liquid-glass-lit": "Follows the rule (verifier V1). Its pattern lookups, uniform expressions and fit_glass() equal the core's (FamilyClose.test_g1_fit_and_patterns_match_the_core).",
+        "liquid-glass": "Follows the rule since its family close: worldScale() in both lookups. Fit 3.0 on its demo torus at COMP scale 3; thickness and both periods equal the rule at COMP scale 0.1, 1, 3 and 10.",
+        "liquid-glass-prism": "Follows the rule since its family close: reference radius 1.45 (REFERENCE_RADIUS) and worldScale() in both lookups. Fit 3.0 on the core's torus at COMP scale 3 (3.4383 at c94e849).",
+        "liquid-glass-flow": "Follows the rule since its family close for Object size (Fit 3.0 at COMP scale 3; 1.45 at c94e849). The motion keeps its own size in SOP units under its own name, Flow size; Fit sets both.",
+        "liquid-glass-blobs": "Takes the Object size number since its family close: Fit gives the radius of the box it marches (BOX_HALF_SIDE 1) times the cube root of |det| of blobs_geo's world transform, over 1.45 (native.py REFERENCE_RADIUS, fit_object_size()). Its scene lengths (Backdrop distance, Frost, Tint density) follow Object size as the rule asks. Two recorded exceptions (Blobs decisions.json, 'Family close G1'): the film count is 2.5 per box radius (uFilm.w = 2.5 / (1.45 x Object size)), 1/1.45 of the family's 2.5 per Object size; and the ripple is part of the blob shape, so it stays in box units and follows the box, not Object size. Measured with Blobs' own code on its box at COMP scale 0.1, 1, 3, 10 and (8, 1, 1): Fit 0.0690, 0.6897, 2.0690, 6.8966 and 1.3793, the rule's values; film period 1.45 times the rule's at every scale (close verify LIT-CV3).",
+        "how": "Scratch family_fit.py (session scratchpad, agents/lit-family-close): each member's own Fit code on a fake td module, on the core's demo torus in a Geometry COMP scaled s; pattern lookups and uniform expressions read from each member's files on 2026-11-02. Blobs (close verify LIT-CV3): its own fit_object_size() on its box in a Geometry COMP scaled 0.1, 1, 3, 10 and (8, 1, 1), its own uFilm.w expression and film lookup, and its ripple() read from blobs.frag; scratch g1_measure.py (agents/close-verify-lit) and unit test FamilyCloseVerifierFixes.test_cv3_rule_record_covers_blobs, on Blobs' files of 2026-11-02."
+      },
+      "open_proposal": "Family critic (2026-11-02): one Fit press sets one Object size for the whole component, so several objects of different sizes, a Geometry COMP scale that changes after Fit and per-instance scale do not keep a preset's look. The critic proposes Object size in SOP units, with the shader following the COMP's and each instance's scale. Not adopted: it waits for the user's decision (this file, 'Family critic: one Object size per component', option (b)). Until then every member documents the three setups."
+    }
+  },
+  {
+    "goal": "Family gap (verifier, C6 centre lines): the measured screen orientation must also be right on the screen's centre lines, at even and odd render sizes, with and without multisampling.",
+    "alternatives": "(a) The core's comparison with +1 on ties (the sync's form). (b) The Liquid Glass Flow scratch fix: a two-pixel dead zone, +1 within two pixels of a centre line. (c) The Liquid Glass Prism tie-break: on the centre line of an odd-sized render, where the projected and the raster position are both 0, the sign of the projected position's screen derivative decides, only where 1/w changes by less than 10% to the next pixel. (d) (c) over (b)'s two-pixel band. (e) (c) plus a centroid-sampled copy of the world position for the comparison.",
+    "evidence": "Prism's screen_orientation_has_no_wrong_pixels method on lit (scratch run fix-gap-lit/c6_survey.cjs): instrumented copies of the shader write the measured sign; torus, knot and sphere; normal and flipped raster; 480 x 270 and 481 x 271; 96 poses per mesh (576 renders per raster and form, about 10 million glass pixels each); one sample per pixel (the glass alone) and four (the canvas, like an antialiased Render TOP). Wrong pixels, normal raster / flipped raster, both sizes together. One sample: (a) 0 / 37,522, all on the centre row of 481 x 271; (b) 0 / 337,584; (c) 0 / 1; (d) 1 / 2. Four samples: (a) 16 / 38,031; (b) 2 / 341,835; (c) 17 / 18; (d) 10 / 18; (e) 1 / 16. The Flow finding reproduces in (a): with multisampling, 16 silhouette pixels in 576 normal-raster renders, 0.5 to 4 pixels from a centre line, where the glass covers one to three of four samples. The pixel is shaded at its centre, outside its triangle, so its point can project to the other side of the line. The Prism finding reproduces too: the whole centre row of 481 x 271 in a flipped raster (1,480, 1,549 and 1,596 pixels on the torus, knot and sphere in the 12-render test).",
+    "choice": "(c), Prism's form. Lit's orient still multiplies by the projection's own sign, as before. (c) is the better of the two forms the verifier named. (b) fixes the normal-raster pixels only by assuming the usual orientation, so in a flipped raster, the case screenSign exists for, it is wrong on every glass pixel within two pixels of a centre line (about 340,000 in the sweep). (c) fixes the odd-size centre row (37,522 to 1) and leaves the normal raster as it was (16 to 17 multisampled silhouette pixels in 576 renders). (d) and (e) measured better on the multisampled silhouettes but were not taken. (d) gets 1 single-sample pixel wrong that (c) gets right. (e) adds a second varying with a centroid qualifier, untested in TouchDesigner, for pixels that hold one to three samples of four. New preview test screen_orientation_has_no_wrong_pixels (Prism's test, with the sphere, 480 x 270 and 481 x 271, and a multisampled readout) and unit test test_c6_centre_line_ties_use_the_guarded_derivative.",
+    "consequence": "At even render sizes nothing changes, because no pixel lies exactly on a centre line. All 43 captures render as before: 40 bit-identical, the three light-setup images within 1/255, as in the previous round. At odd sizes the centre row and column now bend the right way in a flipped raster. Known limits: a centre-line pixel on a nearly edge-on surface keeps +1 (1 in the sweep). With multisampling, 17 silhouette pixels in 576 renders, each covering one to three samples of four, still bend the wrong way; the Flow study measured 8/255 in the final image for one such pixel. The core still has form (a); it should take (c), then Flow (review.md, Family gap: centre lines and the quarter gap).",
+    "status": "implemented; preview test screen_orientation_has_no_wrong_pixels and unit test test_c6_centre_line_ties_use_the_guarded_derivative pass and fail on form (a); native orientation pending; the core took this form in its family close and Flow through the core's pixel stage; lit's copy equals the core's but for the Flip V slot (decision 'Family close G2' below)"
+  },
+  {
+    "goal": "Family gap (verifier, low): the test counts the docs state must stay true as the suites grow.",
+    "alternatives": "(a) Correct the two rows by hand, as each round did before. (b) Drop the counts from the docs and point to the result files only. (c) Write the docs from the result files with a script. (d) Keep the counts and add a unit test that reads every current count from the suites and from the result file the docs cite.",
+    "evidence": "The Checks table said 34 of 34 preview and 70 of 70 unit tests while the suites held 35 and 72 (the verifier's rerun) and then 35 and 74 (scratch snapshot fix-gap-lit/prefix); README and validation.json had been updated, the table had not. The two family gap rounds after it corrected the table to 36 and 75 by hand, but the Saved red runs note still said 44 of 74 for a 6a58487 unit file that shows 45 of 75. Each round added tests and had to find every count by hand (scratch fix-gap-lit/counts/counts.py).",
+    "choice": "(d), with this round's counts corrected. The counts help a reader see the size of the evidence, so (b) loses information. (c) adds a generator for a handful of numbers in prose. (a) alone is what drifted twice. DocumentedCounts counts unit tests with the test loader, preview checks by their literal names in preview_tests.cjs (run_all.sh writes preview-tests.json after the unit tests, so the unit run cannot read it) and compiles from checks/results/compile.json (written first). It also checks the review.md and validation.json notes on the saved 6a58487 red runs against those files.",
+    "consequence": "Unit tests 77 (2 new); a change that adds a test must update the review.md Checks table, the README Status paragraph and validation.json in the same change, and must make the 6a58487 unit red run again (now 47 of 77 fail). Counts that belong to an earlier round's record (16 of 16, 33 of 33, 42 of 72) are history and are not checked. No shader, uniform, preset or capture change.",
+    "status": "implemented; unit tests test_docs_state_the_suite_sizes and test_docs_describe_the_saved_red_runs pass, and fail with the verifier's stale rows, the stale red-run note, a stale README count or a stale validation.json count"
+  },
+  {
+    "goal": "Family gap (verifier, low): one name per thing across the five liquid-glass studies. The Fit pulse was Fitglass, Fitflow or Fitsize, labelled 'Fit to Glass geometry' or 'Fit to glass objects'; the docs called the demo backdrop menu Backdrop or Demo backdrop; Blobs alone kept that menu as a setup control.",
+    "alternatives": "(a) List the mapping only, in one family overview. (b) Align the names and labels where the job is the same, and list what still differs once. (c) Also rename Blobs' Backdrop distance so its menu can be called Backdrop.",
+    "evidence": "Reproduction script over the five study.json files: Fit names {Fitflow, Fitglass, Fitsize}, label heads {'Fit to Glass geometry', 'Fit to glass objects'}, backdrop classes {look, setup}. A pulse holds no value and is in no preset, so renaming it touches no saved look. Blobs' Backdrop is a preset key in all twelve presets, the morph and the shader bindings. 3 of 3 new tests fail on the unfixed tree (4 failures: the label, 'Fit to glass objects' in README.md and article.source.md, no link).",
+    "choice": "(b). One parameter name, Fitglass, and one label head, 'Fit to Glass geometry (...)', in all five; the brackets say what it sets. The demo menu is labelled Demo backdrop in all five, and experiments reset it in all five. The core README lists the mapping once (Names across the family). This study: The Fit pulse keeps its name `Fitglass`; its label changes from 'Fit to glass objects (sets Object size)' to 'Fit to Glass geometry (sets Object size; finds it by material)', so every member's label starts the same. README, tutorial, preset_exec.py comment, three preview test descriptions and a comment, sources.json, co-design and the native check steps use the new label; README links to the core's Names across the family.",
+    "consequence": "Scripts can use par.Fitglass on any member. Components built before this fix keep their old pulse name (Fitflow, Fitsize) until rebuilt. (c) is not done: Blobs' demo menu stays Demobackdrop, listed in the core table; renaming Backdrop distance would break saved presets and is a larger, separate change.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Family close G6: a pick render that runs only what Derivative documents for picking. The vertex shader ran its whole body and then called TDWritePickingValues() under '#ifdef TD_PICKING_ACTIVE'.",
+    "alternatives": "(a) Keep the c94e849 form: the page does not forbid writing the outputs as well, and the C2 record called it harmless. (b) Liquid Glass Prism's form: the point placed before the branch, the four outputs written inline in the '#ifndef' block. (c) The core's form: the point placed before the branch, the four outputs written by passToPixelStage(), called only in the '#ifndef' block.",
+    "evidence": "Write a GLSL MAT, Picking (raw page read again 2026-11-02, sha256 269e3d49..., the same text as the family sync's read): '#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif' and 'when picking is occuring, the define TD_PICKING_ACTIVE is set and only the code inside the #else block is executed'. glslang's preprocessor (compile_glsl.py, picking_preprocessed) on the c94e849 shader: the pick render ran 8 statements, every output and then TDWritePickingValues(); the ordinary render 7. Now 4 each: TDPos(), TDDeform(), the projection, then TDWritePickingValues() or passToPixelStage(). The core, Flow, Prism and Blobs use the documented form; the core's file is (c).",
+    "choice": "(c), the core's file code for code; only comments differ (lit's says TouchDesigner lights work in world space). The header said 'Same as the core study's vertex shader'; with (c) that stays true, and test_g6_vertex_shader_is_the_cores keeps it true against checks/core_reference and, when it is checked out alongside, ../liquid-glass. The tutorial's two vertex excerpts stay whole: 'transforms' now shows passToPixelStage(), 'picking' shows main(). The header says what a pick render runs: the point is still placed, and of the branch only the #else block runs.",
+    "consequence": "The ordinary render computes the same values in a different order (gl_Position before the four outputs). The 43 WebGL captures rendered again from the new shader: 40 bit-identical to the committed files, 3 light-setup images within 1/255, and those 3 bit-identical to the old shader rendered in the same session; the 36 preview tests report the same measurements as on c94e849 (review.md, Family close). A pick render writes none of the four outputs, as the page describes. If a TouchDesigner build read them while picking, picks would come back wrong while ordinary renders look right; validation.json (native_family_sync) says what to look for. Compile: 58 of 58 and 4 of 4 negative tests as before; the picking negative test (stand-in removed) now fails from the '#else' block.",
+    "status": "implemented; unit tests (preprocessed both ways), glslang -E check and preview tests pass and the first two fail on c94e849; native picking pending"
+  },
+  {
+    "goal": "Family close G2: one centre-line tie-break for the family. Lit's screenSign() form went to the core in its family close; confirm lit's copy now equals the core's, or record why it differs.",
+    "alternatives": "(a) Leave it: lit's form was the source the core copied. (b) Pin it: compare lit's screenSign() and the derivatives at the top of main() with the core's files in a unit test, so a later change on either side shows. (c) Also move Flip V to uState.w so the function is the core's text exactly.",
+    "evidence": "Code comparison (comments removed, whitespace collapsed) with the core's working tree after its family close (liquid_glass.frag sha256 b317d977..., pinned in checks/core_reference): screenSign() differs in one token, the Flip V slot, uState.z here (study.json binds Flipv to uState's third value) and uState.w in the core (its fourth). screenUV() differs the same way. The ten statements of main() up to TDCheckDiscard() are the same, in the same order, and both call screenSign(ndc, ndcStep, depthStep, proj). Twenty other functions are the same code, among them worldScale(), wobbleNormal() and filmThickness(). The core measured lit's form and Prism's V2 form as identical on every row of the family survey (core decisions.json, Family close G2); Prism measured the same on its own shader. Flow's screenSign() is the core's, code for code (read 2026-11-02).",
+    "choice": "(b), as test_g2_screen_orientation_is_the_cores. No shader change. Not (c): lit's uState has no back-face pass value (teaching stage, samples, flip V, has refraction TOP here; debug stage, pass, samples, flip V in the core). Moving Flip V would change the uniform layout, the builder, the README table and every hand-built network, with no change in the image.",
+    "consequence": "No image changes. The known limits are the family's: a centre-line pixel on a nearly edge-on surface keeps +1, and multisampled silhouette pixels near a centre line can take the other side's sign (lit's survey: 17 in 576 normal-raster renders). The centroid-sampled variant (e) stays unadopted family-wide (co-design.json, open questions).",
+    "status": "confirmed; unit test passes and fails on c94e849 (the core still broke ties with +1 there); native orientation pending"
+  },
+  {
+    "goal": "Family close G1: confirm the family rule still holds against the core's new implementation: the same Fit value and the same pattern period on the same scaled object.",
+    "alternatives": "(a) Rely on FamilyObjectSizeRule, which pins lit to the rule but reads only lit's own files. (b) Run lit's and the core's own fit_glass() on the same object, and compare the uniform expressions and pattern lookups with the core's files.",
+    "evidence": "Scratch family_fit.py ran each mesh member's own Fit code on the core's demo torus in a Geometry COMP scaled s = 0.1, 1, 3 and 10. On c94e849: core 3.0, lit 3.0, Prism 3.4383, Flow 1.45 at s = 3 (the critic's numbers), and the core's ripple and film periods were s times the rule's. After the family close: all four give 3.0, and the world thickness and both periods equal the rule at every s. Unit test on the core's files: lit's and the core's fit_glass() give the same Object size on that torus at COMP scale 0.1, 3, 10 and (8, 1, 1) (0.1, 3.0, 10.0 and 2.0); the uniform expressions for Thickness, Frost, Tint density, Wobble scale and the film swirl are the same strings; worldScale(), wobbleNormal(), filmThickness(), liquidField(), valueNoise() and latticeHash() are the same code. Since close verify LIT-CV2 the test also measures the periods: it evaluates each side's own uWobble.y and uFilm.w expressions at its own Fit and reads each side's own lookups. One ripple cell spans Object size / Wobble scale scene units and one film cell Object size / 2.5 in both (3 / Wobble scale and 1.2 at s = 3), k times the unscaled demo's at every scale. Before that fix the test matched the lookup's text only, and these periods followed from code equality with the core.",
+    "choice": "(b), as test_g1_fit_and_patterns_match_the_core. No change to the shader, Fit, uniforms or presets. README 'Object size across the family' now shows the measured state (it said the core, Prism and Flow did not follow the rule), and family_rule.members_family_close records it.",
+    "consequence": "No image changes. An Object size typed in lit means the same object size in the core, Prism and Flow. Each member still tunes its own presets. Liquid Glass Blobs was measured afterwards (close verify LIT-CV3): it takes the same Object size number, with two recorded exceptions (family_rule.members_family_close).",
+    "status": "confirmed; unit tests pass and fail on c94e849 (the core's lookups were in object space); native Fit check pending; test tightened in close verify LIT-CV2: it fails on 'float scale = 1.0;' in wobbleNormal() or on a film lookup without worldScale(), two changes it passed before"
+  },
+  {
+    "goal": "Close verify LIT-CV2: make test_g1_fit_and_patterns_match_the_core measure the pattern period it is cited for. Its period line reduced to a regex match on the core's wobbleNormal(), so 'float scale = 1.0;' in lit, checks/core_reference and ../liquid-glass still passed it (the critic's mutation: 2 of 86 other tests failed, this one passed).",
+    "alternatives": "(a) Reword review.md, decisions.json and validation.json: the period follows from code equality with the core, and FamilyObjectSizeRule measures it. (b) Make the test measure it: assert worldScale() in both lookups, then evaluate each side's own uWobble.y and uFilm.w expressions at its own Fit and read each side's own lookups from its shader.",
+    "evidence": "Scratch copies (agents/close-fix-lit): mut1 sets 'float scale = 1.0;' in all three shaders, mut2 drops '* worldScale()' from all three film lookups. The old test passes on both. The new test fails on both, for each core copy. With its string assertions removed, the measurement alone still fails both: ripple (mut1) and film (mut2) period over the rule 0.1 at COMP scale 0.1, the scale itself, because the lookup then counts cells per object unit.",
+    "choice": "(b). New helpers lookup_period() and evaluate() in checks/test_study.py: a lookup's factors must be worldScale(), a uniform component, a number or a local float defined from those; any other factor fails the test instead of being guessed. The test now also runs the unscaled demo (COMP scale 1) as the base. The records' claim ('the period comes out k times the demo's') is now what the test measures.",
+    "consequence": "No shader, uniform, preset or image change. The unit count stays the same for this item (one test changed). If lit and the core change a shared function together in a way that breaks the period, this test now fails; before, only the other tests caught it.",
+    "status": "implemented; red on mut1 and mut2, green on the working tree (review.md, Verifier fixes after the family close)"
+  },
+  {
+    "goal": "Close verify LIT-CV3: this decisions.json's family_rule is the family's one rule record, but its members_family_close entry, the README table and co-design still called Liquid Glass Blobs not measured. Blobs' own family close, which ran at the same time, has since taken the rule's Object size number with two recorded exceptions.",
+    "alternatives": "(a) Point to Blobs' decisions.json only. (b) Record Blobs here with its measured numbers and exceptions, cite Blobs' 'Family close G1', and add one paragraph (not a table row) to the README: the table measures one object, the core's demo torus, and Blobs has no mesh to put it on. (c) A README table row for Blobs on its own box.",
+    "evidence": "Scratch g1_measure.py (agents/close-verify-lit) rerun on Blobs' files of 2026-11-02, box scaled 0.1, 1, 3, 10 and (8, 1, 1): Fit 0.0690, 0.6897, 2.0690, 6.8966 and 1.3793, ratio 1.0 to the rule (box radius 1 x k / 1.45); Backdrop distance ratio 1.0; film period 1.45 times the rule's. blobs.frag ripple() uses uMotion.z (Ripple scale) on the box position, with no worldScale(); uMotion's expressions do not read Object size. Blobs' 'Family close G1' gives the reasons: the ripple moves the silhouette and the march step, and the family's film count turned Oil Slick's bands into round spots on its demo.",
+    "choice": "(b). members_family_close['liquid-glass-blobs'] now states the rule's Fit, the scene lengths that follow it, and the two exceptions with their numbers. README 'Object size across the family' gains a Blobs paragraph; co-design's open question names the exceptions. Unit test FamilyCloseVerifierFixes.test_cv3_rule_record_covers_blobs checks the record, README, co-design and review, and, when liquid-glass-blobs sits next to this study, runs Blobs' own Fit, uFilm.w and film lookup against the record's numbers.",
+    "consequence": "The rule record describes all five members again. Nothing changes in lit's shader or images. At the same Object size, one Blobs film cell is 1.45 times as long as a mesh member's (fewer bands), and Blobs' Ripple is a shape control in box units with no Wobble counterpart.",
+    "status": "recorded; unit test red before the record change, green after (review.md, Verifier fixes after the family close); native Fit pending in each member"
+  },
+  {
+    "goal": "Family critic: one Object size per component. One Fit press sets one Object size for the whole component; say what that does on several objects of different sizes, on a Geometry COMP scale that changes after Fit and on per-instance scale, and decide whether to change the family rule.",
+    "alternatives": "(a) Keep the family rule (Object size = world radius / 1.45, set by Fit) and document the three setups as measured, with workarounds: one copy of the component per size; press Fit again after a scale change, or animate Object size by the same factor. (b) The critic's proposal: Object size in SOP units, set by Fit; the shader multiplies the lengths and the pattern lookups by worldScale() and by a per-instance factor that the vertex stage computes (a flat varying, the cube root of |det(TDInstanceMat3())|), and turns the ripple slope by the instance rotation. COMP and instance scale, animation included, would then follow without Fit. (c) Ask the user first.",
+    "evidence": "Measured with this study's own Fit code, uniform expressions and shader lookups on fake TouchDesigner objects (checks/results/red-run-family-critic.json, measurement; ratio = value / what a Fit that sees the true world size gives): Fit at COMP scale 3: Object size 3.0, lengths and patterns 1. Two objects of radius 1.45 and 0.29: Fit takes the largest object that wears the material (Object size 1.0), so the small one gets lengths and patterns 5 times its own. COMP Scale 1 to 3 after Fit: lengths 1/3, ripple and film periods 1/3; with Object size times 3: all 1. An instance scaled 3: lengths 1/3, ripple and film periods 1 (the lookups use the SOP position, which the instance scales; worldScale() reads uTDMats[vCamIndex].world, without the instance). The ripple slope is turned by worldForNormals only, so it ignores an instance's rotation. Two of the critic's descriptions differ from the measurement: with an animated COMP scale the patterns keep Fit's world size like the lengths (they do not follow live), and with per-instance scale the patterns do follow; only the lengths stay. Option (b) changes what a typed Object size means on a scaled COMP, touches every member's pixel and vertex stage, Flow's checks/core_reference and Lit's family_rule, needs a native check of TDInstanceMat3() in each vertex stage, and still leaves several objects of different SOP sizes on one Object size.",
+    "choice": "(a) now, with (b) recorded for the user's decision (c). The critic marked (b) as needing the user's decision, and this round asks no questions (co-design.json).",
+    "consequence": "README note 'One Object size per component' and one Limits point in the article, pinned to the measurement by test_one_object_size_setups_are_measured_and_documented. Lit's README now covers instancing. No shader, preset, uniform expression or capture changed; the look did not change. If the user picks (b), the whole family changes together and the family_rule record in Liquid Glass Lit's decisions.json is rewritten.",
+    "status": "implemented as (a) (docs and tests); (b) pending the user's decision; not run in TouchDesigner"
+  },
+  {
+    "goal": "Family critic, routed fixes: the Verifier V1 record must say which way the ripples change at a hand-set Object size, and the Thickness and Object size labels must use the family wording, checked against a current copy of the core.",
+    "alternatives": "V1 record: (a) the critic's sentence, pinned by a unit test that measures the direction from this study's own uniform expressions and lookups; (b) also port the core's preview test comp_scale_at_object_size_1_gives_k_times_the_patterns. Labels: (a) the family wording the core, Prism, Flow and Blobs use; (b) keep lit's labels and note the difference. Core reference: (a) copy study.json from ../liquid-glass, record its sha256, and pin all four copies byte for byte; (b) keep the older copy, since FamilyClose reads only its uniform expressions and demo torus.",
+    "evidence": "Reproduced on the working tree, 2026-11-02. V1: the consequence said the COMP-scaled object at Object size 1 shows coarser ripples, 1/k as many per unit of the object. The lookups are vObjPos x uWobble.y x worldScale() and vObjPos x uFilm.w x worldScale(), with uWobble.y = Wobble scale / Object size and uFilm.w = 2.5 / Object size, so a COMP scale k at a hand-set Object size gives k times as many cells per unit of the object. WebGL preview, the core's pattern-detail proxy run on this study's shader (sign changes along pixel rows per 1000 glass pixel pairs; ripples Aqua Jelly normal stage, film Oil Slick film stage): unscaled 22.4 / 44.79; COMP 10 at Object size 1: 214.46 / 274.47; COMP 0.1 at Object size 1: 4.87 / 10.35; COMP 10 at Object size 10: 22.4 / 44.79, the core's numbers exactly. With the pre-V1 lookups (no worldScale() in either lookup, slope scale kept): 22.4 / 44.79 at Object size 1 for both scales, and 4.87 / 10.35 at COMP 10 with Object size 10. The old sentence described the pre-V1 shader at Fit's Object size. Labels: study.json said 'Thickness (scene units)' and 'Object size (1 = the demo torus)'. The uniform expressions multiply Thickness and Frost by Object size, so 'scene units' holds only at Object size 1. The core, Prism, Flow and Blobs say 'Thickness (x Object size ...)' and 'Object size (world radius / 1.45; the demo ... fits to ...)'. checks/core_reference/study.json (sha256 9d03dd0d...) differed from ../liquid-glass/study.json (44ac6f2a...) in exactly those two labels; the other three copies were byte-identical to the core's; Flow's copy already matched the core.",
+    "choice": "V1 (a). No new preview test: the one-off measurement is kept in checks/results/red-run-family-critic-routed.json, and the core's preview test already pins the pixels of the same two functions (code-equal here, test_g1_fit_and_patterns_match_the_core). Labels (a): 'Thickness (x Object size)' and 'Object size (world radius / 1.45; the demo torus fits to 1)', the core's labels word for word. README's control list follows them. Core reference (a).",
+    "consequence": "No shader, uniform expression, preset, experiment or capture changed. A rebuilt component shows the new labels. The V1 record's hand-set Object size sentence, README's control list and the two labels now say what the code does (the record's instancing sentence is listed in review.md, Found, not fixed here). Coupling: test_core_reference_is_the_current_core fails whenever the core's study.json, shaders or native.py change, until this study's copies and sources.json follow, as Flow's test of the same name does for its shader copies.",
+    "status": "implemented; unit tests test_v1_record_says_k_times_as_many_patterns, test_pv4_labels_say_what_object_size_does and test_core_reference_is_the_current_core fail before the fix and pass now (checks/results/red-run-family-critic-routed.json); native label check pending (validation.json family_critic_routed_fixes)"
+  },
+  {
+    "goal": "Family critic (low): the COMP-scale test's threshold matches what the test measures.",
+    "alternatives": "(a) Keep 'at most 50 pixels over 8/255' and only reword the docs. (b) Replace it with 'at most 2/255 at every pixel'. (c) Add 'at most 2/255 at every pixel' and keep the shared 50-pixel clause. (d) Hold 1/255, the measured value.",
+    "evidence": "Every case measures 1/255 (6 cases at COMP scale 0.1 and 10). This study's family_rule record said the test holds 1/255; it now says the test measures 1/255 and fails above 2/255. A scratch copy with the worldScale() exponent 0.3333 instead of 1.0 / 3.0 in liquid_glass_lit.frag (world scale 9.9977 instead of 10) gives film stage 4/255, Aqua Jelly final 3/255, Oil Slick final 8/255 at COMP scale 0.1 and 23/255 on 4 pixels over 8/255 at COMP scale 10: before the fix the whole preview suite passed, 36 of 36; with it 35 of 36 pass; only fit_size_carries_presets_over_comp_scale fails. The suite's exact-match tests (ior1_is_invisible and others) use 2/255.",
+    "choice": "(c). The pass condition is x.max <= 2 && x.pixelsOver8 <= 50 in the core, Flow and Lit. The shared clause keeps the test shape the same in all five members; Prism and Blobs keep their own bounds. 2/255 leaves one step of rounding above the measurement, as the exact-match tests do.",
+    "consequence": "A pattern-scale slip as small as the exponent 0.3333 fails the test. The docs say what the test holds. A GPU that rounds differently could put a case at 3/255; read the evidence before loosening. The tests run in Chromium SwiftShader only; the native COMP-scale check is still pending.",
+    "status": "done (outside TouchDesigner)"
+  },
+  {
+    "goal": "Family critic (low): the antialiased centre-line residual. With multisampling, a few silhouette pixels near a centre line still take the wrong orientation sign (up to 8 per row of twelve renders in the members' surveys). In Liquid Glass Lit's survey a centroid-sampled position, form (e), removed most of those in the usual raster, but it needs a centroid-qualified vertex output that no TouchDesigner build has run.",
+    "alternatives": "(a) Adopt form (e) now in every member: a second vertex output with the centroid qualifier, read only for the projected position. (b) Adopt it now in one member. (c) Keep the current tie-break; make the residual one family open question with a native check that measures whether it is visible, and try (e) in Liquid Glass Lit first only if it is. (d) Leave the known-limit notes as they are.",
+    "evidence": "Reproduced on this study (WebGL preview, Chromium SwiftShader; not TouchDesigner). screen_orientation_has_no_wrong_pixels: 12 wrong multisampled pixels in 144 renders, at most 8 per row of twelve (0 in the normal raster), and 1 wrong single-sample pixel. Final image (checks/results/centre-line-residual.json; each render drawn as delivered and with the orientation set to the right value, 4x multisampled canvas): 8 pixels change in 144 renders, at most 6 per row, 3 by more than 8/255, the largest by 26/255 (Prism Chrome on the knot, flipped raster, 481 x 271); in the normal raster, TouchDesigner's usual orientation, none. All lie within 4 pixels of a centre line. Across the core, Flow, Lit and Prism the largest change is 43/255, at most 7 pixels per row. Looked at 8 times enlarged next to the right-sign render, the core's 43/255 pixel reads as one rim pixel a little darker than its neighbours. Lit's survey measured form (e) over 576 renders: the multisampled residual went from 17 to 1 pixel in the normal raster and from 18 to 16 in the flipped raster. A scratch copy of Lit with a centroid output compiles in glslang (58 of 58, GLSL 4.60 and Vulkan SPIR-V), which says nothing about a TouchDesigner build. Before this round this study listed it as an open question in its own words; the core, Flow and Prism recorded it as a known limit only, and no native check covered the residual.",
+    "choice": "(c), the critic's fix. (a) and (b) would change shaders on a qualifier that no TouchDesigner build has run, for pixels that may not be visible; (d) gives no way to settle it. The open question has the same words in the core, Flow, Lit and Prism (co-design.json). validation.json family_close.native_run gains centre_line_residual: render the delivered material and a copy with the orientation set to the right value, take the difference (Composite TOP, Difference; Analyze TOP, Maximum in RGB) and look at those pixels at 100% zoom. The preview test now allows at most 10 wrong multisampled pixels per row (20 before; measured at most 8 here), so the range the question states stays guarded.",
+    "consequence": "No shader, preset, uniform expression or capture changes. The residual stays as measured until the native check answers. If it is visible, Liquid Glass Lit tries (e) first, with its survey and this check; then the core, with Flow, and Prism. If it is not, the question closes with the native record.",
+    "status": "implemented as an open family question; native check centre_line_residual pending; unit tests CentreLineResidual (2) fail on the files before this round"
+  }
+]

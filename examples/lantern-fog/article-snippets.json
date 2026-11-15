@@ -1,0 +1,47 @@
+[
+  {
+    "file": "volume.frag",
+    "region": "density",
+    "lines": [
+      6,
+      16
+    ],
+    "sha256": "a62f63a05a39eb7a9e6187bedf7aba2310a14c758ae88440847084f521b38f9b"
+  },
+  {
+    "file": "volume.frag",
+    "region": "integrate",
+    "lines": [
+      38,
+      53
+    ],
+    "sha256": "a62f63a05a39eb7a9e6187bedf7aba2310a14c758ae88440847084f521b38f9b"
+  },
+  {
+    "file": "volume.frag",
+    "region": "light",
+    "lines": [
+      19,
+      27
+    ],
+    "sha256": "a62f63a05a39eb7a9e6187bedf7aba2310a14c758ae88440847084f521b38f9b"
+  },
+  {
+    "file": "volume.frag",
+    "region": "integrate",
+    "lines": [
+      38,
+      53
+    ],
+    "sha256": "a62f63a05a39eb7a9e6187bedf7aba2310a14c758ae88440847084f521b38f9b"
+  },
+  {
+    "file": "volume.frag",
+    "region": "composite",
+    "lines": [
+      56,
+      57
+    ],
+    "sha256": "a62f63a05a39eb7a9e6187bedf7aba2310a14c758ae88440847084f521b38f9b"
+  }
+]

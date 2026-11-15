@@ -1,0 +1,316 @@
+[
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   98,
+   224
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Transparency by sampling a render of the scene behind the mesh at the pixel's screen position (FBO).",
+  "adaptation": "As in the core study: a user-supplied Refraction TOP sampled at gl_FragCoord * uTDGeneral.viewport.zw. New here: every lookup is an offset from that position, computed by projecting 3D points with the camera's own view-projection, so an unbent ray lands exactly on its own pixel."
+ },
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   226,
+   320
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "refract() of the eye vector by the surface normal: the entry refraction.",
+  "adaptation": "Kept for the entry (enterGlass). Heckel adds refractVec.xy to the screen position after one surface. Here the ray is followed through the glass to an exit point, refracted again there, and continued Scene depth further before it is projected."
+ },
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   322,
+   464
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Chromatic dispersion: one IOR per colour, extra samples per loop to smooth the split; performance warning about loops.",
+  "adaptation": "Spectrum slices instead of R/G/B or six bands, as in the core study, but each slice is now refracted at both surfaces with its own IOR, and the IOR follows a Cauchy-shaped curve (violet end spreads more). One Refraction TOP read per slice. No per-pixel noise."
+ },
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   465,
+   519
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Saturation by mixing with luminance (0.2125, 0.7154, 0.0721).",
+  "adaptation": "Unchanged from the core study: applied once to the transmitted light after the loop."
+ },
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   570,
+   694
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Squared Blinn-Phong specular, diffuse and fresnel glow.",
+  "adaptation": "Unchanged from the core study (highlights(), rim and reflection weight)."
+ },
+ {
+  "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+  "lines": [
+   696,
+   773
+  ],
+  "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Backside rendering: render the back side, then the front side with the same material; cites the Codrops multiside refraction article (line 698).",
+  "adaptation": "Changed purpose: the back side is rendered as data, not shaded. render_back stores the far side's outward normal (rgb) and eye distance (alpha) in one RGBA 32-bit float target; the front pass marches to the exit, refracts a second time and detects total internal reflection there."
+ },
+ {
+  "source_id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+  "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+  "lines": [
+   1,
+   129
+  ],
+  "sha256": "5ddbdd4d334bbd933f84ab84ba5afe45cd8c4479b919184baaea01361ca48be0",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "decoded": {
+   "demo": "refraction-dispersion-and-other-shader-light-effects::scene9",
+   "file": "/fragmentShader.glsl",
+   "sha256": "48a7e5fb2ac535de204ce0c11fe48f5b7b5ce5fdef3686eb00b1b32f56947b56"
+  },
+  "role": "The archived final scene (scene9), fragment shader string: the 16-sample loop over six IORs (LOOP = 16 at line 49).",
+  "adaptation": "Read for the loop structure; no lines copied. Its single refraction per side is replaced by two refractions per slice in one material."
+ },
+ {
+  "source_id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+  "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+  "lines": [
+   233,
+   273
+  ],
+  "sha256": "5ddbdd4d334bbd933f84ab84ba5afe45cd8c4479b919184baaea01361ca48be0",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "The same file's App code: useFrame renders the scene into backRenderTarget with the mesh hidden (257-258), switches the mesh to THREE.BackSide (261), renders into mainRenderTarget (265-266), then back to THREE.FrontSide (269).",
+  "adaptation": "Read for the back-then-front render order behind the optional back-face pass; no lines copied. Here the back pass stores normals and distances instead of a shaded back side."
+ },
+ {
+  "source_id": "articles/caustics-in-webgl.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+  "lines": [
+   45,
+   81
+  ],
+  "sha256": "abda9de8898b7f6620cdab3fb51976669a7446d7731d07414805d2f87e9857d8",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Choosing an approximation instead of ray tracing; converging rays give brighter caustics, diverging rays dimmer.",
+  "adaptation": "Motivates the caustic glow and the stated limits: a closed-form estimate, not a light simulation."
+ },
+ {
+  "source_id": "articles/caustics-in-webgl.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+  "lines": [
+   82,
+   212
+  ],
+  "sha256": "abda9de8898b7f6620cdab3fb51976669a7446d7731d07414805d2f87e9857d8",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Rendering a mesh's normals (back side) into a render target with a dedicated material, so another shader can read them.",
+  "adaptation": "The same move for the back-face pass: material_back swaps in as the Render TOP's override material and writes normals (plus distance) instead of colour. World-space, signed, float; not packed as normal * 0.5 + 0.5."
+ },
+ {
+  "source_id": "articles/caustics-in-webgl.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+  "lines": [
+   223,
+   411
+  ],
+  "sha256": "abda9de8898b7f6620cdab3fb51976669a7446d7731d07414805d2f87e9857d8",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Caustic intensity as the ratio of a light bundle's area before and after refraction (screen derivatives), then clamp and square.",
+  "adaptation": "Evaluated in closed form for a ball lens instead of with dFdx/dFdy: the bundle's angular radius on the far wall is |2 - n| / n, and the brightness scales with the area ratio (1/9) / radius^2, capped at 4. No derivatives, so no 2x2-pixel blocks."
+ },
+ {
+  "source_id": "articles/caustics-in-webgl.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+  "lines": [
+   412,
+   470
+  ],
+  "sha256": "abda9de8898b7f6620cdab3fb51976669a7446d7731d07414805d2f87e9857d8",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Chromatic aberration on the caustic pattern, smoothed with a per-pixel random offset.",
+  "adaptation": "Not ported: the brief rules out dithering. Colour edges come from the per-slice IOR inside causticGlow() instead."
+ },
+ {
+  "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+  "source_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+  "lines": [
+   329,
+   380
+  ],
+  "sha256": "496ed600a5c6b1ede6ab7a075b0c98bc5d6453f42fdacec58d181ce62ce92d62",
+  "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+  "kind": "archive",
+  "role": "Sampling a render target with screen coordinates (gl_FragCoord / resolution) instead of UVs.",
+  "adaptation": "screenUV() from gl_FragCoord and uTDGeneral.viewport, as in the core study."
+ },
+ {
+  "source_id": "studies/liquid-glass (core study)",
+  "source_url": "../liquid-glass",
+  "lines": null,
+  "sha256": null,
+  "commit": "a6f95c6",
+  "kind": "family",
+  "role": "Reference implementation and conventions of the Liquid Glass family.",
+  "adaptation": "Read with git show a6f95c6:studies/liquid-glass/<file>, never from the working tree. Reused unchanged: env.frag, presets.py and preset_exec.py code, six preset value sets (checks/core_presets_a6f95c6.json), the liquid, film, body, reflection and light functions, facingNormal(), the study.json control set and bindings, the builder's strict/lenient pattern, native.py, the preview harness and capture script. Replaced: the single-surface bend, dispersion loop and back-face pass. New: everything listed in decisions.json."
+ },
+ {
+  "source_id": "codrops: Real-time Multiside Refraction in Three Steps (Jesper Vos, 2019)",
+  "source_url": "https://tympanus.net/codrops/2019/10/29/real-time-multiside-refraction-in-three-steps/",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "external, cited by Heckel (refraction article line 698)",
+  "role": "Back faces' world normals rendered to a texture first, then used by the front-face refraction shader.",
+  "adaptation": "Same storage idea. The article blends the back normal into the front one with a weight (per search summaries; the page returned 403 to our fetcher); this study refracts a second time at the measured exit instead."
+ },
+ {
+  "source_id": "Wyman, C. 2005. An Approximate Image-Space Approach for Interactive Refraction. ACM SIGGRAPH 2005 (ACM Transactions on Graphics 24(3)).",
+  "source_url": "https://doi.org/10.1145/1073204.1073310",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "external research",
+  "role": "Refraction through two surfaces in image space using a separate pass for the back-most surface's depth and normals.",
+  "adaptation": "Credited as the original research behind two-surface image-space refraction. Worked from published summaries, not the paper's full text. The distance estimate here (two secant corrections against the stored eye distance) and the ball-plus-tilt fallback are this study's own. DOI as listed by research indexes (researchr, bohrium); the ACM Digital Library page was not opened."
+ },
+ {
+  "source_id": "docs.derivative.ca/Write_a_GLSL_MAT",
+  "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "GLSL MAT contract (read 2026-11-01, page oldid 38399).",
+  "adaptation": "TDDeform/TDDeformNorm/TDWorldToProj; TDCameraIndex is vertex-only so it is passed as a flat varying; uTDGeneral.viewport = (x, y, 1/w, 1/h); TDOutputSwizzle on every colour written. Multiple render targets: outputs declared as fragColor[TD_NUM_COLOR_BUFFERS], set from the Render TOP's # of Color Buffers; writing beyond the provided buffers can corrupt or crash the GPU. Compared in decisions.json; not used."
+ },
+ {
+  "source_id": "docs.derivative.ca/Render_TOP",
+  "source_url": "https://docs.derivative.ca/Render_TOP",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "Render TOP parameters (read 2026-11-01, page oldid 36456).",
+  "adaptation": "numcolorbufs (# of Color Buffers, left at 1), format rgba32float (32-bit float RGBA), overridemat, antialias aa1, bgcolor alpha 0."
+ },
+ {
+  "source_id": "docs.derivative.ca/Render_Select_TOP",
+  "source_url": "https://docs.derivative.ca/Render_Select_TOP",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "Selecting one colour buffer of a Render TOP (read 2026-11-01, page oldid 23988, last edited 2021).",
+  "adaptation": "Parameters top and colorbufindex. Not needed with the single packed target; the page does not state the index base."
+ },
+ {
+  "source_id": "standard geometric optics",
+  "source_url": null,
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "textbook physics",
+  "role": "Snell's law in vector form, the Fresnel equations for unpolarised light, the critical angle sin(a) = 1 / n, Cauchy's dispersion law n = A + B / wavelength^2, and the paraxial focal length of a ball lens f = n R / (2 (n - 1)).",
+  "adaptation": "Implemented in leaveGlass(), sliceIor() and causticGlow(); the property tests recompute Snell, Fresnel and the Cauchy curve independently in JavaScript."
+ },
+ {
+  "source_id": "studies/liquid-glass (core, working tree after commit 6a58487)",
+  "source_url": null,
+  "lines": null,
+  "sha256": "ff296c8fc00321dc2410742d783f99e10043e7bef5d7041aadefbf2a9709144c",
+  "commit": "after 6a58487 (family sync working tree; sha256 of liquid_glass.frag as read 2026-11-02)",
+  "kind": "family member",
+  "role": "The family's reference implementation after its audit rounds 2 and 3 and the merge items C1 to C9: presets.py (advance, phase, spin, menu, decode_colours), native.py (look_defaults, fit_glass, render_diagnostics, inspect), builder.py (link_demo_inputs, warning categories, lenient Dither), backdrop.frag, env.frag, and in liquid_glass.frag safeNormalize, faceCamera, the relative faceted test, the wrapped lattice, the wobble scale, azimuth, discPoint, paramColour, the covered compose, writeColour-style buffers, the colour cap, TDFog and screenSign().",
+  "adaptation": "Ported into this study's two-surface shader and recipe (review.md, Family sync). Kept as this study's own: the two-surface trace, the ball-and-tilt exit, the negative-distance back-face pass and backSample(), projectOffset(). screenSign() drops the core's projection-sign factor for projectOffset(), whose offsets are differences of projected points; the flat-image reflection's camera-space offset keeps it (cam.viewSign), and on the centre line of an odd-sized render the projected position's derivative breaks the tie. Scene depth joins the lengths that Object size scales; demo_radius() includes the demo torus's flattening (since the family close it gives the demo's Object size, 0.872517, not the reference; see the family-close entries below)."
+ },
+ {
+  "source_id": "studies/liquid-glass-blobs/blobs.frag",
+  "source_url": null,
+  "lines": null,
+  "sha256": "7825758460f97f4bbf9c7188155d0822ea4d5902dcfd5d7cbfeab68b998ec930",
+  "commit": "6a58487",
+  "kind": "family member",
+  "role": "Family member Liquid Glass Blobs: the Refraction TOP's alpha as 'covered' (its fix T1), the fan-gap dispersion level, TDFog on premultiplied output.",
+  "adaptation": "C1 through the core's form, plus a bounce that lets the environment stand in where the scene is transparent; C3 measured and rejected here too (decisions.json); C7 through the core's form."
+ },
+ {
+  "source_id": "extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences",
+  "source_url": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "method",
+  "role": "Martin Roberts (2018): the R2 low-discrepancy sequence built on the plastic number.",
+  "adaptation": "discPoint() places the frost lookups with R2 (angle from 0.7548776662, area from 0.5698402910), as in the core study, so the disc fills evenly for any slice count and stays centred."
+ },
+ {
+  "source_id": "docs.derivative.ca/Write_a_GLSL_MAT (family sync)",
+  "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "Picking ('#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif'), Multiple Render Targets ('layout(location = 0) vec4 fragColor[TD_NUM_COLOR_BUFFERS]'; writing past the buffer count can corrupt output or crash the GPU), TDFog(vec4, vec3, int) and TDDither (read 2026-11-02, page oldid 38399, modified 2026-08-05).",
+  "adaptation": "C2 colour buffers (picking was already there), C7 fog, C4 no TDDither."
+ },
+ {
+  "source_id": "docs.derivative.ca/Render_Pass_TOP and Render_TOP (family sync)",
+  "source_url": "https://docs.derivative.ca/Render_Pass_TOP",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "Render Pass TOP (oldid 32225): cleartocamcolor, cleardepth, overridemat, dither, render; Render TOP (oldid 36456): dither ('Dithers the rendering to help deal with banding'; the default is not stated). Read 2026-11-02.",
+  "adaptation": "R2: the own-scene route draws the glass in a Render Pass TOP on the scene render with Clear Depth Buffer and Clear to Camera Color off and Override Material = material. C4: render and render_back set dither false (leniently)."
+ },
+ {
+  "source_id": "studies/liquid-glass-lit/decisions.json (family_rule) and studies/liquid-glass (core, after its family close)",
+  "source_url": null,
+  "lines": null,
+  "sha256": "a9a4c47cc30021aff5b989e8fe2ce15dae55b46ec7cc6caf0e395c3530bb1928",
+  "commit": "working trees after c94e849, read 2026-11-02 (sha256 above: Lit's decisions.json; core liquid_glass.frag b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb, liquid_glass.vert 833510ac2805089588e54c9b0dfdeaac99138585368318e4b528dae0f51f18d0)",
+  "kind": "family member",
+  "role": "The family rule for Object size (reference radius 1.45; world radius = half the largest side of the render-flagged SOP's bounds x the cube root of |det| of the Geometry COMP's world transform; lengths x Object size, Density and Wobble scale / Object size; 2.5 film swirls per Object size; ripple and film lookups x worldScale()). The core's worldScale() and its two-line lookup change, Lit's preview test fit_size_carries_presets_over_comp_scale, the core's G6 picking test with Blobs' preprocessed() helper, and the family's centre-line survey (screen_orientation_has_no_wrong_pixels as Lit and the core run it).",
+  "adaptation": "Family close G1: worldScale() and both lookups copied unchanged; fit_glass() divides by REFERENCE_RADIUS = 1.45; this study's demo keeps its shape and fits to 0.872517, the new default; the six prism looks mapped once (lengths x 1.146, Tint density / 1.146, Wobble scale x 1.0345). G2: the centre-line tie-break started here; the core's and Lit's are the same lines (compared, not changed). G6: vObjPos moved inside '#ifndef TD_PICKING_ACTIVE', as the core and Blobs write it."
+ },
+ {
+  "source_id": "docs.derivative.ca/Render_TOP, Composite_TOP, Analyze_TOP (centre-line residual native check)",
+  "source_url": "https://docs.derivative.ca/Render_TOP",
+  "lines": null,
+  "sha256": null,
+  "commit": null,
+  "kind": "native API",
+  "role": "Render TOP: Anti-Alias (antialias; 1x (Off) aa1, 2x aa2, 4x aa4, ...), Override Material (overridemat). Composite TOP: Operation (operand), Difference (difference): absoluteValue(input1.rgb - input2.rgb), alpha 1. Analyze TOP: Operation (op), Maximum in RGB (maxrgb); with Full Image scope the result is one pixel. Read 2026-11-02.",
+  "adaptation": "The native check centre_line_residual (validation.json, family_close.native_run): render the delivered material and a copy with the orientation set to the right value, take the difference and its maximum."
+ }
+]

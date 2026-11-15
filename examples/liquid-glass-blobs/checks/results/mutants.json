@@ -1,0 +1,77 @@
+{
+  "kind": "Mutation check of checks/preview_tests.cjs (independent review round)",
+  "method": "Each mutant changes one or two lines of blobs.frag in a scratch copy of the study; the full preview test suite runs on it. A mutant is caught when at least one test fails.",
+  "origin": "Mutants from the independent reviewer M (lens_sign_flip, no_exit_refraction, normal_toWorld, absorption_ignores_path, chord_unrefracted, depth_gl_convention, smin_shrinks), adapted to the current code. Their eighth mutant (ortho_eye_flipped) targets code that no longer exists.",
+  "all_caught": true,
+  "mutants": [
+    {
+      "mutant": "normal_toWorld",
+      "change": "Normals and exit normals transformed with toWorld instead of the inverse transpose",
+      "passed": 23,
+      "total": 24,
+      "caught_by": [
+        "sdf_normal_matches_analytic"
+      ]
+    },
+    {
+      "mutant": "lens_sign_flip",
+      "change": "screenShift() returns origin minus target (the refraction shift flipped)",
+      "passed": 22,
+      "total": 24,
+      "caught_by": [
+        "lens_matches_exact_trace",
+        "ior1_is_invisible"
+      ]
+    },
+    {
+      "mutant": "no_exit_refraction",
+      "change": "outside = inside (the second bend dropped)",
+      "passed": 23,
+      "total": 24,
+      "caught_by": [
+        "lens_matches_exact_trace"
+      ]
+    },
+    {
+      "mutant": "absorption_ignores_path",
+      "change": "absorption() uses a path of 1 instead of the measured path",
+      "passed": 23,
+      "total": 24,
+      "caught_by": [
+        "beer_lambert_tint_follows_measured_chord"
+      ]
+    },
+    {
+      "mutant": "chord_unrefracted",
+      "change": "the interior march follows the camera ray instead of the refracted ray",
+      "passed": 22,
+      "total": 24,
+      "caught_by": [
+        "thickness_matches_exact_chord",
+        "lens_matches_exact_trace"
+      ]
+    },
+    {
+      "mutant": "depth_gl_convention",
+      "change": "depth remapped as if clip z were -1..1 (OpenGL convention)",
+      "passed": 21,
+      "total": 24,
+      "caught_by": [
+        "depth_matches_rasterized_sphere",
+        "any_projection_matches_raster",
+        "draw_order_matters_without_refraction_top"
+      ]
+    },
+    {
+      "mutant": "smin_shrinks",
+      "change": "smooth minimum adds the blend term instead of subtracting it",
+      "passed": 23,
+      "total": 24,
+      "caught_by": [
+        "smooth_min_stays_finite_without_holes"
+      ]
+    }
+  ],
+  "scope": "WebGL2 SwiftShader preview; shows the tests can fail for these defects, not that every defect is caught.",
+  "date": "2026-11-01"
+}

@@ -1,0 +1,856 @@
+{
+  "what": "Scratch measurements behind the family close (G1, G2) of Liquid Glass Blobs. WebGL2 preview (Chromium SwiftShader) of the delivered GLSL, 800 x 450 unless stated; not TouchDesigner.",
+  "date": "2026-11-02",
+  "g1_fit_numbers": {
+    "blobs_geo scaled 3 by its Geometry COMP": {
+      "c94e849_fit": 3.0,
+      "family_rule": 2.0689655172413794,
+      "now": 2.0689655172413794,
+      "note": "The box's radius is 1 x the COMP's scale; the rule divides a radius by 1.45. c94e849 read the scale itself, so its Object size was 1.45 times the rule's and a typed value meant a 1.45 times smaller object than in the core, Lit, Prism and Flow."
+    },
+    "unscaled demo box": {
+      "c94e849_fit": 1.0,
+      "now": 0.6896551724137931
+    }
+  },
+  "g1_c94e849_baseline": {
+    "how": "c94e849 tree (identical to the working tree before this round). blobs_geo scaled s by its COMP with Object size s (c94e849's Fit), camera distance, near and far x s, ring off, time 3, against the unscaled render (max difference /255 and pixel counts over 1, 2 and 8); and blobs_geo scaled 3 left at Object size 1. Script: scratch measure_g1.cjs.",
+    "results": {
+      "aqua_jelly_normal": {
+        "comp_scale_0.1": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "comp_scale_10": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        }
+      },
+      "oil_slick_film": {
+        "comp_scale_0.1": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "comp_scale_10": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 1,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        }
+      },
+      "aqua_jelly_final": {
+        "comp_scale_0.1": {
+          "max": 24,
+          "pixelsOver1": 3,
+          "pixelsOver2": 3,
+          "pixelsOver8": 2
+        },
+        "comp_scale_10": {
+          "max": 34,
+          "pixelsOver1": 5,
+          "pixelsOver2": 4,
+          "pixelsOver8": 3
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 207,
+          "pixelsOver1": 40018,
+          "pixelsOver2": 36767,
+          "pixelsOver8": 35703
+        }
+      },
+      "oil_slick_final": {
+        "comp_scale_0.1": {
+          "max": 2,
+          "pixelsOver1": 3,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "comp_scale_10": {
+          "max": 3,
+          "pixelsOver1": 2,
+          "pixelsOver2": 1,
+          "pixelsOver8": 0
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 97,
+          "pixelsOver1": 42262,
+          "pixelsOver2": 40520,
+          "pixelsOver8": 16751
+        }
+      },
+      "sapphire_drops_final": {
+        "comp_scale_0.1": {
+          "max": 66,
+          "pixelsOver1": 12,
+          "pixelsOver2": 10,
+          "pixelsOver8": 7
+        },
+        "comp_scale_10": {
+          "max": 66,
+          "pixelsOver1": 12,
+          "pixelsOver2": 8,
+          "pixelsOver8": 5
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 249,
+          "pixelsOver1": 55960,
+          "pixelsOver2": 54178,
+          "pixelsOver8": 53490
+        }
+      },
+      "frosted_milk_final": {
+        "comp_scale_0.1": {
+          "max": 20,
+          "pixelsOver1": 15,
+          "pixelsOver2": 14,
+          "pixelsOver8": 11
+        },
+        "comp_scale_10": {
+          "max": 20,
+          "pixelsOver1": 15,
+          "pixelsOver2": 15,
+          "pixelsOver8": 10
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 185,
+          "pixelsOver1": 86344,
+          "pixelsOver2": 86296,
+          "pixelsOver8": 86010
+        }
+      },
+      "soap_bubbles_final": {
+        "comp_scale_0.1": {
+          "max": 22,
+          "pixelsOver1": 10,
+          "pixelsOver2": 6,
+          "pixelsOver8": 3
+        },
+        "comp_scale_10": {
+          "max": 22,
+          "pixelsOver1": 5,
+          "pixelsOver2": 4,
+          "pixelsOver8": 1
+        },
+        "comp_scale_3_object_size_1": {
+          "max": 241,
+          "pixelsOver1": 32860,
+          "pixelsOver2": 32239,
+          "pixelsOver8": 29755
+        }
+      }
+    },
+    "reading": "The box route already carried a preset over a COMP scale when Object size followed the scale: the ripple (normal stage) and film (film stage) stay at 1/255, the finals at most 11 pixels over 8 (refracted edges). A COMP scale left at Object size 1 kept the patterns (they were in box units) and lost the lengths (16,751 to 86,010 pixels over 8)."
+  },
+  "g1_film_count_options": {
+    "how": "All twelve presets at time 3 on the demo, final image and film stage, c94e849's 2.5 film swirls per box unit against the family's 2.5 per Object size, which on the demo box (Object size 1 / 1.45) is 2.5 x 1.45 = 3.625 per box unit. Script: scratch measure_g1.cjs (film factor 1.45); side-by-side images in scratch film_look/sheet.png.",
+    "factor": 1.45,
+    "results": {
+      "prism_clear": {
+        "iridescence": 0.4,
+        "final": {
+          "max": 135,
+          "pixelsOver1": 49760,
+          "pixelsOver2": 47371,
+          "pixelsOver8": 28667
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 58850,
+          "pixelsOver2": 58780,
+          "pixelsOver8": 58377
+        }
+      },
+      "lavender_gel": {
+        "iridescence": 0.05,
+        "final": {
+          "max": 16,
+          "pixelsOver1": 15511,
+          "pixelsOver2": 4146,
+          "pixelsOver8": 122
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 59276,
+          "pixelsOver2": 59131,
+          "pixelsOver8": 58372
+        }
+      },
+      "sapphire_drops": {
+        "iridescence": 0.1,
+        "final": {
+          "max": 27,
+          "pixelsOver1": 37706,
+          "pixelsOver2": 22290,
+          "pixelsOver8": 1319
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 53883,
+          "pixelsOver2": 53771,
+          "pixelsOver8": 53164
+        }
+      },
+      "type_lens": {
+        "iridescence": 0.15,
+        "final": {
+          "max": 62,
+          "pixelsOver1": 42794,
+          "pixelsOver2": 36060,
+          "pixelsOver8": 6913
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 61820,
+          "pixelsOver2": 61725,
+          "pixelsOver8": 61025
+        }
+      },
+      "mercury_beads": {
+        "iridescence": 0,
+        "final": {
+          "max": 0,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 54747,
+          "pixelsOver2": 54532,
+          "pixelsOver8": 53369
+        }
+      },
+      "amber_syrup": {
+        "iridescence": 0,
+        "final": {
+          "max": 0,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 88624,
+          "pixelsOver2": 88460,
+          "pixelsOver8": 87453
+        }
+      },
+      "frosted_milk": {
+        "iridescence": 0,
+        "final": {
+          "max": 0,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 81871,
+          "pixelsOver2": 81659,
+          "pixelsOver8": 80379
+        }
+      },
+      "soap_bubbles": {
+        "iridescence": 1,
+        "final": {
+          "max": 234,
+          "pixelsOver1": 50621,
+          "pixelsOver2": 49649,
+          "pixelsOver8": 43868
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 55212,
+          "pixelsOver2": 55114,
+          "pixelsOver8": 54550
+        }
+      },
+      "emerald_bottle": {
+        "iridescence": 0,
+        "final": {
+          "max": 0,
+          "pixelsOver1": 0,
+          "pixelsOver2": 0,
+          "pixelsOver8": 0
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 51785,
+          "pixelsOver2": 51640,
+          "pixelsOver8": 50791
+        }
+      },
+      "rose_quartz": {
+        "iridescence": 0.15,
+        "final": {
+          "max": 25,
+          "pixelsOver1": 27320,
+          "pixelsOver2": 17449,
+          "pixelsOver8": 892
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 43207,
+          "pixelsOver2": 43114,
+          "pixelsOver8": 42485
+        }
+      },
+      "oil_slick": {
+        "iridescence": 1,
+        "final": {
+          "max": 244,
+          "pixelsOver1": 51825,
+          "pixelsOver2": 51477,
+          "pixelsOver8": 48887
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 52191,
+          "pixelsOver2": 52134,
+          "pixelsOver8": 51665
+        }
+      },
+      "aqua_jelly": {
+        "iridescence": 0.1,
+        "final": {
+          "max": 27,
+          "pixelsOver1": 27178,
+          "pixelsOver2": 13746,
+          "pixelsOver8": 677
+        },
+        "film_stage": {
+          "max": 255,
+          "pixelsOver1": 43867,
+          "pixelsOver2": 43661,
+          "pixelsOver8": 42683
+        }
+      }
+    },
+    "reading": "The family's count changes every preset with iridescence: Oil Slick 244/255 on 48,887 pixels over 8, Soap Bubbles 234 on 43,868, Prism Clear 135 on 28,667, Type Lens 62 on 6,913, the four with a little film at most 27 on at most 1,319, the four without film 0. On Oil Slick the noise cells show as round spots instead of long bands. Chosen: 2.5 swirls per box radius (uFilm.w = 2.5 / (1.45 x Object size)), so the demo is unchanged."
+  },
+  "g2_screen_sign_survey": {
+    "how": "Instrumented copies write gScreenSign. Forms: this study's screenSign() and the core's (liquid-glass working tree, 2026-11-02), pasted literally with Flip V read from uMarch.w and proj passed at the call. Scenes: the twelve presets in the default view and with the camera inside the box, and twelve poses of one blob cut by the box walls (glass reaches the box outline); normal and flipped raster; 480 x 270 and 481 x 271; ring off. One sample per pixel (float target) and 4x multisampled (resolved RGBA8). Script: scratch measure_g2.cjs.",
+    "every_row_identical_between_forms": true,
+    "rows_this_study": {
+      "default_view_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 276673,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 276673,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "default_view_flipped_raster_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 276673,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 276673,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "camera_inside_box_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "camera_inside_box_flipped_raster_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "box_cut_poses_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 446
+        }
+      },
+      "box_cut_poses_flipped_raster_480x270": {
+        "size": [
+          480,
+          270
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 425
+        }
+      },
+      "default_view_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 277704,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 277704,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "default_view_flipped_raster_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 277704,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 277704,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "camera_inside_box_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "camera_inside_box_flipped_raster_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 0
+        }
+      },
+      "box_cut_poses_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 698404,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 698409,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 323
+        }
+      },
+      "box_cut_poses_flipped_raster_481x271": {
+        "size": [
+          481,
+          271
+        ],
+        "renders": 12,
+        "single_sample": {
+          "glass_pixels": 698404,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0
+        },
+        "multisampled": {
+          "glass_pixels": 698409,
+          "wrong_sign_pixels": 0,
+          "near_a_centre_line": 0,
+          "partly_covered_pixels": 318
+        }
+      }
+    },
+    "core_function_as_pasted": "vec2 screenSign(vec2 ndc, vec2 ndcStep, vec2 depthStep, mat4 proj)\n{\n    vec2 raster = 2.0 * (gl_FragCoord.xy - uTDGeneral.viewport.xy) * uTDGeneral.viewport.zw - 1.0;\n    vec2 runs = vec2(abs(ndc.x + raster.x) < abs(ndc.x - raster.x) ? -1.0 : 1.0,\n                     abs(ndc.y + raster.y) < abs(ndc.y - raster.y) ? -1.0 : 1.0);\n    // Neighbouring pixel centres are 2 x viewport.zw apart in raster units;\n    // only a pixel exactly on a centre line comes within 0.5 x viewport.zw of 0.\n    vec2 useStep = step(abs(raster), 0.5 * uTDGeneral.viewport.zw) * step(depthStep, vec2(0.1));\n    runs = mix(runs, vec2(ndcStep.x < 0.0 ? -1.0 : 1.0, ndcStep.y < 0.0 ? -1.0 : 1.0), useStep);\n    vec2 orient = runs * vec2(proj[0][0] < 0.0 ? -1.0 : 1.0, proj[1][1] < 0.0 ? -1.0 : 1.0);\n    if (uMarch.w > 0.5) orient.y = -orient.y;  // Flip V flips the base UV and every vertical offset together\n    return orient;\n}\n",
+    "reading": "0 wrong pixels in every row, both readouts, both forms; the rows are identical value for value. The multisampled silhouette pixels the family found on meshes do not occur here: the blobs' silhouette is computed per pixel inside the box faces, so only glass at the box's outline is partly covered (318 to 446 pixels per row in the cut poses), and none of it took the wrong sign."
+  },
+  "captures": {
+    "how": "All 49 capture jobs (checks/capture_jobs.py) rendered twice: with the c94e849 tree (its own job list) and with this round's tree, both now, same machine; each compared with the stored image (RGB, /255).",
+    "identical_everywhere": 26,
+    "rows_that_differ": {
+      "preview-droplets": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          15,
+          443,
+          3
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          3,
+          0
+        ]
+      },
+      "preview-lens": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          2,
+          224,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-backdrop_far": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          3,
+          415,
+          2
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-dispersion": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          32,
+          484,
+          8
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-frost": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          113,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-tint": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          43,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-reflection": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          2,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-layout_top": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          289,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preview-morph": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          30,
+          275,
+          9
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          1,
+          0
+        ]
+      },
+      "preview-final": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          8,
+          392,
+          4
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preset-lavender_gel": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          1,
+          0
+        ]
+      },
+      "preset-sapphire_drops": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          2,
+          0
+        ]
+      },
+      "preset-sapphire_drops-type": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          2,
+          0
+        ]
+      },
+      "preset-amber_syrup": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          3,
+          0
+        ]
+      },
+      "preset-amber_syrup-type": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          3,
+          0
+        ]
+      },
+      "preset-emerald_bottle": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          1,
+          0
+        ]
+      },
+      "preset-rose_quartz": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          1,
+          1,
+          0
+        ]
+      },
+      "timeline-1": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          343,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "timeline-2.5": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          1,
+          310,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "timeline-4": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          2,
+          436,
+          0
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "timeline-5.5": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          3,
+          345,
+          2
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "timeline-7": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          4,
+          498,
+          1
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      },
+      "timeline-8.5": {
+        "stored_vs_c94e849_rerender [max, pixels differing, pixels over 2]": [
+          35,
+          696,
+          4
+        ],
+        "c94e849_rerender_vs_family_close [max, pixels differing, pixels over 2]": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "reading": "This round against c94e849, both rendered now: at most 1/255, on at most 3 pixels (the seven preset tiles whose Tint density was rounded to 6 decimals, Droplets, Morph); every other capture identical. Separately, 16 stored experiment and timeline images were older than the c94e849 code (up to 35/255 on at most 9 pixels over 2): a c94e849 re-render already differed from them. All 23 differing captures were replaced with this round's render and receipt; the three experiments whose Backdrop distance or Frost value was converted (lens, backdrop_far, frost) render pixel-identically to c94e849."
+  }
+}

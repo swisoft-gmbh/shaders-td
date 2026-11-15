@@ -1,0 +1,237 @@
+{
+ "what": "Look decisions LOOK-P1 and LOOK-P2 (co-design.json, look_decisions_for_user): the family close look change reproduced from the capture files, and the factors computed from study.json. WebGL2 previews, not TouchDesigner.",
+ "date": "2026-11-02",
+ "reproduced_from_files": {
+  "how": "Each capture as committed at c94e849 (git show) against the current file: max per-channel difference /255 and pixels over 8/255 (checks: scratch reproduce.py of the look-acceptance round). WebGL2 previews (Chromium SwiftShader), not TouchDesigner.",
+  "core_looks": [
+   "clear_crystal",
+   "prism_chrome",
+   "violet_gel",
+   "sapphire_drop",
+   "chrome_type",
+   "frosted_ice"
+  ],
+  "prism_looks": [
+   "spectral_prism",
+   "type_lens",
+   "diamond_fire",
+   "trapped_light",
+   "caustic_heart",
+   "lavender_prism"
+  ],
+  "core_looks_checkerboard_and_type": {
+   "captures": 12,
+   "max_from": 181,
+   "max_to": 248,
+   "pixels_over_8_from": 31456,
+   "pixels_over_8_to": 69741
+  },
+  "prism_looks_checkerboard_and_type": {
+   "captures": 12,
+   "max_from": 1,
+   "max_to": 52,
+   "pixels_over_8_from": 0,
+   "pixels_over_8_to": 4809
+  },
+  "spectral_prism": {
+   "max": 52,
+   "pixels_over_8": 4732,
+   "pixels": 530590
+  },
+  "spectral_prism_type": {
+   "max": 40,
+   "pixels_over_8": 4809,
+   "pixels": 530590
+  },
+  "rows": {
+   "preset-spectral_prism": {
+    "max": 52,
+    "pixels_over_8": 4732,
+    "pixels": 530590
+   },
+   "preset-spectral_prism-type": {
+    "max": 40,
+    "pixels_over_8": 4809,
+    "pixels": 530590
+   },
+   "preset-spectral_prism-backpass": {
+    "max": 246,
+    "pixels_over_8": 61993,
+    "pixels": 530590
+   },
+   "preset-type_lens": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-type_lens-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-type_lens-backpass": {
+    "max": 34,
+    "pixels_over_8": 10,
+    "pixels": 530590
+   },
+   "preset-diamond_fire": {
+    "max": 8,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-diamond_fire-type": {
+    "max": 9,
+    "pixels_over_8": 1,
+    "pixels": 530590
+   },
+   "preset-diamond_fire-backpass": {
+    "max": 196,
+    "pixels_over_8": 510,
+    "pixels": 530590
+   },
+   "preset-trapped_light": {
+    "max": 2,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-trapped_light-type": {
+    "max": 5,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-trapped_light-backpass": {
+    "max": 126,
+    "pixels_over_8": 50,
+    "pixels": 530590
+   },
+   "preset-caustic_heart": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-caustic_heart-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-caustic_heart-backpass": {
+    "max": 89,
+    "pixels_over_8": 62,
+    "pixels": 530590
+   },
+   "preset-lavender_prism": {
+    "max": 6,
+    "pixels_over_8": 0,
+    "pixels": 530590
+   },
+   "preset-lavender_prism-type": {
+    "max": 11,
+    "pixels_over_8": 6,
+    "pixels": 530590
+   },
+   "preset-lavender_prism-backpass": {
+    "max": 238,
+    "pixels_over_8": 42544,
+    "pixels": 530590
+   },
+   "preset-clear_crystal": {
+    "max": 220,
+    "pixels_over_8": 41700,
+    "pixels": 530590
+   },
+   "preset-clear_crystal-type": {
+    "max": 218,
+    "pixels_over_8": 42212,
+    "pixels": 530590
+   },
+   "preset-clear_crystal-backpass": {
+    "max": 228,
+    "pixels_over_8": 30939,
+    "pixels": 530590
+   },
+   "preset-prism_chrome": {
+    "max": 243,
+    "pixels_over_8": 69741,
+    "pixels": 530590
+   },
+   "preset-prism_chrome-type": {
+    "max": 248,
+    "pixels_over_8": 62330,
+    "pixels": 530590
+   },
+   "preset-prism_chrome-backpass": {
+    "max": 241,
+    "pixels_over_8": 70704,
+    "pixels": 530590
+   },
+   "preset-violet_gel": {
+    "max": 182,
+    "pixels_over_8": 36933,
+    "pixels": 530590
+   },
+   "preset-violet_gel-type": {
+    "max": 208,
+    "pixels_over_8": 39667,
+    "pixels": 530590
+   },
+   "preset-violet_gel-backpass": {
+    "max": 227,
+    "pixels_over_8": 39568,
+    "pixels": 530590
+   },
+   "preset-sapphire_drop": {
+    "max": 232,
+    "pixels_over_8": 37548,
+    "pixels": 530590
+   },
+   "preset-sapphire_drop-type": {
+    "max": 211,
+    "pixels_over_8": 32077,
+    "pixels": 530590
+   },
+   "preset-sapphire_drop-backpass": {
+    "max": 208,
+    "pixels_over_8": 44882,
+    "pixels": 530590
+   },
+   "preset-chrome_type": {
+    "max": 230,
+    "pixels_over_8": 37781,
+    "pixels": 530590
+   },
+   "preset-chrome_type-type": {
+    "max": 219,
+    "pixels_over_8": 31456,
+    "pixels": 530590
+   },
+   "preset-chrome_type-backpass": {
+    "max": 224,
+    "pixels_over_8": 48602,
+    "pixels": 530590
+   },
+   "preset-frosted_ice": {
+    "max": 185,
+    "pixels_over_8": 50306,
+    "pixels": 530590
+   },
+   "preset-frosted_ice-type": {
+    "max": 181,
+    "pixels_over_8": 57888,
+    "pixels": 530590
+   },
+   "preset-frosted_ice-backpass": {
+    "max": 142,
+    "pixels_over_8": 34643,
+    "pixels": 530590
+   }
+  }
+ },
+ "factors": {
+  "how": "study.json: Objectsize default and the demo Geometry COMP scale (1, 1, sz). Lengths are value x Object size; the ripple and film lookups are value / Object size x worldScale(), worldScale() = cube root of sz. c94e849: Object size 1 and no worldScale().",
+  "object_size_default": 0.872517,
+  "demo_sz": 0.6,
+  "lengths_vs_c94e849": 0.872517,
+  "ripple_and_film_count_vs_c94e849": 0.9666661684548831,
+  "bands_wider_percent": 3.4483291784585424
+ }
+}

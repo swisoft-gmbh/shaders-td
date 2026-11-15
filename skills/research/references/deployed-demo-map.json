@@ -1,0 +1,83 @@
+[
+  {
+    "route": "painting4",
+    "page_url": "https://r3f.maximeheckel.com/painting4",
+    "source_id": "deployed/painting4.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/painting4-fdde8af16b584633.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "lens",
+    "page_url": "https://r3f.maximeheckel.com/lens",
+    "source_id": "deployed/lens.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/lens-df61afaae5a0bcb3.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "lens2",
+    "page_url": "https://r3f.maximeheckel.com/lens2",
+    "source_id": "deployed/lens2.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/lens2-771d7cedb7990bb4.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "painting6",
+    "page_url": "https://r3f.maximeheckel.com/painting6",
+    "source_id": "deployed/painting6.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/painting6-cfc617326d2fc8ae.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "planet",
+    "page_url": "https://r3f.maximeheckel.com/planet",
+    "source_id": "deployed/planet.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/planet-3fc4abec4e141d64.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "raytracing2",
+    "page_url": "https://r3f.maximeheckel.com/raytracing2",
+    "source_id": "deployed/raytracing2.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/raytracing2-fcbdc1e7028dfde3.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "sacilotto",
+    "page_url": "https://r3f.maximeheckel.com/sacilotto",
+    "source_id": "deployed/sacilotto.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/sacilotto-1eafa742ec7d6354.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "vhs",
+    "page_url": "https://r3f.maximeheckel.com/vhs",
+    "source_id": "deployed/vhs.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/vhs-6373b71923075651.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Retained HTML/script evidence; runtime unverified."
+  },
+  {
+    "route": "bubble",
+    "page_url": "https://r3f.maximeheckel.com/bubble",
+    "source_id": "deployed/bubble.js",
+    "live_url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/bubble-e366c5fb5b0adc40.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "distributed": false,
+    "runtime_verified": false,
+    "capture_note": "Application error in retained HTML."
+  }
+]

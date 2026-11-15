@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "id": "lantern-fog",
+  "title": "Lantern Fog",
+  "route": "Volumetric GLSL TOP",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause",
+      "type": "toggle",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Time",
+      "type": "float",
+      "default": 2,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "type": "float",
+      "default": 0.016666666666666666,
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Extinction",
+      "label": "Extinction",
+      "type": "float",
+      "default": 2.2,
+      "min": 0,
+      "max": 8
+    },
+    {
+      "name": "Steps",
+      "label": "Steps",
+      "type": "float",
+      "default": 64,
+      "min": 16,
+      "max": 128
+    },
+    {
+      "name": "Light",
+      "label": "Light",
+      "type": "float",
+      "default": 1,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Slab",
+      "label": "Slab",
+      "type": "toggle",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Stage",
+      "label": "Stage",
+      "type": "menu",
+      "default": "final",
+      "names": [
+        "final",
+        "density",
+        "transmittance",
+        "light"
+      ],
+      "labels": [
+        "Final",
+        "Density",
+        "Transmittance",
+        "Light"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "volume_code",
+      "type": "textDAT",
+      "source": "volume.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "volume",
+      "type": "glslTOP",
+      "purpose": "volume pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 512,
+        "resolutionh": 512,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uVolume",
+          "values": [
+            "parent().par.Extinction",
+            "parent().par.Steps",
+            "parent().par.Light",
+            "parent().par.Slab"
+          ]
+        },
+        {
+          "name": "uView",
+          "values": [
+            "parent().par.Stage.menuIndex",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        920,
+        0
+      ],
+      "purpose": "Final output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "volume",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "volume",
+      "parameter": "pixeldat",
+      "target": "volume_code",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Orthographic view through z=-1.5..1.5; density >=0; extinction per scene unit; midpoint ray/light integration.",
+  "external_dependencies": [],
+  "target_build": "TouchDesigner 2025.33230 on macOS; verify other builds",
+  "native_status": "Tested on TouchDesigner 2025.33230 macOS; see validation.json for exact scope."
+}

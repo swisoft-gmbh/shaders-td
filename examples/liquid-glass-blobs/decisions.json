@@ -1,0 +1,323 @@
+[
+  {
+    "goal": "Blobs that compose into any TouchDesigner 3D scene, with any camera, and sort correctly against other objects (universality first).",
+    "alternatives": "A full-screen GLSL TOP raymarcher with its own camera (like orbital-relic), composited over the scene; a GLSL MAT on a proxy box that writes gl_FragDepth; meshing the field (Metaball SOP or marching cubes) and reusing the core material.",
+    "evidence": "A TOP raymarcher has no depth relationship to other geometry unless the scene depth is fed back in and its camera is copied by hand. A Metaball SOP mesh would reuse the core material but cannot measure real thickness and remeshes every frame. The MAT route gets TouchDesigner's camera, transforms and depth buffer for free; Write a GLSL MAT documents proj's 0..1 depth range, so gl_FragDepth can match rasterized depth.",
+    "choice": "GLSL MAT on a 2x2x2 proxy box (Box SOP inside blobs_geo). The material renders the box's back faces (Cull Face = Front Faces), marches each pixel's camera ray in the box's object space and writes depth = (camProj * P).z / w.",
+    "consequence": "Add blobs_geo to any Render TOP; move, rotate, scale or instance it like any object. Property tests: written depth matches a rasterized sphere within 0.0005 scene units, and occlusion between a raster sphere and a blob sphere is exact (0 wrong of 6128 pixels). Not supported: fisheye/quad-reproject cameras (TDWorldToProj is vertex-only), and a camera inside a blob.",
+    "status": "implemented; native compile and render pending"
+  },
+  {
+    "goal": "Rays that start correctly whether the camera is outside or inside the proxy box.",
+    "alternatives": "Rasterize front faces and start at the box surface; rasterize back faces and intersect the box analytically.",
+    "evidence": "With front faces, a camera inside the box sees nothing because the front faces are behind it.",
+    "choice": "Back faces (exactly one fragment per pixel for a convex box), ray start = max(box entry, camera).",
+    "consequence": "Test camera_inside_proxy_box passes (camera at z = 0.9, normals within 0.16 degrees). Cost: every covered pixel of the box runs the shader, and writing gl_FragDepth disables early depth rejection.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Work under any Geometry COMP transform, parent hierarchy and instancing without extra wiring.",
+    "alternatives": "uTDMats[].world and worldInverse (ignores instance transforms); TDInstanceMat() (documented as vertex-only, unclear whether it includes world); capture the affine map through TDDeform.",
+    "evidence": "TDDeform is the documented way to get world positions including instancing. An affine map is fixed by where it sends the origin and the three unit axes.",
+    "choice": "The vertex stage sends TDDeform of the origin and the three axes as flat varyings; the pixel stage builds the 3x3 map and its inverse. Normals use the inverse transpose; path lengths are measured back in scene units.",
+    "consequence": "Tests: rotated/moved/scaled sphere normals within 0.11 degrees; non-uniform scale (ellipsoid) depth matches a raster ellipsoid; two instances each draw their blob at their own transform (preview stand-in for TDDeform). Each instance also gets its own layout seed. Skinned deforms are not affine and are not supported (irrelevant for a box).",
+    "status": "implemented; instancing verified only with the preview stand-in"
+  },
+  {
+    "goal": "Blob layout that needs no wiring by default but can be driven by the user's own data.",
+    "alternatives": "Parameters only; a CHOP bound on the GLSL MAT's Arrays page; a Table DAT read in Python into vector uniforms; a layout TOP sampled with texelFetch.",
+    "evidence": "The GLSL MAT page names the Arrays sequence but not its per-row parameters, so a builder would guess names. Vector uniforms would need one row per blob and cannot be indexed in a loop. A TOP sampler uses the same mechanism as the Refraction and Reflection TOPs, any CHOP becomes a TOP with CHOP to TOP (RGBA, 32-bit float), a Table DAT goes through DAT to CHOP first, and a GLSL TOP or POP pipeline could write the same image.",
+    "choice": "Procedural by default (Count, Radius, Spread, Merge, Stretch, Droplets, Droplet size, Speed, Seed, Ripple). Layout menu switches to a Layout TOP: pixel i of row 0 = (x, y, z, radius) in box units. The demo builds Table DAT -> DAT to CHOP -> CHOP to TOP as a worked example.",
+    "consequence": "Test layout_top_places_blobs: blob 0 sits exactly at the table's first row. Limits: at most 12 blobs and 6 droplets; capsule stretch and droplets stay procedural. Every centre, procedural or from the layout TOP, is clamped so |c| + r(1 + Stretch) + Merge/4 + 0.01 <= 1 per axis; a blob too big even at the centre is centred and cut flat by the box walls (independent review M1).",
+    "status": "implemented; the CHOP to TOP chain is demo-only and pending native confirmation"
+  },
+  {
+    "goal": "Merging that stays finite and hole-free for every setting.",
+    "alternatives": "Heckel's smoothmin as archived (divides by k); exponential smooth minimum; the polynomial with a zero-width branch.",
+    "evidence": "k = 0 makes the archived form divide by zero. The polynomial's slope never exceeds 1, so sphere tracing stays safe; smin(a, b, k) <= min(a, b), so the smooth union contains the plain union.",
+    "choice": "Polynomial smooth minimum with k < 1e-4 handled as min; merge width fades with each blob.",
+    "consequence": "Test smooth_min_stays_finite_without_holes: merge 0, 0.00005, 0.001, 0.3 and 1, an extreme layout and coincident centres give no NaN or infinite values and no pixel the plain union covers is missed. The test layout is small enough that no centre is clamped; blobs too big for the box are covered by blobs_cut_by_the_box_have_no_holes (independent review M1).",
+    "status": "implemented"
+  },
+  {
+    "goal": "Glass with a real inside: thickness, magnification and flipping that depend on the actual shape.",
+    "alternatives": "The core's single-interface bend with a Thickness slider; a second back-face render (core option); marching inside the same distance field.",
+    "evidence": "The field is negative inside, so -field is the distance to the nearest wall; marching on it finds the exit of the refracted ray without another render.",
+    "choice": "Refract in, march inside to the exit (Newton-refined), refract out (reflect on total internal reflection), continue Backdrop distance, project with the camera. Dispersion reuses the measured chord and exit normal for every colour (one interior march per pixel).",
+    "consequence": "Test thickness_matches_exact_chord: within 0.0008 scene units of the analytic chord at IOR 1 and 1.5, also scaled. Approximation: other colours reuse the mean colour's chord; no second internal bounce; Backdrop distance is a single depth for the whole scene behind.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Continuous colour and blur with no dithering (user requirement).",
+    "alternatives": "Per-pixel random jitter of the colour samples (grain); many more samples; mipmap reads sized to the gap between samples.",
+    "evidence": "The first preview showed contour bands: lens paths spread 12 colour samples far apart on screen.",
+    "choice": "Each sample reads a mipmap level as wide as the larger of the frost gap and the rainbow-fan gap (two extra cheap lens evaluations per pixel).",
+    "consequence": "Bands disappear in the preview (preview-dispersion.png). The rainbow softens slightly with high Dispersion; raise Samples for crisper fringes.",
+    "status": "revised in the family sync: the fan level is now a quarter of the gap (see below)"
+  },
+  {
+    "goal": "Smooth blob silhouettes.",
+    "alternatives": "Rely on Render TOP antialiasing; supersample the whole render; analytic edge coverage.",
+    "evidence": "Multisampling covers the proxy box's triangles, not the blob edge inside them, so a raymarched silhouette stays stair-stepped.",
+    "choice": "The march remembers how close a missing ray came; within half a pixel the pixel is shaded at that point and faded by its coverage (final image only; teaching stages keep hard edges).",
+    "consequence": "Clean edges in every preview. Approximation: pixels just inside the edge count as fully covered, so the edge sits up to half a pixel outward. Native look of the edge is pending.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Hits precise enough for analytic tests and smooth shading at grazing angles.",
+    "alternatives": "Stop at the epsilon; two fixed-point steps t += field; Newton steps along the ray.",
+    "evidence": "With fixed-point steps the normal test failed at grazing angles (0.67 degrees) and the IOR 1 chord failed (0.5 units) because the interior march mistook the entry for the exit.",
+    "choice": "Two Newton steps along the ray on the way in and out (slope = dot(normal, ray), clamped); the interior march only counts an exit after it has been deeper than the epsilon, and treats a ray that never gets in as a grazing touch.",
+    "consequence": "Normals within 0.11 degrees, chords within 0.0008, depth within 0.0005 scene units in the preview tests. Costs about ten extra field evaluations per pixel.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Presets and A/B morph that include the blob shape.",
+    "alternatives": "Look-only presets; presets that also set integer counts (jump during a morph).",
+    "evidence": "The references differ in shape as much as in colour (one magnifying body with droplets, ribbons, many capsules).",
+    "choice": "Twelve presets (eight until verifier finding V1) set look and shape floats. Count and Droplets are fractional: the last blob or droplet grows in, so they morph continuously. Seed, light direction, steps, samples and inputs stay untouched.",
+    "consequence": "Tests morph1_equals_target, morph0_is_neutral and fractional_count_is_continuous pass. Through a thick lens the refracted image reacts strongly to small shape changes; that is optics, not a jump in the shape.",
+    "status": "implemented"
+  },
+  {
+    "goal": "Reuse the family's glass look without depending on a file another agent is editing.",
+    "alternatives": "Read the core's working tree; derive from the committed core.",
+    "evidence": "The core study was being edited during this build.",
+    "choice": "Everything reused from the core was read with git show a6f95c6:studies/liquid-glass/<file>.",
+    "consequence": "sources.json records each reused file with its hash at a6f95c6. Later core fixes are not inherited automatically.",
+    "status": "recorded; the family sync (2026-11-02) took the core's audit rounds 2 and 3 from commit 6a58487",
+    "core_commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392"
+  },
+  {
+    "goal": "Blobs too big for the proxy box must not show see-through holes (independent review M1).",
+    "alternatives": "Shrink each blob until it fits (radius and axis scaled by the room left); intersect the field with the box so walls cut a flat glass face; restrict the camera-inside-glass early-out only.",
+    "evidence": "Preview: a single capsule at radius 0.9, stretch 0.8 had 98,575 missed pixels inside its covered region; the early-out took a ray entering the box inside glass for a camera inside a blob. A flat-cap probe by the reviewer restored 152,007 hits.",
+    "choice": "blobField() returns max(field, sdBox(p)) with the box pulled in by 0.001, so a box entry is never inside glass; the early-out now only fires when the near plane itself is inside glass. Shrinking to fit was not chosen, because it would change what Radius means at large values.",
+    "consequence": "0 holes for single blobs crossing the walls up to the slider maxima (blobs_cut_by_the_box_have_no_holes). Big blobs show a flat glass face at the walls; the README says to scale blobs_geo up and lower Radius. No preset reaches the walls (largest extent 0.963 for Lavender Gel), so the presets are unchanged.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "A Refraction TOP with a transparent background must not turn the glass opaque black (independent review T1).",
+    "alternatives": "Document that the Refraction TOP must include the background; mix alpha between 1 - translucency and 1 by the sampled alpha; carry the sampled alpha as coverage and fall back to the zero-wiring blend for the uncovered share.",
+    "evidence": "Preview: over a transparent Refraction TOP the glass stayed alpha 1 with luma 0.06, and invisible-glass settings differed from no blobs by 255/255. The archived method (refraction article, lines 109-114) snapshots the whole scene including the background.",
+    "choice": "transmitted() returns the Refraction TOP's alpha (covered). compose uses one formula: the covered share is refracted, the uncovered share blends like zero-wiring mode. covered = 1 reproduces the old refracted glass exactly, covered = 0 reproduces the old zero-wiring blend exactly.",
+    "consequence": "transparent_refraction_top_keeps_background passes (1/255; alpha 0 at a clear blob's centre). Demo captures, whose Refraction TOP is opaque, are unchanged.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Rays for any camera projection, clipped at the near plane (independent review T8, T9).",
+    "alternatives": "Keep the perspective/orthographic switch and list other projections as unsupported; unproject the pixel through camProjInverse.",
+    "evidence": "Preview: a projection blended halfway between perspective and orthographic wrote depth 0.176 scene units off; a blob nearer than the near plane was written at depth 0 over 231,876 pixels.",
+    "choice": "The ray starts at camProjInverse * (pixel, depth 0), the near-plane point, and runs through vWorldPos. Screen shifts, unitsToUV and the edge-pixel size use the full matrix and clip w. A guard switches to depth 1 if depth 0 ever lay beyond the box point (a build with reversed depth).",
+    "consequence": "any_projection_matches_raster (worst 0.00054 scene units) and near_plane_clips_the_blobs (0 wrong) pass; the perspective-only tests are unchanged. Fisheye and quad reprojection remain unsupported.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Motion that stays smooth on installations running for weeks (independent review T4).",
+    "alternatives": "Wrap time modulo an hour (a jump once an hour); a Speed-aware phase accumulator in a CHOP; fold time back and forth (a triangle wave).",
+    "evidence": "float32 time steps reach 0.0625 s after a week and 0.25 s after 30 days.",
+    "choice": "The uniform expression folds running time: 3600 - abs(3600 - absTime.seconds % 7200). Python evaluates it in double precision, so the shader only ever sees 0..3600 s.",
+    "consequence": "No jump ever; steps stay below 0.00025 s. The blobs reverse direction once an hour (recorded as an open question). Fixed time and Pause are unchanged.",
+    "status": "superseded by the integrated drift clock (family sync, 2026-11-02; see below)"
+  },
+  {
+    "goal": "Blending (zero-wiring mode, Opacity, antialiased edges) that sees the objects behind the blobs (independent review T2, M4).",
+    "alternatives": "Document only; set Draw Priority on blobs_geo; add a Write depth toggle.",
+    "evidence": "Preview: an object behind a clear blob shows through when drawn first (red 1.00) and vanishes when drawn after (0.06). COMP Render page: smaller Draw Priority values draw later; the Transparency page states both directions.",
+    "choice": "blobs_geo gets drawpriority -1 through a new lenient_parameters entry (a missing parameter only warns, even on this core node). No depth toggle: depth sorting is the study's main promise.",
+    "consequence": "The preview always draws the blobs last; draw_order_matters_without_refraction_top documents the limit. Native sorting direction pending (validation.json native_draw_priority).",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Cheap mitigations for TouchDesigner features this route did not handle (independent review T6, M6, M7, M8, T3, T10, T11).",
+    "alternatives": "Document only; implement each feature fully.",
+    "evidence": "Write a GLSL MAT (TDFog, picking, TDCheckDiscard), TouchDesigner-style shaders in glslang's tests (TDWritePickingValues in the vertex stage), the Transparency page (OIT needs blending off), MoltenVK's fast-math default (2), CHOP to TOP (channels by order, clamp).",
+    "choice": "TDWritePickingValues() under TD_PICKING_ACTIVE; TDFog() applied to the premultiplied colour; finite check by float bits; safeDirection() for the light and half vectors; initialised march outputs; input TOPs as plain paths with empty defaults; layout_top clamp off; inspect() reports missing demo nodes. OIT, depth peeling, scene lights and multi-camera refraction are documented as unsupported.",
+    "consequence": "Each is compiled or tested in the preview where possible (pick-render compile, fog stand-in, NaN positive control, unit tests); native behaviour pending in validation.json.",
+    "status": "implemented; native pending. The input-TOP part (plain paths with empty defaults, T3) is superseded by the family sync's R3: the default is now the demo node, and Reset to Default restores it. The picking part (TDWritePickingValues() under #ifdef after the whole body) is superseded by the picking form fix P1: the documented '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif'.",
+    "core_commit": "a6f95c66032e3e1d6ecea2c42068b39f346cb392",
+    "note": "Nothing new was taken from the core study in this round; everything reused still comes from a6f95c6."
+  },
+  {
+    "goal": "Motion that never jumps when Speed changes, and stays precise after weeks (family sync R1).",
+    "alternatives": "Keep the hour-long fold of absTime (motion reverses once an hour; a morphed Speed still multiplies the folded time); the core's advance() with one phase wrapped at the noise period; advance() with three phases and wave speeds rounded so the layout repeats exactly.",
+    "evidence": "Red run against 6a58487 in the WebGL2 preview: one frame of a Prism Clear to Lavender Gel morph (Morph 0.50 to 0.51) changed the image by p99 232/255 at 1 h against 59 at 3 s; nudging Speed 0.35 to 0.36 at 1 h gave p99 235 against 7 for a steady frame. After: p99 70 against 71, and 5 against 5. Unit test: every frame of a 100-frame morph and a slider drag at 1 h moves each phase by exactly rate x speed x dt.",
+    "choice": "presets.py advance() (copied from the core at 6a58487) and phase(comp, which): layout (rate Speed, wraps at 256 pi), ripple (0.4 + Speed, 20 pi), film (0.015 + 0.045 x Speed, 256), feeding uPhase. blobs.frag rounds every layout wave speed to a multiple of 1/128 (loopRate), so 256 pi is whole turns; the film noise lattice wraps cells -128..127. The demo ring spins by spin(). No node expression reads absTime.",
+    "consequence": "No jump during morphs or speed drags, no hourly reversal. Each phase wraps without a jump, but only the blob layout loops exactly: every 256 pi / Speed s (38 min at 0.35). The ripple repeats every 20 pi / (0.4 + Speed) s (84 s) and the film swirl every 256 / (0.015 + 0.045 x Speed) s (about 2.3 h), so the whole image does not repeat exactly (corrected after verifier finding V5). Rounding the wave speeds moved the default layout by at most 0.0025 box units at t = 3 s; through the thick lenses that re-samples the refracted image (20,251 of 360,000 pixels of the default preview change by more than 8/255 from this alone; 225 in the proxy stage). Editing the presets DAT restarts the drift with one jump.",
+    "status": "implemented; native pending",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "Decide the fan-gap mipmap level with the core's B7 method (family item C3, which started in this study).",
+    "alternatives": "No fan level (separate colour copies); a level as wide as the whole gap between neighbouring colour samples (6a58487); fractions of it (1/8, 1/4, 0.35, 1/2); prism's isotropic footprintLod (not tried: core round 2 measured it worse).",
+    "evidence": "Prism Clear and Type Lens, Dispersion 1, 12 samples, refraction stage and final image, against 64-sample references rendered with no fan level and with the whole gap; mean error and pixels over 32/255 on the pixels the rainbow changes (reference vs Dispersion 0). The whole gap was about twice as far off as no level (refraction, Prism Clear: 16.64 vs 8.34). A quarter beat no level on mean and over-32 count in all 8 cases, and had fewer over-32 pixels than 0.35 or 0.5 in all 8. Table [mean, over32] per case and variant: {\"ref64_no_fan_level:refraction-prism_clear\": {\"off\": [8.34, 1412], \"k0.125\": [7.95, 1232], \"k0.25\": [7.3, 1344], \"k0.35\": [7.21, 1644], \"k0.5\": [8.0, 2380], \"on\": [16.64, 6973]}, \"ref64_no_fan_level:refraction-type_lens\": {\"off\": [7.09, 1626], \"k0.125\": [6.65, 1230], \"k0.25\": [6.36, 1355], \"k0.35\": [6.62, 1763], \"k0.5\": [7.85, 3101], \"on\": [14.36, 7365]}, \"ref64_no_fan_level:final-prism_clear\": {\"off\": [7.23, 1059], \"k0.125\": [6.88, 939], \"k0.25\": [6.33, 993], \"k0.35\": [6.2, 1180], \"k0.5\": [6.82, 1673], \"on\": [14.02, 5067]}, \"ref64_no_fan_level:final-type_lens\": {\"off\": [6.44, 1213], \"k0.125\": [6.05, 904], \"k0.25\": [5.8, 1012], \"k0.35\": [6.04, 1343], \"k0.5\": [7.25, 2423], \"on\": [13.37, 5983]}, \"ref64_full_gap:refraction-prism_clear\": {\"off\": [8.63, 1629], \"k0.125\": [7.97, 1224], \"k0.25\": [6.75, 917], \"k0.35\": [6.44, 1019], \"k0.5\": [7.12, 1716], \"on\": [15.87, 6676]}, \"ref64_full_gap:refraction-type_lens\": {\"off\": [7.56, 1935], \"k0.125\": [6.59, 1107], \"k0.25\": [5.51, 637], \"k0.35\": [5.57, 704], \"k0.5\": [6.81, 2095], \"on\": [13.5, 6826]}, \"ref64_full_gap:final-prism_clear\": {\"off\": [7.48, 1176], \"k0.125\": [6.91, 922], \"k0.25\": [5.88, 735], \"k0.35\": [5.61, 771], \"k0.5\": [6.16, 1222], \"on\": [13.48, 4834]}, \"ref64_full_gap:final-type_lens\": {\"off\": [6.88, 1452], \"k0.125\": [5.97, 827], \"k0.25\": [5.01, 485], \"k0.35\": [5.09, 534], \"k0.5\": [6.3, 1652], \"on\": [12.62, 5559]}}",
+    "choice": "Each spectral sample reads a level as wide as a quarter of the screen gap between neighbouring colours (max with the frost gap). The loop accepts 64 samples (control still stops at 32) so the test can render the reference.",
+    "consequence": "Sharper, denser rainbow fringes, closer to reference 1; faint fine steps can remain where the fan is widest (raise Samples). dispersion_converges_with_samples: mean 7.3 and 6.28 at 12 samples, 2.98 and 2.68 at 24. Evidence image captures/review-fan-level.png. For the core: the same measurement suggests a quarter-gap level, not the whole gap.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Bends that point the right way whatever the build's raster or projection convention (family item C6).",
+    "alternatives": "Undo a projection flip with sign(proj[0][0], proj[1][1]) (6a58487); the sign of dFdx(ndc.x), dFdy(ndc.y) everywhere, with the projection's sign below a quarter pixel (this study's family sync, until gap fix G2); compare the pixel's projected position with its raster position, with the derivative only on the centre line of an odd-sized render (core round 3 and prism; adopted in G2).",
+    "evidence": "Preview with the raster flipped (prism's emulation): lookups through an off-centre sphere landed up to 531 pixels from the mirror of their normal position with the 6a58487 form, 0.3 with either measured form; the default image differed on 54,312 pixels by more than 8/255 with the 6a58487 form, 2 when first measured with the derivative form and 3 in the runs just before and after G2 (G2 changed none). An upside-down Refraction TOP with Flip V: 531 pixels before, 0 after. Gap fix G2 (checks/results/red-run-gap-fixes.json): an instrumented copy wrote the measured sign on every blob pixel of the twelve presets, default view and camera inside the box, normal and flipped raster, 480 x 270 and 481 x 271 (8 rows, 257,812 to 353,907 blob pixels each). The derivative form was wrong on 0 pixels in every row: the proxy box's faces are planar, so the next pixel's extrapolated position is exact, unlike the curved silhouettes where the core measured 2 to 5 wrong pixels per preset and prism 1 per render. The position comparison is also wrong on 0. The comparison alone, with +1 on ties, is wrong on the whole centre row at 481 x 271 in a flipped raster (1,494 and 1,242 pixels). A camera exactly in the plane of a box face gives 1,517 and 1,638 wrong pixels with both forms, all of them pixels only the emulated flipped raster draws; that scene was left out. The 24 preset captures are pixel-identical before and after G2.",
+    "choice": "screenSign(ndc, ndcStep, depthStep), prism's code with this study's Flip V: compare the box point's projected position with the raster position from gl_FragCoord; on the centre line of an odd-sized render take the sign of dFdx(ndc.x), dFdy(ndc.y) where 1/w changes less than 10 % to the next pixel, else +1. The derivatives are taken at the top of main() before any branch. No projection sign: toScreen() projects with camProj, which already carries it. Applied to every projected shift and to the flat-image reflection offset. Flip V flips the screen UV and the measured vertical sign together.",
+    "consequence": "One method across the core, prism and this study (lit adds the projection's sign because it shifts in camera space). No visible change here: the derivative form was already right on every tested pixel. The comparison depends on gl_FragCoord and uTDGeneral.viewport, the same values screenUV() reads. Unit test test_screen_sign_compares_positions_and_is_measured_before_any_branch fails on the pre-G2 code; preview test screen_orientation_has_no_wrong_pixels guards the outcome (it passes on the pre-G2 code too, and fails if the centre-line rule is lost). The brief asked for Flip V to stay a UV-only override. With measured offsets, flipping the UV alone would mirror every vertical bend for an upside-down Refraction TOP (the case the toggle exists for); flipping both reproduces the core's UV-only result exactly in the case the core designed it for (gl_FragCoord counted from the top with bottom-up inputs, where the measured sign is -1). Flip V stays an input-orientation override only; it is not needed for raster orientation.",
+    "status": "implemented; native pending (inferred choice, see co-design.json)"
+  },
+  {
+    "goal": "Input fields that edit like ordinary parameters and resolve reliably (family item R3).",
+    "alternatives": "Plain relative paths with an empty default (6a58487: Reset to Default empties the field); the core's checked constant paths whose default is the demo node.",
+    "evidence": "6a58487 wrote the plain text 'scene' without checking how TouchDesigner resolves a relative path on a COMP's own parameter; the core's link_demo_inputs() checks that the path resolves to the demo node inside the component and falls back to an expression with an 'inputs' warning.",
+    "choice": "Core mechanism for Refraction TOP, Reflection TOP and Layout TOP (demo_target in study.json); Reset to Default brings the demo back; clearing the text empties a field. Build warnings carry a category (material, inputs, optional, setup, demo).",
+    "consequence": "README and tutorial now say 'select the text and delete it' for zero-wiring mode instead of 'Reset to Default'. One convention across the family.",
+    "status": "implemented; native pending",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "Experiments whose result never depends on the order they ran in (family item R4).",
+    "alternatives": "Set only the experiment's parameters (6a58487); reset every look control first (core).",
+    "evidence": "Unit test running every experiment after every other one (361 pairs) with a user edit in between: fails on 6a58487, passes now.",
+    "choice": "native.apply() resets look_defaults() (preset values, Morph and target, Seed, Blob layout, Samples, March steps, Energy conserving, Light direction, Panorama rotation, Flat image warp, the Study page); setup controls (input TOPs, Object size, Reflection map, Flip V, Colour parameters, Demo backdrop) are kept.",
+    "consequence": "apply(component, 'final') restores the default look. A user's Seed is reset by any experiment.",
+    "status": "implemented; native pending",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "Presets that carry over between blobs of any size (family item C8).",
+    "alternatives": "No size control (6a58487); scale from the shader's own transform (automatic, but it would also change the meaning of Backdrop distance for everyone and per instance); an Object size control scaling the scene-unit look controls, with a fit pulse.",
+    "evidence": "Preview: Sapphire Drops and Frosted Milk on blobs scaled 3x seen from 3x the distance match the original on all but 9 and 11 pixels (over 2/255) with Object size 3, and differ on 54,179 and 86,296 pixels with Object size 1. Object size 1 returns u() exactly (unit test, bit-identical uniform values).",
+    "choice": "Inputs > Object size (setup, default 1) divides Tint density and multiplies Backdrop distance and the Frost disc, in Python (presets.sized()). Fit to Glass geometry sets it to the cube root of |det| of blobs_geo's world transform (COMP bounds as a fallback). Ripple, merge and film already live in the box's own units.",
+    "consequence": "One Object size per component; instances scaled differently need their own component. Native Fit pending.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Comparable demo backdrops across the family (family item C9).",
+    "alternatives": "Port the core's checkerboard as 'Checker'; keep this study's own checker-and-type backdrop as 'Checker'; add prism's type page as 'Type'.",
+    "evidence": "The presets were tuned on this study's backdrop (a black type band over the checkerboard, so flipped lenses never fill with black). Judges asked to compare looks on one shared image; prism's Type page is that image.",
+    "choice": "Study > Demo backdrop: Checker (this study's own, default, unchanged) and Type (prism's backdrop.frag at 6a58487, byte-for-byte except smoothstep fills). Contact sheets on both.",
+    "consequence": "captures/presets-sheet.png and captures/presets-sheet-type.png. 'Checker' here is not the core's checker image; 'Type' is identical across the family.",
+    "status": "implemented (demo only)"
+  },
+  {
+    "goal": "Shader hygiene and pipeline safety from the core and the members (R5, R8, C2, C4, C5).",
+    "alternatives": "Keep 6a58487's forms; copy the core's and members' fixes.",
+    "evidence": "Red run against 6a58487: reversed smoothstep edges (blobs.frag studio, env.frag, backdrop.frag), atan(0, 0) possible, the hit normal flipped at the rim (144 rim pixels with a path near 0 at IOR 1.55, where 0.92 is the physical minimum), a half vector falling back to +Y, one output buffer, no output cap (3,000,000 reached the output), no dither setting, no colour mode or energy toggle.",
+    "choice": "Increasing smoothstep edges everywhere, azimuth(), faceCamera() on the hit normal, guarded half vector (no highlight when undefined), r0 * r0, paramColour() with Colour parameters (Auto / As typed / sRGB), Energy conserving (off by default), absorption clamping the glass colour to 0..1, fragColor[TD_NUM_COLOR_BUFFERS] with an #ifndef fallback and constant-index zeros, a 1024 colour cap before TDOutputSwizzle (rgb only), Dither off on both demo Render TOPs, Info DATs on Render TOPs and render_diagnostics in inspect().",
+    "consequence": "faceCamera changed about 215 rim pixels of the default preview; every other default look is unchanged by these (Energy conserving off, Colour parameters Auto = As typed in a pass-through project).",
+    "status": "implemented; native pending",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "Record family items that do not apply to a depth-writing proxy box.",
+    "alternatives": "Adopt them anyway; record why not.",
+    "evidence": "R2 (Render Pass TOP route): the blobs are drawn inside the user's own Render TOP (README step 1), so objects in front stay in front through the shared depth buffer; the demo's Over TOP only lays the flat backdrop behind a transparent render. R7 (back-face pass): this study measures the path by marching inside the field (marchInside()), with no second render. Prism's negative back-face distance: no back pass here. Prism's isotropic footprintLod: core round 2 (B7) measured it worse, and the fan-level scan here (an isotropic level) showed the same effect. Two-surface optics mode: this study already traces two surfaces exactly. Flow vertex stage: the proxy box's vertices are only the box, so a vertex flow has no surface to move. Scene-light mode: not merged, by family decision, so this member stays simple. TouchDesigner's lighting functions work per pixel on a world position and a normal (the liquid-glass-lit study calls TDLightingPBR(i, ..., pos, n, ...) in its pixel stage at 6a58487), so they could be applied at the blob hit P and normal n; revisit after native runs. (Corrected after verifier finding V6: an earlier version said scene lights do not fit a proxy box.)",
+    "choice": "Not applied; README and review.md say why.",
+    "consequence": "None for users.",
+    "status": "recorded"
+  },
+  {
+    "goal": "Ship the twelve presets the family brief asks for (verifier finding V1).",
+    "alternatives": "Keep eight and record the shortfall as an open question; add four looks adapted from the core with blob shapes.",
+    "evidence": "Brief: '12-style presets'. Before: 8 presets here, 12 in every other family member; co-design.json recorded the count as an inference. Preview, t = 3 s: with the four new presets the closest pair differs by a mean of 13.27/255 per channel over the whole frame on the Checker backdrop (Sapphire Drops and Oil Slick) and 12.91/255 on the Type backdrop (same pair); the closest pair of the original eight is Lavender Gel and Type Lens at 13.83/255 on Checker.",
+    "choice": "Four presets adapted from the core at 6a58487 (Emerald Bottle, Rose Quartz, Oil Slick, Aqua Jelly), retuned by eye in the preview, each with its own blob shape and sized so radius x (1 + Stretch) + Merge / 4 + 0.01 stays at or below 1 (no box cut). The first eight are unchanged and keep their order, so existing menus, experiments and scripts keep working.",
+    "consequence": "Preset and Morph target menus list twelve looks. Unit test test_twelve_complete_presets (was test_eight_complete_presets) and preview test presets_stay_distinct (every pair at least 10/255 apart on both backdrops). Both contact sheets rebuilt with twelve tiles.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Normals and refraction that stay right on objects of any size (verifier finding V2, universality first).",
+    "alternatives": "Keep safeDirection() (threshold length > 1e-4) on transformed vectors; scale the threshold by the cube root of |det(toWorld)|; normalise with inversesqrt(dot(v, v)) and fall back only on an exact zero.",
+    "evidence": "Preview, one sphere, blobs_geo at scale s with camera distance, near, far and Object size scaled by s: before the fix, at s = 20,000 the normal stage differed from s = 1 by up to 0.994 on all 43,020 pixels (19,638 read exactly +Y) and the refraction stage by up to 1.066; after, 0.00001 and 0.00005. The same holds at s = 0.001 and s = 1,000,000. transpose(toObject) * normal is 1 / s long, so a fixed threshold fails above about s = 10,000; the older insideObj had the same 1 / s length.",
+    "choice": "movedDirection() (blobs.frag) normalises the hit normal, the exit normal and the direction inside the glass with inversesqrt(dot(v, v)); only an exact zero falls back to +Y. safeDirection() stays for the light and layout vectors, which do not scale with the object.",
+    "consequence": "Preview test normals_hold_at_any_object_scale (scales 0.001 and 20,000; normal and refraction stages). At scale 1 the preset captures change on at most 11 pixels by more than 2/255 (float rounding at refracted edges). The thickness stage shows chord x 0.5 in scene units, so it is clipped by the 1024 output cap on very large objects; the test reads the refraction stage instead.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Zero-wiring mode must not break the demo's capture and export (verifier finding V3, core A9).",
+    "alternatives": "Leave the demo 'behind' Select TOP with an empty path when Refraction TOP is empty; fall back to the transparent 'blank' TOP, as the core does since 6a58487.",
+    "evidence": "Before: 'behind' evaluated parent().par.Refractiontop.eval() or '' (an empty path). 'over' takes 'behind' as input 1 and is in native.py CORE_NODES, so an error there would block capture() and export(). Core 6a58487 uses op('blank').",
+    "choice": "'behind' evaluates parent().par.Refractiontop.eval() or op('blank').",
+    "consequence": "Unit test test_behind_falls_back_to_blank_without_a_refraction_top evaluates the expression with and without a Refraction TOP. Native check native_zero_wiring_demo_output in validation.json.",
+    "status": "implemented; native pending",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "inspect() reports compile errors from every Render TOP that draws the blobs, including the user's own (verifier gap G1, core round 3 render_diagnostics).",
+    "alternatives": "Only the component's own renders (before G1); the core's search of the project for Render and Render Pass TOPs that draw the material; matching only renders whose Geometry lists blobs_geo.",
+    "evidence": "Before: a fake project with a user Render TOP drawing blobs_geo and holding a compile error gave keys render and render_scene only (checks/results/red-run-gap-fixes.json). README step 1 tells users to add blobs_geo to their own Render TOP, which compiles its own copy of the material. COMP.findChildren(type=...) and the Render TOP parameters geometry and overridemat checked on docs.derivative.ca on 2026-11-02.",
+    "choice": "render_diagnostics(component, renders=None): op('/').findChildren(type=renderTOP) and renderpassTOP, plus the component's own renders; keep own renders (by name) and any render whose Geometry holds blobs_geo, or whose Override Material or one of whose Geometry COMPs' Material is the component's material (by path). A failed search leaves the own renders only.",
+    "consequence": "A user render's compile errors appear in inspect()['render_diagnostics'] under its path. They are reported, not blocking: capture() and export() still refuse only on errors in the component's own material and output chain. User renders are read as they last cooked. Unit tests test_render_diagnostics_reports_the_renders_that_draw_the_blobs and test_inspect_reports_scripts_blocking_errors_and_every_render fail on the pre-G1 code.",
+    "status": "implemented; native pending (inferred choice, see co-design.json)",
+    "core_commit": "6a5848742d3fadaf514d6a33caef09aedaa3f537"
+  },
+  {
+    "goal": "A pick render that runs only what Derivative documents for picking (verifier finding P1).",
+    "alternatives": "Keep '#ifdef TD_PICKING_ACTIVE' after the whole body and reword the comment (the verifier's second option); the documented form with the projection outside the branch (prism's liquid_prism.vert); the documented form with everything, the projection included, inside '#ifndef'.",
+    "evidence": "Write a GLSL MAT, Picking (oldid 38399, modified 2026-08-05, read 2026-11-02): '#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif' and 'only the code inside the #else block is executed'. docs.derivative.ca/Syntaxhighlight (an exported MAT vertex shader, last edited 2017-09-27): TDDeform and gl_Position = TDWorldToProj(...) come before '#ifndef TD_PICKING_ACTIVE'. Before the fix, glslang -E with TD_PICKING_ACTIVE kept 10 statements in main(); after it, 3 (checks/results/red-run-picking.json).",
+    "choice": "Prism's form: TDDeform and gl_Position first, the seven outputs inside '#ifndef TD_PICKING_ACTIVE', 'TDWritePickingValues();' alone in the '#else' block. Comments say what the pick render runs. Moving the projection inside '#ifndef' was rejected: the pick render would then have no position unless TDWritePickingValues() writes one, which no page states.",
+    "consequence": "The ordinary render runs the same statements (only the projection moved up); the 24 preset tiles are pixel-identical. The pick render skips four TDDeform calls, TDCameraIndex() and TDInstanceID(). Pick values still describe the proxy box. Unit test test_pick_render_runs_only_the_documented_picking_block fails on the pre-fix file. The tutorial's proxy excerpt now shows the branch, with one paragraph explaining it.",
+    "status": "implemented; native pending (native_picking in validation.json)"
+  },
+  {
+    "goal": "Family gap (verifier, low): one name per thing across the five liquid-glass studies. The Fit pulse was Fitglass, Fitflow or Fitsize, labelled 'Fit to Glass geometry' or 'Fit to glass objects'; the docs called the demo backdrop menu Backdrop or Demo backdrop; Blobs alone kept that menu as a setup control.",
+    "alternatives": "(a) List the mapping only, in one family overview. (b) Align the names and labels where the job is the same, and list what still differs once. (c) Also rename Blobs' Backdrop distance so its menu can be called Backdrop.",
+    "evidence": "Reproduction script over the five study.json files: Fit names {Fitflow, Fitglass, Fitsize}, label heads {'Fit to Glass geometry', 'Fit to glass objects'}, backdrop classes {look, setup}. A pulse holds no value and is in no preset, so renaming it touches no saved look. Blobs' Backdrop is a preset key in all twelve presets, the morph and the shader bindings. 3 of 3 new tests fail on the unfixed tree (['Fitsize'] != ['Fitglass']; Demobackdrop setup True; no link).",
+    "choice": "(b). One parameter name, Fitglass, and one label head, 'Fit to Glass geometry (...)', in all five; the brackets say what it sets. The demo menu is labelled Demo backdrop in all five, and experiments reset it in all five. The core README lists the mapping once (Names across the family). This study: The Fit pulse `Fitsize` is renamed `Fitglass`. Demo backdrop (`Demobackdrop`) is no longer a setup control: native.apply() resets it to the Checker like the other look controls, as the other four members do, because the experiments' captures use the Checker. Its name stays `Demobackdrop`, since `Backdrop` here is Optics > Backdrop distance, a preset value. README and tutorial updated; README links to the core's Names across the family.",
+    "consequence": "Scripts can use par.Fitglass on any member. Components built before this fix keep their old pulse name (Fitflow, Fitsize) until rebuilt. (c) is not done: Blobs' demo menu stays Demobackdrop, listed in the core table; renaming Backdrop distance would break saved presets and is a larger, separate change.",
+    "status": "implemented; native pending"
+  },
+  {
+    "goal": "Family close G1: Object size has one meaning across the family. The family rule (Liquid Glass Lit decisions.json, family_rule): the object's world radius over 1.45, applied to the scene-unit lengths and to the ripple and film lookups through worldScale(). Check what Object size means here against the rule; align it or record why the box route differs, with numbers on a scaled box.",
+    "alternatives": "(a) Keep c94e849: Object size = the Geometry COMP's scale, so 1 means the 2-unit box (radius 1), and the ripple and film stay in box units. (b) Record the difference only. (c) Align the number: Fit = the box's radius over 1.45, the default the demo's fit (1 / 1.45, as Liquid Glass Flow did for its radius-1 sphere), and convert the presets' scene-unit values once so the demo keeps its look (as Liquid Glass Prism did for its own looks). For the patterns under (c): (c1) the film and the ripple both follow the rule; (c2) only the film, a colour pattern, follows it; the ripple, which moves the surface, stays with the shape in box units. For the film's count under (c2): the family's 2.5 swirls per Object size (3.625 per box unit on the demo), or this study's 2.5 per box radius (2.5 / (1.45 x Object size) per scene unit). For the four looks adapted from the core (Emerald Bottle, Rose Quartz, Oil Slick, Aqua Jelly): convert them like the others, or keep the core's numbers.",
+    "evidence": "Measured on the c94e849 tree, blobs_geo scaled by its Geometry COMP (checks/results/family-close-measurements.json). Fit on blobs_geo scaled 3 gave 3.0; the rule gives 3 / 1.45 = 2.069, so a typed Object size meant a 1.45 times smaller object here than in the core, Lit, Prism and Flow, and one preset value gave 1.45 times the rule's world length. Otherwise the box route already behaved as the rule asks whenever Object size followed the scale: COMP scale 0.1 and 10 with Object size = scale against the unscaled demo, ripple (Aqua Jelly normal stage) and film (Oil Slick film stage) 1/255 with 0 pixels over 2, finals at most 66/255 on at most 15 pixels over 2. The difference showed only at a hand-set Object size: COMP scale 3 left at Object size 1 kept the ripple and film exactly (1/255) but lost the lengths (finals 97 to 249/255 on 16,751 to 86,010 pixels over 8). The family's film count on this demo (2.5 x 1.45 per box unit): Oil Slick 244/255 on 48,887 pixels over 8, Soap Bubbles 234 on 43,868, Prism Clear 135 on 28,667, Type Lens 62 on 6,913; on Oil Slick the noise cells show as round spots (scratch film_look/sheet.png). The ripple is part of blobField(): it moves the silhouette, the written depth and the measured path, and stepScale() divides the march step by its slope (0.04 x Ripple x Ripple scale, box units). The four adapted looks were tuned on this demo: two of them already differed from the core's numbers at c94e849 (Emerald Bottle Tint density 1.5 against 1.8, Rose Quartz Frost 0.5 against 0.35).",
+    "choice": "(c) with (c2), this study's film count, and every look converted. native.fit_object_size(): REFERENCE_RADIUS = 1.45, BOX_HALF_SIDE = 1 (the box blobs.frag marches, not the Box SOP's bounds, which could only disagree with the shader), Object size = BOX_HALF_SIDE x the cube root of |det(worldTransform)| / 1.45. Inputs > Object size defaults to 1 / 1.45, labelled 'world radius / 1.45; the demo box fits to 0.69'. All twelve presets and the control defaults: Backdrop distance and Frost x 1.45, Tint density / 1.45, rounded to 6 decimals; Backdrop distance's and Frost's slider ends x 1.45; the lens, backdrop_far and frost experiments x 1.45. blobs.frag: worldScale() as in the core (same text) and filmThickness() looks up pObj x uFilm.w x worldScale(); uFilm.w = 2.5 / (1.45 x Object size). The shape (Radius, Spread, Merge, Stretch, droplets, Ripple, Ripple scale) stays in box units.",
+    "consequence": "A typed Object size and Fit now mean the same object size here as in the other four members, and the demo renders as before (preset uniforms equal c94e849's within 1e-6; captures in review.md, Family close). A box scaled by its COMP looks like the unscaled one once Fit is pressed, as before. Deliberate change: a box scaled k times by its COMP but left at the default Object size now has a film swirl k times as fine (k times the frequency), as in the core and Lit, while its ripples keep their count (comp_scale_at_default_object_size_gives_k_times_the_film_bands, which measures at k = 10 about 7.6 times the band detail, at k = 0.1 no bands left, and asks for at least 4 and at most 0.4). Kept different from the rule on purpose, with the measured reasons above: the ripple follows the box, not Object size; the film count is 2.5 per box radius, which is 2.5 / 1.45 = 1.724 per Object size against the family's 2.5. The four adapted looks keep their c94e849 look here, so their Tint density numbers no longer equal the core's (Oil Slick 1.724138 here, 2.5 in the core): they give the same tint per scene unit on this demo as the core's numbers give on the core's demo. Components built before this change keep their own copies of the old presets, shader and Fit, so they look as before. Only a value typed for the old Object size meaning (1 = the 2-unit box) and carried into a new component looks 1.45 times deeper and wider; press Fit to Glass geometry. Limits of the rule: a non-uniform scale counts as its average; per-instance scale is not seen.",
+    "status": "implemented; unit tests that fail on c94e849 (checks/results/red-run-family-close.json): FamilyClose test_g1_fit_uses_the_family_reference_radius, test_g1_film_follows_object_size_and_world_scale and test_g1_core_has_the_same_world_scale, and the changed test_fit_object_size_reads_the_world_transform and test_object_size_is_a_setup_control_feeding_scene_unit_uniforms; unit guards that pass on c94e849 too: FamilyClose test_g1_presets_keep_their_look_on_the_demo and test_g1_shape_stays_in_box_units; preview tests fit_size_carries_presets_over_comp_scale (port, a guard that passes on c94e849 too) and comp_scale_at_default_object_size_gives_k_times_the_film_bands (fails on c94e849); object_size_carries_presets changed expectation (review.md); native Fit pending (validation.json native_fit_object_size)"
+  },
+  {
+    "goal": "Family close G2: one centre-line tie-break for the family. This study measured 0 wrong pixels with its planar box faces; re-check against the core's new tie-break.",
+    "alternatives": "(a) Keep this study's screenSign(ndc, ndcStep, depthStep): the raster comparison, the 0.5 x viewport.zw centre-line window, the 10% 1/w guard, the projection's sign carried by camProj in toScreen(). (b) Take the core's screenSign(ndc, ndcStep, depthStep, proj), which multiplies the projection's sign inside because its offsets are in camera space.",
+    "evidence": "Line by line, the tie-break is the same three lines in both (unit test test_g2_centre_line_tie_break_is_the_familys). Scratch survey with the core's function pasted literally (checks/results/family-close-measurements.json): the twelve presets in the default view and with the camera inside the box, and twelve poses of a blob cut by the box walls, normal and flipped raster, 480 x 270 and 481 x 271, one sample per pixel and 4x multisampled: every row identical between the two forms, 0 wrong pixels in all 24 rows of each readout. The multisampled silhouette pixels the family found on meshes do not occur: the blobs' own silhouette is computed per pixel inside the box faces, so only glass at the box outline is partly covered (318 to 446 pixels per row in the cut poses), and none took the wrong sign.",
+    "choice": "(a): no shader change. The orientation test now also runs the cut poses and a 4x multisampled readout (preview.js gains opts.multisample and msPixels()), with this study's 0 for one sample per pixel and the family's 20 per row for four samples.",
+    "consequence": "No image changes. The family has one tie-break. Known limit, shared with the family: a centre-line pixel on a nearly edge-on face keeps +1 (none measured here). Native orientation pending (validation.json native_screen_orientation).",
+    "status": "compared, not changed; unit test test_g2_centre_line_tie_break_is_the_familys fails on c94e849 (the core still broke ties with +1 there); preview test screen_orientation_has_no_wrong_pixels extended"
+  },
+  {
+    "goal": "Family close G6: the picking branch in the form Derivative documents ('#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif'; only the #else block runs while picking). Confirm this study.",
+    "alternatives": "Keep blobs.vert as it is (the P1 fix); change it.",
+    "evidence": "blobs.vert has deformed and projected before the branch, written its seven outputs inside '#ifndef TD_PICKING_ACTIVE' and called only TDWritePickingValues() in '#else' since picking fix P1 (review.md, Picking form fix). test_pick_render_runs_only_the_documented_picking_block passes: the pick render keeps three statements; compile.json has both vertex variants passing. The core, Flow and Lit took the same form in this round.",
+    "choice": "No change.",
+    "consequence": "None. Native picking pending (validation.json native_picking).",
+    "status": "confirmed; no change"
+  },
+  {
+    "goal": "Close verify CV3: normals_hold_at_any_object_scale must compare scaled blobs with the demo's own scene. It set Object size to the scale (1, 0.001, 20,000), which since Family close G1 means a Backdrop distance 1.45 times the demo's.",
+    "alternatives": "(a) Keep Object size = scale and record the changed numbers (refraction worst difference 8e-5 and 9e-5, was 5e-5). (b) Use the Object size Fit sets, scale x the demo box's 1 / 1.45, as object_size_carries_presets and fit_size_carries_presets_over_comp_scale do.",
+    "evidence": "Cut-down copy of the test in the WebGL2 preview (checks/results/red-run-close-verify.json). With Object size = scale, the scale-1 reference's refraction stage differs from the demo's render by 0.386; normal stage 0. With Fit's Object size: 0 in both stages, and the refraction difference over scale is 5e-5 at 0.001 and 20,000, as at c94e849.",
+    "choice": "(b). The test also compares its scale-1 reference with the demo's render at the default Object size and requires at most 1e-6, so it cannot drift off the demo again unnoticed.",
+    "consequence": "The test measures what its claim says, on the demo's scene. The threshold (1e-3) is unchanged. No shader, preset or image change.",
+    "status": "implemented; red with Object size = scale (0.386), green with Fit's Object size (0); review.md, Close verify fixes"
+  },
+  {
+    "goal": "Family critic: one Object size per component. One Fit press sets one Object size for the whole component; say what that does on several objects of different sizes, on a Geometry COMP scale that changes after Fit and on per-instance scale, and decide whether to change the family rule.",
+    "alternatives": "(a) Keep the family rule (Object size = world radius / 1.45, set by Fit) and document the three setups as measured, with workarounds: one copy of the component per size; press Fit again after a scale change, or animate Object size by the same factor. (b) The critic's proposal: Object size in SOP units, set by Fit; the shader multiplies the lengths and the pattern lookups by worldScale() and by a per-instance factor that the vertex stage computes (a flat varying, the cube root of |det(TDInstanceMat3())|), and turns the ripple slope by the instance rotation. COMP and instance scale, animation included, would then follow without Fit. (c) Ask the user first.",
+    "evidence": "Measured with this study's own fit_object_size(), presets.sized() and uFilm.w expression, and the film lookup in blobs.frag, on fake TouchDesigner objects (checks/results/red-run-family-critic.json; ratio = value / what a Fit that sees the true world size gives; values: Backdrop distance, Frost, tint length, film period). A copy of blobs_geo at a fifth of its size: 5, 5, 5, 5 (Fit reads blobs_geo only). Scale 1 to 3 after Fit: 1/3 each; with Object size times 3: 1 each. An instance scaled 3: 1/3, 1/3, 1/3, 1 (pObj includes the instance; worldScale() does not). The blob shape is in box units and follows the box in every case. Two of the critic's descriptions differ from the measurement: with an animated COMP scale the patterns keep Fit's world size like the lengths (they do not follow live), and with per-instance scale the patterns do follow; only the lengths stay. Option (b) changes what a typed Object size means on a scaled COMP, touches every member's pixel and vertex stage, Flow's checks/core_reference and Lit's family_rule, needs a native check of TDInstanceMat3() in each vertex stage, and still leaves several objects of different SOP sizes on one Object size.",
+    "choice": "(a) now, with (b) recorded for the user's decision (c). The critic marked (b) as needing the user's decision, and this round asks no questions (co-design.json).",
+    "consequence": "README note 'One Object size per component' and one Limits point in the article, pinned to the measurement by test_one_object_size_setups_are_measured_and_documented. No shader, preset, uniform expression or capture changed; the look did not change. If the user picks (b), the whole family changes together and the family_rule record in Liquid Glass Lit's decisions.json is rewritten.",
+    "status": "implemented as (a) (docs and tests); (b) pending the user's decision; not run in TouchDesigner"
+  },
+  {
+    "goal": "Look decisions after the family close: the user has not accepted two rules this study keeps apart from the family's, the film count (2.5 swirls per box radius) and the ripple in box units. The fix the critic named is the user's answer, with code changes only after it, and this round could not ask.",
+    "alternatives": "(a) Change the code to one option now, which guesses the user's answer. (b) Leave the open question as it was. (c) Write each question so one reply answers it (options, a recommended option marked as an inference, the option in the code, numbers and an image), and guard the code until the answer comes.",
+    "evidence": "The 24 preset captures differ from c94e849 by 0 to 1/255: the demo look did not change. Film: uFilm.w = 2.5 / (1.45 x Object size), 1.724 per Object size against the family's 2.5, so the bands are 1.45 times as wide (the critic's 'film count 1.45x the rule's' is the other way round). The family's count measured on the current tree (800 x 450, time 3): Oil Slick 244/255 on 48,887 pixels over 8/255, Soap Bubbles 234 on 43,868, Prism Clear 135 on 28,667, Type Lens 62 on 6,913, equal to the family close's c94e849 measurement. Ripple: ripple(p) in box units, uMotion.z = Ripple scale. The open question named only the film. co-design.md: an inferred preference is not acceptance.",
+    "choice": "(c). co-design.json look_decisions_for_user: LOOK-B1 (A 2.5 per box radius, recommended; B the family's 2.5 per Object size) and LOOK-B2 (A box units, recommended; B Object size as in the core). The open question points there. README section Look decisions waiting for you with captures/review-look-decisions.png (rendered from the current tree with a test patch). Unit tests LookDecisions (2).",
+    "consequence": "No shader, preset, control or capture change. The film count and the ripple's unit stay as delivered until the user answers; a change to them fails LookDecisions until the answer is recorded (origin user, with the user's words).",
+    "status": "implemented (records and unit tests LookDecisions, which fail on the records before this round: checks/results/red-run-look-decisions.json); the decisions LOOK-B1, LOOK-B2 wait for the user (validation.json look_decisions)"
+  },
+  {
+    "goal": "Family critic, one name per thing: the Fit helper has the same name in every member.",
+    "alternatives": "(a) Keep fit_object_size() and list the difference in the core's Names across the family. (b) Rename it fit_glass() and drop fit_object_size at once. (c) Rename it fit_glass() and keep fit_object_size as an alias of the same function for one round.",
+    "evidence": "Before the fix the core, Prism and Lit defined fit_glass() and their Fit pulse called it; this study defined fit_object_size() and Flow fit_flow() (checks/results/red-run-fit-name.json). Liquid Glass Lit's checks/test_study.py (its LIT-CV3 test) calls this study's helper as fit_object_size, and this round could not write in Lit, so (b) would break Lit's tests.",
+    "choice": "(c). native.py defines fit_glass(); 'fit_object_size = fit_glass  # alias' follows it, with a comment that says when to remove it. preset_exec.py, the module's usage note and the README call fit_glass(). The pending native check keeps its key, native_fit_object_size, because Liquid Glass Lit's validation.json points at it.",
+    "consequence": "A script can call fit_glass() in any member. Old scripts and Lit's tests keep working for one round. Records of earlier rounds (review.md round tables, red-run files and the test ids they cite, such as test_fit_object_size_reads_the_world_transform) keep the name they used then. A component built before this change keeps its own embedded native.py and callback, which call fit_object_size from that copy, so it works as before until it is rebuilt. Remove the alias once Lit's test calls fit_glass.",
+    "status": "implemented; unit tests FitHelperName (2) fail before the fix (checks/results/red-run-fit-name.json); the alias's removal waits for Lit's tests; native pulse check pending (validation.json native_fit_object_size)"
+  }
+]

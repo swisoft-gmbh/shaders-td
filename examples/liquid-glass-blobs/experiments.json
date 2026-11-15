@@ -1,0 +1,325 @@
+[
+  {
+    "id": "proxy",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "proxy"
+    },
+    "question": "Which pixels does the material work on?",
+    "prediction": "The whole 2x2x2 proxy box is drawn: dark blue where rays miss every blob, light grey where they hit one. The back half of the ring disappears behind the box's back wall, because this stage writes the box's own depth where rays miss.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-proxy.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "sphere",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Count": 1.0,
+      "Spread": 0.0,
+      "Droplets": 0.0,
+      "Stretch": 0.0,
+      "Ripple": 0.0,
+      "Radius": 0.6,
+      "Stage": "normal"
+    },
+    "question": "What does the smallest raymarched scene look like?",
+    "prediction": "One sphere of radius 0.6 with smoothly changing normal colours: x to red, y to green, z (toward the camera) to blue.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-sphere.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "steps",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "steps"
+    },
+    "question": "Where does marching cost the most?",
+    "prediction": "Rays that hit head-on finish in a few steps (dark blue). Rays that skim past a silhouette take many steps (orange, yellow), and so do rays that pass through the gaps between blobs.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-steps.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "merge_hard",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Merge": 0.0,
+      "Stage": "normal"
+    },
+    "question": "What does a plain union (min) of blobs look like?",
+    "prediction": "Where blobs overlap, the normal colour jumps along a sharp crease: they intersect but do not melt together.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-merge_hard.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "merge_soft",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Merge": 0.6,
+      "Stage": "normal"
+    },
+    "question": "What does the smooth minimum change?",
+    "prediction": "The creases become smooth necks and nearby blobs bridge across gaps; the colours flow without jumps.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-merge_soft.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "droplets",
+    "parameters": {
+      "Preset": "sapphire_drops",
+      "Pause": true,
+      "Time": 5.0,
+      "Droplets": 3.0
+    },
+    "question": "Can small drops split off and merge back?",
+    "prediction": "Small droplets circle beside the main body; at this time one touches it through a thin neck while another floats free.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-droplets.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "box_cut",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Count": 1.0,
+      "Spread": 0.0,
+      "Droplets": 0.0,
+      "Ripple": 0.0,
+      "Radius": 0.9,
+      "Stretch": 0.8,
+      "Stage": "normal"
+    },
+    "question": "What happens to a blob that is too big for the box?",
+    "prediction": "One long capsule reaches past the box. Where the front wall cuts it, the glass has a flat face of one even normal colour (pointing at the camera), not a hole showing the backdrop.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-box_cut.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "depth",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "normal"
+    },
+    "question": "Do ordinary objects sort correctly against the blobs?",
+    "prediction": "The orange ring passes in front of the blobs where it is nearer to the camera and is hidden where it goes behind them, including inside the box, because each blob pixel writes its own depth.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-depth.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "see_through",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Reflection": 0.0,
+      "Rim": 0.0,
+      "Specular": 0.0,
+      "Diffuse": 0.0,
+      "Iridescence": 0.0,
+      "Ripple": 0.0,
+      "Ior": 1.0,
+      "Dispersion": 0.0,
+      "Frost": 0.0,
+      "Density": 0.0,
+      "Saturation": 1.0,
+      "Stage": "final"
+    },
+    "question": "What do blobs show if they do not bend light?",
+    "prediction": "They disappear: every blob pixel shows the Refraction TOP at its own screen position, and the ring stays in front where it should.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-see_through.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "lens",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Ior": 1.5,
+      "Backdrop": 2.32
+    },
+    "question": "What does a real path through the glass do to the view?",
+    "prediction": "Each blob acts as a lens: the backdrop appears shrunk, flipped and shifted, most strongly near the rims.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-lens.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "backdrop_far",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Ior": 1.5,
+      "Backdrop": 4.64
+    },
+    "question": "What does Backdrop distance change?",
+    "prediction": "Doubling it roughly doubles how far the rays spread before they reach the scene, so the flipped image inside each blob shrinks further.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-backdrop_far.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "thickness",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "thickness"
+    },
+    "question": "How much glass does each pixel's light cross?",
+    "prediction": "Bright in the middle of each blob and where blobs merge (long paths), dark at the rims (short paths).",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-thickness.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "dispersion",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "refraction",
+      "Dispersion": 1.0
+    },
+    "question": "What happens if every colour bends by a different amount?",
+    "prediction": "Bright edges seen through the blobs split into dense rainbow fringes, red and violet on opposite sides. Neighbouring colours blend; where the fan is widest, fine steps may remain (raise Samples to remove them).",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-dispersion.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "frost",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Frost": 0.87
+    },
+    "question": "What does spreading the samples over a disc look like?",
+    "prediction": "The view through the blobs blurs smoothly and stays centred, without grain or ghost copies.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-frost.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "tint",
+    "parameters": {
+      "Preset": "lavender_gel",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "body"
+    },
+    "question": "Where does the glass colour come from?",
+    "prediction": "Lavender gets deeper where the path inside is long and toward the rims (edge tint); thin parts stay pale and see-through.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-tint.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "reflection",
+    "parameters": {
+      "Preset": "type_lens",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "reflection"
+    },
+    "question": "What do the blobs reflect, and where?",
+    "prediction": "Bright studio strips and coloured gels from the panorama, strongest near the silhouettes (fresnel) and everywhere a little (mirror).",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-reflection.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "layout_top",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Layout": "top",
+      "Count": 5.0,
+      "Stretch": 0.0,
+      "Merge": 0.2
+    },
+    "question": "Can I place the blobs myself?",
+    "prediction": "Five blobs sit where the rows of blob_layout.tsv put them (one row per blob: x, y, z, radius), instead of drifting.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-layout_top.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "morph",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Morphtarget": "lavender_gel",
+      "Morph": 0.5
+    },
+    "question": "How do two presets blend?",
+    "prediction": "Halfway between Prism Clear and Lavender Gel: a pale violet tint, less rainbow, and a blob layout halfway between the two.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-morph.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Preset": "prism_clear",
+      "Pause": true,
+      "Time": 3.0,
+      "Stage": "final"
+    },
+    "question": "What does the default look like?",
+    "prediction": "Clear capsule blobs with rainbow fringes, sharp highlights and studio reflections, merging and splitting over time.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-final.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "A sculpture described by distance",
+    "question": "A sculpture described by distance?",
+    "snippets": [
+      [
+        "surface.frag",
+        "scene"
+      ]
+    ],
+    "experiments": [
+      "hard"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "A distance estimate is not a hit",
+    "question": "A distance estimate is not a hit?",
+    "snippets": [
+      [
+        "surface.frag",
+        "march"
+      ]
+    ],
+    "experiments": [
+      "hit"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Normals reveal the hidden shape",
+    "question": "Normals reveal the hidden shape?",
+    "snippets": [
+      [
+        "surface.frag",
+        "normal"
+      ]
+    ],
+    "experiments": [
+      "normals"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Make the computational limit visible",
+    "question": "Make the computational limit visible?",
+    "snippets": [
+      [
+        "surface.frag",
+        "march"
+      ]
+    ],
+    "experiments": [
+      "budget"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Compose without hiding the mechanism",
+    "question": "Compose without hiding the mechanism?",
+    "snippets": [
+      [
+        "surface.frag",
+        "shade"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

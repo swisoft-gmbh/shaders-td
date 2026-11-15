@@ -1,0 +1,11 @@
+{
+  "purpose": "Toolkit validation example selected by developer, not a commissioned user artwork",
+  "shader_acceptance": "pending",
+  "article_acceptance": "pending",
+  "user_feedback": [
+    {
+      "report": "../../validation/user-feedback.json",
+      "scope": "Visible in user host; no creative or tutorial acceptance requested or inferred."
+    }
+  ]
+}

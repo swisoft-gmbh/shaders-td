@@ -1,0 +1,111 @@
+test_core_built_strictly_with_world_lighting (__main__.BuilderSmoke.test_core_built_strictly_with_world_lighting) ... ok
+test_renders_and_shaders_get_info_dats (__main__.BuilderSmoke.test_renders_and_shaders_get_info_dats) ... ok
+test_unavailable_core_node_stops_the_build (__main__.BuilderSmoke.test_unavailable_core_node_stops_the_build) ... ok
+test_unavailable_demo_node_is_skipped_with_warning (__main__.BuilderSmoke.test_unavailable_demo_node_is_skipped_with_warning) ... Liquid Glass Lit built with demo warnings (cosmetic, demo only; the material itself is fine):
+  demo: unavailable type environmentlightCOMP
+  demo: skipped node demo_envlight (environmentlightCOMP)
+  demo: skipped reference demo_envlight.envlightmap
+ok
+test_records_match_the_preview_measurements (__main__.CentreLineResidual.test_records_match_the_preview_measurements) ... ok
+test_residual_is_an_open_family_question_with_a_native_check (__main__.CentreLineResidual.test_residual_is_an_open_family_question_with_a_native_check) ... ok
+test_docs_describe_the_saved_red_runs (__main__.DocumentedCounts.test_docs_describe_the_saved_red_runs) ... ok
+test_docs_state_the_suite_sizes (__main__.DocumentedCounts.test_docs_state_the_suite_sizes) ... ok
+test_g1_fit_and_patterns_match_the_core (__main__.FamilyClose.test_g1_fit_and_patterns_match_the_core) ... ok
+test_g1_readme_family_table_is_current (__main__.FamilyClose.test_g1_readme_family_table_is_current) ... ok
+test_g2_screen_orientation_is_the_cores (__main__.FamilyClose.test_g2_screen_orientation_is_the_cores) ... ok
+test_g6_pick_render_runs_only_the_documented_picking_block (__main__.FamilyClose.test_g6_pick_render_runs_only_the_documented_picking_block) ... ok
+test_g6_vertex_shader_is_the_cores (__main__.FamilyClose.test_g6_vertex_shader_is_the_cores) ... ok
+test_preprocessed_helper_follows_ifdef_ifndef_and_else (__main__.FamilyClose.test_preprocessed_helper_follows_ifdef_ifndef_and_else) ... ok
+test_cv1_main_pointer_names_the_section_that_shows_it (__main__.FamilyCloseVerifierFixes.test_cv1_main_pointer_names_the_section_that_shows_it) ... ok
+test_cv3_rule_record_covers_blobs (__main__.FamilyCloseVerifierFixes.test_cv3_rule_record_covers_blobs) ... ok
+test_native_family_list_waits_for_a_recorded_run (__main__.FamilyCritic.test_native_family_list_waits_for_a_recorded_run) ... ok
+test_one_object_size_setups_are_measured_and_documented (__main__.FamilyCritic.test_one_object_size_setups_are_measured_and_documented) ... ok
+test_core_reference_is_the_current_core (__main__.FamilyCriticRouted.test_core_reference_is_the_current_core) ... ok
+test_pv4_labels_say_what_object_size_does (__main__.FamilyCriticRouted.test_pv4_labels_say_what_object_size_does) ... ok
+test_v1_record_says_k_times_as_many_patterns (__main__.FamilyCriticRouted.test_v1_record_says_k_times_as_many_patterns) ... ok
+test_demo_backdrop_menu_has_the_family_label_and_experiments_reset_it (__main__.FamilyNames.test_demo_backdrop_menu_has_the_family_label_and_experiments_reset_it) ... ok
+test_docs_use_the_family_names (__main__.FamilyNames.test_docs_use_the_family_names) ... ok
+test_fit_pulse_has_the_family_name_and_label (__main__.FamilyNames.test_fit_pulse_has_the_family_name_and_label) ... ok
+test_fit_carries_every_preset_over_a_comp_scale (__main__.FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale)
+The demo torus scaled by its Geometry COMP: after Fit to Glass geometry, ... ok
+test_rule_matches_the_demo_the_uniforms_and_the_shader (__main__.FamilyObjectSizeRule.test_rule_matches_the_demo_the_uniforms_and_the_shader) ... ok
+test_fit_size_test_holds_2_255_at_every_pixel (__main__.FitThreshold.test_fit_size_test_holds_2_255_at_every_pixel) ... ok
+test_continuous_output (__main__.LightingContract.test_continuous_output) ... ok
+test_env_light_calls_are_guarded (__main__.LightingContract.test_env_light_calls_are_guarded) ... ok
+test_extra_colour_buffers_are_zeroed (__main__.LightingContract.test_extra_colour_buffers_are_zeroed) ... ok
+test_light_calls_are_guarded (__main__.LightingContract.test_light_calls_are_guarded) ... ok
+test_material_lights_in_world_space (__main__.LightingContract.test_material_lights_in_world_space) ... ok
+test_uses_documented_returning_forms (__main__.LightingContract.test_uses_documented_returning_forms) ... ok
+test_apply_keeps_the_users_wiring_and_calibration (__main__.NativeHelpers.test_apply_keeps_the_users_wiring_and_calibration) ... ok
+test_apply_resets_what_the_previous_experiment_changed (__main__.NativeHelpers.test_apply_resets_what_the_previous_experiment_changed) ... ok
+test_experiments_in_file_order_equal_fresh_runs (__main__.NativeHelpers.test_experiments_in_file_order_equal_fresh_runs) ... ok
+test_lights_and_inspect_for_every_eval_shape (__main__.NativeHelpers.test_lights_and_inspect_for_every_eval_shape) ... ok
+test_lights_never_blocks_inspect (__main__.NativeHelpers.test_lights_never_blocks_inspect) ... ok
+test_every_stage_is_capped (__main__.Numerics.test_every_stage_is_capped) ... ok
+test_key_light_divides_safely (__main__.Numerics.test_key_light_divides_safely) ... ok
+test_reversed_edge_detector_catches_the_old_forms (__main__.Numerics.test_reversed_edge_detector_catches_the_old_forms) ... ok
+test_smoothstep_edges_increase_in_every_shader (__main__.Numerics.test_smoothstep_edges_increase_in_every_shader) ... ok
+test_apply_writes_every_preset_value (__main__.PresetModule.test_apply_writes_every_preset_value) ... ok
+test_custom_changes_nothing (__main__.PresetModule.test_custom_changes_nothing) ... ok
+test_morph_endpoints_and_midpoint (__main__.PresetModule.test_morph_endpoints_and_midpoint) ... ok
+test_control_defaults_are_the_default_preset (__main__.Recipe.test_control_defaults_are_the_default_preset) ... ok
+test_demo_dimmer_drives_both_demo_lights (__main__.Recipe.test_demo_dimmer_drives_both_demo_lights) ... ok
+test_demo_draws_the_glass_into_the_scene_render (__main__.Recipe.test_demo_draws_the_glass_into_the_scene_render) ... ok
+test_demo_render_lights_only_name_demo_lights (__main__.Recipe.test_demo_render_lights_only_name_demo_lights) ... ok
+test_every_preset_value_reaches_a_morphed_uniform (__main__.Recipe.test_every_preset_value_reaches_a_morphed_uniform) ... ok
+test_experiments_use_real_presets_and_previews (__main__.Recipe.test_experiments_use_real_presets_and_previews) ... ok
+test_menus_offer_every_preset (__main__.Recipe.test_menus_offer_every_preset) ... ok
+test_preset_keys_are_controls_and_scene_settings_are_not (__main__.Recipe.test_preset_keys_are_controls_and_scene_settings_are_not) ... ok
+test_source_menus_match_shader_modes (__main__.Recipe.test_source_menus_match_shader_modes) ... ok
+test_stage_menu_matches_shader_stages (__main__.Recipe.test_stage_menu_matches_shader_stages) ... ok
+test_twelve_complete_presets (__main__.Recipe.test_twelve_complete_presets) ... ok
+test_c1_transmitted_returns_the_scene_alpha_and_one_formula_composes (__main__.SyncC.test_c1_transmitted_returns_the_scene_alpha_and_one_formula_composes) ... ok
+test_c2_vertex_shader_answers_picking (__main__.SyncC.test_c2_vertex_shader_answers_picking) ... ok
+test_c4_readme_tells_users_to_switch_dither_off (__main__.SyncC.test_c4_readme_tells_users_to_switch_dither_off) ... ok
+test_c4_renders_switch_dither_off (__main__.SyncC.test_c4_renders_switch_dither_off) ... ok
+test_c4_shaders_never_dither (__main__.SyncC.test_c4_shaders_never_dither) ... ok
+test_c5_normalize_never_sees_a_zero_vector (__main__.SyncC.test_c5_normalize_never_sees_a_zero_vector) ... ok
+test_c5_render_diagnostics_reports_the_renders_that_draw_the_glass (__main__.SyncC.test_c5_render_diagnostics_reports_the_renders_that_draw_the_glass) ... ok
+test_c6_centre_line_ties_use_the_guarded_derivative (__main__.SyncC.test_c6_centre_line_ties_use_the_guarded_derivative) ... ok
+test_c6_offsets_follow_the_measured_screen_orientation (__main__.SyncC.test_c6_offsets_follow_the_measured_screen_orientation) ... ok
+test_c7_fog_on_the_premultiplied_output (__main__.SyncC.test_c7_fog_on_the_premultiplied_output) ... ok
+test_c7_native_fog_check_matches_the_demo (__main__.SyncC.test_c7_native_fog_check_matches_the_demo) ... ok
+test_c8_fit_finds_the_glass_objects_and_sets_object_size (__main__.SyncC.test_c8_fit_finds_the_glass_objects_and_sets_object_size) ... {}
+ok
+test_c8_object_size_is_setup_and_never_reset (__main__.SyncC.test_c8_object_size_is_setup_and_never_reset) ... ok
+test_c8_object_size_scales_the_lengths_and_is_exact_at_1 (__main__.SyncC.test_c8_object_size_scales_the_lengths_and_is_exact_at_1) ... ok
+test_c9_backdrop_menu_reaches_the_demo_backdrop (__main__.SyncC.test_c9_backdrop_menu_reaches_the_demo_backdrop) ... ok
+test_demo_spin_is_integrated (__main__.SyncR1DriftClock.test_demo_spin_is_integrated) ... ok
+test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump (__main__.SyncR1DriftClock.test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump) ... ok
+test_drift_stays_smooth_through_a_100_frame_morph_and_a_speed_drag_after_an_hour (__main__.SyncR1DriftClock.test_drift_stays_smooth_through_a_100_frame_morph_and_a_speed_drag_after_an_hour) ... ok
+test_no_node_expression_reads_absolute_time (__main__.SyncR1DriftClock.test_no_node_expression_reads_absolute_time) ... ok
+test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero (__main__.SyncR1DriftClock.test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero) ... ok
+test_shader_drifts_by_uphase_on_a_lattice_that_repeats_every_256 (__main__.SyncR1DriftClock.test_shader_drifts_by_uphase_on_a_lattice_that_repeats_every_256) ... ok
+test_r3_build_warnings_are_grouped_by_category (__main__.SyncR3R4R9Recipe.test_r3_build_warnings_are_grouped_by_category) ... Liquid Glass Lit built with demo warnings (cosmetic, demo only; the material itself is fine):
+  demo: unavailable type environmentlightCOMP
+  demo: skipped node demo_envlight (environmentlightCOMP)
+  demo: skipped reference demo_envlight.envlightmap
+ok
+test_r3_inputs_field_is_constant_and_resets_to_the_demo (__main__.SyncR3R4R9Recipe.test_r3_inputs_field_is_constant_and_resets_to_the_demo) ... ok
+test_r3_refraction_top_is_a_constant_setup_field_linked_to_the_demo (__main__.SyncR3R4R9Recipe.test_r3_refraction_top_is_a_constant_setup_field_linked_to_the_demo) ... ok
+test_r4_order_does_not_matter (__main__.SyncR3R4R9Recipe.test_r4_order_does_not_matter) ... ok
+test_r4_reset_controls_are_the_documented_ones (__main__.SyncR3R4R9Recipe.test_r4_reset_controls_are_the_documented_ones) ... ok
+test_r4_scene_setup_survives_every_experiment (__main__.SyncR3R4R9Recipe.test_r4_scene_setup_survives_every_experiment) ... ok
+test_r9_inspect_reports_script_and_blocking_errors (__main__.SyncR3R4R9Recipe.test_r9_inspect_reports_script_and_blocking_errors) ... ok
+test_r9_menu_uniforms_follow_the_evaluated_value (__main__.SyncR3R4R9Recipe.test_r9_menu_uniforms_follow_the_evaluated_value) ... ok
+test_r9_sampler_extend_modes_are_set (__main__.SyncR3R4R9Recipe.test_r9_sampler_extend_modes_are_set) ... ok
+test_r5_derivatives_first_with_a_relative_threshold (__main__.SyncR5R6R8Shader.test_r5_derivatives_first_with_a_relative_threshold) ... ok
+test_r5_no_atan_of_zero_and_guarded_vectors (__main__.SyncR5R6R8Shader.test_r5_no_atan_of_zero_and_guarded_vectors) ... ok
+test_r5_normal_faces_the_camera_after_the_wobble (__main__.SyncR5R6R8Shader.test_r5_normal_faces_the_camera_after_the_wobble) ... ok
+test_r5_sample_ior_at_least_1_and_f0_squared (__main__.SyncR5R6R8Shader.test_r5_sample_ior_at_least_1_and_f0_squared) ... ok
+test_r5_wobble_independent_of_comp_scale (__main__.SyncR5R6R8Shader.test_r5_wobble_independent_of_comp_scale) ... ok
+test_r5_zero_normal_decided_before_TDDeformNorm (__main__.SyncR5R6R8Shader.test_r5_zero_normal_decided_before_TDDeformNorm) ... ok
+test_r6_frost_disc_stays_centred (__main__.SyncR5R6R8Shader.test_r6_frost_disc_stays_centred) ... ok
+test_r6_frost_uses_the_r2_disc (__main__.SyncR5R6R8Shader.test_r6_frost_uses_the_r2_disc) ... ok
+test_r8_colour_parameters_and_energy_conserving (__main__.SyncR5R6R8Shader.test_r8_colour_parameters_and_energy_conserving) ... ok
+test_v1_patterns_follow_object_size_in_the_world (__main__.SyncR5R6R8Shader.test_v1_patterns_follow_object_size_in_the_world) ... ok
+
+----------------------------------------------------------------------
+Ran 96 tests in 0.633s
+
+OK

@@ -1,0 +1,296 @@
+[
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      98,
+      224
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Transparency by sampling a render of the scene behind the mesh at the pixel's screen position (FBO).",
+    "adaptation": "The FBO becomes a user-supplied Refraction TOP sampled at gl_FragCoord * uTDGeneral.viewport.zw. TouchDesigner renders it in a separate Render TOP that excludes the glass; no in-material hide/show trick."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      226,
+      320
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "refract() of the eye vector by the surface normal, used as a screen offset.",
+    "adaptation": "The bend is converted to a projected, aspect-correct screen offset: (refract - eye) in camera space times Thickness, scaled by the camera's own projection and depth. Heckel adds refractVec.xy straight to the screen coordinates without projecting it through the camera (his scenes can be orbited), so the shift does not follow camera distance, lens or orientation."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      322,
+      463
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Chromatic dispersion with per-channel IORs and extra samples per loop to smooth it.",
+    "adaptation": "Replaced the R/G/B (and later 6-band) loop by a loop over spectrum samples: each sample has its own IOR and a smooth R/G/B weight, normalised per channel. One texture read per sample instead of six. The same samples double as the frost blur (a disc placed by the R2 quasirandom sequence), with mipmap levels to keep the blur continuous."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      465,
+      519
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Saturation by mixing with luminance (weights 0.2125, 0.7154, 0.0721).",
+    "adaptation": "Used as saturateColour(), applied once after the loop instead of inside it."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      520,
+      559
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "RGB to rygcbv split for finer dispersion control.",
+    "adaptation": "Not ported. The spectrum weights achieve a smooth multi-band split without per-band IOR controls."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      570,
+      655
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Blinn-Phong specular with the squared N.H term, plus diffuse.",
+    "adaptation": "Kept the squared N.H term; the half vector uses the direction toward the camera (Heckel's code adds the camera-to-surface vector). Light colour and direction are parameters."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      657,
+      694
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Fresnel factor pow(1 - |N.V|, power) added as a glow.",
+    "adaptation": "Used twice: as the rim glow (Rim colour x Rim amount) and to weight the reflection between the IOR's base reflectance and 1. Mirror pushes that weight to 1."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      696,
+      773
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Backside rendering: render back faces first, then front faces refracting that result.",
+    "adaptation": "Optional render_back Render TOP with a second GLSL MAT (front faces culled, blending off). Its alpha stores the back surface's distance, so the front pass also measures true thickness for absorption and the bend."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+    "lines": [
+      1,
+      129
+    ],
+    "sha256": "5ddbdd4d334bbd933f84ab84ba5afe45cd8c4479b919184baaea01361ca48be0",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Archived final scene: the exact shaders behind the article (16 samples, 6 IORs, saturation, specular, fresnel).",
+    "adaptation": "Read for the actual loop structure and constants; no lines copied verbatim. All GLSL in this study is newly written for TouchDesigner's GLSL MAT."
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Official TouchDesigner GLSL MAT API (read 2026-11-01, page oldid 38399).",
+    "adaptation": "TDPos/TDNormal/TDDeform/TDDeformNorm/TDWorldToProj; TDCameraIndex is vertex-only so it is passed as a flat varying; uTDMats members, uTDGeneral.viewport, TDFrontFacing, TDCheckDiscard, TDOutputSwizzle. The equirectangular convention (u = 0 toward +X, then +Z) is this study's own; the documentation states none."
+  },
+  {
+    "source_id": "docs.derivative.ca/GLSL_MAT",
+    "source_url": "https://docs.derivative.ca/GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "GLSL MAT parameter names (read 2026-11-01, page oldid 36246).",
+    "adaptation": "samplerNname/top/filter, vecN uniforms, blending, srcblend/destblend, cullface, depth parameters used by builder.py."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP, Parameter_Execute_DAT, Page_Class, Torus_SOP",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Parameter and method names used by builder.py (read 2026-11-01).",
+    "adaptation": "overridemat, antialias, bgcolor; op/pars/valuechange/onpulse; appendObject/appendCOMP/appendTOP/appendRGB/appendXYZ; Torus SOP radx/rady/rows/cols/normals. Render TOP 'render' toggle for the optional back-face pass; Par.evalOPs for several glass objects."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_Pass_TOP, Transparency, Over_TOP",
+    "source_url": "https://docs.derivative.ca/Render_Pass_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Multipass rendering on top of an existing render's colour and depth; transparency draw order (read 2026-11-01).",
+    "adaptation": "README workflow: the glass is drawn in a Render Pass TOP after the scene render, with Clear Depth Buffer and Clear to Camera Color off and Override Material = the glass material, so foreground objects occlude it."
+  },
+  {
+    "source_id": "docs.derivative.ca/Par_Class, OP_Class, Color_Space_Workflows, Project_Class",
+    "source_url": "https://docs.derivative.ca/Par_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Parameter modes (val, expr, default, defaultExpr, menuIndex, evalOPs), relativePath, scriptErrors, and the working colour space (read 2026-11-01).",
+    "adaptation": "Inputs fields in constant mode with checked relative paths; menu indices from the evaluated value; script errors in inspect(); Colour parameters Auto from project.workingColorSpace."
+  },
+  {
+    "source_id": "extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences",
+    "source_url": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Martin Roberts (2018): the R2 low-discrepancy sequence built on the plastic number.",
+    "adaptation": "discPoint() places the frost samples with R2 (angle from 0.7548776662, area from 0.5698402910) so the disc fills evenly for any sample count and stays centred."
+  },
+  {
+    "source_id": "studies/liquid-glass-blobs/blobs.frag",
+    "source_url": null,
+    "lines": [
+      380,
+      440
+    ],
+    "sha256": "7825758460f97f4bbf9c7188155d0822ea4d5902dcfd5d7cbfeab68b998ec930",
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Blobs: transmitted() returns the Refraction TOP's alpha ('covered', fix T1); one premultiplied compose formula; fan-gap mip level for dispersion; TDFog on premultiplied output (lines 680-731).",
+    "adaptation": "C1: the covered formula, with this study's energy-conserving keep and colour-parameter decoding; where the back-face pass covers the view, covered still comes from the Refraction TOP's alpha at the same spot (fix V1; the sync first counted the inner surface as covered). C7: the fog form, on the front pass only. C3: the fan-gap level was ported, measured against 64- and 128-sample references, and rejected (decisions.json)."
+  },
+  {
+    "source_id": "studies/liquid-glass-prism/liquid_prism.frag",
+    "source_url": null,
+    "lines": [
+      655,
+      665
+    ],
+    "sha256": "970377c5c92047e40dd8f6061ef8abedeaf8c7bed79d680fcc7864e88078f527",
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Prism: measured screen orientation (screenSign from dFdx/dFdy of the pixel's NDC, fixes T7/M6), applied to every offset; Flip V flips the base UV and the vertical sign together.",
+    "adaptation": "C6: same goal and Flip V semantics, measured differently: the pixel's projected position is compared with its raster position, without derivatives (derivatives misread a few sliver triangles at grazing silhouettes, up to 50/255). Prism's isotropic footprintLod and negative back-face encoding were not merged (decisions.json)."
+  },
+  {
+    "source_id": "studies/liquid-glass-prism/backdrop.frag",
+    "source_url": null,
+    "lines": [
+      1,
+      90
+    ],
+    "sha256": "a43f469b50d8ec1cf7b320cb29ee624cf85939b6ab67a901b3d252fc4a55d076",
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Prism: bold white type on black (typeBlock) as a demo backdrop.",
+    "adaptation": "C9: the Type branch of this study's backdrop.frag behind Study > Backdrop, with the smoothstep edges reordered (the Prism copy has them reversed, which GLSL leaves undefined). The checkerboard branch is unchanged."
+  },
+  {
+    "source_id": "studies/liquid-glass-flow/liquid_flow.vert, liquid_flow.frag, native.py, checks/compile_glsl.py",
+    "source_url": null,
+    "lines": [
+      225,
+      237
+    ],
+    "sha256": "2ac4c752bbecfc07c7a9bba7958a57874a72f9cb236b4394bbbac1081b451532",
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Flow: TD_PICKING_ACTIVE branch with TDWritePickingValues() (vert lines 225-237); fragColor[TD_NUM_COLOR_BUFFERS] with zeros at constant indices under #if (frag lines 450-475; a loop failed in WebGL2); fit_flow() reading SOP or Geometry COMP bounds (native.py lines 91-117); compile variants with picking and eight buffers.",
+    "adaptation": "C2: the picking call after this study's unchanged outputs (no moved points to report), zeros for buffers 1 to 7, compile variants with picking and three buffers plus a negative test. C8: fit_glass() measures in scene units (times the COMP's world scale) relative to the demo torus and sets one Object size."
+  },
+  {
+    "source_id": "studies/liquid-glass-lit/liquid_glass_lit.frag, study.json, builder.py, native.py",
+    "source_url": null,
+    "lines": [
+      460,
+      492
+    ],
+    "sha256": "f9b437e2dfdf408dea37243691d36696c88eae6a162a618173cb6f9d41ac217a",
+    "commit": "6a58487",
+    "role": "Family member Liquid Glass Lit: min(colour, 1024) before the output for half-float renders; 'dither': false on its renders and a TDDither lint; Info DATs on every render and render_diagnostics in inspect(); safe normalisation.",
+    "adaptation": "C4: Dither off as a lenient parameter with a 'dither' build warning, and a broader lint (no per-pixel noise in any shader). C5: the cap on colour only (this study's back-face pass keeps distances in alpha), safeNormalize(), Info DATs on renders, render_diagnostics also finds the user's renders that draw the material."
+  },
+  {
+    "source_id": "docs.derivative.ca/Write_a_GLSL_MAT (family sync)",
+    "source_url": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Picking (TD_PICKING_ACTIVE, TDWritePickingValues, TDPickVertex), Multiple Render Targets (fragColor[TD_NUM_COLOR_BUFFERS]; writing past the buffer count can corrupt output), TDFog(vec4, vec3, int) and TDDither (read 2026-11-02; page modified 2026-08-05).",
+    "adaptation": "C2 picking branch and colour buffers, C7 fog, C4 no TDDither."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP, Render_Pass_TOP (family sync)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Parameter 'dither' (label Dither, Advanced page) on both TOPs; no default stated (read 2026-11-02, raw wiki text).",
+    "adaptation": "C4: render and render_back set dither off leniently; the README tells users to turn it off on their renders."
+  },
+  {
+    "source_id": "docs.derivative.ca/SOP_Class, GeometryCOMP_Class, ObjectCOMP_Class, Matrix_Class",
+    "source_url": "https://docs.derivative.ca/SOP_Class",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "SOP.bounds(display=False, render=False) and geometryCOMP.bounds(display, render, selected, recurse) return min, max, center and size; ObjectCOMP.worldTransform; tdu.Matrix.determinant() (read 2026-11-02, raw wiki text).",
+    "adaptation": "C8: native.fit_glass() for the Fit to Glass geometry pulse."
+  },
+  {
+    "source_id": "studies/liquid-glass-lit/liquid_glass_lit.frag, decisions.json, checks/preview_tests.cjs (family close)",
+    "source_url": null,
+    "lines": null,
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de",
+    "commit": "c94e849",
+    "role": "Family member Liquid Glass Lit: the family rule for Object size (decisions.json, family_rule; worldScale() on the ripple and film lookups, its verifier fix V1), the centre-line tie-break in screenSign() (its family gap round), and the preview tests fit_size_carries_presets_over_comp_scale and screen_orientation_has_no_wrong_pixels. sha256 is liquid_glass_lit.frag at c94e849.",
+    "adaptation": "G1: the same two-line change and test. G2: the same screenSign() form and test, measured equal to Prism's V2 form here; the reference shader's instrument patch adapted to this study's one-buffer 6a58487 output."
+  },
+  {
+    "source_id": "studies/liquid-glass-prism/liquid_prism.frag, checks/preview_tests.cjs, README.md (family close)",
+    "source_url": null,
+    "lines": null,
+    "sha256": "c04f16038657133fc23e6915ae7384a20230062d0de9b276e64e64b55e27bd46",
+    "commit": "c94e849",
+    "role": "Family member Liquid Glass Prism: the V2 centre-line tie-break (screenSign() with ndcStep and depthStep), the occluder test render_pass_keeps_foreground_in_front with its Over TOP control, and the README wording for uFilm.w = 0. sha256 is liquid_prism.frag at c94e849.",
+    "adaptation": "G2: compared literally with Lit's form (identical results). G4: the same ball, placement and thresholds. G3: the same wording."
+  },
+  {
+    "source_id": "studies/liquid-glass-blobs/blobs.vert, blobs.frag, checks/test_study.py (family close)",
+    "source_url": null,
+    "lines": null,
+    "sha256": "b32c679b094d7defe7b2867ec5ab65d4383c328c01c0e75d44232536a09ab46e",
+    "commit": "c94e849",
+    "role": "Family member Liquid Glass Blobs: the documented picking form (its fix P1) with the preprocessor helper of its unit test, and the quarter fan-gap level in transmitted(). sha256 is blobs.vert at c94e849.",
+    "adaptation": "G6: the same branch, with the outputs in a helper. G5: the quarter gap measured here and recorded in C3, not adopted."
+  },
+  {
+    "source_id": "studies/liquid-glass-flow/checks/preview_tests.cjs (family close)",
+    "source_url": null,
+    "lines": null,
+    "sha256": "20c7722ba8ae45bd2aea95e70ab1de0a56860355d950171d2115532228ca7510",
+    "commit": "c94e849",
+    "role": "Family member Liquid Glass Flow: the preview test film_swirl_frequency_0_is_one_drifting_thickness and its uniforms hook. sha256 is the file at c94e849.",
+    "adaptation": "G3: the same measurement on a flat sheet mesh added to this study's preview."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP, Composite_TOP, Analyze_TOP (centre-line residual native check)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "role": "Render TOP: Anti-Alias (antialias; 1x (Off) aa1, 2x aa2, 4x aa4, ...), Override Material (overridemat). Composite TOP: Operation (operand), Difference (difference): absoluteValue(input1.rgb - input2.rgb), alpha 1. Analyze TOP: Operation (op), Maximum in RGB (maxrgb); with Full Image scope the result is one pixel. Read 2026-11-02.",
+    "adaptation": "The native check centre_line_residual (validation.json, family_close.native_run): render the delivered material and a copy with the orientation set to the right value, take the difference and its maximum."
+  }
+]

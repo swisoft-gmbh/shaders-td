@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquid Glass Flow Preview</title>
+<style>
+  :root { color-scheme: dark; --bg: #101114; --fg: #e8e8ea; --muted: #9a9ca3; --line: #2a2c31; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 16px; }
+  canvas { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  form { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; align-items: center; }
+  label { color: var(--muted); }
+  select, input { margin-left: 6px; }
+  p { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <canvas id="view" width="960" height="540"></canvas>
+  <form id="controls">
+    <label>Preset <select name="preset"></select></label>
+    <label>Stage <select name="stage"></select></label>
+    <label>Object <select name="mesh"><option>sphere</option><option>torus</option><option>box</option><option>grid</option><option>knot</option></select></label>
+    <label>Displace along <select name="along"><option value="centre">centre (crack-free)</option><option value="normal">normal</option></select></label>
+    <label>Amplitude x <input type="range" name="amp" min="0" max="3" step="0.05" value="1"></label>
+    <label>Backdrop <select name="backdrop"><option value="checker">Checker</option><option value="type">Type</option></select></label>
+    <label>Back-face pass <input type="checkbox" name="backface"></label>
+    <label>Animate <input type="checkbox" name="animate" checked></label>
+  </form>
+  <p>WebGL2 preview of the delivered GLSL with stand-ins for TouchDesigner built-ins. A look-development aid, not a TouchDesigner render.</p>
+</main>
+<script src="preview.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const which = ['core', 'hybrid'].includes(params.get('study')) ? params.get('study') : 'flow';
+  if (params.has('w')) {  // tests render smaller to save time
+    const canvas = document.getElementById('view');
+    canvas.width = Number(params.get('w')); canvas.height = Number(params.get('h') || canvas.width * 9 / 16);
+  }
+  window.previewReady = createPreview(document.getElementById('view'), which).then((preview) => {
+    window.preview = preview;
+    if (params.has('harness')) return preview;  // driven by the capture and test scripts
+    const form = document.getElementById('controls');
+    for (const name of preview.presets.order) form.preset.add(new Option(preview.presets.presets[name].label, name));
+    form.preset.value = preview.presets.default;
+    for (const name of preview.study.controls.find((c) => c.name === 'Stage').names) form.stage.add(new Option(name, name));
+    const start = performance.now();
+    const frame = () => {
+      const t = form.animate.checked ? (performance.now() - start) / 1000 : 2;
+      const base = preview.presets.presets[form.preset.value].values.Amplitude;
+      preview.draw({ preset: form.preset.value, mesh: form.mesh.value, time: t,
+        overrides: { Stage: form.stage.value, Backface: form.backface.checked, Displacealong: form.along.value, Backdrop: form.backdrop.value,
+                     Amplitude: base * Number(form.amp.value),
+                     Culling: form.mesh.value === 'grid' ? 'none' : 'back' } });
+      requestAnimationFrame(frame);
+    };
+    frame();
+    return preview;
+  }).catch((e) => { document.body.insertAdjacentHTML('beforeend', '<pre>' + e.message + '</pre>'); throw e; });
+</script>
+</body>
+</html>

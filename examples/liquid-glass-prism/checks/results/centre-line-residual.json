@@ -1,0 +1,302 @@
+{
+ "study": "liquid-glass-prism",
+ "what": "Final image (4x multisampled canvas), delivered material against the same material with the right orientation forced; WebGL preview (Chromium SwiftShader), not TouchDesigner.",
+ "renders": 144,
+ "changed_pixels": 24,
+ "over_2": 16,
+ "over_8": 7,
+ "over_16": 2,
+ "max": 20,
+ "max_changed_per_row": 7,
+ "worst": {
+  "row": "knot_480x270",
+  "preset": "diamond_fire",
+  "pixel": [
+   239,
+   110
+  ],
+  "delivered": [
+   91,
+   89,
+   90
+  ],
+  "right_sign": [
+   111,
+   109,
+   109
+  ],
+  "max": 20
+ },
+ "rows": {
+  "torus_480x270": {
+   "renders": 12,
+   "changed_pixels": 5,
+   "over_2": 3,
+   "over_8": 3,
+   "over_16": 0,
+   "max": 13,
+   "within_4_pixels_of_a_centre_line": 5,
+   "worst": {
+    "preset": "frosted_ice",
+    "pixel": [
+     240,
+     148
+    ],
+    "delivered": [
+     133,
+     139,
+     146
+    ],
+    "right_sign": [
+     121,
+     127,
+     133
+    ]
+   }
+  },
+  "knot_480x270": {
+   "renders": 12,
+   "changed_pixels": 7,
+   "over_2": 5,
+   "over_8": 2,
+   "over_16": 2,
+   "max": 20,
+   "within_4_pixels_of_a_centre_line": 7,
+   "worst": {
+    "preset": "diamond_fire",
+    "pixel": [
+     239,
+     110
+    ],
+    "delivered": [
+     91,
+     89,
+     90
+    ],
+    "right_sign": [
+     111,
+     109,
+     109
+    ]
+   }
+  },
+  "sphere_480x270": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "torus_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 1,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 6,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "frosted_ice",
+    "pixel": [
+     265,
+     135
+    ],
+    "delivered": [
+     233,
+     234,
+     235
+    ],
+    "right_sign": [
+     227,
+     228,
+     229
+    ]
+   }
+  },
+  "knot_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 4,
+   "over_2": 2,
+   "over_8": 1,
+   "over_16": 0,
+   "max": 14,
+   "within_4_pixels_of_a_centre_line": 4,
+   "worst": {
+    "preset": "prism_chrome",
+    "pixel": [
+     239,
+     124
+    ],
+    "delivered": [
+     192,
+     166,
+     237
+    ],
+    "right_sign": [
+     183,
+     152,
+     231
+    ]
+   }
+  },
+  "sphere_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 1,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 6,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "spectral_prism",
+    "pixel": [
+     238,
+     69
+    ],
+    "delivered": [
+     255,
+     223,
+     243
+    ],
+    "right_sign": [
+     255,
+     223,
+     249
+    ]
+   }
+  },
+  "torus_481x271": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "knot_481x271": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 1,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 8,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "spectral_prism",
+    "pixel": [
+     240,
+     127
+    ],
+    "delivered": [
+     222,
+     209,
+     147
+    ],
+    "right_sign": [
+     214,
+     201,
+     139
+    ]
+   }
+  },
+  "sphere_481x271": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "torus_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 2,
+   "over_2": 2,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 8,
+   "within_4_pixels_of_a_centre_line": 2,
+   "worst": {
+    "preset": "lavender_prism",
+    "pixel": [
+     280,
+     135
+    ],
+    "delivered": [
+     120,
+     96,
+     197
+    ],
+    "right_sign": [
+     125,
+     100,
+     205
+    ]
+   }
+  },
+  "knot_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 2,
+   "over_2": 1,
+   "over_8": 1,
+   "over_16": 0,
+   "max": 13,
+   "within_4_pixels_of_a_centre_line": 2,
+   "worst": {
+    "preset": "violet_gel",
+    "pixel": [
+     258,
+     135
+    ],
+    "delivered": [
+     197,
+     187,
+     223
+    ],
+    "right_sign": [
+     208,
+     194,
+     236
+    ]
+   }
+  },
+  "sphere_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 1,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": {
+    "preset": "spectral_prism",
+    "pixel": [
+     245,
+     70
+    ],
+    "delivered": [
+     238,
+     155,
+     160
+    ],
+    "right_sign": [
+     237,
+     156,
+     160
+    ]
+   }
+  }
+ },
+ "errors": [],
+ "normal_raster_changed_pixels": 13,
+ "label": "WebGL preview (Chromium SwiftShader), not a TouchDesigner render",
+ "method": "The family survey's poses (twelve presets at their own poses, torus, knot and sphere, normal and flipped raster, 480 x 270 and 481 x 271, time 2), each drawn twice into the 4x multisampled canvas: with the delivered liquid_prism.frag, and with `cam.screenSign = screenSign(ndc, ndcStep, depthStep);` replaced by the right value for the raster (y = -1 in the flipped raster). The default demo backdrop stays on, so a wrong bend shows. Every pixel that differs is the residual's effect. Pixel coordinates count rows from the bottom (WebGL readPixels).",
+ "script": "session scratchpad agents/centre-line-residual/visibility.cjs (not part of the study)",
+ "date": "2026-11-02"
+}

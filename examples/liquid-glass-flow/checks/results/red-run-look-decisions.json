@@ -1,0 +1,48 @@
+{
+ "what": "Red run of the LookDecisions unit tests (look-acceptance round, 2026-11-02). Plain Python; nothing ran in TouchDesigner.",
+ "date": "2026-11-02",
+ "pre_fix": {
+  "how": "A copy of the three studies as they stood before this round (records and README without the look decisions), with this round's checks/test_study.py copied in.",
+  "results": {
+   "results": {
+    "test_code_stays_as_delivered_until_answered": "ERROR",
+    "test_look_decisions_wait_for_the_user": "ERROR"
+   },
+   "first_errors": [
+    "KeyError: 'look_decisions_for_user'",
+    "KeyError: 'look_decisions_for_user'"
+   ]
+  }
+ },
+ "mutations": {
+  "how": "A copy of the fixed tree, one change at a time; each must turn a LookDecisions test red.",
+  "cases": {
+   "default Object size back to 1 without an answer (LOOK-F1 B)": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "ok"
+    },
+    "first_errors": [
+     "AssertionError: 1.0 != 0.6896551724137931 within 12 places (0.31034482758620685 difference)"
+    ]
+   },
+   "the recommendation recorded as an answer with origin inference": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "FAIL"
+    },
+    "first_errors": [
+     "AssertionError: 'inference' != 'user'",
+     "AssertionError: 'inference' != 'user'"
+    ]
+   },
+   "control: a wording change in the question only (must stay green)": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "ok",
+     "test_look_decisions_wait_for_the_user": "ok"
+    },
+    "first_errors": []
+   }
+  }
+ }
+}

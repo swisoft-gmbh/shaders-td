@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" font-family="Helvetica, Arial, sans-serif">
+  <title>One pixel's ray through the proxy box and a blob</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#eef0f3"/>
+    </marker>
+    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7fd1f0"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="520" fill="#14161a"/>
+  <text x="30" y="38" fill="#eef0f3" font-size="21" font-weight="bold">One pixel, one ray: from the proxy box to the scene behind</text>
+  <text x="30" y="60" fill="#9aa1ab" font-size="14">Schematic, seen from the side, not to scale. Names match blobs.frag.</text>
+
+  <!-- camera -->
+  <path d="M60,270 L100,248 L100,292 z" fill="#3a404a" stroke="#d9dde3"/>
+  <text x="40" y="320" fill="#b8c0ca" font-size="13">camera</text>
+  <text x="40" y="337" fill="#b8c0ca" font-size="12">(camPos)</text>
+
+  <!-- proxy box -->
+  <rect x="300" y="110" width="360" height="320" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="306" y="452" fill="#7fb3d5" font-size="13">proxy box, -1..1 (only its back faces are drawn)</text>
+
+  <!-- blobs -->
+  <path d="M430,190 C470,150 560,160 575,215 C590,260 640,280 620,330 C600,380 520,375 490,345 C460,320 400,330 395,280 C390,235 400,215 430,190 z"
+        fill="#2b3550" fill-opacity="0.8" stroke="#b9a2e0" stroke-width="2"/>
+  <circle cx="625" cy="185" r="20" fill="#2b3550" fill-opacity="0.8" stroke="#b9a2e0" stroke-width="2"/>
+  <text x="600" y="152" fill="#cfc4e4" font-size="12">droplet</text>
+  <text x="455" y="300" fill="#cfc4e4" font-size="13">blobField &lt; 0</text>
+  <text x="455" y="317" fill="#cfc4e4" font-size="13">(inside the glass)</text>
+
+  <!-- ray to entry -->
+  <line x1="100" y1="270" x2="300" y2="262" stroke="#eef0f3" stroke-width="2"/>
+  <circle cx="300" cy="262" r="5" fill="#7fb3d5"/>
+  <text x="250" y="250" fill="#7fb3d5" font-size="12">span.x</text>
+  <!-- march steps (spheres) -->
+  <line x1="300" y1="262" x2="396" y2="258" stroke="#eef0f3" stroke-width="2" marker-end="url(#a)"/>
+  <circle cx="300" cy="262" r="85" fill="none" stroke="#6b7280" stroke-width="1"/>
+  <circle cx="352" cy="260" r="40" fill="none" stroke="#6b7280" stroke-width="1"/>
+  <circle cx="380" cy="259" r="14" fill="none" stroke="#6b7280" stroke-width="1"/>
+  <text x="130" y="150" fill="#9aa1ab" font-size="12">marchSurface: each circle is one step,</text>
+  <text x="130" y="166" fill="#9aa1ab" font-size="12">as long as the distance to the nearest blob</text>
+
+  <!-- hit P and normal -->
+  <circle cx="397" cy="258" r="6" fill="#ffd166"/>
+  <text x="372" y="285" fill="#ffd166" font-size="14" font-weight="bold">P</text>
+  <line x1="397" y1="258" x2="352" y2="242" stroke="#ffd166" stroke-width="2" marker-end="url(#a)"/>
+  <text x="340" y="236" fill="#ffd166" font-size="13" font-weight="bold">n</text>
+  <text x="30" y="482" fill="#ffd166" font-size="13">P: the hit. Its depth is written as gl_FragDepth = (camProj · P).z / w, so other objects sort against it.</text>
+
+  <!-- interior path -->
+  <line x1="397" y1="258" x2="610" y2="318" stroke="#7fd1f0" stroke-width="2.5" marker-end="url(#c)"/>
+  <text x="470" y="262" fill="#7fd1f0" font-size="13">inside = refract(eye, n, 1/ior)</text>
+  <text x="485" y="355" fill="#7fd1f0" font-size="13">chord (marchInside)</text>
+  <circle cx="612" cy="319" r="6" fill="#7fd1f0"/>
+  <text x="624" y="345" fill="#7fd1f0" font-size="14" font-weight="bold">exit</text>
+
+  <!-- outgoing and backdrop -->
+  <line x1="612" y1="319" x2="880" y2="372" stroke="#ef8f6a" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="640" y="300" fill="#ef8f6a" font-size="13">outside = refract(inside, -nExit, ior)</text>
+  <line x1="880" y1="120" x2="880" y2="440" stroke="#d9dde3" stroke-width="3"/>
+  <text x="890" y="140" fill="#d9dde3" font-size="13">scene behind</text>
+  <text x="890" y="157" fill="#d9dde3" font-size="13">(Refraction TOP)</text>
+  <text x="700" y="380" fill="#ef8f6a" font-size="13" transform="rotate(11 700 380)">Backdrop distance</text>
+  <circle cx="880" cy="372" r="6" fill="#ef8f6a"/>
+  <text x="890" y="392" fill="#ef8f6a" font-size="13">sample here</text>
+  <!-- unbent continuation -->
+  <line x1="397" y1="258" x2="880" y2="238" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="700" y="232" fill="#9aa1ab" font-size="12">IOR 1: same ray, same pixel (invisible)</text>
+  <text x="30" y="504" fill="#9aa1ab" font-size="13">Each colour repeats the two bends with its own IOR (dispersion), reusing the measured chord.</text>
+</svg>

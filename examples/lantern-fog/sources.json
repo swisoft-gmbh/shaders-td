@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+    "lines": [
+      622,
+      785
+    ],
+    "sha256": "0509f160136083c4ca64bd11a58f7a7f1cc30f8dcec95b2305d7dd31610c54e3",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Published mechanism and teaching progression",
+    "adaptation": "Use segmentT=exp(-sigma*rho*ds), accumulate T*(1-segmentT)*source, and then multiply T by segmentT. Treat the light result only as a factor of the source."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/Raymarching/lightTransmittance.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/lightTransmittance.ts",
+    "lines": [
+      1,
+      471
+    ],
+    "sha256": "489d93a4e47b9d8e7a0244384277c1340d19531f7f518a1d63431b6cc9fa722e",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Matching archived implementation",
+    "adaptation": "Use segmentT=exp(-sigma*rho*ds), accumulate T*(1-segmentT)*source, and then multiply T by segmentT. Treat the light result only as a factor of the source."
+  }
+]

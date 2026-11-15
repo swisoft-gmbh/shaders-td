@@ -1,0 +1,275 @@
+[
+  {
+    "id": "see_through",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Ior": 1.0,
+      "Dispersion": 0.0,
+      "Frost": 0.0,
+      "Density": 0.0,
+      "Reflection": 0.0,
+      "Rim": 0.0,
+      "Specular": 0.0,
+      "Diffuse": 0.0,
+      "Iridescence": 0.0,
+      "Wobble": 0.0,
+      "Saturation": 1.0
+    },
+    "question": "What does the glass show when it does not bend light?",
+    "prediction": "The object disappears: every glass pixel shows the refraction TOP at its own screen position.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-see_through.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "bend",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Ior": 1.45,
+      "Thickness": 0.8
+    },
+    "question": "What does refract() do to the view through the object?",
+    "prediction": "The backdrop appears shifted and flipped inside the torus; where the surface tilts most, near the edges, it shifts most.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-bend.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "thick",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Ior": 1.45,
+      "Thickness": 1.6
+    },
+    "question": "How does thickness change the bend?",
+    "prediction": "Doubling Thickness doubles the sideways shift, so the flipped image inside the tube is pushed further.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-thick.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "dispersion",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Ior": 1.45,
+      "Thickness": 0.8,
+      "Dispersion": 1.0
+    },
+    "question": "What happens if every colour bends by a different amount?",
+    "prediction": "Same bend as the 'bend' experiment, but every high-contrast edge seen through the glass now carries a rainbow fringe, with red and violet on opposite sides.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-dispersion.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "frost",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Dispersion": 0.0,
+      "Frost": 0.6
+    },
+    "question": "What does spreading the samples over a disc look like?",
+    "prediction": "The view through the glass blurs smoothly, without separate ghost copies.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-frost.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "tint",
+    "parameters": {
+      "Preset": "violet_gel",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "body"
+    },
+    "question": "Where does the glass colour come from?",
+    "prediction": "Grazing edges turn deeper violet (Edge tint lengthens the path there); the middle stays pale and see-through. Without the back-face pass the thickness is one constant value; the 'backface' experiment measures real thickness.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-tint.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "milky",
+    "parameters": {
+      "Preset": "violet_gel",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "body",
+      "Translucency": 0.3
+    },
+    "question": "What does lower translucency do?",
+    "prediction": "Compared with 'tint', only Translucency changes: the glass's own lavender colour replaces most of the see-through view, and the gel looks milky and nearly solid.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-milky.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "reflection",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "reflection",
+      "Iridescence": 0.0
+    },
+    "question": "What does the reflection map contribute on its own?",
+    "prediction": "Studio strips and the coloured gels of the panorama wrap around the object, strongest toward the silhouette. Iridescence is off, so no film colours are mixed in.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-reflection.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "fresnel",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "fresnel"
+    },
+    "question": "Where does glass reflect most?",
+    "prediction": "Dark in the middle where the surface faces the camera, bright at grazing edges.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-fresnel.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "highlights",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Specular": 4.0,
+      "Shininess": 200.0,
+      "Rim": 1.5
+    },
+    "question": "What do specular and rim add?",
+    "prediction": "Small, sharp white highlights where the light reflects toward the camera, and a bright glow along the silhouette.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-highlights.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "wobble",
+    "parameters": {
+      "Preset": "aqua_jelly",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Wobble": 0.6
+    },
+    "question": "How does wobble change the surface?",
+    "prediction": "The normal view shows soft ripples over the whole object while the silhouette stays the same.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-wobble.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "film",
+    "parameters": {
+      "Preset": "oil_slick",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "film"
+    },
+    "question": "What does the oil film look like on its own?",
+    "prediction": "Bands of magenta, green and gold that follow the swirl and shift colour toward the edges.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-film.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "backface",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "thickness",
+      "Backface": true,
+      "Thickness": 1.0
+    },
+    "question": "What does the back-face pass measure?",
+    "prediction": "Thickness varies across the object, largest through the middle of the tube and thin at its edges, instead of one constant value.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-backface.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "morph",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Morphtarget": "violet_gel",
+      "Morph": 0.5
+    },
+    "question": "What lies halfway between two presets?",
+    "prediction": "A lightly violet, partly dispersive glass: every preset value sits halfway between Prism Chrome and Violet Gel.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-morph.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final"
+    },
+    "question": "What does the default look produce?",
+    "prediction": "Clear glass with rainbow fringes, an oil-film sheen, bright rims and studio reflections.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-final.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "type_backdrop",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Backdrop": "type"
+    },
+    "question": "The glass only shows what is behind it: how does the same preset read over a different scene?",
+    "prediction": "Over heavy white type on black, the bent, upside-down letters and their rainbow edges dominate the glass, and the clear parts turn dark, because there is little light behind them. The material is the same as over the checkerboard.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-type_backdrop.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  }
+]

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13">
+  <title>Liquid Glass Lit network (schematic)</title>
+  <desc>Schematic of the liquid_glass_lit component built by builder.py. Solid arrows carry images, dashed arrows are parameter references, orange arrows are lights the glass pass hands to the material. The glass is drawn into demo_scene by the Render Pass TOP render. Not a captured TouchDesigner network.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3a3d45"/>
+    </marker>
+    <marker id="arrowLight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #3a3d45; stroke-width: 1.4; rx: 6; }
+      .core { fill: #eef3ff; stroke: #3b5bdb; stroke-width: 1.8; }
+      .demo { fill: #f6f6f4; stroke: #8a8d94; stroke-dasharray: 0; }
+      .light { fill: #fff4e6; stroke: #d9822b; stroke-width: 1.6; }
+      .name { font-weight: bold; fill: #1d1f24; }
+      .type { fill: #5b5f68; font-size: 11.5px; }
+      .wire { stroke: #3a3d45; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .ref { stroke: #3a3d45; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrow); }
+      .lit { stroke: #d9822b; stroke-width: 2; fill: none; marker-end: url(#arrowLight); }
+      .note { fill: #3a3d45; font-size: 12px; }
+      .head { font-weight: bold; fill: #1d1f24; font-size: 14px; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="980" height="600" fill="#fbfbfa"/>
+  <text x="20" y="28" class="head">liquid_glass_lit component (schematic of the recipe, not a captured network)</text>
+
+  <!-- Core: shader DATs, material, presets -->
+  <rect x="20" y="60" width="150" height="46" rx="6" class="box core"/>
+  <text x="32" y="80" class="name">vertex</text><text x="32" y="97" class="type">Text DAT · .vert</text>
+  <rect x="20" y="120" width="150" height="46" rx="6" class="box core"/>
+  <text x="32" y="140" class="name">pixel</text><text x="32" y="157" class="type">Text DAT · .frag</text>
+  <rect x="230" y="80" width="215" height="66" rx="6" class="box core"/>
+  <text x="242" y="102" class="name">material</text><text x="242" y="119" class="type">GLSL MAT · Lighting Space</text>
+  <text x="242" y="134" class="type">= World · 15 vec4 + sRefraction</text>
+  <path d="M170 83 C200 83 205 100 228 103" class="ref"/>
+  <path d="M170 143 C200 143 205 125 228 122" class="ref"/>
+  <rect x="20" y="190" width="150" height="46" rx="6" class="box core"/>
+  <text x="32" y="210" class="name">presets</text><text x="32" y="227" class="type">module + presets_data</text>
+  <rect x="20" y="250" width="150" height="46" rx="6" class="box core"/>
+  <text x="32" y="270" class="name">preset_exec</text><text x="32" y="287" class="type">Parameter Execute DAT</text>
+  <path d="M170 212 C205 212 215 160 260 148" class="ref"/>
+  <text x="180" y="236" class="note">u() morph, phase()</text>
+
+  <!-- Lights -->
+  <rect x="470" y="60" width="150" height="46" rx="6" class="box light"/>
+  <text x="482" y="80" class="name">demo_key</text><text x="482" y="97" class="type">Light COMP · point</text>
+  <rect x="470" y="118" width="150" height="46" rx="6" class="box light"/>
+  <text x="482" y="138" class="name">demo_rim</text><text x="482" y="155" class="type">Light COMP · point</text>
+  <rect x="660" y="60" width="150" height="46" rx="6" class="box demo"/>
+  <text x="672" y="80" class="name">demo_envmap</text><text x="672" y="97" class="type">GLSL TOP · 2:1 panorama</text>
+  <rect x="660" y="128" width="170" height="46" rx="6" class="box light"/>
+  <text x="672" y="148" class="name">demo_envlight</text><text x="672" y="165" class="type">Environment Light COMP</text>
+  <path d="M735 106 L740 126" class="ref"/>
+  <text x="748" y="121" class="note">envlightmap</text>
+
+  <!-- Glass pass: a Render Pass TOP built on the scene render -->
+  <rect x="230" y="320" width="170" height="46" rx="6" class="box demo"/>
+  <text x="242" y="340" class="name">demo_geo / torus</text><text x="242" y="357" class="type">Geometry COMP · Material</text>
+  <path d="M325 146 L318 318" class="ref"/>
+  <text x="313" y="290" class="note" text-anchor="end">Material = material</text>
+  <rect x="20" y="320" width="150" height="46" rx="6" class="box demo"/>
+  <text x="32" y="340" class="name">demo_cam</text><text x="32" y="357" class="type">Camera COMP</text>
+  <rect x="470" y="290" width="230" height="92" rx="6" class="box demo"/>
+  <text x="482" y="311" class="name">render</text><text x="482" y="328" class="type">Render Pass TOP · the glass only,</text>
+  <text x="482" y="343" class="type">keeps the scene's colour and depth</text>
+  <text x="482" y="358" class="type">Lights = demo_key demo_rim</text><text x="482" y="373" class="type">demo_envlight (by toggles)</text>
+  <path d="M400 343 L468 336" class="ref"/>
+  <path d="M170 350 C300 395 400 385 468 362" class="ref"/>
+  <path d="M620 83 C650 90 640 200 585 288" class="lit"/>
+  <path d="M545 164 C550 220 555 260 558 288" class="lit"/>
+  <path d="M745 174 C700 230 640 270 625 288" class="lit"/>
+  <text x="660" y="218" class="note" fill="#d9822b">uTDLights, uTDEnvLights</text>
+  <text x="660" y="233" class="note" fill="#d9822b">TD_NUM_LIGHTS,</text>
+  <text x="660" y="248" class="note" fill="#d9822b">TD_NUM_ENV_LIGHTS</text>
+
+  <!-- Scene without the glass: the Refraction TOP and the pass's input -->
+  <rect x="20" y="420" width="160" height="46" rx="6" class="box demo"/>
+  <text x="32" y="440" class="name">demo_backdrop</text><text x="32" y="457" class="type">GLSL TOP · checker/type</text>
+  <rect x="215" y="410" width="190" height="46" rx="6" class="box demo"/>
+  <text x="227" y="430" class="name">demo_card</text><text x="227" y="447" class="type">Geometry · card MAT, far plane</text>
+  <path d="M180 443 L213 437" class="ref"/>
+  <rect x="215" y="470" width="190" height="46" rx="6" class="box demo"/>
+  <text x="227" y="490" class="name">demo_front</text><text x="227" y="507" class="type">Geometry · occluder bar (toggle)</text>
+  <rect x="470" y="430" width="230" height="62" rx="6" class="box demo"/>
+  <text x="482" y="451" class="name">demo_scene</text><text x="482" y="468" class="type">Render TOP · the scene without glass</text>
+  <text x="482" y="483" class="type">= Refraction TOP (default)</text>
+  <path d="M405 434 L468 448" class="ref"/>
+  <path d="M405 492 L468 476" class="ref"/>
+  <path d="M150 366 C200 392 420 382 470 440" class="ref"/>
+  <path d="M585 430 L585 384" class="wire"/>
+  <path d="M480 430 C440 405 432 385 432 300 L432 180 C432 162 425 153 415 149" class="ref"/>
+  <text x="440" y="205" class="note">sRefraction</text>
+  <rect x="850" y="313" width="110" height="46" rx="6" class="box demo"/>
+  <text x="862" y="333" class="name">out</text><text x="862" y="350" class="type">Out TOP</text>
+  <path d="M700 336 L848 336" class="wire"/>
+
+  <!-- Legend -->
+  <g transform="translate(420,540)">
+    <path d="M0 8 L40 8" class="wire"/><text x="48" y="12" class="note">image wire</text>
+    <path d="M140 8 L180 8" class="ref"/><text x="188" y="12" class="note">parameter reference</text>
+    <path d="M330 8 L370 8" class="lit"/><text x="378" y="12" class="note">lights via the glass pass</text>
+    <rect x="0" y="26" width="16" height="12" class="core" rx="2"/><text x="22" y="37" class="note">core (strict)</text>
+    <rect x="140" y="26" width="16" height="12" class="demo" rx="2"/><text x="162" y="37" class="note">demo (lenient)</text>
+    <rect x="270" y="26" width="16" height="12" class="light" rx="2"/><text x="292" y="37" class="note">demo lights (lenient)</text>
+  </g>
+</svg>

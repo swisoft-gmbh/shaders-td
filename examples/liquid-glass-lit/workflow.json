@@ -1,0 +1,576 @@
+{
+  "research": {
+    "status": "completed",
+    "skill": "shader-research",
+    "outputs": [
+      "research.md",
+      "sources.json",
+      "brief.md",
+      "decisions.json"
+    ],
+    "steps_applied": [
+      "Read native-scope, method, native-techniques, native-api, chat-web, chat-source-index, source-formats, teaching-evidence.",
+      "Step 1: extracted goals, inputs and audience from the family and direction briefs (brief.md); co-design choices delegated (co-design.json).",
+      "Step 3: corpus.py search/read and demos.py list/show for the refraction article (scene7 specular.ts), shaping-light and raymarching lighting sections.",
+      "Step 4: four focused mechanisms with source id, lines, sha256 and commit (sources.json).",
+      "Step 5: verified native API on docs.derivative.ca (Write a GLSL MAT, GLSL Reference, Environment Light COMP, GLSL MAT, Light COMP, Render TOP) and a TouchDesigner preamble in glslang's tests; recorded the TDEnvLightingPBR doc conflict.",
+      "Step 6: compared routes (research.md): core-style uniforms vs Python-expression light uniforms vs TD light functions.",
+      "Independent review: reread SKILL.md and native-scope, method, native-techniques, native-api, chat-web, chat-source-index, source-formats, teaching-evidence.",
+      "Independent review, step 3: corpus.py verify (393 files, 0 errors), corpus.py search and read of the refraction article lines 120-160 (hide mesh, render to the FBO, show mesh, depth-tested draw), demos.py list for the refraction article.",
+      "Independent review, step 5: raw wiki pages fetched and hashed (Par_Class, Render_Pass_TOP, Render_TOP, Light_COMP, Write_a_GLSL_MAT, GLSL_MAT, GLSL_Reference, Environment_Light_COMP); glsl_PBR.glsl refetched (sha256 unchanged) for M3.",
+      "Independent review, step 6: compared integration routes (Over TOP vs Render Pass TOP) and recorded the choice (research.md, decisions.json); source-formats 'Reversed smoothing edges' applied to T5/M4."
+    ]
+  },
+  "build": {
+    "status": "completed",
+    "skill": "shader-build",
+    "outputs": [
+      "liquid_glass_lit.vert",
+      "liquid_glass_lit.frag",
+      "envmap.frag",
+      "study.json",
+      "build.py",
+      "builder.py",
+      "native.py",
+      "presets.json",
+      "presets.py",
+      "preset_exec.py",
+      "experiments.json",
+      "captures/",
+      "card.vert",
+      "card.frag"
+    ],
+    "steps_applied": [
+      "Read co-design, material-route, native-delivery, dossier.",
+      "Foundation: inherited the core's refraction path; stated spaces (world lighting, Lighting Space = World), UV, alpha, filtering in study.json contracts.",
+      "Mechanism: separate teaching stages for lights, environment, ambient and light sources; fixed time in every experiment.",
+      "Composition: scene lights + env reflections + fallback recombined with the core's glass; demo lights placed to make the fallback visibly different.",
+      "Challenge: rim light first placed too far behind (N.L about 0.05 at the silhouette, invisible); moved to the side. Lights stage first mixed full diffuse, hiding highlight changes; redefined as exactly what lights add.",
+      "Measure: no GPU timing; performance pending (validation.json).",
+      "Feedback/native steps: no TouchDesigner host; native compile, render and export marked pending.",
+      "Independent review: reread shader-build SKILL.md and co-design, material-route, native-delivery, dossier.",
+      "Material route: the glass now joins the scene through a Render Pass TOP built on the scene render (depth kept); demo rebuilt the same way with a backdrop card and an optional occluder; never self-sampling the target the pass writes (the material reads the scene render's TOP copy).",
+      "Challenge: each finding first tested against code, docs or a scratch experiment (fake-td simulation for T1/T3, float32 GGX emulation for M5, float readback for M6, mutation runs for M1/M2/M6); verdicts in review.md.",
+      "Native delivery: native.py lights() uses evalOPs() and cannot raise; apply() resets to defaults; inspect() records render errors; builder adds Info DATs on renders.",
+      "Dossier: decisions.json, sources.json, experiments.json (occluder, blackout, env_seam), validation.json and co-design.json updated; core reuse still from commit a6f95c6 only.",
+      "Feedback/native steps: still no TouchDesigner host; new native checks listed in validation.json (native_integration, native_lighting)."
+    ]
+  },
+  "explain": {
+    "status": "completed",
+    "skill": "shader-explain",
+    "outputs": [
+      "article.source.md",
+      "article.md",
+      "article-plan.json",
+      "article-snippets.json",
+      "figures/network.svg",
+      "captures/light-setups.png"
+    ],
+    "steps_applied": [
+      "Read teaching-evidence and teaching-contract.",
+      "Storyboarded 7 sections as reader question -> smallest model -> code excerpt -> experiment -> labelled preview observation.",
+      "Code excerpts generated with article.py render from // @begin/@end regions; article.py check passes.",
+      "Every image labelled as a WebGL preview; predictions kept separate from observations; native observations pending.",
+      "Independent review: reread shader-explain SKILL.md and teaching-contract.",
+      "New section 'Use it in your own lit scene' (reader question, screen excerpt, occluder experiment, labelled preview observation); blackout and env_seam experiments placed in their sections; N.L and roughness claims relabelled to what the preview can show.",
+      "article.py render and check rerun (8 sections, 12 excerpts); network.svg redrawn for the Render Pass TOP demo and inspected as a rendered image."
+    ]
+  },
+  "review": {
+    "status": "completed",
+    "skill": "shader-review",
+    "outputs": [
+      "review.md",
+      "validation.json",
+      "checks/results/",
+      "review.md#independent-review"
+    ],
+    "steps_applied": [
+      "Source truth: corpus.py verify, cited lines re-read.",
+      "Static contract: check_study.py passes.",
+      "Geometry and numerics reviewed (review.md); temporal steps not applicable (no feedback state).",
+      "Teaching: article.py check; previews inspected against each prediction.",
+      "Native execution, delivery/export and performance: pending, no host.",
+      "Independent review: reread shader-review SKILL.md and references/review.md.",
+      "Step 1: corpus.py verify passes; cited lines reread.",
+      "Step 2: check_study.py passes (28 nodes, 2 wires, 15 experiments).",
+      "Step 5 (geometry): depth and camera conventions checked for the integration route; render-mode and multi-camera limits documented.",
+      "Numerics criteria: ordered smoothing edges, nonzero divisors, finite outputs now tested (unit and float readback tests).",
+      "Step 6: article.py check passes; new previews inspected against their predictions.",
+      "Step 8: 15 findings reported with verdict and action in review.md; all checks rerun with CAPTURE=1 and passing. Native execution, delivery and performance still pending."
+    ]
+  },
+  "family_sync": {
+    "status": "completed",
+    "date": "2026-11-02",
+    "skills": [
+      "shader-build",
+      "shader-review",
+      "shader-explain",
+      "shader-research"
+    ],
+    "outputs": [
+      "liquid_glass_lit.frag",
+      "liquid_glass_lit.vert",
+      "backdrop.frag",
+      "envmap.frag",
+      "study.json",
+      "builder.py",
+      "native.py",
+      "presets.py",
+      "preset_exec.py",
+      "experiments.json",
+      "checks/",
+      "checks/reference/",
+      "captures/",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-plan.json",
+      "figures/network.svg",
+      "decisions.json",
+      "validation.json",
+      "sources.json",
+      "co-design.json",
+      "review.md#family-sync"
+    ],
+    "steps_applied": [
+      "Read in full: shader-build SKILL.md, shader-review SKILL.md and references/review.md, shader-explain SKILL.md and references/teaching-contract.md; consulted shader-research SKILL.md and references/native-api.md for the TouchDesigner facts touched (picking, colour buffers, TDFog, the Render TOP and Render Pass TOP Dither parameter), rechecked on Derivative's raw wiki pages (sha256 in sources.json).",
+      "shader-build, inspect before choosing: no TouchDesigner host; recipe, builder and in-host helpers updated and native steps marked pending (validation.json native_family_sync).",
+      "shader-build Foundation: alpha association restated (the Refraction TOP's alpha is coverage; output premultiplied), sampler filter and extend modes recorded per sampler, colour-space handling made a setup control.",
+      "shader-build Mechanism: experiments keep a reset contract (look controls reset, setup kept) and fixed time; new experiment type_backdrop varies one control.",
+      "shader-build Challenge: each look change isolated at fixed conditions against the 6a58487 baseline kept in checks/reference (frost, wobble, film separately), numbers in review.md.",
+      "shader-build Measure: no GPU timing; WebGL2 SwiftShader previews only, labelled as such.",
+      "shader-review step 1: core and member files read and hashed (sources.json); docs re-read 2026-11-02.",
+      "shader-review step 2: check_study.py passes (28 nodes, 2 wires, 16 experiments).",
+      "shader-review step 4 (temporal): drift clock tested at a month of uptime, a 100-frame morph and a speed drag at 1 h, pause and resume.",
+      "shader-review step 5 (geometry): object scale (wobble), Object size, missing normals, screen orientation, transparent scenes, colour buffers, picking compile.",
+      "shader-review numerics criteria: no normalize of a zero vector, no atan(0, 0), per-sample IOR at least 1, finite capped outputs.",
+      "shader-review step 6: article.py render and check (8 sections, 13 excerpts); new excerpts and experiment placed in their sections.",
+      "shader-review step 8: review.md Family sync table (item, change, test, evidence), red runs on the 6a58487 files, changed test expectations with before/after numbers.",
+      "shader-review steps 3 and 7: impossible here (no TouchDesigner); listed as pending.",
+      "shader-explain: teaching sections that changed were rewritten from the actual source (frost and alpha in 'Start from the glass', compose in 'Light the body', the drift clock in 'Twelve looks', screen orientation, picking and the Type backdrop in 'Use it in your own lit scene', Limits); predictions labelled; every image labelled a WebGL preview; captures inspected against the reference images."
+    ],
+    "verifier_fixes": {
+      "status": "completed",
+      "date": "2026-11-02",
+      "issues": [
+        "V1 Object size vs Geometry COMP scale (medium)",
+        "V2 Dither wording (low)",
+        "V3 native fog check (low)",
+        "V4 R4 red-run evidence (low)"
+      ],
+      "skills": [
+        "shader-build",
+        "shader-review",
+        "shader-explain",
+        "shader-research"
+      ],
+      "outputs": [
+        "liquid_glass_lit.frag",
+        "study.json",
+        "checks/preview_tests.cjs",
+        "checks/test_study.py",
+        "checks/results/",
+        "README.md",
+        "article.source.md",
+        "article.md",
+        "decisions.json",
+        "validation.json",
+        "sources.json",
+        "co-design.json",
+        "review.md#verifier-fixes-after-the-sync"
+      ],
+      "steps_applied": [
+        "Read in full: shader-build SKILL.md, shader-review SKILL.md and references/review.md, shader-explain SKILL.md and references/teaching-contract.md; consulted shader-research SKILL.md and references/native-api.md for the TouchDesigner facts touched (TDDither, TDFog, Camera COMP fog parameters, Geometry COMP Uniform Scale), rechecked on Derivative's raw pages (sha256 in sources.json).",
+        "shader-build, inspect before choosing: no TouchDesigner host; the fix stays in GLSL plus docs, and the new native check is listed as pending (validation.json native_family_sync).",
+        "shader-build Mechanism: the ripple and film fields keep their causal control (Object size) and now mean the same thing for any object transform; one helper, worldScale(), shared by both.",
+        "shader-build Challenge: V1 isolated at fixed conditions (time 2, demo lights scaled with the object) against the unscaled demo; before and after numbers in review.md; SOP scale kept as a control case.",
+        "shader-build Measure: no timing; every image is a WebGL2 SwiftShader preview and labelled as such.",
+        "shader-review step 1: verifier evidence re-run (its comp_scale script reproduced exactly); docs re-read on raw pages.",
+        "shader-review step 2: check_study.py passes.",
+        "shader-review step 5 (geometry): orientation and scale under a Geometry COMP's uniform scale (0.1 and 10) for the normal, film and final stages; non-uniform and per-instance scale named as limits.",
+        "shader-review step 6: article.py render and check; Object size, fog and dither passages rewritten from the actual source.",
+        "shader-review step 8: each issue reproduced, fixed with the smallest change, guarded by a test that fails without the fix (preview and unit red runs on the unfixed and 6a58487 files), changed expectations with before/after numbers in review.md.",
+        "shader-review steps 3 and 7: impossible here (no TouchDesigner); listed as pending.",
+        "shader-explain steps 1, 4, 5 and 7 with the teaching contract: article text tied to source (worldScale, the compose comment), predictions kept as predictions, captures re-rendered and compared (40 of 43 bit-identical, 3 within 1/255) and the contact sheets inspected against the four references."
+      ]
+    },
+    "family_gap_object_size": {
+      "status": "completed",
+      "date": "2026-11-02",
+      "issue": "Object size means three different things across the family, and lit's V1 world-scale rule never reached the core (verifier, medium).",
+      "skills": [
+        "shader-build",
+        "shader-review",
+        "shader-explain",
+        "shader-research"
+      ],
+      "outputs": [
+        "checks/test_study.py",
+        "checks/results/",
+        "native.py",
+        "decisions.json",
+        "co-design.json",
+        "validation.json",
+        "sources.json",
+        "README.md#object-size-across-the-family",
+        "review.md#family-gap-one-meaning-for-object-size",
+        "workflow.json"
+      ],
+      "steps_applied": [
+        "Read in full: shader-build SKILL.md, shader-review SKILL.md and references/review.md, shader-explain SKILL.md and references/teaching-contract.md; consulted shader-research SKILL.md and references/native-api.md for the one TouchDesigner fact touched (ObjectCOMP worldTransform), checked on Derivative's raw page (sha256 in sources.json).",
+        "shader-build, inspect before choosing: no TouchDesigner host; the member files were read, not run; the parent-scale behaviour of worldTransform is labelled an inference and added as a native check (validation.json native_family_sync).",
+        "shader-build Challenge: reproduced first with family_size.py on the four mesh members' working trees (one object, COMP scale 0.1 / 1 / 3 / 10); then one change at a time on copies of this study (mutations.py): core shader form, film only, Prism's reference radius, Fit without the COMP scale, no record; each fails the new tests and the unchanged copy passes.",
+        "shader-build Measure: no timing and no image; no shader, uniform or preset changed, so no capture was re-rendered.",
+        "shader-review step 1: source truth for the rule taken from each member's own files (lines cited in review.md) and Derivative's ObjectCOMP Class page.",
+        "shader-review step 2: check_study.py passes.",
+        "shader-review step 5 (geometry): Object size against Geometry COMP scale, uniform and non-uniform (cube-root average), in Fit and in the shader; per-instance scale listed as a limit.",
+        "shader-review step 6 (teaching): README section 'Object size across the family'; article.py render and check pass; the article needed no change (lit's behaviour is unchanged).",
+        "shader-review step 8: defect reported by impact; fixed inside this study (rule recorded, lit pinned by FamilyObjectSizeRule, docstrings); the core, Prism and Flow ports are outside the write scope and listed as not fixed; steps 3 and 7 impossible here.",
+        "shader-explain step 6: the family rule written as goal, alternatives, evidence, choice, consequence in decisions.json, with a machine-readable family_rule the tests read.",
+        "shader-explain step 7: article.py check passes; it checks source alignment, not teaching quality.",
+        "Red runs: on the 6a58487 files 44 of 74 unit tests fail (both new ones; checks/results/unit-tests-6a58487.txt made again); before the record existed both new tests failed in this tree."
+      ]
+    },
+    "family_gap_centre_lines_and_quarter_gap": {
+      "status": "completed",
+      "date": "2026-11-02",
+      "issue": "C6: the measured screen orientation was wrong on centre-line pixels (Flow: a multisampled silhouette pixel on the centre column; Prism: the whole centre row of an odd-sized flipped raster), and the records claimed bit-identical normal-raster previews. C3: the records left out the quarter fan gap that Liquid Glass Blobs adopted (verifier, both low).",
+      "skills": [
+        "shader-build",
+        "shader-review",
+        "shader-explain",
+        "shader-research"
+      ],
+      "outputs": [
+        "liquid_glass_lit.frag",
+        "checks/preview_tests.cjs",
+        "checks/test_study.py",
+        "checks/results/",
+        "decisions.json",
+        "co-design.json",
+        "validation.json",
+        "README.md",
+        "article.source.md",
+        "article.md",
+        "review.md#family-gap-centre-lines-and-the-quarter-gap",
+        "workflow.json"
+      ],
+      "steps_applied": [
+        "Read in full: shader-build SKILL.md, shader-review SKILL.md and references/review.md, shader-explain SKILL.md and references/teaching-contract.md; consulted shader-research SKILL.md and references/native-api.md. No new TouchDesigner API fact: the change uses dFdx/dFdy, gl_FragCoord and uTDGeneral.viewport, which the shader already relied on.",
+        "shader-build, inspect before choosing: no TouchDesigner host; every result is a WebGL preview, labelled as such; native orientation stays pending (validation.json native_family_sync).",
+        "shader-build Challenge: reproduced first. Five screenSign() forms were patched into copies of the shader through the preview server, never into the study, and measured at fixed poses (fix-gap-lit/c6_survey.cjs: 576 renders per raster and form, one sample and four). The quarter and whole fan gap were measured the same way (fix-gap-lit/c3_survey.cjs).",
+        "shader-build Measure: no timing. All 43 captures rendered again to scratch and compared: 40 bit-identical, 3 within 1/255 as in the previous round, so none was replaced.",
+        "shader-review step 1: the Flow and Prism findings read from their decisions.json and review.md; Prism's screenSign() and test read from its source.",
+        "shader-review step 2: check_study.py passes.",
+        "shader-review step 4 (numerics criteria): a non-number in the derivative guard gives +1; derivatives only in uniform control flow, before TDCheckDiscard() (unit test).",
+        "shader-review step 5 (geometry): orientation at even and odd sizes, normal and flipped raster, single-sample and multisampled, on three meshes.",
+        "shader-review step 6 (teaching): the article's orientation paragraph rewritten from the new source; article.py render and check pass.",
+        "shader-review step 8: each issue reproduced, fixed with the smallest change (Prism's tie-break; C3 record), guarded by tests that fail without the fix: preview screen_orientation_has_no_wrong_pixels (sync form: 1,480 to 1,596 wrong pixels per odd-size flipped row), unit test_c6_centre_line_ties_use_the_guarded_derivative; two changed unit expectations with before/after in review.md. Red runs on the 6a58487 files: 17 of 36 preview tests and 45 of 75 unit tests fail (checks/results/*-6a58487.*, made again). Steps 3 and 7 impossible here.",
+        "shader-explain steps 5 to 7: the decision written as goal, options, evidence, choice, consequence; the test's claim states its measured residual; article rendered and checked.",
+        "Contact sheets and preset captures looked at against the four reference images: unchanged, and the twelve presets stay distinct."
+      ]
+    },
+    "family_gap_test_counts": {
+      "status": "completed",
+      "date": "2026-11-02",
+      "issue": "Verifier (low): the review.md Checks table gave stale test counts (34 of 34 preview, 70 of 70 unit) after the suites grew.",
+      "skills": [
+        "shader-build",
+        "shader-review",
+        "shader-explain",
+        "shader-research"
+      ],
+      "outputs": [
+        "checks/test_study.py",
+        "checks/results/unit-tests-6a58487.txt",
+        "checks/results/",
+        "review.md#family-gap-test-counts-in-the-docs",
+        "README.md",
+        "validation.json",
+        "decisions.json",
+        "co-design.json",
+        "workflow.json"
+      ],
+      "steps_applied": [
+        "Read in full: shader-build SKILL.md, shader-review SKILL.md and references/review.md, shader-explain SKILL.md and references/teaching-contract.md; consulted shader-research SKILL.md and references/native-api.md. No TouchDesigner API fact touched.",
+        "shader-build, inspect before choosing: no TouchDesigner host; no shader, uniform, preset or study.json change, so no native check was added.",
+        "shader-build Challenge: reproduced first with fix-gap-lit/counts/counts.py. The verifier's rerun found 35 preview and 72 unit tests against the table's 34 of 34 and 70 of 70; a snapshot from the start of the centre-line round (fix-gap-lit/prefix) still had those rows, with 35 and 74 tests in the suites. In the current tree the table had been corrected to 36 and 75 by the two earlier gap rounds, but the Saved red runs note still said 44 of 74 for a file that shows 45 of 75.",
+        "shader-build Measure: no timing and no image; no capture rendered again, because nothing that draws changed.",
+        "shader-review step 1: every count read from the suites (test loader, check names in preview_tests.cjs) and the result files the docs cite, not from earlier records.",
+        "shader-review step 2: check_study.py passes.",
+        "shader-review step 6 (teaching): the article states no test counts and needed no change; article.py render and check pass.",
+        "shader-review step 8: the issue fixed with the smallest change (counts corrected) and guarded by DocumentedCounts (2 new unit tests). Red runs: mutations.py makes 13 copies with one stale count or one undocumented new test each; every one fails, the unchanged copy passes. On the 6a58487 files 47 of 77 unit tests fail (checks/results/unit-tests-6a58487.txt made again). No test weakened or removed. Steps 3 and 7 impossible here; steps 4 and 5 do not apply.",
+        "shader-explain steps 6 and 7: the decision written as goal, options, evidence, choice, consequence in decisions.json; co-design.json records the supplied fix and the inferred test; article rendered and checked.",
+        "The preset contact sheet looked at against the four reference images: unchanged, and the twelve presets stay distinct."
+      ]
+    }
+  },
+  "family_names_fix": {
+    "part_of": "family sync",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "Family names (verifier, low): one name per thing across the five members (Fit pulse, Demo backdrop menu).",
+    "change": "The Fit pulse keeps its name `Fitglass`; its label changes from 'Fit to glass objects (sets Object size)' to 'Fit to Glass geometry (sets Object size; finds it by material)', so every member's label starts the same. README, tutorial, preset_exec.py comment, three preview test descriptions and a comment, sources.json, co-design and the native check steps use the new label; README links to the core's Names across the family. One comment in liquid_glass_lit.frag now names Fit to Glass geometry (no code change).",
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Page class: custom parameters have a name and a label).",
+        "Step 5: re-read the Par Class page on docs.derivative.ca (modified 2026-08-19, read 2026-11-02) for pulse(); whether a scripted pulse fires the Parameter Execute callback is not stated there, so it is a pending native check."
+      ],
+      "shader-build": [
+        "Read SKILL.md: recipe (study.json), callback (preset_exec.py) and helpers kept consistent; parameter names and labels are the native delivery surface, so they were changed in the recipe, never in a built network.",
+        "Challenge: the divergence was reproduced first by a script over the five study.json files (three Fit names, two label heads, two backdrop classes).",
+        "No TouchDesigner host: native checks of the renamed pulse and labels stay pending (validation.json, family_names)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one name per thing in the tutorial; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host: valid parameter names and menus; Teaching: matching presets and docs).",
+        "Steps 2, 6 and 8: check_study.py, article.py check, review.md (Family names). Red run before the fix: checks/results/red-run-family-names.json. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close": {
+    "part_of": "family close (gaps G1 to G6 after the two-way sync, commit c94e849)",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "This study's share: G6, the documented picking form in the vertex shader; G2, confirm screenSign()'s tie-break equals the core's or record why it differs; G1, confirm the same Fit value and pattern period as the core on the same scaled object. G3, G4 and G5 were the core's (lit already had the occluder test and the quarter-gap record).",
+    "change": "liquid_glass_lit.vert takes the core's file code for code: the point is placed before the branch, '#ifndef TD_PICKING_ACTIVE' calls passToPixelStage(), '#else' calls TDWritePickingValues(). No pixel shader, uniform, preset or Fit change. New checks/core_reference (the core's four files), FamilyClose unit tests (6), the compile check's picking_preprocessed list (glslang -E). README (picking sentence, Object size across the family table, Status), tutorial (two vertex paragraphs), decisions (G6, G2, G1 and three status notes), validation, co-design, sources and review.md (Family close).",
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (material contracts: TDDeform, TDWorldToProj; 'Write a GLSL MAT').",
+        "Step 5: re-read Write a GLSL MAT's raw page (2026-11-02, sha256 269e3d49..., byte-identical to the family sync's read) for the Picking section: '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif', only the #else block runs while picking. sources.json records it."
+      ],
+      "shader-build": [
+        "Read SKILL.md: inspect before choosing (no host: no native claim; the in-host builder and recipe unchanged, only the vertex Text DAT's source changes).",
+        "Challenge: reproduced first. Tests written before the shader change; on the unchanged tree the two G6 tests and the README table test failed, the G1 and G2 tests passed against the core's new files. Red runs on c94e849 kept (checks/results/red-run-family-close.json).",
+        "Measure: no timing claimed. The 43 WebGL captures rendered again from the new shader; the three that differ by 1/255 from the committed files render bit-identically from the old shader in the same session, so no pixel changed and no capture was replaced.",
+        "Native delivery: picking, orientation and Fit stay pending in TouchDesigner (validation.json, native_family_sync, family_close)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Step 4: the two vertex excerpts ('transforms', 'picking') come from the delivered file through article.py render; the paragraphs beside them were rewritten from the new source (passToPixelStage(), the #else block).",
+        "Step 6: each consequential choice written as goal, alternatives, evidence, choice, consequence (decisions.json, Family close G6, G2, G1).",
+        "Step 7: article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Material route: native deformation and projection; Teaching: section-local code; Portability: checks/core_reference keeps the comparison when the study moves alone).",
+        "Step 1: the core's files compared by sha256 and as code; the critic's measurement reproduced exactly on c94e849 (core 3.0, lit 3.0, Prism 3.4383, Flow 1.45).",
+        "Steps 2, 5, 6 and 8: check_study.py, the geometry contract (what each render runs), article.py check, review.md (Family close). Steps 3 and 7 impossible without TouchDesigner; step 4 does not apply (no temporal change)."
+      ]
+    }
+  },
+  "family_close_verifier_fixes": {
+    "part_of": "family close",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "A family critic's three low findings on this study's family close: LIT-CV1 the tutorial's pointer to main() named 'the last section' (Credits); LIT-CV2 test_g1_fit_and_patterns_match_the_core did not measure the pattern period the records cite; LIT-CV3 the family rule record, README and co-design still called Liquid Glass Blobs not measured. Found, not fixed: the core's tutorial has the same 'last section' pointer (review.md).",
+    "change": "article.source.md (pointer names 'Use it in your own lit scene'; article.md and article-snippets.json rendered again). checks/test_study.py: test_g1 measures each side's ripple and film period from its own evaluated uWobble.y and uFilm.w and its own lookups (helpers lookup_period(), evaluate(), family_rule(), sections()); new FamilyCloseVerifierFixes (2). decisions.json: family_rule.members_family_close for Blobs, its 'how' and status; Family close G1 evidence, consequence and status; two new decisions (Close verify LIT-CV2, LIT-CV3). README (Blobs paragraph, unit count), co-design (open question, three answers), validation (unit_tests, family_close, new family_close_verifier_fixes), review.md (Verifier fixes after the family close; G1 row and Not done note), checks/results/red-run-close-verify.json. No shader, uniform, preset, builder or capture change.",
+    "outputs": [
+      "article.source.md",
+      "article.md",
+      "article-snippets.json",
+      "checks/test_study.py",
+      "decisions.json",
+      "README.md",
+      "co-design.json",
+      "validation.json",
+      "review.md",
+      "workflow.json",
+      "checks/results/red-run-close-verify.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no new TouchDesigner API fact was needed; the Fit checks keep citing worldTransform as the family rule records it, and stay pending natively."
+      ],
+      "shader-build": [
+        "Read SKILL.md (inspect before choosing, Challenge, Measure, native delivery).",
+        "Challenge: each finding reproduced first on scratch copies (agents/close-fix-lit): the article pointer; mutations 'float scale = 1.0;' and a film lookup without worldScale() in lit, checks/core_reference and ../liquid-glass (old test_g1 passed both); the critic's g1_measure.py rerun on Blobs' files. Tests written before the record changes; red runs kept in checks/results/red-run-close-verify.json.",
+        "Measure: no timing claimed; no image changed, so no capture was re-rendered (previews stay labelled as WebGL previews).",
+        "Native delivery: no recipe, shader or builder change; native steps stay pending."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Step 4: the pointer fixed in article.source.md, then article.py render; the excerpts are unchanged.",
+        "Step 7: article.py check rerun; the pointer is checked by a unit test, which article.py check does not cover."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Teaching: claims tied to tests and records; Portability: the suite run with the study copied alone).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Verifier fixes after the family close: evidence, red runs, changed test expectation, merge risk). Steps 3 and 7 impossible without TouchDesigner; steps 4 and 5 do not apply (no temporal or geometry change)."
+      ]
+    }
+  },
+  "family_close_cv5_recheck": {
+    "part_of": "family close",
+    "status": "completed (outside TouchDesigner; no change needed here)",
+    "date": "2026-11-02",
+    "items": "LIT-CV5 (family critic, low): family_rule.members_family_close['liquid-glass-blobs'] said Blobs was not measured.",
+    "change": "None in this study. The finding was already fixed by this study's close verify LIT-CV3 (decision 'Close verify LIT-CV3'; review.md, Verifier fixes after the family close): the entry records Blobs' Fit (0.6897 at box scale 1, 2.0690 at 3), its scene lengths and its two exceptions (film 2.5 per box radius, ripple in box units). The wrong part was in Liquid Glass Blobs: its review note named the key members_2026_11_02. Blobs fixed that note and added test_cv5_pointers_to_the_family_rule_name_keys_that_exist (Blobs review.md, Close verify fixes). Only this entry and the rerun results changed here.",
+    "outputs": [
+      "workflow.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no TouchDesigner API fact involved."
+      ],
+      "shader-build": [
+        "Challenge: reproduced first. The entry no longer says 'not measured'; c94e849's said 'Not compared in this round'. Blobs' own native.py Fit and uFilm.w checked against the entry by test_cv3_rule_record_covers_blobs (passes)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: no tutorial change; article.py render (no change) and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md. Step 2: check_study.py; step 6: article.py render and check; full checks/run_all.sh rerun (compile 58 of 58, 88 unit tests, 36 of 36 preview tests). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_critic_native_and_object_size": {
+    "part_of": "family close (family critic: native runs and one Object size)",
+    "status": "completed outside TouchDesigner; native runs and the rule change pending",
+    "date": "2026-11-02",
+    "items": "Critic issue 1 (high): no family close result ran in TouchDesigner; not fixable here, native list and record template added. Critic issue 2 (medium): one Object size per component; measured, documented and tested; the rule change waits for the user's decision.",
+    "outputs": [
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-snippets.json",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json",
+      "checks/test_study.py",
+      "checks/results/red-run-family-critic.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Write a GLSL MAT: TDDeform and instancing; the running build is authoritative). New API fact checked on docs.derivative.ca/App_Class (2026-11-02): the App class has build, version, osName and osVersion but no GPU member, so the native record takes the GPU by hand."
+      ],
+      "shader-build": [
+        "Read SKILL.md. Challenge: both issues reproduced at fixed conditions with this study's own Fit code on fake objects (scratchpad agents/critic-fit-native/fit_limits.py); baseline kept. Measure: no renders needed, because no shader, preset or uniform expression changed. Native execution marked pending, as the build mode requires when no host is connected."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one Limits point added in the article's own words, no code excerpt changed; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Geometry: instancing and scale; Teaching: docs tied to tests; Host: build, OS, GPU and Info DAT output).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Family critic: native runs and one Object size; claims limited to what ran). Steps 3, 5 (native part) and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_critic_routed_fixes": {
+    "part_of": "family close (family critic: the two findings routed to Lit by the core's rounds)",
+    "status": "completed outside TouchDesigner; native label check pending",
+    "date": "2026-11-02",
+    "items": "Low: decisions.json Verifier V1 said a COMP-scaled object at Object size 1 shows 1/k as many ripples; the lookups give k times as many (routed by the core's review.md, Family close verifier V1). Low: the Thickness and Object size labels did not use the family wording, and checks/core_reference/study.json was an older copy of the core's (routed by the core's PV4).",
+    "change": "decisions.json: the V1 consequence and status corrected, a new decision 'Family critic, routed fixes'. study.json: two labels. checks/core_reference/study.json copied from the core, its sha256 in sources.json, its README updated. README: the Thickness and Object size descriptions, the unit-test sentence. New unit tests FamilyCriticRouted (3). review.md, validation.json, co-design.json and this entry. No shader, uniform expression, preset or capture changed.",
+    "outputs": [
+      "study.json",
+      "decisions.json",
+      "README.md",
+      "review.md",
+      "validation.json",
+      "co-design.json",
+      "sources.json",
+      "workflow.json",
+      "checks/core_reference/study.json",
+      "checks/core_reference/README.md",
+      "checks/test_study.py",
+      "checks/results/red-run-family-critic-routed.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (custom parameter pages: labels are set per parameter; the running build is authoritative). No new TouchDesigner API fact was needed; the labels are text the builder passes on."
+      ],
+      "shader-build": [
+        "Read SKILL.md. Inspect before choosing: no TouchDesigner host here, so no native claim. Challenge: both findings reproduced first (the V1 sentence, the two labels, the core reference sha256 against ../liquid-glass); tests written before the fix and run red; a scratch copy with the pre-V1 lookups fails the V1 measurement. Measure: the core's pattern-detail proxy run once on this study's shader in the WebGL preview, current and pre-V1 lookups; no timing claimed."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md. Step 6: the V1 decision now states its consequence in the direction the code gives. Steps 4 and 7: the tutorial names neither label nor the V1 direction, so article.source.md is unchanged; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host: valid parameter names and labels; Teaching: honest records tied to tests; Portability: the core reference copies pinned by sha256 so the study still checks when moved alone).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Family critic: routed fixes; claims limited to what ran). Full checks/run_all.sh rerun. Steps 3 and 7 cannot run without TouchDesigner; steps 4 and 5 do not apply (no temporal or geometry change)."
+      ]
+    }
+  },
+  "family_close_fit_threshold": {
+    "part_of": "family close (family critic: the COMP-scale test's threshold)",
+    "status": "completed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "items": "Family critic (low): fit_size_carries_presets_over_comp_scale accepted up to 50 pixels over 8/255, while every case here measures 1/255. It now also holds 2/255 at every pixel; the family's shared clause (at most 50 pixels over 8/255) stays. Prism (15/255) and Blobs (66/255, 15 pixels over 2/255) keep their own recorded bounds.",
+    "change": "checks/preview_tests.cjs: the pass condition adds x.max <= 2, the claim says 2/255 (measured 1/255). checks/test_study.py: FitThreshold (1 test). Unit suite 94 tests (93 before); preview suite unchanged. decisions.json: the Family rule's evidence now says the test measures 1/255 and fails above 2/255 (it said 'holds ... to 1/255'). No shader, preset, uniform expression, recipe value or capture changed.",
+    "outputs": [
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/results/red-run-fit-threshold.json",
+      "checks/results/",
+      "README.md",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no TouchDesigner API fact touched, so no new docs lookup."
+      ],
+      "shader-build": [
+        "Read SKILL.md in full. Challenge: the gap reproduced at fixed conditions before any change, with a deliberate slip (worldScale() exponent 0.3333) on a scratch copy (scratchpad agents/fit-threshold/mut); baseline kept (scratchpad agents/fit-threshold/before). Measure: no render of the delivered files needed; no shader, preset or uniform expression changed, so no capture changed. No TouchDesigner host: native checks stay pending."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md in full. Steps 4 and 7: article.py render and check; no excerpt changed, and test claims stay honest (measured 1/255, held to 2/255)."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md in full: Numerics and Teaching criteria (a test's claim matches what it checks; tests not inflated into claims of native correctness).",
+        "Step 2: check_study.py. Step 6: article.py render and check. Step 8: review.md, Family critic: the COMP-scale test's threshold, with red runs. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_centre_line_residual": {
+    "part_of": "family close (family critic: the antialiased centre-line residual)",
+    "status": "completed outside TouchDesigner; native check pending",
+    "date": "2026-11-02",
+    "items": "Family critic (low): a few multisampled silhouette pixels near a centre line still take the wrong orientation sign (up to 8 per row of twelve renders); the centroid fix (Lit's form (e)) needs a centroid varying no TouchDesigner build has run. Kept as a family open question with a native check; no shader changed.",
+    "change": "co-design.json: the family's open question (same words in the core, Flow, Lit and Prism) and an answers entry. validation.json: family_close.native_run check centre_line_residual, family_close.centre_line_residual, unit and preview scopes. decisions.json: the decision. checks/preview_tests.cjs: at most 10 wrong multisampled pixels per row (20 before). checks/test_study.py: CentreLineResidual (2 tests); _critic_native_run_test expects five native checks. README, tutorial, review.md, sources.json. Unit suite 96 tests (94 before). No shader, preset, uniform expression or capture changed.",
+    "outputs": [
+      "co-design.json",
+      "validation.json",
+      "decisions.json",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "review.md",
+      "sources.json",
+      "workflow.json",
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/results/centre-line-residual.json",
+      "checks/results/red-run-centre-line-residual.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Render TOP: record antialiasing with captures). New API facts checked on docs.derivative.ca on 2026-11-02 for the native check: Render TOP Anti-Alias (antialias, aa4) and Override Material (overridemat); Composite TOP Operation Difference (operand, difference); Analyze TOP Operation Maximum in RGB (op, maxrgb). Recorded in sources.json."
+      ],
+      "shader-build": [
+        "Read SKILL.md in full. Inspect before choosing: no TouchDesigner host here, so native execution stays pending and the native check is written as a recipe. Challenge: the residual reproduced at fixed conditions (the survey's 144 renders) with the baseline kept, and its effect on the final image isolated by forcing the orientation on a scratch copy (visibility.cjs). Measure: no timing; every image labelled a WebGL preview. The centroid variant only compiled in glslang on a scratch copy of Lit, not adopted."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md in full. Steps 4, 6 and 7: the limitation stated in the tutorial in plain words with its preview numbers and its open status; the decision written as goal, options, evidence, choice, consequence; article.py render and check; no code excerpt changed."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md in full: Geometry (antialiasing, orientation at odd sizes), Numerics, Teaching (limitations explicit, claims match tests) and Host criteria.",
+        "Steps 2 (check_study.py), 5 (orientation in both rasters, single-sample and multisampled), 6 (article.py render and check) and 8 (review.md, Family critic: the antialiased centre-line residual; red runs and mutations). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "what": "Red run for the family names fix (review.md > Family names). The new FamilyNames unit tests, run on this study before any recipe, callback or doc change of the fix (same working tree, tests added first).",
+  "date": "2026-11-02",
+  "command": "python3 checks/test_study.py FamilyNames",
+  "ran": 3,
+  "outcome": "FAILED (failures=1)",
+  "failures": [
+    {
+      "test": "test_docs_use_the_family_names",
+      "kind": "FAIL",
+      "message": "AssertionError: False is not true : README.md must link to the family table"
+    }
+  ],
+  "green_after_fix": "see checks/results/unit-tests.txt",
+  "note": "Prism's parameter names and labels already matched the family; only the README link to the family table was missing. The two name tests guard against drift."
+}

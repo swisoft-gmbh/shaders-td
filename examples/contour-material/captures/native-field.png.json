@@ -1,0 +1,29 @@
+{
+  "time_unix": 1792512999.0829928,
+  "build": "2025.33230",
+  "version": "099",
+  "platform": "macOS-15.8.1-arm64-arm-64bit",
+  "component": "/project1/mh_shader_examples/contour_material",
+  "resolution": [
+    640,
+    640
+  ],
+  "parameters": {
+    "Pause": true,
+    "Time": 2.0,
+    "Step": 0.016666666666666666,
+    "Bands": 18.0,
+    "Warp": 0.65,
+    "Width": 0.075,
+    "Turn": 25.0,
+    "Stretch": 1.0,
+    "Stage": "field"
+  },
+  "errors": "",
+  "warnings": "",
+  "compile_reports": {
+    "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+  },
+  "scope": "Current cook and compile diagnostics; not visual acceptance or performance.",
+  "capture": "native-field.png"
+}

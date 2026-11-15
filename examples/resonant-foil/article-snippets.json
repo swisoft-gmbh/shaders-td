@@ -1,0 +1,47 @@
+[
+  {
+    "file": "vertex.vert",
+    "region": "displacement",
+    "lines": [
+      11,
+      15
+    ],
+    "sha256": "5c448e5fdf18416e304cb8539a12661a59b9dbf9a97be86f9dfe4ce619855ca4"
+  },
+  {
+    "file": "vertex.vert",
+    "region": "displacement",
+    "lines": [
+      11,
+      15
+    ],
+    "sha256": "5c448e5fdf18416e304cb8539a12661a59b9dbf9a97be86f9dfe4ce619855ca4"
+  },
+  {
+    "file": "vertex.vert",
+    "region": "jacobian",
+    "lines": [
+      18,
+      20
+    ],
+    "sha256": "5c448e5fdf18416e304cb8539a12661a59b9dbf9a97be86f9dfe4ce619855ca4"
+  },
+  {
+    "file": "vertex.vert",
+    "region": "transforms",
+    "lines": [
+      23,
+      29
+    ],
+    "sha256": "5c448e5fdf18416e304cb8539a12661a59b9dbf9a97be86f9dfe4ce619855ca4"
+  },
+  {
+    "file": "pixel.frag",
+    "region": "lighting",
+    "lines": [
+      18,
+      25
+    ],
+    "sha256": "0101b57c139df5b9f8e4666cf41fdbba52cc3c5d76335c4197d4ccd671829e60"
+  }
+]

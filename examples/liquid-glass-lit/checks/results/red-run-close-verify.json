@@ -1,0 +1,171 @@
+{
+  "made": "2026-11-02 by hand for review.md (Verifier fixes after the family close); not written by run_all.sh",
+  "kind": "Python unit tests on scratch copies. No TouchDesigner, no GPU, no image.",
+  "how": "Scratch red_runs.py (session scratchpad, agents/close-fix-lit) copied liquid-glass-lit, liquid-glass and liquid-glass-blobs into a new folder per run and ran checks/test_study.py there. Run A takes the record and tutorial files from a copy made before this round (md5 equal to the round's start snapshot). Runs B and C also ran the test file from before this round (md5 1ffa40be...) on the same mutation; there it fails test_docs_state_the_suite_sizes too, because the docs now say 88.",
+  "reproduction_before_any_change": {
+    "note": "The critic's mutation (mut1: 'float scale = 1.0;') and the film mutation (mut2: no '* worldScale()' in the film lookup), each in liquid_glass_lit.frag, checks/core_reference and ../liquid-glass, on copies of the files before this round with the test file from before this round: test_g1_fit_and_patterns_match_the_core passes both.",
+    "mut1_scale_1": {
+      "ran": 86,
+      "failures": [
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR5R6R8Shader.test_r5_wobble_independent_of_comp_scale"
+      ]
+    },
+    "mut2_film_without_worldScale": {
+      "ran": 86,
+      "failures": [
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR1DriftClock.test_shader_drifts_by_uphase_on_a_lattice_that_repeats_every_256",
+        "SyncR5R6R8Shader.test_v1_patterns_follow_object_size_in_the_world"
+      ]
+    }
+  },
+  "runs": {
+    "A_this_rounds_tests_on_the_files_before_this_round": {
+      "ran": 88,
+      "failed_tests": 3,
+      "failures": [
+        "DocumentedCounts.test_docs_state_the_suite_sizes",
+        "FamilyCloseVerifierFixes.test_cv1_main_pointer_names_the_section_that_shows_it",
+        "FamilyCloseVerifierFixes.test_cv3_rule_record_covers_blobs"
+      ],
+      "test_g1_passed": true
+    },
+    "B_scale_1_in_all_three_shaders": {
+      "ran": 88,
+      "failed_tests": 3,
+      "failures": [
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [../liquid-glass]",
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [checks/core_reference]",
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR5R6R8Shader.test_r5_wobble_independent_of_comp_scale"
+      ],
+      "test_g1_passed": false
+    },
+    "B_old_test_file": {
+      "ran": 86,
+      "failed_tests": 3,
+      "failures": [
+        "DocumentedCounts.test_docs_state_the_suite_sizes",
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR5R6R8Shader.test_r5_wobble_independent_of_comp_scale"
+      ],
+      "test_g1_passed": true
+    },
+    "C_film_lookup_without_worldScale": {
+      "ran": 88,
+      "failed_tests": 4,
+      "failures": [
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [../liquid-glass]",
+        "FamilyClose.test_g1_fit_and_patterns_match_the_core [checks/core_reference]",
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR1DriftClock.test_shader_drifts_by_uphase_on_a_lattice_that_repeats_every_256",
+        "SyncR5R6R8Shader.test_v1_patterns_follow_object_size_in_the_world"
+      ],
+      "test_g1_passed": false
+    },
+    "C_old_test_file": {
+      "ran": 86,
+      "failed_tests": 4,
+      "failures": [
+        "DocumentedCounts.test_docs_state_the_suite_sizes",
+        "FamilyObjectSizeRule.test_fit_carries_every_preset_over_a_comp_scale",
+        "SyncR1DriftClock.test_shader_drifts_by_uphase_on_a_lattice_that_repeats_every_256",
+        "SyncR5R6R8Shader.test_v1_patterns_follow_object_size_in_the_world"
+      ],
+      "test_g1_passed": true
+    },
+    "D_blobs_with_the_familys_film_count": {
+      "ran": 88,
+      "failed_tests": 1,
+      "failures": [
+        "FamilyCloseVerifierFixes.test_cv3_rule_record_covers_blobs"
+      ],
+      "test_g1_passed": true
+    },
+    "E_lit_alone": {
+      "ran": 88,
+      "failed_tests": 0,
+      "failures": [],
+      "test_g1_passed": true
+    },
+    "F_this_round": {
+      "ran": 88,
+      "failed_tests": 0,
+      "failures": [],
+      "test_g1_passed": true
+    }
+  },
+  "measurement_alone": {
+    "note": "This round's test_g1 with its four text assertions removed (scratch test_probe.py), on mut1 and mut2: the period measurement fails by itself.",
+    "mut1": [
+      "0.10000000000000002 != 1.0 within 12 places (0.9 difference) : ('checks/core_reference', 'lit', 'ripple', (0.1, 0.1, 0.1))",
+      "0.10000000000000002 != 1.0 within 12 places (0.9 difference) : ('../liquid-glass', 'lit', 'ripple', (0.1, 0.1, 0.1))"
+    ],
+    "mut2": [
+      "0.1 != 1.0 within 12 places (0.9 difference) : ('checks/core_reference', 'lit', 'film', (0.1, 0.1, 0.1))",
+      "0.1 != 1.0 within 12 places (0.9 difference) : ('../liquid-glass', 'lit', 'film', (0.1, 0.1, 0.1))"
+    ]
+  },
+  "blobs_measurement": {
+    "note": "The critic's g1_measure.py (agents/close-verify-lit) rerun on Blobs' files of 2026-11-02, box scaled by its Geometry COMP. backdrop_distance_over_rule is Blobs' uOptics.y (the script's thickness column). Blobs has no uWobble, so no ripple row: its ripple() uses uMotion.z on the box position.",
+    "film_lookup": "float swirl = valueNoise(pObj * uFilm.w * worldScale() + vec3(0.0, uPhase.z, 0.0)) * 2.0 - 1.0;",
+    "rows": [
+      {
+        "scale": [
+          0.1,
+          0.1,
+          0.1
+        ],
+        "fit": 0.068966,
+        "fit_over_rule": 1.0,
+        "backdrop_distance_over_rule": 1.0,
+        "film_period_over_rule": 1.45
+      },
+      {
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "fit": 0.689655,
+        "fit_over_rule": 1.0,
+        "backdrop_distance_over_rule": 1.0,
+        "film_period_over_rule": 1.45
+      },
+      {
+        "scale": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "fit": 2.068966,
+        "fit_over_rule": 1.0,
+        "backdrop_distance_over_rule": 1.0,
+        "film_period_over_rule": 1.45
+      },
+      {
+        "scale": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "fit": 6.896552,
+        "fit_over_rule": 1.0,
+        "backdrop_distance_over_rule": 1.0,
+        "film_period_over_rule": 1.45
+      },
+      {
+        "scale": [
+          8.0,
+          1.0,
+          1.0
+        ],
+        "fit": 1.37931,
+        "fit_over_rule": 1.0,
+        "backdrop_distance_over_rule": 1.0,
+        "film_period_over_rule": 1.45
+      }
+    ]
+  }
+}

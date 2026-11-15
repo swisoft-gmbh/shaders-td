@@ -1,0 +1,38 @@
+{
+  "static": {
+    "status": "passed",
+    "evidence": "../../validation/package-validation.json"
+  },
+  "native_compile": {
+    "status": "passed",
+    "evidence": "../../validation/fresh-build.json"
+  },
+  "native_render": {
+    "status": "passed",
+    "evidence": "../../validation/fresh-build.json"
+  },
+  "controls": {
+    "status": "passed",
+    "evidence": "../../validation/temporal-tests.json"
+  },
+  "export_reopen": {
+    "status": "passed",
+    "evidence": "../../validation/export-reopen.json"
+  },
+  "performance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "shader_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "article_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "user_visibility": {
+    "status": "reported",
+    "evidence": "../../validation/user-feedback.json"
+  }
+}

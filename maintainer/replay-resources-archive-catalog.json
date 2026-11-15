@@ -1,0 +1,967 @@
+[
+  {
+    "url": "https://r3f.maximeheckel.com/painting4",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/f2d7b403d7242aba09f92b4f44f39bf1f736231140c0096f94010b12a5c55f65",
+    "sha256": "f2d7b403d7242aba09f92b4f44f39bf1f736231140c0096f94010b12a5c55f65",
+    "bytes": 19222,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/painting4.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/painting4-fdde8af16b584633.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/fc84ba73beaed403efa95ac2c899928a05ecdf1b3d71350c36ca3558690365f6",
+    "sha256": "fc84ba73beaed403efa95ac2c899928a05ecdf1b3d71350c36ca3558690365f6",
+    "bytes": 17903,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/painting4-fdde8af16b584633.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/lens",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/a03a5f6347c756bd8143e4b75dc2b64def3af27aa95af5300237ad9256c3db0a",
+    "sha256": "a03a5f6347c756bd8143e4b75dc2b64def3af27aa95af5300237ad9256c3db0a",
+    "bytes": 19040,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/lens.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/lens2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/0f29ae28ca70b124415e8ef608dca01e2595d2449d45a880578bf6328c720226",
+    "sha256": "0f29ae28ca70b124415e8ef608dca01e2595d2449d45a880578bf6328c720226",
+    "bytes": 22003,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/lens2.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/painting6",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/ba6136ba2bc89b1ce9a03a827f25f032dc61e147a719dcb4b9dce787f5782474",
+    "sha256": "ba6136ba2bc89b1ce9a03a827f25f032dc61e147a719dcb4b9dce787f5782474",
+    "bytes": 22439,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/painting6.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/planet",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/756e7c75b1f7c87fc06287648a893d725ed960dd2e4fd3b3dd768f7f2aa3ac30",
+    "sha256": "756e7c75b1f7c87fc06287648a893d725ed960dd2e4fd3b3dd768f7f2aa3ac30",
+    "bytes": 27319,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/planet.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/raytracing2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/eac7d7a6e1899cdb0daaa858e098f546e657bd7b569c70a494bb0aa29723cb19",
+    "sha256": "eac7d7a6e1899cdb0daaa858e098f546e657bd7b569c70a494bb0aa29723cb19",
+    "bytes": 19898,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/raytracing2.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/sacilotto",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/e934a2d76b08a7285cb862c4a2fefdffe8b8c48cf73dcbe0fd52eb661f93e19f",
+    "sha256": "e934a2d76b08a7285cb862c4a2fefdffe8b8c48cf73dcbe0fd52eb661f93e19f",
+    "bytes": 18052,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/sacilotto.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/vhs",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/7e17db5564176c934256549c4868527d93598442e1de3a40c6df120c4847a505",
+    "sha256": "7e17db5564176c934256549c4868527d93598442e1de3a40c6df120c4847a505",
+    "bytes": 19953,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/pages/vhs.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/lens-df61afaae5a0bcb3.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/5e71abc0645f3f95ca68ee5c7d2ef8ca1d065dca81dbfa4cde8bdadc2d5300d8",
+    "sha256": "5e71abc0645f3f95ca68ee5c7d2ef8ca1d065dca81dbfa4cde8bdadc2d5300d8",
+    "bytes": 9991,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/lens-df61afaae5a0bcb3.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/lens2-771d7cedb7990bb4.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/d6c4cfa214d2388419eea8a8530a7658b4a4571fc31eb00d19ce6d53beb50870",
+    "sha256": "d6c4cfa214d2388419eea8a8530a7658b4a4571fc31eb00d19ce6d53beb50870",
+    "bytes": 8822,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/lens2-771d7cedb7990bb4.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/painting6-cfc617326d2fc8ae.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/a86496e78e1b0276a3d8d1c625d88efe48e052d63e3a0e8f35c265b376b8c2cf",
+    "sha256": "a86496e78e1b0276a3d8d1c625d88efe48e052d63e3a0e8f35c265b376b8c2cf",
+    "bytes": 29477,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/painting6-cfc617326d2fc8ae.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/planet-3fc4abec4e141d64.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/5dd12336e96a5f99e9e9460dac20de40a26dcc8477afc39224e7bc991bf85b26",
+    "sha256": "5dd12336e96a5f99e9e9460dac20de40a26dcc8477afc39224e7bc991bf85b26",
+    "bytes": 6508,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/planet-3fc4abec4e141d64.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/raytracing2-fcbdc1e7028dfde3.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/35565f829d238e4633bde441b3501d0db1788ba18a361021da21ca71504863c2",
+    "sha256": "35565f829d238e4633bde441b3501d0db1788ba18a361021da21ca71504863c2",
+    "bytes": 24127,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/raytracing2-fcbdc1e7028dfde3.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/sacilotto-1eafa742ec7d6354.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/65d3353115e19502cb37621d03d14acc99b02a730c4e06116892bb01ea109cee",
+    "sha256": "65d3353115e19502cb37621d03d14acc99b02a730c4e06116892bb01ea109cee",
+    "bytes": 3764,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/sacilotto-1eafa742ec7d6354.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/vhs-6373b71923075651.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/c523f1aa1ab18f3e6a3930b0d9286b30642aaf03fd0b9919ab5e33d4a01c94e8",
+    "sha256": "c523f1aa1ab18f3e6a3930b0d9286b30642aaf03fd0b9919ab5e33d4a01c94e8",
+    "bytes": 12598,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/vhs-6373b71923075651.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/build-TfctsWXpff2fKS/_buildManifest.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/8b8fb139181d291626f1f40dfeb95a00e72f3ca5c024b7b4e588c9ec4da3922b",
+    "sha256": "8b8fb139181d291626f1f40dfeb95a00e72f3ca5c024b7b4e588c9ec4da3922b",
+    "bytes": 16915,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/_buildManifest.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/build-TfctsWXpff2fKS/_ssgManifest.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/6f5b4aa00d2f8d6aed9935b471806bf7acef464d0c1d390260e5fe27f800c67e",
+    "sha256": "6f5b4aa00d2f8d6aed9935b471806bf7acef464d0c1d390260e5fe27f800c67e",
+    "bytes": 77,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/_ssgManifest.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/1302-27fe362836e71684.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/2adb54d5bdab060c6b37c742e992fb8cfaafd78c4ee2a86b9c3dd88e76834661",
+    "sha256": "2adb54d5bdab060c6b37c742e992fb8cfaafd78c4ee2a86b9c3dd88e76834661",
+    "bytes": 33045,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/1302-27fe362836e71684.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/2885-42295f5481ee0ff0.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/7675fc8f90b565cabbb549c82c860372c097718ac1699d3126a36c2882354185",
+    "sha256": "7675fc8f90b565cabbb549c82c860372c097718ac1699d3126a36c2882354185",
+    "bytes": 8442,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/2885-42295f5481ee0ff0.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/2953-66600a400336d15e.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/a5fd710003636135c54872281d7a7e125faf4ab34131b0c99bbafcfdeb923d48",
+    "sha256": "a5fd710003636135c54872281d7a7e125faf4ab34131b0c99bbafcfdeb923d48",
+    "bytes": 69978,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/2953-66600a400336d15e.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/394f23e0-ae3a426a1050f061.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/4db4365efd7bcc5960d46d5a80af04e7bb97b31d5aec49d71a01b1c1768b2aa1",
+    "sha256": "4db4365efd7bcc5960d46d5a80af04e7bb97b31d5aec49d71a01b1c1768b2aa1",
+    "bytes": 371233,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/394f23e0-ae3a426a1050f061.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/4200-94b0bcbc5ba451be.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/41843987e4e681ceaa7762e7193a139923bf96a834f3ce3f6849d57cc92f2c1d",
+    "sha256": "41843987e4e681ceaa7762e7193a139923bf96a834f3ce3f6849d57cc92f2c1d",
+    "bytes": 2263,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/4200-94b0bcbc5ba451be.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/456-a197f651e6ca844b.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/256d3c92687ee3d5242da6115c174575e24c78c172e23ff39045ef496b08fde2",
+    "sha256": "256d3c92687ee3d5242da6115c174575e24c78c172e23ff39045ef496b08fde2",
+    "bytes": 15583,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/456-a197f651e6ca844b.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/4853-55a40b885dafb98c.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/cc2f571eeb2d2347ab70507c4cf40e88ffaccddf1d896d4246a57b11f4d223e5",
+    "sha256": "cc2f571eeb2d2347ab70507c4cf40e88ffaccddf1d896d4246a57b11f4d223e5",
+    "bytes": 84241,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/4853-55a40b885dafb98c.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/5499-13f572acdaf1acc7.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/1a5dd298eeff870423f4388a7d362385a5062e3adce95f00a38fc20b005dbef8",
+    "sha256": "1a5dd298eeff870423f4388a7d362385a5062e3adce95f00a38fc20b005dbef8",
+    "bytes": 111663,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/5499-13f572acdaf1acc7.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/5705-b003af30acb67643.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/ac506922f797c060a2f4834e296ad46772ab1c8b254c020abe3a188cef030aa1",
+    "sha256": "ac506922f797c060a2f4834e296ad46772ab1c8b254c020abe3a188cef030aa1",
+    "bytes": 7449,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/5705-b003af30acb67643.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/576a46fa-faa6caed0c9325f2.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/c9f2d4318615c4931fa80b8a2426e8e5bccb650174cec4930a5ac5a15acf8aef",
+    "sha256": "c9f2d4318615c4931fa80b8a2426e8e5bccb650174cec4930a5ac5a15acf8aef",
+    "bytes": 87856,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/576a46fa-faa6caed0c9325f2.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/6387-cd0c90e506a9eddf.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/dd91bc55f3a42a5689669a735cc3bdb9746993808e7d65c878e7f74adfa9b5cc",
+    "sha256": "dd91bc55f3a42a5689669a735cc3bdb9746993808e7d65c878e7f74adfa9b5cc",
+    "bytes": 12581,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/6387-cd0c90e506a9eddf.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/6e60299b-fbe1ed2fe1ff2dc0.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/6c3395c4ebad8f2debf378cf8e2762f00ed108010e1a3ca45df5fce7d1530578",
+    "sha256": "6c3395c4ebad8f2debf378cf8e2762f00ed108010e1a3ca45df5fce7d1530578",
+    "bytes": 162920,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/6e60299b-fbe1ed2fe1ff2dc0.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/7962-bb525c26976b28ca.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/4c4297172436802eb0db2f32e5f1b31ca3a209abc1bc6d8e81380dce8af77809",
+    "sha256": "4c4297172436802eb0db2f32e5f1b31ca3a209abc1bc6d8e81380dce8af77809",
+    "bytes": 19871,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/7962-bb525c26976b28ca.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/7965-d03110362a8f98c5.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/cbd4b07cc2b39aa6674cc0ac7332675be24648a9c60bc5c536afb525cec13abf",
+    "sha256": "cbd4b07cc2b39aa6674cc0ac7332675be24648a9c60bc5c536afb525cec13abf",
+    "bytes": 41855,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/7965-d03110362a8f98c5.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/9294-7cdb669a7102a6d6.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/fc8195938bdbdef6241242cd3cb1a4298737e6a604dc8fb3c712a194f2fc5447",
+    "sha256": "fc8195938bdbdef6241242cd3cb1a4298737e6a604dc8fb3c712a194f2fc5447",
+    "bytes": 3345,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/9294-7cdb669a7102a6d6.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/940-86d74037d1e50249.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/5bbdff1670ad3a492fff66914d87ac4d11481ecb53ec4616bc154460b1a74ca8",
+    "sha256": "5bbdff1670ad3a492fff66914d87ac4d11481ecb53ec4616bc154460b1a74ca8",
+    "bytes": 27137,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/940-86d74037d1e50249.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/9810-138eb72033614221.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/df392eae05a846840fdd4d3f3e75ddd1783ddf12a70296220e6c17919564bce6",
+    "sha256": "df392eae05a846840fdd4d3f3e75ddd1783ddf12a70296220e6c17919564bce6",
+    "bytes": 13265,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/9810-138eb72033614221.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/9989-1004944a767f604a.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/52ad4e67399c7a4f419a269425c949d76192e4de608af751149c61e4b694e7c7",
+    "sha256": "52ad4e67399c7a4f419a269425c949d76192e4de608af751149c61e4b694e7c7",
+    "bytes": 168397,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/9989-1004944a767f604a.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/b31a666a-06633d4d4e5210f7.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/01a7c0ac6a9fd0861d9362e4ed589cc80ac21fb1f7f0ccdfce5ff06ba011183b",
+    "sha256": "01a7c0ac6a9fd0861d9362e4ed589cc80ac21fb1f7f0ccdfce5ff06ba011183b",
+    "bytes": 560292,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/b31a666a-06633d4d4e5210f7.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/bd4ff835-b904d52c4f9585ef.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/67bac5c744645d6bd16b831a5540fc23a01ae8212731f1fd3bf8aa4a14cd13e2",
+    "sha256": "67bac5c744645d6bd16b831a5540fc23a01ae8212731f1fd3bf8aa4a14cd13e2",
+    "bytes": 80999,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/bd4ff835-b904d52c4f9585ef.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/c1049093-3c87970fc1dbdf5e.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/9b1153145fd4d1efdb945c104ad5a3df01ca9721542b1eafcd4ce58b3cf303b9",
+    "sha256": "9b1153145fd4d1efdb945c104ad5a3df01ca9721542b1eafcd4ce58b3cf303b9",
+    "bytes": 109675,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/c1049093-3c87970fc1dbdf5e.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/c8791f83-5fd959498888dea9.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/cbcf6341ddf9cf9cf914baa4fd6f6474ed14982bd519a34ab059cfcb17a4f6bd",
+    "sha256": "cbcf6341ddf9cf9cf914baa4fd6f6474ed14982bd519a34ab059cfcb17a4f6bd",
+    "bytes": 388075,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/c8791f83-5fd959498888dea9.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/f8e28c46-f88f88d2f516b887.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/1c41821580ce8ef38ec7dfd9576491af76e32637269abe310ff505c00a948634",
+    "sha256": "1c41821580ce8ef38ec7dfd9576491af76e32637269abe310ff505c00a948634",
+    "bytes": 332988,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/f8e28c46-f88f88d2f516b887.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/framework-663f7a1e7a7576c3.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/65649de6f86e68df7706e5c4b19b1fb10c91c5619b3d32c7e707bc8ecce7a5bc",
+    "sha256": "65649de6f86e68df7706e5c4b19b1fb10c91c5619b3d32c7e707bc8ecce7a5bc",
+    "bytes": 189686,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/framework-663f7a1e7a7576c3.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/main-ef4957ecec9a0a65.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/8012059e1c42ab4d4d39ccb837ed959986b7d91f03fa0c974bf92c9ba9e59e8c",
+    "sha256": "8012059e1c42ab4d4d39ccb837ed959986b7d91f03fa0c974bf92c9ba9e59e8c",
+    "bytes": 137789,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/main-ef4957ecec9a0a65.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/_app-634e1008b334a661.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/6ec9e1ad77bf1da99dd2d9699ab1ca78d43fa68857ac9a1f3bc39e7a87c7dca5",
+    "sha256": "6ec9e1ad77bf1da99dd2d9699ab1ca78d43fa68857ac9a1f3bc39e7a87c7dca5",
+    "bytes": 73999,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/_app-634e1008b334a661.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/_error-1ead5ddb1d86f2f2.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/1e7aff254a5f71163fe0be22da36fb4bf1282615613cd336dfa72930592a4517",
+    "sha256": "1e7aff254a5f71163fe0be22da36fb4bf1282615613cd336dfa72930592a4517",
+    "bytes": 224,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/_error-1ead5ddb1d86f2f2.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+    "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+    "bytes": 112594,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/polyfills-42372ed130431b0a.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/webpack-4798d4e6b732b180.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/c024cd8f9b8fcb5f0bceb39bbdd993a7bba7dc23eac756bb14e0447c077cb911",
+    "sha256": "c024cd8f9b8fcb5f0bceb39bbdd993a7bba7dc23eac756bb14e0447c077cb911",
+    "bytes": 3375,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "current-8-pages/scripts/webpack-4798d4e6b732b180.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/bubble",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/cf0c7f3f84397b428270baa4e0d3c2cd41b2f1d9f52177bb6bde48bb08c8ae88",
+    "sha256": "cf0c7f3f84397b428270baa4e0d3c2cd41b2f1d9f52177bb6bde48bb08c8ae88",
+    "bytes": 22348,
+    "mime_type": "text/html",
+    "kind": "html",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "bubble/bubble.html"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/1898-46d08af3b50e139c.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/d9ede20ffae6407380b0d452314310f0c107fdcc45f937ecaf3a786f7c4bf57f",
+    "sha256": "d9ede20ffae6407380b0d452314310f0c107fdcc45f937ecaf3a786f7c4bf57f",
+    "bytes": 62729,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "bubble/bubble-script-01.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/chunks/pages/bubble-e366c5fb5b0adc40.js?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/092fcba0ec43afe0667929989a0e2d75a0cb46da2bf138aca99f8b11abb47030",
+    "sha256": "092fcba0ec43afe0667929989a0e2d75a0cb46da2bf138aca99f8b11abb47030",
+    "bytes": 8229,
+    "mime_type": "text/javascript",
+    "kind": "javascript",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "bubble/bubble-script-02.js"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/shapes.gltf",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/bb0feee9c78102eee6d6b1fe6bbf60d343ee2d90d71f1f773e861e9d618b20fd",
+    "sha256": "bb0feee9c78102eee6d6b1fe6bbf60d343ee2d90d71f1f773e861e9d618b20fd",
+    "bytes": 1851341,
+    "mime_type": "model/gltf+json",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/bb0feee9c78102eee6d6b1fe6bbf60d343ee2d90d71f1f773e861e9d618b20fd.gltf"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/SpaceGrotesk-Medium.ttf",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/a956a4691a0ba64031858a5c79634a821d3ce81b5088bbcd05d774f7006c51c1",
+    "sha256": "a956a4691a0ba64031858a5c79634a821d3ce81b5088bbcd05d774f7006c51c1",
+    "bytes": 90044,
+    "mime_type": "font/ttf",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/a956a4691a0ba64031858a5c79634a821d3ce81b5088bbcd05d774f7006c51c1.ttf"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/bunny-transformed.glb",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/aaf7b13a069bdf3c4a6f50929e34f6f3efd81ec1c5ee0244addbd6c188b8add2",
+    "sha256": "aaf7b13a069bdf3c4a6f50929e34f6f3efd81ec1c5ee0244addbd6c188b8add2",
+    "bytes": 110404,
+    "mime_type": "model/gltf-binary",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/aaf7b13a069bdf3c4a6f50929e34f6f3efd81ec1c5ee0244addbd6c188b8add2.glb"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/venus/scene.gltf",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/abfcda22c4dc29670f0d40d298094f78410950ec13d9735f2f8a591eabb9f52d",
+    "sha256": "abfcda22c4dc29670f0d40d298094f78410950ec13d9735f2f8a591eabb9f52d",
+    "bytes": 4408,
+    "mime_type": "model/gltf+json",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/abfcda22c4dc29670f0d40d298094f78410950ec13d9735f2f8a591eabb9f52d.gltf"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/inter-var-latin.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/7b37fe23a7c053972771428efcb225cd67bc573452cea2efc55e576580fe4963",
+    "sha256": "7b37fe23a7c053972771428efcb225cd67bc573452cea2efc55e576580fe4963",
+    "bytes": 36532,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/7b37fe23a7c053972771428efcb225cd67bc573452cea2efc55e576580fe4963.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/inter-var-latin-italic.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/7226705438c333b1fd36c6ab2d6433d598debda548ebbd0ba809f1bcfc4ea868",
+    "sha256": "7226705438c333b1fd36c6ab2d6433d598debda548ebbd0ba809f1bcfc4ea868",
+    "bytes": 21512,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/7226705438c333b1fd36c6ab2d6433d598debda548ebbd0ba809f1bcfc4ea868.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/fira-code.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/105c876c9d98b25b61545e8682771ac553a40fcb7495e622d3dc4967473f05e9",
+    "sha256": "105c876c9d98b25b61545e8682771ac553a40fcb7495e622d3dc4967473f05e9",
+    "bytes": 103168,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/105c876c9d98b25b61545e8682771ac553a40fcb7495e622d3dc4967473f05e9.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/SpaceGrotesk-Regular.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/05f850c72b69005f10f63dfa87516dd0e6e073e269993a4c574c8768d92bd200",
+    "sha256": "05f850c72b69005f10f63dfa87516dd0e6e073e269993a4c574c8768d92bd200",
+    "bytes": 31372,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/05f850c72b69005f10f63dfa87516dd0e6e073e269993a4c574c8768d92bd200.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/SpaceGrotesk-Medium.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/cb0de7fb94a70efa43717119354407e194bd79df4df9e5c6cad014012503a373",
+    "sha256": "cb0de7fb94a70efa43717119354407e194bd79df4df9e5c6cad014012503a373",
+    "bytes": 31320,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/cb0de7fb94a70efa43717119354407e194bd79df4df9e5c6cad014012503a373.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/SpaceGrotesk-SemiBold.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/ed9a06cd74db4df9b380b4d61ed56c1d3b71bb855b203d5bf7b7e7d2a4e3ee0c",
+    "sha256": "ed9a06cd74db4df9b380b4d61ed56c1d3b71bb855b203d5bf7b7e7d2a4e3ee0c",
+    "bytes": 31296,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/ed9a06cd74db4df9b380b4d61ed56c1d3b71bb855b203d5bf7b7e7d2a4e3ee0c.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/venus/scene.bin",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/97c3341d8b40679704676c054eb705ae9f1ac5411e813c802897122010b61a40",
+    "sha256": "97c3341d8b40679704676c054eb705ae9f1ac5411e813c802897122010b61a40",
+    "bytes": 1039128,
+    "mime_type": "application/octet-stream",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/97c3341d8b40679704676c054eb705ae9f1ac5411e813c802897122010b61a40.bin"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/venus/textures/Default_metallicRoughness.png",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/004ecfb9e2e7a8fe2bacedfcfb7bfded10ba9b9ae11158d64a49ff7981d5855a",
+    "sha256": "004ecfb9e2e7a8fe2bacedfcfb7bfded10ba9b9ae11158d64a49ff7981d5855a",
+    "bytes": 1339656,
+    "mime_type": "image/png",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/004ecfb9e2e7a8fe2bacedfcfb7bfded10ba9b9ae11158d64a49ff7981d5855a.png"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/venus/textures/Default_normal.jpeg",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/48e1370c4fdcaba93796ce1ac88eaa44d69106f409d0456972d4ef6a9ad9e324",
+    "sha256": "48e1370c4fdcaba93796ce1ac88eaa44d69106f409d0456972d4ef6a9ad9e324",
+    "bytes": 1785604,
+    "mime_type": "image/jpeg",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/48e1370c4fdcaba93796ce1ac88eaa44d69106f409d0456972d4ef6a9ad9e324.jpg"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/fonts/DepartureMono-Regular.woff2",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/2216f860026991f879d5f9a7a0777368f3b24c11078de2326a1518bb2ae498e3",
+    "sha256": "2216f860026991f879d5f9a7a0777368f3b24c11078de2326a1518bb2ae498e3",
+    "bytes": 17428,
+    "mime_type": "font/woff2",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/objects/2216f860026991f879d5f9a7a0777368f3b24c11078de2326a1518bb2ae498e3.woff2"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/_next/static/css/c7f174c0beae10e2.css?dpl=dpl_DWMmuTbmhX4aG6RiAJFk11BbRiYX",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/68bdf20fac7f88a5cb76f203fe795ad75485e667e07531b987d9f96d0fc6f99e",
+    "sha256": "68bdf20fac7f88a5cb76f203fe795ad75485e667e07531b987d9f96d0fc6f99e",
+    "bytes": 2532,
+    "mime_type": "text/css",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-current-demos-and-media-2026-10-16.zip",
+      "member": "media-and-styles/styles/current.css"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/paper/watercolor.png",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/385d44d1243cc851e55b603fd9358bd26a9e459adbdebe5d1d0efba94167453a",
+    "sha256": "385d44d1243cc851e55b603fd9358bd26a9e459adbdebe5d1d0efba94167453a",
+    "bytes": 529029,
+    "mime_type": "image/png",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-03-2026-10-16-part-001.zip",
+      "recovery_id": "media-03"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/mixbox-lut.png",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/b13d7532033d96d963c7e3a854ba2b4e98b8a44d324456386e9b34e0615552be",
+    "sha256": "b13d7532033d96d963c7e3a854ba2b4e98b8a44d324456386e9b34e0615552be",
+    "bytes": 176599,
+    "mime_type": "image/png",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-04-2026-10-16-part-001.zip",
+      "recovery_id": "media-04"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/honda_3000.jpg",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/f6e287100fbf3bdb115a3f8de5af81b31714bd21a639cd0790be21d962ca70c9",
+    "sha256": "f6e287100fbf3bdb115a3f8de5af81b31714bd21a639cd0790be21d962ca70c9",
+    "bytes": 172926,
+    "mime_type": "image/webp",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-05-2026-10-16-part-001.zip",
+      "recovery_id": "media-05"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/paint-normal.jpg",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/756ab66ea6b986af9514a99394d09e99148feb4815576f6b3028655f441631f0",
+    "sha256": "756ab66ea6b986af9514a99394d09e99148feb4815576f6b3028655f441631f0",
+    "bytes": 731589,
+    "mime_type": "image/jpeg",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-08-2026-10-16-part-001.zip",
+      "recovery_id": "media-08"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://cdn.maximeheckel.com/videos/footages/landscape-60fps.mp4",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/3776b33445d089827fdeded0011741fc196f1f97b473a54a3f91b41da15a2968",
+    "sha256": "3776b33445d089827fdeded0011741fc196f1f97b473a54a3f91b41da15a2968",
+    "bytes": 2997013,
+    "mime_type": "video/mp4",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-09-2026-10-16-part-001.zip",
+      "recovery_id": "media-09"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://r3f.maximeheckel.com/assets/metal-texture.jpg",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/ef063b8f751db77d2ca4ef8a7f28ba60096e58cc8250b30f32923f99b067c9aa",
+    "sha256": "ef063b8f751db77d2ca4ef8a7f28ba60096e58cc8250b30f32923f99b067c9aa",
+    "bytes": 49498,
+    "mime_type": "image/jpeg",
+    "kind": "asset",
+    "source_provenance": {
+      "archive": "maxime-heckel-media-10-2026-10-16-part-001.zip",
+      "recovery_id": "media-10"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://www.gstatic.com/draco/versioned/decoders/1.5.5/draco_wasm_wrapper.js",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/b93f6384147828f857456c84845f4dbceada5b7a8455991109c853e236a1f018",
+    "sha256": "b93f6384147828f857456c84845f4dbceada5b7a8455991109c853e236a1f018",
+    "bytes": 58916,
+    "mime_type": "text/javascript",
+    "kind": "decoder",
+    "source_provenance": {
+      "capture": "Firecrawl normal HTTP fetch",
+      "version": "1.5.5",
+      "requirement": "bunny-transformed.glb KHR_draco_mesh_compression"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://www.gstatic.com/draco/versioned/decoders/1.5.5/draco_decoder.wasm",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/0103c8bff79532c2f1a496dd9ea0764ac692ed8585d9136596ef9f043873a61f",
+    "sha256": "0103c8bff79532c2f1a496dd9ea0764ac692ed8585d9136596ef9f043873a61f",
+    "bytes": 283091,
+    "mime_type": "application/wasm",
+    "kind": "decoder",
+    "source_provenance": {
+      "capture": "Firecrawl normal HTTP fetch",
+      "version": "1.5.5",
+      "requirement": "bunny-transformed.glb KHR_draco_mesh_compression"
+    },
+    "category_id": "04"
+  },
+  {
+    "url": "https://www.gstatic.com/draco/versioned/decoders/1.5.5/draco_decoder.js",
+    "path": "Downloads/04-offline-replay/_assembled/local-replay/maxime-heckel-replay/objects/6604be0104930049a96f5b30e2c17928fb13daca25c1f088349730eb0c6db3c8",
+    "sha256": "6604be0104930049a96f5b30e2c17928fb13daca25c1f088349730eb0c6db3c8",
+    "bytes": 709590,
+    "mime_type": "text/javascript",
+    "kind": "decoder",
+    "source_provenance": {
+      "capture": "Firecrawl normal HTTP fetch",
+      "version": "1.5.5",
+      "requirement": "bunny-transformed.glb KHR_draco_mesh_compression"
+    },
+    "category_id": "04"
+  }
+]

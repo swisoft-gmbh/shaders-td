@@ -1,0 +1,153 @@
+{
+  "id": "contour-loom",
+  "title": "Contour Loom",
+  "route": "GLSL TOP",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause / fixed time",
+      "default": true,
+      "type": "toggle",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Fixed time (seconds)",
+      "default": 2.0,
+      "type": "float",
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "default": 0.016666666666666666,
+      "type": "float",
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Bands",
+      "label": "Contour count",
+      "default": 18,
+      "type": "float",
+      "min": 1,
+      "max": 60
+    },
+    {
+      "name": "Warp",
+      "label": "Field warp",
+      "default": 0.65,
+      "type": "float",
+      "min": 0,
+      "max": 2
+    },
+    {
+      "name": "Width",
+      "label": "Line half-width",
+      "default": 0.075,
+      "type": "float",
+      "min": 0.015,
+      "max": 0.3
+    },
+    {
+      "name": "Stage",
+      "label": "Teaching stage",
+      "default": "final",
+      "type": "menu",
+      "min": 0,
+      "max": 1,
+      "names": [
+        "final",
+        "field",
+        "lines",
+        "uv"
+      ],
+      "labels": [
+        "Final",
+        "Field",
+        "Lines",
+        "Uv"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "pixel",
+      "type": "textDAT",
+      "position": [
+        0,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "shader.frag"
+    },
+    {
+      "id": "render",
+      "type": "glslTOP",
+      "position": [
+        0,
+        0
+      ],
+      "purpose": "Native pixel pass",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uControls",
+          "values": [
+            "parent().par.Bands",
+            "parent().par.Warp",
+            "parent().par.Width",
+            "parent().par.Stage.menuIndex"
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        250,
+        0
+      ],
+      "purpose": "Final image or teaching stage"
+    }
+  ],
+  "wires": [
+    {
+      "from": "render",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "render",
+      "parameter": "pixeldat",
+      "target": "pixel",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Aspect-correct screen coordinates; phase-unit line width; opaque artistic color.",
+  "schema_version": 1,
+  "target_build": "Inspect host; initially tested on macOS 2025.33230",
+  "external_dependencies": [],
+  "native_status": "tested on macOS TouchDesigner 2025.33230; see validation.json for scope"
+}

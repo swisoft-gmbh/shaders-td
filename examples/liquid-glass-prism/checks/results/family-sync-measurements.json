@@ -1,0 +1,1509 @@
+{
+ "scope": "Scratch measurements for the family sync (2026-11-02), WebGL2 preview (Chromium SwiftShader) of this study's shaders. Not TouchDesigner. Scripts were kept in the agent's scratch folder; the decisions they support are in decisions.json.",
+ "c6_screen_orientation": {
+  "method": "Instrumented 6a58487 shader outputting the derivative sign and the position-comparison sign per glass pixel; 12 presets x torus/knot x normal/flipped raster, 960 x 540, probe target (no MSAA).",
+  "totals": {
+   "derivative_wrong_normal": 24,
+   "position_wrong_normal": 0,
+   "derivative_wrong_flipped": 24,
+   "position_wrong_flipped": 0,
+   "max_derivative_per_render": 1,
+   "max_position_per_render": 0
+  }
+ },
+ "c3_fan_gap_vs_6a58487_shader": {
+  "method": "Round-2 B7 method, 480 x 270, Samples 16 against 64, Dispersion 1; mean error on changed pixels and pixels over 32/255.",
+  "rows": [
+   {
+    "preset": "clear_crystal",
+    "mesh": "torus",
+    "stage": "refraction",
+    "changed_pixels": 621,
+    "changed_mean_error": {
+     "before": 0.94,
+     "after": 1.69
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.47,
+     "after": 0.49
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "torus",
+    "stage": "final",
+    "changed_pixels": 607,
+    "changed_mean_error": {
+     "before": 0.95,
+     "after": 1.7
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.46,
+     "after": 0.48
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "knot",
+    "stage": "refraction",
+    "changed_pixels": 2,
+    "changed_mean_error": {
+     "before": 4.5,
+     "after": 3.5
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.44,
+     "after": 0.44
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "knot",
+    "stage": "final",
+    "changed_pixels": 3,
+    "changed_mean_error": {
+     "before": 3.67,
+     "after": 2.67
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.42,
+     "after": 0.42
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "torus",
+    "stage": "refraction",
+    "changed_pixels": 70,
+    "changed_mean_error": {
+     "before": 1.39,
+     "after": 1.73
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.48,
+     "after": 0.49
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "torus",
+    "stage": "final",
+    "changed_pixels": 71,
+    "changed_mean_error": {
+     "before": 1.65,
+     "after": 2.03
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.45,
+     "after": 0.46
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "knot",
+    "stage": "refraction",
+    "changed_pixels": 0,
+    "changed_mean_error": {
+     "before": null,
+     "after": null
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.44,
+     "after": 0.44
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "knot",
+    "stage": "final",
+    "changed_pixels": 0,
+    "changed_mean_error": {
+     "before": null,
+     "after": null
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.4,
+     "after": 0.4
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "stage": "refraction",
+    "changed_pixels": 4179,
+    "changed_mean_error": {
+     "before": 1.47,
+     "after": 5.89
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 19
+    },
+    "glass_mean_error": {
+     "before": 0.8,
+     "after": 1.55
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 19
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "stage": "final",
+    "changed_pixels": 4070,
+    "changed_mean_error": {
+     "before": 1.44,
+     "after": 5.8
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 19
+    },
+    "glass_mean_error": {
+     "before": 0.76,
+     "after": 1.47
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 19
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "stage": "refraction",
+    "changed_pixels": 21,
+    "changed_mean_error": {
+     "before": 2.1,
+     "after": 2.86
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.51,
+     "after": 0.51
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "stage": "final",
+    "changed_pixels": 20,
+    "changed_mean_error": {
+     "before": 2.25,
+     "after": 3.05
+    },
+    "changed_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    },
+    "glass_mean_error": {
+     "before": 0.48,
+     "after": 0.48
+    },
+    "glass_pixels_over_32": {
+     "before": 0,
+     "after": 0
+    }
+   }
+  ]
+ },
+ "c3_fan_gap_and_footprint_vs_synced_shader": {
+  "method": "The guard test's metric (960 x 540, refraction stage, torus, Dispersion 1): mean |16 - 64 slices| over glass pixels and pixels over 32/255, each variant against its own 64-slice render.",
+  "rows": {
+   "delivered": {
+    "clear_crystal": {
+     "mean_16_vs_64": 0.65,
+     "pixels_over_32": 0
+    },
+    "prism_chrome": {
+     "mean_16_vs_64": 0.61,
+     "pixels_over_32": 0
+    },
+    "spectral_prism": {
+     "mean_16_vs_64": 2.17,
+     "pixels_over_32": 21
+    }
+   },
+   "fan_gap": {
+    "clear_crystal": {
+     "mean_16_vs_64": 1.55,
+     "pixels_over_32": 3
+    },
+    "prism_chrome": {
+     "mean_16_vs_64": 1.32,
+     "pixels_over_32": 1
+    },
+    "spectral_prism": {
+     "mean_16_vs_64": 4.73,
+     "pixels_over_32": 1405
+    }
+   },
+   "footprint_minus1": {
+    "clear_crystal": {
+     "mean_16_vs_64": 0.62,
+     "pixels_over_32": 0
+    },
+    "prism_chrome": {
+     "mean_16_vs_64": 0.6,
+     "pixels_over_32": 0
+    },
+    "spectral_prism": {
+     "mean_16_vs_64": 1.79,
+     "pixels_over_32": 0
+    }
+   },
+   "footprint_full": {
+    "clear_crystal": {
+     "mean_16_vs_64": 0.59,
+     "pixels_over_32": 0
+    },
+    "prism_chrome": {
+     "mean_16_vs_64": 0.57,
+     "pixels_over_32": 0
+    },
+    "spectral_prism": {
+     "mean_16_vs_64": 1.23,
+     "pixels_over_32": 0
+    }
+   }
+  }
+ },
+ "footprint_variants_vs_4x4_supersampled": {
+  "method": "Glass mean error and pixels over 32/255 at 480 x 270 against a 1920 x 1080 render without a footprint level, averaged down 4 x 4. Round 1: none, full (6a58487), area, shorter axis, minus 1; round 2: none, minus 2, minus 1.",
+  "round1": [
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46464,
+    "none": {
+     "mean": 17.75,
+     "over32": 10380
+    },
+    "max": {
+     "mean": 21.69,
+     "over32": 12961
+    },
+    "area": {
+     "mean": 19.5,
+     "over32": 11435
+    },
+    "minor": {
+     "mean": 18.6,
+     "over32": 10838
+    },
+    "max_minus1": {
+     "mean": 18.45,
+     "over32": 10839
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44730,
+    "none": {
+     "mean": 21.68,
+     "over32": 12909
+    },
+    "max": {
+     "mean": 27.66,
+     "over32": 17128
+    },
+    "area": {
+     "mean": 23.57,
+     "over32": 14260
+    },
+    "minor": {
+     "mean": 22,
+     "over32": 13108
+    },
+    "max_minus1": {
+     "mean": 22.28,
+     "over32": 13362
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46463,
+    "none": {
+     "mean": 18.08,
+     "over32": 11513
+    },
+    "max": {
+     "mean": 22.1,
+     "over32": 13630
+    },
+    "area": {
+     "mean": 20.11,
+     "over32": 12472
+    },
+    "minor": {
+     "mean": 19.14,
+     "over32": 12022
+    },
+    "max_minus1": {
+     "mean": 18.95,
+     "over32": 11882
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44724,
+    "none": {
+     "mean": 21.24,
+     "over32": 13122
+    },
+    "max": {
+     "mean": 28.61,
+     "over32": 16454
+    },
+    "area": {
+     "mean": 24.73,
+     "over32": 14619
+    },
+    "minor": {
+     "mean": 22.95,
+     "over32": 13738
+    },
+    "max_minus1": {
+     "mean": 23.41,
+     "over32": 14009
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46271,
+    "none": {
+     "mean": 17.3,
+     "over32": 11268
+    },
+    "max": {
+     "mean": 18.64,
+     "over32": 12306
+    },
+    "area": {
+     "mean": 17.72,
+     "over32": 11537
+    },
+    "minor": {
+     "mean": 17.5,
+     "over32": 11392
+    },
+    "max_minus1": {
+     "mean": 17.46,
+     "over32": 11366
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44652,
+    "none": {
+     "mean": 16.52,
+     "over32": 9705
+    },
+    "max": {
+     "mean": 19.99,
+     "over32": 12302
+    },
+    "area": {
+     "mean": 17.86,
+     "over32": 10561
+    },
+    "minor": {
+     "mean": 17.13,
+     "over32": 10016
+    },
+    "max_minus1": {
+     "mean": 16.96,
+     "over32": 9870
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46460,
+    "none": {
+     "mean": 16.88,
+     "over32": 10030
+    },
+    "max": {
+     "mean": 18.44,
+     "over32": 11112
+    },
+    "area": {
+     "mean": 17.51,
+     "over32": 10375
+    },
+    "minor": {
+     "mean": 17.23,
+     "over32": 10200
+    },
+    "max_minus1": {
+     "mean": 17.15,
+     "over32": 10128
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44727,
+    "none": {
+     "mean": 17.5,
+     "over32": 10010
+    },
+    "max": {
+     "mean": 21.51,
+     "over32": 12939
+    },
+    "area": {
+     "mean": 18.98,
+     "over32": 10994
+    },
+    "minor": {
+     "mean": 18.16,
+     "over32": 10411
+    },
+    "max_minus1": {
+     "mean": 18.17,
+     "over32": 10437
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "scene_depth": 20,
+    "glass_pixels": 46464,
+    "none": {
+     "mean": 23.42,
+     "over32": 13800
+    },
+    "max": {
+     "mean": 25.39,
+     "over32": 15321
+    },
+    "area": {
+     "mean": 22.31,
+     "over32": 12887
+    },
+    "minor": {
+     "mean": 21.27,
+     "over32": 12083
+    },
+    "max_minus1": {
+     "mean": 20.66,
+     "over32": 11847
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "scene_depth": 20,
+    "glass_pixels": 44731,
+    "none": {
+     "mean": 31.3,
+     "over32": 19664
+    },
+    "max": {
+     "mean": 30.93,
+     "over32": 19946
+    },
+    "area": {
+     "mean": 27.38,
+     "over32": 16942
+    },
+    "minor": {
+     "mean": 26.19,
+     "over32": 15737
+    },
+    "max_minus1": {
+     "mean": 26.08,
+     "over32": 15778
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "torus",
+    "scene_depth": 20,
+    "glass_pixels": 46446,
+    "none": {
+     "mean": 39.35,
+     "over32": 23051
+    },
+    "max": {
+     "mean": 36.69,
+     "over32": 22130
+    },
+    "area": {
+     "mean": 33.3,
+     "over32": 20329
+    },
+    "minor": {
+     "mean": 32.74,
+     "over32": 19642
+    },
+    "max_minus1": {
+     "mean": 31.29,
+     "over32": 18877
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "knot",
+    "scene_depth": 20,
+    "glass_pixels": 44728,
+    "none": {
+     "mean": 42.87,
+     "over32": 23783
+    },
+    "max": {
+     "mean": 39.47,
+     "over32": 23384
+    },
+    "area": {
+     "mean": 36.14,
+     "over32": 21841
+    },
+    "minor": {
+     "mean": 35.54,
+     "over32": 21248
+    },
+    "max_minus1": {
+     "mean": 34.85,
+     "over32": 21003
+    }
+   }
+  ],
+  "round2": [
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46464,
+    "none": {
+     "mean": 17.75,
+     "over32": 10380
+    },
+    "max_minus2": {
+     "mean": 17.75,
+     "over32": 10400
+    },
+    "max_minus1": {
+     "mean": 18.45,
+     "over32": 10839
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44730,
+    "none": {
+     "mean": 21.68,
+     "over32": 12909
+    },
+    "max_minus2": {
+     "mean": 21.11,
+     "over32": 12503
+    },
+    "max_minus1": {
+     "mean": 22.28,
+     "over32": 13362
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46463,
+    "none": {
+     "mean": 18.08,
+     "over32": 11513
+    },
+    "max_minus2": {
+     "mean": 18.17,
+     "over32": 11532
+    },
+    "max_minus1": {
+     "mean": 18.95,
+     "over32": 11882
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44724,
+    "none": {
+     "mean": 21.24,
+     "over32": 13122
+    },
+    "max_minus2": {
+     "mean": 21.4,
+     "over32": 13052
+    },
+    "max_minus1": {
+     "mean": 23.41,
+     "over32": 14009
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46271,
+    "none": {
+     "mean": 17.3,
+     "over32": 11268
+    },
+    "max_minus2": {
+     "mean": 17.3,
+     "over32": 11250
+    },
+    "max_minus1": {
+     "mean": 17.46,
+     "over32": 11366
+    }
+   },
+   {
+    "preset": "clear_crystal",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44652,
+    "none": {
+     "mean": 16.52,
+     "over32": 9705
+    },
+    "max_minus2": {
+     "mean": 16.5,
+     "over32": 9612
+    },
+    "max_minus1": {
+     "mean": 16.96,
+     "over32": 9870
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "torus",
+    "scene_depth": "preset",
+    "glass_pixels": 46460,
+    "none": {
+     "mean": 16.88,
+     "over32": 10030
+    },
+    "max_minus2": {
+     "mean": 16.96,
+     "over32": 10016
+    },
+    "max_minus1": {
+     "mean": 17.15,
+     "over32": 10128
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "knot",
+    "scene_depth": "preset",
+    "glass_pixels": 44727,
+    "none": {
+     "mean": 17.5,
+     "over32": 10010
+    },
+    "max_minus2": {
+     "mean": 17.56,
+     "over32": 10073
+    },
+    "max_minus1": {
+     "mean": 18.17,
+     "over32": 10437
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "scene_depth": 20,
+    "glass_pixels": 46464,
+    "none": {
+     "mean": 23.42,
+     "over32": 13800
+    },
+    "max_minus2": {
+     "mean": 20.12,
+     "over32": 11322
+    },
+    "max_minus1": {
+     "mean": 20.66,
+     "over32": 11847
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "scene_depth": 20,
+    "glass_pixels": 44731,
+    "none": {
+     "mean": 31.3,
+     "over32": 19664
+    },
+    "max_minus2": {
+     "mean": 25.61,
+     "over32": 15274
+    },
+    "max_minus1": {
+     "mean": 26.08,
+     "over32": 15778
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "torus",
+    "scene_depth": 20,
+    "glass_pixels": 46446,
+    "none": {
+     "mean": 39.35,
+     "over32": 23051
+    },
+    "max_minus2": {
+     "mean": 31.47,
+     "over32": 18972
+    },
+    "max_minus1": {
+     "mean": 31.29,
+     "over32": 18877
+    }
+   },
+   {
+    "preset": "trapped_light",
+    "mesh": "knot",
+    "scene_depth": 20,
+    "glass_pixels": 44728,
+    "none": {
+     "mean": 42.87,
+     "over32": 23783
+    },
+    "max_minus2": {
+     "mean": 34.74,
+     "over32": 20931
+    },
+    "max_minus1": {
+     "mean": 34.85,
+     "over32": 21003
+    }
+   }
+  ]
+ },
+ "footprint_variants_vs_supersampled_64_slices": {
+  "method": "As above, with the truth rendered at 64 spectrum slices (variants at 16), Dispersion-1 presets.",
+  "rows": [
+   {
+    "preset": "spectral_prism",
+    "mesh": "torus",
+    "glass_pixels": 46463,
+    "none": {
+     "mean": 17.67,
+     "over32": 10372
+    },
+    "minus2": {
+     "mean": 17.64,
+     "over32": 10327
+    },
+    "minus1": {
+     "mean": 18.31,
+     "over32": 10759
+    },
+    "full": {
+     "mean": 21.45,
+     "over32": 12860
+    }
+   },
+   {
+    "preset": "spectral_prism",
+    "mesh": "knot",
+    "glass_pixels": 44730,
+    "none": {
+     "mean": 21.81,
+     "over32": 12965
+    },
+    "minus2": {
+     "mean": 21.22,
+     "over32": 12593
+    },
+    "minus1": {
+     "mean": 22.47,
+     "over32": 13453
+    },
+    "full": {
+     "mean": 27.99,
+     "over32": 17313
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "torus",
+    "glass_pixels": 46460,
+    "none": {
+     "mean": 16.79,
+     "over32": 9943
+    },
+    "minus2": {
+     "mean": 16.87,
+     "over32": 9933
+    },
+    "minus1": {
+     "mean": 17.07,
+     "over32": 10039
+    },
+    "full": {
+     "mean": 18.34,
+     "over32": 11028
+    }
+   },
+   {
+    "preset": "prism_chrome",
+    "mesh": "knot",
+    "glass_pixels": 44729,
+    "none": {
+     "mean": 17.49,
+     "over32": 10039
+    },
+    "minus2": {
+     "mean": 17.56,
+     "over32": 10082
+    },
+    "minus1": {
+     "mean": 18.17,
+     "over32": 10409
+    },
+    "full": {
+     "mean": 21.59,
+     "over32": 13059
+    }
+   }
+  ]
+ },
+ "footprint_grain_vs_2x2_supersampled": {
+  "method": "Mean absolute Laplacian inside the glass at 960 x 540 (the large_scene_depth_stays_smooth metric) for the delivered level (minus 2), the 6a58487 full level, no level, and a 2 x 2 supersampled render without a level.",
+  "rows": {
+   "spectral_prism": {
+    "delivered_2.2": 49.89,
+    "isotropic_2.2": 36.47,
+    "none_2.2": 51.68,
+    "supersampled_2x2_2.2": 46.44,
+    "delivered_20": 90.08,
+    "isotropic_20": 46.93,
+    "none_20": 120.92,
+    "supersampled_2x2_20": 85.76,
+    "delivered_ratio": 1.81,
+    "isotropic_ratio": 1.29,
+    "none_ratio": 2.34,
+    "supersampled_2x2_ratio": 1.85
+   },
+   "trapped_light": {
+    "delivered_2.2": 100.11,
+    "isotropic_2.2": 63.27,
+    "none_2.2": 105.78,
+    "supersampled_2x2_2.2": 85.81,
+    "delivered_20": 203.61,
+    "isotropic_20": 95.78,
+    "none_20": 270.86,
+    "supersampled_2x2_20": 177.11,
+    "delivered_ratio": 2.03,
+    "isotropic_ratio": 1.51,
+    "none_ratio": 2.56,
+    "supersampled_2x2_ratio": 2.06
+   }
+  }
+ },
+ "r7_backface_filter": {
+  "method": "6a58487 shader: masked texelFetch bilinear (delivered) against a plain bilinear over all four texels. Unit sphere, IOR 1, Thickness 1, thickness stage against the exact view chord; knot, Spectral Prism, three stages, pixels differing by more than 8/255.",
+  "sphere": {
+   "masked_delivered": {
+    "pixels_and_over_8_255": {
+     "inner_0_to_0_9": [
+      45028,
+      0
+     ],
+     "rim_0_9_to_1": [
+      10578,
+      0
+     ]
+    },
+    "worst_error_inside_0_98_radius": 0.4
+   },
+   "plain_bilinear": {
+    "pixels_and_over_8_255": {
+     "inner_0_to_0_9": [
+      45028,
+      0
+     ],
+     "rim_0_9_to_1": [
+      10578,
+      0
+     ]
+    },
+    "worst_error_inside_0_98_radius": 0.4
+   }
+  },
+  "knot": {
+   "thickness": {
+    "glass_pixels": 88802,
+    "pixels_over_8_255": 225,
+    "max_255": 155
+   },
+   "exitnormal": {
+    "glass_pixels": 88802,
+    "pixels_over_8_255": 248,
+    "max_255": 252.7
+   },
+   "final": {
+    "glass_pixels": 88802,
+    "pixels_over_8_255": 554,
+    "max_255": 187.2
+   }
+  }
+ },
+ "look_change_vs_6a58487_captures": {
+  "method": "Per-capture max channel difference against the committed 6a58487 captures (same draw options; preset captures on the type backdrop compared with the old preset captures, which used it). Light-backdrop looks are left out: their backdrop changed to the core's checkerboard.",
+  "rows": {
+   "preview-see_through.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-bend_twice.png": {
+    "max": 76,
+    "mean": 0.32,
+    "pixels_over_8": 6680,
+    "share_over_8": 0.0126
+   },
+   "preview-scene_depth.png": {
+    "max": 104,
+    "mean": 0.81,
+    "pixels_over_8": 17129,
+    "share_over_8": 0.0323
+   },
+   "preview-exit_ball.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-exit_flat.png": {
+    "max": 72,
+    "mean": 0.15,
+    "pixels_over_8": 3055,
+    "share_over_8": 0.0058
+   },
+   "preview-exit_tilt.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-backface.png": {
+    "max": 10,
+    "mean": 0.0,
+    "pixels_over_8": 1,
+    "share_over_8": 0.0
+   },
+   "preview-backface_path.png": {
+    "max": 6,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-critical_low.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-critical_high.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-bounce.png": {
+    "max": 223,
+    "mean": 1.18,
+    "pixels_over_8": 15279,
+    "share_over_8": 0.0288
+   },
+   "preview-dispersion.png": {
+    "max": 255,
+    "mean": 7.78,
+    "pixels_over_8": 65829,
+    "share_over_8": 0.1241
+   },
+   "preview-deviation.png": {
+    "max": 148,
+    "mean": 1.38,
+    "pixels_over_8": 14525,
+    "share_over_8": 0.0274
+   },
+   "preview-caustic.png": {
+    "max": 0,
+    "mean": 0.0,
+    "pixels_over_8": 0,
+    "share_over_8": 0.0
+   },
+   "preview-morph.png": {
+    "max": 238,
+    "mean": 3.55,
+    "pixels_over_8": 46608,
+    "share_over_8": 0.0878
+   },
+   "preview-final.png": {
+    "max": 246,
+    "mean": 7.57,
+    "pixels_over_8": 68507,
+    "share_over_8": 0.1291
+   },
+   "preset-spectral_prism.png -> preset-spectral_prism-type.png": {
+    "max": 246,
+    "mean": 7.57,
+    "pixels_over_8": 68507,
+    "share_over_8": 0.1291
+   },
+   "preset-spectral_prism-backpass.png": {
+    "max": 246,
+    "mean": 7.72,
+    "pixels_over_8": 63717,
+    "share_over_8": 0.1201
+   },
+   "preset-type_lens.png -> preset-type_lens-type.png": {
+    "max": 112,
+    "mean": 0.43,
+    "pixels_over_8": 9320,
+    "share_over_8": 0.0176
+   },
+   "preset-type_lens-backpass.png": {
+    "max": 122,
+    "mean": 1.48,
+    "pixels_over_8": 31544,
+    "share_over_8": 0.0595
+   },
+   "preset-diamond_fire.png -> preset-diamond_fire-type.png": {
+    "max": 180,
+    "mean": 0.8,
+    "pixels_over_8": 14533,
+    "share_over_8": 0.0274
+   },
+   "preset-diamond_fire-backpass.png": {
+    "max": 197,
+    "mean": 2.53,
+    "pixels_over_8": 39749,
+    "share_over_8": 0.0749
+   },
+   "preset-trapped_light.png -> preset-trapped_light-type.png": {
+    "max": 210,
+    "mean": 1.4,
+    "pixels_over_8": 20438,
+    "share_over_8": 0.0385
+   },
+   "preset-trapped_light-backpass.png": {
+    "max": 168,
+    "mean": 1.44,
+    "pixels_over_8": 30059,
+    "share_over_8": 0.0567
+   },
+   "preset-caustic_heart.png -> preset-caustic_heart-type.png": {
+    "max": 77,
+    "mean": 0.29,
+    "pixels_over_8": 5658,
+    "share_over_8": 0.0107
+   },
+   "preset-caustic_heart-backpass.png": {
+    "max": 113,
+    "mean": 1.03,
+    "pixels_over_8": 23997,
+    "share_over_8": 0.0452
+   },
+   "preset-clear_crystal.png -> preset-clear_crystal-type.png": {
+    "max": 89,
+    "mean": 0.39,
+    "pixels_over_8": 8273,
+    "share_over_8": 0.0156
+   },
+   "preset-clear_crystal-backpass.png": {
+    "max": 106,
+    "mean": 1.0,
+    "pixels_over_8": 21730,
+    "share_over_8": 0.041
+   },
+   "preset-prism_chrome.png -> preset-prism_chrome-type.png": {
+    "max": 243,
+    "mean": 7.16,
+    "pixels_over_8": 68209,
+    "share_over_8": 0.1286
+   },
+   "preset-prism_chrome-backpass.png": {
+    "max": 246,
+    "mean": 7.35,
+    "pixels_over_8": 62055,
+    "share_over_8": 0.117
+   },
+   "preset-chrome_type.png -> preset-chrome_type-type.png": {
+    "max": 75,
+    "mean": 1.22,
+    "pixels_over_8": 30992,
+    "share_over_8": 0.0584
+   },
+   "preset-chrome_type-backpass.png": {
+    "max": 121,
+    "mean": 1.89,
+    "pixels_over_8": 40455,
+    "share_over_8": 0.0762
+   }
+  }
+ },
+ "verifier_fixes": {
+  "scope": "Verifier round after the family sync (V1 to V6), 2026-11-02. WebGL2 preview (Chromium SwiftShader), not TouchDesigner. Each issue was reproduced on a scratch copy of the pre-fix study before the fix.",
+  "v1_flat_image_offset_vs_projected_camera_up_before_fix": {
+   "method": "Instrumented pre-fix shader (preview option projFlipY negates row 1 of uTDMats.proj): per glass pixel, the sign of the orientation handed to environment() against the sign of projectOffset() for a small step along camera up (and right). Spectral Prism torus, 960 x 540.",
+   "rows": {
+    "projFlipY_false_flipRaster_false": {
+     "glass_pixels": 98796,
+     "x_flat_vs_projected_agree": 98796,
+     "y_flat_vs_projected_agree": 98796
+    },
+    "projFlipY_false_flipRaster_true": {
+     "glass_pixels": 98796,
+     "x_flat_vs_projected_agree": 98796,
+     "y_flat_vs_projected_agree": 98796
+    },
+    "projFlipY_true_flipRaster_false": {
+     "glass_pixels": 98796,
+     "x_flat_vs_projected_agree": 98796,
+     "y_flat_vs_projected_agree": 0
+    },
+    "projFlipY_true_flipRaster_true": {
+     "glass_pixels": 98796,
+     "x_flat_vs_projected_agree": 98796,
+     "y_flat_vs_projected_agree": 0
+    }
+   }
+  },
+  "v2_centre_row_before_fix": {
+   "method": "The screen_orientation_has_no_wrong_pixels instrumentation on the pre-fix shader at 481 x 271 (12 presets per row).",
+   "rows": {
+    "torus": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "glass_pixels": 298680,
+     "wrong_sign_pixels": 0,
+     "where": {}
+    },
+    "torus_flipped_raster": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "glass_pixels": 298680,
+     "wrong_sign_pixels": 1524,
+     "where": {
+      "centre_row": 1524
+     }
+    },
+    "knot": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "glass_pixels": 268536,
+     "wrong_sign_pixels": 0,
+     "where": {}
+    },
+    "knot_flipped_raster": {
+     "size": [
+      481,
+      271
+     ],
+     "renders": 12,
+     "glass_pixels": 268536,
+     "wrong_sign_pixels": 1548,
+     "where": {
+      "centre_row": 1548
+     }
+    }
+   }
+  },
+  "v2_tie_break_survey_481x271": {
+   "method": "Final screen orientation per glass pixel over 192 renders at 481 x 271 (knot, torus, blob, sphere; spin 0 to 345 in 15-degree steps; tilt 20 and 70), normal and flipped raster, for three centre-line rules: the comparison's tie rule alone (+1), the sign of the ndc derivative, and the delivered derivative sign trusted only where 1/w changes by less than 10% to the next pixel. A separate pass over the same poses found 1 wrong derivative sign in 48,620 centre-line pixels, where 1/w changed by 140% to the next pixel; at the knot's default pose the wrong sign had 12.5%. Correct signs: median 0.1%, 99th percentile 2.1%.",
+   "rows": {
+    "tie_rule_only": {
+     "normal_raster": {
+      "renders": 192,
+      "glass_pixels": 2761689,
+      "centre_line_pixels": 48466,
+      "wrong_sign_pixels": 0
+     },
+     "flipped_raster": {
+      "renders": 192,
+      "glass_pixels": 2761685,
+      "centre_line_pixels": 48467,
+      "wrong_sign_pixels": 26268
+     }
+    },
+    "derivative_no_guard": {
+     "normal_raster": {
+      "renders": 192,
+      "glass_pixels": 2761689,
+      "centre_line_pixels": 48466,
+      "wrong_sign_pixels": 1
+     },
+     "flipped_raster": {
+      "renders": 192,
+      "glass_pixels": 2761685,
+      "centre_line_pixels": 48467,
+      "wrong_sign_pixels": 1
+     }
+    },
+    "delivered_guard_0_1": {
+     "normal_raster": {
+      "renders": 192,
+      "glass_pixels": 2761689,
+      "centre_line_pixels": 48466,
+      "wrong_sign_pixels": 0
+     },
+     "flipped_raster": {
+      "renders": 192,
+      "glass_pixels": 2761685,
+      "centre_line_pixels": 48467,
+      "wrong_sign_pixels": 12
+     }
+    }
+   }
+  },
+  "c3_fan_gap_fractions_on_final_shader": {
+   "method": "The guard test's metric (960 x 540, refraction stage, torus, Dispersion 1, Samples 16 against 64): mean |16 - 64 slices| over glass pixels and pixels over 32/255; changed_pixels_b7: mean error against the 64-slice render on the pixels the variant changes (delivered vs variant). Fan gap = fraction x the screen distance between the red and violet lookups / Samples, max with the frost level, inside footprintLod().",
+   "rows": {
+    "delivered": {
+     "clear_crystal": {
+      "glass": 98056,
+      "mean_vs_64": 0.651,
+      "over32": 0
+     },
+     "prism_chrome": {
+      "glass": 98377,
+      "mean_vs_64": 0.605,
+      "over32": 0
+     },
+     "spectral_prism": {
+      "glass": 99158,
+      "mean_vs_64": 2.167,
+      "over32": 21
+     }
+    },
+    "quarter_gap": {
+     "clear_crystal": {
+      "glass": 98056,
+      "mean_vs_64": 0.651,
+      "over32": 0,
+      "changed_pixels_b7": {
+       "changed": 0,
+       "delivered_mean": 0,
+       "variant_mean": 0,
+       "delivered_over32": 0,
+       "variant_over32": 0
+      }
+     },
+     "prism_chrome": {
+      "glass": 98377,
+      "mean_vs_64": 0.605,
+      "over32": 0,
+      "changed_pixels_b7": {
+       "changed": 0,
+       "delivered_mean": 0,
+       "variant_mean": 0,
+       "delivered_over32": 0,
+       "variant_over32": 0
+      }
+     },
+     "spectral_prism": {
+      "glass": 99158,
+      "mean_vs_64": 2.154,
+      "over32": 17,
+      "changed_pixels_b7": {
+       "changed": 5787,
+       "delivered_mean": 6.106,
+       "variant_mean": 5.874,
+       "delivered_over32": 8,
+       "variant_over32": 4
+      }
+     }
+    },
+    "whole_gap": {
+     "clear_crystal": {
+      "glass": 98098,
+      "mean_vs_64": 1.547,
+      "over32": 3,
+      "changed_pixels_b7": {
+       "changed": 40330,
+       "delivered_mean": 1.184,
+       "variant_mean": 3.362,
+       "delivered_over32": 0,
+       "variant_over32": 3
+      }
+     },
+     "prism_chrome": {
+      "glass": 98384,
+      "mean_vs_64": 1.315,
+      "over32": 1,
+      "changed_pixels_b7": {
+       "changed": 30924,
+       "delivered_mean": 1.253,
+       "variant_mean": 3.513,
+       "delivered_over32": 0,
+       "variant_over32": 1
+      }
+     },
+     "spectral_prism": {
+      "glass": 99170,
+      "mean_vs_64": 4.791,
+      "over32": 1510,
+      "changed_pixels_b7": {
+       "changed": 50757,
+       "delivered_mean": 3.883,
+       "variant_mean": 9.01,
+       "delivered_over32": 21,
+       "variant_over32": 1510
+      }
+     }
+    }
+   }
+  },
+  "captures_after_fixes": {
+   "method": "Every capture job re-rendered with the fixed shader and compared with captures/ (max channel difference).",
+   "changed": {},
+   "compared": 52
+  }
+ },
+ "gap_fix_c3_unit_test": {
+  "scope": "Gap fix after the verifier round, 2026-11-02. Unit tests only (python3 checks/test_study.py); no image was rendered and no shader changed. Scratch copy of the study; the mutant script stayed in the agent's scratch folder.",
+  "method": "Each mutant is a copy of liquid_prism.frag with one change to a Refraction TOP lookup level. Every mutant compiles with glslang (checks/compile_glsl.py). The old C3 test, the whole old unit suite and the new C3 test were run on the delivered shader and on each mutant.",
+  "mutants": {
+   "quarter_fan_gap_named_fanGap": "After the frost level: red and violet traced once more (sliceIor 0 and 1, enterGlass, leaveGlass), fan = projectOffset(violet exit) - projectOffset(red exit), fanGap = 0.25 x |fan x size| / count, lod = max(lod, log2(max(fanGap, 1))). The blobs study's form, rejected in decisions.json (C3).",
+   "per_lookup_level_named_gapLevel": "The scene lookup reads footprintLod(unfolded, lod + 1, size) through a new variable gapLevel.",
+   "bounce_level_raised_in_bounceLight": "bounceLight() reads textureLod(..., lod + 1.0).",
+   "footprint_full_width_as_6a58487": "footprintLod() without the 2-level shift (the 6a58487 form).",
+   "literal_mip_0_plus_frost_no_footprint": "The scene lookup reads the frost level only, no footprint level (what the old test name described)."
+  },
+  "results": {
+   "old_test_test_c3_dispersion_keeps_mip_0_plus_frost_and_is_guarded": {
+    "delivered": "pass",
+    "mutants_failing": 0,
+    "mutants": 5
+   },
+   "old_unit_suite_65_tests": {
+    "delivered": "pass",
+    "mutants_failing": 0,
+    "mutants": 5
+   },
+   "new_test_test_c3_lookup_level_is_frost_or_footprint_never_a_fan_gap": {
+    "delivered": "pass",
+    "mutants_failing": 5,
+    "mutants": 5
+   },
+   "new_unit_suite_65_tests": {
+    "delivered": "pass",
+    "mutants_failing": 5,
+    "mutants": 5,
+    "failing_test": "test_c3_lookup_level_is_frost_or_footprint_never_a_fan_gap only"
+   },
+   "red_run_6a58487": "39 of 65 fail, as before; the new C3 test fails at footprintLod()'s 2-level shift (checks/results/unit-tests-6a58487.txt)"
+  },
+  "note": "The preview guard dispersion_converges_with_samples catches the whole fan gap (4.79/255 and 1,510 pixels over 32 against limits 2.5 and 50; verifier_fixes) but not the quarter gap (2.154/255 and 17 pixels), so only the unit test pins the C3 decision against the quarter gap."
+ }
+}

@@ -1,0 +1,289 @@
+[
+  {
+    "id": "core_match",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "torus",
+      "Amplitude": 0.0
+    },
+    "question": "What does the flow material do when the surface does not move?",
+    "prediction": "Nothing new: with Amplitude 0 the torus looks exactly like the core Liquid Glass at the same Object size. Here that is the default 0.69 (what Fit sets on the demo sphere), so the glass is a little thinner than in the core's own demo, where the torus fits to 1.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-core_match.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "swell",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "displacement",
+      "Demoobject": "sphere",
+      "Amplitude": 0.15,
+      "Swell": 1.0,
+      "Swellscale": 1.0,
+      "Ripples": 0.0,
+      "Waves": 0.0,
+      "Sag": 0.0,
+      "Drip": 0.0
+    },
+    "question": "What does the liquid field look like on the surface?",
+    "prediction": "A few large orange (pushed out) and blue (pulled in) patches with soft borders; changing Time moves them slowly.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-swell.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "ripples",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "displacement",
+      "Demoobject": "sphere",
+      "Amplitude": 0.05,
+      "Swell": 0.0,
+      "Ripples": 1.0,
+      "Ripplescale": 6.0,
+      "Waves": 0.0,
+      "Sag": 0.0
+    },
+    "question": "How do ripples differ from swell?",
+    "prediction": "The same colours in many small patches: Ripple scale sets how many fit across the object. The outline turns finely bumpy.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-ripples.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "waves",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "displacement",
+      "Demoobject": "sphere",
+      "Amplitude": 0.12,
+      "Swell": 0.0,
+      "Ripples": 0.0,
+      "Waves": 1.0,
+      "Wavelength": 0.8,
+      "Sag": 0.0
+    },
+    "question": "What does a travelling wave do on a closed object?",
+    "prediction": "Parallel orange and blue bands across the sphere, at right angles to the wave direction; increasing Time slides them along it.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-waves.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "silhouette",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "sphere",
+      "Amplitude": 0.2
+    },
+    "question": "Does the outline itself change, or only the shading?",
+    "prediction": "The outline bulges and dents: the sphere is no longer round against the backdrop.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-silhouette.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "wrong_normals",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Demoobject": "sphere",
+      "Amplitude": 0.2,
+      "Correctnormals": false
+    },
+    "question": "What goes wrong if the normals are not rebuilt?",
+    "prediction": "The outline is bumpy, but the normal colours stay a smooth sphere gradient: shading ignores the bumps.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-wrong_normals.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "corrected_normals",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Demoobject": "sphere",
+      "Amplitude": 0.2,
+      "Correctnormals": true
+    },
+    "question": "What do rebuilt normals look like?",
+    "prediction": "The normal colours now bend around every bulge and dent, matching the outline.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-corrected_normals.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "flow_refraction",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Demoobject": "sphere",
+      "Amplitude": 0.2,
+      "Swell": 1.0,
+      "Swellscale": 0.8,
+      "Ior": 1.3,
+      "Dispersion": 0.0
+    },
+    "question": "Does the bending of the backdrop follow the moving shape?",
+    "prediction": "Yes: the backdrop seen through the glass warps around each bulge, like a lens that keeps changing shape.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-flow_refraction.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "cracks",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Demoobject": "box",
+      "Amplitude": 0.25,
+      "Displacealong": "normal",
+      "Swell": 1.0,
+      "Swellscale": 0.8
+    },
+    "question": "What happens on a mesh with hard edges when points move along their normals?",
+    "prediction": "The box's faces move apart: thin gaps open along its edges and the backdrop shows through.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-cracks.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "crack_free",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Demoobject": "box",
+      "Amplitude": 0.25,
+      "Displacealong": "centre",
+      "Swell": 1.0,
+      "Swellscale": 0.8
+    },
+    "question": "Does moving points away from the centre close the cracks?",
+    "prediction": "Yes: the edges stay closed while the box swells; its faces stay distinct colours because each keeps its own normal.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-crack_free.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "sag_drip",
+    "parameters": {
+      "Preset": "sapphire_drop",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "sphere",
+      "Sag": 1.2,
+      "Drip": 0.9
+    },
+    "question": "How does gravity change the shape?",
+    "prediction": "The lower half hangs down into one or two drops, like a blob about to drip; the top stays round.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-sag_drip.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "coarse_mesh",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "normal",
+      "Demoobject": "sphere",
+      "Amplitude": 0.25,
+      "Demodetail": 10
+    },
+    "question": "What happens when the mesh has too few points for the field?",
+    "prediction": "The outline turns into straight segments and the bulges lose their shape: the field is only sampled at the vertices.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-coarse_mesh.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "open_sheet",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "grid",
+      "Displacealong": "normal",
+      "Culling": "none",
+      "Amplitude": 0.08
+    },
+    "question": "Does it work on an open surface?",
+    "prediction": "Yes, along the normal: the sheet ripples with travelling waves. Away from the centre would slide its points sideways instead.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-open_sheet.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "morph",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "sphere",
+      "Morphtarget": "amber_honey",
+      "Morph": 0.5
+    },
+    "question": "Does the morph blend the motion as well as the look?",
+    "prediction": "Halfway: a light amber tint, a slower, heavier swell and a beginning sag.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-morph.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demoobject": "sphere"
+    },
+    "question": "What is the default look?",
+    "prediction": "A clear, rainbow-fringed glass blob whose outline slowly swells.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-final.png",
+    "observation": "Native observation pending: run this preset in TouchDesigner."
+  }
+]

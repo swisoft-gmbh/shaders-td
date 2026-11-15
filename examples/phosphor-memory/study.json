@@ -1,0 +1,309 @@
+{
+  "id": "phosphor-memory",
+  "title": "Phosphor Memory",
+  "route": "Feedback GLSL TOP",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause / fixed time",
+      "default": false,
+      "type": "toggle",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Fixed time (seconds)",
+      "default": 2.0,
+      "type": "float",
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "default": 0.016666666666666666,
+      "type": "float",
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Threshold",
+      "label": "Change threshold",
+      "default": 0.018,
+      "type": "float",
+      "min": 0.001,
+      "max": 0.25
+    },
+    {
+      "name": "Lifetime",
+      "label": "Trail lifetime (seconds)",
+      "default": 0.65,
+      "type": "float",
+      "min": 0.02,
+      "max": 4
+    },
+    {
+      "name": "Pitch",
+      "label": "Hatch pitch (pixels)",
+      "default": 9,
+      "type": "float",
+      "min": 3,
+      "max": 40
+    },
+    {
+      "name": "Reset",
+      "label": "Reset history (hold then release)",
+      "default": false,
+      "type": "toggle",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Stage",
+      "label": "Teaching stage",
+      "default": "final",
+      "type": "menu",
+      "min": 0,
+      "max": 1,
+      "names": [
+        "final",
+        "source",
+        "motion",
+        "trail"
+      ],
+      "labels": [
+        "Final",
+        "Source",
+        "Motion",
+        "Trail"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source_code",
+      "type": "textDAT",
+      "position": [
+        -500,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "source.frag"
+    },
+    {
+      "id": "state_code",
+      "type": "textDAT",
+      "position": [
+        0,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "state.frag"
+    },
+    {
+      "id": "display_code",
+      "type": "textDAT",
+      "position": [
+        250,
+        150
+      ],
+      "purpose": "Inspectable shader source",
+      "source": "display.frag"
+    },
+    {
+      "id": "source",
+      "type": "glslTOP",
+      "position": [
+        -500,
+        0
+      ],
+      "purpose": "Native pixel pass",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seed",
+      "type": "constantTOP",
+      "position": [
+        -500,
+        -200
+      ],
+      "purpose": "Uninitialized zero state",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "colorr": 0,
+        "colorg": 0,
+        "colorb": 0,
+        "alpha": 0
+      }
+    },
+    {
+      "id": "history",
+      "type": "feedbackTOP",
+      "position": [
+        -250,
+        -200
+      ],
+      "purpose": "Previous state; alpha marks validity",
+      "expressions": {
+        "reset": "parent().par.Reset"
+      }
+    },
+    {
+      "id": "state",
+      "type": "glslTOP",
+      "position": [
+        0,
+        0
+      ],
+      "purpose": "Native pixel pass",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uControls",
+          "values": [
+            "parent().par.Threshold",
+            "parent().par.Lifetime",
+            "parent().par.Pitch",
+            "parent().par.Stage.menuIndex"
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "type": "glslTOP",
+      "position": [
+        250,
+        0
+      ],
+      "purpose": "Native pixel pass",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 640,
+        "resolutionh": 640,
+        "format": "rgba16float",
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uControls",
+          "values": [
+            "parent().par.Threshold",
+            "parent().par.Lifetime",
+            "parent().par.Pitch",
+            "parent().par.Stage.menuIndex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        500,
+        0
+      ],
+      "purpose": "Final style or diagnostic"
+    }
+  ],
+  "wires": [
+    {
+      "from": "seed",
+      "to": "history",
+      "input": 0
+    },
+    {
+      "from": "source",
+      "to": "state",
+      "input": 0
+    },
+    {
+      "from": "history",
+      "to": "state",
+      "input": 1
+    },
+    {
+      "from": "source",
+      "to": "display",
+      "input": 0
+    },
+    {
+      "from": "state",
+      "to": "display",
+      "input": 1
+    },
+    {
+      "from": "display",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "source",
+      "parameter": "pixeldat",
+      "target": "source_code",
+      "previous_frame": false
+    },
+    {
+      "node": "state",
+      "parameter": "pixeldat",
+      "target": "state_code",
+      "previous_frame": false
+    },
+    {
+      "node": "display",
+      "parameter": "pixeldat",
+      "target": "display_code",
+      "previous_frame": false
+    },
+    {
+      "node": "history",
+      "parameter": "top",
+      "target": "state",
+      "previous_frame": true
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "UV 0..1; RGBA state=(luma,trail,raw mask,initialized); dt is a fixed simulation step.",
+  "schema_version": 1,
+  "target_build": "Inspect host; initially tested on macOS 2025.33230",
+  "external_dependencies": [],
+  "native_status": "tested on macOS TouchDesigner 2025.33230; see validation.json for scope"
+}

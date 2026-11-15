@@ -1,0 +1,87 @@
+[
+  {
+    "id": "density",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "density",
+      "Extinction": 2.2,
+      "Steps": 64,
+      "Light": 1,
+      "Slab": false
+    },
+    "question": "What is the volume before illumination?",
+    "prediction": "A central density slice reveals intertwined helical ribbons.",
+    "reset": false,
+    "capture": "captures/native-density.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "transmission",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "transmittance",
+      "Extinction": 2.2,
+      "Steps": 64,
+      "Light": 1,
+      "Slab": false
+    },
+    "question": "How much background light survives?",
+    "prediction": "Bright areas transmit more; dense overlapping ribbons transmit less.",
+    "reset": false,
+    "capture": "captures/native-transmission.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "light",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "light",
+      "Extinction": 2.2,
+      "Steps": 64,
+      "Light": 1,
+      "Slab": false
+    },
+    "question": "Does light visibility have its own path?",
+    "prediction": "The central slice shows light attenuation from a fixed direction, separate from the view ray.",
+    "reset": false,
+    "capture": "captures/native-light.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "slab",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "transmittance",
+      "Extinction": 2,
+      "Steps": 64,
+      "Light": 0,
+      "Slab": true
+    },
+    "question": "Can a homogeneous slab match an equation?",
+    "prediction": "Transmission equals exp(-2 \u00d7 0.4 \u00d7 3), independent of the step count up to floating-point error.",
+    "reset": false,
+    "capture": "captures/native-slab.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Extinction": 2.2,
+      "Steps": 64,
+      "Light": 1,
+      "Slab": false
+    },
+    "question": "What does scattering add?",
+    "prediction": "Amber-lit violet density accumulates over the dark background with front-to-back attenuation.",
+    "reset": false,
+    "capture": "captures/native-final.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  }
+]

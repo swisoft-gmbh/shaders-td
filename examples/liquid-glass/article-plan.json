@@ -1,0 +1,170 @@
+[
+  {
+    "heading": "Make the object see-through",
+    "question": "How can an object show what is behind it?",
+    "snippets": [
+      [
+        "liquid_glass.vert",
+        "transforms"
+      ],
+      [
+        "liquid_glass.frag",
+        "screen"
+      ]
+    ],
+    "experiments": [
+      "see_through"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Bend the light",
+    "question": "Why does glass shift and flip what is behind it?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "bend"
+      ],
+      [
+        "liquid_glass.frag",
+        "setup"
+      ],
+      [
+        "liquid_glass.frag",
+        "surface"
+      ]
+    ],
+    "experiments": [
+      "bend",
+      "thick"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Split the colours, then frost them",
+    "question": "Where do rainbow fringes come from, and how does the same loop make frosted glass?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "dispersion"
+      ]
+    ],
+    "experiments": [
+      "dispersion",
+      "frost"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Give the glass its own colour",
+    "question": "Why is coloured glass pale in the middle and deep at the edges?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "body"
+      ],
+      [
+        "liquid_glass.frag",
+        "compose"
+      ]
+    ],
+    "experiments": [
+      "tint",
+      "milky"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Reflect the world",
+    "question": "What does glass reflect, and why mostly at the edges?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "reflection"
+      ]
+    ],
+    "experiments": [
+      "reflection",
+      "fresnel"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Highlights and a glowing rim",
+    "question": "What makes glass look shiny?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "light"
+      ]
+    ],
+    "experiments": [
+      "highlights"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Make it liquid",
+    "question": "How does a solid mesh start to look like liquid?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "liquid"
+      ],
+      [
+        "liquid_glass.frag",
+        "film"
+      ]
+    ],
+    "experiments": [
+      "wobble",
+      "film"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Measure thickness with the back-face pass",
+    "question": "How can the shader know how thick the object really is?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "backface"
+      ]
+    ],
+    "experiments": [
+      "backface"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Twelve looks and a morph",
+    "question": "How do presets and morphing reach the shader?",
+    "snippets": [
+      [
+        "liquid_glass.frag",
+        "uniforms"
+      ]
+    ],
+    "experiments": [
+      "morph",
+      "final"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Use it in your own scene",
+    "question": "What does the material need from my own scene, and what does it fit into?",
+    "snippets": [
+      [
+        "liquid_glass.vert",
+        "picking"
+      ]
+    ],
+    "experiments": [
+      "type_backdrop"
+    ],
+    "figures": []
+  }
+]

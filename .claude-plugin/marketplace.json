@@ -1,0 +1,17 @@
+{
+  "name": "shaders-td",
+  "description": "Single-plugin marketplace for Shaders for TouchDesigner.",
+  "owner": {
+    "name": "Swisoft GmbH",
+    "email": "plugins@swisoft.ch"
+  },
+  "plugins": [
+    {
+      "name": "shaders-td",
+      "source": "./",
+      "description": "Research, build, explain and review original TouchDesigner shaders, with Maxime Heckel's published articles as the knowledge base.",
+      "category": "development",
+      "homepage": "https://marcoleder.ch/shaders-td/"
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "research": {
+    "status": "passed",
+    "evidence": "research.md, sources.json",
+    "method": "corpus.py verify (393 files, no errors) and cited line ranges with sha256",
+    "date": "2026-11-01"
+  },
+  "static": {
+    "status": "passed",
+    "evidence": "checks/results/check_study.json",
+    "method": "skills/review/scripts/check_study.py",
+    "date": "2026-11-02",
+    "scope": "31 nodes, 19 wires, 15 experiments; uniform declarations match bindings for both materials (20 vec4 uniforms and 3 samplers each)."
+  },
+  "glsl_compile_standins": {
+    "status": "passed",
+    "evidence": "checks/results/compile.json",
+    "date": "2026-11-02",
+    "scope": "glslangValidator, GLSL 4.60 and Vulkan SPIR-V (-V -R) against stand-ins for TouchDesigner built-ins (TDFog included), for the four shaders plus define variants: vertex with TD_PICKING_ACTIVE (since the family close, the documented #ifndef ... #else branch), pixel with TD_NUM_COLOR_BUFFERS 3 and 8, and the pixel shader's own fallback with the define left out. Two negative tests: the vertex shader without its uFlow declaration, and the picking variant without the TDWritePickingValues() stand-in, both fail and name what is missing."
+  },
+  "shader_properties_preview": {
+    "status": "passed",
+    "evidence": "checks/results/preview-tests.json",
+    "date": "2026-11-02",
+    "scope": "44 property tests of the delivered GLSL in WebGL2 (Chromium SwiftShader, 480 x 270): the brief's four (amplitude 0 equals the current core, max difference 0 over 23 render pairs, two of them at Object size 1.45 in both, three on a torus scaled 3 by its COMP at each Fit's Object size and three at 481 x 271 in a flipped raster; rebuilt normals within 0.5 degrees of float64 in nine cases and within 1 degree at the Amplitude maximum, where the surface is squeezed (verifier round V1); silhouette coverage changes; crack-free box), the flow tests, and 23 family-sync tests (R1 morph frame, speed nudge and a week of drift; R5 wobble and faceted normals at any scale, IOR 1 with wobble; R6 frost shift and convergence; C3 dispersion convergence; R7 chord thickness near, far and orthographic, no dark fringe; R8 energy conserving and sRGB; C1 transparent and empty scenes, opaque scene vs the core's 6a58487 pixel stage; C2 three colour buffers; C5 half-float cap; C6 flipped raster and Flip V; C7 fog stand-in; C8 Object size 0.1 and 10 (both size names set, so reference runs measure only C8); C9 backdrop menu). Red runs against the 6a58487 material: checks/results/red-run-6a58487.json. Verifier gap round: film_swirl_frequency_0_is_one_drifting_thickness (uFilm.w = 0 gives one film thickness that drifts; Wobble speed 0 stops it) and render_pass_keeps_foreground_in_front (an opaque ball in front of the moving glass stays in front with the Render Pass route, max 1/255; the Over TOP control paints the glass over it, max 246/255). Family close (2): fit_size_carries_presets_over_comp_scale (COMP scale 0.1 and 10 at the sizes Fit sets, every case 1/255, 0 pixels over 8) and screen_orientation_has_no_wrong_pixels (at most 1 single-sample and 5 multisampled wrong pixels per row of twelve moving renders, also at 481 x 271). Fit threshold (family critic, 2026-11-02): fit_size_carries_presets_over_comp_scale also holds 2/255 at every pixel (measured: 1/255); a worldScale() exponent of 0.3333 now fails it (checks/results/red-run-fit-threshold.json). Since the centre-line residual round, screen_orientation_has_no_wrong_pixels allows at most 10 wrong multisampled pixels per row (20 before)."
+  },
+  "unit_tests": {
+    "status": "passed",
+    "evidence": "checks/results/unit-tests.txt; checks/results/red-run-centre-line-residual.json",
+    "date": "2026-11-02",
+    "scope": "91 tests. Centre-line residual (2): CentreLineResidual checks the family's open question (same words in every member alongside), the native check and its edit, that no shader has a centroid qualifier yet, and that the records match the preview results; both fail on the records before this round (checks/results/red-run-centre-line-residual.json). Before that, 89 tests. Fit threshold (1): FitThreshold reads the pass condition and the claim of the preview test fit_size_carries_presets_over_comp_scale and requires the 2/255 clause, here and in the core, Flow and Lit where they sit alongside; it fails on the test file before this round and the others pass (checks/results/red-run-fit-threshold.json). Before that, 88 tests. Fit helper name (3): FitHelperName checks that native.py defines fit_glass() with fit_flow as an alias of the same function, that the pulse callback, the usage note and the README call fit_glass(), that every member checked out alongside defines and calls fit_glass, and that every decision making Object size the motion's unit is marked superseded; all three fail before the fix (checks/results/red-run-fit-name.json). Before that, 85 tests. Look decisions (2): LookDecisions checks co-design.json look_decisions_for_user against the README and the receipts, and that the code holds the option recorded as in the code; both fail on the records before this round (checks/results/red-run-look-decisions.json). Before that, 83 tests. Family critic (2): FamilyCritic measures the three setups that one Object size per component does not follow (several objects, a Geometry COMP scale that changes after Fit, per-instance scale) with this study's own Fit, and pins the README note to the numbers; it also checks the native list in validation.json family_close.native_run. Both fail on c94e849 and on the current tree without the note and the list (checks/results/red-run-family-critic.json). Before that, 81 tests. Family close critic fixes (1): FamilyCloseCritic pins the Thickness and Object size labels and the core copy's (PV4); it fails on the labels before the fix and the other 80 pass (checks/results/red-run-family-close-critic.json). Before that, 80 tests: presets.py with fake parameters and a fake clock (morph, menu, flow time, drift phase, a 100-frame morph and a slider drag at 1 h, within-frame agreement, pause and resume, two components, a still look, demo spin, colour decoding); the preset callback; native.apply() run alone and in all 225 ordered pairs, with setup kept; Fit to Glass geometry with fake SOPs and COMPs (Flow size, and Object size by the family rule, equal to the core's own fit_glass() on the same geometry); recipe consistency; the pixel shader against the current core line by line; GLSL source rules for R1, R5 to R9 and C1 to C9; README scene route; builder dry run with constant Inputs fields and Info DATs on every render. Verifier gap round: the README hand-wiring row for uFilm.w (G1) and the occlusion claim tied to its preview test (G2). Family names: FamilyNames (3) pins the Fit pulse name and label, the Demo backdrop menu as a look control and the docs' names to the family list in the core README; test_core_controls_kept no longer exempts the Fit pulse (checks/results/red-run-family-names.json). Family close (FamilyClose, 5): the family rule for Object size and its bindings (G1), the centre-line tie-break (G2), the film swirl wording in README, tutorial and shader (G3), what a pick render runs (G6), and the preprocessor helper. Verifier fixes after the family close (FamilyCloseVerifier, 3): the Fit checklists in review.md and fit_native against fit_flow()'s values and report keys, the red-run claims against checks/results/red-run-family-close.json, and the Not done here paragraph against Lit's family_rule and the core README (checks/results/red-run-family-close-verifier.json)."
+  },
+  "mutation_check": {
+    "status": "passed",
+    "evidence": "review.md#independent-review (M4); review.md#verifier-gap-round",
+    "date": "2026-11-01",
+    "scope": "One-off scratch run, not shipped: 16 deliberately broken copies of the shaders (reviewers' mutants rewritten for the fixed code, plus instance gravity, drift fold, centre fade, periodic lattice, extra pixel line); each fails at least one preview or unit test. Verifier gap round (2026-11-02): two more scratch copies, the pixel shader writing gl_FragDepth = 0 and the vertex shader putting the glass at the near plane; both fail render_pass_keeps_foreground_in_front (max 246/255 with the Render Pass route)."
+  },
+  "independent_review": {
+    "status": "addressed",
+    "evidence": "review.md#independent-review",
+    "date": "2026-11-01",
+    "scope": "14 findings from two reviewers: all confirmed; 13 fixed, T6 mitigated (picking block, extra colour buffers); native checks for T3-T6 pending."
+  },
+  "tutorial": {
+    "status": "passed",
+    "evidence": "checks/results/article-check.json",
+    "date": "2026-11-02",
+    "scope": "Source alignment and section placement (7 sections, 11 excerpts) after the family-close edits (the transforms excerpt now shows the picking branch; Flow size and Object size defined where they are used). Images are labelled WebGL previews; native captures pending."
+  },
+  "previews": {
+    "status": "produced",
+    "date": "2026-11-02",
+    "evidence": "captures/*.png with .json receipts, captures/type/*.png, captures/presets-sheet.png, captures/presets-sheet-type.png, captures/flow-strip.png, captures/review-family-close-object-size.png, checks/results/family-close-measurements.json",
+    "scope": "WebGL2 previews of the delivered GLSL, re-rendered after the family sync (56 images plus 3 sheets; 12 new over the Type backdrop). Compared with 6a58487: unchanged where neither ripples, film nor frost show; the ripple and film patterns re-randomised by the 256-unit lattice (R1) and frost re-centred (R6); numbers in review.md#family-sync. Not TouchDesigner captures. After the verifier round's V1 fix all 56 re-render bit-identically (compared in a scratch folder; files not replaced). Family close: all 56 re-rendered at the new default Object size (1 / 1.45): 51 changed by the deliberate look change (thinner glass relative to the demo sphere, finer ripples and film; numbers in review.md#family-close and checks/results/family-close-measurements.json), 5 bit-identical and kept; with Object size 1 all 56 render bit-identical to c94e849. The three sheets were rebuilt; captures/review-family-close-object-size.png shows four presets before and after."
+  },
+  "native_compile": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Build via README Quick start; read the info_material DAT."
+  },
+  "native_render": {
+    "status": "pending",
+    "evidence": null,
+    "how": "native.py capture() for each experiment."
+  },
+  "builder_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Run build.py in TouchDesigner 2025.x; check component.fetch('build_warnings') for demo SOP parameter names (Grid, Transform, Merge, Sphere, Torus, Switch)."
+  },
+  "controls": {
+    "status": "pending",
+    "evidence": null,
+    "how": "component.op('study_tools').module.apply(component, id) for each experiment in experiments.json"
+  },
+  "preset_callback": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Change Glass > Preset and confirm the sliders, including the Flow page, change."
+  },
+  "instancing_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Instance the demo geometry with rotated, scaled copies; vary Instance variation; with Sag on, drops should hang down in the world (TDInstanceMat3)."
+  },
+  "no_normals_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Turn off the demo sphere's Compute Normals; confirm the faceted fallback."
+  },
+  "export_reopen": {
+    "status": "pending",
+    "evidence": null,
+    "how": "native.py export() to a new .tox, load it under another parent."
+  },
+  "performance": {
+    "status": "pending",
+    "evidence": null,
+    "note": "No timing measured. Estimated vertex cost: about 20 noise lookups per vertex; pixel cost as Liquid Glass."
+  },
+  "shader_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "article_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "clock_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Animate Morph between presets with different Flow speed and Wobble speed after the project has run a while; the liquid and ripples should change speed without jumping. Toggle Pause. Build two components with different Flow speed: they must move independently. With both speeds and Demo spin at 0 the material should stop cooking every frame."
+  },
+  "fit_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Press Flow fit > Fit to Glass geometry with the demo sphere (expect centre 0, Flow size 1, Object size 0.69 = 1 / 1.45: the defaults), the demo torus (Flow size 1.45, Object size 1.0: what Liquid Glass's Fit sets on its own demo torus) and that torus with its Geometry COMP scaled 3 (Flow size 1.45, Object size 3.0: Flow size unchanged, Object size x3). The Textport report gives source, centre, flow_size, object_size, world_scale, reference_radius and notes; with the COMP scaled, notes names the scale (family close G1)."
+  },
+  "demo_box_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Study > Demo object > Box; run experiments cracks and crack_free; check build_warnings for Grid, Transform and Merge SOP parameter names."
+  },
+  "picking_and_buffers_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Point a Render Pick DAT at the moving glass: it should report positions on the moved surface (the #else block of the documented TD_PICKING_ACTIVE branch, family close G6); set the Render TOP's # of Color Buffers to 2 and view buffer 1 (expect black)."
+  },
+  "family_sync": {
+    "status": "passed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "evidence": "review.md#family-sync, checks/results/red-run-6a58487.json, checks/results/c3-fan-gap.json",
+    "scope": "Every R and C item applied or reported as not applicable; each applied item has a unit or preview test, red on the 6a58487 code where it can fail there. Rebased on the core working tree after its family-sync merge, on 6a58487."
+  },
+  "render_pass_route_native": {
+    "status": "pending",
+    "evidence": "Preview only: render_pass_keeps_foreground_in_front (checks/results/preview-tests.json). Native check pending.",
+    "how": "Draw the glass into a scene render with a Render Pass TOP (Clear Depth Buffer and Clear to Camera Color off, Override Material = material) and put an object in front of it: it must stay in front; check that sampling the scene render the pass builds on raises no warning."
+  },
+  "inputs_fields_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "After building, the Inputs fields show relative paths in constant mode; drag, type, clear and Reset to Default each behave as the README says; no 'inputs' build warning."
+  },
+  "dither_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Check render and render_back show Dither off (Advanced page) and no 'dither' build warning; note the default of a fresh Render TOP."
+  },
+  "colour_parameters_auto_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "In a project with a linear working colour space, Colour parameters Auto should match sRGB; in pass-through, As typed."
+  },
+  "fog_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Turn on the camera's fog: the glass should take only its alpha's share of the fog colour."
+  },
+  "screen_orientation_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Refraction must bend the same way as in the previews without Flip V; check on macOS (Metal) and Windows, also at an odd render size such as 481 x 271 (centre-line tie-break, family close G2)."
+  },
+  "backface_32bit_native": {
+    "status": "pending",
+    "evidence": null,
+    "how": "Back-face pass on, camera 50 units away: thickness stage smooth, no stepping; render_back format 32-bit float RGBA."
+  },
+  "verifier_round": {
+    "status": "addressed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "evidence": "review.md#verifier-round, checks/results/preview-tests.json, checks/results/unit-tests.txt, checks/results/red-run-6a58487.json",
+    "scope": "Four findings, all reproduced and confirmed. V1: the rebuilt normal's fallback is relative to the nudge's rest area (Chrome Type motion at Amplitude 0.5: max 46.3 degrees before, 0.82 after). V2: Object size differs from Liquid Glass's by 1.45 / COMP scale after each Fit; documented, and fit_flow() reports liquid_glass_object_size. V3: stale review row corrected. V4: red-run record regenerated from a rerun (68 unit tests: 48 red, 20 green on 6a58487), C4 and C8 red claims restated. No preview changed."
+  },
+  "verifier_gap_round": {
+    "status": "addressed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "evidence": "review.md#verifier-gap-round, checks/results/preview-tests.json, checks/results/unit-tests.txt, checks/results/red-run-6a58487.json",
+    "scope": "Two low-severity gaps, both reproduced and confirmed. G1: the README said uFilm.w = 0 freezes the swirl; it gives one film thickness over the whole object that still drifts with uPhase.w (preview: one colour on the sheet, (243, 254, 221) at 2 s and (189, 218, 16) at 30 s; Wobble speed 0: no change). README reworded as in Liquid Glass Prism; preview and unit tests added. G2: the occlusion claim (family sync R2) had no preview test; Liquid Glass Prism's render_pass_keeps_foreground_in_front ported with its Over TOP control, red under two depth mutations. No shader, recipe, preset or capture changed (five captures re-rendered bit-identical)."
+  },
+  "family_names": {
+    "status": "passed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "evidence": "review.md (Family names), checks/results/red-run-family-names.json, checks/results/unit-tests.txt",
+    "scope": "FamilyNames unit tests (3): the Fit pulse is Fitglass with a label starting 'Fit to Glass geometry (', the callback watches it, the Demo backdrop menu is a look control experiments reset, and README and tutorial use these names and link to the core's Names across the family. 3 of 3 new tests fail on the unfixed tree (['Fitflow'] != ['Fitglass']; 3 bare 'Backdrop' in README.md; no link). Unit suite: 73 tests (70 before).",
+    "native": {
+      "status": "pending",
+      "evidence": null,
+      "how": "Build a fresh component: the Fit pulse's parameter is Fitglass and its label reads as in study.json; component.par.Fitglass.pulse() from the Textport runs the fit (prints its report) like a click; apply(component, 'final') after choosing Type returns Demo backdrop to its default."
+    }
+  },
+  "family_close": {
+    "status": "passed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "evidence": "review.md#family-close, checks/results/preview-tests.json, checks/results/unit-tests.txt, checks/results/compile.json, checks/results/red-run-family-close.json",
+    "scope": "This study's share of the family gaps G1, G2, G3 and G6. Pixel stage rebuilt on the core's family-close working tree and checks/core_reference refreshed: amplitude0_matches_core 0/255 on 23 renders, including the torus scaled 3 by its COMP at each Fit's Object size and the odd size 481 x 271 in a flipped raster. G1: Object size follows the family rule (world radius / 1.45, ripple and film lookups x worldScale()); the motion keeps its own SOP-unit size, Flow size; Fit sets both. fit_size_carries_presets_over_comp_scale: every case 1/255, 0 pixels over 8 (c94e849 with its own Fit values: finals 30 to 247/255 on 9,609 to 20,679 pixels over 8). G2: screen_orientation_has_no_wrong_pixels at most 1 single-sample and 5 multisampled wrong pixels per row (c94e849: 1,932 to 2,016 on the odd size's centre row in a flipped raster). G3: already reworded here; the shader comment arrived with the rebuild. G6: the documented picking branch; a pick render writes no pixel-stage output (unit test). Each gap has tests that fail on c94e849 (red_on_c94e849). Not every new or changed test is red there: six preview tests changed only to pin Object size 1 pass on c94e849 by design, because they keep measuring what they measured then; object_size_carries_presets_over passes there too (one size did both jobs at c94e849); and the preprocessor helper's own test is not a red test (green_on_c94e849_by_design). Corrected in the verifier fixes after the family close (FLOW-V2).",
+    "native": {
+      "status": "pending",
+      "evidence": null,
+      "how": [
+        "Fit on a COMP-scaled object: put the demo sphere's Geometry COMP at Scale 3, press Fit to Glass geometry: Flow size stays 1, Object size reads 3 / 1.45 = 2.07, and the glass and its ripples look as on the unscaled demo (camera moved back 3 times).",
+        "Same object in Liquid Glass and here at Amplitude 0, after each component's Fit: both Object sizes equal, and the two renders match.",
+        "Odd render size: set the Render TOP to 481 x 271 and look at the centre row and column of the glass for a seam in the bend.",
+        "Picking: a Render Pick DAT over the moving glass returns positions on the moved surface (compare with the SOP's rest positions), and an ordinary render is unchanged when the Render Pick DAT cooks; info_material shows no compile error for the picking variant."
+      ]
+    },
+    "red_on_c94e849": {
+      "unit": [
+        "test_g1_object_size_follows_the_family_rule",
+        "test_g2_centre_line_tie_break_comes_through_the_pixel_stage",
+        "test_g3_film_swirl_0_wording_everywhere",
+        "test_g6_pick_render_runs_only_the_documented_picking_block",
+        "test_core_reference_is_the_current_core",
+        "test_pixel_shader_is_current_core_plus_documented_additions",
+        "test_core_controls_kept",
+        "test_uses_the_rendered_sop_bounds",
+        "test_demo_sphere_fits_to_the_defaults",
+        "test_comp_bounds_fallback_and_notes",
+        "test_c2_vertex_shader_answers_picking_with_the_moved_surface",
+        "test_c6_offsets_follow_the_measured_screen_orientation",
+        "test_c8_object_size_is_setup_and_never_reset",
+        "test_c8_object_size_scales_the_lengths_and_is_exact_at_1",
+        "test_g1_readme_says_what_film_swirl_0_does",
+        "test_r5_pixel_stage_hygiene",
+        "test_r5_vertex_decides_a_zero_normal_before_transforming"
+      ],
+      "preview": [
+        "amplitude0_matches_core",
+        "fit_size_carries_presets_over_comp_scale",
+        "screen_orientation_has_no_wrong_pixels",
+        "normals_match_finite_differences",
+        "motion_matches_float64_reference",
+        "wobble_independent_of_object_scale",
+        "faceted_fallback_is_scale_free"
+      ]
+    },
+    "green_on_c94e849_by_design": {
+      "unit": [
+        "test_preprocessed_helper_follows_ifdef_ifndef_and_else"
+      ],
+      "preview": [
+        "frost_does_not_shift_the_view",
+        "frost_converges_with_samples",
+        "dispersion_converges_with_samples",
+        "backface_thickness_matches_chord",
+        "opaque_scene_matches_pre_sync",
+        "film_swirl_frequency_0_is_one_drifting_thickness"
+      ],
+      "also_green": [
+        "object_size_carries_presets_over"
+      ],
+      "why": "The six preview tests pin Object size 1 so their stated glass lengths stay what they measured at c94e849. object_size_carries_presets_over now sets Flow size and Object size to k times their defaults; at c94e849 one size, default 1, did both jobs, so it sets the same values there. The helper test checks the test's own preprocessor.",
+      "evidence": "checks/results/red-run-family-close.json (unit_tests_on_c94e849, preview_tests_on_c94e849, changed_preview_tests_on_c94e849)"
+    },
+    "verifier_fixes": {
+      "status": "passed (outside TouchDesigner)",
+      "date": "2026-11-02",
+      "evidence": "review.md#verifier-fixes-after-the-family-close, checks/results/unit-tests.txt, checks/results/red-run-family-close-verifier.json, checks/results/red-run-family-close.json (changed_preview_tests_on_c94e849)",
+      "scope": "Records and tests only; no shader, recipe, preset or capture changed. FLOW-V1: the native-run checklist for Fit (review.md, Open risks) expected the removed report key liquid_glass_object_size and Object size 1.45 on the torus; it now gives fit_flow()'s values (sphere: Flow size 1, Object size 0.69; torus: 1.45 and 1.0; torus in a COMP scaled 3: 1.45 and 3.0) and report keys, as fit_native does. FLOW-V2: the red-run claims now name which tests are red on c94e849 and which stay green by design; a new run of the 11 changed preview tests on c94e849 is recorded (4 red, 7 green). FLOW-V3: the Not done here paragraph no longer routes Lit's records (Lit updated them in the same round) and names the two core README lines, corrected in the core in this round. Three new unit tests (FamilyCloseVerifier), each red on the family close as first delivered."
+    },
+    "critic_fixes": {
+      "status": "passed (outside TouchDesigner)",
+      "date": "2026-11-02",
+      "evidence": "review.md (Family close critic fixes), checks/results/red-run-family-close-critic.json, checks/results/unit-tests.txt, checks/results/preview-tests.json",
+      "scope": "One label, the core's copy and one test. PV4: 'Thickness (x Object size)', because Thickness is multiplied by Object size, whose default here is 0.69. checks/core_reference/study.json refreshed to the core's study.json (its Thickness and Object size labels changed). No shader, preset, uniform expression or capture changed; amplitude0_matches_core stays 0/255.",
+      "native": {
+        "status": "pending",
+        "evidence": null,
+        "how": "In TouchDesigner 2025.x, rebuild the component: the Optics page shows 'Thickness (x Object size)'."
+      }
+    },
+    "native_run": {
+      "status": "pending",
+      "why": "Family critic (high): nothing in the family close has run in TouchDesigner. Every closed gap is a static, glslang or WebGL-preview result, and this environment has no TouchDesigner.",
+      "target": "TouchDesigner 2025.x on macOS, Apple Silicon",
+      "record": {
+        "build": null,
+        "os": null,
+        "gpu": null,
+        "info_dat": null
+      },
+      "how_to_record": "Build the component on the target, then run component.op('study_tools').module.inspect(component) and keep build, version, platform and compile_reports (the text of every info_ DAT) as the record. TouchDesigner's Python App class has no GPU member (docs.derivative.ca/App_Class, read 2026-11-02), so copy the chip and GPU from About This Mac. Fill every record field before you change status.",
+      "checks": [
+        {
+          "id": "fit_comp_scaled",
+          "how": "Set the demo sphere's Geometry COMP Scale to 3 and press Fit to Glass geometry: Flow size stays 1, Object size reads 3 / 1.45 = 2.07, and the glass and its Wobble ripples look as on the unscaled demo, seen from 3 times as far."
+        },
+        {
+          "id": "odd_size_481x271",
+          "how": "Set the demo render to 481 x 271 (odd both ways). With Flip screen V off, look at Stage screenuv and the bent checker: no one-pixel seam on the centre row or column. Note whether your build's raster runs down or up (whether the refraction needs Flip screen V)."
+        },
+        {
+          "id": "occlusion",
+          "how": "In a scene of your own, follow the README's Render Pass TOP route with an opaque object in front of the moving glass: it stays in front, as in the preview's render_pass_keeps_foreground_in_front."
+        },
+        {
+          "id": "render_pick",
+          "how": "Point a Render Pick DAT at the demo render and pick over the moving glass: positions and normals lie on the moved surface, not on the SOP's rest shape (the vTDPickVert values the '#else' block sets), an ordinary render is unchanged while the Render Pick DAT cooks, and info_material shows no error for the pick variant."
+        },
+        {
+          "id": "centre_line_residual",
+          "how": "Family open question (centre-line residual). Set the demo render to 481 x 271 (odd both ways) with Anti-Alias at 4x and Flip screen V off, as in odd_size_481x271. Copy the render, the material and its pixel shader DAT. In the copied DAT, replace `vec2 orient = screenSign(ndc, ndcStep, depthStep, proj);` with `vec2 orient = vec2(1.0, 1.0);`: the orientation every other glass pixel measures in TouchDesigner's usual raster (use -1.0 for y if odd_size_481x271 found that the raster runs up). Point the copied material's pixel shader at the copied DAT and the copied render's Override Material at the copied material. With Pause on, wire both renders into a Composite TOP with Operation Difference. An Analyze TOP with Operation Maximum in RGB gives the largest difference; the pixels that are not black are where the orientation was wrong. Repeat at several Fixed times so silhouettes cross the centre row and column. Record the build, the GPU, how many pixels differ, the largest difference, and whether those pixels show at 100% zoom in the delivered image. The preview's numbers for this study are under preview.",
+          "if_visible": "If any of them is visible, try a centroid-qualified vertex output for the projected position in Liquid Glass Lit first (Lit's form (e): a second vertex output, `centroid out vec3 vOrientPos`, holding the world position and read only for the projected position in screenSign()). In Lit's preview survey it fixed the usual raster (17 residual pixels to 1) but not the flipped one (18 to 16). Measure it with Lit's survey and this check, then bring it to the core, to Flow with the core's pixel stage, and to Prism. If none is visible, close the open question with this record.",
+          "preview": {
+            "label": "WebGL preview (Chromium SwiftShader), not TouchDesigner",
+            "source": "checks/results/preview-tests.json (screen_orientation_has_no_wrong_pixels: 12 rows of 12 renders) and checks/results/centre-line-residual.json (the final image)",
+            "wrong_multisampled_pixels_total": 11,
+            "wrong_multisampled_pixels_per_row_max": 5,
+            "final_image": {
+              "changed_pixels": 8,
+              "over_8": 4,
+              "max": 38,
+              "max_changed_per_row": 4,
+              "normal_raster_changed_pixels": 2
+            }
+          }
+        }
+      ]
+    },
+    "one_object_size": {
+      "status": "documented (outside TouchDesigner); rule change pending the user's decision",
+      "date": "2026-11-02",
+      "evidence": "review.md (Family critic: native runs and one Object size); checks/results/red-run-family-critic.json; decisions.json (Family critic: one Object size per component)",
+      "scope": "Family critic (medium, universality): one Fit press sets one Object size for the whole component. Measured with this study's own code on several objects of different sizes, a COMP scale that changes after Fit and per-instance scale; the README note and the article's Limits state the result and the workarounds; the critic's rule change is option (b) in decisions.json, pending the user's decision. Family critic (high, native runs): family_close.native_run lists the four native checks with an empty record (build, OS, GPU, Info DAT text); nothing has run in TouchDesigner. Tests: FamilyCritic (2), both red on c94e849 and on the current tree without the note and the list. Unit tests, plain Python only; no shader or capture changed.",
+      "native": {
+        "status": "pending",
+        "evidence": null,
+        "how": "Run family_close.native_run, then: put two glass objects of different sizes in one component and press Fit (Object size follows the larger); animate the Geometry COMP Scale after Fit with Object size animated by the same factor (the look holds); scale one instance by 3 (its ripples grow with it; its glass bends and tints as if three times smaller)."
+      }
+    },
+    "fit_threshold": {
+      "status": "passed (outside TouchDesigner)",
+      "date": "2026-11-02",
+      "evidence": "review.md (Family critic: the COMP-scale test's threshold); checks/results/red-run-fit-threshold.json; checks/results/preview-tests.json; checks/results/unit-tests.txt",
+      "scope": "Family critic (low): fit_size_carries_presets_over_comp_scale accepted up to 50 pixels over 8/255, while every case here measures 1/255. It now also holds 2/255 at every pixel; the family's shared clause (at most 50 pixels over 8/255) stays. Prism (15/255) and Blobs (66/255, 15 pixels over 2/255) keep their own recorded bounds. A scratch copy with the worldScale() exponent 0.3333 instead of 1.0 / 3.0 in liquid_flow.frag (world scale 9.9977 instead of 10) gives film stage 4/255, Oil Slick final 5/255, Aqua Jelly and Prism Chrome finals 2/255; 0 pixels over 8/255: before the fix the test passed when run alone (TESTS filter); with it the test fails when run alone (TESTS filter). Here amplitude0_matches_core already caught the same slip (up to 2/255 on 3 of its 23 renders, the torus scaled 3 by its COMP), so the gap was in the fit test's own claim. Unit test FitThreshold.test_fit_size_test_holds_2_255_at_every_pixel, red on the test file before this round. The core and Liquid Glass Lit made the same change. No shader, uniform, preset or capture changed. WebGL2 preview (SwiftShader), not a TouchDesigner render."
+    },
+    "centre_line_residual": {
+      "status": "passed (outside TouchDesigner)",
+      "date": "2026-11-02",
+      "evidence": "review.md (Family critic: the antialiased centre-line residual), checks/results/centre-line-residual.json, checks/results/preview-tests.json, checks/results/unit-tests.txt, checks/results/red-run-centre-line-residual.json",
+      "scope": "Family critic (low): a few multisampled silhouette pixels near a centre line take the wrong orientation sign. Measured here: screen_orientation_has_no_wrong_pixels: 11 wrong multisampled pixels in 144 renders, at most 5 per row of twelve (2 in the normal raster), and 1 wrong single-sample pixel. Final image (checks/results/centre-line-residual.json; each render drawn as delivered and with the orientation set to the right value, 4x multisampled canvas): 8 pixels change in 144 renders, at most 4 per row, 4 by more than 8/255, the largest by 38/255 (Violet Gel on the knot, normal raster, 480 x 270); in the normal raster, TouchDesigner's usual orientation, 2 pixels, by up to 38/255. All lie within 4 pixels of a centre line. Kept as a family open question (co-design.json) with the native check centre_line_residual (family_close.native_run); no shader changed. screen_orientation_has_no_wrong_pixels now allows at most 10 wrong multisampled pixels per row (20 before). Unit tests CentreLineResidual (2) fail on the files before this round.",
+      "native": {
+        "status": "pending",
+        "evidence": null,
+        "how": "family_close.native_run, check centre_line_residual."
+      }
+    }
+  },
+  "look_decisions": {
+    "status": "waiting for the user",
+    "date": "2026-11-02",
+    "evidence": [
+      "co-design.json (look_decisions_for_user)",
+      "README.md (Look decisions waiting for you)",
+      "checks/results/look-decisions.json",
+      "checks/results/red-run-look-decisions.json",
+      "review.md (Look decisions)"
+    ],
+    "decisions": [
+      "LOOK-F1"
+    ],
+    "scope": "LOOK-F1 (default Object size) written as a multiple-choice decision with a recommended option; the open question's radius-1.45 option measured and withdrawn; LookDecisions guards the code until the user answers.",
+    "tests": "LookDecisions (2 unit tests) pass; both error on the records before this round, and code or record changes made without an answer fail them (checks/results/red-run-look-decisions.json).",
+    "native": "None needed for the records. The look itself is a WebGL2 preview; nothing ran in TouchDesigner."
+  },
+  "fit_name": {
+    "status": "passed (outside TouchDesigner); native pulse check pending",
+    "date": "2026-11-02",
+    "evidence": [
+      "checks/results/unit-tests.txt",
+      "checks/results/red-run-fit-name.json",
+      "review.md (Family critic: one Fit name)"
+    ],
+    "scope": "Family critic (low), one name per thing: the Fit helper is fit_glass() in every member; fit_flow stays one round as an alias because the core's tests (MEMBER_FIT) still call it. decisions.json 'Presets that transfer across object sizes and positions' is marked superseded by Family close G1. Names and records only: no shader, preset, control, recipe value or capture changed. The core's, Lit's and Prism's unit suites pass against this tree (72, 93 and 82 tests).",
+    "native": "pending: that the built component's Fit to Glass geometry pulse runs fit_glass() is part of fit_native."
+  }
+}

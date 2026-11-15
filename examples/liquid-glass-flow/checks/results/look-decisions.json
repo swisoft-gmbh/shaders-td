@@ -1,0 +1,242 @@
+{
+ "what": "Look decision LOOK-F1 (co-design.json, look_decisions_for_user): the family close look change reproduced from the capture files, and the radius-1.45 option measured. WebGL2 preview of the delivered GLSL, not TouchDesigner.",
+ "date": "2026-11-02",
+ "reproduced_from_files": {
+  "how": "Each capture as committed at c94e849 (git show) against the current file: max per-channel difference /255 and pixels over 8/255 (checks: scratch reproduce.py of the look-acceptance round). WebGL2 previews (Chromium SwiftShader), not TouchDesigner.",
+  "presets_checkerboard": {
+   "captures": 12,
+   "max_from": 99,
+   "max_to": 241,
+   "pixels_over_8_from": 40423,
+   "pixels_over_8_to": 85725
+  },
+  "motion_frames": {
+   "captures": 16,
+   "max_from": 213,
+   "max_to": 249,
+   "pixels_over_8_from": 67238,
+   "pixels_over_8_to": 81053
+  },
+  "rows": {
+   "preset-clear_crystal": {
+    "max": 201,
+    "pixels_over_8": 48258,
+    "pixels": 530590
+   },
+   "preset-clear_crystal-type": null,
+   "preset-prism_chrome": {
+    "max": 234,
+    "pixels_over_8": 77042,
+    "pixels": 530590
+   },
+   "preset-prism_chrome-type": null,
+   "preset-violet_gel": {
+    "max": 199,
+    "pixels_over_8": 55927,
+    "pixels": 530590
+   },
+   "preset-violet_gel-type": null,
+   "preset-sapphire_drop": {
+    "max": 217,
+    "pixels_over_8": 68658,
+    "pixels": 530590
+   },
+   "preset-sapphire_drop-type": null,
+   "preset-chrome_type": {
+    "max": 216,
+    "pixels_over_8": 67118,
+    "pixels": 530590
+   },
+   "preset-chrome_type-type": null,
+   "preset-frosted_ice": {
+    "max": 120,
+    "pixels_over_8": 71897,
+    "pixels": 530590
+   },
+   "preset-frosted_ice-type": null,
+   "preset-amber_honey": {
+    "max": 185,
+    "pixels_over_8": 69749,
+    "pixels": 530590
+   },
+   "preset-amber_honey-type": null,
+   "preset-emerald_bottle": {
+    "max": 165,
+    "pixels_over_8": 40423,
+    "pixels": 530590
+   },
+   "preset-emerald_bottle-type": null,
+   "preset-rose_quartz": {
+    "max": 99,
+    "pixels_over_8": 65604,
+    "pixels": 530590
+   },
+   "preset-rose_quartz-type": null,
+   "preset-liquid_mercury": {
+    "max": 133,
+    "pixels_over_8": 49567,
+    "pixels": 530590
+   },
+   "preset-liquid_mercury-type": null,
+   "preset-oil_slick": {
+    "max": 241,
+    "pixels_over_8": 85725,
+    "pixels": 530590
+   },
+   "preset-oil_slick-type": null,
+   "preset-aqua_jelly": {
+    "max": 224,
+    "pixels_over_8": 74729,
+    "pixels": 530590
+   },
+   "preset-aqua_jelly-type": null,
+   "motion/aqua_jelly-t0": {
+    "max": 213,
+    "pixels_over_8": 79937,
+    "pixels": 530590
+   },
+   "motion/aqua_jelly-t2": {
+    "max": 222,
+    "pixels_over_8": 72026,
+    "pixels": 530590
+   },
+   "motion/aqua_jelly-t4": {
+    "max": 226,
+    "pixels_over_8": 69928,
+    "pixels": 530590
+   },
+   "motion/aqua_jelly-t6": {
+    "max": 222,
+    "pixels_over_8": 73631,
+    "pixels": 530590
+   },
+   "motion/chrome_type-t0": {
+    "max": 213,
+    "pixels_over_8": 70124,
+    "pixels": 530590
+   },
+   "motion/chrome_type-t2": {
+    "max": 215,
+    "pixels_over_8": 67238,
+    "pixels": 530590
+   },
+   "motion/chrome_type-t4": {
+    "max": 216,
+    "pixels_over_8": 70285,
+    "pixels": 530590
+   },
+   "motion/chrome_type-t6": {
+    "max": 216,
+    "pixels_over_8": 68290,
+    "pixels": 530590
+   },
+   "motion/prism_chrome-t0": {
+    "max": 241,
+    "pixels_over_8": 81053,
+    "pixels": 530590
+   },
+   "motion/prism_chrome-t2": {
+    "max": 244,
+    "pixels_over_8": 79979,
+    "pixels": 530590
+   },
+   "motion/prism_chrome-t4": {
+    "max": 239,
+    "pixels_over_8": 77392,
+    "pixels": 530590
+   },
+   "motion/prism_chrome-t6": {
+    "max": 249,
+    "pixels_over_8": 77505,
+    "pixels": 530590
+   },
+   "motion/sapphire_drop-t0": {
+    "max": 224,
+    "pixels_over_8": 74255,
+    "pixels": 530590
+   },
+   "motion/sapphire_drop-t2": {
+    "max": 220,
+    "pixels_over_8": 71805,
+    "pixels": 530590
+   },
+   "motion/sapphire_drop-t4": {
+    "max": 224,
+    "pixels_over_8": 72196,
+    "pixels": 530590
+   },
+   "motion/sapphire_drop-t6": {
+    "max": 222,
+    "pixels_over_8": 69366,
+    "pixels": 530590
+   }
+  }
+ },
+ "option_radius_1_45": {
+  "how": "Demo sphere built with radius 1.45 (rest scale 1.45), Object size 1, Flow size 1.45, camera 1.45 times farther (z 5.8, far 100), against today (radius 1, defaults) and the c94e849 default (radius 1, Object size 1). checks/preview harness, 480 x 270, time 2.",
+  "size": [
+   480,
+   270
+  ],
+  "time": 2,
+  "results": {
+   "prism_chrome": {
+    "big_vs_now": {
+     "max": 1,
+     "pixelsOver8": 0
+    },
+    "big_vs_old": {
+     "max": 234,
+     "pixelsOver8": 19030
+    },
+    "now_vs_old": {
+     "max": 234,
+     "pixelsOver8": 19030
+    }
+   },
+   "sapphire_drop": {
+    "big_vs_now": {
+     "max": 4,
+     "pixelsOver8": 0
+    },
+    "big_vs_old": {
+     "max": 222,
+     "pixelsOver8": 17160
+    },
+    "now_vs_old": {
+     "max": 222,
+     "pixelsOver8": 17160
+    }
+   },
+   "aqua_jelly": {
+    "big_vs_now": {
+     "max": 1,
+     "pixelsOver8": 0
+    },
+    "big_vs_old": {
+     "max": 224,
+     "pixelsOver8": 18418
+    },
+    "now_vs_old": {
+     "max": 224,
+     "pixelsOver8": 18417
+    }
+   },
+   "oil_slick": {
+    "big_vs_now": {
+     "max": 1,
+     "pixelsOver8": 0
+    },
+    "big_vs_old": {
+     "max": 242,
+     "pixelsOver8": 21067
+    },
+    "now_vs_old": {
+     "max": 242,
+     "pixelsOver8": 21067
+    }
+   }
+  },
+  "reading": "It renders today's look (big_vs_now at most 4/255, 0 pixels over 8), not the c94e849 look (big_vs_old 222 to 242/255): lengths follow the object, so a bigger sphere at a bigger Object size looks the same."
+ }
+}

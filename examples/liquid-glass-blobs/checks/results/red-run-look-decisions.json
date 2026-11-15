@@ -1,0 +1,51 @@
+{
+ "what": "Red run of the LookDecisions unit tests (look-acceptance round, 2026-11-02). Plain Python; nothing ran in TouchDesigner.",
+ "date": "2026-11-02",
+ "pre_fix": {
+  "how": "A copy of the three studies as they stood before this round (records and README without the look decisions), with this round's checks/test_study.py copied in.",
+  "results": {
+   "results": {
+    "test_code_stays_as_delivered_until_answered": "ERROR",
+    "test_look_decisions_wait_for_the_user": "ERROR"
+   },
+   "first_errors": [
+    "KeyError: 'look_decisions_for_user'",
+    "KeyError: 'look_decisions_for_user'"
+   ]
+  }
+ },
+ "mutations": {
+  "how": "A copy of the fixed tree, one change at a time; each must turn a LookDecisions test red.",
+  "cases": {
+   "the family's film count (LOOK-B1 B) without an answer": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "FAIL"
+    },
+    "first_errors": [
+     "AssertionError: '2.5 / (1.0 * parent().par.Objectsize.eval())' != '2.5 / (1.45 * parent().par.Objectsize.eval())'",
+     "AssertionError: '2.5 / 1 = 2.500 per Object size' not found in \"Nothing changed on the demo: the presets render as at c94e849 (0 to 1/255). The difference is with the family rule. The rule gives 2.5 film swirls per O"
+    ]
+   },
+   "ripple scale over Object size (LOOK-B2 B) without an answer": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "ok"
+    },
+    "first_errors": [
+     "AssertionError: Lists differ: [\"op([64 chars].u(parent().par.Ripplescale) / parent().par.Objectsize.eval()\"] != [\"op([64 chars].u(parent().par.Ripplescale)\"]"
+    ]
+   },
+   "README recommends another option than co-design.json": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "FAIL"
+    },
+    "first_errors": [
+     "AssertionError: '**B**' != '**A**'",
+     "AssertionError: '**B**' != '**A**'"
+    ]
+   }
+  }
+ }
+}

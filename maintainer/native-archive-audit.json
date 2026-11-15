@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-20",
+  "articles_catalogued": 60,
+  "repositories_catalogued": 51,
+  "touchdesigner_index_matches": [
+    {
+      "preferred_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/content/shading-motion.mdx",
+      "id": "bf8a78485a4638bf1c538084a77193903d843923613bebbd81e0faea55c00d9d"
+    },
+    {
+      "preferred_path": "Downloads/02-page-captures-and-recovery/11-Saved-Wave-A-checkpoint/Wave-A-maxime-heckel-pages-003--file-37759eb43621/contents/pages/Wedf79f75/code/compiled-mdx.js",
+      "id": "467603e450a5ab930e68ec6dad4372a3008bf8030c2d8b0af69ed92c1b6c6ac9"
+    },
+    {
+      "preferred_path": "Downloads/02-page-captures-and-recovery/11-Saved-Wave-A-checkpoint/Wave-A-maxime-heckel-pages-003--file-37759eb43621/contents/pages/Wedf79f75/content.md",
+      "id": "f5d7cd43fa29b36c158b152f0ac8b4eecc8cae265dbe697f518993b0a0264932"
+    }
+  ],
+  "native_project_paths": [],
+  "finding": "Only Shading Motion and its captures mention TouchDesigner. It implements TouchDesigner-inspired effects on the web. No native project files found. Not evidence of an authored native tutorial collection."
+}

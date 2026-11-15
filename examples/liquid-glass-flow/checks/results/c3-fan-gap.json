@@ -1,0 +1,263 @@
+{
+ "item": "C3 continuous dispersion (fan-gap mip level, from Liquid Glass Blobs)",
+ "method": "Round-2 B7 method in the WebGL2 preview (SwiftShader), 480 x 270, time 2, no spin, Dispersion 1, Samples 12. Reference: the delivered shader with 64 spectrum samples (test-only sample cap). For each variant: mean error against the reference on the pixels the variant changes (current code's error on the same pixels beside it), and glass pixels more than 32/255 from the reference. Variants: the whole fan gap (each sample reads a mip level as wide as the screen gap between neighbouring colour samples, max with the frost gap) and a quarter of it (what Liquid Glass Blobs adopted). Scratch harness: a copy of this folder with the two variant pixel shaders.",
+ "verdict": "rejected: the whole gap is further from the reference in all 16 cases; a quarter of the gap changes no pixel at this resolution",
+ "cases": {
+  "clear_crystal_sphere_refraction_thickness_preset": {
+   "fan": {
+    "changed_px": 2408,
+    "mean_current": 0.7,
+    "mean_variant": 1.05,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_sphere_refraction_thickness_2.5": {
+   "fan": {
+    "changed_px": 18973,
+    "mean_current": 2.18,
+    "mean_variant": 5.91,
+    "over32_current": 0,
+    "over32_variant": 24
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_sphere_final_thickness_preset": {
+   "fan": {
+    "changed_px": 2159,
+    "mean_current": 0.7,
+    "mean_variant": 1,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_sphere_final_thickness_2.5": {
+   "fan": {
+    "changed_px": 18354,
+    "mean_current": 2.2,
+    "mean_variant": 5.89,
+    "over32_current": 0,
+    "over32_variant": 12
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_torus_refraction_thickness_preset": {
+   "fan": {
+    "changed_px": 1474,
+    "mean_current": 0.96,
+    "mean_variant": 1.21,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_torus_refraction_thickness_2.5": {
+   "fan": {
+    "changed_px": 25123,
+    "mean_current": 1.42,
+    "mean_variant": 4.06,
+    "over32_current": 0,
+    "over32_variant": 59
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_torus_final_thickness_preset": {
+   "fan": {
+    "changed_px": 1183,
+    "mean_current": 1,
+    "mean_variant": 1.19,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "clear_crystal_torus_final_thickness_2.5": {
+   "fan": {
+    "changed_px": 24410,
+    "mean_current": 1.41,
+    "mean_variant": 4.02,
+    "over32_current": 0,
+    "over32_variant": 51
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_sphere_refraction_thickness_preset": {
+   "fan": {
+    "changed_px": 621,
+    "mean_current": 0.99,
+    "mean_variant": 1.05,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_sphere_refraction_thickness_2.5": {
+   "fan": {
+    "changed_px": 18821,
+    "mean_current": 1.68,
+    "mean_variant": 5.09,
+    "over32_current": 0,
+    "over32_variant": 41
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_sphere_final_thickness_preset": {
+   "fan": {
+    "changed_px": 511,
+    "mean_current": 0.88,
+    "mean_variant": 1.02,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_sphere_final_thickness_2.5": {
+   "fan": {
+    "changed_px": 17134,
+    "mean_current": 1.58,
+    "mean_variant": 4.69,
+    "over32_current": 0,
+    "over32_variant": 17
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_torus_refraction_thickness_preset": {
+   "fan": {
+    "changed_px": 531,
+    "mean_current": 0.83,
+    "mean_variant": 0.97,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_torus_refraction_thickness_2.5": {
+   "fan": {
+    "changed_px": 18687,
+    "mean_current": 1.29,
+    "mean_variant": 3.86,
+    "over32_current": 0,
+    "over32_variant": 12
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_torus_final_thickness_preset": {
+   "fan": {
+    "changed_px": 302,
+    "mean_current": 0.77,
+    "mean_variant": 0.91,
+    "over32_current": 0,
+    "over32_variant": 0
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  },
+  "prism_chrome_torus_final_thickness_2.5": {
+   "fan": {
+    "changed_px": 17422,
+    "mean_current": 1.2,
+    "mean_variant": 3.68,
+    "over32_current": 0,
+    "over32_variant": 8
+   },
+   "fanq": {
+    "changed_px": 0,
+    "mean_current": null,
+    "mean_variant": null,
+    "over32_current": 0,
+    "over32_variant": 0
+   }
+  }
+ }
+}

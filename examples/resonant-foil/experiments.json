@@ -1,0 +1,92 @@
+[
+  {
+    "id": "flat",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Amplitude": 0,
+      "Frequency": 7,
+      "Correct": true,
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "What is the undeformed baseline?",
+    "prediction": "The sphere remains smooth with its original silhouette.",
+    "reset": false,
+    "capture": "captures/native-flat.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "displacement",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "displacement",
+      "Amplitude": 0.18,
+      "Frequency": 7,
+      "Correct": true,
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "Where are vertices moving?",
+    "prediction": "The varying encodes signed vertical displacement; the silhouette actually changes.",
+    "reset": false,
+    "capture": "captures/native-displacement.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "wrong",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Amplitude": 0.18,
+      "Frequency": 7,
+      "Correct": false,
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "What goes wrong if normals stay unchanged?",
+    "prediction": "Lighting follows the old sphere even though the geometry moved.",
+    "reset": false,
+    "capture": "captures/native-wrong.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "normals",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "normals",
+      "Amplitude": 0.18,
+      "Frequency": 7,
+      "Correct": true,
+      "Turn": 25,
+      "Stretch": 1.5
+    },
+    "question": "Does correction survive nonuniform scale?",
+    "prediction": "World-space normals remain oriented with the deformed, stretched surface.",
+    "reset": false,
+    "capture": "captures/native-normals.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Amplitude": 0.18,
+      "Frequency": 7,
+      "Correct": true,
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "How do corrected normals shape the foil?",
+    "prediction": "Blue-to-copper reflection-like highlights follow the wave geometry.",
+    "reset": false,
+    "capture": "captures/native-final.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  }
+]

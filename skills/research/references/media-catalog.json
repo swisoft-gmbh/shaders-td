@@ -1,0 +1,1006 @@
+{
+  "scope": "Literal Image components in 17 shader MDX articles; not videos, inline SVG, CSS backgrounds or dynamically constructed assets.",
+  "counts": {
+    "image_references": 110,
+    "bundled_diagrams": 0,
+    "recovered_matches": 3
+  },
+  "images": [
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/axis-helper.png",
+      "alt": "",
+      "source_line": 213,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/annotations.png",
+      "alt": "My original annotations for key elements of the Linear WebGL scene",
+      "source_line": 292,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/displacementmap.png",
+      "alt": "Displacement Map used for our terrain. The lighter the area, the higher the vertices will appear, the darker the lower.",
+      "source_line": 361,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/terrain-animation.png",
+      "alt": "Diagram showcasing how to trick the viewer to think the animation is endless by using a copy of the plane, and swap its position at the right moment",
+      "source_line": 455,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/linear-scene-zoomed.png",
+      "alt": "Screenshot of the Linear WebGL animation with a portion zoomed in on the grid showcasing the grid is in fact composed of RGB stripes",
+      "source_line": 528,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/linear-scene-no-gamma-correction.png",
+      "alt": "Screenshot showcasing our Three.js scene without color correction",
+      "source_line": 607,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/spotlights-positions.png",
+      "alt": "Diagram showcasing the position of the two spotlights relative to the first plane that light up our scene at specific targets",
+      "source_line": 630,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "vaporwave-3d-scene-with-threejs",
+      "article_url": "https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/",
+      "source_src": "blog/linear-metalnessmap.png",
+      "alt": "Metalness Map used for our terrain. The lighter the area, the more metallic the material will appear in that area, the darker the rougher. ",
+      "source_line": 685,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-study-of-shaders-with-react-three-fiber",
+      "article_url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+      "source_src": "blog/uniforms-2.png",
+      "alt": "Diagram illustrating how to pass uniforms from our mesh to the vertex shader and fragment shader.",
+      "source_line": 230,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-study-of-shaders-with-react-three-fiber",
+      "article_url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+      "source_src": "blog/varyings-2.png",
+      "alt": "Diagram illustrating how to pass the attributes from a geometry from the vertex shader to the fragment shader using varyings.",
+      "source_line": 354,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-magical-world-of-particles-with-react-three-fiber-and-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/",
+      "source_src": "blog/console_attributes.png",
+      "alt": "Screenshot showcasing the output printed when logging the attributes of a geometry",
+      "source_line": 104,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-magical-world-of-particles-with-react-three-fiber-and-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/",
+      "source_src": "blog/varyings_3.png",
+      "alt": "Diagram illustrating how to pass the attributes from a geometry from the vertex shader to the fragment shader using varyings.",
+      "source_line": 178,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-magical-world-of-particles-with-react-three-fiber-and-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/",
+      "source_src": "blog/fbo_3.png",
+      "alt": "Diagram illustrating how the Frame Buffer Objects allows to store and update particles position data in a vertex shader and then be read as a texture.",
+      "source_line": 607,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/example_dispersion_2.png",
+      "alt": "Examples of dispersion effects by the Vercel Team, Davo Galavotti, and many other artists",
+      "source_line": 50,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/transparent_mesh_fbo_2.png",
+      "alt": "Diagram showcasing how to make a mesh transparent by hidding it, rendering the scene in an FBO, using the resulting texture on the mesh's material and showing it again.",
+      "source_line": 102,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/refraction.png",
+      "alt": "Simple diagram showcasing how light gets refracted when passing from one environment to another.",
+      "source_line": 232,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/dispersion_2.png",
+      "alt": "Simple diagram showcasing how light gets refracted and dispersed when passing from one environment to another.",
+      "source_line": 326,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/specular_diffuse.png",
+      "alt": "Diagram showcasing how the different vectors necessary to reproduce specular and diffuse lighting are obtained.",
+      "source_line": 580,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "refraction-dispersion-and-other-shader-light-effects",
+      "article_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+      "source_src": "blog/backside.png",
+      "alt": "Diagram showcasing how to render both backside and frontside while maintaining existing transparency and light effects",
+      "source_line": 710,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/first_render_target_2.png",
+      "alt": "Diagram showcasing how the texture of a render target is mapped onto a mesh. All these steps are executed on every frame.",
+      "source_line": 157,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/uv_mapping_screen_coordinate.png",
+      "alt": "Diagram showcasing the difference between mapping a texture using UV coordinates and mapping a texture using screen coordinates.",
+      "source_line": 339,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/lens.png",
+      "alt": "Diagram showcasing materials and meshes being swapped within the render loop before being rendered in a render target",
+      "source_line": 450,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/transform_portal.png",
+      "alt": "Diagram showcasing the diverse pieces of the implementation behind the portal scene",
+      "source_line": 485,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/fullscreen_triangle.png",
+      "alt": "Diagram of the fullscreen triangle geometry returned from the getFullscreenTriangle function",
+      "source_line": 593,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "article_url": "https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/",
+      "source_src": "blog/post_processing_effect.png",
+      "alt": "Diagram detailing a post-processing effect pipeline leveraging render targets and a fullscreen triangle",
+      "source_line": 615,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-sdf_inmjmq.png",
+      "alt": "Diagram showcasing the Raymarching process of 3 rays beamed from a single point and marching step-by-step by a distance d obtained through a Signed Distance Field",
+      "source_line": 86,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-points_s6aqzv.png",
+      "alt": "Diagram showcasing 3 points, P1, P2, and P3, being respectively, at a positive distance, small distance, and inside a sphere.",
+      "source_line": 111,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-uv.png",
+      "alt": "Diagram illustrating the normalization, shift, and aspect ratio adjustements of our UV coordinates that make sure that our raymarched scenes will be resizable and at the correct aspect ratio.",
+      "source_line": 238,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-axis_rxqjxy.png",
+      "alt": "Diagram representing the position of a theoretical sphere and our ray origin in relation to the center of the scene.",
+      "source_line": 255,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-diffuse_utdrew.png",
+      "alt": "Diagram showcasing how the dot product is used to obtain the 'amount' of light that a given point receives from a given light source.",
+      "source_line": 316,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-min_scweye.png",
+      "alt": "Diagram showcasing how Raymarching and SDF are applied when multiple objects are in the scene through the usage of the min operator.",
+      "source_line": 401,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-derivative_uwzz62.png",
+      "alt": "Chart representing a non-smooth intersection of 2 objects through the function f:x -> abs(x/2) and its derivative which is discontinued.",
+      "source_line": 422,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-smoothmin_xjlz5c.png",
+      "alt": "Charts representing respectively a curve obtained by using the standard min operator and a curve obtained by using smoothmin.",
+      "source_line": 432,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-mod_cr2h8i.png",
+      "alt": "Chart representing the mod function with a period of 2. Notice the repeating pattern along the x-axis. Now use this model to picture in your mind the same repetition happening along all axis x, y, and z in our raymarched scene.",
+      "source_line": 573,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-fbm_ywg0zh.png",
+      "alt": "Charts representing the application of a noise on top of itself through 3 octaves, where at each octave we decrease its amplitude and increase its frequency, thus yielding a more organic-looking and sharper noise the bigger the maximum octave number is.",
+      "source_line": 670,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "painting-with-math-a-gentle-study-of-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+      "source_src": "blog/raymarching-fbm-noise-derivative_fx9ecf.png",
+      "alt": "Screenshots representing a raymarched terrain view from the top from octaves 2 to 7, obtained through FBM and noise derivatives. Notice the cracks, and slopes forming after the 5th octave is reached.",
+      "source_line": 823,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/raymarching-points_s6aqzv.png",
+      "alt": "Diagram showcasing 3 points, P1, P2, and P3, being respectively, at a positive distance, small distance, and inside a sphere.",
+      "source_line": 68,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/volumetric_raymarching_points.png",
+      "alt": "Diagram showcasing 3 points, P1, P2, and P3, being respectively, at a positive distance, small distance, and inside a sphere. Only P3 is considered 'valid' in the context of Volumetric Raymarching",
+      "source_line": 97,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/directional_derivatives.png",
+      "alt": "Diagram showcasing 2 sampled points P1 and P2 with both their diffuse lighting calculated by sampling extra points P1' and P2' in the direction of the light",
+      "source_line": 344,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/lowstep_cloud.png",
+      "alt": "Screenshot of our rendered Volumetric cloud with a low max step count and higher step size. Notice how those optimizations have degraded the output quality.",
+      "source_line": 483,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/blue-noise-pattern.png",
+      "alt": "Blue noise texture",
+      "source_line": 498,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/blue_noise_dithering.png",
+      "alt": "Diagram showcasing the difference between our cloud being sampled without and with blue noise dithering. Notice how each ray is offset when blue noise is introduced and how that 'erases' any obvious layering in the final render.",
+      "source_line": 505,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/bicubic_filtering.png",
+      "alt": "Diagram showcasing how the bicubic filtering is applied as a post-processing effect to the original scene using Render Targets.",
+      "source_line": 582,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/beers_law.png",
+      "alt": "Diagram showcasing how Beer's Law can be used to represent how much light gets absorbed through a volume",
+      "source_line": 628,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/lightmarching.png",
+      "alt": "Diagram showcasing how we sample multiple points of lights in the direction of the light through our volume for each sampled point in the Raymarching loop.",
+      "source_line": 707,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "real-time-cloudscapes-with-volumetric-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/",
+      "source_src": "blog/anisotropic_scattering.png",
+      "alt": "Diagram showcasing the difference between isotropic scattering and anisotropic scattering when sampling our light energy.",
+      "source_line": 791,
+      "status": "reference-only",
+      "available_recovery": true,
+      "url": "https://assets.maximeheckel.com/images/blog/anisotropic_scattering.png?w=3840&q=100",
+      "note": "Not bundled: the file is served by his CDN and is not in the licensed blog repository. Open the URL."
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/example_caustics.png",
+      "alt": "Example of caustic patterns made in blender, redshift and webGPU by (left to right) @wes_cream, @active_theory, and @pixelbeat who kindly volunteered some of his time to make a custom/special render with my logo for this blog post 🙏.",
+      "source_line": 17,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/caustic_scene.png",
+      "alt": "Diagram showcasing the high level components of our scene that will serve us to render a caustic effect",
+      "source_line": 57,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/converging_diverging_rays.png",
+      "alt": "Diagram showcasing the impact of the shape of the surface on the intensity of the resulting caustic effect",
+      "source_line": 67,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/normal_projection_fbo.png",
+      "alt": "Diagram showcasing the process of swapping the material of the target mesh to our normal material to then render it in a dedicated render target to obtain a texture that can be used as input to any material",
+      "source_line": 195,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/caustics_normal_fbo.png",
+      "alt": "Diagram showcasing how, from the normal texture we just obtained, we can compute a caustic pattern that can then be projected as a texture itself onto the caustic plane.",
+      "source_line": 236,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/projection_fragment.png",
+      "alt": "Diagram showcasing how comparing the surface obtained via partial derivatives before and after the refraction through a surface can tell us whether the intensity of the caustic effect should be weaker (diverging rays -> bigger refracted surface) or brighter (converging rays -> smaller refracted surface).",
+      "source_line": 271,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/caustics_clamp_value_issue.png",
+      "alt": "Screenshot showcasing rendering issue of one early attempt at caustics when the plane was viewed through MeshTransmissionMaterial",
+      "source_line": 350,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/bounding_box.png",
+      "alt": "Diagram showcasing the vertices of the bounding box of a given mesh.",
+      "source_line": 596,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/center_caustics_plane.png",
+      "alt": "Diagram showcasing how we get the weighted center of our caustic plane.",
+      "source_line": 629,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/scale_caustic_plane.png",
+      "alt": "Diagram showcasing how we obtain a safe scale of our caustic plane so it fits our light pattern.",
+      "source_line": 658,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "caustics-in-webgl",
+      "article_url": "https://blog.maximeheckel.com/posts/caustics-in-webgl/",
+      "source_src": "blog/caustics_simple_mesh.png",
+      "alt": "Screenshot of a caustic pattern obtained from a sphereGeometry. The resulting effect is unfortunately not very interesting.",
+      "source_line": 706,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "moebius-style-post-processing",
+      "article_url": "https://blog.maximeheckel.com/posts/moebius-style-post-processing/",
+      "source_src": "blog/sobel_matrix_kernel.png",
+      "alt": "Diagram showcasing the process of applying the Sobel matrix on a given kernel",
+      "source_line": 445,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "moebius-style-post-processing",
+      "article_url": "https://blog.maximeheckel.com/posts/moebius-style-post-processing/",
+      "source_src": "blog/sobel_matrix_directions.png",
+      "alt": "Diagram showcasing how each of x-direction/y-direction Sobel Matrices respectively detect vertical/horizontal edges",
+      "source_line": 466,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "moebius-style-post-processing",
+      "article_url": "https://blog.maximeheckel.com/posts/moebius-style-post-processing/",
+      "source_src": "blog/sobel_depth_normal_v2.png",
+      "alt": "Diagram showcasing how combining the outputs of the Sobel filters for both Depth and Normal data gives us the outlines for the entire scene and each meshes within it",
+      "source_line": 560,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "moebius-style-post-processing",
+      "article_url": "https://blog.maximeheckel.com/posts/moebius-style-post-processing/",
+      "source_src": "blog/spaceship_outline.png",
+      "alt": "Render of the spaceship mesh (originally made by Sousinho) used in the final scene with a custom version of our Moebius post-processing pipeline returning a blueprint style output",
+      "source_line": 906,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-crafting-painterly-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+      "source_src": "blog/Kernel_Comparison.png",
+      "alt": "Diagram showcasing both box-shaped and circular kernels and highlighting which parts of the image are being smoothed while maintaining the sharpness of the edges.",
+      "source_line": 228,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-crafting-painterly-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+      "source_src": "blog/Circular_Kernel_Details.png",
+      "alt": "Diagram showcasing how the sampling of a slice of the circular kernel is split.",
+      "source_line": 283,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-crafting-painterly-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+      "source_src": "blog/Weighting_Comparison.png",
+      "alt": "Diagram comparing standard weighting vs Gaussian weighting. The darker the color of a pixel is, the 'heavier' the weight for said pixel is.",
+      "source_line": 304,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-crafting-painterly-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+      "source_src": "blog/Anisotropic_Kernel.png",
+      "alt": "Diagram comparing isotropic kernels vs anisotropic kernels.",
+      "source_line": 450,
+      "status": "reference-only",
+      "available_recovery": true,
+      "url": "https://assets.maximeheckel.com/images/blog/Anisotropic_Kernel.png?w=3840&q=100",
+      "note": "Not bundled: the file is served by his CDN and is not in the licensed blog repository. Open the URL."
+    },
+    {
+      "article": "on-crafting-painterly-shaders",
+      "article_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+      "source_src": "blog/Kuwahara_Pipeline.png",
+      "alt": "Diagram showcasing the multi-pass post-processing pipeline details in this section.",
+      "source_line": 464,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-art-of-dithering-and-retro-shading-web",
+      "article_url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+      "source_src": "blog/dithering-examples.png",
+      "alt": "Examples of beautifully executed dithering art from left to right by Basement Studio, @aweusmeuh, and @loackme_",
+      "source_line": 54,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-art-of-dithering-and-retro-shading-web",
+      "article_url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+      "source_src": "blog/bayermatrix.png",
+      "alt": "Diagram showcasing the process of applying the 4x4 Bayer Matrix on the input buffer of a scene and obtaining the dithering pattern based on the threshold value matching each pixel",
+      "source_line": 199,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-art-of-dithering-and-retro-shading-web",
+      "article_url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+      "source_src": "blog/grayscaletexture.png",
+      "alt": "Diagram showcasing how to use the grayscale values to sample a texture containing the same amount of colors",
+      "source_line": 400,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-art-of-dithering-and-retro-shading-web",
+      "article_url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+      "source_src": "blog/rgbcells.png",
+      "alt": "Diagram showcasing the staggered RGB cells shadow mask effect on a sample scene",
+      "source_line": 547,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "the-art-of-dithering-and-retro-shading-web",
+      "article_url": "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web/",
+      "source_src": "blog/screenshot-curveuv.png",
+      "alt": "Screenshot showcasing artifacts introduced when using the curveUV coordinates as base uv for our RGB Cell shadow mask",
+      "source_line": 660,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Bar_Pattern.png",
+      "alt": "Diagram showcasing the bar pattern rendered on each cell based on the luma",
+      "source_line": 121,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/ASCII_Pattern.png",
+      "alt": "Diagram showcasing a simplified version of the ASCII texture passed as an argument of the ASCII effect. It also breaks down the UV coordinates used to sample each character individually.",
+      "source_line": 220,
+      "status": "reference-only",
+      "available_recovery": true,
+      "url": "https://assets.maximeheckel.com/images/blog/ASCII_Pattern.png?w=3840&q=100",
+      "note": "Not bundled: the file is served by his CDN and is not in the licensed blog repository. Open the URL."
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Pixel_Pattern.png",
+      "alt": "Diagram showcasing the Provencher style circle pattern rendered on each cell based on the luma",
+      "source_line": 321,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Crochet_Pattern.png",
+      "alt": "Diagram showcasing a simplified depiction of the ellipsis pattern used in the crochet post-processing effect",
+      "source_line": 556,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Lego_Pattern.png",
+      "alt": "Diagram showcasing how the lighting technique used in this effect draws the stud at the center of each cell",
+      "source_line": 620,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Fluted_Glass_Derivative.png",
+      "alt": "Diagram showcasing the sine wave representing our fluted glass shape in relation to its derivative which represents the amount of distortion the fluted glass creates at any given point. (Apologies for the inaccuracy of this chart I have yet to find a good plugin on Figma to draw them. It should be good enough to help you visualize the math behind this effect.)",
+      "source_line": 665,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "post-processing-as-a-creative-medium",
+      "article_url": "https://blog.maximeheckel.com/posts/post-processing-as-a-creative-medium/",
+      "source_src": "blog/Depixelation.png",
+      "alt": "Diagram showcasing a sketch breaking down the process behind the Depixelation effect.",
+      "source_line": 742,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/coordinate-system.png",
+      "alt": "Diagram illustrating the different coordinate systems and the matrix necessary to jump from one to the next",
+      "source_line": 72,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/depth-based-stop.png",
+      "alt": "Diagram showcasing the impact of using depth based stopping when drawing our light using raymarching",
+      "source_line": 267,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/shadow-1.png",
+      "alt": "Diagram showcasing the expected result of handling occlusion from objects within the scene.",
+      "source_line": 369,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/shadow-2.png",
+      "alt": "Diagram showcasing sampling points being in shadow, within/outside the lightCamera frustum, and lit.",
+      "source_line": 549,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/shadow-3.png",
+      "alt": "Diagram illustrating why we're skipping instead of interrupting our raymarching loop.",
+      "source_line": 581,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/light-banding.png",
+      "alt": "Screenshot of our scene where the step size was reduced, yielding some visible banding for our volumetric light.",
+      "source_line": 790,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/bn-dithering.png",
+      "alt": "Diagram illustrating the offset introduced by blue noise dithering.",
+      "source_line": 801,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/arches-demo.png",
+      "alt": "Diagram representing three arched doors with light beaming through the opening, and the wall/columns casting shadows.",
+      "source_line": 849,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "article_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+      "source_src": "blog/cube-cam.png",
+      "alt": "Diagram showcasing a cube camera positioned at the center of a scene and the respective direction of each of its faces.",
+      "source_line": 955,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "field-guide-to-tsl-and-webgpu",
+      "article_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+      "source_src": "blog/node-material.png",
+      "alt": "Diagram illustrating an arbitrary set of nodes for a given material and a representation of the data they can override.",
+      "source_line": 171,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "field-guide-to-tsl-and-webgpu",
+      "article_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+      "source_src": "blog/compute-shader.png",
+      "alt": "Diagram illustrating an arbitrary buffer passed as input to a compute shader. The shader function is then dispatched in threads, each computing an updated value from the input buffer and writting the result in an output buffer.",
+      "source_line": 755,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "field-guide-to-tsl-and-webgpu",
+      "article_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+      "source_src": "blog/workgroups.png",
+      "alt": "Diagram illustrating workgroupSize and dispatchSize and how combined set the final number of threads to be dispatched to execute our compute shader function.",
+      "source_line": 997,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "field-guide-to-tsl-and-webgpu",
+      "article_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+      "source_src": "blog/gpgpu-2.png",
+      "alt": "Diagram showcasing the process behind 'GPGPU particles' and how we leveraged the texture of a Frame Buffer Object to read/write the positions and updated position of each particle on the GPU.",
+      "source_line": 1028,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "field-guide-to-tsl-and-webgpu",
+      "article_url": "https://blog.maximeheckel.com/posts/field-guide-to-tsl-and-webgpu/",
+      "source_src": "blog/sobel-2.png",
+      "alt": "Diagram showcasing how combining the outputs of the Sobel filters for both Depth and Normal data gives us the outlines for the entire scene and each meshes within it",
+      "source_line": 1346,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/halftone.png",
+      "alt": "Classic halftone pattern",
+      "source_line": 42,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/mask-halftone.png",
+      "alt": "Diagram breaking down the distance field and masking aspect of drawing a circle in a fragment shader",
+      "source_line": 56,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/cell-halftone.png",
+      "alt": "Diagram showcasing the process of repeating patterns in a fragment shader using the fract function",
+      "source_line": 93,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/luma-halftone.png",
+      "alt": "Diagram showcasing the white dot halftone pattern based on the luma of the underlying cell color",
+      "source_line": 217,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/ring-halftone.png",
+      "alt": "Diagram illustrating an arbitrary set of nodes for a given material and a representation of the data they can override.",
+      "source_line": 243,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/antialias.png",
+      "alt": "Diagram illustrating a simple antialiasing process using smoothstep to blur the edges of a circle and make its edge softer",
+      "source_line": 274,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/subtractive-blending2.png",
+      "alt": "Diagram showcasing subtractive color blending for cyan, magenta, yellow, and all the pairs they can form",
+      "source_line": 385,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/cmyk-halftone.png",
+      "alt": "Diagram showcasing the breakdown of red, green, and blue with CMYK dots",
+      "source_line": 417,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shades-of-halftone",
+      "article_url": "https://blog.maximeheckel.com/posts/shades-of-halftone/",
+      "source_src": "blog/cell-wall.png",
+      "alt": "Diagram illustrating dots clipping to the 'walls' of their respective cell when offset too much",
+      "source_line": 530,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/motion-mask.png",
+      "alt": "Diagram showcasing the process behind frame differencing",
+      "source_line": 63,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/motion-mask-decau.png",
+      "alt": "Diagram showcasing the process behind frame differencing with decay",
+      "source_line": 129,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/blob-buffer.png",
+      "alt": "Diagram showcasing the buffer array containing our blob slot data. Blobs with a confidence below 0.3 in this example are considered discarded.",
+      "source_line": 443,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/optical-flow.png",
+      "alt": "Diagram showcasing the process behind motion flow extraction",
+      "source_line": 660,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/wagon-wheel.png",
+      "alt": "Diagram showcasing three sampled frames of a sphere rotating along a circular path, creating the illusion that it moves in the opposite direction",
+      "source_line": 956,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "shading-motion",
+      "article_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+      "source_src": "blog/object-smear.png",
+      "alt": "Diagram showcasing a sphere smeared along its circular path between frames to reveal its true direction of motion",
+      "source_line": 999,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-rendering-the-sky-sunsets-and-planets",
+      "article_url": "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/",
+      "source_src": "blog/shuttle.webp",
+      "alt": "Shuttle Silhouette https://www.nasa.gov/image-article/shuttle-silhouette-2/",
+      "source_line": 17,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-rendering-the-sky-sunsets-and-planets",
+      "article_url": "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/",
+      "source_src": "blog/moon-obstruction.webp",
+      "alt": "Diagram showcasing the different obstruction scenario handled by our sun visibility test",
+      "source_line": 681,
+      "status": "reference-only",
+      "available_recovery": false
+    },
+    {
+      "article": "on-rendering-the-sky-sunsets-and-planets",
+      "article_url": "https://blog.maximeheckel.com/posts/on-rendering-the-sky-sunsets-and-planets/",
+      "source_src": "blog/lut-raymarching.webp",
+      "alt": "Diagram showcasing the sampling processes for our Sky-View and Aerial Perspective LUTs",
+      "source_line": 939,
+      "status": "reference-only",
+      "available_recovery": false
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "heading": "What shape exists before the lines?",
+    "question": "What shape exists before the lines?",
+    "snippets": [
+      [
+        "shader.frag",
+        "field"
+      ]
+    ],
+    "experiments": [
+      "field"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "How do equal values become threads?",
+    "question": "How do equal values become threads?",
+    "snippets": [
+      [
+        "shader.frag",
+        "coordinates"
+      ],
+      [
+        "shader.frag",
+        "contours"
+      ]
+    ],
+    "experiments": [
+      "lines"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "What happens when the pattern becomes dense?",
+    "question": "What happens when the pattern becomes dense?",
+    "snippets": [
+      [
+        "shader.frag",
+        "contours"
+      ]
+    ],
+    "experiments": [
+      "dense"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "How does a diagram become a material?",
+    "question": "How does a diagram become a material?",
+    "snippets": [
+      [
+        "shader.frag",
+        "compose"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

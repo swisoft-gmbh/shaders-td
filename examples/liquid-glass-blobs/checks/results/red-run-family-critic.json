@@ -1,0 +1,50 @@
+{
+  "what": "Family critic round (2026-11-02): this study's FamilyCritic unit tests, run on two trees with the current checks/test_study.py.",
+  "tests": [
+    "FamilyCritic.test_one_object_size_setups_are_measured_and_documented",
+    "FamilyCritic.test_native_family_list_waits_for_a_recorded_run"
+  ],
+  "c94e849": {
+    "tree": "git archive c94e849",
+    "results": {
+      "FamilyCritic.test_one_object_size_setups_are_measured_and_documented": "FAIL",
+      "FamilyCritic.test_native_family_list_waits_for_a_recorded_run": "ERROR"
+    },
+    "summary": [
+      "Ran 2 tests in 0.002s",
+      "FAILED (failures=1, errors=1)"
+    ]
+  },
+  "without_this_fix": {
+    "tree": "the current tree with the README's One Object size note and validation.json family_close.native_run removed",
+    "results": {
+      "FamilyCritic.test_one_object_size_setups_are_measured_and_documented": "ERROR",
+      "FamilyCritic.test_native_family_list_waits_for_a_recorded_run": "ERROR"
+    },
+    "summary": [
+      "Ran 2 tests in 0.003s",
+      "FAILED (errors=2)"
+    ]
+  },
+  "with_this_fix": {
+    "tree": "the current tree",
+    "results": {
+      "FamilyCritic.test_one_object_size_setups_are_measured_and_documented": "ok",
+      "FamilyCritic.test_native_family_list_waits_for_a_recorded_run": "ok"
+    },
+    "summary": [
+      "Ran 2 tests in 0.002s",
+      "OK"
+    ]
+  },
+  "measurement": {
+    "script": "scratchpad agents/critic-fit-native/fit_limits.py (each member's own Fit, uniform expressions and shader lookups on fake TouchDesigner objects)",
+    "ratios_are": "value / what a Fit that sees the true world size gives (1 = the look carries over)",
+    "result": {
+      "fit_at_comp_scale_1": 0.6896551724137931,
+      "fit_at_comp_scale_3": 2.0689655172413794,
+      "reads_one_geometry_comp": true,
+      "frag_mentions_TDInstance": false
+    }
+  }
+}

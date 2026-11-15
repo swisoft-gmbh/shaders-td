@@ -1,0 +1,51 @@
+{
+  "research": {
+    "status": "passed",
+    "evidence": "research.md"
+  },
+  "static": {
+    "status": "passed",
+    "evidence": "../../validation/package-validation.json"
+  },
+  "native_compile": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/fresh-build.json"
+  },
+  "native_render": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/fresh-build.json"
+  },
+  "controls": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/mechanism-tests.json"
+  },
+  "mechanism": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/mechanism-tests.json"
+  },
+  "export_reopen": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/export-reopen.json"
+  },
+  "tutorial": {
+    "status": "passed",
+    "evidence": "../../validation/five-mechanisms/workflow-validation.json",
+    "scope": "Source/section/capture alignment, prose review and native capture inspection. No browser article was published; user article acceptance remains pending."
+  },
+  "performance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "shader_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "article_acceptance": {
+    "status": "pending",
+    "evidence": null
+  },
+  "user_visibility": {
+    "status": "reported",
+    "evidence": "../../validation/five-mechanisms/user-feedback.json"
+  }
+}

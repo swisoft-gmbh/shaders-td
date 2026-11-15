@@ -1,0 +1,98 @@
+{
+  "contour-loom": {
+    "captures": {
+      "field": {
+        "mean": 0.18884848058223724,
+        "std": 0.20317572355270386,
+        "finite": true,
+        "errors": ""
+      },
+      "lines": {
+        "mean": 0.16236107051372528,
+        "std": 0.3297751545906067,
+        "finite": true,
+        "errors": ""
+      },
+      "dense": {
+        "mean": 0.15902914106845856,
+        "std": 0.28980377316474915,
+        "finite": true,
+        "errors": ""
+      },
+      "final": {
+        "mean": 0.11967401206493378,
+        "std": 0.168874129652977,
+        "finite": true,
+        "errors": ""
+      }
+    },
+    "controls": [
+      {
+        "control": "Stage",
+        "value": "field",
+        "difference": 0.14180780947208405,
+        "passed": true
+      },
+      {
+        "control": "Bands",
+        "value": 36,
+        "difference": 0.05326744541525841,
+        "passed": true
+      },
+      {
+        "control": "Warp",
+        "value": 1.3,
+        "difference": 0.08727862685918808,
+        "passed": true
+      }
+    ]
+  },
+  "contour-material": {
+    "captures": {
+      "field": {
+        "mean": 0.1216573566198349,
+        "std": 0.2431703358888626,
+        "finite": true,
+        "errors": ""
+      },
+      "normal": {
+        "mean": 0.1490943729877472,
+        "std": 0.2951182425022125,
+        "finite": true,
+        "errors": ""
+      },
+      "stretch": {
+        "mean": 0.20840564370155334,
+        "std": 0.333501935005188,
+        "finite": true,
+        "errors": ""
+      },
+      "final": {
+        "mean": 0.04616587236523628,
+        "std": 0.10499307513237,
+        "finite": true,
+        "errors": ""
+      }
+    },
+    "controls": [
+      {
+        "control": "Stage",
+        "value": "normal",
+        "difference": 0.07994285225868225,
+        "passed": true
+      },
+      {
+        "control": "Turn",
+        "value": 85,
+        "difference": 0.010621330700814724,
+        "passed": true
+      },
+      {
+        "control": "Stretch",
+        "value": 1.4,
+        "difference": 0.04420255497097969,
+        "passed": true
+      }
+    ]
+  }
+}

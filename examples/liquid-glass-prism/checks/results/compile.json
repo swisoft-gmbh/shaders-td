@@ -1,0 +1,99 @@
+{
+  "tool": "Glslang Version: 11:15.1.0",
+  "ok": true,
+  "results": [
+    {
+      "shader": "liquid_prism.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_prism.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_prism.vert"
+    },
+    {
+      "shader": "liquid_prism.vert (picking)",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_prism.vert (picking)",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_prism.vert"
+    },
+    {
+      "shader": "liquid_prism.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_prism.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_prism.frag"
+    },
+    {
+      "shader": "liquid_prism.frag (3 colour buffers)",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_prism.frag (3 colour buffers)",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_prism.frag"
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "backdrop.frag"
+    },
+    {
+      "shader": "env.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "env.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "env.frag"
+    }
+  ],
+  "negative_test": {
+    "shader": "liquid_prism.frag (deliberately broken copy)",
+    "mode": "glsl460",
+    "expected": "compile error on line 393",
+    "compiled": false,
+    "error_lines": [
+      393,
+      393
+    ],
+    "ok": true,
+    "output": "broken.frag\nERROR: 0:393: 'outwardNormalOf' : no matching overloaded function found \nERROR: 0:393: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated."
+  },
+  "negative_test_picking": {
+    "shader": "liquid_prism.vert (TD_PICKING_ACTIVE, no TDWritePickingValues stand-in)",
+    "mode": "glsl460",
+    "expected": "compile error: TDWritePickingValues undeclared (the picking branch is compiled)",
+    "compiled": false,
+    "ok": true,
+    "output": "picking.vert\nERROR: 0:32: 'TDWritePickingValues' : no matching overloaded function found \nERROR: 0:32: '' : missing #endif \nERROR: 0:32: '' : compilation terminated \nERROR: 3 compilation errors.  No code generated."
+  },
+  "scope": "Valid GLSL 4.60 against documented TD stand-ins; not a TouchDesigner compile."
+}

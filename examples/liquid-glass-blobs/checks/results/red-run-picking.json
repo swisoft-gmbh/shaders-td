@@ -1,0 +1,60 @@
+{
+ "scope": "Verifier finding P1 (low), 2026-11-02: blobs.vert ran its whole body in the pick render and then called TDWritePickingValues() under #ifdef, not the documented '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif'. 'Before' is blobs.vert as the verifier saw it (identical to 6a58487); 'after' is the delivered file. glslang and plain Python only; nothing ran in TouchDesigner.",
+ "documentation": {
+  "write_a_glsl_mat": "https://docs.derivative.ca/Write_a_GLSL_MAT (oldid 38399, modified 2026-08-05, read 2026-11-02): '#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif' and 'when picking is occuring, the define TD_PICKING_ACTIVE is set and only the code inside the #else block is executed'.",
+  "exported_mat_shader": "https://docs.derivative.ca/Syntaxhighlight (last edited 27 September 2017, read 2026-11-02): an exported MAT vertex shader computes 'vec4 worldSpacePos = TDDeform(P); gl_Position = TDWorldToProj(worldSpacePos);' before '#ifndef TD_PICKING_ACTIVE', and calls TDWritePickingValues() in the #else block."
+ },
+ "method": "glslangValidator -E (preprocess only) of blobs.vert with and without '#define TD_PICKING_ACTIVE'; the statements of main() listed. The unit test does the same with a small Python preprocessor (#ifdef/#ifndef/#else/#endif), which gives the same lists.",
+ "pick_render_statements_before": [
+  "vec4 world = TDDeform(vec4(TDPos(), 1.0))",
+  "vWorldPos = world.xyz",
+  "vObjOrigin = TDDeform(vec4(0.0, 0.0, 0.0, 1.0)).xyz",
+  "vObjX = TDDeform(vec4(1.0, 0.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjY = TDDeform(vec4(0.0, 1.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjZ = TDDeform(vec4(0.0, 0.0, 1.0, 1.0)).xyz - vObjOrigin",
+  "vCamIndex = TDCameraIndex()",
+  "vInstance = TDInstanceID()",
+  "gl_Position = TDWorldToProj(world)",
+  "TDWritePickingValues()"
+ ],
+ "pick_render_statements_after": [
+  "vec4 world = TDDeform(vec4(TDPos(), 1.0))",
+  "gl_Position = TDWorldToProj(world)",
+  "TDWritePickingValues()"
+ ],
+ "ordinary_render_statements_before": [
+  "vec4 world = TDDeform(vec4(TDPos(), 1.0))",
+  "vWorldPos = world.xyz",
+  "vObjOrigin = TDDeform(vec4(0.0, 0.0, 0.0, 1.0)).xyz",
+  "vObjX = TDDeform(vec4(1.0, 0.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjY = TDDeform(vec4(0.0, 1.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjZ = TDDeform(vec4(0.0, 0.0, 1.0, 1.0)).xyz - vObjOrigin",
+  "vCamIndex = TDCameraIndex()",
+  "vInstance = TDInstanceID()",
+  "gl_Position = TDWorldToProj(world)"
+ ],
+ "ordinary_render_statements_after": [
+  "vec4 world = TDDeform(vec4(TDPos(), 1.0))",
+  "gl_Position = TDWorldToProj(world)",
+  "vWorldPos = world.xyz",
+  "vObjOrigin = TDDeform(vec4(0.0, 0.0, 0.0, 1.0)).xyz",
+  "vObjX = TDDeform(vec4(1.0, 0.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjY = TDDeform(vec4(0.0, 1.0, 0.0, 1.0)).xyz - vObjOrigin",
+  "vObjZ = TDDeform(vec4(0.0, 0.0, 1.0, 1.0)).xyz - vObjOrigin",
+  "vCamIndex = TDCameraIndex()",
+  "vInstance = TDInstanceID()"
+ ],
+ "unit_test_red_run": {
+  "code": "blobs.vert before the fix, checks/test_study.py after it",
+  "result": "61 tests, 2 failures: test_pick_render_runs_only_the_documented_picking_block (10 statements in the pick render, 3 expected) and test_extra_colour_buffers_are_zeroed_with_constant_indices ('#ifndef TD_PICKING_ACTIVE' not found; this assertion changed on purpose from '#ifdef', see review.md#picking-form-fix).",
+  "after": "61 tests, OK"
+ },
+ "compile_after": "checks/results/compile.json: blobs.vert and blobs.vert (pick render) pass in GLSL 4.60 and Vulkan relaxed modes, as before.",
+ "look": {
+  "method": "All 24 preset tiles (12 presets on Checker and Type, time 3 s, 800 x 450 in an 870 x 491 screenshot) rendered with the fixed blobs.vert in the WebGL2 (SwiftShader) preview and compared with the stored captures.",
+  "identical_tiles": 24,
+  "tiles": 24,
+  "max_channel_difference": 0,
+  "note": "The preview never defines TD_PICKING_ACTIVE, so it renders the ordinary branch; the pick render itself cannot be previewed."
+ }
+}

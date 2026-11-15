@@ -1,0 +1,10 @@
+{
+  "interface": {
+    "display_name": "Research a shader idea",
+    "short_description": "Find techniques and compare TouchDesigner routes",
+    "default_prompt": "Use $research to find techniques for my TouchDesigner idea."
+  },
+  "policy": {
+    "allow_implicit_invocation": true
+  }
+}

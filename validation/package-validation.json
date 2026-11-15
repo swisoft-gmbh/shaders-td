@@ -1,0 +1,727 @@
+{
+  "preserved_files": 393,
+  "web_scenes": 141,
+  "studies": [
+    {
+      "study": "contour-loom",
+      "recipe": {
+        "ok": true,
+        "nodes": 3,
+        "wires": 1,
+        "experiments": 4,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 4,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "contour-material",
+      "recipe": {
+        "ok": true,
+        "nodes": 8,
+        "wires": 1,
+        "experiments": 4,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "lantern-fog",
+      "recipe": {
+        "ok": true,
+        "nodes": 3,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "orbital-relic",
+      "recipe": {
+        "ok": true,
+        "nodes": 3,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "phosphor-memory",
+      "recipe": {
+        "ok": true,
+        "nodes": 9,
+        "wires": 6,
+        "experiments": 4,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 4,
+        "excerpts": 6,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "pigment-census",
+      "recipe": {
+        "ok": true,
+        "nodes": 5,
+        "wires": 2,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "resonant-foil",
+      "recipe": {
+        "ok": true,
+        "nodes": 8,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    },
+    {
+      "study": "tidal-ink",
+      "recipe": {
+        "ok": true,
+        "nodes": 8,
+        "wires": 4,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "teaching": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 6,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      }
+    }
+  ],
+  "negative_cases": [
+    "stale source excerpt",
+    "code moved out of its section",
+    "experiment moved out of its section",
+    "omitted teaching section",
+    "missing local figure",
+    "source path escape",
+    "unknown wire node",
+    "same-frame wire cycle",
+    "duplicate input slot",
+    "unknown uniform control",
+    "invalid menu preset",
+    "native version directive conflict"
+  ],
+  "relocation": {
+    "passed": true,
+    "preserved_files": 393,
+    "studies": 8
+  },
+  "scaffold": {
+    "relocated_copy": true,
+    "refuses_overwrite": true,
+    "new_mechanisms": [
+      "orbital-relic",
+      "lantern-fog",
+      "pigment-census",
+      "resonant-foil",
+      "tidal-ink"
+    ]
+  },
+  "web_baseline_unchanged": true,
+  "ok": true,
+  "check_count": 1728,
+  "liquid_glass_examples": {
+    "scope": "Preview-only. No TouchDesigner run and no .tox. Checks outside TouchDesigner: glslang against TouchDesigner stand-ins, WebGL2 (SwiftShader) previews of the same GLSL, Python unit tests on fake td objects, the plugin static and tutorial checks.",
+    "date": "2026-11-03",
+    "studies": [
+      {
+        "study": "liquid-glass",
+        "path": "examples/liquid-glass",
+        "recipe": {
+          "ok": true,
+          "nodes": 20,
+          "wires": 3,
+          "experiments": 16,
+          "errors": [],
+          "scope": "Static recipe contracts; no native compilation or visual certification."
+        },
+        "teaching": {
+          "ok": true,
+          "sections": 10,
+          "excerpts": 15,
+          "errors": [],
+          "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+        },
+        "unit_tests": {
+          "ran": 75,
+          "ok": true,
+          "run_date": "2026-11-03"
+        },
+        "glsl_compile_standins": {
+          "compiles": 12,
+          "negative_tests": 1,
+          "ok": true,
+          "targets": "GLSL 4.60 and Vulkan (relaxed)",
+          "run_date": "2026-11-03"
+        },
+        "preview": {
+          "tests": 35,
+          "ok": true,
+          "source": "examples/liquid-glass/checks/results/preview-tests.json",
+          "status": "committed 2026-11-02, not rerun; no shader logic changed"
+        },
+        "native": "pending"
+      },
+      {
+        "study": "liquid-glass-flow",
+        "path": "examples/liquid-glass-flow",
+        "recipe": {
+          "ok": true,
+          "nodes": 31,
+          "wires": 19,
+          "experiments": 15,
+          "errors": [],
+          "scope": "Static recipe contracts; no native compilation or visual certification."
+        },
+        "teaching": {
+          "ok": true,
+          "sections": 7,
+          "excerpts": 11,
+          "errors": [],
+          "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+        },
+        "unit_tests": {
+          "ran": 91,
+          "ok": true,
+          "run_date": "2026-11-03"
+        },
+        "glsl_compile_standins": {
+          "compiles": 14,
+          "negative_tests": 2,
+          "ok": true,
+          "targets": "GLSL 4.60 and Vulkan (relaxed)",
+          "run_date": "2026-11-03"
+        },
+        "preview": {
+          "tests": 44,
+          "ok": true,
+          "source": "examples/liquid-glass-flow/checks/results/preview-tests.json (committed 2026-11-02, 44 tests, ok True)",
+          "status": "rerun 2026-11-03 for 0.4.0 twice: after the one-line path change in liquid_flow.frag's header comment, then after the fix round rewrote that comment to name commits c94e849 and 9e58e25 (comment lines only): 44 tests, ok True; rerun output kept outside the repo, committed file unchanged"
+        },
+        "native": "pending"
+      },
+      {
+        "study": "liquid-glass-blobs",
+        "path": "examples/liquid-glass-blobs",
+        "recipe": {
+          "ok": true,
+          "nodes": 26,
+          "wires": 5,
+          "experiments": 19,
+          "errors": [],
+          "scope": "Static recipe contracts; no native compilation or visual certification."
+        },
+        "teaching": {
+          "ok": true,
+          "sections": 9,
+          "excerpts": 19,
+          "errors": [],
+          "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+        },
+        "unit_tests": {
+          "ran": 81,
+          "ok": true,
+          "run_date": "2026-11-03"
+        },
+        "glsl_compile_standins": {
+          "compiles": 14,
+          "negative_tests": 1,
+          "ok": true,
+          "targets": "GLSL 4.60 and Vulkan (relaxed)",
+          "run_date": "2026-11-03"
+        },
+        "preview": {
+          "tests": 42,
+          "ok": true,
+          "source": "examples/liquid-glass-blobs/checks/results/preview-tests.json",
+          "status": "committed 2026-11-02, not rerun; no shader logic changed"
+        },
+        "native": "pending"
+      },
+      {
+        "study": "liquid-glass-prism",
+        "path": "examples/liquid-glass-prism",
+        "recipe": {
+          "ok": true,
+          "nodes": 20,
+          "wires": 3,
+          "experiments": 16,
+          "errors": [],
+          "scope": "Static recipe contracts; no native compilation or visual certification."
+        },
+        "teaching": {
+          "ok": true,
+          "sections": 9,
+          "excerpts": 16,
+          "errors": [],
+          "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+        },
+        "unit_tests": {
+          "ran": 84,
+          "ok": true,
+          "run_date": "2026-11-03"
+        },
+        "glsl_compile_standins": {
+          "compiles": 12,
+          "negative_tests": 2,
+          "ok": true,
+          "targets": "GLSL 4.60 and Vulkan (relaxed)",
+          "run_date": "2026-11-03"
+        },
+        "preview": {
+          "tests": 54,
+          "ok": true,
+          "source": "examples/liquid-glass-prism/checks/results/preview-tests.json",
+          "status": "committed 2026-11-02, not rerun; no shader logic changed"
+        },
+        "native": "pending"
+      },
+      {
+        "study": "liquid-glass-lit",
+        "path": "examples/liquid-glass-lit",
+        "recipe": {
+          "ok": true,
+          "nodes": 28,
+          "wires": 2,
+          "experiments": 16,
+          "errors": [],
+          "scope": "Static recipe contracts; no native compilation or visual certification."
+        },
+        "teaching": {
+          "ok": true,
+          "sections": 8,
+          "excerpts": 13,
+          "errors": [],
+          "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+        },
+        "unit_tests": {
+          "ran": 96,
+          "ok": true,
+          "run_date": "2026-11-03"
+        },
+        "glsl_compile_standins": {
+          "compiles": 58,
+          "negative_tests": 4,
+          "ok": true,
+          "targets": "GLSL 4.60 and Vulkan (relaxed)",
+          "run_date": "2026-11-03",
+          "picking_preprocess_checks": 2
+        },
+        "preview": {
+          "tests": 36,
+          "ok": true,
+          "source": "examples/liquid-glass-lit/checks/results/preview-tests.json",
+          "status": "committed 2026-11-02, not rerun; no shader logic changed"
+        },
+        "native": "pending"
+      }
+    ]
+  },
+  "package_0_4_0": {
+    "version": "0.4.0",
+    "date": "2026-11-03",
+    "claude_plugin_validate_strict": {
+      "command": "claude plugin validate . --strict",
+      "cli": "Claude Code 2.1.317",
+      "exit": 0,
+      "ok": true,
+      "result": "Validation passed; plugin directory checks found nothing to report",
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "claude_plugin_validate_skills": {
+      "command": "claude plugin validate skills",
+      "exit": 0,
+      "ok": true,
+      "result": "Validation passed",
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "root_plugin_json_agent_plugins_schema": {
+      "schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json (fetched 2026-11-03)",
+      "file": "plugin.json",
+      "errors": [],
+      "ok": true,
+      "note": "license (now the SPDX expression CC-BY-NC-4.0 AND MIT), homepage and repository are schema properties; none rejected; rerun against the schema file fetched 2026-11-03 after the release_notes wording change, no errors",
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "manifest_versions": {
+      "versions": {
+        "plugin.json": "0.4.0",
+        ".claude-plugin/plugin.json": "0.4.0",
+        ".codex-plugin/plugin.json": "0.4.0"
+      },
+      "same_version": true,
+      "marketplace_version_fields": {
+        ".claude-plugin/marketplace.json": [],
+        ".agents/plugins/marketplace.json": []
+      },
+      "openai_overlay_equal": {
+        "interface": true,
+        "review": true,
+        "publication": true
+      },
+      "root_new_fields": {
+        "license": "CC-BY-NC-4.0 AND MIT",
+        "homepage": "https://marcoleder.ch/maxime-heckel-td/",
+        "repository": "https://github.com/marcoleder/maxime-heckel-shaders-touchdesigner"
+      },
+      "ok": true,
+      "claude_plugin_license": "CC-BY-NC-4.0 AND MIT",
+      "license_note": "Both license fields give the SPDX expression CC-BY-NC-4.0 AND MIT (the toolkit and Heckel's article content; his blog code). README.md says the field names only these two; NOTICE.md lists the full terms, including captures with no redistribution licence.",
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "skill_frontmatter_and_length": {
+      "shader-build": {
+        "lines": 119,
+        "body_lines": 114,
+        "keys": [
+          "description",
+          "license",
+          "name"
+        ],
+        "keys_in_spec": true,
+        "name_matches_folder": true,
+        "name_lowercase_hyphen_max_64": true,
+        "description_chars": 446,
+        "description_max_1024": true,
+        "description_max_450_target": true,
+        "touchdesigner_in_first_60": true,
+        "no_angle_brackets": true,
+        "body_under_500_lines": true,
+        "ok": true
+      },
+      "shader-explain": {
+        "lines": 76,
+        "body_lines": 71,
+        "keys": [
+          "description",
+          "license",
+          "name"
+        ],
+        "keys_in_spec": true,
+        "name_matches_folder": true,
+        "name_lowercase_hyphen_max_64": true,
+        "description_chars": 323,
+        "description_max_1024": true,
+        "description_max_450_target": true,
+        "touchdesigner_in_first_60": true,
+        "no_angle_brackets": true,
+        "body_under_500_lines": true,
+        "ok": true
+      },
+      "shader-research": {
+        "lines": 87,
+        "body_lines": 82,
+        "keys": [
+          "description",
+          "license",
+          "name"
+        ],
+        "keys_in_spec": true,
+        "name_matches_folder": true,
+        "name_lowercase_hyphen_max_64": true,
+        "description_chars": 351,
+        "description_max_1024": true,
+        "description_max_450_target": true,
+        "touchdesigner_in_first_60": true,
+        "no_angle_brackets": true,
+        "body_under_500_lines": true,
+        "ok": true
+      },
+      "shader-review": {
+        "lines": 78,
+        "body_lines": 73,
+        "keys": [
+          "description",
+          "license",
+          "name"
+        ],
+        "keys_in_spec": true,
+        "name_matches_folder": true,
+        "name_lowercase_hyphen_max_64": true,
+        "description_chars": 318,
+        "description_max_1024": true,
+        "description_max_450_target": true,
+        "touchdesigner_in_first_60": true,
+        "no_angle_brackets": true,
+        "body_under_500_lines": true,
+        "ok": true
+      },
+      "rule": "ok = spec keys only, name matches folder, name lowercase-hyphen and at most 64 characters, description at most 1024 characters (spec limit), TouchDesigner in its first 60 characters, no angle brackets, SKILL.md under 500 lines. description_max_450_target is this release's own tighter target and is reported, not part of ok.",
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "links_and_anchors": {
+      "files": 45,
+      "relative_links_checked": 619,
+      "broken": [],
+      "ok": true,
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups",
+      "all_non_corpus_markdown": {
+        "files": 123,
+        "relative_links_checked": 1728,
+        "problems": [],
+        "ok": true,
+        "note": "Every ](path) target exists and every #anchor into a Markdown file resolves."
+      }
+    },
+    "references_linked_from_skill": {
+      "references": 32,
+      "unlinked": [],
+      "ok": true,
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups",
+      "note": "Every reference outside the corpus is linked directly from a SKILL.md; chat-source-index.md is now linked from skills/research/SKILL.md. native-extended-mechanisms.md is linked from another skill's SKILL.md, not its own."
+    },
+    "contents_lists": {
+      "over_100_without_contents": [],
+      "ok": true,
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "corpus_and_demos_verify": {
+      "corpus.py": {
+        "exit": 0
+      },
+      "demos.py": {
+        "exit": 0
+      },
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "native_examples_static_and_tutorial_checks": {
+      "contour-loom": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "contour-material": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "lantern-fog": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "orbital-relic": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "phosphor-memory": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "pigment-census": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "resonant-foil": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "tidal-ink": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "liquid_glass_examples_static_and_tutorial_checks": {
+      "liquid-glass": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "liquid-glass-flow": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "liquid-glass-blobs": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "liquid-glass-prism": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "liquid-glass-lit": {
+        "check_study_ok": true,
+        "article_check_ok": true
+      },
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "greps": {
+      "checked": "the stale audit version and old sibling-plugin name outside the corpus, the previous release number outside its kept records, and the session marker in any repo file",
+      "stale_audit_version_outside_corpus": [],
+      "old_sibling_plugin_name_outside_corpus": [],
+      "previous_release_number_kept": [
+        "validation/README.md:25",
+        "validation/chat-web-acceptance.json:2",
+        "examples/liquid-glass/review.md:98",
+        "examples/liquid-glass/README.md:29"
+      ],
+      "previous_release_number_unexpected": [],
+      "session_marker": [],
+      "ok": true,
+      "rerun_ok": true,
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups"
+    },
+    "liquid_glass_wording_review": {
+      "method": "Read every added line that mentions the liquid-glass examples in skills/ (all four packages), README.md, examples/README.md, examples/LIQUID-GLASS.md, validation/README.md and both OpenAI manifest texts; grep the added skill text for phrases that report a TouchDesigner result.",
+      "lines_read": 120,
+      "finding": "Every mention says or links to preview-only status (glslang compiles, WebGL2 previews, unit tests; no TouchDesigner run, no .tox). No added sentence words a liquid-glass result as a TouchDesigner result. TouchDesigner statements in the added text are Docs facts or say 'not checked in TouchDesigner'.",
+      "ok": true,
+      "finding_scope_note": "Some added sentences are process learnings that cite an example (for example co-design.md on the Blobs preset count); they link to a study page that states the preview-only status rather than saying it themselves.",
+      "gap_fix_rerun": "Reread the liquid-glass lines in the six skill files the gap-fix round changed (shader-build SKILL.md and builder-and-helpers.md, shader-review SKILL.md and review.md, shader-research SKILL.md and native-api.md) and grepped skills/ for sentences that report a TouchDesigner run; every hit is a negation such as 'Nothing in those examples ran in TouchDesigner'."
+    },
+    "navigation_check": {
+      "status": "ran once; one observation, not a trigger rate",
+      "date": "2026-11-03",
+      "method": "Three separate claude -p sessions (Claude Code 2.1.317), each with no prior context, the plugin loaded with --plugin-dir from the working tree, read-only tools (Read, Glob, Grep, Skill), no MCP servers, max 25 turns, and an appended note that nobody can answer questions and nothing may be written. The account's other plugins and organisation instructions stayed active, so each agent also listed intake questions.",
+      "runs": [
+        {
+          "prompt": "make a liquid glass material for any SOP in TD with separate refraction and reflection outputs",
+          "opened": [
+            "Skill: maxime-heckel-shaders-touchdesigner:shader-build",
+            "Read: skills/build/references/glass-refraction.md",
+            "Read: examples/LIQUID-GLASS.md",
+            "Read: skills/research/references/chat-web.md",
+            "Read: examples/liquid-glass/README.md",
+            "Read: skills/build/references/material-integration.md",
+            "Read: skills/build/references/co-design.md",
+            "Grep: TDOutputSwizzle|fragColor\\[|layout\\(location|TD_NUM_COLOR_BUFFERS|reflect|transmitted\\(|void main",
+            "Read: examples/liquid-glass/liquid_glass.frag",
+            "Read: skills/build/references/study-families.md"
+          ],
+          "observation": "Invoked shader-build, then opened glass-refraction.md, LIQUID-GLASS.md, the core README, material-integration.md, co-design.md, liquid_glass.frag and study-families.md. It planned to copy examples/liquid-glass and add colour buffers, and called the examples compiled and previewed only."
+        },
+        {
+          "prompt": "port this three.js dithering shader to a GLSL TOP",
+          "opened": [
+            "Skill: maxime-heckel-shaders-touchdesigner:shader-build",
+            "Read: skills/research/references/chat-web.md",
+            "Read: skills/research/SKILL.md",
+            "Read: skills/build/references/co-design.md",
+            "Read: skills/build/references/td-glsl-pitfalls.md",
+            "Grep: dither",
+            "Read: skills/research/references/chat-source-index.md",
+            "Read: skills/research/references/corpus/blog/core/components/MDX/Widgets/Retro/ordered.ts",
+            "Grep: (?i)dither",
+            "Read: skills/build/references/native-delivery.md",
+            "Read: skills/build/references/builder-and-helpers.md"
+          ],
+          "observation": "Invoked shader-build (not shader-research), read shader-research/SKILL.md, td-glsl-pitfalls.md, chat-source-index.md and the bundled ordered.ts dither source; did not open source-formats.md or techniques.md. No shader was attached, so it proposed the bundled ordered dither as the default."
+        },
+        {
+          "prompt": "write a TD Python script that renames my operators",
+          "opened": [
+            "Glob: **/maxime-heckel-shaders-touchdesigner/**/SKILL.md",
+            "Grep: name: shader-build",
+            "Grep: (?i)not for|unrelated|out of scope|rename"
+          ],
+          "observation": "Near miss handled: found shader-build's 'Not for TD Python scripting unrelated to shaders' line and used no plugin workflow or reference."
+        }
+      ],
+      "notes": [
+        "Prompts 1 and 2 both opened shader-research/references/chat-web.md (the ChatGPT web-chat workflow), which a Claude Code session does not need.",
+        "A first attempt fed all three prompts to one session through stdin; it was discarded and the three prompts were rerun separately."
+      ]
+    },
+    "open_items": [],
+    "ok": true,
+    "resolved_items": [
+      "live-audit-2026-10-20.md no longer links the missing validation/final-critique.md (WP1 made it plain text).",
+      "chat-web.md now has a '## Contents' list (110 lines).",
+      "skills/research/SKILL.md now links references/chat-source-index.md directly (gap-fix round).",
+      "skills/build/SKILL.md description went from 471 to 446 characters, within the 450-character target (gap-fix round)."
+    ],
+    "liquid_glass_unit_tests_rerun": {
+      "command": "cd examples/<study> && python3 -B checks/test_study.py",
+      "ran": {
+        "liquid-glass": 75,
+        "liquid-glass-flow": 91,
+        "liquid-glass-blobs": 81,
+        "liquid-glass-prism": 84,
+        "liquid-glass-lit": 96
+      },
+      "ok": true,
+      "rerun": "2026-11-03, gap-fix round after the WP1-WP3 follow-ups",
+      "scope": "Python unit tests on fake td objects; not a TouchDesigner run."
+    },
+    "downloads_zip_comparison": {
+      "date": "2026-11-03",
+      "method": "Compared every .frag, .vert, .glsl, .py, .json and .tsv file in downloads/shader.zip and the five per-study ZIPs with examples/; GLSL compared with comments removed, Python compared as an AST with and without docstrings.",
+      "equal_files": {
+        "shader.zip": 454,
+        "liquid-glass.zip": 72,
+        "liquid-glass-flow.zip": 103,
+        "liquid-glass-blobs.zip": 90,
+        "liquid-glass-prism.zip": 99,
+        "liquid-glass-lit.zip": 90
+      },
+      "different_files": {
+        "liquid-glass-flow/liquid_flow.frag": "header comment only",
+        "liquid-glass-flow/builder.py": "docstring only (studies/ to examples/)",
+        "liquid-glass-flow/native.py": "docstring only (studies/ to examples/)",
+        "liquid-glass-flow/presets.py": "docstring only (studies/ to examples/)",
+        "liquid-glass-flow/checks/test_study.py": "the expected text of that header comment",
+        "liquid-glass-flow/article-snippets.json": "one snippet's line range (shifted by one) and hash"
+      },
+      "markdown": "The ZIPs lack the Known gaps section of LIQUID-GLASS.md, the moved-from-studies/ note in each study README and the Flow article's path text.",
+      "shader_logic_same": true,
+      "ok": true
+    }
+  }
+}

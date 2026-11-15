@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "id": "resonant-foil",
+  "title": "Resonant Foil",
+  "route": "Displaced GLSL MAT",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause",
+      "type": "toggle",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Time",
+      "type": "float",
+      "default": 2,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "type": "float",
+      "default": 0.016666666666666666,
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Amplitude",
+      "label": "Amplitude",
+      "type": "float",
+      "default": 0.18,
+      "min": 0,
+      "max": 0.35
+    },
+    {
+      "name": "Frequency",
+      "label": "Frequency",
+      "type": "float",
+      "default": 7,
+      "min": 1,
+      "max": 14
+    },
+    {
+      "name": "Correct",
+      "label": "Correct",
+      "type": "toggle",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Turn",
+      "label": "Turn",
+      "type": "float",
+      "default": 25,
+      "min": -180,
+      "max": 180
+    },
+    {
+      "name": "Stretch",
+      "label": "Stretch",
+      "type": "float",
+      "default": 1,
+      "min": 0.5,
+      "max": 1.8
+    },
+    {
+      "name": "Stage",
+      "label": "Stage",
+      "type": "menu",
+      "default": "final",
+      "names": [
+        "final",
+        "normals",
+        "displacement",
+        "error"
+      ],
+      "labels": [
+        "Final",
+        "Normals",
+        "Displacement",
+        "Error"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "vertex",
+      "type": "textDAT",
+      "source": "vertex.vert",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pixel",
+      "type": "textDAT",
+      "source": "pixel.frag",
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "id": "material",
+      "type": "glslMAT",
+      "parameters": {
+        "glslversion": "glsl460"
+      },
+      "uniforms": [
+        {
+          "name": "uSurface",
+          "values": [
+            "parent().par.Amplitude",
+            "parent().par.Frequency",
+            "parent().par.Correct",
+            "parent().par.Stage.menuIndex"
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        460,
+        0
+      ]
+    },
+    {
+      "id": "geometry",
+      "type": "geometryCOMP",
+      "expressions": {
+        "ry": "parent().par.Turn",
+        "sx": "parent().par.Stretch"
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      },
+      "position": [
+        690,
+        0
+      ]
+    },
+    {
+      "id": "geometry/sphere",
+      "type": "sphereSOP",
+      "parameters": {
+        "type": "mesh",
+        "rows": 96,
+        "cols": 144
+      },
+      "flags": {
+        "display": true,
+        "render": true
+      },
+      "position": [
+        0,
+        -200
+      ]
+    },
+    {
+      "id": "camera",
+      "type": "cameraCOMP",
+      "parameters": {
+        "tz": 4.2
+      },
+      "position": [
+        230,
+        -200
+      ]
+    },
+    {
+      "id": "render",
+      "type": "renderTOP",
+      "parameters": {
+        "outputresolution": "custom",
+        "resolutionw": 512,
+        "resolutionh": 512,
+        "format": "rgba32float",
+        "antialias": "aa4"
+      },
+      "position": [
+        460,
+        -200
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        920,
+        0
+      ],
+      "purpose": "Final output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "render",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "material",
+      "parameter": "vdat",
+      "target": "vertex",
+      "previous_frame": false
+    },
+    {
+      "node": "material",
+      "parameter": "pdat",
+      "target": "pixel",
+      "previous_frame": false
+    },
+    {
+      "node": "geometry",
+      "parameter": "material",
+      "target": "material",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "camera",
+      "target": "camera",
+      "previous_frame": false
+    },
+    {
+      "node": "render",
+      "parameter": "geometry",
+      "target": "geometry",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Displacement/Jacobian in SOP object space; corrected normals transformed through TDDeformNorm to world space; world light/view.",
+  "external_dependencies": [],
+  "target_build": "TouchDesigner 2025.33230 on macOS; verify other builds",
+  "native_status": "Tested on TouchDesigner 2025.33230 macOS; see validation.json for exact scope."
+}

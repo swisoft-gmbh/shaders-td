@@ -1,0 +1,303 @@
+{
+ "scope": "Verifier gap fixes G1 (render_diagnostics) and G2 (screen orientation), 2026-11-02. 'Before' is the study as the verifier saw it (native.py and blobs.frag before this round); 'after' is the delivered code. WebGL2 (SwiftShader) preview and plain Python only; nothing ran in TouchDesigner.",
+ "G1_render_diagnostics": {
+  "reproduction": "A fake project with the component's own renders plus /project1/render_glass, a Render TOP outside the component whose Geometry holds blobs_geo and which has a compile error. inspect()['render_diagnostics'] keys.",
+  "before": [
+   "render",
+   "render_scene"
+  ],
+  "after": [
+   "/project1/render_glass",
+   "render",
+   "render_scene"
+  ]
+ },
+ "G2_screen_orientation": {
+  "method": "Instrumented copy of blobs.frag writes gScreenSign; every blob pixel (demo ring and background skipped) is compared with +1, +1 (normal raster) or +1, -1 (flipped raster emulation). Twelve presets per row, time 3 s.",
+  "derivative_form_before": {
+   "presets_480x270": {
+    "renders": 12,
+    "glass_pixels": 257812,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "presets_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 257812,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_480x270": {
+    "renders": 12,
+    "glass_pixels": 176221,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 176221,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_480x270": {
+    "renders": 12,
+    "glass_pixels": 351804,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 351804,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_480x270": {
+    "renders": 12,
+    "glass_pixels": 383069,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 384586,
+    "wrong_sign_pixels": 1517,
+    "on_centre_line": 0
+   },
+   "presets_481x271": {
+    "renders": 12,
+    "glass_pixels": 258739,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "presets_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 258723,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_481x271": {
+    "renders": 12,
+    "glass_pixels": 177202,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 177202,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_481x271": {
+    "renders": 12,
+    "glass_pixels": 385171,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 386809,
+    "wrong_sign_pixels": 1638,
+    "on_centre_line": 0
+   }
+  },
+  "position_comparison_after": {
+   "presets_480x270": {
+    "renders": 12,
+    "glass_pixels": 257812,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "presets_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 257812,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_480x270": {
+    "renders": 12,
+    "glass_pixels": 176221,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 176221,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_480x270": {
+    "renders": 12,
+    "glass_pixels": 351804,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 351804,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_480x270": {
+    "renders": 12,
+    "glass_pixels": 383069,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_flipped_480x270": {
+    "renders": 12,
+    "glass_pixels": 384586,
+    "wrong_sign_pixels": 1517,
+    "on_centre_line": 0
+   },
+   "presets_481x271": {
+    "renders": 12,
+    "glass_pixels": 258739,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "presets_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 258723,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_481x271": {
+    "renders": 12,
+    "glass_pixels": 177202,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "grazing_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 177202,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_481x271": {
+    "renders": 12,
+    "glass_pixels": 385171,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "insideOnFace_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 386809,
+    "wrong_sign_pixels": 1638,
+    "on_centre_line": 0
+   }
+  },
+  "mutation_comparison_without_centre_line_fallback": {
+   "presets_481x271": {
+    "renders": 12,
+    "glass_pixels": 258739,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "presets_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 258723,
+    "wrong_sign_pixels": 1494,
+    "on_centre_line": 1494
+   },
+   "inside_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 0,
+    "on_centre_line": 0
+   },
+   "inside_flipped_481x271": {
+    "renders": 12,
+    "glass_pixels": 353907,
+    "wrong_sign_pixels": 1242,
+    "on_centre_line": 1242
+   }
+  },
+  "camera_on_a_face_plane": {
+   "note": "Rows insideOnFace: camera at z 0.6, exactly in the plane of the box face z = 0.6. Both forms are wrong on 1,517 (480 x 270) and 1,638 (481 x 271) pixels in the flipped raster only. Those pixels are drawn only by the emulated flipped raster: none of them is drawn at the mirrored position in the normal raster (per preset below), and the blob-pixel count differs between the two rasters by exactly that number. A face through the camera rasterises as a degenerate sliver; the scene is left out of the test.",
+   "per_preset_480x270_wrong_in_flipped_and_drawn_in_normal": {
+    "prism_clear": {
+     "wrong": 59,
+     "wrongDrawnInNormal": 0
+    },
+    "lavender_gel": {
+     "wrong": 185,
+     "wrongDrawnInNormal": 0
+    },
+    "sapphire_drops": {
+     "wrong": 60,
+     "wrongDrawnInNormal": 0
+    },
+    "type_lens": {
+     "wrong": 174,
+     "wrongDrawnInNormal": 0
+    },
+    "mercury_beads": {
+     "wrong": 356,
+     "wrongDrawnInNormal": 0
+    },
+    "amber_syrup": {
+     "wrong": 273,
+     "wrongDrawnInNormal": 0
+    },
+    "frosted_milk": {
+     "wrong": 126,
+     "wrongDrawnInNormal": 0
+    },
+    "soap_bubbles": {
+     "wrong": 113,
+     "wrongDrawnInNormal": 0
+    },
+    "emerald_bottle": {
+     "wrong": 35,
+     "wrongDrawnInNormal": 0
+    },
+    "rose_quartz": {
+     "wrong": 23,
+     "wrongDrawnInNormal": 0
+    },
+    "oil_slick": {
+     "wrong": 47,
+     "wrongDrawnInNormal": 0
+    },
+    "aqua_jelly": {
+     "wrong": 66,
+     "wrongDrawnInNormal": 0
+    }
+   }
+  },
+  "captures": "All 24 preset captures (12 presets x Checker and Type) re-rendered with the after code at 800 x 450 are pixel-identical to the stored captures, so no capture was re-rendered."
+ },
+ "unit_tests_on_before_code": {
+  "command": "python3 checks/test_study.py in a scratch copy of the study with the before native.py and blobs.frag",
+  "result": "FAILED (failures=2, errors=1)",
+  "red": [
+   "ERROR: test_render_diagnostics_reports_the_renders_that_draw_the_blobs",
+   "FAIL: test_inspect_reports_scripts_blocking_errors_and_every_render",
+   "FAIL: test_screen_sign_compares_positions_and_is_measured_before_any_branch"
+  ]
+ }
+}

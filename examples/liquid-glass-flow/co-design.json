@@ -1,0 +1,306 @@
+{
+  "purpose": "Liquid Glass Flow: a family member whose silhouette moves like liquid, built on the core Liquid Glass look, with a companion tutorial.",
+  "choices_origin": "Family brief and judging priority from the user; this member's direction from the workflow brief; design details delegated ('do not ask questions') and recorded below as inferences.",
+  "requested_workflows": [
+    "research",
+    "build",
+    "explain",
+    "review",
+    "family sync",
+    "verifier round",
+    "verifier gap round"
+  ],
+  "answers": [
+    {
+      "topic": "family brief",
+      "origin": "user",
+      "value": "Universal liquid glass for 3D objects in TouchDesigner 2025.x (GLSL 4.60, macOS Apple Silicon); glass colour and reflection, translucency, opacity, overall style; no dithering; presets (menu loads editable values, plus A/B morph); separate Refraction and Reflection TOPs; tutorial for TD users new to GLSL."
+    },
+    {
+      "topic": "judging priority",
+      "origin": "user",
+      "value": "Universality first (any object, scene and camera with the least wiring), then the match to the four reference images (look, not shape)."
+    },
+    {
+      "topic": "subagents and skill",
+      "origin": "user",
+      "quote": "Feel free to spawn subagents. You are now on Ultra Code and have multiple possibilities to investigate different shaders. Ensure they all use the skill.",
+      "value": "The plugin's four skills were followed in order (workflow.json)."
+    },
+    {
+      "topic": "direction",
+      "origin": "delegated default",
+      "value": "Vertex displacement by an animated object-space liquid field with rebuilt normals; the core pixel stage and presets unchanged; crack-free mode; tessellation, non-uniform scale and instancing documented."
+    },
+    {
+      "topic": "default direction mode",
+      "origin": "inference",
+      "value": "Away from centre (crack-free), because tearing is an outright artefact on common hard-edged meshes, while weaker motion on non-star-shaped meshes is milder. Normal mode is one menu choice away."
+    },
+    {
+      "topic": "units",
+      "origin": "inference",
+      "value": "Amplitude as a fraction of Object size, scales in features per object size, measured from Flow centre, so presets transfer between objects."
+    },
+    {
+      "topic": "preset motion",
+      "origin": "inference",
+      "value": "Each of the 12 core presets keeps its look values and gains a motion character (for example Sapphire Drop sags into drops, Chrome Type carries travelling waves, Liquid Mercury swells fast)."
+    },
+    {
+      "topic": "demo object",
+      "origin": "inference",
+      "value": "A sphere by default (the blob of reference 3), with torus, box (crack test) and grid (open sheet) on a menu."
+    },
+    {
+      "topic": "target build",
+      "origin": "user",
+      "value": "TouchDesigner 2025.x, GLSL 4.60, macOS Apple Silicon. Not available here; native checks pending."
+    },
+    {
+      "topic": "location",
+      "origin": "delegated default",
+      "value": "studies/liquid-glass-flow/ (self-contained)."
+    },
+    {
+      "topic": "independent review fixes",
+      "origin": "delegated default",
+      "value": "The workflow brief asked to verify and fix 14 reviewer findings without asking questions; the choices below are inferences within that brief."
+    },
+    {
+      "topic": "flow clock",
+      "origin": "inference",
+      "value": "Speed added up per frame in the presets module, advanced by the uniform expression, rather than a Speed CHOP (32-bit samples stall slow speeds once the sum is large) or an Execute DAT writing a parameter every frame. Pause gives Fixed time x speed, so paused looks are unchanged."
+    },
+    {
+      "topic": "gravity per instance",
+      "origin": "inference",
+      "value": "Gravity now includes each instance's rotation and scale (TDInstanceMat3), which answers the earlier open question: sagging drops point down in the world."
+    },
+    {
+      "topic": "fit to object",
+      "origin": "inference",
+      "value": "A pulse button, not live expressions: one material can serve several objects, and an expression would refit whenever the SOP changes. Not run at build time; the defaults already fit the demo sphere."
+    },
+    {
+      "topic": "Normal mode error",
+      "origin": "inference",
+      "value": "Documented with measured numbers rather than capping Amplitude, because a cap would also limit crack-free mode, whose normals are exact."
+    },
+    {
+      "topic": "demo box",
+      "origin": "inference",
+      "value": "Six grid faces merged, matching the preview and keeping split normals along the edges, instead of a divided Box SOP, which Derivative documents as not rendering."
+    },
+    {
+      "topic": "family sync scope",
+      "origin": "user (workflow brief, 2026-11-02)",
+      "value": "Sync this member with the core: rebase the pixel stage on the core working tree after its family-sync merge, bring the core's audit rounds 2 and 3 (R1 to R9) and the family merge items (C1 to C9) where they apply, keep the member's own identity and better solutions, use the plugin's skill files, no questions."
+    },
+    {
+      "topic": "clock: clock() or advance()",
+      "origin": "inferred (delegated)",
+      "value": "advance() everywhere (per-component state, no absTime in expressions, holds at speed 0); this study's folded drift kept for the vertex field (one flow time wrapped at 25600). Comparison in decisions.json."
+    },
+    {
+      "topic": "one Object size",
+      "origin": "inferred (delegated)",
+      "value": "Flow fit > Object size (renamed from Flowsize to the core's internal name Objectsize) also scales the glass lengths, in SOP units; no second size control. A scaled Geometry COMP leaves the glass lengths at the unscaled size (documented)."
+    },
+    {
+      "topic": "experiments reset Faces, Displace along and Correct normals",
+      "origin": "inferred (delegated)",
+      "value": "Unlike the core, where Faces is setup, these three are reset by every experiment, because the demo experiments vary them; the flow fit (centre, size, gravity, wave direction, instance variation) is kept."
+    },
+    {
+      "topic": "C3 fan-gap dispersion",
+      "origin": "inferred from measurement",
+      "value": "Rejected (worse than mip 0 against a 64-sample reference in all 16 measured cases), as in the core."
+    },
+    {
+      "topic": "screenSign centre-line pixel",
+      "origin": "inferred (delegated)",
+      "value": "Keep the core's code bit-identical; report the one-pixel finding to the core rather than diverge."
+    },
+    {
+      "topic": "demo backdrop default",
+      "origin": "inferred (family decision)",
+      "value": "Checker stays the default; Type is on the menu and on a second contact sheet."
+    },
+    {
+      "topic": "verifier round: which findings to fix",
+      "origin": "supplied (workflow brief: fix verified issues V1 to V4; reproduce first, smallest change, a test that fails without the fix)",
+      "value": "All four reproduced and fixed; none disputed."
+    },
+    {
+      "topic": "V1 rest-normal fallback threshold",
+      "origin": "inferred (delegated; the verifier proposed 1e-6 x (2e)^4 or a zero/NaN-only test)",
+      "value": "Keep the rest normal only below a thousandth of the nudge's rest area, or for NaN: above float rounding, far below any squeeze the presets or slider reach. Decided inside flowNormal(), where the nudge is known."
+    },
+    {
+      "topic": "V1 tolerance of the new squeezed test case",
+      "origin": "inferred (delegated)",
+      "value": "1 degree for that case only (the nudge's own step error is 0.82 degrees there on both the 6a58487 and the fixed shader); the nine existing cases keep 0.5."
+    },
+    {
+      "topic": "V2 Object size versus Liquid Glass",
+      "origin": "inferred (delegated; universality first, least wiring)",
+      "value": "Keep this study's Object size (SOP units, demo sphere = 1, the motion's unit) and every look unchanged; document the 1.45 / COMP scale factor and report Liquid Glass's value from the Fit pulse, rather than redefine Object size and change every preset at the default size."
+    },
+    {
+      "topic": "G1 film swirl 0 wording",
+      "origin": "supplied (verifier's fix: Liquid Glass Prism's README wording)",
+      "value": "README uFilm row: '0 = one film thickness over the whole object, no swirl; Wobble speed 0 stops the drift'. The shader keeps its behaviour; only the description changes."
+    },
+    {
+      "topic": "G1 how to measure 'one thickness' in the preview",
+      "origin": "inferred (delegated)",
+      "value": "Film stage on the open demo grid facing an orthographic camera, Amplitude 0 and Wobble 0, so every pixel sees the surface at one angle and one colour means one thickness; uFilm.w set through a test-only uniform hook because Object size has a minimum of 0.001. Prism Chrome, not Oil Slick: Oil Slick's Film variation 1 makes the 2 s colour black (thickness 0), a weak case."
+    },
+    {
+      "topic": "G2 occlusion test",
+      "origin": "supplied (verifier: port Liquid Glass Prism's test with its Over TOP control)",
+      "value": "Same emulation and thresholds as Prism (more than 500 ball pixels over the glass, Render Pass route within 2/255, Over TOP control over 40/255). Ball placed at (0.35, 0.2, 2.0), radius 0.3 (inferred), so it covers part of the moving demo sphere for this study's camera at z 4."
+    },
+    {
+      "topic": "G2 docs",
+      "origin": "inferred (delegated; honest limits)",
+      "value": "README step 3 and the tutorial name the preview test and keep 'not yet checked in TouchDesigner'; the Over TOP fallback and the native check stay as they were."
+    },
+    {
+      "topic": "family names (verifier gap)",
+      "origin": "supplied + inference (delegated)",
+      "value": "Supplied: the verifier's issue and its two fixes (align labels where possible, or list the mapping once in the family overview); the docs rule 'one name per thing'; universality first (scripts that work on any member). Inferred: do both; take the name most members already used (Fitglass) and the label head four of five already used ('Fit to Glass geometry'); put the one mapping in the core README, which every member links to; keep Blobs' Demobackdrop name rather than rename a preset key; make Blobs' menu a look control because its experiments' captures use the Checker."
+    },
+    {
+      "topic": "Family close G1: what Object size means here",
+      "origin": "supplied (family rule in Liquid Glass Lit decisions.json, family_rule; the family close task)",
+      "value": "Object size = the object's world radius / 1.45 (the core's demo torus), for Thickness, Frost, Tint density and the ripple and film lookups (worldScale() in the shared pixel stage). Fit to Glass geometry sets it."
+    },
+    {
+      "topic": "Family close G1: the motion's own size",
+      "origin": "supplied (the task allows keeping the motion's SOP-unit fit under its own name, with the Fit pulse setting both) + inferred name",
+      "value": "A second control, Flow fit > Flow size (Flowsize), in SOP units, bound to uFlowSpace.w only. Inferred: the name Flowsize, because 6a58487's Flowsize bound exactly uFlowSpace.w; the label 'Flow size', next to Flow centre. Rejected: deriving the motion size from Object size in the shader (one control, but the motion's unit would depend on the reference radius and the COMP's scale)."
+    },
+    {
+      "topic": "Family close G1: default Object size",
+      "origin": "inferred (delegated; universality first, and the defaults fit the demo)",
+      "value": "1 / 1.45 (0.69), what Fit sets on the default demo object, the radius-1 sphere. Rejected: 1 (the core's default), which keeps the old demo look but makes the look jump when Fit is pressed on the demo. Consequence: the demo look changes once (thinner glass relative to the sphere, 1.45 times finer ripples and film), measured in review.md."
+    },
+    {
+      "topic": "Family close G1: several glass objects",
+      "origin": "inferred (delegated)",
+      "value": "Fit reads the first object for Flow centre, Flow size and Object size, and notes the others: one flow component fits one object. The family rule's 'several objects: the largest' is not used, because the motion has one centre."
+    },
+    {
+      "topic": "Family close G2 centre lines",
+      "origin": "supplied (the core's tie-break, ported from Liquid Glass Lit; the core compared Lit's and Prism's forms and found them equal)",
+      "value": "Taken through the rebuilt pixel stage, unchanged. Lit's preview test screen_orientation_has_no_wrong_pixels ported with its thresholds, on the moving sphere, torus and knot."
+    },
+    {
+      "topic": "Family close G6 picking",
+      "origin": "supplied (Derivative's documented form) + inferred details",
+      "value": "'#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); ... #endif'. Inferred: move, place and transform the normal once before the branch, so both branches read the same moved surface; the tutorial's transforms excerpt shows the branch."
+    },
+    {
+      "topic": "Family close G3 film swirl wording",
+      "origin": "supplied",
+      "value": "Already Prism's wording here since the verifier gap round; the rebuilt pixel stage brings the core's matching shader comment. A unit test now checks README, tutorial and shader."
+    },
+    {
+      "topic": "Family close: tests whose stated numbers are glass lengths",
+      "origin": "inferred (delegated; never weaken a test)",
+      "value": "Tests that recorded numbers at the old default (Object size 1) pin Object size 1, the family reference, so they still measure what they did: frost shift and convergence, dispersion convergence, the back-face chord, the pre-sync comparison and the film swirl. Tests of scale invariance set Object size and Flow size to k times their defaults, as Fit does."
+    },
+    {
+      "topic": "Family close verifier fixes: what to fix",
+      "origin": "supplied (workflow task: the family critic's FLOW-V1 to FLOW-V3, CORE-V1)",
+      "value": "Fit checklist to match validation.json and fit_flow(); red-run claims reworded; the Not done paragraph narrowed to the two core README lines; a test that fails if a record names a report key fit_flow() does not return."
+    },
+    {
+      "topic": "Family close verifier fixes: checklist form",
+      "origin": "inferred (delegated; do not ask questions)",
+      "value": "Both Fit checklists list the three objects as 'Flow size a, Object size b' with the torus in a Geometry COMP scaled 3 written out (Flow size 1.45, Object size 3.0), so one test can read the numbers from both and compare them with fit_flow()."
+    },
+    {
+      "topic": "Family close verifier fixes: how far to record the red run",
+      "origin": "inferred (the critic called it optional)",
+      "value": "Ran the 11 changed preview tests that the first red run skipped on the same kind of c94e849 copy, recorded them (changed_preview_tests_on_c94e849) and listed red and green-by-design tests in validation.json, so the claims are checked against data rather than reworded only."
+    },
+    {
+      "topic": "family close critic fix: Thickness label (PV4)",
+      "origin": "supplied: the finding and its suggested fix (a family critic, relayed by the workflow); inferred: the exact wording",
+      "value": "'Thickness (x Object size)', Prism's form without its back-face note. The Object size label keeps this study's wording, which the core and Prism adopted in the same round."
+    },
+    {
+      "topic": "family critic: one Object size per component",
+      "origin": "inferred (family critic round, 2026-11-02; no question asked)",
+      "value": "Keep the family rule and document the three setups it does not follow (several sizes, a scale that changes after Fit, per-instance scale) with workarounds. The critic's rule change is recorded in decisions.json and left to the user, because the brief puts universality first but the change redefines Object size for the whole family."
+    },
+    {
+      "topic": "family critic: native runs",
+      "origin": "supplied (brief: TouchDesigner 2025.x, GLSL 4.60, macOS on Apple Silicon) and inferred (the record's fields)",
+      "value": "validation.json family_close.native_run targets TouchDesigner 2025.x on macOS, Apple Silicon, and waits for a run that records the build, the OS, the GPU and the Info DAT text."
+    },
+    {
+      "topic": "family critic: one Fit name",
+      "origin": "supplied (family critic's fix: rename the helper fit_glass(), keep the old name as a documented alias for one round, update the pulse callbacks; mark decisions.json[5] superseded by 'Family close G1')",
+      "value": "native.py defines fit_glass(); 'fit_flow = fit_glass  # alias' follows it; preset_exec.py, the module's usage note and the README call fit_glass()."
+    },
+    {
+      "topic": "family critic: one Fit name, what keeps the old name",
+      "origin": "inferred (this round could write only in Flow and Blobs)",
+      "value": "The alias goes once the core's MEMBER_FIT names fit_glass for Flow. Test ids that earlier red-run records cite keep their names, and earlier round records keep the name the helper had then; sources.json, the README and the usage note name fit_glass()."
+    },
+    {
+      "topic": "family critic: the COMP-scale test's threshold",
+      "origin": "supplied (family critic: add a clause of max at most 2/255 for the core, Flow and Lit; Prism and Blobs keep theirs) + inferred (this round, 2026-11-02; no question asked)",
+      "value": "Supplied: x.max <= 2 in fit_size_carries_presets_over_comp_scale; Prism (15/255) and Blobs (66/255, 15 pixels over 2/255) unchanged. Inferred: keep the shared clause of at most 50 pixels over 8/255, so the test reads the same in every member; reproduce the gap with a worldScale() exponent of 0.3333 on a scratch copy; pin the condition with a unit test that also compares the core, Flow and Lit."
+    },
+    {
+      "topic": "family critic: the antialiased centre-line residual",
+      "origin": "supplied (family critic: keep it a family open question until a native check shows whether the residual is visible; if it is, try a centroid-qualified vertex output for the projected position in one member first) + inferred (this round, 2026-11-02; no question asked)",
+      "value": "Supplied: the open question, the native check, the centroid output tried in one member first and only if the residual is visible. Inferred: Liquid Glass Lit is that member (it measured form (e)); the question has the same words in all four members; the native check compares the delivered material with a copy whose orientation is set to the right value (Composite TOP Difference, Analyze TOP Maximum in RGB, then a look at 100% zoom); the preview measures the residual's size in the final image (checks/results/centre-line-residual.json); the preview test's bound tightens from 20 to 10 wrong multisampled pixels per row, so the question's range stays guarded; no shader changes."
+    }
+  ],
+  "open_questions": [
+    "Does the user prefer Normal mode as the default for their own meshes (smooth, open surfaces)? Its normals are approximate (up to 10 degrees on the demo torus).",
+    "Should Fit to Glass geometry also run automatically when Glass geometry changes?",
+    "Should experiments keep Faces and Displace along as setup controls instead, with the demo experiments that need them moved to a second component?",
+    "LOOK-F1 (look_decisions_for_user): which default Object size should the demo use? The radius-1.45 sphere this question first offered does not keep the old look; it renders today's (measured there).",
+    "Family critic: should Object size switch to SOP units, with the shader following the Geometry COMP's scale and each instance's scale by itself (decisions.json, Family critic: one Object size per component, option (b))? It would make animated and per-instance scale work without Fit, but changes what a typed Object size means on a scaled COMP, in every member.",
+    "Family open question (centre-line residual): with antialiasing, a few silhouette pixels near the render's centre row or column still take the wrong screen orientation, so they bend the wrong way. In the WebGL preview each member's survey finds up to 8 of them per row of twelve renders; in the final image they change at most 7 pixels per row, by up to 43/255 in an emulated flipped raster and up to 38/255 in TouchDesigner's usual one. Are they visible in TouchDesigner? The native check centre_line_residual (validation.json, family_close.native_run) answers it. If they are, try a centroid-qualified vertex output for the projected position in Liquid Glass Lit first (form (e) of Lit's survey), then bring it to the core and the other members. Until then no member changes its shader for it."
+  ],
+  "shader_acceptance": "pending",
+  "article_acceptance": "pending",
+  "user_feedback": [],
+  "look_decisions_for_user": {
+    "status": "waiting for the user",
+    "how_to_answer": "Asked through the host's question tool, one decision per question with the recommended option first. In a host without a question tool, answer in text by naming a decision and an option, for example 'LOOK-F1 B'. Each option says what it changes. Until you answer, the code stays as delivered.",
+    "rule": "Until the user answers, the option in the code stays there: checks/test_study.py, LookDecisions, fails if it changes. After an answer, record it here (origin user, with the user's words), change the code, set in_code to the chosen option and update that test's IN_CODE and its check of the code.",
+    "decisions": [
+      {
+        "id": "LOOK-F1",
+        "question": "Which default Object size should the demo use?",
+        "what_changed": "The family close set the default Object size to 1 / 1.45 (0.69), what Fit sets on the radius-1 demo sphere. Before, it was 1. On the demo the glass is now thinner relative to the sphere, so it bends, magnifies, frosts and tints less, and its ripples and film bands are 1.45 times finer. Against c94e849 the 12 preset captures changed by 99 to 241/255 and the 16 motion frames by 213 to 249/255 (max per channel).",
+        "evidence": [
+          "captures/review-family-close-object-size.png",
+          "checks/results/look-decisions.json",
+          "checks/results/family-close-measurements.json"
+        ],
+        "options": {
+          "A": "Keep 0.69 (in the code now). The demo shows the core's presets at the size they were tuned for on the core's torus, and Fit changes nothing on the demo. No code change.",
+          "B": "Go back to a default of 1. The demo looks as at c94e849, but pressing Fit on the demo sets 0.69 and the look jumps to A's. Changes: the default and label in study.json, the tests and captures that assume 0.69.",
+          "C": "Keep 0.69 and give Flow its own copy of the twelve presets, with Thickness, Frost and Scene depth x 1.45, Tint density / 1.45 and Wobble scale / 1.45 (as Prism did for its own looks). Lengths and ripples look as at c94e849 and Fit changes nothing, but the film bands stay 1.45 times finer (the family rule fixes the film count), and the presets no longer equal the core's: the same preset name gives a different look than in Liquid Glass on the same object. Changes: presets.json, test_core_looks_unchanged and amplitude0_matches_core (compared at converted values), captures."
+        },
+        "recommended": "A",
+        "recommended_origin": "inference (the look-acceptance round, 2026-11-02; the user has not answered)",
+        "why_recommended": "Universality first. With A, one Object size means the same glass in every member, Fit is a no-op on the demo, and Flow's presets stay the core's. B makes the default disagree with Fit; C splits the presets from the core's. If the stronger bend of the reference images is wanted, a thicker preset reaches it without either cost.",
+        "not_an_option": "Scaling the demo sphere to radius 1.45 at Object size 1 (Flow size 1.45, camera 1.45 times farther). The earlier open question offered it as a way to keep the old look. Measured, it renders today's look (at most 4/255 from it, 0 pixels over 8/255), not c94e849's (222 to 242/255 from it): lengths follow the object, so a bigger sphere at a bigger Object size looks the same (checks/results/look-decisions.json, option_radius_1_45).",
+        "in_code": "A",
+        "status": "waiting for the user",
+        "answer": null
+      }
+    ]
+  }
+}

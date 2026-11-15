@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" font-family="Helvetica, Arial, sans-serif">
+  <title>Liquid Glass Flow network schematic</title>
+  <defs>
+    <marker id="wire" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9dde3"/>
+    </marker>
+    <marker id="ref" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7fb3d5"/>
+    </marker>
+    <marker id="opt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8a65d"/>
+    </marker>
+    <marker id="flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8fd18a"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="700" fill="#14161a"/>
+  <text x="30" y="40" fill="#eef0f3" font-size="22" font-weight="bold">Liquid Glass Flow: how the pieces connect</text>
+  <text x="30" y="64" fill="#9aa1ab" font-size="14">Schematic of the recipe in study.json, not a captured TouchDesigner network.</text>
+
+  <!-- inputs -->
+  <g>
+    <rect x="30" y="100" width="250" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+    <text x="46" y="128" fill="#eef0f3" font-size="17" font-weight="bold">Refraction TOP</text>
+    <text x="46" y="150" fill="#b8c0ca" font-size="13">Your scene without the glass,</text>
+    <text x="46" y="167" fill="#b8c0ca" font-size="13">same camera. Demo: demo_backdrop</text>
+
+    <rect x="30" y="200" width="250" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+    <text x="46" y="228" fill="#eef0f3" font-size="17" font-weight="bold">Reflection TOP</text>
+    <text x="46" y="250" fill="#b8c0ca" font-size="13">360 panorama or any image.</text>
+    <text x="46" y="267" fill="#b8c0ca" font-size="13">Demo: demo_env. Empty: studio</text>
+
+    <rect x="30" y="300" width="250" height="96" rx="8" fill="#2a2219" stroke="#e8a65d" stroke-dasharray="6 4"/>
+    <text x="46" y="328" fill="#eef0f3" font-size="17" font-weight="bold">render_back (optional)</text>
+    <text x="46" y="350" fill="#d9c3a6" font-size="13">Same shaders via material_back,</text>
+    <text x="46" y="367" fill="#d9c3a6" font-size="13">so the inner surface moves too.</text>
+    <text x="46" y="384" fill="#d9c3a6" font-size="13">rgb = inner surface, alpha = distance</text>
+  </g>
+
+  <!-- material -->
+  <g>
+    <rect x="330" y="100" width="330" height="360" rx="10" fill="#22303d" stroke="#d9dde3" stroke-width="1.5"/>
+    <text x="348" y="130" fill="#eef0f3" font-size="19" font-weight="bold">material</text>
+    <text x="348" y="150" fill="#b8c0ca" font-size="13">GLSL MAT: Override Material of the glass pass</text>
+
+    <rect x="348" y="165" width="294" height="160" rx="6" fill="#1b2a22" stroke="#8fd18a"/>
+    <text x="362" y="187" fill="#cfeccc" font-size="15" font-weight="bold">vertex: liquid_flow.vert (new)</text>
+    <text x="362" y="209" fill="#b8c0ca" font-size="13">1. q = (rest position - centre) / size</text>
+    <text x="362" y="228" fill="#b8c0ca" font-size="13">2. height = swell + ripples + waves</text>
+    <text x="362" y="247" fill="#b8c0ca" font-size="13">3. offset = height x direction + sag</text>
+    <text x="362" y="266" fill="#b8c0ca" font-size="13">4. normal from 4 moved neighbours</text>
+    <text x="362" y="285" fill="#b8c0ca" font-size="13">5. TDDeform, TDDeformNorm (instances,</text>
+    <text x="362" y="302" fill="#b8c0ca" font-size="13">    non-uniform scale apply after)</text>
+    <text x="362" y="319" fill="#8fd18a" font-size="12">Amplitude 0 skips steps 1-4 exactly</text>
+
+    <rect x="348" y="335" width="294" height="110" rx="6" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="362" y="357" fill="#eef0f3" font-size="15" font-weight="bold">pixel: liquid_flow.frag</text>
+    <text x="362" y="379" fill="#b8c0ca" font-size="13">The current Liquid Glass pixel shader</text>
+    <text x="362" y="396" fill="#b8c0ca" font-size="13">+ vFlow + displacement stage.</text>
+    <text x="362" y="413" fill="#eef0f3" font-size="13">sRefraction, sReflection,</text>
+    <text x="362" y="430" fill="#e8a65d" font-size="13">sBackface (when Back-face pass is on)</text>
+  </g>
+  <path d="M625,325 L625,333" fill="none" stroke="#8fd18a" stroke-width="2" marker-end="url(#flow)"/>
+
+  <!-- presets -->
+  <rect x="330" y="490" width="330" height="78" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+  <text x="348" y="518" fill="#eef0f3" font-size="17" font-weight="bold">presets, preset_exec</text>
+  <text x="348" y="540" fill="#b8c0ca" font-size="13">12 looks with motion; Morph blends both.</text>
+  <text x="348" y="557" fill="#8fd18a" font-size="13">flow_time(): Flow speed added up per frame</text>
+
+  <!-- outputs -->
+  <g>
+    <rect x="710" y="100" width="260" height="120" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="128" fill="#eef0f3" font-size="17" font-weight="bold">Geometry COMP</text>
+    <text x="726" y="150" fill="#b8c0ca" font-size="13">Your glass object, any mesh;</text>
+    <text x="726" y="167" fill="#b8c0ca" font-size="13">no Material needed.</text>
+    <text x="726" y="189" fill="#b8c0ca" font-size="13">Demo: demo_geo/pick switches</text>
+    <text x="726" y="206" fill="#b8c0ca" font-size="13">sphere, torus, box, grid</text>
+
+    <rect x="710" y="250" width="260" height="78" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="278" fill="#eef0f3" font-size="17" font-weight="bold">Render Pass TOP</text>
+    <text x="726" y="300" fill="#b8c0ca" font-size="13">Draws the glass into your scene render.</text>
+    <text x="726" y="317" fill="#b8c0ca" font-size="13">Demo: render (glass alone)</text>
+
+    <rect x="710" y="360" width="260" height="78" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="388" fill="#eef0f3" font-size="17" font-weight="bold">Over TOP (demo only)</text>
+    <text x="726" y="410" fill="#b8c0ca" font-size="13">Demo glass over its flat backdrop:</text>
+    <text x="726" y="427" fill="#b8c0ca" font-size="13">over (input 2 via behind)</text>
+
+    <rect x="710" y="470" width="260" height="56" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+    <text x="726" y="504" fill="#eef0f3" font-size="17" font-weight="bold">out</text>
+  </g>
+
+  <!-- parameter references (dashed blue) -->
+  <path d="M280,139 C310,139 310,413 346,413" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M280,239 C305,239 305,409 346,409" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M660,290 L708,290" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M840,220 L840,248" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <path d="M495,490 L495,462" fill="none" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ref)"/>
+  <!-- optional back-face pass (dashed orange) -->
+  <path d="M280,348 C310,348 315,428 346,428" fill="none" stroke="#e8a65d" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#opt)"/>
+  <!-- wires: image data (solid) -->
+  <path d="M840,328 L840,358" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+  <path d="M840,438 L840,468" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+  <path d="M155,178 L155,190 L300,190 L300,600 L690,600 L690,410 L708,410" fill="none" stroke="#d9dde3" stroke-width="2.2" marker-end="url(#wire)"/>
+
+  <!-- legend -->
+  <g font-size="13" fill="#b8c0ca">
+    <line x1="30" y1="640" x2="70" y2="640" stroke="#d9dde3" stroke-width="2.2"/>
+    <text x="80" y="644">Wire: image data</text>
+    <line x1="220" y1="640" x2="260" y2="640" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="270" y="644">Parameter reference (sampler, Override Material, geometry)</text>
+    <line x1="620" y1="640" x2="660" y2="640" stroke="#e8a65d" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="670" y="644">Optional back-face pass</text>
+    <text x="30" y="672">Green: what is new in this study. No feedback: every reference reads the current frame.</text>
+  </g>
+</svg>

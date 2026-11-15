@@ -1,0 +1,19 @@
+{
+  "purpose": "Distinct mechanism test requested by user",
+  "choices_origin": "delegated test-fixture design",
+  "requested_workflows": [
+    "research",
+    "build",
+    "explain",
+    "review"
+  ],
+  "shader_acceptance": "pending",
+  "article_acceptance": "pending",
+  "user_feedback": [
+    {
+      "quote": "All five visible; no obvious problems",
+      "context": "Five animated native sample viewers open in TouchDesigner",
+      "scope": "User-reported visible output and no obvious problems; not tutorial acceptance, measured performance or a cross-platform claim."
+    }
+  ]
+}

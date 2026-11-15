@@ -1,0 +1,10 @@
+{
+  "interface": {
+    "display_name": "Write a shader tutorial",
+    "short_description": "Turn a TouchDesigner shader into a tutorial",
+    "default_prompt": "Use $explain to write a tutorial for my TouchDesigner shader."
+  },
+  "policy": {
+    "allow_implicit_invocation": true
+  }
+}

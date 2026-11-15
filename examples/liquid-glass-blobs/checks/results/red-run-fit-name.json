@@ -1,0 +1,17 @@
+{
+ "what": "Family critic, one name per thing: red run of the new FitHelperName tests before the rename to fit_glass().",
+ "date": "2026-11-02",
+ "how": "The study folders as they were on 2026-11-02 before this fix (the uncommitted family-close tree; the helper names, the pulse callbacks and Flow decisions.json[5] were the same at c94e849), with only the new FitHelperName tests added to checks/test_study.py. Plain Python; nothing ran in TouchDesigner. The cross-member test reads every member checked out next to this one, so it failed for both Flow and Blobs in either suite.",
+ "unit_tests_before_fix": {
+  "summary": [
+   "Ran 81 tests",
+   "FAILED (failures=3)"
+  ],
+  "failing": [
+   "FitHelperName.test_fit_helper_is_fit_glass_and_the_old_name_is_an_alias (['fit_object_size'] != ['fit_glass']: native.py defined fit_object_size)",
+   "FitHelperName.test_every_member_calls_its_fit_fit_glass [liquid-glass-flow] (['fit_flow'] != ['fit_glass'])",
+   "FitHelperName.test_every_member_calls_its_fit_fit_glass [liquid-glass-blobs] (['fit_object_size'] != ['fit_glass'])"
+  ],
+  "note": "Two new tests, three failures (one test fails for two members). The other 79 tests pass. After the fix: 81 of 81 (checks/results/unit-tests.txt). Partial fix, native.py and the callback renamed but the README not yet: test_fit_helper_is_fit_glass_and_the_old_name_is_an_alias still fails ('module.fit_glass(component)' not found in README.md)."
+ }
+}

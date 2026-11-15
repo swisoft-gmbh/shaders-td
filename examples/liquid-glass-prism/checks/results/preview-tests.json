@@ -1,0 +1,1718 @@
+{
+  "ok": true,
+  "passed": 54,
+  "total": 54,
+  "errors": [],
+  "results": [
+    {
+      "name": "ior1_invisible_torus_fallback",
+      "ok": true,
+      "claim": "With IOR 1 (no bend at either surface), saturation 1 and no dispersion, frost, tint or light terms, the glass shows exactly the refraction TOP, with the analytic exit estimate (no back-face pass).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "ior1_invisible_torus_backpass",
+      "ok": true,
+      "claim": "With IOR 1 (no bend at either surface), saturation 1 and no dispersion, frost, tint or light terms, the glass shows exactly the refraction TOP, with the back-face pass measuring the exit.",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "ior1_invisible_knot_fallback",
+      "ok": true,
+      "claim": "With IOR 1 (no bend at either surface), saturation 1 and no dispersion, frost, tint or light terms, the glass shows exactly the refraction TOP, with the analytic exit estimate (no back-face pass).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "ior1_invisible_knot_backpass",
+      "ok": true,
+      "claim": "With IOR 1 (no bend at either surface), saturation 1 and no dispersion, frost, tint or light terms, the glass shows exactly the refraction TOP, with the back-face pass measuring the exit.",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "ior1_invisible_orthographic",
+      "ok": true,
+      "claim": "The same holds for an orthographic camera (eye distance measured along the view axis in both passes).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "opacity0_is_invisible",
+      "ok": true,
+      "claim": "Opacity 0 removes the glass entirely, reflections and trapped light included.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "no_refraction_top_blends_clear",
+      "ok": true,
+      "claim": "With no refraction TOP, clear untinted glass with no light terms blends to the real background (alpha 0).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "slab_zero_net_deviation",
+      "ok": true,
+      "claim": "Through a parallel-sided slab tilted 35 and 20 degrees, light leaves in exactly the direction it entered, for red, middle and violet (deviation stage, within 2/255 of 90 degrees), measured with the back-face pass. Without the pass, Exit tilt -1 (flat far wall) gives the same zero deviation. Control: the ball estimate (Exit tilt 0), which does not know the slab is flat, does deviate, so the test can fail.",
+      "evidence": {
+        "points": 49,
+        "max_deviation_255": 0,
+        "max_degrees": 0,
+        "control_ball_estimate_255": 110,
+        "fallback_exit_tilt_minus1_255": 0
+      }
+    },
+    {
+      "name": "tir_beyond_critical_angle_only",
+      "ok": true,
+      "claim": "At 45 degrees inside a prism, the share of light reflected back inside follows the Fresnel equations below the critical angle (within 3/255, for the exact ray through the pixel) and is total (255) beyond it; it rises monotonically with IOR, so the image never jumps.",
+      "evidence": {
+        "rows": [
+          {
+            "ior": 1.3,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0338,
+            "expected": 23.9,
+            "measured": 24
+          },
+          {
+            "ior": 1.36,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0323,
+            "expected": 52.2,
+            "measured": 52
+          },
+          {
+            "ior": 1.4,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0314,
+            "expected": 114.5,
+            "measured": 115
+          },
+          {
+            "ior": 1.41,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0312,
+            "expected": 169.1,
+            "measured": 169
+          },
+          {
+            "ior": 1.42,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.031,
+            "expected": 255,
+            "measured": 255
+          },
+          {
+            "ior": 1.43,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0307,
+            "expected": 255,
+            "measured": 255
+          },
+          {
+            "ior": 1.5,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0293,
+            "expected": 255,
+            "measured": 255
+          },
+          {
+            "ior": 1.6,
+            "critical_ior": 1.4142,
+            "inside_angle_deg": 45.0275,
+            "expected": 255,
+            "measured": 255
+          }
+        ],
+        "monotonic": true
+      }
+    },
+    {
+      "name": "tir_area_below_and_beyond",
+      "ok": true,
+      "claim": "Over a patch of the prism face: no total reflection at IOR 1.30 (critical 50 degrees), total at IOR 1.60 (critical 39 degrees).",
+      "evidence": {
+        "points": 25,
+        "max_share_ior_1_30": 35,
+        "min_share_ior_1_60": 255
+      }
+    },
+    {
+      "name": "dispersion_violet_deviates_more",
+      "ok": true,
+      "claim": "Through the prism, violet leaves at a larger angle than the middle, and the middle larger than red (deviation stage: red, middle, violet in R, G, B). At the centre the angles match Snell's law with the Cauchy spectrum within 2/255 of 90 degrees.",
+      "evidence": {
+        "centre_measured_rgb": [
+          53,
+          62,
+          82
+        ],
+        "centre_expected_rgb": [
+          53.3,
+          61.8,
+          82.1
+        ],
+        "area_points": 25,
+        "degrees": [
+          18.7,
+          21.9,
+          28.9
+        ]
+      }
+    },
+    {
+      "name": "fallback_without_backpass_stays_finite",
+      "ok": true,
+      "claim": "Without the back-face pass, every output value is finite (no NaN or infinity) for 5 shapes x 5 extreme settings x 8 stages, read back from a 32-bit float target.",
+      "evidence": {
+        "renders": 200,
+        "failing": [],
+        "max_abs": 12.953014373779297
+      }
+    },
+    {
+      "name": "backpass_stays_finite",
+      "ok": true,
+      "claim": "With the back-face pass, the same 200 renders are finite too.",
+      "evidence": {
+        "renders": 200,
+        "failing": [],
+        "max_abs": 1024
+      }
+    },
+    {
+      "name": "backpass_path_matches_sphere_chord",
+      "ok": true,
+      "claim": "With the back-face pass, the distance travelled inside a unit sphere equals the exact chord of the view ray (IOR 1) and of the refracted ray (IOR 1.5), within 3/255. This checks the march to the far side.",
+      "evidence": [
+        {
+          "ior": 1,
+          "x": 480,
+          "expected": 127.5,
+          "measured": 127,
+          "chord": 2
+        },
+        {
+          "ior": 1,
+          "x": 520,
+          "expected": 121.2,
+          "measured": 121,
+          "chord": 1.901
+        },
+        {
+          "ior": 1,
+          "x": 560,
+          "expected": 100.8,
+          "measured": 101,
+          "chord": 1.58
+        },
+        {
+          "ior": 1,
+          "x": 590,
+          "expected": 70,
+          "measured": 70,
+          "chord": 1.098
+        },
+        {
+          "ior": 1,
+          "x": 605,
+          "expected": 41.6,
+          "measured": 42,
+          "chord": 0.652
+        },
+        {
+          "ior": 1.5,
+          "x": 480,
+          "expected": 127.5,
+          "measured": 127,
+          "chord": 2
+        },
+        {
+          "ior": 1.5,
+          "x": 520,
+          "expected": 124.7,
+          "measured": 125,
+          "chord": 1.957
+        },
+        {
+          "ior": 1.5,
+          "x": 560,
+          "expected": 116.4,
+          "measured": 116,
+          "chord": 1.825
+        },
+        {
+          "ior": 1.5,
+          "x": 590,
+          "expected": 105.9,
+          "measured": 106,
+          "chord": 1.661
+        },
+        {
+          "ior": 1.5,
+          "x": 605,
+          "expected": 99,
+          "measured": 99,
+          "chord": 1.553
+        }
+      ]
+    },
+    {
+      "name": "fallback_ball_matches_measured_on_sphere",
+      "ok": true,
+      "claim": "On a unit sphere with Thickness 2 and Exit tilt 0, the analytic exit normal (no back-face pass) equals the measured one within 4/255, from the middle out to 0.97 of the sphere's screen radius: the fallback is exact for the shape it assumes, and the measured exit holds up near the silhouette.",
+      "evidence": {
+        "points": 81,
+        "max_difference_255": 1,
+        "max_difference_middle": 1,
+        "max_difference_rings": 1
+      }
+    },
+    {
+      "name": "samples_invariant_without_dispersion",
+      "ok": true,
+      "claim": "Without dispersion or frost every slice is identical, so the sample count cannot change the image.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph1_equals_target",
+      "ok": true,
+      "claim": "Morph 1 toward a preset renders that preset.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph0_is_neutral",
+      "ok": true,
+      "claim": "Morph 0 leaves the current look unchanged.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "screen_uv_matches_pixel",
+      "ok": true,
+      "claim": "screenUV() gives the pixel position over the render size (preview viewport stand-in).",
+      "evidence": {
+        "pixel": [
+          517,
+          249
+        ],
+        "measured": [
+          137,
+          118
+        ],
+        "expected": [
+          137.5,
+          117.8
+        ]
+      }
+    },
+    {
+      "name": "refraction_lookup_follows_snell",
+      "ok": true,
+      "claim": "In the image itself (Refraction stage over a backdrop that stores its own screen position), light through a 45-degree prism lands where an independent trace predicts: Snell's law at the front face, the exit point on the far face, Snell's law again, then Scene depth further (1 and 2.5), projected by the camera. Within 2 pixels at 25 points per case, for a horizontal and a vertical bend (prism turned 90 degrees).",
+      "evidence": {
+        "points": 100,
+        "worst_error_px": 0.21,
+        "rows": [
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 420,
+            "y": 210,
+            "expected": [
+              0.4759,
+              0.3917
+            ],
+            "measured": [
+              0.4759,
+              0.3917
+            ],
+            "error_px": 0.05
+          },
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 450,
+            "y": 210,
+            "expected": [
+              0.5078,
+              0.3922
+            ],
+            "measured": [
+              0.5078,
+              0.3921
+            ],
+            "error_px": 0.02
+          },
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 480,
+            "y": 210,
+            "expected": [
+              0.5401,
+              0.3926
+            ],
+            "measured": [
+              0.54,
+              0.3925
+            ],
+            "error_px": 0.06
+          },
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 510,
+            "y": 210,
+            "expected": [
+              0.573,
+              0.3928
+            ],
+            "measured": [
+              0.5729,
+              0.3928
+            ],
+            "error_px": 0.16
+          },
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 540,
+            "y": 210,
+            "expected": [
+              0.6084,
+              0.3928
+            ],
+            "measured": [
+              0.6085,
+              0.3928
+            ],
+            "error_px": 0.06
+          },
+          {
+            "roll": 0,
+            "D": 1,
+            "x": 420,
+            "y": 240,
+            "expected": [
+              0.4757,
+              0.4463
+            ],
+            "measured": [
+              0.4758,
+              0.4463
+            ],
+            "error_px": 0.05
+          }
+        ]
+      }
+    },
+    {
+      "name": "rainbow_in_the_image_follows_snell",
+      "ok": true,
+      "claim": "In the image, each colour channel through the prism equals the independently traced 16-slice spectrum: every slice bent at both faces with its Cauchy IOR, weighted by the transmitted share and the documented slice colours. Within 0.004 (about 4 pixels of ramp); violet lands on the side Snell's law predicts.",
+      "evidence": {
+        "points": 50,
+        "worst_error": 0.0001,
+        "clearly_split_points": 10,
+        "violet_side_correct": true,
+        "rows": [
+          {
+            "roll": 0,
+            "x": 510,
+            "y": 210,
+            "expected": [
+              0.5067,
+              0.514,
+              0.4589
+            ],
+            "measured": [
+              0.5066,
+              0.514,
+              0.4589
+            ]
+          },
+          {
+            "roll": 0,
+            "x": 540,
+            "y": 210,
+            "expected": [
+              0.4294,
+              0.4437,
+              0.1591
+            ],
+            "measured": [
+              0.4294,
+              0.4437,
+              0.1592
+            ]
+          },
+          {
+            "roll": 0,
+            "x": 510,
+            "y": 240,
+            "expected": [
+              0.5096,
+              0.516,
+              0.4646
+            ],
+            "measured": [
+              0.5096,
+              0.516,
+              0.4646
+            ]
+          },
+          {
+            "roll": 0,
+            "x": 540,
+            "y": 240,
+            "expected": [
+              0.4325,
+              0.4511,
+              0.167
+            ],
+            "measured": [
+              0.4325,
+              0.4512,
+              0.167
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "trapped_light_is_not_transmitted",
+      "ok": true,
+      "claim": "In the image (Refraction stage, Inner reflection 0): past the critical angle (IOR 1.6 in the 45-degree prism) nothing of the scene behind gets through; below it (IOR 1.3) exactly 1 - Fresnel of it does, within 0.01.",
+      "evidence": {
+        "ior_1_6_max": 0,
+        "ior_1_3": [
+          {
+            "x": 420,
+            "y": 210,
+            "expected": 0.951,
+            "measured": 0.951
+          },
+          {
+            "x": 450,
+            "y": 210,
+            "expected": 0.9338,
+            "measured": 0.9338
+          },
+          {
+            "x": 480,
+            "y": 210,
+            "expected": 0.9036,
+            "measured": 0.9036
+          },
+          {
+            "x": 510,
+            "y": 210,
+            "expected": 0.8428,
+            "measured": 0.8428
+          },
+          {
+            "x": 540,
+            "y": 210,
+            "expected": 0.6736,
+            "measured": 0.6737
+          },
+          {
+            "x": 420,
+            "y": 240,
+            "expected": 0.9518,
+            "measured": 0.9518
+          },
+          {
+            "x": 450,
+            "y": 240,
+            "expected": 0.9351,
+            "measured": 0.9351
+          },
+          {
+            "x": 480,
+            "y": 240,
+            "expected": 0.9057,
+            "measured": 0.9057
+          },
+          {
+            "x": 510,
+            "y": 240,
+            "expected": 0.8469,
+            "measured": 0.8469
+          }
+        ]
+      }
+    },
+    {
+      "name": "trapped_light_returns_as_bounce",
+      "ok": true,
+      "claim": "The light the far face traps comes back as the inner bounce: bright where all of it is trapped (IOR 1.6), at least four times dimmer where only the Fresnel share is (IOR 1.3).",
+      "evidence": {
+        "mean_bounce_ior_1_6": 0.8085,
+        "mean_bounce_ior_1_3": 0.1038
+      }
+    },
+    {
+      "name": "caustic_glow_faces_away_from_light",
+      "ok": true,
+      "claim": "The caustic glow is the ball-lens spot of the delivered model: exp(-(angle / radius)^2), where angle is between the exit normal and the direction away from the light, and radius |2 - n| / n = 1/3 at IOR 1.5. Within 0.02 on a sphere, and bright where the exit normal faces away from the light.",
+      "evidence": {
+        "points": 109,
+        "worst_error": 0.0001,
+        "brightest": {
+          "angle": 0.017,
+          "expected": 0.9974,
+          "measured": 0.9974
+        }
+      }
+    },
+    {
+      "name": "flat_guess_matches_measured_slab",
+      "ok": true,
+      "claim": "Without the back-face pass, Exit tilt -1 with Thickness 0.4 reproduces the measured image of the tilted 0.4-thick slab within 0.5 pixel (direction and sideways shift). Control: the ball guess (Exit tilt 0) does not.",
+      "evidence": {
+        "points": 49,
+        "flat_guess_vs_measured_px": 0.035,
+        "control_ball_guess_vs_measured_px": 54.829
+      }
+    },
+    {
+      "name": "frost_is_smooth_not_grainy",
+      "ok": true,
+      "claim": "Frost 1 over a smooth gradient backdrop, on a sphere and a slab: inside the glass (8 pixels from its edge) the median second difference between neighbouring pixels of the read-back screen position stays below 0.002, so the blur adds no pixel-scale noise (no dithering). A copy that jitters the frost samples per pixel gives about 0.012. Checks the image, not function names.",
+      "evidence": {
+        "sphere": {
+          "interior_pixels": 49702,
+          "median": 0.00003,
+          "p99": 0.0136
+        },
+        "slab": {
+          "interior_pixels": 45991,
+          "median": 0,
+          "p99": 0.01661
+        }
+      }
+    },
+    {
+      "name": "ball_never_traps_any_wavelength",
+      "ok": true,
+      "claim": "A ball cannot trap light: its exit angle equals its entry angle for every wavelength. On a unit sphere (out to 0.97 of its screen radius) with the ball guess and with the back-face pass, at Dispersion 0 and 1, and on the torus with the ball guess (Exit tilt 0, which assumes a ball everywhere), no red, middle or violet share reaches 0.99. This covers both the per-slice exit normal and the exit march near the silhouette.",
+      "evidence": {
+        "sphere_guess_dispersion1": {
+          "pixels": 52276,
+          "trapped": 0,
+          "worst_share": 0.306
+        },
+        "sphere_measured_dispersion1": {
+          "pixels": 52276,
+          "trapped": 0,
+          "worst_share": 0.308
+        },
+        "sphere_measured_dispersion0": {
+          "pixels": 52276,
+          "trapped": 0,
+          "worst_share": 0.278
+        },
+        "torus_guess_dispersion1": {
+          "pixels": 98796,
+          "trapped": 0,
+          "worst_share": 0.945
+        }
+      }
+    },
+    {
+      "name": "geometry_without_normals",
+      "ok": true,
+      "claim": "A mesh with no normals (N = 0) uses faceted normals from screen derivatives, in both passes: IOR 1 stays invisible on a slab and a sphere, the slab still gives zero net deviation (faceted normals are exact there), and 24 renders stay finite.",
+      "evidence": {
+        "slab_fallback": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "slab_backpass": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "sphere_fallback": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "sphere_backpass": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "slab_deviation_backpass_max_255": 0,
+        "finite_renders": 24,
+        "finite_ok": true
+      }
+    },
+    {
+      "name": "bends_follow_screen_orientation",
+      "ok": true,
+      "claim": "A build whose screen y runs opposite to the projection's y (emulated: the rasteriser flips y; the scene behind and the back-face pass come from the same build) bends light the same way: through the prism, sideways and up/down, every lookup lands on the mirror of its normal position within 0.5 pixel. Over the whole default look, at most 2000 pixels differ by more than 8/255 (where the footprint mip level changes inside a 2 x 2 pixel block, whose derivatives the mirror reads from the other row; the shader before this check differed on about 90,000 pixels by up to 252/255).",
+      "evidence": {
+        "prism_lookups": {
+          "points": 50,
+          "worst_px": 0
+        },
+        "spectral_prism_image": {
+          "pixels_differing": 13102,
+          "pixels_over_8": 1855
+        }
+      }
+    },
+    {
+      "name": "flip_v_corrects_upside_down_inputs",
+      "ok": true,
+      "claim": "If the Refraction TOP and the back-face pass arrive upside down, Flip V restores the normal render: it flips the base screen UV and every vertical offset together. Prism lookups within 0.5 pixel; the default look with the back-face pass within 2/255 except at most 50 pixels.",
+      "evidence": {
+        "prism_lookups": {
+          "points": 50,
+          "worst_px": 0
+        },
+        "spectral_prism_backpass_image": {
+          "max": 1,
+          "pixelsOver2": 0
+        }
+      }
+    },
+    {
+      "name": "mirrored_projection_keeps_offsets_the_right_way",
+      "ok": true,
+      "claim": "A build whose projection matrix has a negative y scale (emulated, with and without a flipped raster) bends and reflects the same way as the normal build: prism lookups land on the same or the mirrored position within 0.5 pixel, and every flat-image reflection lookup of the Spectral Prism torus within 1 pixel. Before the fix the flat-image offset ran up where the bends ran down (it ignored the projection's sign: 0 of 98,796 glass pixels agreed in direction, verifier's measurement).",
+      "evidence": {
+        "prism_lookups_upright": {
+          "points": 50,
+          "worst_px": 0
+        },
+        "prism_lookups_upside_down": {
+          "points": 50,
+          "worst_px": 0
+        },
+        "flat_image_reflection": {
+          "normal": {
+            "glass_pixels": 98796,
+            "pixels_read_over_8px_up_or_down": 94368
+          },
+          "mirrored_projection_upright": {
+            "pixels": 98796,
+            "worst_px": 0,
+            "pixels_over_1px": 0
+          },
+          "mirrored_projection_upside_down": {
+            "pixels": 98796,
+            "worst_px": 0.312,
+            "pixels_over_1px": 0
+          },
+          "flipped_raster_control": {
+            "pixels": 98796,
+            "worst_px": 0.312,
+            "pixels_over_1px": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "backface_background_reads_as_empty",
+      "ok": true,
+      "claim": "The back-face pass stores minus the distance, so a non-zero background (as a camera background colour could add) still reads as empty: on a sphere, the measured path, exit normal and final image are identical, value for value, with backgrounds of alpha 0, 0.5 and 1, and IOR 1 stays invisible. (The first encoding, distance in alpha with 0 = empty, changes 24 values at the rim.)",
+      "evidence": {
+        "values_changed_by_background": {
+          "thickness": {
+            "alpha_0.5": 0,
+            "alpha_1": 0
+          },
+          "exitnormal": {
+            "alpha_0.5": 0,
+            "alpha_1": 0
+          },
+          "final": {
+            "alpha_0.5": 0,
+            "alpha_1": 0
+          }
+        },
+        "ior1_with_background_alpha_0_7": {
+          "max": 1,
+          "pixelsOver2": 0
+        }
+      }
+    },
+    {
+      "name": "render_pass_keeps_foreground_in_front",
+      "ok": true,
+      "claim": "An opaque ball between the camera and the glass: with the README's Render Pass TOP route (the glass drawn into the scene render, whose depth is kept), the image shows the ball exactly as the scene render does wherever it covers the glass, with no occluder listed anywhere. Control: laid over the scene with an Over TOP (the fallback), the glass is drawn over the ball. (Renamed from holdout_keeps_foreground_in_front: the emulation and thresholds are unchanged.)",
+      "evidence": {
+        "occluder_pixels_over_glass": 7890,
+        "render_pass_max_diff": 1,
+        "over_top_max_diff": 246
+      }
+    },
+    {
+      "name": "lookups_stay_in_front_of_camera",
+      "ok": true,
+      "claim": "Every point the shader projects (scene lookups, bounce lookups, the exit march and per-slice re-reads) stays at least half as far from the camera as its reference point, so none lands near or behind the camera: Scene depth up to 50, camera 1.8 to 5 units away, with and without the back-face pass (instrumented copy of the delivered shader).",
+      "evidence": {
+        "renders": 36,
+        "smallest_ratio": 0.5,
+        "rows": [
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 1.8,
+            "D": 50,
+            "back": false,
+            "glass": 379711,
+            "min_ratio": 0.5
+          },
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 1.8,
+            "D": 50,
+            "back": true,
+            "glass": 379711,
+            "min_ratio": 0.5
+          },
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 3,
+            "D": 50,
+            "back": false,
+            "glass": 264161,
+            "min_ratio": 0.5
+          },
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 3,
+            "D": 50,
+            "back": true,
+            "glass": 264161,
+            "min_ratio": 0.5
+          },
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 5,
+            "D": 50,
+            "back": false,
+            "glass": 98796,
+            "min_ratio": 0.5
+          },
+          {
+            "preset": "spectral_prism",
+            "cameraZ": 5,
+            "D": 50,
+            "back": true,
+            "glass": 98796,
+            "min_ratio": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "large_scene_depth_stays_smooth",
+      "ok": true,
+      "claim": "At Scene depth 2.2 and 20 (Spectral Prism, Trapped Light), the glass is no grainier and no blurrier than a 2 x 2 supersampled render of the same view: the mean absolute Laplacian inside the glass stays within 0.85 to 1.2 times the supersampled one. Each lookup reads a mip level that rises once its footprint passes 4 texels per pixel. (Changed in the family sync: the test used to require the Laplacian to grow at most 1.8 times from Scene depth 2.2 to 20, but the supersampled render itself grows 1.85 and 2.06 times; the 6a58487 full-footprint level met it by over-blurring, 0.55 to 0.79 times the supersampled image; no level at all gives up to 1.53 times. See review.md.)",
+      "evidence": {
+        "spectral_prism_depth_2.2": {
+          "mean_laplacian": 42.01,
+          "supersampled_2x2": 39.78,
+          "ratio": 1.056
+        },
+        "spectral_prism_depth_20": {
+          "mean_laplacian": 90.88,
+          "supersampled_2x2": 85.46,
+          "ratio": 1.063
+        },
+        "trapped_light_depth_2.2": {
+          "mean_laplacian": 88.13,
+          "supersampled_2x2": 75.68,
+          "ratio": 1.165
+        },
+        "trapped_light_depth_20": {
+          "mean_laplacian": 206.8,
+          "supersampled_2x2": 177.5,
+          "ratio": 1.165
+        }
+      }
+    },
+    {
+      "name": "morph_frame_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "One frame of a 100-frame A/B morph (Spectral Prism toward Lavender Prism, Morph 0.50 to 0.51 in 1/60 s) changes the image no more after an hour than after 2 s: the ripple and film drift is added up frame by frame, so changing its speed never throws the pattern. (6a58487 multiplied absolute time by the morphed speed in the shader.)",
+      "evidence": {
+        "final_t2": {
+          "max": 224,
+          "pixelsOver8": 15591,
+          "p99OfAllPixels": 17
+        },
+        "final_t3600": {
+          "max": 224,
+          "pixelsOver8": 16233,
+          "p99OfAllPixels": 19
+        },
+        "film_t2": {
+          "max": 12,
+          "pixelsOver8": 3105,
+          "p99OfAllPixels": 8
+        },
+        "film_t3600": {
+          "max": 12,
+          "pixelsOver8": 1277,
+          "p99OfAllPixels": 7
+        }
+      }
+    },
+    {
+      "name": "speed_change_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "After an hour, nudging Wobble speed from 0.60 to 0.61 changes one frame no more than one frame of motion at a fixed speed does (Lavender Prism, normal stage).",
+      "evidence": {
+        "steady": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 1
+        },
+        "nudged": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 1
+        }
+      }
+    },
+    {
+      "name": "ior1_invisible_with_wobble",
+      "ok": true,
+      "claim": "Ripples do not undo the silhouette fix: at IOR 1 the rippled glass is still invisible, with and without the back-face pass (normals are turned toward the camera, and the far side's away from it, after the wobble).",
+      "evidence": {
+        "fallback": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "backpass": {
+          "max": 1,
+          "pixelsOver2": 0
+        }
+      }
+    },
+    {
+      "name": "wobble_independent_of_object_scale",
+      "ok": true,
+      "claim": "Wobble looks the same on a Geometry COMP scaled 0.1 or 10 times (camera moved with it, Object size set to the scale as Fit sets it; normal stage): the ripple slope is multiplied by the cube root of the scale's volume change. 6a58487 divided the tilt by the scale (ten times too strong at 0.1).",
+      "evidence": {
+        "scale_0_1": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        },
+        "scale_10": {
+          "max": 1,
+          "pixelsOver8": 0,
+          "p99OfAllPixels": 0
+        }
+      }
+    },
+    {
+      "name": "faceted_normal_is_scale_free",
+      "ok": true,
+      "claim": "A mesh without normals built at a twentieth of the size (camera moved with it) gets the same faceted normals: the degeneracy test compares the cross product with the derivatives' own size. 6a58487 used an absolute threshold, so small objects fell back to facing the camera.",
+      "evidence": {
+        "max": 1,
+        "pixelsOver8": 0,
+        "p99OfAllPixels": 0
+      }
+    },
+    {
+      "name": "frost_does_not_shift_the_image",
+      "ok": true,
+      "claim": "Frost 1 at 16 samples blurs the view through a sphere without moving it: the read-back screen position moves on average by at most 2 pixels (the disc spreads 0.25 scene units, about 32 pixels at this distance). The frost points come from the R2 sequence, whose average stays near the centre; 6a58487's golden-angle spiral put them on one arm (average offset 0.14 of the radius).",
+      "evidence": {
+        "pixels": 20108,
+        "shift_px": [
+          0.55,
+          1.01
+        ],
+        "shift_length_px": 1.15
+      }
+    },
+    {
+      "name": "energy_conserving_mirror_is_pure_reflection",
+      "ok": true,
+      "claim": "With Energy conserving on and Mirror 1, nothing shows through: the final image equals the reflection stage (bounce and glow included, since they travel through the glass).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "srgb_colour_mode_decodes_colours",
+      "ok": true,
+      "claim": "Colour parameters set to sRGB render like the same colours converted to linear by hand (Lavender Prism, body stage).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "transparent_scene_stays_transparent",
+      "ok": true,
+      "claim": "Over a Refraction TOP with a transparent background (alpha 0), invisible glass (IOR 1, no tint or light terms) leaves the image exactly as the scene: colour and alpha, with the back-face pass off and on. (6a58487 wrote alpha 1, so clear glass turned the empty background opaque black.) Measured, not asserted: where the scene is only partly covered (alpha 0.5), the glass draws the bent scene and blending adds the scene behind it again by the see-through share, so the pixel comes out brighter and more opaque (a documented limit).",
+      "evidence": {
+        "alpha_0_scene": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "alpha_0_scene_backface_pass": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "known_limit_alpha_half_scene_not_asserted": {
+          "max": 64,
+          "alphaMax": 64,
+          "pixelsOver2": 99340,
+          "pixelsOver1": 99340
+        }
+      }
+    },
+    {
+      "name": "empty_scene_matches_no_refraction_top",
+      "ok": true,
+      "claim": "Where the Refraction TOP is empty (alpha 0), the glass blends exactly as it does with no Refraction TOP connected (Lavender Prism, colour and alpha, with the back-face pass off and on; bounce and glow stay in both): one formula covers both.",
+      "evidence": {
+        "back_face_pass_off": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "back_face_pass_on": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        }
+      }
+    },
+    {
+      "name": "opaque_scene_matches_pre_sync",
+      "ok": true,
+      "claim": "Over an opaque Refraction TOP (the demo backdrop), each of the twelve presets with ripples, film and frost off renders as the 6a58487 material did (with the synced footprint level patched in), within 1/255 including alpha (knot, back-face pass off and on), except at most 12 pixels per render: the silhouette pixels where 6a58487's derivative-based screen orientation came out wrong (screen_orientation_has_no_wrong_pixels). So covered = 1, Colour parameters Auto in a pass-through project, Object size 1, fog off, no extra colour buffers and the cap at 1024 change nothing.",
+      "evidence": {
+        "spectral_prism": {
+          "max": 26,
+          "pixelsOver1": 2
+        },
+        "spectral_prism_backpass": {
+          "max": 21,
+          "pixelsOver1": 2
+        },
+        "type_lens": {
+          "max": 1,
+          "pixelsOver1": 0
+        },
+        "type_lens_backpass": {
+          "max": 12,
+          "pixelsOver1": 2
+        },
+        "diamond_fire": {
+          "max": 43,
+          "pixelsOver1": 3
+        },
+        "diamond_fire_backpass": {
+          "max": 51,
+          "pixelsOver1": 3
+        },
+        "trapped_light": {
+          "max": 19,
+          "pixelsOver1": 2
+        },
+        "trapped_light_backpass": {
+          "max": 53,
+          "pixelsOver1": 3
+        },
+        "caustic_heart": {
+          "max": 4,
+          "pixelsOver1": 2
+        },
+        "caustic_heart_backpass": {
+          "max": 32,
+          "pixelsOver1": 3
+        },
+        "lavender_prism": {
+          "max": 40,
+          "pixelsOver1": 3
+        },
+        "lavender_prism_backpass": {
+          "max": 21,
+          "pixelsOver1": 2
+        },
+        "clear_crystal": {
+          "max": 16,
+          "pixelsOver1": 3
+        },
+        "clear_crystal_backpass": {
+          "max": 30,
+          "pixelsOver1": 3
+        },
+        "prism_chrome": {
+          "max": 12,
+          "pixelsOver1": 2
+        },
+        "prism_chrome_backpass": {
+          "max": 31,
+          "pixelsOver1": 2
+        },
+        "violet_gel": {
+          "max": 17,
+          "pixelsOver1": 3
+        },
+        "violet_gel_backpass": {
+          "max": 21,
+          "pixelsOver1": 3
+        },
+        "sapphire_drop": {
+          "max": 4,
+          "pixelsOver1": 1
+        },
+        "sapphire_drop_backpass": {
+          "max": 28,
+          "pixelsOver1": 2
+        },
+        "chrome_type": {
+          "max": 2,
+          "pixelsOver1": 1
+        },
+        "chrome_type_backpass": {
+          "max": 29,
+          "pixelsOver1": 2
+        },
+        "frosted_ice": {
+          "max": 18,
+          "pixelsOver1": 4
+        },
+        "frosted_ice_backpass": {
+          "max": 29,
+          "pixelsOver1": 4
+        }
+      }
+    },
+    {
+      "name": "extra_colour_buffers_get_zeros",
+      "ok": true,
+      "claim": "In a render with three colour buffers (TD_NUM_COLOR_BUFFERS 3, cleared to 0.5, blending off), buffer 0 holds exactly the single-buffer glass and buffers 1 and 2 hold zeros wherever the glass is drawn (with the material's premultiplied blending, zeros leave those buffers unchanged). 6a58487 wrote buffer 0 only.",
+      "evidence": {
+        "glass_pixels": 98796,
+        "buffer0_max_float_diff": 0,
+        "buffer1_pixels_not_zero": 0,
+        "buffer2_pixels_not_zero": 0
+      }
+    },
+    {
+      "name": "dispersion_converges_with_samples",
+      "ok": true,
+      "claim": "Dispersion 1 at the default 16 slices agrees with a 64-slice render (refraction stage, torus, Clear Crystal, Prism Chrome and Spectral Prism): mean difference within 2.5/255 and at most 50 of about 99,000 glass pixels over 32/255. A fan-gap mip level as wide as the whole gap between slices (tried in the family sync, from the blobs study) fails this on Spectral Prism: mean 4.79/255 and 1,510 pixels over 32/255. A quarter of the gap (what the blobs study adopted) passes but changes no pixel on Clear Crystal or Prism Chrome (decisions.json, C3).",
+      "evidence": {
+        "clear_crystal": {
+          "glass_pixels": 97852,
+          "mean": 0.58,
+          "max": 16,
+          "pixelsOver32": 0
+        },
+        "prism_chrome": {
+          "glass_pixels": 98056,
+          "mean": 0.55,
+          "max": 14,
+          "pixelsOver32": 0
+        },
+        "spectral_prism": {
+          "glass_pixels": 99157,
+          "mean": 2.17,
+          "max": 45,
+          "pixelsOver32": 20
+        }
+      }
+    },
+    {
+      "name": "output_fits_half_float",
+      "ok": true,
+      "claim": "A light colour of 200,000 (a typed value, or an HDR multiplier) gives finite colour no higher than 1024, which a 16-bit float render stores (half floats end at 65504; 6a58487 wrote values far above that). The cap is on colour only: the back-face pass of a sphere 1500 units away still stores minus distances below -1400 in alpha.",
+      "evidence": {
+        "hot_highlight": {
+          "nonFinite": 0,
+          "maxRGB": 1024,
+          "minAlpha": 0
+        },
+        "back_pass_far_away": {
+          "nonFinite": 0,
+          "maxRGB": 1,
+          "minAlpha": -1501
+        }
+      }
+    },
+    {
+      "name": "screen_orientation_has_no_wrong_pixels",
+      "ok": true,
+      "claim": "The screen orientation is right at every glass pixel of the twelve presets on the torus and the knot, in a normal and a flipped raster, at 960 x 540 and at the odd size 481 x 271: it compares the pixel's projected position with its raster position, and only on a centre line of an odd-sized render, where both are 0, takes the sign of the projected position's screen derivatives. 6a58487 took the sign of derivatives everywhere, which came out wrong on one silhouette pixel per render here (the core study measured 2 to 5 on its knot, up to 50/255 off). The comparison alone, with +1 on ties, was wrong on the whole centre row at 481 x 271 in a flipped raster (1,524 torus and 1,548 knot pixels). Family close G2: the family's survey with Liquid Glass Lit's and the core's thresholds too (each preset at its own pose on the torus, knot and sphere, 480 x 270 and 481 x 271): at most 2 wrong single-sample pixels and 10 wrong multisampled pixels per row of twelve renders (20 until the family critic's centre-line round; measured here: at most 1 and 2). The few the family allows are a centre-line pixel on a nearly edge-on surface (the tie keeps +1) and silhouette pixels where the glass covers one to three samples of four. Whether those are visible in TouchDesigner is a family open question with a pending native check (co-design.json; validation.json, centre_line_residual).",
+      "evidence": {
+        "this_study": {
+          "torus": {
+            "size": [
+              960,
+              540
+            ],
+            "renders": 12,
+            "glass_pixels": 1185552,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "torus_flipped_raster": {
+            "size": [
+              960,
+              540
+            ],
+            "renders": 12,
+            "glass_pixels": 1185552,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "knot": {
+            "size": [
+              960,
+              540
+            ],
+            "renders": 12,
+            "glass_pixels": 1065624,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "knot_flipped_raster": {
+            "size": [
+              960,
+              540
+            ],
+            "renders": 12,
+            "glass_pixels": 1065624,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "torus_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "glass_pixels": 298680,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "torus_flipped_raster_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "glass_pixels": 298680,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "knot_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "glass_pixels": 268536,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          },
+          "knot_flipped_raster_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "glass_pixels": 268536,
+            "wrong_sign_pixels": 0,
+            "of_them_on_a_centre_line": 0
+          }
+        },
+        "family_survey": {
+          "torus_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 215287,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 218027,
+              "wrong_sign_pixels": 2,
+              "of_them_within_a_pixel_of_a_centre_line": 2
+            }
+          },
+          "torus_flipped_raster_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 215291,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 218006,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "knot_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 226117,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 229549,
+              "wrong_sign_pixels": 1,
+              "of_them_within_a_pixel_of_a_centre_line": 1
+            }
+          },
+          "knot_flipped_raster_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 226123,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 229533,
+              "wrong_sign_pixels": 1,
+              "of_them_within_a_pixel_of_a_centre_line": 1
+            }
+          },
+          "sphere_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 166800,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 168716,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "sphere_flipped_raster_480x270": {
+            "size": [
+              480,
+              270
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 166799,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 168726,
+              "wrong_sign_pixels": 1,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "torus_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 216938,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 219599,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "torus_flipped_raster_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 216934,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 219572,
+              "wrong_sign_pixels": 1,
+              "of_them_within_a_pixel_of_a_centre_line": 1
+            }
+          },
+          "knot_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 227797,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 231240,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "knot_flipped_raster_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 227796,
+              "wrong_sign_pixels": 1,
+              "of_them_within_a_pixel_of_a_centre_line": 1
+            },
+            "multisampled": {
+              "glass_pixels": 231222,
+              "wrong_sign_pixels": 2,
+              "of_them_within_a_pixel_of_a_centre_line": 2
+            }
+          },
+          "sphere_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 168223,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 169836,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          },
+          "sphere_flipped_raster_481x271": {
+            "size": [
+              481,
+              271
+            ],
+            "renders": 12,
+            "single_sample": {
+              "glass_pixels": 168223,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            },
+            "multisampled": {
+              "glass_pixels": 169828,
+              "wrong_sign_pixels": 0,
+              "of_them_within_a_pixel_of_a_centre_line": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fog_adds_only_the_glass_share",
+      "ok": true,
+      "claim": "With full fog (preview stand-in) on invisible glass at Opacity 0.5, every glass pixel is half the scene plus half the fog colour within 2/255 (only antialiased silhouette pixels are neither), and at Opacity 0 the fogged glass leaves no trace. With fog off TDFog changes nothing (opaque_scene_matches_pre_sync). 6a58487 ignored fog. TouchDesigner's own fog is a native check.",
+      "evidence": {
+        "opacity_half": {
+          "glass_pixels": 99340,
+          "pixels_neither_over_2": 1109
+        },
+        "opacity_0": {
+          "glass_pixels": 0,
+          "pixels_neither_over_2": 0
+        }
+      }
+    },
+    {
+      "name": "object_size_carries_presets_over",
+      "ok": true,
+      "claim": "A preset looks the same on an object built 0.1 or 10 units across, with Object size set to match (what Fit to Glass geometry measures): Thickness, Scene depth, frost, tint, ripples and film all follow, with and without the back-face pass (final image, at most 50 pixels over 8/255). 6a58487 had no Object size: its lengths stayed in scene units.",
+      "evidence": {
+        "spectral_prism": {
+          "size_0_1": {
+            "max": 12,
+            "pixelsOver8": 3,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 11,
+            "pixelsOver8": 6,
+            "p99OfAllPixels": 0
+          }
+        },
+        "spectral_prism_backpass": {
+          "size_0_1": {
+            "max": 13,
+            "pixelsOver8": 2,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "lavender_prism": {
+          "size_0_1": {
+            "max": 15,
+            "pixelsOver8": 6,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 9,
+            "pixelsOver8": 2,
+            "p99OfAllPixels": 0
+          }
+        },
+        "lavender_prism_backpass": {
+          "size_0_1": {
+            "max": 13,
+            "pixelsOver8": 10,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice": {
+          "size_0_1": {
+            "max": 12,
+            "pixelsOver8": 2,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice_backpass": {
+          "size_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 2,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "caustic_heart": {
+          "size_0_1": {
+            "max": 2,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 5,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "caustic_heart_backpass": {
+          "size_0_1": {
+            "max": 6,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "size_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "fit_size_carries_presets_over_comp_scale",
+      "ok": true,
+      "claim": "A preset looks the same on the demo torus scaled 0.1 or 10 by its Geometry COMP, with Object size set to the demo's size times that scale (what Fit to Glass geometry sets) and the camera moved with it: the ripples (Lavender Prism, normal stage), the film bands (Prism Chrome, film stage) and the final image of four looks, one with the back-face pass, at most 50 pixels over 8/255. The pattern lookups are multiplied by the world scale, so Object size means the same world size for the patterns as for Thickness, Scene depth, Frost and Tint density (the family rule; Liquid Glass Lit's test, as in the core study).",
+      "evidence": {
+        "lavender_prism_normal": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "prism_chrome_film": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 4,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "spectral_prism_final": {
+          "comp_scale_0_1": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 12,
+            "pixelsOver8": 3,
+            "p99OfAllPixels": 0
+          }
+        },
+        "lavender_prism_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 15,
+            "pixelsOver8": 6,
+            "p99OfAllPixels": 0
+          }
+        },
+        "prism_chrome_final": {
+          "comp_scale_0_1": {
+            "max": 5,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 7,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 12,
+            "pixelsOver8": 2,
+            "p99OfAllPixels": 0
+          }
+        },
+        "spectral_prism_final_backpass": {
+          "comp_scale_0_1": {
+            "max": 13,
+            "pixelsOver8": 2,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "backdrop_menu_matches_the_family",
+      "ok": true,
+      "claim": "Study > Demo backdrop: Checker is the core study's demo scene exactly (its 6a58487 backdrop), so contact sheets compare across the family; Type, the default, is this study's bold type on black (within 1/255: its smoothstep edges are now in increasing order). Control: the 6a58487 light checkerboard of this study differs from the core's on many pixels.",
+      "evidence": {
+        "checker_vs_core_6a58487": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "type_vs_prism_6a58487": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "default_is_type": {
+          "max": 0,
+          "alphaMax": 0,
+          "pixelsOver2": 0,
+          "pixelsOver1": 0
+        },
+        "control_old_prism_checker_vs_core": {
+          "max": 250,
+          "alphaMax": 0,
+          "pixelsOver2": 177078,
+          "pixelsOver1": 177856
+        }
+      }
+    }
+  ],
+  "material": "delivered",
+  "scope": "Shader maths and study.json bindings in WebGL2 (SwiftShader). Not a TouchDesigner render."
+}

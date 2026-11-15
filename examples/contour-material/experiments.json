@@ -1,0 +1,62 @@
+[
+  {
+    "id": "field",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "field",
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "What space owns the pattern?",
+    "prediction": "The scalar field is attached to the object.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-field.png"
+  },
+  {
+    "id": "normal",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "normal",
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "What space owns the light?",
+    "prediction": "World-space normals vary across transformed facets.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-normal.png"
+  },
+  {
+    "id": "stretch",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "normal",
+      "Turn": 25,
+      "Stretch": 1.4
+    },
+    "question": "What changes under nonuniform scale?",
+    "prediction": "Derivative normals follow the actual transformed surface.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-stretch.png"
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Turn": 25,
+      "Stretch": 1
+    },
+    "question": "How do surface and light combine?",
+    "prediction": "Object-attached contours are lit in world space.",
+    "reset": false,
+    "observation": "Rendered in TouchDesigner 2025.33230 with no reported operator errors. The receipt records the captured parameters.",
+    "capture": "captures/native-final.png"
+  }
+]

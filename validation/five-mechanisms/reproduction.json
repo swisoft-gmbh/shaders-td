@@ -1,0 +1,7 @@
+{
+  "static_all_passed": true,
+  "temporal_passed": true,
+  "mechanism_checks": 35,
+  "frames": 407,
+  "scope": "Portable launcher built five new native components and reran the mechanism checks. Export/reopen has its own receipt."
+}

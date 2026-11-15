@@ -1,0 +1,40 @@
+{
+ "what": "Red run of the LookDecisions unit tests (look-acceptance round, 2026-11-02). Plain Python; nothing ran in TouchDesigner.",
+ "date": "2026-11-02",
+ "pre_fix": {
+  "how": "A copy of the three studies as they stood before this round (records and README without the look decisions), with this round's checks/test_study.py copied in.",
+  "results": {
+   "results": {
+    "test_code_stays_as_delivered_until_answered": "ERROR",
+    "test_look_decisions_wait_for_the_user": "ERROR"
+   },
+   "first_errors": [
+    "KeyError: 'look_decisions_for_user'",
+    "KeyError: 'look_decisions_for_user'"
+   ]
+  }
+ },
+ "mutations": {
+  "how": "A copy of the fixed tree, one change at a time; each must turn a LookDecisions test red.",
+  "cases": {
+   "a core look's Thickness converted x 1.146 (LOOK-P1 B) without an answer": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "ok"
+    },
+    "first_errors": [
+     "AssertionError: {'Gla[163 chars]': 0.917, 'Dispersion': 0.25, 'Saturation': 1.[438 chars] 0.3} != {'Gla[163 chars]': 0.8, 'Dispersion': 0.25, 'Saturation': 1.1,[436 chars] 0.3}"
+    ]
+   },
+   "Prism-only film count (LOOK-P2 B) without an answer": {
+    "results": {
+     "test_code_stays_as_delivered_until_answered": "FAIL",
+     "test_look_decisions_wait_for_the_user": "ok"
+    },
+    "first_errors": [
+     "AssertionError: '2.586 / parent().par.Objectsize.eval()' != '2.5 / parent().par.Objectsize.eval()'"
+    ]
+   }
+  }
+ }
+}

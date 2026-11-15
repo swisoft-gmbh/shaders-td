@@ -1,0 +1,171 @@
+{
+ "what": "Look decisions LOOK-B1 and LOOK-B2 (co-design.json, look_decisions_for_user): the demo look checked against c94e849, and the family film count measured on the current tree. WebGL2 preview of the delivered GLSL, not TouchDesigner.",
+ "date": "2026-11-02",
+ "reproduced_from_files": {
+  "how": "Each capture as committed at c94e849 (git show) against the current file: max per-channel difference /255 and pixels over 8/255 (checks: scratch reproduce.py of the look-acceptance round). WebGL2 previews (Chromium SwiftShader), not TouchDesigner.",
+  "presets": {
+   "captures": 24,
+   "max_from": 0,
+   "max_to": 1,
+   "pixels_over_8_from": 0,
+   "pixels_over_8_to": 0
+  },
+  "rows": {
+   "preset-amber_syrup-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-amber_syrup": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-aqua_jelly-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-aqua_jelly": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-emerald_bottle-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-emerald_bottle": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-frosted_milk-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-frosted_milk": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-lavender_gel-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-lavender_gel": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-mercury_beads-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-mercury_beads": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-oil_slick-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-oil_slick": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-prism_clear-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-prism_clear": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-rose_quartz-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-rose_quartz": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-sapphire_drops-type": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-sapphire_drops": {
+    "max": 1,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-soap_bubbles-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-soap_bubbles": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-type_lens-type": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   },
+   "preset-type_lens": {
+    "max": 0,
+    "pixels_over_8": 0,
+    "pixels": 427170
+   }
+  },
+  "reading": "The family close did not change the demo look (0 to 1/255). The decisions are about two member-specific rules."
+ },
+ "option_family_film_count": {
+  "how": "Current tree, checks/preview harness, 800 x 450, time 3, each preset at its defaults; the family count drawn with a test patch that multiplies the film lookup by 1.45 ('pObj * (uFilm.w * 1.45) * worldScale()'). Images: captures/review-look-decisions.png.",
+  "size": [
+   800,
+   450
+  ],
+  "time": 3,
+  "results": {
+   "oil_slick": {
+    "max": 244,
+    "pixelsOver8": 48887,
+    "pixels": 360000
+   },
+   "soap_bubbles": {
+    "max": 234,
+    "pixelsOver8": 43868,
+    "pixels": 360000
+   },
+   "prism_clear": {
+    "max": 135,
+    "pixelsOver8": 28667,
+    "pixels": 360000
+   },
+   "type_lens": {
+    "max": 62,
+    "pixelsOver8": 6913,
+    "pixels": 360000
+   }
+  }
+ },
+ "ripple_units": {
+  "how": "Code read: blobs.frag ripple(p) uses uMotion.y (height) and uMotion.z (scale) with p in box units; study.json uMotion.z = u(Ripplescale), with no Object size; the core divides Wobble scale by Object size and multiplies its lookup by worldScale().",
+  "reading": "No visible difference on the demo or after Fit; the two rules differ only when Object size does not match the box."
+ }
+}

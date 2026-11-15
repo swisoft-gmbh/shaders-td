@@ -1,0 +1,87 @@
+[
+  {
+    "id": "hit",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "hit",
+      "Blend": 0.23,
+      "Turn": 0.4,
+      "Budget": 128,
+      "Single": false
+    },
+    "question": "Which rays actually hit a surface?",
+    "prediction": "White means an explicit hit; exhausting the budget does not create a false surface.",
+    "reset": false,
+    "capture": "captures/native-hit.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "hard",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Blend": 0,
+      "Turn": 0.4,
+      "Budget": 128,
+      "Single": false
+    },
+    "question": "What does a hard union look like?",
+    "prediction": "Primitive intersections meet at a sharp seam.",
+    "reset": false,
+    "capture": "captures/native-hard.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "normals",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "normals",
+      "Blend": 0.23,
+      "Turn": 0.4,
+      "Budget": 128,
+      "Single": false
+    },
+    "question": "How does distance produce orientation?",
+    "prediction": "Central differences encode the surface normal as RGB.",
+    "reset": false,
+    "capture": "captures/native-normals.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "budget",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "iterations",
+      "Blend": 0.23,
+      "Turn": 0.4,
+      "Budget": 16,
+      "Single": false
+    },
+    "question": "Where does the ray budget run out?",
+    "prediction": "The iteration diagnostic exposes expensive grazing rays and incomplete coverage.",
+    "reset": false,
+    "capture": "captures/native-budget.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Pause": true,
+      "Time": 2,
+      "Stage": "final",
+      "Blend": 0.23,
+      "Turn": 0.4,
+      "Budget": 128,
+      "Single": false
+    },
+    "question": "How does smooth union change the sculpture?",
+    "prediction": "A matte bronze and blue composite joins the ring and satellites smoothly.",
+    "reset": false,
+    "capture": "captures/native-final.png",
+    "observation": "Captured from the native component with no reported operator errors. Mechanism-specific comparisons are recorded in review.md."
+  }
+]

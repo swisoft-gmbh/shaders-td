@@ -1,0 +1,736 @@
+{
+  "scope": "Family close measurements (2026-11-02), WebGL2 preview (Chromium SwiftShader) of this study's shaders; not TouchDesigner.",
+  "g2_screen_orientation_forms": {
+    "method": "Instrumented copies write the measured orientation instead of the colour; torus, knot and sphere; normal and flipped raster; 480 x 270 and 481 x 271; the twelve presets at twelve poses per row; single = the glass alone in a float target (one sample per pixel), multi = the 4x multisampled canvas. Wrong-sign pixel counts; near_centre_line = within one pixel of a centre line.",
+    "forms": {
+      "a_c94e849": "comparison with +1 on ties (the family sync's form)",
+      "lit": "Liquid Glass Lit's tie-break, projection sign inside screenSign() (the delivered form)",
+      "prism_v2": "Liquid Glass Prism's V2 form written literally: raster direction from screenSign(), projection sign applied after, ndc from viewProj x world"
+    },
+    "totals": {
+      "form_a_c94e849": {
+        "single_normal": 0,
+        "single_flipped": 4625,
+        "multi_normal": 0,
+        "multi_flipped": 4700
+      },
+      "form_lit": {
+        "single_normal": 0,
+        "single_flipped": 1,
+        "multi_normal": 0,
+        "multi_flipped": 12
+      },
+      "form_prism_v2": {
+        "single_normal": 0,
+        "single_flipped": 1,
+        "multi_normal": 0,
+        "multi_flipped": 12
+      }
+    },
+    "rows": {
+      "form_a_c94e849": {
+        "torus_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233610,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233573,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "knot_480x270": {
+          "single": {
+            "glass": 210803,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214475,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_480x270": {
+          "single": {
+            "glass": 210802,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214504,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "sphere_480x270": {
+          "single": {
+            "glass": 166792,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168724,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_480x270": {
+          "single": {
+            "glass": 166789,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168710,
+            "wrong": 1,
+            "near_centre_line": 0
+          }
+        },
+        "torus_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 235348,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 1480,
+            "near_centre_line": 1480
+          },
+          "multi": {
+            "glass": 235273,
+            "wrong": 1497,
+            "near_centre_line": 1497
+          }
+        },
+        "knot_481x271": {
+          "single": {
+            "glass": 212366,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 216021,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_481x271": {
+          "single": {
+            "glass": 212357,
+            "wrong": 1549,
+            "near_centre_line": 1549
+          },
+          "multi": {
+            "glass": 216018,
+            "wrong": 1579,
+            "near_centre_line": 1579
+          }
+        },
+        "sphere_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 169832,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 1596,
+            "near_centre_line": 1596
+          },
+          "multi": {
+            "glass": 169834,
+            "wrong": 1621,
+            "near_centre_line": 1621
+          }
+        }
+      },
+      "form_lit": {
+        "torus_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233610,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233573,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "knot_480x270": {
+          "single": {
+            "glass": 210803,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214475,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_480x270": {
+          "single": {
+            "glass": 210802,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214504,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "sphere_480x270": {
+          "single": {
+            "glass": 166792,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168724,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_480x270": {
+          "single": {
+            "glass": 166789,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168710,
+            "wrong": 1,
+            "near_centre_line": 0
+          }
+        },
+        "torus_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 235348,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 235273,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_481x271": {
+          "single": {
+            "glass": 212366,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 216021,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_481x271": {
+          "single": {
+            "glass": 212357,
+            "wrong": 1,
+            "near_centre_line": 1
+          },
+          "multi": {
+            "glass": 216018,
+            "wrong": 8,
+            "near_centre_line": 8
+          }
+        },
+        "sphere_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 169832,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 169834,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        }
+      },
+      "form_prism_v2": {
+        "torus_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233610,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_480x270": {
+          "single": {
+            "glass": 230934,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 233573,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "knot_480x270": {
+          "single": {
+            "glass": 210803,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214475,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_480x270": {
+          "single": {
+            "glass": 210802,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 214504,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        },
+        "sphere_480x270": {
+          "single": {
+            "glass": 166792,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168724,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_480x270": {
+          "single": {
+            "glass": 166789,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 168710,
+            "wrong": 1,
+            "near_centre_line": 0
+          }
+        },
+        "torus_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 235348,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "torus_flipped_raster_481x271": {
+          "single": {
+            "glass": 232618,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 235273,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_481x271": {
+          "single": {
+            "glass": 212366,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 216021,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "knot_flipped_raster_481x271": {
+          "single": {
+            "glass": 212357,
+            "wrong": 1,
+            "near_centre_line": 1
+          },
+          "multi": {
+            "glass": 216018,
+            "wrong": 8,
+            "near_centre_line": 8
+          }
+        },
+        "sphere_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 169832,
+            "wrong": 0,
+            "near_centre_line": 0
+          }
+        },
+        "sphere_flipped_raster_481x271": {
+          "single": {
+            "glass": 168219,
+            "wrong": 0,
+            "near_centre_line": 0
+          },
+          "multi": {
+            "glass": 169834,
+            "wrong": 1,
+            "near_centre_line": 1
+          }
+        }
+      }
+    },
+    "lit_equals_prism_on_every_row": true
+  },
+  "g5_quarter_gap": {
+    "method": "The guard test's metric: 960 x 540, refraction stage, torus, Dispersion 1, 12 against 64 samples; mean and max error on the glass pixels, pixels over 32/255. none = the delivered frost level; quarter = Liquid Glass Blobs' level, max(frost gap, 0.25 x the screen gap between the red and violet bends / samples); whole = the same with 1.0.",
+    "results": {
+      "none:clear_crystal_thickness_preset": {
+        "glass_pixels": 67315,
+        "mean": 0.347,
+        "max": 7,
+        "pixelsOver32": 0
+      },
+      "none:clear_crystal_thickness_2.5": {
+        "glass_pixels": 88814,
+        "mean": 1.831,
+        "max": 26,
+        "pixelsOver32": 0
+      },
+      "none:prism_chrome_thickness_preset": {
+        "glass_pixels": 73858,
+        "mean": 0.321,
+        "max": 6,
+        "pixelsOver32": 0
+      },
+      "none:prism_chrome_thickness_2.5": {
+        "glass_pixels": 86505,
+        "mean": 1.32,
+        "max": 14,
+        "pixelsOver32": 0
+      },
+      "quarter:clear_crystal_thickness_preset": {
+        "glass_pixels": 67315,
+        "mean": 0.347,
+        "max": 7,
+        "pixelsOver32": 0
+      },
+      "quarter:clear_crystal_thickness_2.5": {
+        "glass_pixels": 88818,
+        "mean": 1.758,
+        "max": 26,
+        "pixelsOver32": 0
+      },
+      "quarter:prism_chrome_thickness_preset": {
+        "glass_pixels": 73858,
+        "mean": 0.321,
+        "max": 6,
+        "pixelsOver32": 0
+      },
+      "quarter:prism_chrome_thickness_2.5": {
+        "glass_pixels": 86505,
+        "mean": 1.317,
+        "max": 14,
+        "pixelsOver32": 0
+      },
+      "whole:clear_crystal_thickness_preset": {
+        "glass_pixels": 67588,
+        "mean": 0.638,
+        "max": 14,
+        "pixelsOver32": 0
+      },
+      "whole:clear_crystal_thickness_2.5": {
+        "glass_pixels": 89523,
+        "mean": 3.966,
+        "max": 57,
+        "pixelsOver32": 286
+      },
+      "whole:prism_chrome_thickness_preset": {
+        "glass_pixels": 74119,
+        "mean": 0.611,
+        "max": 23,
+        "pixelsOver32": 0
+      },
+      "whole:prism_chrome_thickness_2.5": {
+        "glass_pixels": 87585,
+        "mean": 3.613,
+        "max": 59,
+        "pixelsOver32": 394
+      }
+    }
+  },
+  "g1_object_size_1_on_a_comp_scaled_object": {
+    "method": "Delivered shaders, the demo torus scaled 0.1 or 10 by its Geometry COMP (camera moved with it) but Object size left at 1, against the unscaled demo; and a SOP scaled 0.1 with Object size 0.1. Max / pixels over 8. The deliberate change of family close G1: the patterns now count the COMP's scale.",
+    "results": {
+      "aqua_jelly_normal": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 55,
+          "pixelsOver8": 81841
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 82,
+          "pixelsOver8": 81762
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      },
+      "oil_slick_film": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 255,
+          "pixelsOver8": 94099
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 255,
+          "pixelsOver8": 93645
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      },
+      "aqua_jelly_final": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 203,
+          "pixelsOver8": 90772
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 231,
+          "pixelsOver8": 75084
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      },
+      "oil_slick_final": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 241,
+          "pixelsOver8": 92868
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 244,
+          "pixelsOver8": 91383
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      },
+      "prism_chrome_final": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 247,
+          "pixelsOver8": 90782
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 250,
+          "pixelsOver8": 82696
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      },
+      "frosted_ice_final": {
+        "comp_scale_0_1_object_size_1": {
+          "max": 154,
+          "pixelsOver8": 91395
+        },
+        "comp_scale_10_object_size_1": {
+          "max": 206,
+          "pixelsOver8": 81736
+        },
+        "sop_scale_0_1_object_size_0_1": {
+          "max": 1,
+          "pixelsOver8": 0
+        }
+      }
+    }
+  },
+  "v1_pattern_detail": {
+    "method": "Family close verifier V1. Pattern detail: sign changes of the pattern's effect along pixel rows, per 1000 adjacent glass pixels (ripples: Aqua Jelly, normal stage, Wobble 0.6 minus Wobble 0; film: Oil Slick, film stage, default minus Film variation 0; red channel of the float probe). Demo torus at COMP scale 1, 10 and 0.1, camera moved with the scale, 960 x 540. Scratch probe (agents/fix-close-cf/pattern_probe.cjs); the preview test comp_scale_at_object_size_1_gives_k_times_the_patterns uses the same metric.",
+    "now": {
+      "ripples": {
+        "comp_1_object_size_1": 22.4,
+        "comp_10_object_size_1": 214.46,
+        "comp_10_object_size_10": 22.4,
+        "comp_0_1_object_size_1": 4.87,
+        "comp_0_1_object_size_0.1": 22.4
+      },
+      "film": {
+        "comp_1_object_size_1": 44.79,
+        "comp_10_object_size_1": 274.47,
+        "comp_10_object_size_10": 44.79,
+        "comp_0_1_object_size_1": 10.35,
+        "comp_0_1_object_size_0.1": 44.79
+      }
+    },
+    "c94e849": {
+      "ripples": {
+        "comp_1_object_size_1": 22.4,
+        "comp_10_object_size_1": 22.4,
+        "comp_10_object_size_10": 4.87,
+        "comp_0_1_object_size_1": 22.4,
+        "comp_0_1_object_size_0.1": 214.46
+      },
+      "film": {
+        "comp_1_object_size_1": 44.79,
+        "comp_10_object_size_1": 44.79,
+        "comp_10_object_size_10": 10.35,
+        "comp_0_1_object_size_1": 44.79,
+        "comp_0_1_object_size_0.1": 274.49
+      }
+    },
+    "reading": "Now, at Object size 1 a COMP scale of 10 gives 9.6 times the unscaled ripple detail and 6.1 times the film detail (the bands near pixel size count less), a COMP scale of 0.1 about 0.22 times: finer when scaled up, coarser when scaled down. At Object size = COMP scale (what Fit sets) the count equals the unscaled one. On c94e849 it was the other way round: Object size 1 kept the unscaled count, and the fitted Object size gave 1/k as many."
+  },
+  "v5_blobs_metric": {
+    "method": "Family close verifier V5. Liquid Glass Blobs' metric (its decisions.json, 'Decide the fan-gap mipmap level'): 12 samples against a 64-sample reference, mean error and pixels over 32/255 on the pixels the rainbow changes (64-sample reference vs Dispersion 0). Delivered shader (no fan level), demo torus, Dispersion 1, 960 x 540, refraction stage and final image. mean_on_glass_pixels is this study's own metric (dispersion_converges_with_samples) on the same renders. Scratch probe agents/fix-close-cf/blobs_metric_probe.cjs.",
+    "results": {
+      "refraction-clear_crystal-thickness_preset": {
+        "rainbow_pixels": 36828,
+        "mean_on_rainbow_pixels": 0.63,
+        "over32": 0,
+        "glass_pixels": 67315,
+        "mean_on_glass_pixels": 0.347
+      },
+      "refraction-clear_crystal-thickness_2.5": {
+        "rainbow_pixels": 73187,
+        "mean_on_rainbow_pixels": 2.22,
+        "over32": 0,
+        "glass_pixels": 88814,
+        "mean_on_glass_pixels": 1.831
+      },
+      "final-clear_crystal-thickness_preset": {
+        "rainbow_pixels": 35845,
+        "mean_on_rainbow_pixels": 0.62,
+        "over32": 0,
+        "glass_pixels": 94160,
+        "mean_on_glass_pixels": 0.237
+      },
+      "final-clear_crystal-thickness_2.5": {
+        "rainbow_pixels": 71731,
+        "mean_on_rainbow_pixels": 2.2,
+        "over32": 0,
+        "glass_pixels": 94232,
+        "mean_on_glass_pixels": 1.673
+      },
+      "refraction-prism_chrome-thickness_preset": {
+        "rainbow_pixels": 34694,
+        "mean_on_rainbow_pixels": 0.68,
+        "over32": 0,
+        "glass_pixels": 73858,
+        "mean_on_glass_pixels": 0.321
+      },
+      "refraction-prism_chrome-thickness_2.5": {
+        "rainbow_pixels": 66630,
+        "mean_on_rainbow_pixels": 1.71,
+        "over32": 0,
+        "glass_pixels": 86505,
+        "mean_on_glass_pixels": 1.32
+      },
+      "final-prism_chrome-thickness_preset": {
+        "rainbow_pixels": 32209,
+        "mean_on_rainbow_pixels": 0.64,
+        "over32": 0,
+        "glass_pixels": 94175,
+        "mean_on_glass_pixels": 0.218
+      },
+      "final-prism_chrome-thickness_2.5": {
+        "rainbow_pixels": 63415,
+        "mean_on_rainbow_pixels": 1.58,
+        "over32": 0,
+        "glass_pixels": 94153,
+        "mean_on_glass_pixels": 1.068
+      }
+    },
+    "reading": "On the pixels the rainbow changes, the 12-sample error here is 0.62 to 0.68/255 at the presets' Thickness and 1.58 to 2.22/255 at Thickness 2.5, with no pixel over 32/255. Blobs measured 6.44 to 8.63/255 with 1,059 to 1,935 pixels over 32/255 with no fan level. The rainbow error there is about ten times this study's with either metric."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "tool": "Glslang Version: 11:15.1.0",
+  "ok": true,
+  "results": [
+    {
+      "shader": "blobs.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "blobs.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "blobs.vert"
+    },
+    {
+      "shader": "blobs.vert (pick render)",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "blobs.vert (pick render)",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "blobs.vert"
+    },
+    {
+      "shader": "blobs.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "blobs.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "blobs.frag"
+    },
+    {
+      "shader": "blobs.frag (3 colour buffers)",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "blobs.frag (3 colour buffers)",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "blobs.frag"
+    },
+    {
+      "shader": "blobs.frag (8 colour buffers)",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "blobs.frag (8 colour buffers)",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "blobs.frag"
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "backdrop.frag"
+    },
+    {
+      "shader": "env.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "env.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "env.frag"
+    }
+  ],
+  "negative_test": {
+    "shader": "blobs.frag (broken copy: 'length' misspelled)",
+    "expected": "compile error on line 858",
+    "failed_as_expected": true,
+    "error_lines": [
+      858,
+      858
+    ],
+    "on_the_right_line": true,
+    "output": "broken.frag\nERROR: 0:858: 'lenght' : no matching overloaded function found \nERROR: 0:858: '' : compilation terminated \nERROR: 2 compilation errors.  No code generated."
+  },
+  "scope": "Valid GLSL 4.60 against documented TD stand-ins; not a TouchDesigner compile."
+}

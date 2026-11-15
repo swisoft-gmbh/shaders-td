@@ -1,0 +1,47 @@
+[
+  {
+    "file": "shader.frag",
+    "region": "field",
+    "lines": [
+      8,
+      16
+    ],
+    "sha256": "66667d466b7b199d08cc2fd5902cb48b4a05e38f3a9273b0aa685f8810f384bf"
+  },
+  {
+    "file": "shader.frag",
+    "region": "coordinates",
+    "lines": [
+      21,
+      24
+    ],
+    "sha256": "66667d466b7b199d08cc2fd5902cb48b4a05e38f3a9273b0aa685f8810f384bf"
+  },
+  {
+    "file": "shader.frag",
+    "region": "contours",
+    "lines": [
+      28,
+      32
+    ],
+    "sha256": "66667d466b7b199d08cc2fd5902cb48b4a05e38f3a9273b0aa685f8810f384bf"
+  },
+  {
+    "file": "shader.frag",
+    "region": "contours",
+    "lines": [
+      28,
+      32
+    ],
+    "sha256": "66667d466b7b199d08cc2fd5902cb48b4a05e38f3a9273b0aa685f8810f384bf"
+  },
+  {
+    "file": "shader.frag",
+    "region": "compose",
+    "lines": [
+      36,
+      45
+    ],
+    "sha256": "66667d466b7b199d08cc2fd5902cb48b4a05e38f3a9273b0aa685f8810f384bf"
+  }
+]

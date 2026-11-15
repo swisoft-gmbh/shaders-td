@@ -1,0 +1,128 @@
+{
+  "made": "by hand, 2026-11-02, from runs in the session scratchpad (agents/lit-critic-labels)",
+  "what": "Family critic, routed fixes (review.md): the V1 record's direction, the Thickness and Object size labels, and checks/core_reference/study.json.",
+  "run_A_new_tests_on_the_files_before_the_fix": {
+    "how": "The final checks/test_study.py over the study as it was before this round (the labels, the V1 record, README and checks/core_reference/study.json unchanged).",
+    "ran": 93,
+    "failed": [
+      "DocumentedCounts.test_docs_state_the_suite_sizes",
+      "FamilyCriticRouted.test_core_reference_is_the_current_core",
+      "FamilyCriticRouted.test_pv4_labels_say_what_object_size_does",
+      "FamilyCriticRouted.test_v1_record_says_k_times_as_many_patterns"
+    ],
+    "messages": [
+      "{'rev[109 chars] [('90', '90')], 'README compiles': [('58', '4[158 chars]90']} != {'rev[109 chars] [('93', '93')], 'README compiles': [('58', '4[158 chars]93']}",
+      "'9d03dd0d78a2928c35d634f7dd4e87b76ffce987c22d6f79060abe5afe198827' != '44ac6f2ac4bb566696cfc4cb04401036e6ab7603b1201755049a36bb566ec183'",
+      "'scene units' unexpectedly found in 'Thickness (scene units)' : Thickness",
+      "'an object scaled k times by its COMP at a hand-set Object size shows k times as many ripples and film bands' not found in \"A COMP scale k with Object size k (what Fit sets) or a SOP scale k with Object size k both give the demo's ripple and film count; Object size 1 on an unscaled object is unchanged. A COMP-scaled object left at Object size 1 now shows coarser ripples (1/k as many per unit of th"
+    ],
+    "note": "test_docs_state_the_suite_sizes fails because the docs there state 90 unit tests and the suite has 93."
+  },
+  "run_B_pre_v1_lookups": {
+    "how": "Scratch copy of the fixed study with 'vec3 p = vObjPos * uWobble.y * scale;' -> 'vec3 p = vObjPos * uWobble.y;' and 'vObjPos * uFilm.w * worldScale()' -> 'vObjPos * uFilm.w' (the pre-V1 lookups; the slope's scale kept). Ran FamilyCriticRouted.test_v1_record_says_k_times_as_many_patterns.",
+    "failed": [
+      "FamilyCriticRouted.test_v1_record_says_k_times_as_many_patterns"
+    ],
+    "message": "1.0 != 0.1 within 12 places (0.9 difference) : (1.0, 0.1)",
+    "note": "The test fails on the measurement before it reads the record. A first mutation that also replaced the slope's scale ('float scale = 1.0;') fails the same way."
+  },
+  "run_C_study_alone": {
+    "how": "The fixed study copied alone into the scratchpad, with no sibling studies; checks/test_study.py.",
+    "result": "Ran 93 tests in 0.647s; OK",
+    "note": "The ../liquid-glass comparisons do not run there; the checks/core_reference copies and their sha256 in sources.json do."
+  },
+  "measurement_v1_pattern_detail": {
+    "kind": "WebGL2 preview of the delivered GLSL (Chromium SwiftShader), not a TouchDesigner render",
+    "how": "The core's v1_pattern_detail proxy, run once on this study's shader and preview harness (scratch v1_pattern_detail.cjs): sign changes along pixel rows per 1000 glass pixel pairs, pattern on minus pattern off, glass alone (probe), 960 x 540, time 2. Ripples: Aqua Jelly, normal stage, Wobble 0.6 vs 0. Film: Oil Slick, film stage, Film variation as preset vs 0. Camera moved with the COMP scale.",
+    "current_lookups": {
+      "ripples": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 214.46
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 4.87
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "ratio_comp_10_object_size_1": 9.574,
+        "ratio_comp_0_1_object_size_1": 0.217,
+        "ratio_comp_10_object_size_10": 1
+      },
+      "film": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 274.47
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 10.35
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "ratio_comp_10_object_size_1": 6.128,
+        "ratio_comp_0_1_object_size_1": 0.231,
+        "ratio_comp_10_object_size_10": 1
+      }
+    },
+    "pre_v1_lookups": {
+      "ripples": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 22.4
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 4.87
+        },
+        "ratio_comp_10_object_size_1": 1,
+        "ratio_comp_0_1_object_size_1": 1,
+        "ratio_comp_10_object_size_10": 0.217
+      },
+      "film": {
+        "unscaled": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_10_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_0_1_object_size_1": {
+          "glass_pairs": 93347,
+          "per_1000": 44.79
+        },
+        "comp_10_object_size_10": {
+          "glass_pairs": 93347,
+          "per_1000": 10.35
+        },
+        "ratio_comp_10_object_size_1": 1,
+        "ratio_comp_0_1_object_size_1": 1,
+        "ratio_comp_10_object_size_10": 0.231
+      }
+    },
+    "errors": [],
+    "reading": "Current: at Object size 1 a COMP scale 10 gives about 9.6 / 6.1 times the unscaled detail and COMP 0.1 about 0.22 / 0.23 times (the proxy is not linear in k); Object size 10 gives the unscaled count exactly. Pre-V1: Object size 1 gives the unscaled count at both scales, and Fit's Object size 10 gives 0.22 / 0.23 times it, the '1/k as many' the old record described."
+  }
+}

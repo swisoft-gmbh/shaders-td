@@ -1,0 +1,339 @@
+[
+  {
+    "id": "47a4f6bf732c81e5",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "lib/mdx.ts",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/1d530ee6dee0ed27d98111b98163cb86172f4ca2/lib/mdx.ts",
+    "sha256": "2998f534957d3c2878185ecb93ec97c277b2fd0e0cedd8b2467e6808dc9d8a16",
+    "commit_sha": "1d530ee6dee0ed27d98111b98163cb86172f4ca2",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/1d530ee6dee0ed27d98111b98163cb86172f4ca2/lib/mdx.ts#L51-L73"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "beef399aa9378cc7",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "gatsby-theme-maximeheckel/components/TableOfContent/ProgressBar.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/ProgressBar.tsx",
+    "sha256": "2aa3ff9cceac5b08ec22fe2a4e762c5b259b34d555cebaf77038210ca0811a51",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/ProgressBar.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "b83d7c71bbed3c6b",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "gatsby-theme-maximeheckel/components/TableOfContent/TableOfContent.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/TableOfContent.tsx",
+    "sha256": "431ca754f8e2b8be997f1a40ec1ff62e412254c15700e99a9a96b01e9cb78d5b",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/TableOfContent.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "3bed63e254aa6641",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-10-8-simpletesttoensurethatalldependencieshaveapinnedversion.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-10-8-simpletesttoensurethatalldependencieshaveapinnedversion.mdx",
+    "sha256": "107be95b96120aaf7ff21cf973370fdf0f815018b1711c8b8fd2e418ef9ec37a",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-10-8-simpletesttoensurethatalldependencieshaveapinnedversion.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-10-8-simpletesttoensurethatalldependencieshaveapinnedversion.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "6216ad6d8481be4f",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-11-12-substacksubscriptionserverlessfunction.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-12-substacksubscriptionserverlessfunction.mdx",
+    "sha256": "fa0478503518a0030b945e3d505e826ef4308fb68f0e92325e4433c7a3cfabc7",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-12-substacksubscriptionserverlessfunction.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-12-substacksubscriptionserverlessfunction.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "843f50c6083eb4f2",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-11-27-storing-user-settings-swift.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-27-storing-user-settings-swift.mdx",
+    "sha256": "95ae5b153d30a1959496875560495eef27228c11bc0bc26a4353a59b2afee80e",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-27-storing-user-settings-swift.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-11-27-storing-user-settings-swift.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "6dfa86752e907bf8",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-12-26-cardwithgloweffectonhover.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-12-26-cardwithgloweffectonhover.mdx",
+    "sha256": "f9f9824eb6141ff7300ef6a3845e9f769b09e5c3cc83aa5cdec8e7078c92ad32",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-12-26-cardwithgloweffectonhover.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-12-26-cardwithgloweffectonhover.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "c964a096130295f7",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-5-19-firstcodesnippet.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-19-firstcodesnippet.mdx",
+    "sha256": "40ba48fa8d8ec354af592b73dc767f8e4c446398f5f0662446c2fdfa95909c08",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-19-firstcodesnippet.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-19-firstcodesnippet.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "7c9ee4d1e5a178dd",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-5-22-cancelaxiosrequestsinareactcontextproviderusingrefs.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-22-cancelaxiosrequestsinareactcontextproviderusingrefs.mdx",
+    "sha256": "47c4f7f8dd5d4cd1b73ea08a09b65ce855865908cd46eea2848d318f16ccafea",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-22-cancelaxiosrequestsinareactcontextproviderusingrefs.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-5-22-cancelaxiosrequestsinareactcontextproviderusingrefs.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "0b97aa533211cec7",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-6-11-assertrequestpropertieswithcypress.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-6-11-assertrequestpropertieswithcypress.mdx",
+    "sha256": "ba3f1b30c3bec8529ff142174e17df17cd19b5e050ceb1d07d3aee2fce711d93",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-6-11-assertrequestpropertieswithcypress.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-6-11-assertrequestpropertieswithcypress.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "015efc89d9953d5f",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-7-3-waving-hand-animation-framer-motion.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-7-3-waving-hand-animation-framer-motion.mdx",
+    "sha256": "9701001aefd8f40a725ee2ca46cc767826715f6c6a27647aa925e25c2ada3488",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-7-3-waving-hand-animation-framer-motion.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-7-3-waving-hand-animation-framer-motion.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "bb7a4abf2c9a658d",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-8-23-animatelineargradientonstatechangeinswiftui.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-animatelineargradientonstatechangeinswiftui.mdx",
+    "sha256": "5c55e79aa96a527b40359d373a2a1bdcf97da624cbb23c42b005a3b488beedfa",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-animatelineargradientonstatechangeinswiftui.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-animatelineargradientonstatechangeinswiftui.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "850a2112b36ffbcc",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-8-23-swiftuitabviewwithpagetabviewstyleandfullscreenbackgroundcolors.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-swiftuitabviewwithpagetabviewstyleandfullscreenbackgroundcolors.mdx",
+    "sha256": "04aae23f3520dc7ae6c11ba9308cc42bd5109d474bfc567a98705065a152fab4",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-swiftuitabviewwithpagetabviewstyleandfullscreenbackgroundcolors.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-8-23-swiftuitabviewwithpagetabviewstyleandfullscreenbackgroundcolors.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "b05704b14c7c3e0a",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-9-1-semitransparentblurorfrostedglasseffectinswiftui.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-1-semitransparentblurorfrostedglasseffectinswiftui.mdx",
+    "sha256": "b91722d23c96fbbb08f01e486a419956ed36d29d935287eafe84b0074f5b178e",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-1-semitransparentblurorfrostedglasseffectinswiftui.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-1-semitransparentblurorfrostedglasseffectinswiftui.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "c13b89d2db3dc81f",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "snippets/2020-9-26-animatedcopytoclipboardbuttonwithframermotionandsvg.mdx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-26-animatedcopytoclipboardbuttonwithframermotionandsvg.mdx",
+    "sha256": "719e17edcb985fe98627f96cf60e2356828bf3674682311fbbc3089b8a702101",
+    "commit_sha": "27074d0d3c390dff3aa50c1cdf96944b98bd72e0",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-26-animatedcopytoclipboardbuttonwithframermotionandsvg.mdx",
+      "https://raw.githubusercontent.com/MaximeHeckel/blog.maximeheckel.com/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/snippets/2020-9-26-animatedcopytoclipboardbuttonwithframermotionandsvg.mdx"
+    ],
+    "role": "historical_snippet",
+    "category_id": "01"
+  },
+  {
+    "id": "bd6060956044b494",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/MDX/custom/Widgets/FramerMotionAnimatePresence.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/3c8291d96bd9069d22bdcf26436abc75b7386a04/core/components/MDX/custom/Widgets/FramerMotionAnimatePresence.tsx",
+    "sha256": "e0ecef54b92d8cfd1739f6fdcfeb5ee44d3fb8ac8170bc3b78d50eed829692dd",
+    "commit_sha": "3c8291d96bd9069d22bdcf26436abc75b7386a04",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/3c8291d96bd9069d22bdcf26436abc75b7386a04/core/components/MDX/custom/Widgets/FramerMotionAnimatePresence.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "79c8c1ae9ec9e920",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "lib/mockStreamData.ts",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/4c059b24fa392419b280a0506d561c68bd15414d/lib/mockStreamData.ts",
+    "sha256": "4af021f8836fce22fa1519bec974a682d66aef496f45a10f0a4db8bbdb2c3642",
+    "commit_sha": "4c059b24fa392419b280a0506d561c68bd15414d",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/4c059b24fa392419b280a0506d561c68bd15414d/lib/mockStreamData.ts"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "4031f82f8430c8cd",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "pages/api/embeddings.ts",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/4c059b24fa392419b280a0506d561c68bd15414d/pages/api/embeddings.ts",
+    "sha256": "b86d7857b506952a4b7a16d608e33640de0c0acf3f082a66e66a40010f8f8cbd",
+    "commit_sha": "4c059b24fa392419b280a0506d561c68bd15414d",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/4c059b24fa392419b280a0506d561c68bd15414d/pages/api/embeddings.ts#L26-L51"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "8eea369f00622642",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/4ce1571e758dc1bae6eeb1bf7607e56de1405faf/core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample.tsx",
+    "sha256": "db5e83988683b12e94f5528c9462634ae57feb392e8d7febd924f716c395e034",
+    "commit_sha": "4ce1571e758dc1bae6eeb1bf7607e56de1405faf",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/4ce1571e758dc1bae6eeb1bf7607e56de1405faf/core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "e6b02055d4ab54fc",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/MDX/Widgets/HeartRateWidget.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/8fe1795fb25064eecdf202d318afb51218e7b5a4/core/components/MDX/Widgets/HeartRateWidget.tsx",
+    "sha256": "272fe0acb63d2abf3b482b5c1a21da055d4c8605e553768c74fff72e60a4861b",
+    "commit_sha": "8fe1795fb25064eecdf202d318afb51218e7b5a4",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/8fe1795fb25064eecdf202d318afb51218e7b5a4/core/components/MDX/Widgets/HeartRateWidget.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "924383a42df8f43a",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/MDX/Widgets/AtmosphericScattering/lut.ts",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/afe3cd40fb51989e52a6d2a474506ed668dbad54/core/components/MDX/Widgets/AtmosphericScattering/lut.ts",
+    "sha256": "3669856dc296fe980600eddb92471a7ae0608880225ae23921d05d09e5e1cb72",
+    "commit_sha": "afe3cd40fb51989e52a6d2a474506ed668dbad54",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/afe3cd40fb51989e52a6d2a474506ed668dbad54/core/components/MDX/Widgets/AtmosphericScattering/lut.ts"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "a135e35ad1df5229",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": ".github/workflows/ci.yml",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/b07c07f5854e2f192f0086681640bc5552277636/.github/workflows/ci.yml",
+    "sha256": "59f31cdd454fa37ebf0d3bbb6b3c1a71ccf925607fcbf2439be7e40cf3d3f9dc",
+    "commit_sha": "b07c07f5854e2f192f0086681640bc5552277636",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/b07c07f5854e2f192f0086681640bc5552277636/.github/workflows/ci.yml"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "f03f93f0c5228316",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/MDX/custom/Widgets/FramerMotionAnimationLayout.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/b5429b983bdc3cedd24a021f6f2fb932df57514e/core/components/MDX/custom/Widgets/FramerMotionAnimationLayout.tsx",
+    "sha256": "060c9eee48a588b326926c5655d7ab9f0b9d67d490ef501d75b21f54d031cb15",
+    "commit_sha": "b5429b983bdc3cedd24a021f6f2fb932df57514e",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/b5429b983bdc3cedd24a021f6f2fb932df57514e/core/components/MDX/custom/Widgets/FramerMotionAnimationLayout.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "eda3c9376e2e6d2e",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "lib/tweets.ts",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/e1a28b211ea521b8bb21de70d81697b5d3cb8bb7/lib/tweets.ts",
+    "sha256": "38d598b220e1c4fedf74b0a3678a2ef39d6963efae3cfed31bac22131e839237",
+    "commit_sha": "e1a28b211ea521b8bb21de70d81697b5d3cb8bb7",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/e1a28b211ea521b8bb21de70d81697b5d3cb8bb7/lib/tweets.ts"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  },
+  {
+    "id": "901bab5f3ce26405",
+    "repository": "MaximeHeckel/blog.maximeheckel.com",
+    "source_path": "core/components/Tweet/Tweet.tsx",
+    "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/historical-sources/raw/MaximeHeckel/blog.maximeheckel.com/e7b785a89bf3234ce6922f93831a37e066fcaa7b/core/components/Tweet/Tweet.tsx",
+    "sha256": "38bf72c4d7a7ee30cadc9134e3844a0e612c356659c2331246ce9ee10e90cccd",
+    "commit_sha": "e7b785a89bf3234ce6922f93831a37e066fcaa7b",
+    "original_urls": [
+      "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/e7b785a89bf3234ce6922f93831a37e066fcaa7b/core/components/Tweet/Tweet.tsx"
+    ],
+    "role": "historical_code_reference",
+    "category_id": "01"
+  }
+]

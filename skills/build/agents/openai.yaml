@@ -1,0 +1,10 @@
+{
+  "interface": {
+    "display_name": "Build a shader",
+    "short_description": "Co-design and build an original TouchDesigner shader",
+    "default_prompt": "Use $build to make an original TouchDesigner shader with me."
+  },
+  "policy": {
+    "allow_implicit_invocation": true
+  }
+}

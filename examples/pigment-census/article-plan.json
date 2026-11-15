@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "A source with known structure",
+    "question": "A source with known structure?",
+    "snippets": [
+      [
+        "source.frag",
+        "fixture"
+      ]
+    ],
+    "experiments": [
+      "source"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Summarize four neighborhoods",
+    "question": "Summarize four neighborhoods?",
+    "snippets": [
+      [
+        "filter.frag",
+        "moments"
+      ]
+    ],
+    "experiments": [
+      "variance"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Let an edge choose its own side",
+    "question": "Let an edge choose its own side?",
+    "snippets": [
+      [
+        "filter.frag",
+        "select"
+      ]
+    ],
+    "experiments": [
+      "edge-kuwahara"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Compare with a filter that cannot choose",
+    "question": "Compare with a filter that cannot choose?",
+    "snippets": [
+      [
+        "filter.frag",
+        "comparison"
+      ]
+    ],
+    "experiments": [
+      "edge-box"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Return to the painting with a measurable claim",
+    "question": "Return to the painting with a measurable claim?",
+    "snippets": [
+      [
+        "filter.frag",
+        "select"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

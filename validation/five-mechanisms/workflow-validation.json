@@ -1,0 +1,111 @@
+{
+  "studies": [
+    {
+      "study": "orbital-relic",
+      "research_sources_verified": true,
+      "static": {
+        "ok": true,
+        "nodes": 3,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "tutorial": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      },
+      "all_mechanism_checks_passed": true,
+      "mechanism_checks": 7
+    },
+    {
+      "study": "lantern-fog",
+      "research_sources_verified": true,
+      "static": {
+        "ok": true,
+        "nodes": 3,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "tutorial": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      },
+      "all_mechanism_checks_passed": true,
+      "mechanism_checks": 6
+    },
+    {
+      "study": "pigment-census",
+      "research_sources_verified": true,
+      "static": {
+        "ok": true,
+        "nodes": 5,
+        "wires": 2,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "tutorial": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      },
+      "all_mechanism_checks_passed": true,
+      "mechanism_checks": 5
+    },
+    {
+      "study": "resonant-foil",
+      "research_sources_verified": true,
+      "static": {
+        "ok": true,
+        "nodes": 8,
+        "wires": 1,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "tutorial": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 5,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      },
+      "all_mechanism_checks_passed": true,
+      "mechanism_checks": 6
+    },
+    {
+      "study": "tidal-ink",
+      "research_sources_verified": true,
+      "static": {
+        "ok": true,
+        "nodes": 8,
+        "wires": 4,
+        "experiments": 5,
+        "errors": [],
+        "scope": "Static recipe contracts; no native compilation or visual certification."
+      },
+      "tutorial": {
+        "ok": true,
+        "sections": 5,
+        "excerpts": 6,
+        "errors": [],
+        "scope": "Source integrity, semantic section placement and local figure presence; no visual or native certification."
+      },
+      "all_mechanism_checks_passed": true,
+      "mechanism_checks": 11
+    }
+  ],
+  "scope": "Four-mode integration exercised using the actual skill instructions and bundled helpers in this session; not a fresh-host activation/dispatch test. The count includes 34 native behavior/diagnostic checks and one independent CPU normal-equation check.",
+  "mechanism_check_count": 35
+}

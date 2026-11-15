@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "articles/on-crafting-painterly-shaders.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/",
+    "lines": [
+      62,
+      196
+    ],
+    "sha256": "5f730089c166f752d646b4f368b257060c7ac01f2dfd5db27251f07914bf5022",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Published mechanism and teaching progression",
+    "adaptation": "Start with four inclusive (radius+1)^2 quadrants, clamp integer fetches at boundaries, clamp tiny negative roundoff in variance, and make zero radius a valid identity case."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/PainterlyShaders/basic.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/basic.ts",
+    "lines": [
+      1,
+      283
+    ],
+    "sha256": "e12cac070bfd4921e0b0efc836c3977060d6c67e65f97fa5787ba6c20c350020",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Matching archived implementation",
+    "adaptation": "Start with four inclusive (radius+1)^2 quadrants, clamp integer fetches at boundaries, clamp tiny negative roundoff in variance, and make zero radius a valid identity case."
+  }
+]

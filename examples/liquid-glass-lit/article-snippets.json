@@ -1,0 +1,119 @@
+[
+  {
+    "file": "liquid_glass_lit.vert",
+    "region": "transforms",
+    "lines": [
+      14,
+      24
+    ],
+    "sha256": "44cd3dbc6462a26bb1b0e2d4e612eb7bf1b7f1bcadeec3f829bf5a53bb2aa6b7"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "transmission",
+    "lines": [
+      240,
+      324
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "sources",
+    "lines": [
+      328,
+      344
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "gather",
+    "lines": [
+      385,
+      407
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "keylight",
+    "lines": [
+      348,
+      381
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "envlight",
+    "lines": [
+      448,
+      460
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "studio",
+    "lines": [
+      411,
+      444
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "roughness",
+    "lines": [
+      464,
+      489
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "ambient",
+    "lines": [
+      493,
+      508
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "compose",
+    "lines": [
+      550,
+      610
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "uniforms",
+    "lines": [
+      25,
+      46
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.frag",
+    "region": "screen",
+    "lines": [
+      65,
+      113
+    ],
+    "sha256": "bb18540f16a9e86bfe50ac3b36eb13d696ff00dce94c3dce5cd6f3cfffcd23de"
+  },
+  {
+    "file": "liquid_glass_lit.vert",
+    "region": "picking",
+    "lines": [
+      30,
+      41
+    ],
+    "sha256": "44cd3dbc6462a26bb1b0e2d4e612eb7bf1b7f1bcadeec3f829bf5a53bb2aa6b7"
+  }
+]

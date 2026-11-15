@@ -1,0 +1,78 @@
+[
+  {
+    "heading": "A texture can hold pigment instead of a picture",
+    "question": "A texture can hold pigment instead of a picture?",
+    "snippets": [
+      [
+        "seed.frag",
+        "seed"
+      ]
+    ],
+    "experiments": [
+      "seed"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Prescribe a velocity with a known property",
+    "question": "Prescribe a velocity with a known property?",
+    "snippets": [
+      [
+        "state.frag",
+        "velocity"
+      ]
+    ],
+    "experiments": [
+      "velocity"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Follow the lookup backward",
+    "question": "Follow the lookup backward?",
+    "snippets": [
+      [
+        "state.frag",
+        "sample"
+      ]
+    ],
+    "experiments": [
+      "backtrace"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Challenge the lifecycle with simple states",
+    "question": "Challenge the lifecycle with simple states?",
+    "snippets": [
+      [
+        "state.frag",
+        "lifecycle"
+      ]
+    ],
+    "experiments": [
+      "flat"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Display the transported state without changing it",
+    "question": "Display the transported state without changing it?",
+    "snippets": [
+      [
+        "state.frag",
+        "transport"
+      ],
+      [
+        "display.frag",
+        "pigment"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

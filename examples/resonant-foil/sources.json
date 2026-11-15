@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/",
+    "lines": [
+      471,
+      505
+    ],
+    "sha256": "37622428de83df3fc1ab3b60ddc524fc7e68482793e3194d1b9d8e68be948a3a",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Published mechanism and teaching progression",
+    "adaptation": "Use F(x,y,z)=(x,y+g(x,z),z), transform n to (nx-gx*ny,ny,nz-gz*ny), normalize and then use TDDeformNorm. At zero amplitude keep n exactly."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+    "lines": [
+      1,
+      206
+    ],
+    "sha256": "2cb104063e845b9ac16cfedc156ce0d97828ecd2a608ce01577796b948265821",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Matching archived implementation",
+    "adaptation": "Use F(x,y,z)=(x,y+g(x,z),z), transform n to (nx-gx*ny,ny,nz-gz*ny), normalize and then use TDDeformNorm. At zero amplitude keep n exactly."
+  }
+]

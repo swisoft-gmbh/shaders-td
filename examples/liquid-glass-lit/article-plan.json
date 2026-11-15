@@ -1,0 +1,146 @@
+[
+  {
+    "heading": "Start from the glass you already have",
+    "question": "What does the material do before any light touches it?",
+    "snippets": [
+      [
+        "liquid_glass_lit.vert",
+        "transforms"
+      ],
+      [
+        "liquid_glass_lit.frag",
+        "transmission"
+      ]
+    ],
+    "experiments": [
+      "see_through",
+      "dispersion"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Ask the Render TOP for its lights",
+    "question": "How does a material know which lights the scene has?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "sources"
+      ],
+      [
+        "liquid_glass_lit.frag",
+        "gather"
+      ]
+    ],
+    "experiments": [
+      "scene_lights",
+      "fallback",
+      "blackout"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Light only where the surface faces it",
+    "question": "Why does a light behind the object only touch its edges?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "keylight"
+      ]
+    ],
+    "experiments": [
+      "rim_only",
+      "highlight_size"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Reflect the Environment Light",
+    "question": "Where do reflections come from, without a Reflection TOP?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "envlight"
+      ],
+      [
+        "liquid_glass_lit.frag",
+        "studio"
+      ]
+    ],
+    "experiments": [
+      "env_reflection",
+      "env_rotate"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Rough reflections are blurrier mipmaps",
+    "question": "How does a rough surface blur its reflection without grain?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "roughness"
+      ]
+    ],
+    "experiments": [
+      "env_roughness",
+      "env_seam"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Light the body, not only the surface",
+    "question": "How does milky glass take the scene's light?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "ambient"
+      ],
+      [
+        "liquid_glass_lit.frag",
+        "compose"
+      ]
+    ],
+    "experiments": [
+      "body_light"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Twelve looks and a morph",
+    "question": "How do presets and morphing reach the shader?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "uniforms"
+      ]
+    ],
+    "experiments": [
+      "morph",
+      "final"
+    ],
+    "figures": [
+      "captures/presets-sheet.png"
+    ]
+  },
+  {
+    "heading": "Use it in your own lit scene",
+    "question": "How do you put the glass into a scene where things can pass in front of it?",
+    "snippets": [
+      [
+        "liquid_glass_lit.frag",
+        "screen"
+      ],
+      [
+        "liquid_glass_lit.vert",
+        "picking"
+      ]
+    ],
+    "experiments": [
+      "occluder",
+      "type_backdrop"
+    ],
+    "figures": []
+  }
+]

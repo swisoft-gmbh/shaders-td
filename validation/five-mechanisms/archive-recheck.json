@@ -1,0 +1,4017 @@
+{
+  "scope": "Archive catalog reconciliation and full authored-source signal scan. No source-file size cutoff; dependencies/build output excluded. Not universal semantic completeness.",
+  "catalog_counts": {
+    "articles": 60,
+    "repositories": 51,
+    "gists": 26,
+    "historical-source-files": 25
+  },
+  "catalog_hashes": {
+    "articles": "40baec4eff301b8d59e704ab611238cae74e6b847e28c6be6006eb6ed0ec9330",
+    "repositories": "e712b3589879e3c57ad45f9b3174c7bb620430d35b655843a60fca821b7aab26",
+    "gists": "75c319849a60e990508b8c0f2411badd9aff86021052df826f451eb494eb0c4d",
+    "historical-source-files": "6045236410704172c460fdd093f3fe7fab711781f94936ea0bfb0e68fa884d49"
+  },
+  "preserved_records_verified": 393,
+  "source_hash_checks": [
+    {
+      "id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/caustics-in-webgl.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/moebius-style-post-processing.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/on-crafting-painterly-shaders.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/post-processing-as-a-creative-medium.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/shades-of-halftone.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/shading-motion.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/learning-in-public.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/config-2025.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/building-a-design-system-from-scratch.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/cubic-bezier-from-math-to-motion.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/the-physics-behind-spring-animations.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/scrollspy-demystified.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/framer-motion-layout-animations.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "articles/the-power-of-composition-with-css-variables.mdx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/BeforeAfterImage/BeforeAfterImage.styles.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/BeforeAfterImage/BeforeAfterImage.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/BeforeAfterImage/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/BeforeAfterImage/types.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/CodeBlock.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/SandpackSetupFiles.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/components/CustomSandpackButtons/CustomSandpackButtons.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/components/CustomSandpackButtons/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/components/PreviewTabs/PreviewTabs.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/components/PreviewTabs/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/components/PreviewTabs/types.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/diff.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/prism.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/syntaxTheme.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/types.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Code/utils.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Fullbleed/Fullbleed.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/Fullbleed/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Image/Image.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Image/Lightbox.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Image/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/InlineMath/InlineMath.styles.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/InlineMath/InlineMath.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/InlineMath/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/MDXComponents.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionAnimatePresence.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionAnimationLayout.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/FramerMotionPropagation.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/snippet1.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/snippet2.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/snippet3.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AdvancedFramerMotion/snippet4.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/Density.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/LightDensity.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/Lightmarching.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/MieOzoneDensity.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/RaySphereIntersect.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/RayleighDensity.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/TransmittanceLUT.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/canvasUtils.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/eclipse.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/lut.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/planet.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/AtmosphericScattering/skyDome.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/BezierCurve.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/CSSComposition/HSLAShowcase.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/CSSComposition/PaletteGenerator.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/CSSComposition/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/CSSComposition/ThemePicker.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/beautifulCaustics.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/causticsPlane.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/dynamicCaustics.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/normalProjection.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Caustics/simpleCaustics.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/CubicBezierVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/DesignSystem/ColorTokens.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/DesignSystem/FlexGridShowcase.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/DesignSystem/MicroInteractionShowcase.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/DesignSystem/TextShowcase.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/Basic.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/Distortions.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/LayoutPosition.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/LayoutProp.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/ListLayoutGroup.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackArrowList.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackNotification.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SandpackTabs.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/SharedLayoutAnimationDetails.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/FramerMotionLayoutAnimations/TabsLayoutGroup.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/AnimationTypes.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/ClipboardAnimationDetails.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/Orchestration.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/snippet1.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/snippet2.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/snippet3.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/snippet4.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/GuideToFramerMotion/snippet5.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/CMYKHalftoneDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/ColorBlending.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/GooeyDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/GridDotsDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/MoireDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/PatternDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/Reflectance.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/RingDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/SimpleGridDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/WhiteDots.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/cmyk.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/gooey.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/halftone.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Halftone/jittered.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/ShadingVisualizer/ShadingVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/ShadingVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/SobelVisualizer/SobelVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/SobelVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/depth.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/final.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/handdrawn.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/light.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/normal.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/postprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/shadows.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/sobel.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/sobelDepth.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Moebius/tonal.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/KernelVisualizer/KernelVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/KernelVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/KuwaharaVisualizer/KuwaharaVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/KuwaharaVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/basic.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/circular.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/final.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/material.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/multi.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/tensor.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PainterlyShaders/weights.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/AttributesVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/animateAttributes.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/animateShader.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/basic.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/curlFBO.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/customGeometry.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/customPointShader.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/customizeSizeShader.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/morphFBO.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/twist.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/PixelizationVisualizer/PixelizationVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/PixelizationVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/ThresholdVisualizer/ThresholdVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/ThresholdVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/ascii.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/crochet.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/depixelation.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/dots.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/flow.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/fluted-glass.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/led.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/lego.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/mouse-trail.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/provencher-1.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/provencher-2.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/PostProcessing/receipt.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/RaymarchingVisualizer/RaymarchingVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/RaymarchingVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/VolumetricRaymarchingVisualizer/VolumetricRaymarchibgVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/VolumetricRaymarchingVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/beersLaw.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/bicubicFiltering.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/bluenoiseDithering.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/combiningSDF.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/diffuseLighting.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/directionalDerivative.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/firstRaymarchedScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/infinitySpheres.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/intersectingSDF.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/lightTransmittance.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/martianLandscape.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/mengerFractal.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/morphingCloud.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/noiseDerivatives.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/phase.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/richardmattka.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/smoothmin.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/volumetric.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Raymarching/volumetricNoise.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/ColorChannelSummary.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/RGBShiftVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/advancedSampling.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/fresnel.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/saturation.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleDispersion.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleRefraction.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleSampling.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/specular.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/transparency.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/basic.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/infinityMirror.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/lens.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/monopo.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/portal.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/postprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/screenCoordinates.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transformPortal.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transition.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/DitheringVisualizer/DitheringVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/DitheringVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/QuantizationVisualizer/QuantizationVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/QuantizationVisualizer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/blueNoise.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/color.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/curve.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/effect.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/final.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/grayscale.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/hue.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/ordered.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/palette.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/pixel.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/rgb.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Retro/waves.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/SDFShapes.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Scrollspy/HighlightSection.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Scrollspy/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Scrollspy/ScrollSpyWidget.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/Scrollspy/useScrollSpy.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderCanvas.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderPlayground.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/FragmentShaderVisualizer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/flag.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/fragment.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/gradient.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/gradient2.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/planet.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyColoredPlane.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyPlane.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/BlobTracking.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/DecorativeMotion.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/DitheredMotionMaskDemo.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/MotionMask.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskCompute.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingCompute.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/objectSmearScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/opticalFlowCompute.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/opticalFlowMotionSource.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/opticalFlowPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/opticalFlowScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/velocityMapMaterial.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/velocityMapPostprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/velocityMapScene.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/ShadingMotion/velocityMapSphereMaterial.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/SpringAnimation/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/SpringAnimation/SpringPhysics.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/EffectCompute.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/ParticleCompute.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/SimpleCompute.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/attractor.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/blob.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/ComputeShaderGrid.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/DataLinkMagnified.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/DataLinks.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/DiagramLabel.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/EffectFragment.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/FragmentShader.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/ParticleVertex.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/StorageBuffer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/TextureBuffer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/VertexShader.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/common/util.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/computeInstance.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/fallback.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/glassblob.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/outline.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/particleInit.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/TSLWebGPU/postprocessing.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/CalloutGPUTier.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script1.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script2.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script3.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script4.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script5.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script6.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VaporwaveThreejs/script7.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/Sandpack.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/arches.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/cubeCam.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/depthstop.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/fog.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/lightray.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/multiLight.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/multiple.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/performance.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/scattering.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/sdf.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/shadows.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/MDX/Widgets/VolumetricLighting/solar.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/VideoPlayer/MediaPlayer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/VideoPlayer/VideoPlayer.styles.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/VideoPlayer/VideoPlayer.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/VideoPlayer/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/components/VideoPlayer/utils.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/IndexSection.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/Scene.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/SceneDebugControls.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/gpgpu/fragmentShader.glsl",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/gpgpu/simulationFragment.glsl",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/gpgpu/simulationVertex.glsl",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/gpgpu/vertexShader.glsl",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/index.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/postprocessing/ascii.glsl",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/features/IndexSection/utils.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/hooks/useGPUTier.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/core/hooks/useIsMobile.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/scripts/generate-glossary.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "licenses/BLOG-CODE-MIT.txt",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "licenses/BLOG-CONTENT-CC-BY-NC-4.0.txt",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "blog/content/glossary.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "historical/afe3cd40fb51989e52a6d2a474506ed668dbad54/lut.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/themes/dark.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/themes/light.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/tokens/radii.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/tokens/shadows.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/tokens/spaces.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/src/lib/tokens/typography.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/design-system/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/README.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/License.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/pages/index.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/pages/_app.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-three.js/styles/globals.css",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/README.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/LICENSE.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/pages/index.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/pages/_app.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/linear-vaporwave-react-three-fiber/styles/globals.css",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/color-to-vec3/README.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/color-to-vec3/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/color-to-vec3/src/utils/color.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/color-to-vec3/src/utils/color.test.ts",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/color-to-vec3/src/convert-color-to-vec3.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/sandpack-webgpu-repro/README.md",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/sandpack-webgpu-repro/package.json",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/sandpack-webgpu-repro/src/App.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/sandpack-webgpu-repro/src/App-three-react.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "repositories/sandpack-webgpu-repro/src/App-three-vanilla.tsx",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/painting4.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/lens.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/lens2.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/painting6.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/planet.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/raytracing2.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/sacilotto.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/vhs.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    },
+    {
+      "id": "deployed/bubble.js",
+      "bundled_hash_ok": true,
+      "original_exists": true,
+      "original_hash_ok": true
+    }
+  ],
+  "articles": [
+    {
+      "slug": "advanced-animation-patterns-with-framer-motion",
+      "title": "Advanced animation patterns with Framer Motion",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "asynchronous-rendering-with-react-c323cda68f41",
+      "title": "Asynchronous rendering with React",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "automated-ui-accessibility-testing-with-cypress-cc2e38231241",
+      "title": "Automated UI accessibility testing with Cypress",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "beautiful-and-mind-bending-effects-with-webgl-render-targets",
+      "title": "Beautiful and mind-bending effects with WebGL Render Targets",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "build-personal-health-api-shortcuts-serverless",
+      "title": "Using Shortcuts and serverless to build a personal Apple Health API",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "build-serverless-preview-deployment",
+      "title": "Build your own preview deployment service",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "building-a-design-system-from-scratch",
+      "title": "Building a Design System from scratch",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "building-a-graphql-wrapper-for-the-docker-api-2109f2b9c202",
+      "title": "Building a GraphQL wrapper for the Docker API",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "building-magical-ai-powered-semantic-search",
+      "title": "Building a magical AI-powered semantic search from scratch",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "building-perfect-github-action-frontend-teams",
+      "title": "Building the perfect GitHub CI workflow for your frontend team",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "caustics-in-webgl",
+      "title": "Shining a light on Caustics with Shaders and React Three Fiber",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "config-2025",
+      "title": "Speaking at Figma Config 2025",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "creating-beautiful-screenshots-source-code-with-serverless-function",
+      "title": "Generate screenshots of your code with a serverless function",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "cubic-bezier-from-math-to-motion",
+      "title": "Cubic B\u00e9zier: from math to motion",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "data-fetching-with-next-js",
+      "title": "Data Fetching with NextJS: What I learned",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "duplicate-dependencies-npm-link",
+      "title": "How to fix NPM link duplicate dependencies issues",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "field-guide-to-tsl-and-webgpu",
+      "title": "Field Guide to TSL and WebGPU",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "first-failed-swiftui-project",
+      "title": "My first failed SwiftUI project",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "first-steps-with-gpt-3-and-beyond",
+      "title": "First steps with GPT-3 for frontend developers",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "framer-motion-emotion",
+      "title": "How to use Framer Motion with Emotion styled-components",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "framer-motion-layout-animations",
+      "title": "Everything about Framer Motion layout animations",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "getting-started-with-typescript-on-gatsby-8544b47c1d27",
+      "title": "Getting started with Typescript on Gatsby",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "guide-animations-spark-joy-framer-motion",
+      "title": "Guide to creating animations that spark joy with Framer Motion",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "guide-to-cicd-for-frontend-developers",
+      "title": "The little guide to CI/CD for frontend developers",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "how-i-got-started-with-kubernetes-on-gke-5f829eca98bc",
+      "title": "How I got started with Kubernetes on GKE",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "how-to-build-first-eslint-rule",
+      "title": "How I built my first custom ESLint rule",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "https-medium-com-maximeheckel-how-to-efficiently-type-your-styled-components-with-flow-f43930a0dd2b",
+      "title": "How to efficiently type your styled-components with Flow",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "immigrating-to-the-us-my-path",
+      "title": "Immigrating to the US",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "learning-in-public",
+      "title": "Learning in public",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "migrating-to-nextjs",
+      "title": "Migrating to Next.js",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "moebius-style-post-processing",
+      "title": "Moebius-style post-processing and other stylized shaders",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "on-crafting-painterly-shaders",
+      "title": "On Crafting Painterly Shaders",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "on-rendering-the-sky-sunsets-and-planets",
+      "title": "On Rendering the Sky, Sunsets, and Planets",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "painting-with-math-a-gentle-study-of-raymarching",
+      "title": "Painting with Math: A Gentle Study of Raymarching",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "post-processing-as-a-creative-medium",
+      "title": "Post-Processing Shaders as a Creative Medium",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "preloading-views-with-react",
+      "title": "React Lazy: a take on preloading views",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "react-sub-components-513f6679abed",
+      "title": "React sub-components",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "react-sub-components-part-2-using-the-new-context-api-6f1c089acfe4",
+      "title": "React sub-components Part 2: Using the new Context API",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "react-sub-components-part-3-whitelisting-sub-components-with-flow-b04f9bcf80c2",
+      "title": "React sub-components Part 3: Whitelisting sub-components with flow",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "real-time-cloudscapes-with-volumetric-raymarching",
+      "title": "Real-time dreamy Cloudscapes with Volumetric Raymarching",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "rebuilding-redux-with-hooks-and-context-e16b59faf51c",
+      "title": "Rebuilding Redux with Hooks and Context",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "refraction-dispersion-and-other-shader-light-effects",
+      "title": "Refraction, dispersion, and other shader light effects",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "running-cross-browser-cypress-github-ci",
+      "title": "Running scheduled cross-browser end-to-end tests on Github CI",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "running-golang-tests-with-jest-b5d8f3d43a7",
+      "title": "Running Golang tests with Jest",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "scrollspy-demystified",
+      "title": "Scrollspy demystified",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "seo-mistakes-i-have-made-and-how-i-fixed-them",
+      "title": "SEO mistakes I've made and how I fixed them",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "shades-of-halftone",
+      "title": "Shades of Halftone",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "shading-motion",
+      "title": "Shading Motion",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "shaping-light-volumetric-lighting-with-post-processing-and-raymarching",
+      "title": "On Shaping Light",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "static-tweets-with-mdx-nextjs",
+      "title": "Static Tweets with MDX and Next.js",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "swiftui-as-react-developer",
+      "title": "Going native: SwiftUI from the perspective of a React developer",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "switching-off-the-lights-adding-dark-mode-to-your-react-app-with-context-and-hooks-f41da6e07269",
+      "title": ">-",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "switching-off-the-lights-part-2-fixing-dark-mode-flashing-on-servered-rendered-website",
+      "title": "Fixing the dark mode flash issue on server rendered websites",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "the-art-of-dithering-and-retro-shading-web",
+      "title": "The Art of Dithering and Retro Shading for the Web",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "the-magical-world-of-particles-with-react-three-fiber-and-shaders",
+      "title": "The magical world of Particles with React Three Fiber and Shaders",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "the-physics-behind-spring-animations",
+      "title": "The physics behind spring animations",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "the-power-of-composition-with-css-variables",
+      "title": "The Power of Composition with CSS Variables",
+      "bundled": true,
+      "graphics_signal": false
+    },
+    {
+      "slug": "the-study-of-shaders-with-react-three-fiber",
+      "title": "The Study of Shaders with React Three Fiber",
+      "bundled": true,
+      "graphics_signal": true
+    },
+    {
+      "slug": "using-flow-generics-to-type-generic-react-components-22dd642634d8",
+      "title": "Using Flow generics to type generic React components",
+      "bundled": false,
+      "graphics_signal": false
+    },
+    {
+      "slug": "vaporwave-3d-scene-with-threejs",
+      "title": "Building a Vaporwave scene with Three.js",
+      "bundled": true,
+      "graphics_signal": true
+    }
+  ],
+  "repositories": [
+    {
+      "name": "Amazon-S3-photo-manager",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "HackingHealthApp",
+      "scanned_source_files": 45,
+      "signals": []
+    },
+    {
+      "name": "HarborJS",
+      "scanned_source_files": 9,
+      "signals": []
+    },
+    {
+      "name": "api.mhkl.io",
+      "scanned_source_files": 2,
+      "signals": []
+    },
+    {
+      "name": "arbres_quadratiques",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "blog.maximeheckel.com",
+      "scanned_source_files": 513,
+      "signals": [
+        {
+          "path": "core/components/MDX/Widgets/SDFShapes.tsx",
+          "bytes": 10255,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/SDFShapes.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderPlayground.tsx",
+          "bytes": 11377,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderPlayground.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderCanvas.tsx",
+          "bytes": 22125,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderCanvas.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts",
+          "bytes": 5328,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/blob.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyColoredPlane.ts",
+          "bytes": 2117,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyColoredPlane.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/fragment.ts",
+          "bytes": 1749,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/fragment.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/planet.ts",
+          "bytes": 5846,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/planet.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/FragmentShaderVisualizer.tsx",
+          "bytes": 7265,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/FragmentShaderVisualizer.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyPlane.ts",
+          "bytes": 2272,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/wobblyPlane.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/gradient.ts",
+          "bytes": 1605,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/gradient.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/flag.ts",
+          "bytes": 1566,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/flag.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShaderReactThreeFiber/gradient2.ts",
+          "bytes": 5098,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShaderReactThreeFiber/gradient2.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ParticlesReactThreeFiber/curlFBO.ts",
+          "bytes": 10601,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/curlFBO.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ParticlesReactThreeFiber/customizeSizeShader.ts",
+          "bytes": 3282,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/customizeSizeShader.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ParticlesReactThreeFiber/morphFBO.ts",
+          "bytes": 7431,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/morphFBO.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ParticlesReactThreeFiber/animateShader.ts",
+          "bytes": 3158,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/animateShader.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ParticlesReactThreeFiber/customPointShader.ts",
+          "bytes": 3666,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/customPointShader.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/blob.ts",
+          "bytes": 7329,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/blob.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/fallback.ts",
+          "bytes": 1998,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/fallback.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/glassblob.ts",
+          "bytes": 11504,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/glassblob.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/postprocessing.ts",
+          "bytes": 3231,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/postprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/attractor.ts",
+          "bytes": 5316,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/attractor.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/outline.ts",
+          "bytes": 14707,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/outline.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/computeInstance.ts",
+          "bytes": 5338,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/computeInstance.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/TSLWebGPU/particleInit.ts",
+          "bytes": 4548,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/TSLWebGPU/particleInit.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/combiningSDF.ts",
+          "bytes": 3862,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/combiningSDF.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/morphingCloud.ts",
+          "bytes": 6160,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/morphingCloud.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/bluenoiseDithering.ts",
+          "bytes": 5696,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/bluenoiseDithering.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/volumetric.ts",
+          "bytes": 3051,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/volumetric.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/smoothmin.ts",
+          "bytes": 5676,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/smoothmin.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/noiseDerivatives.ts",
+          "bytes": 4871,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/noiseDerivatives.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/directionalDerivative.ts",
+          "bytes": 4868,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/directionalDerivative.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/firstRaymarchedScene.ts",
+          "bytes": 2873,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/firstRaymarchedScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/richardmattka.ts",
+          "bytes": 5283,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/richardmattka.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/martianLandscape.ts",
+          "bytes": 6381,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/martianLandscape.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/volumetricNoise.ts",
+          "bytes": 4163,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/volumetricNoise.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/lightTransmittance.ts",
+          "bytes": 11393,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/lightTransmittance.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/intersectingSDF.ts",
+          "bytes": 3954,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/intersectingSDF.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/mengerFractal.ts",
+          "bytes": 5637,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/mengerFractal.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/bicubicFiltering.ts",
+          "bytes": 10799,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/bicubicFiltering.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/infinitySpheres.ts",
+          "bytes": 4649,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/infinitySpheres.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/diffuseLighting.ts",
+          "bytes": 3225,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/diffuseLighting.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/beersLaw.ts",
+          "bytes": 10774,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/beersLaw.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Raymarching/phase.ts",
+          "bytes": 11614,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Raymarching/phase.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Caustics/normalProjection.ts",
+          "bytes": 3628,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/normalProjection.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Caustics/simpleCaustics.ts",
+          "bytes": 6012,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/simpleCaustics.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Caustics/dynamicCaustics.ts",
+          "bytes": 40607,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/dynamicCaustics.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Caustics/beautifulCaustics.ts",
+          "bytes": 8950,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/beautifulCaustics.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Caustics/causticsPlane.ts",
+          "bytes": 11584,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Caustics/causticsPlane.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/MieOzoneDensity.tsx",
+          "bytes": 6013,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/MieOzoneDensity.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/TransmittanceLUT.tsx",
+          "bytes": 6267,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/TransmittanceLUT.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/lut.ts",
+          "bytes": 43069,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/lut.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/planet.ts",
+          "bytes": 17270,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/planet.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/eclipse.ts",
+          "bytes": 20236,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/eclipse.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/Lightmarching.tsx",
+          "bytes": 8430,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/Lightmarching.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/skyDome.ts",
+          "bytes": 14072,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/skyDome.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/AtmosphericScattering/RayleighDensity.tsx",
+          "bytes": 3433,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/AtmosphericScattering/RayleighDensity.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RenderTargetsReactThreeFiber/postprocessing.ts",
+          "bytes": 9255,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/postprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transformPortal.ts",
+          "bytes": 6162,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transformPortal.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RenderTargetsReactThreeFiber/screenCoordinates.ts",
+          "bytes": 4479,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/screenCoordinates.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transition.ts",
+          "bytes": 7123,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/transition.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RenderTargetsReactThreeFiber/lens.ts",
+          "bytes": 5515,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RenderTargetsReactThreeFiber/lens.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/weights.ts",
+          "bytes": 7928,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/weights.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/basic.ts",
+          "bytes": 7702,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/basic.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/circular.ts",
+          "bytes": 7558,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/circular.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/tensor.ts",
+          "bytes": 7362,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/tensor.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/multi.ts",
+          "bytes": 14276,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/multi.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/material.ts",
+          "bytes": 10897,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/material.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PainterlyShaders/final.ts",
+          "bytes": 18178,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PainterlyShaders/final.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/fluted-glass.ts",
+          "bytes": 5996,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/fluted-glass.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/provencher-1.ts",
+          "bytes": 4346,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/provencher-1.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/lego.ts",
+          "bytes": 5187,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/lego.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/receipt.ts",
+          "bytes": 3751,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/receipt.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/flow.ts",
+          "bytes": 13029,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/flow.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/dots.ts",
+          "bytes": 3823,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/dots.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/mouse-trail.ts",
+          "bytes": 8449,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/mouse-trail.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/ascii.ts",
+          "bytes": 5862,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/ascii.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/depixelation.ts",
+          "bytes": 4953,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/depixelation.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/provencher-2.ts",
+          "bytes": 5847,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/provencher-2.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/crochet.ts",
+          "bytes": 6609,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/crochet.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/PostProcessing/led.ts",
+          "bytes": 4599,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/PostProcessing/led.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/effect.ts",
+          "bytes": 2221,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/effect.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/pixel.ts",
+          "bytes": 4317,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/pixel.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/ordered.ts",
+          "bytes": 4642,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/ordered.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/waves.ts",
+          "bytes": 7290,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/waves.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/rgb.ts",
+          "bytes": 7167,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/rgb.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/hue.ts",
+          "bytes": 6720,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/hue.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/curve.ts",
+          "bytes": 7388,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/curve.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/palette.ts",
+          "bytes": 3831,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/palette.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/blueNoise.ts",
+          "bytes": 3174,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/blueNoise.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/grayscale.ts",
+          "bytes": 4085,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/grayscale.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/color.ts",
+          "bytes": 3996,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/color.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Retro/final.ts",
+          "bytes": 8197,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Retro/final.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/postprocessing.ts",
+          "bytes": 3209,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/postprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/sobelDepth.ts",
+          "bytes": 8538,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/sobelDepth.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/depth.ts",
+          "bytes": 4958,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/depth.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/shadows.ts",
+          "bytes": 12490,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/shadows.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/sobel.ts",
+          "bytes": 10017,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/sobel.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/tonal.ts",
+          "bytes": 11186,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/tonal.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/handdrawn.ts",
+          "bytes": 11188,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/handdrawn.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/normal.ts",
+          "bytes": 6393,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/normal.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/light.ts",
+          "bytes": 13431,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/light.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Moebius/final.ts",
+          "bytes": 25922,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Moebius/final.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/DitheredMotionMaskDemo.tsx",
+          "bytes": 5453,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/DitheredMotionMaskDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskScene.ts",
+          "bytes": 6622,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/velocityMapPostprocessing.ts",
+          "bytes": 2201,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/velocityMapPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskPostprocessing.ts",
+          "bytes": 2657,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingCompute.ts",
+          "bytes": 6452,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingCompute.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/MotionMask.tsx",
+          "bytes": 7585,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/MotionMask.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/opticalFlowMotionSource.ts",
+          "bytes": 6782,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/opticalFlowMotionSource.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsScene.ts",
+          "bytes": 5426,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/velocityMapSphereMaterial.ts",
+          "bytes": 780,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/velocityMapSphereMaterial.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskCompute.ts",
+          "bytes": 2888,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/asciiMotionMaskCompute.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/objectSmearScene.ts",
+          "bytes": 10571,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/objectSmearScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/velocityMapMaterial.ts",
+          "bytes": 331,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/velocityMapMaterial.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingPostprocessing.ts",
+          "bytes": 1564,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsScene.ts",
+          "bytes": 5859,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/opticalFlowCompute.ts",
+          "bytes": 3926,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/opticalFlowCompute.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/velocityMapScene.ts",
+          "bytes": 7912,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/velocityMapScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsPostprocessing.ts",
+          "bytes": 7257,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingEffectsPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/opticalFlowPostprocessing.ts",
+          "bytes": 3230,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/opticalFlowPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsPostprocessing.ts",
+          "bytes": 3595,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingSegmentsPostprocessing.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/blobTrackingScene.ts",
+          "bytes": 4965,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/blobTrackingScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/ShadingMotion/opticalFlowScene.ts",
+          "bytes": 6098,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ShadingMotion/opticalFlowScene.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/transparency.ts",
+          "bytes": 3556,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/transparency.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleDispersion.ts",
+          "bytes": 4932,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleDispersion.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleRefraction.ts",
+          "bytes": 3807,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleRefraction.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/fresnel.ts",
+          "bytes": 10000,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/fresnel.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/specular.ts",
+          "bytes": 9481,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/specular.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/advancedSampling.ts",
+          "bytes": 8271,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/advancedSampling.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleSampling.ts",
+          "bytes": 5847,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/simpleSampling.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts",
+          "bytes": 10131,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/final.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/saturation.ts",
+          "bytes": 6258,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/saturation.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/depthstop.ts",
+          "bytes": 6919,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/depthstop.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/multiLight.ts",
+          "bytes": 16011,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/multiLight.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/performance.ts",
+          "bytes": 13758,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/performance.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/arches.ts",
+          "bytes": 16547,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/arches.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/solar.ts",
+          "bytes": 16318,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/solar.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/sdf.ts",
+          "bytes": 8900,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/sdf.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/shadows.ts",
+          "bytes": 11748,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/shadows.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/lightray.ts",
+          "bytes": 6837,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/lightray.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/cubeCam.ts",
+          "bytes": 12907,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/cubeCam.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/fog.ts",
+          "bytes": 12440,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/fog.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/multiple.ts",
+          "bytes": 15280,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/multiple.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/VolumetricLighting/scattering.ts",
+          "bytes": 11287,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/VolumetricLighting/scattering.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/GridDotsDemo.tsx",
+          "bytes": 3055,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/GridDotsDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/SimpleGridDemo.tsx",
+          "bytes": 1591,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/SimpleGridDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/RingDemo.tsx",
+          "bytes": 3277,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/RingDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/halftone.ts",
+          "bytes": 10999,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/halftone.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/jittered.ts",
+          "bytes": 14342,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/jittered.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/MoireDemo.tsx",
+          "bytes": 4566,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/MoireDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/WhiteDots.tsx",
+          "bytes": 2972,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/WhiteDots.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/PatternDemo.tsx",
+          "bytes": 6470,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/PatternDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/GooeyDemo.tsx",
+          "bytes": 3503,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/GooeyDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/CMYKHalftoneDemo.tsx",
+          "bytes": 5560,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/CMYKHalftoneDemo.tsx"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/cmyk.ts",
+          "bytes": 12907,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/cmyk.ts"
+        },
+        {
+          "path": "core/components/MDX/Widgets/Halftone/gooey.ts",
+          "bytes": 11654,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/Halftone/gooey.ts"
+        },
+        {
+          "path": "core/features/IndexSection/Scene.tsx",
+          "bytes": 11630,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/Scene.tsx"
+        },
+        {
+          "path": "core/features/IndexSection/gpgpu/fragmentShader.glsl",
+          "bytes": 302,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/gpgpu/fragmentShader.glsl"
+        },
+        {
+          "path": "core/features/IndexSection/gpgpu/vertexShader.glsl",
+          "bytes": 569,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/gpgpu/vertexShader.glsl"
+        },
+        {
+          "path": "core/features/IndexSection/gpgpu/simulationFragment.glsl",
+          "bytes": 1046,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/gpgpu/simulationFragment.glsl"
+        },
+        {
+          "path": "core/features/IndexSection/gpgpu/simulationVertex.glsl",
+          "bytes": 120,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/gpgpu/simulationVertex.glsl"
+        },
+        {
+          "path": "core/features/IndexSection/postprocessing/ascii.glsl",
+          "bytes": 1801,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/core/features/IndexSection/postprocessing/ascii.glsl"
+        }
+      ]
+    },
+    {
+      "name": "carbonara",
+      "scanned_source_files": 7,
+      "signals": []
+    },
+    {
+      "name": "color-to-vec3",
+      "scanned_source_files": 4,
+      "signals": []
+    },
+    {
+      "name": "cypress-axe-example",
+      "scanned_source_files": 28,
+      "signals": []
+    },
+    {
+      "name": "design-system",
+      "scanned_source_files": 145,
+      "signals": []
+    },
+    {
+      "name": "docker-CI",
+      "scanned_source_files": 2,
+      "signals": []
+    },
+    {
+      "name": "docker-graphql",
+      "scanned_source_files": 31,
+      "signals": []
+    },
+    {
+      "name": "ftpclientc",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "gatsby-theme-maximeheckel",
+      "scanned_source_files": 77,
+      "signals": []
+    },
+    {
+      "name": "github-action-merge-fast-forward",
+      "scanned_source_files": 2,
+      "signals": []
+    },
+    {
+      "name": "go-basic-web-server",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "gojest",
+      "scanned_source_files": 2,
+      "signals": []
+    },
+    {
+      "name": "graphql-query-builder",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "health-dashboard",
+      "scanned_source_files": 34,
+      "signals": []
+    },
+    {
+      "name": "healthpulse",
+      "scanned_source_files": 6,
+      "signals": []
+    },
+    {
+      "name": "ico-project",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "jest-runner-go",
+      "scanned_source_files": 10,
+      "signals": []
+    },
+    {
+      "name": "linear-vaporwave-react-three-fiber",
+      "scanned_source_files": 3,
+      "signals": [
+        {
+          "path": "pages/index.js",
+          "bytes": 8141,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/linear-vaporwave-react-three-fiber/linear-vaporwave-react-three-fiber-1bf94daa0999ddd1b908deb3e1d479166b82cf79.zip.unpacked/linear-vaporwave-react-three-fiber-1bf94daa0999ddd1b908deb3e1d479166b82cf79/pages/index.js"
+        }
+      ]
+    },
+    {
+      "name": "linear-vaporwave-three.js",
+      "scanned_source_files": 3,
+      "signals": []
+    },
+    {
+      "name": "material-emotion-sample",
+      "scanned_source_files": 6,
+      "signals": []
+    },
+    {
+      "name": "mean_grunt_bower_boilerplate",
+      "scanned_source_files": 9,
+      "signals": []
+    },
+    {
+      "name": "media-tagger",
+      "scanned_source_files": 10,
+      "signals": []
+    },
+    {
+      "name": "next-rsc",
+      "scanned_source_files": 17,
+      "signals": []
+    },
+    {
+      "name": "node-selftracker-app",
+      "scanned_source_files": 8,
+      "signals": []
+    },
+    {
+      "name": "node-selftracker-server",
+      "scanned_source_files": 10,
+      "signals": []
+    },
+    {
+      "name": "node_simple_chat",
+      "scanned_source_files": 1,
+      "signals": []
+    },
+    {
+      "name": "og-image-maximeheckel.com",
+      "scanned_source_files": 3,
+      "signals": []
+    },
+    {
+      "name": "r3f-cannon-orbital-mechanics-test",
+      "scanned_source_files": 7,
+      "signals": []
+    },
+    {
+      "name": "react-hook-context-emotion-dark-mode",
+      "scanned_source_files": 6,
+      "signals": []
+    },
+    {
+      "name": "react-lazy-preloading",
+      "scanned_source_files": 11,
+      "signals": []
+    },
+    {
+      "name": "react-livephoto",
+      "scanned_source_files": 6,
+      "signals": []
+    },
+    {
+      "name": "react-sub-components-context",
+      "scanned_source_files": 5,
+      "signals": []
+    },
+    {
+      "name": "react-suspense-example",
+      "scanned_source_files": 4,
+      "signals": []
+    },
+    {
+      "name": "redux-hooks-context",
+      "scanned_source_files": 6,
+      "signals": []
+    },
+    {
+      "name": "sandpack",
+      "scanned_source_files": 305,
+      "signals": []
+    },
+    {
+      "name": "sandpack-webgpu-repro",
+      "scanned_source_files": 6,
+      "signals": [
+        {
+          "path": "src/App.tsx",
+          "bytes": 2566,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/sandpack-webgpu-repro/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d.zip.unpacked/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d/src/App.tsx"
+        },
+        {
+          "path": "src/App-three-react.tsx",
+          "bytes": 3879,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/sandpack-webgpu-repro/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d.zip.unpacked/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d/src/App-three-react.tsx"
+        },
+        {
+          "path": "src/App-three-vanilla.tsx",
+          "bytes": 2447,
+          "bundled": true,
+          "original_path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/sandpack-webgpu-repro/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d.zip.unpacked/sandpack-webgpu-repro-e5e54a1d70210830dfc678c7b1245c49d9c0e20d/src/App-three-vanilla.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-ares-server",
+      "scanned_source_files": 1,
+      "signals": []
+    },
+    {
+      "name": "strashub",
+      "scanned_source_files": 14,
+      "signals": []
+    },
+    {
+      "name": "sunshine-weather-app",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "temaki_generator",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "trameipanalyser",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "tutum-machine",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "ucp-client",
+      "scanned_source_files": 0,
+      "signals": []
+    },
+    {
+      "name": "untitled-goose-running-game",
+      "scanned_source_files": 36,
+      "signals": []
+    },
+    {
+      "name": "votingappdemo-dockercon",
+      "scanned_source_files": 4,
+      "signals": []
+    },
+    {
+      "name": "website",
+      "scanned_source_files": 33,
+      "signals": []
+    }
+  ],
+  "native_archive_project_paths": [],
+  "touchdesigner_index_mentions": [
+    {
+      "path": "Downloads/01-source-code-and-repositories/_assembled/source-archive/repositories/blog.maximeheckel.com/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5.zip.unpacked/blog.maximeheckel.com-9837a4106e226c7c35775e44456a0250f1b894e5/content/shading-motion.mdx",
+      "snippet": "...My definition may sound vague, but I\u2019m sure you\u2019ve encountered this visual language before, especially among creators in the [TouchDesigner] community. Just..."
+    },
+    {
+      "path": "Downloads/02-page-captures-and-recovery/11-Saved-Wave-A-checkpoint/Wave-A-maxime-heckel-pages-003--file-37759eb43621/contents/pages/Wedf79f75/code/compiled-mdx.js",
+      "snippet": "...My definition may sound vague, but I\u2019m sure you\u2019ve encountered this visual language before, especially among creators in the [TouchDesigner] community. Just..."
+    },
+    {
+      "path": "Downloads/02-page-captures-and-recovery/11-Saved-Wave-A-checkpoint/Wave-A-maxime-heckel-pages-003--file-37759eb43621/contents/pages/Wedf79f75/content.md",
+      "snippet": "...My definition may sound vague, but I\u2019m sure you\u2019ve encountered this visual language before, especially among creators in the [TouchDesigner] community. Just..."
+    }
+  ],
+  "missing_signal_files": [],
+  "unbundled_articles_with_graphics_signals": []
+}

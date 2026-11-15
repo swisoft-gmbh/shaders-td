@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "scope": "local relocated file generation, static contracts and syntax; no ChatGPT UI, GPU or native execution",
+  "checks": [
+    {
+      "name": "web permits cloud hosts",
+      "passed": true
+    },
+    {
+      "name": "web no mandatory connection",
+      "passed": true
+    },
+    {
+      "name": "web four modes route web chat",
+      "passed": true
+    },
+    {
+      "name": "web direct resource links readable without search execution",
+      "passed": true
+    },
+    {
+      "name": "web file-only ZIP round trip",
+      "passed": true
+    },
+    {
+      "name": "web rejects overwrite",
+      "passed": true
+    },
+    {
+      "name": "web rejects recursive ZIP destination",
+      "passed": true
+    },
+    {
+      "name": "web rejects environment credentials",
+      "passed": true
+    },
+    {
+      "name": "web rejects symlinks",
+      "passed": true
+    },
+    {
+      "name": "single-file export needs no fetch, import, script src or stylesheet",
+      "passed": true
+    },
+    {
+      "name": "single-file title escaped",
+      "passed": true
+    },
+    {
+      "name": "embedded GLSL round-trips without changing shader",
+      "passed": true
+    },
+    {
+      "name": "single-file refuses overwrite",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner permits cloud hosts",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner no mandatory connection",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner four modes route web chat",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner direct resource links readable without search execution",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner file-only ZIP round trip",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner rejects overwrite",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner rejects recursive ZIP destination",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner rejects environment credentials",
+      "passed": true
+    },
+    {
+      "name": "touchdesigner rejects symlinks",
+      "passed": true
+    },
+    {
+      "name": "orbital-relic relocated recipe and tutorial",
+      "passed": true
+    },
+    {
+      "name": "lantern-fog relocated recipe and tutorial",
+      "passed": true
+    },
+    {
+      "name": "pigment-census relocated recipe and tutorial",
+      "passed": true
+    },
+    {
+      "name": "resonant-foil relocated recipe and tutorial",
+      "passed": true
+    },
+    {
+      "name": "tidal-ink relocated recipe and tutorial",
+      "passed": true
+    },
+    {
+      "name": "standalone renderer JavaScript syntax",
+      "passed": true
+    }
+  ],
+  "ordinary_chat_installation": "not-run",
+  "ordinary_chat_generated_study": "not-run",
+  "browser_rendering": "not-run",
+  "new_native_rendering": "not-run"
+}

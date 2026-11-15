@@ -1,0 +1,292 @@
+[
+  {
+    "id": "see_through",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Ior": 1.0,
+      "Dispersion": 0.0,
+      "Frost": 0.0,
+      "Density": 0.0,
+      "Saturation": 1.0,
+      "Reflection": 0.0,
+      "Rim": 0.0,
+      "Specular": 0.0,
+      "Diffuse": 0.0,
+      "Iridescence": 0.0,
+      "Wobble": 0.0,
+      "Caustic": 0.0
+    },
+    "question": "What does the glass show when neither surface bends light?",
+    "prediction": "The torus disappears: entering and leaving at IOR 1 changes nothing, so every glass pixel shows the Refraction TOP at its own screen position.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-see_through.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "bend_twice",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Ior": 1.5,
+      "Dispersion": 0.0,
+      "Scenedepth": 1.0,
+      "Wobble": 0.0
+    },
+    "question": "What does light do when it bends going in and again coming out?",
+    "prediction": "The type behind the tube appears flipped and pulled toward the tube's centre line, most strongly near the rims, where both surfaces tilt most.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-bend_twice.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "scene_depth",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Ior": 1.5,
+      "Dispersion": 0.0,
+      "Scenedepth": 2.5,
+      "Wobble": 0.0
+    },
+    "question": "How far behind the glass does the bent light meet the scene?",
+    "prediction": "With Scene depth 2.5 instead of 1 (in units of Object size), the same exit directions travel further before they read the Refraction TOP, so the flipped image is pushed further and looks more magnified.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-scene_depth.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "exit_ball",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "exitnormal",
+      "Backface": false,
+      "Exittilt": 0.0,
+      "Wobble": 0.0
+    },
+    "question": "Without a back-face pass, where does the shader think the light leaves?",
+    "prediction": "Smooth colour gradients: the exit normal of a ball fitted to each pixel, tilted the opposite way from the near side's normal.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-exit_ball.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "exit_flat",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Backface": false,
+      "Exittilt": -1.0,
+      "Ior": 1.5,
+      "Dispersion": 0.0,
+      "Scenedepth": 1.0,
+      "Wobble": 0.0
+    },
+    "question": "What if the guessed far side is parallel to the near side, as in a window or a thin ribbon?",
+    "prediction": "The type behind the torus is no longer flipped or magnified, only shifted: a flat sheet turns light back to its original direction. The shift grows toward the rims, where the ray crosses the sheet at a slant (path Thickness / cos). Compare with bend_twice, which uses Exit tilt 0.3, close to a ball.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-exit_flat.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "exit_tilt",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "tir",
+      "Backface": false,
+      "Exittilt": 1.0,
+      "Ior": 1.5,
+      "Dispersion": 0.0,
+      "Wobble": 0.0
+    },
+    "question": "Can light get trapped inside a ball, and what does Exit tilt change?",
+    "prediction": "A wide white band of totally reflected light along the outer rim and around the hole. Set Exit tilt back to 0 (a ball) and the band disappears, because in a ball the exit angle always equals the entry angle.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-exit_tilt.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "backface",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "exitnormal",
+      "Backface": true,
+      "Wobble": 0.0
+    },
+    "question": "What does the back-face pass measure?",
+    "prediction": "The exit normals now come from the real far side: flatter, more uniform colours on the flattened torus than the ball estimate, with sharp changes only where the ray reaches a different part of the tube.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-backface.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "backface_path",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "thickness",
+      "Backface": true,
+      "Thickness": 1.0,
+      "Wobble": 0.0
+    },
+    "question": "How far does light travel inside the glass?",
+    "prediction": "A low grey, brightest across the middle of each tube section and darker toward its edges: the flattened tube is roughly 0.6 scene units deep, shown as path / (2 x Thickness x Object size), about 0.34 of full brightness at the demo's Object size, 0.872517.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-backface_path.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner.",
+    "preview_observation": "Preview: along the centre row the tube reads 73, 96, then 65 out of 255 (about 0.5, 0.66, 0.45 scene units; 64, 84 and 57 before the family close, when Object size was 1 on the demo: the same path, a different scale)."
+  },
+  {
+    "id": "critical_low",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "tir",
+      "Backface": true,
+      "Ior": 1.3,
+      "Dispersion": 0.0,
+      "Wobble": 0.0
+    },
+    "question": "At a low index of refraction, how much light is trapped at the far side?",
+    "prediction": "Mostly dark: below the critical angle only a few per cent is reflected back inside. Only grazing rims brighten.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-critical_low.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "critical_high",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "tir",
+      "Backface": true,
+      "Ior": 1.9,
+      "Dispersion": 0.0,
+      "Wobble": 0.0
+    },
+    "question": "What changes when the index of refraction rises past the critical value?",
+    "prediction": "The critical angle shrinks from 50 to 32 degrees, so wide white regions appear where the inside angle now exceeds it: total internal reflection.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-critical_high.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "bounce",
+    "parameters": {
+      "Preset": "trapped_light",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "bounce"
+    },
+    "question": "Where does trapped light go?",
+    "prediction": "Bright, mirrored fragments of the type and studio strips inside the trapped bands; dark where nothing is trapped.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-bounce.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "dispersion",
+    "parameters": {
+      "Preset": "spectral_prism",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction"
+    },
+    "question": "What happens when every colour bends by a different amount at both surfaces?",
+    "prediction": "Every edge of the type seen through the glass splits into a full rainbow, red on one side and violet on the other, wider where the glass bends most.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-dispersion.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "deviation",
+    "parameters": {
+      "Preset": "spectral_prism",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "deviation",
+      "Backface": true
+    },
+    "question": "Which colour leaves the glass at the largest angle?",
+    "prediction": "Blue-tinted everywhere: the violet slice (blue channel) deviates more than the middle (green) and red (red channel). White marks slices that are trapped.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-deviation.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "caustic",
+    "parameters": {
+      "Preset": "caustic_heart",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "caustic"
+    },
+    "question": "Where does focused light collect inside the glass?",
+    "prediction": "A soft warm glow on the part of the far wall that faces away from the light (lower right for the default light direction), with slightly coloured edges.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-caustic.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "morph",
+    "parameters": {
+      "Preset": "spectral_prism",
+      "Pause": true,
+      "Time": 2.0,
+      "Morphtarget": "type_lens",
+      "Morph": 0.5
+    },
+    "question": "How do presets and morphing reach the shader?",
+    "prediction": "A look halfway between Spectral Prism and Type Lens: thinner fringes, stronger reflections.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-morph.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Preset": "spectral_prism",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final"
+    },
+    "question": "What does the default look add up to?",
+    "prediction": "Clear glass with a dense rainbow along every edge seen through it, bright trapped-light bands near the rims, a white rim and sharp highlights.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-final.png",
+    "observation": "Native observation pending: run this experiment in TouchDesigner."
+  }
+]

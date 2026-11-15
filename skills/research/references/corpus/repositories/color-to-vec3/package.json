@@ -1,0 +1,62 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "color-to-vec3",
+  "title": "Color to vec3",
+  "description": "Converts any format of color to vec3 format for glsl/wgsl",
+  "icon": "color-to-vec3-icon.png",
+  "author": "MaximeHeckel",
+  "version": "1.0.0",
+  "packageManager": "pnpm@11.19.0",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "categories": [
+    "Developer Tools",
+    "Design Tools"
+  ],
+  "license": "MIT",
+  "crossExtensions": [
+    "thomas/color-picker"
+  ],
+  "commands": [
+    {
+      "name": "convert-color-to-vec3",
+      "title": "Convert Color to Vec3",
+      "subtitle": "Convert a color into a GLSL/WGSL vec3",
+      "description": "Enter a color of any format and copy its normalized vec3 value.",
+      "icon": "color-to-vec3-icon.png",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "color",
+          "type": "text",
+          "placeholder": "CSS color (e.g. #ff8000)",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.0.5",
+    "raycast-cross-extension": "^0.2.3"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "vitest": "^4.1.10"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "test": "vitest run",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "pnpm dlx @raycast/api@latest publish"
+  }
+}

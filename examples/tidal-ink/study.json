@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "id": "tidal-ink",
+  "title": "Tidal Ink",
+  "route": "Feedback advection",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause",
+      "type": "toggle",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Time",
+      "type": "float",
+      "default": 2,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "type": "float",
+      "default": 0.016666666666666666,
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Reset",
+      "label": "Reset",
+      "type": "toggle",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Speed",
+      "label": "Speed",
+      "type": "float",
+      "default": 0.12,
+      "min": 0,
+      "max": 0.35
+    },
+    {
+      "name": "Decay",
+      "label": "Decay",
+      "type": "float",
+      "default": 0.15,
+      "min": 0,
+      "max": 2
+    },
+    {
+      "name": "Inject",
+      "label": "Inject",
+      "type": "float",
+      "default": 0.5,
+      "min": 0,
+      "max": 2
+    },
+    {
+      "name": "Seed",
+      "label": "Seed",
+      "type": "menu",
+      "default": "pattern",
+      "names": [
+        "pattern",
+        "flat",
+        "empty"
+      ],
+      "labels": [
+        "Pattern",
+        "Flat",
+        "Empty"
+      ]
+    },
+    {
+      "name": "Stage",
+      "label": "Stage",
+      "type": "menu",
+      "default": "final",
+      "names": [
+        "final",
+        "state",
+        "velocity",
+        "backtrace"
+      ],
+      "labels": [
+        "Final",
+        "State",
+        "Velocity",
+        "Backtrace"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "seed_code",
+      "type": "textDAT",
+      "source": "seed.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "seed",
+      "type": "glslTOP",
+      "purpose": "seed pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 384,
+        "resolutionh": 384,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uSeed",
+          "values": [
+            "parent().par.Seed.menuIndex",
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "id": "history",
+      "type": "feedbackTOP",
+      "parameters": {
+        "format": "rgba32float"
+      },
+      "position": [
+        460,
+        0
+      ]
+    },
+    {
+      "id": "state_code",
+      "type": "textDAT",
+      "source": "state.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        690,
+        0
+      ]
+    },
+    {
+      "id": "state",
+      "type": "glslTOP",
+      "purpose": "state pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 384,
+        "resolutionh": 384,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uFlow",
+          "values": [
+            "parent().par.Speed",
+            "parent().par.Decay",
+            "parent().par.Inject",
+            "parent().par.Reset"
+          ]
+        },
+        {
+          "name": "uView",
+          "values": [
+            "parent().par.Stage.menuIndex",
+            "parent().par.Seed.menuIndex",
+            0,
+            0
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        0,
+        -200
+      ]
+    },
+    {
+      "id": "display_code",
+      "type": "textDAT",
+      "source": "display.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        230,
+        -200
+      ]
+    },
+    {
+      "id": "display",
+      "type": "glslTOP",
+      "purpose": "display pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 384,
+        "resolutionh": 384,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uFlow",
+          "values": [
+            "parent().par.Speed",
+            "parent().par.Decay",
+            "parent().par.Inject",
+            "parent().par.Reset"
+          ]
+        },
+        {
+          "name": "uView",
+          "values": [
+            "parent().par.Stage.menuIndex",
+            "parent().par.Seed.menuIndex",
+            0,
+            0
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        460,
+        -200
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        920,
+        0
+      ],
+      "purpose": "Final output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "seed",
+      "to": "history",
+      "input": 0
+    },
+    {
+      "from": "history",
+      "to": "state",
+      "input": 0
+    },
+    {
+      "from": "state",
+      "to": "display",
+      "input": 0
+    },
+    {
+      "from": "display",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "seed",
+      "parameter": "pixeldat",
+      "target": "seed_code",
+      "previous_frame": false
+    },
+    {
+      "node": "state",
+      "parameter": "pixeldat",
+      "target": "state_code",
+      "previous_frame": false
+    },
+    {
+      "node": "display",
+      "parameter": "pixeldat",
+      "target": "display_code",
+      "previous_frame": false
+    },
+    {
+      "node": "history",
+      "parameter": "top",
+      "target": "state",
+      "previous_frame": true
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "Periodic normalized UV domain; velocity UV/second; fixed simulation step seconds/cook; RG pigment, B reserved, A initialized. No pressure solve or full fluid physics.",
+  "external_dependencies": [],
+  "target_build": "TouchDesigner 2025.33230 on macOS; verify other builds",
+  "native_status": "Tested on TouchDesigner 2025.33230 macOS; see validation.json for exact scope."
+}

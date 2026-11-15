@@ -1,0 +1,14 @@
+[
+  {
+    "source_id": "articles/shading-motion.mdx",
+    "url": "https://blog.maximeheckel.com/posts/shading-motion/",
+    "lines": [
+      58,
+      270
+    ],
+    "use": "Frame difference, persistence and separate styling",
+    "adaptation": "New native implementation and composition; source article is web-based.",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "sha256": "bf8a78485a4638bf1c538084a77193903d843923613bebbd81e0faea55c00d9d"
+  }
+]

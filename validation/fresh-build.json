@@ -1,0 +1,103 @@
+{
+  "parent": "/project1/mh_shader_examples",
+  "studies": {
+    "contour-loom": {
+      "component": "/project1/mh_shader_examples/contour_loom",
+      "inspection": {
+        "time_unix": 1792512970.2674382,
+        "build": "2025.33230",
+        "version": "099",
+        "platform": "macOS-15.8.1-arm64-arm-64bit",
+        "component": "/project1/mh_shader_examples/contour_loom",
+        "resolution": [
+          640,
+          640
+        ],
+        "parameters": {
+          "Pause": true,
+          "Time": 2.0,
+          "Step": 0.016666666666666666,
+          "Bands": 18.0,
+          "Warp": 0.65,
+          "Width": 0.075,
+          "Stage": "final"
+        },
+        "errors": "",
+        "warnings": "",
+        "compile_reports": {
+          "info_render": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+        },
+        "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+      },
+      "rgb_max": 0.94970703125,
+      "finite": true
+    },
+    "phosphor-memory": {
+      "component": "/project1/mh_shader_examples/phosphor_memory",
+      "inspection": {
+        "time_unix": 1792512970.39975,
+        "build": "2025.33230",
+        "version": "099",
+        "platform": "macOS-15.8.1-arm64-arm-64bit",
+        "component": "/project1/mh_shader_examples/phosphor_memory",
+        "resolution": [
+          640,
+          640
+        ],
+        "parameters": {
+          "Pause": false,
+          "Time": 2.0,
+          "Step": 0.016666666666666666,
+          "Threshold": 0.018,
+          "Lifetime": 0.65,
+          "Pitch": 9.0,
+          "Reset": false,
+          "Stage": "final"
+        },
+        "errors": "",
+        "warnings": "",
+        "compile_reports": {
+          "info_state": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+          "info_source": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n",
+          "info_display": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+        },
+        "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+      },
+      "rgb_max": 0.1549072265625,
+      "finite": true
+    },
+    "contour-material": {
+      "component": "/project1/mh_shader_examples/contour_material",
+      "inspection": {
+        "time_unix": 1792512970.5250828,
+        "build": "2025.33230",
+        "version": "099",
+        "platform": "macOS-15.8.1-arm64-arm-64bit",
+        "component": "/project1/mh_shader_examples/contour_material",
+        "resolution": [
+          640,
+          640
+        ],
+        "parameters": {
+          "Pause": true,
+          "Time": 2.0,
+          "Step": 0.016666666666666666,
+          "Bands": 18.0,
+          "Warp": 0.65,
+          "Width": 0.075,
+          "Turn": 25.0,
+          "Stretch": 1.0,
+          "Stage": "final"
+        },
+        "errors": "",
+        "warnings": "",
+        "compile_reports": {
+          "info_material": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n\n=============\n\nLinked Successfully\n"
+        },
+        "scope": "Current cook and compile diagnostics; not visual acceptance or performance."
+      },
+      "rgb_max": 0.9462890625,
+      "finite": true
+    }
+  }
+}

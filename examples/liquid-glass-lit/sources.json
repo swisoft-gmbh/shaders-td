@@ -1,0 +1,423 @@
+[
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      98,
+      224
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "Transparency by sampling a render of the scene behind the mesh at the pixel's screen position. Lines 140-154: the mesh is hidden, the scene is rendered into the render target, then the mesh is shown again and drawn in the normal depth-tested render of the scene.",
+    "adaptation": "Inherited through the core study: the user's Refraction TOP sampled at gl_FragCoord * uTDGeneral.viewport.zw. Independent review (T2): the README recipe and the demo now do the same in TouchDesigner. A Render TOP draws the scene without the glass; a Render Pass TOP draws the glass into it and keeps its depth, so objects in front of the glass stay in front."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      226,
+      320
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "refract() of the eye vector as a screen offset.",
+    "adaptation": "Inherited through the core study: projected, camera-correct offset (see the core's sources.json)."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      322,
+      463
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "Dispersion with per-channel IORs and extra samples.",
+    "adaptation": "Inherited through the core study: one spectrum sample per read, shared with frost."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      465,
+      519
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "Saturation by mixing with luminance.",
+    "adaptation": "Inherited unchanged from the core study (saturateColour)."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      570,
+      656
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "Diffuse = max(N.L, 0); Blinn-Phong specular with the squared N.H term; light given as a fixed uniform.",
+    "adaptation": "The N.L diffuse term is kept and applied to every light term. The light is no longer a uniform: it comes from the scene's Light COMPs through TDLightingPBR(). The squared Blinn-Phong highlight is replaced by GGX (the built-in key light writes it out; scene lights use TouchDesigner's own), multiplied by N.L."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/RefractionDispersionReactThreeFiber/specular.ts",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      27,
+      39
+    ],
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "sha256": "f5f63d7bf3c432d8a33112c321b8d014f64319db96ed75a51b9371d816704357",
+    "role": "The scene-7 specular(): kSpecular = pow(NdotH2, shininess) is added without an N.L factor; kDiffuse = max(0, NdotL).",
+    "adaptation": "Motivates the property test light_adds_energy_only_where_NdotL_positive: with scene lights that can sit behind the object, every term a light adds must be gated by N.L."
+  },
+  {
+    "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/",
+    "lines": [
+      657,
+      695
+    ],
+    "sha256": "f332ad5c1d9372454a42acdb232017bf80058cf09ff999e058bcf6b5a0d1b087",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "role": "Fresnel: pow(1 - |dot(eye, normal)|, power) as a glow.",
+    "adaptation": "Inherited through the core study: fresnel weights reflection between F0 (from IOR) and 1, plus the rim glow."
+  },
+  {
+    "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/shaping-light-volumetric-lighting-with-post-processing-and-raymarching/",
+    "lines": [
+      116,
+      177
+    ],
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "sha256": "50a9d12a9805458e0a3a8a6864d7331e39892da140b205c2236277e16343f02a",
+    "role": "Scene light position and direction copied into effect uniforms every frame by JavaScript (update()).",
+    "adaptation": "TouchDesigner does this for materials: the Render TOP's Lights parameter fills uTDLights/uTDEnvLights and sets TD_NUM_LIGHTS/TD_NUM_ENV_LIGHTS at compile time. Cited in the tutorial to explain why no wiring is needed."
+  },
+  {
+    "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/",
+    "lines": [
+      296,
+      323
+    ],
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "kind": "archive",
+    "sha256": "adbae1af168ff441de66dab2844de210e65433ec97eb35c0ea835801be2c35b1",
+    "role": "Plain-language explanation of max(dot(normal, lightDirection), 0) as the amount of light a point receives.",
+    "adaptation": "Teaching pattern for the N.L section of the tutorial (dot product refresher); no code reused."
+  },
+  {
+    "source_id": "studies/liquid-glass at commit a6f95c6 (read with git show, never the working tree)",
+    "kind": "family-core",
+    "commit": "a6f95c6",
+    "files": {
+      "liquid_glass.frag": "cb57c3884feb9747ce60473c1df19eb6cf883fccd549035489813746b393422d",
+      "liquid_glass.vert": "8830e4b4d4669a35d3e2055586cdf68f0104985f482331388f290550bb1ec901",
+      "backdrop.frag": "f5b55194e35afbadfe8cdc3ea1a1296cb77f840102972ede424b82eec85c5606",
+      "env.frag": "64379210ce2dacc2585526c171c300626eee259379b9ea92288c1fcd87f4c3df",
+      "presets.py": "5e63e18ec34c434e78a8274fbfc5d65ab7a1b4cfadc7cf480a5c63846a1889e8",
+      "preset_exec.py": "1c9447387a4cc634adabd8dbf559dc5da8b1a4ccf73b22fb9eb4c90d4229bc8b",
+      "builder.py": "720f8f655a893537ca1558418381dbd5a56a8908896eed2196f174363117678a",
+      "native.py": "d259739dbb48a4754d4dee516569272f42d015ccfd31e3c947630d4ca1ffa9b5",
+      "build.py": "150dc2b8ff39fef27e29fd2b37f277d4c7ef2cdf1044e764ba21894bdff1430e",
+      "checks/compile_glsl.py": "9a23b490b196482ee09008a2635d24d1eeee92b73bd183d5e2a40671d02ae2f3",
+      "checks/preview/preview.js": "756a5e006c9c625e4610e17a2900fb954c526eae6e3ac47c717c720491c82243",
+      "checks/preview_tests.cjs": "44ea9cc40694aa037eee6f1761d77dfcbab4044b3a6064f63740aaf5de983040",
+      "checks/capture.cjs": "66ded60a897339b4ecf317b3a41253ed69aa7d42019c115501dd830467c8ce9b",
+      "checks/test_study.py": "9334e5c4150484add01f9540e20d9acbb5cccf4b4be37ae372d7891fcc7beaca"
+    },
+    "role": "Family conventions and reused code: vertex shader, screen/surface/liquid/film/transmission/studio regions, premultiplied compose, presets module and callback, strict/lenient builder, native helpers, checks layout.",
+    "adaptation": "Removed the Reflection TOP, flat-image mode, back-face pass and typed-in light. Added scene-light gathering, fallback logic, env-light reflections with roughness-to-mip, env/ambient body light, a light-setup compile matrix, light stand-ins in the preview and new property tests. backdrop.frag copied unchanged; envmap.frag extends env.frag. Builder now skips unavailable demo nodes instead of stopping."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Write_a_GLSL_MAT",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "269e3d49e75bc93371fac3b452f871e66f40a1e93ffc082829fed3955b58fe30",
+    "role": "TD_NUM_LIGHTS, TD_NUM_ENV_LIGHTS, TDLight, TDEnvLight (color, rotate), TDEnvLightBuffer, TDPBRResult, TDLightingPBR, TDEnvLightingPBR, TDEnvLightTextureLod (2D and cube versions, black for the other kind), light index order from the Render TOP's Lights parameter, uTDGeneral.ambientColor, TDDither (not called). Also: TD_NUM_COLOR_BUFFERS and fragColor[TD_NUM_COLOR_BUFFERS] (Multiple Render Targets); TD_RENDER_TOP is defined only in the copy compiled for a Render TOP; uTDMats[].proj has a Z range of [0,1]; TDWorldToProj should always write gl_Position (it handles FishEye and other projections); shaders recompile per number and type of lights.",
+    "adaptation": "Compile stand-ins follow these structs and signatures. The page's TDEnvLightingPBR form (inout arguments and a returned TDPBRResult) conflicts with TouchDesigner's own preamble; the material uses the preamble's 7-argument form. Independent review: the material declares one output per colour buffer and writes zero to the extra ones (T7); the demo backdrop card projects through TDWorldToProj."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/GLSL_Reference",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "ae8700c6d0db0ddad8c81045d5babba8af6d5c384e297be9c7ca1f48c324922b",
+    "role": "TDCubeMapToEquirectangular(): u = 0 at the middle of the +X face, rising toward +Z.",
+    "adaptation": "Used for the 2D env-light lookup. The preview stand-in implements this u convention; v (0 = straight down) is inferred."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Environment_Light_COMP",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "3cce5d9c13d1cef520202a954bcfd0a86d584c4390c364ca8237f3b8ccc02a08",
+    "role": "envlightmap (2D equirectangular or cube), envlightmaprotate, envlightmapprefilter menu (off, automatic, useprefiltertop), dimmer.",
+    "adaptation": "Demo Environment Light parameters; rotation reaches the shader as uTDEnvLights[i].rotate."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/GLSL_MAT, Light_COMP, Render_TOP",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "role": "GLSL MAT lightingspace (World Space vs legacy Camera Space); Light COMP lighttype point/cone/distant, attenuation, shadow types; Render TOP lights and dither parameters.",
+    "adaptation": "Builder sets lightingspace = worldspace (strict), demo lights and the Render TOP's Lights expression (lenient)."
+  },
+  {
+    "source_id": "https://github.com/KhronosGroup/glslang/blob/main/Test/vk.relaxed.stagelink.0.1.frag",
+    "kind": "native-evidence",
+    "read": "2026-11-01",
+    "lines": [
+      11,
+      236
+    ],
+    "sha256": "a699e25fb6d5a4cc838330a34ab0d50d5adc46fbde5654c2d1de2f8d2b03d316",
+    "role": "A TouchDesigner pixel-shader preamble with zero lights preserved in glslang's relaxed-Vulkan tests: TD_LIGHTS_ARRAY_SIZE / TD_ENV_LIGHTS_ARRAY_SIZE = 1, uniform blocks for uTDLights/uTDEnvLights, TDPBRResult TDLightingPBR(9 args) plus void inout overloads, TDPBRResult TDEnvLightingPBR(7 args) plus a void 9-argument overload, TDCubeMapToEquirectangular declared, no TDEnvLightTextureLod.",
+    "adaptation": "Basis of the compile stand-ins' layout and of the #if guards. It is an older build's preamble (date not stated); the 2025.x preamble is a pending native check."
+  },
+  {
+    "source_id": "https://github.com/satoruhiga/TouchDesigner-ShaderBuilder/blob/HEAD/src/glsl_PBR.glsl",
+    "kind": "third-party",
+    "read": "2026-11-01",
+    "lines": [
+      171,
+      192
+    ],
+    "sha256": "3a95abf4d4e868eac6f0329d37c3ec5851b95f748ef3a006738d5e013c88fd68",
+    "role": "Third-party TouchDesigner PBR shader (not Derivative's): R = uTDEnvLights[i].rotate * R; mapCoord = TDCubeMapToEquirectangular(R); mipCount = 1 + floor(log2(max(size))) taken from the raw map sTDEnvLight2DMaps; the colour is read from sTDPrefiltEnvLight2DMaps, an undocumented prefiltered (GGX-convolved) chain, at perceptualRoughness * mipCount.",
+    "adaptation": "Evidence for the rotation order only. The material reads the raw map through TDEnvLightTextureLod ('Directly access environment maps'), so this file does not show how blurry that map's mip levels are. lod = roughness x Environment blur range is this study's own choice (independent review M3). No code copied."
+  },
+  {
+    "source_id": "https://github.com/shader-park/shader-park-core/blob/HEAD/targets/touchDesigner.js and https://github.com/patrickhartono/Blend2TD/blob/HEAD/scripts/fragmentShader.glsl",
+    "kind": "third-party",
+    "read": "2026-11-01",
+    "lines": {
+      "touchDesigner.js": [
+        155,
+        183
+      ],
+      "fragmentShader.glsl": [
+        105,
+        134
+      ]
+    },
+    "sha256": {
+      "touchDesigner.js": "30999acbf6d944c2228f62c1998c9ee6eb0e776aea11797d5bafa00bfcb02e0d",
+      "fragmentShader.glsl": "62d48eb42b3e1c803ac46d65ed08d7057d556ed782ef1f9b2db2dc0ff30dcad1"
+    },
+    "role": "Two independent TouchDesigner shaders calling TDPBRResult res = TDEnvLightingPBR(i, diffuse, specular, normal, view, roughness, ao).",
+    "adaptation": "Corroborates the 7-argument form. No code copied."
+  },
+  {
+    "source_id": "https://derivative.ca/release/201710000",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "role": "Release note: TDLightingPBR() and TDEnvLightingPBR() parameters simplified; environment lights split into their own arrays.",
+    "adaptation": "Explains why older examples use other signatures."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Par_Class",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "bcdc812c76dfff4259bf4e102d71f0181759c01da0a8786ec935ef2ea988e569",
+    "role": "eval() on an OP parameter that can hold several OPs returns one OP, a list of OPs or None; evalOPs() returns List[OP]; mode is a ParMode (CONSTANT, EXPRESSION, EXPORT, BIND); default can be set on custom parameters; isPulse.",
+    "adaptation": "native.lights() uses evalOPs() and never raises (T1); native.reset() skips parameters not in CONSTANT mode (T3)."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Render_Pass_TOP",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "01f24a881286f2922e7e6bca10408ed20ad8d9875fcb847d22c706d8f5d7c2cc",
+    "role": "Used with a Render TOP for multipass rendering; 'can build upon its inputs render by using the existing depth/color information in the framebuffers'. Parameters renderinput (or the input wire), camera, geometry, lights, cleartocamcolor, cleardepth, dither.",
+    "adaptation": "The demo's glass pass (render) and the README recipe: input = the scene Render TOP, Clear to Camera Color and Clear Depth Buffer off (T2)."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Render_TOP",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "7828aa3ddb7957100d4deb27999b9efdbccc6d19fca16be29d25dde1404347ed",
+    "role": "lights and camera are Object parameters; rendermode menu (render2d, cubemap, fisheye180, dualparaboloid, uvunwrap, cubemapods); several cameras can render in one pass; coloroutputneeded: the TOP's texture is a copy of the offscreen render buffer.",
+    "adaptation": "README and tutorial limits: Render Mode 2D and one camera per glass render (T8). The copy note is why sampling the scene render while a Render Pass continues in its buffers should be safe (native check pending)."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Light_COMP",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "5bf98e6a837f204dd706b237f9b8cede8bd97fdd051014f63f470a5850b0040e",
+    "role": "dimmer: 'Lights with Dimmer intensity below 0.001 are ignored. This optimization allows lights that are set to 0.0 to not be calculated in a Render TOP.'",
+    "adaptation": "Experiment blackout and README troubleshooting (T4); whether such lights leave TD_NUM_LIGHTS is a pending native check."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/GLSL_MAT",
+    "kind": "native-api",
+    "read": "2026-11-01",
+    "sha256_of_raw_page": "92402d452d09c86eb1e53d683f2f2d38088552866cac644230c4d2dbe2079f22",
+    "role": "'When there are compile errors in a GLSL shader, a blue/red checkerboard error shader will be displayed.'",
+    "adaptation": "Native compile check: look for the checkerboard as well as reading the Info DATs (T6)."
+  },
+  {
+    "source_id": "studies/liquid-glass/liquid_glass.frag",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "ff296c8fc00321dc2410742d783f99e10043e7bef5d7041aadefbf2a9709144c",
+    "role": "The core's reference implementation of the family sync: uPhase drift on a 256-periodic lattice, derivatives at the top of main() with a relative threshold, faceCamera() after the wobble, cube-root-of-det wobble scale, azimuth(), R2 discPoint(), per-sample IOR clamp, r0 x r0, paramColour(), Energy conserving keep, covered alpha with one compose formula, screenSign(), TDFog on the premultiplied output, constant-index colour buffers.",
+    "adaptation": "Ported function by function into liquid_glass_lit.frag around lit's own lighting (TDLightingPBR, environment lights, built-in key and studio). Not ported: the back-face pass, the flat-image reflection and its blur widening (lit has neither). Lit keeps its own 1024 cap on every stage."
+  },
+  {
+    "source_id": "studies/liquid-glass/liquid_glass.vert",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "1190f94419060ce32b8376c0bbdfe47136e47b0bcc4ddae112847a3aca706155",
+    "role": "Zero normal decided before TDDeformNorm; TD_PICKING_ACTIVE branch with TDWritePickingValues().",
+    "adaptation": "Copied into liquid_glass_lit.vert (same outputs as before)."
+  },
+  {
+    "source_id": "studies/liquid-glass/presets.py, preset_exec.py",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "63576d399e4570c1254964150a18916451dc52cd7ffdb2550ccd4e239f55b00a (presets.py); 749e8a8593040aa403f7757e6626fc582b36f3ce7737aaa957578f568c2e1cda (preset_exec.py)",
+    "role": "menu(), advance(), phase(), spin(), decode_colours(); the Fit pulse callback.",
+    "adaptation": "Copied unchanged except docstrings; preset_exec.py gains the Fitglass pulse."
+  },
+  {
+    "source_id": "studies/liquid-glass/native.py, builder.py",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "c6e67d598b8a211fe9ca0f43f1ae1d08f7a3a7190f23f13803034a4113ae2a55 (native.py); 7820a8d449c6b9cc12b8df8af47247708c62f1288ce7f320237c5afae3de9083 (builder.py)",
+    "role": "look_defaults() with setup controls, blocking_errors(), inputs_report(), render_diagnostics() over the project, fit_glass(); link_demo_inputs(), WARNING_NOTES categories, lenient sampler extend modes and lenient_parameters.",
+    "adaptation": "Merged into lit's own helpers: lit keeps skipping parameters in expression, export or bind mode, keeps its lights() report and its lenient creation of demo nodes, and finds the glass objects for Fit itself (no Glass geometry field)."
+  },
+  {
+    "source_id": "studies/liquid-glass/backdrop.frag",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "c519893cbd467884edc96dc136dbf78f3c6f0aec4ec8121141a023ae40613a01",
+    "role": "Checker backdrop plus the Type branch (Prism's bold type with its smoothstep edges reordered), selected by uBackdrop.x.",
+    "adaptation": "Copied; one comment line changed. The checker branch is the 6a58487 backdrop exactly (preview test: 0/255)."
+  },
+  {
+    "source_id": "studies/liquid-glass/checks (preview.js, preview_tests.cjs, test_study.py, compile_glsl.py)",
+    "kind": "family",
+    "commit": "studies/liquid-glass (working tree after its family sync, based on commit 6a58487; read 2026-11-02)",
+    "sha256": "083da46c618529e0acf3de7674f65309a9a6793b738e1f500cec1886e434ad7b (preview.js); a5fcffd38637e0a865ae97c71427b6b7e0d372a861e5c2152586c706679bcf27 (preview_tests.cjs); 58a5f588dd80a578c01b8e3cda8fb88a39671f112664b01e7b9b0eadf00eb010 (test_study.py); 11545626f6ed95afa01171e7ade2c3b52fe1631d535e6d76570749f868d559c9 (compile_glsl.py)",
+    "role": "Test methods: reference renders of the 6a58487 shaders, the drift-continue frames, flipped-raster and upside-down-input emulation, the TDFog stand-in, the three-buffer render, sampleCap for 64-sample references, the picking compile variant and its negative test.",
+    "adaptation": "Ported into lit's preview and tests, with lit's own scene (demo Light COMPs scaled with the object in the Object size test; the occluder bar in the orientation test)."
+  },
+  {
+    "source_id": "studies/liquid-glass-prism/backdrop.frag",
+    "kind": "family",
+    "commit": "6a58487",
+    "sha256": "a43f469b50d8ec1cf7b320cb29ee624cf85939b6ab67a901b3d252fc4a55d076",
+    "role": "Bold white type on black, the family's shared demo backdrop (C9).",
+    "adaptation": "Reached lit through the core's backdrop.frag (edges reordered there)."
+  },
+  {
+    "source_id": "studies/liquid-glass-blobs/blobs.frag",
+    "kind": "family",
+    "commit": "6a58487",
+    "sha256": "7825758460f97f4bbf9c7188155d0822ea4d5902dcfd5d7cbfeab68b998ec930",
+    "role": "Fix T1 (the Refraction TOP's alpha as 'covered') and TDFog on premultiplied colour (C1, C7).",
+    "adaptation": "Reached lit through the core's merged form."
+  },
+  {
+    "source_id": "studies/liquid-glass-flow/native.py",
+    "kind": "family",
+    "commit": "6a58487",
+    "sha256": "c23955d8c534dd7a013240541d74cd51ca26b141e2b267fa0d58ec3bdbaf0120",
+    "role": "fit_flow(): SOP bounds of the render-flagged SOP, COMP bounds as a fallback (C8).",
+    "adaptation": "Reached lit through the core's fit_glass(); lit finds the glass objects from the material instead of a Glass geometry field."
+  },
+  {
+    "source_id": "extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences",
+    "source_url": "https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/",
+    "kind": "method",
+    "role": "Martin Roberts (2018): the R2 low-discrepancy sequence built on the plastic number.",
+    "adaptation": "discPoint() places the frost samples with R2 (angle from 0.7548776662, area from 0.5698402910), as in the core study. For 8 to 32 samples its centre of mass stays within 0.064 disc radii (the golden spiral: 0.089 to 0.155)."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Write_a_GLSL_MAT (family sync)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "269e3d49e75bc93371fac3b452f871e66f40a1e93ffc082829fed3955b58fe30",
+    "role": "Picking: '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif' and the TDPickVertex members; Multiple Render Targets: 'layout(location = 0) vec4 fragColor[TD_NUM_COLOR_BUFFERS]', 'Ensure you are not writing beyond the number of buffers provided'; 'vec4 TDFog(vec4 curColor, vec3 worldSpacePos, int cameraIndex)', to be called at the end of the shader; TDDither only dithers when called.",
+    "adaptation": "C2 picking branch (after the normal outputs) and constant-index colour buffers; C7 fog; C4 no TDDither."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Render_TOP, Render_Pass_TOP (family sync)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "7828aa3ddb7957100d4deb27999b9efdbccc6d19fca16be29d25dde1404347ed (Render_TOP); 01f24a881286f2922e7e6bca10408ed20ad8d9875fcb847d22c706d8f5d7c2cc (Render_Pass_TOP)",
+    "role": "Parameter 'dither' (label Dither) on both TOPs: 'Dithers the rendering to help deal with banding'; no default stated.",
+    "adaptation": "C4: demo_scene and render set dither off as lenient parameters ('dither' warning category); README tells users to turn it off on their own renders."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Camera_COMP (verifier fixes)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "d523c33e39dfc6106820df3f73eabd7ef9651dc3c76785eb5324946109adf3f0",
+    "role": "Fog page: Fog menu (off, linear, exp, exp2), Fog Density, Fog Near, Fog Far, Fog Color, Fog Alpha ('background opacity of the scene'); View page Near and Far.",
+    "adaptation": "V3: the native fog check sets linear fog with Fog Far 1 and judges the glass by its formula; the V1 native check moves demo_cam closer with Near 0.01."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/COMP_Xform_Page (verifier fixes)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "5663434436043b1156ed0878e4c3f12e422ed572304c93d87c41f91a3a76fead",
+    "role": "Parameter scale, label Uniform Scale: 'change the size of an Component uniformly along the three axes' (the page the Geometry COMP includes).",
+    "adaptation": "V1: the shader multiplies the ripple and film frequencies by the world scale, so a Uniform Scale k with Object size k (what Fit sets) keeps a preset's patterns; native check in validation.json."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Write_a_GLSL_MAT, section Dithering (verifier fixes)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "same raw page as the family sync entry",
+    "role": "'If dithering is enabled in the Render TOP, you can have this dithering applied to your color by simply calling TDDither ... If dithering is disabled ... it will leave the color unchanged.'",
+    "adaptation": "V2: README step 4 says the glass never calls TDDither, so Dither does not touch it; built-in materials dither and that noise would be bent through the glass."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/ObjectCOMP_Class (family Object size rule)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "c4a623bf4a9df9d9fbadc753306e23f36a203a6902a7a6f1f6ad306d684b9f35",
+    "role": "worldTransform: 'The current world transform of the Object.' localTransform: the Xform and Pre-Xform parameters 'without taking into account any parent or constraint transforms'.",
+    "adaptation": "Family rule (decisions.json, family_rule): Fit to Glass geometry takes the cube root of |det(worldTransform)|, the same number the shader takes from uTDMats world. That parent transforms count in worldTransform is read from the contrast with localTransform; native check in validation.json (native_family_sync)."
+  },
+  {
+    "source_id": "studies/liquid-glass (liquid_glass.vert, liquid_glass.frag, native.py, study.json) after its family close",
+    "kind": "family",
+    "commit": "studies/liquid-glass working tree after its family close, based on commit c94e849; read 2026-11-02; copies in checks/core_reference; study.json read again on 2026-11-02 after the core's family close critic fix PV4 (two labels changed) and copied to checks/core_reference",
+    "sha256": {
+      "liquid_glass.vert": "833510ac2805089588e54c9b0dfdeaac99138585368318e4b528dae0f51f18d0",
+      "liquid_glass.frag": "b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb",
+      "native.py": "e2edfcf40306b7272ac760195745da744677180cf10c492b956428f8a3c587c4",
+      "study.json": "44ac6f2ac4bb566696cfc4cb04401036e6ab7603b1201755049a36bb566ec183"
+    },
+    "role": "G6: the documented picking form with passToPixelStage(). G2: screenSign() with lit's centre-line tie-break and the derivatives at the top of main(). G1: worldScale() in the ripple and film lookups, the rule's uniform expressions, fit_glass() and the demo torus.",
+    "adaptation": "liquid_glass_lit.vert is the core's file code for code (comments aside). The pixel shader needed no change: its shared functions already equal the core's (screenSign() and screenUV() but for the Flip V slot). FamilyClose unit tests compare against these copies and against ../liquid-glass when present. Liquid Glass Flow pins the same two shader files (same sha256). test_core_reference_is_the_current_core checks all four copies against these sha256 and, when the core is present, against its current files; the Thickness and Object size labels here take the core's words (family critic, routed fixes)."
+  },
+  {
+    "source_id": "https://docs.derivative.ca/Write_a_GLSL_MAT, section Picking (family close)",
+    "kind": "native-api",
+    "read": "2026-11-02",
+    "sha256_of_raw_page": "269e3d49e75bc93371fac3b452f871e66f40a1e93ffc082829fed3955b58fe30",
+    "role": "'#ifndef TD_PICKING_ACTIVE // All the typical shader code #else TDWritePickingValues(); #endif' and 'when picking is occuring, the define TD_PICKING_ACTIVE is set and only the code inside the #else block is executed'. The raw page is byte-identical to the family sync's read.",
+    "adaptation": "G6: the vertex shader places the point before the branch and writes the pixel-stage outputs only in the '#ifndef' block; a pick render runs TDWritePickingValues() alone after the placement. Whether a build reads anything else while picking is a native check (validation.json, native_family_sync)."
+  },
+  {
+    "source_id": "docs.derivative.ca/Render_TOP, Composite_TOP, Analyze_TOP (centre-line residual native check)",
+    "source_url": "https://docs.derivative.ca/Render_TOP",
+    "lines": null,
+    "sha256": null,
+    "commit": null,
+    "kind": "native API",
+    "role": "Render TOP: Anti-Alias (antialias; 1x (Off) aa1, 2x aa2, 4x aa4, ...), Override Material (overridemat). Composite TOP: Operation (operand), Difference (difference): absoluteValue(input1.rgb - input2.rgb), alpha 1. Analyze TOP: Operation (op), Maximum in RGB (maxrgb); with Full Image scope the result is one pixel. Read 2026-11-02.",
+    "adaptation": "The native check centre_line_residual (validation.json, family_close.native_run): render the delivered material and a copy with the orientation set to the right value, take the difference and its maximum."
+  }
+]

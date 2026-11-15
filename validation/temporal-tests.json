@@ -1,0 +1,58 @@
+{
+  "build": "2025.33230",
+  "checks": [
+    {
+      "name": "initialized_without_flash",
+      "passed": true,
+      "mask_max": 0.0,
+      "valid_min": 1.0
+    },
+    {
+      "name": "unchanged_input_has_zero_motion",
+      "passed": true,
+      "raw_max": 0.0
+    },
+    {
+      "name": "changed_input_triggers_motion",
+      "passed": true,
+      "raw_max": 1.0
+    },
+    {
+      "name": "stopped_input_has_zero_new_motion",
+      "passed": true,
+      "raw_max": 0.0
+    },
+    {
+      "name": "one_step_decay",
+      "passed": true,
+      "measured": 0.974590539932251,
+      "expected": 0.9746849137081521
+    },
+    {
+      "name": "pause_holds_state",
+      "passed": true,
+      "max_difference": 0.0
+    },
+    {
+      "name": "reset_clears_valid_history",
+      "passed": true,
+      "trail_max": 0.0
+    },
+    {
+      "name": "one_second_decay_60_steps",
+      "passed": true,
+      "measured": 0.2104388177394867,
+      "expected": 0.2147111723416973
+    },
+    {
+      "name": "one_second_decay_30_steps",
+      "passed": true,
+      "measured": 0.2121874839067459,
+      "expected": 0.2147111723416973
+    }
+  ],
+  "all_passed": true,
+  "frames": 233,
+  "method": "One output cook per frame, controlled source time, state texture readback at checkpoints.",
+  "limits": "Fixed-step simulation test, not wall-clock performance or live-camera robustness."
+}

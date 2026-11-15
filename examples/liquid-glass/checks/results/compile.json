@@ -1,0 +1,91 @@
+{
+  "tool": "Glslang Version: 11:15.1.0",
+  "ok": true,
+  "results": [
+    {
+      "shader": "liquid_glass.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_glass.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_glass.vert"
+    },
+    {
+      "shader": "liquid_glass.vert",
+      "mode": "glsl460",
+      "ok": true,
+      "output": "",
+      "defines": "TD_PICKING_ACTIVE"
+    },
+    {
+      "shader": "liquid_glass.vert",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_glass.vert",
+      "defines": "TD_PICKING_ACTIVE"
+    },
+    {
+      "shader": "liquid_glass.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "liquid_glass.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_glass.frag"
+    },
+    {
+      "shader": "liquid_glass.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": "",
+      "defines": "TD_NUM_COLOR_BUFFERS 3"
+    },
+    {
+      "shader": "liquid_glass.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "liquid_glass.frag",
+      "defines": "TD_NUM_COLOR_BUFFERS 3"
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "backdrop.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "backdrop.frag"
+    },
+    {
+      "shader": "env.frag",
+      "mode": "glsl460",
+      "ok": true,
+      "output": ""
+    },
+    {
+      "shader": "env.frag",
+      "mode": "vulkan-relaxed",
+      "ok": true,
+      "output": "env.frag"
+    }
+  ],
+  "negative_test": {
+    "shader": "liquid_glass.vert, TD_PICKING_ACTIVE, TDWritePickingValues() stand-in removed",
+    "expect": "compile fails and the log names TDWritePickingValues",
+    "compiled": false,
+    "names_it": true,
+    "ok": true,
+    "output": "liquid_glass.vert\nERROR: 0:40: 'TDWritePickingValues' : no matching overloaded function found \nERROR: 0:40: '' : missing #endif "
+  },
+  "scope": "Valid GLSL 4.60 against documented TD stand-ins; not a TouchDesigner compile."
+}

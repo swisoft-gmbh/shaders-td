@@ -1,0 +1,314 @@
+[
+  {
+    "id": "see_through",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Ior": 1.0,
+      "Dispersion": 0.0,
+      "Frost": 0.0,
+      "Density": 0.0,
+      "Edgetint": 0.0,
+      "Saturation": 1.0,
+      "Translucency": 1.0,
+      "Specular": 0.0,
+      "Diffuse": 0.0,
+      "Reflection": 0.0,
+      "Rim": 0.0,
+      "Iridescence": 0.0,
+      "Wobble": 0.0
+    },
+    "question": "Does light ever leak into the view through the glass?",
+    "prediction": "No. At IOR 1 with Specular, Surface diffuse, Reflection, Rim and Iridescence at 0, the torus disappears even though both demo lights and the Environment Light are on.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-see_through.png",
+    "preview_observation": "WebGL preview: the torus is invisible; max difference to the backdrop 1/255 with and without scene lights (test ior1_invisible_with_light_terms_off).",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "dispersion",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "refraction",
+      "Dispersion": 1.0
+    },
+    "question": "Where do the rainbow fringes come from?",
+    "prediction": "Every high-contrast edge seen through the glass splits into a red-to-violet fringe, widest near the silhouette. Lights do not change this stage.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-dispersion.png",
+    "preview_observation": "WebGL preview: red-to-violet fringes on every black/white edge seen through the glass, widest near the silhouette.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "scene_lights",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "lights",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Diffuse": 0.6
+    },
+    "question": "What do the scene's Light COMPs deliver to the glass?",
+    "prediction": "The Lights stage (everything the lights add) shows soft warm shading from the key light (upper right) over most of the front, with small hot highlights, and blue-violet light from the rim light on the left edge and on the inner wall of the hole. Surfaces facing neither light stay black.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-scene_lights.png",
+    "preview_observation": "WebGL preview (stand-in light functions): warm grey shading over most of the front with small highlights top and bottom; blue-violet light on the left edge and the inner wall of the hole.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "fallback",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demolights": "none",
+      "Demoenv": false
+    },
+    "question": "What happens when the scene has no lights at all?",
+    "prediction": "With Demo Light COMPs = None and no Environment Light, the glass still has a highlight, now from the built-in key light on the upper left instead of the demo key on the upper right, and white studio reflections, but none of the coloured panels. Switch Teaching stage to Light sources: the glass turns blue, meaning only the built-in fallback is in use.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-fallback.png",
+    "preview_observation": "WebGL preview: highlights and white studio reflections remain; no coloured panels. Test no_lights_equals_builtin_fallback: difference 0 against Built-in only with 1 or 3 lights.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "blackout",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "sources",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Demodimmer": 0.0
+    },
+    "question": "What does Auto do when every scene light is dimmed to 0?",
+    "prediction": "A native check. Derivative's Light COMP page says lights with Dimmer below 0.001 are ignored. If TouchDesigner then compiles the material for zero lights, Auto switches to the built-in key light, and the Light sources stage turns from yellow (scene lights and scene environment) to cyan (scene environment and built-in key). If it stays yellow, dimmed lights still count. Also try Demo Light COMP dimmer 0.0005 and 0.01. In a show that fades every light to black, set Lighting > Lights to Scene only so the glass goes dark with the scene.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-blackout.png",
+    "preview_observation": "WebGL preview: the torus is yellow (scene lights and scene environment in use). The preview's stand-in keeps dimmed lights in the light count. That is an assumption of the preview, not TouchDesigner's behaviour.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "rim_only",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "lights",
+      "Demolights": "rim",
+      "Demoenv": true,
+      "Diffuse": 0.6
+    },
+    "question": "Why does a light behind the object only touch its edges?",
+    "prediction": "With only the rim light (to the left, slightly behind), the Lights stage is black on the surfaces facing the camera. Only surfaces that turn toward the left catch light: a thin band on the left outer edge and the inner wall on the right side of the hole. Everything a light adds is multiplied by N.L.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-rim_only.png",
+    "preview_observation": "WebGL preview (stand-in light functions): front black; thin blue band on the left outer edge and the inner wall right of the hole. Test light_adds_energy_only_where_NdotL_positive: 0 of 15,365 away-facing pixels changed.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "highlight_size",
+    "parameters": {
+      "Preset": "clear_crystal",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "lights",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Diffuse": 0.6,
+      "Highlightsize": 0.45
+    },
+    "question": "What does Highlight size change?",
+    "prediction": "Compared with scene_lights, raising Highlight size from 0.12 to 0.45 spreads each highlight into a wide, dimmer sheen; the diffuse shading does not change.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-highlight_size.png",
+    "preview_observation": "WebGL preview: highlights spread into broad sheens; diffuse shading unchanged compared with scene_lights.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "env_reflection",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "reflection",
+      "Demolights": "none",
+      "Demoenv": true
+    },
+    "question": "Where do the reflections come from now?",
+    "prediction": "The Reflection stage shows the demo environment map's coloured panels (blue-violet, magenta, warm window) wrapped around the torus, brightest at its edges. Turn Demo Environment Light off and only the white built-in studio strips remain.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-env_reflection.png",
+    "preview_observation": "WebGL preview: blue-violet, magenta and warm panels of the demo map wrap the torus, brightest at the edges.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "env_rotate",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "environment",
+      "Demolights": "none",
+      "Demoenv": true,
+      "Demoenvrotate": 90.0
+    },
+    "question": "Does the Environment Light's rotation reach the material?",
+    "prediction": "Turning the demo environment by 90 degrees turns the reflected panels around the vertical axis. A native check: a PBR MAT sphere lit by the same Environment Light should turn the same way.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-env_rotate.png",
+    "preview_observation": "WebGL preview: the panels moved around the torus. Test env_rotation_reaches_reflection: 360 degrees identical, 90 degrees differs. Direction of turn vs TouchDesigner pending.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "env_roughness",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "environment",
+      "Demolights": "none",
+      "Demoenv": true,
+      "Roughness": 0.6
+    },
+    "question": "How does a rough surface reflect?",
+    "prediction": "At Reflection roughness 0.6 the Environment stage shows the same panels as soft glows, without steps or ghost copies: roughness picks a blurrier mipmap level and averages eight nearby directions.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-env_roughness.png",
+    "preview_observation": "WebGL preview: soft glows, no steps or ghost copies. Test env_roughness_blurs_monotonically: gradient over mean brightness 0.440 -> 0.002 over roughness 0 -> 0.9, brightness never below 60%. The preview's mipmaps are box averages.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "env_seam",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "environment",
+      "Demolights": "none",
+      "Demoenv": true,
+      "Roughness": 0.7,
+      "Demoenvrotate": 90.0
+    },
+    "question": "Does a rough reflection show a seam where the panorama's edges meet?",
+    "prediction": "A native check. The panorama's left and right edges meet in the +X direction. Turned by 90 degrees, that direction should face the camera on the front of the ring (if TouchDesigner turns the other way, use -90). If TouchDesigner does not wrap the panorama sideways when it reads its blurry mipmap levels, a thin vertical line shows there. The WebGL preview wraps the panorama, so it cannot show this.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-env_seam.png",
+    "preview_observation": "WebGL preview: soft glows and no line. The preview wraps the panorama sideways, so it cannot show a seam; the native result is pending.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "body_light",
+    "parameters": {
+      "Preset": "rose_quartz",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "body",
+      "Demolights": "key",
+      "Demoenv": true,
+      "Translucency": 0.35
+    },
+    "question": "How does a milky glass body take the scene's light?",
+    "prediction": "With Translucency 0.35, the Glass body stage is bright pink on the right, where the key light hits, and keeps a dimmer pink on the left from the Environment Light's ambient instead of going black.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-body_light.png",
+    "preview_observation": "WebGL preview (stand-in light functions): bright pink on the right where the key hits, dimmer pink on the left from the env ambient; faint bands from the backdrop behind.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "morph",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Morphtarget": "violet_gel",
+      "Morph": 0.5
+    },
+    "question": "How do presets and the morph reach the shader?",
+    "prediction": "Halfway between Prism Chrome and Violet Gel: a faintly violet glass with softer fringes; the scene's lights and reflections stay the same.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-morph.png",
+    "preview_observation": "WebGL preview: faintly violet glass with softer fringes. Tests morph1_equals_target and morph0_is_neutral: difference 0.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "final",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demolights": "both",
+      "Demoenv": true
+    },
+    "question": "What does the finished default look like in the demo scene?",
+    "prediction": "Prism Chrome on the torus: rainbow fringes through the glass, coloured reflections from the Environment Light, a warm key highlight on the upper right and blue-violet glints on the left from the rim light.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-final.png",
+    "preview_observation": "WebGL preview: Prism Chrome with fringes, coloured env reflections, a warm highlight upper right and blue glints on the left.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "occluder",
+    "parameters": {
+      "Preset": "prism_chrome",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Demooccluder": true
+    },
+    "question": "Does an object between the camera and the glass stay in front of it?",
+    "prediction": "The dark bar stays in front of the torus: the Render Pass TOP draws the glass into the scene render and keeps its depth, so the bar hides the glass behind it. Beside the bar, the glass can show a bent copy of the bar's edge, because the Refraction TOP (the scene render) contains the bar too.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-occluder.png",
+    "preview_observation": "WebGL preview: the dark bar stays in front of the torus. To its right, the glass shows a dark, bent copy of the bar, refracted from the scene render. Test occluder_stays_in_front: 0 of 20,444 bar pixels change; a model of the old Over TOP recipe changes 10,559 of them.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  },
+  {
+    "id": "type_backdrop",
+    "parameters": {
+      "Preset": "chrome_type",
+      "Pause": true,
+      "Time": 2.0,
+      "Stage": "final",
+      "Demolights": "both",
+      "Demoenv": true,
+      "Backdrop": "type"
+    },
+    "question": "How does the glass read over a different scene, such as bold type on black?",
+    "prediction": "Over the Type backdrop, Chrome Type bends the white letters along the torus and splits their edges into thin colour fringes; the reflections and highlights are the same as over the checkerboard, because only the Refraction TOP changed. The family's other studies use the same backdrop, so their contact sheets compare.",
+    "reset": false,
+    "capture": null,
+    "preview": "captures/preview-type_backdrop.png",
+    "preview_observation": "WebGL preview (stand-in light functions): the white letters bend around the torus and break into thin colour fringes at their edges; magenta and blue-violet reflections from the Environment Light sit on top, as over the checkerboard. Test backdrop_menu_switches_the_demo_scene: Checker equals the 6a58487 backdrop (difference 0); Type is 71% dark pixels and 23% white ink.",
+    "observation": "Native observation pending: run this experiment in TouchDesigner and compare with the prediction."
+  }
+]

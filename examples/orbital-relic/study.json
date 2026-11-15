@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "id": "orbital-relic",
+  "title": "Orbital Relic",
+  "route": "SDF raymarching GLSL TOP",
+  "controls": [
+    {
+      "name": "Pause",
+      "label": "Pause",
+      "type": "toggle",
+      "default": true,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Time",
+      "label": "Time",
+      "type": "float",
+      "default": 2,
+      "min": 0,
+      "max": 3600
+    },
+    {
+      "name": "Step",
+      "label": "Simulation step (seconds)",
+      "type": "float",
+      "default": 0.016666666666666666,
+      "min": 0.001,
+      "max": 0.1
+    },
+    {
+      "name": "Blend",
+      "label": "Blend",
+      "type": "float",
+      "default": 0.23,
+      "min": 0,
+      "max": 0.6
+    },
+    {
+      "name": "Turn",
+      "label": "Turn",
+      "type": "float",
+      "default": 0.4,
+      "min": -3.14,
+      "max": 3.14
+    },
+    {
+      "name": "Budget",
+      "label": "Budget",
+      "type": "float",
+      "default": 128,
+      "min": 8,
+      "max": 192
+    },
+    {
+      "name": "Single",
+      "label": "Single",
+      "type": "toggle",
+      "default": false,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "name": "Stage",
+      "label": "Stage",
+      "type": "menu",
+      "default": "final",
+      "names": [
+        "final",
+        "normals",
+        "iterations",
+        "hit"
+      ],
+      "labels": [
+        "Final",
+        "Normals",
+        "Iterations",
+        "Hit"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "surface_code",
+      "type": "textDAT",
+      "source": "surface.frag",
+      "purpose": "Editable GLSL source",
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "surface",
+      "type": "glslTOP",
+      "purpose": "surface pass",
+      "parameters": {
+        "glslversion": "glsl460",
+        "outputresolution": "custom",
+        "resolutionw": 512,
+        "resolutionh": 512,
+        "format": "rgba32float"
+      },
+      "uniforms": [
+        {
+          "name": "uShape",
+          "values": [
+            "parent().par.Blend",
+            "parent().par.Turn",
+            "parent().par.Budget",
+            "parent().par.Single"
+          ]
+        },
+        {
+          "name": "uView",
+          "values": [
+            "parent().par.Stage.menuIndex",
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "uClock",
+          "values": [
+            "parent().par.Time if parent().par.Pause else absTime.seconds",
+            "parent().par.Step",
+            "parent().par.Pause",
+            0
+          ]
+        }
+      ],
+      "position": [
+        230,
+        0
+      ]
+    },
+    {
+      "id": "out",
+      "type": "outTOP",
+      "position": [
+        920,
+        0
+      ],
+      "purpose": "Final output"
+    }
+  ],
+  "wires": [
+    {
+      "from": "surface",
+      "to": "out",
+      "input": 0
+    }
+  ],
+  "references": [
+    {
+      "node": "surface",
+      "parameter": "pixeldat",
+      "target": "surface_code",
+      "previous_frame": false
+    }
+  ],
+  "output": "out",
+  "coordinate_contract": "UV rays use output aspect ratio; distance and normals in object scene units; rotation preserves distances.",
+  "external_dependencies": [],
+  "target_build": "TouchDesigner 2025.33230 on macOS; verify other builds",
+  "native_status": "Tested on TouchDesigner 2025.33230 macOS; see validation.json for exact scope."
+}

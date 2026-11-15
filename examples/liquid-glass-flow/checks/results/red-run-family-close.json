@@ -1,0 +1,1104 @@
+{
+ "scope": "Family close (2026-11-02): the new and changed tests run on this study as it was at commit c94e849 (its shaders, recipe, helpers and docs), with the new checks/test_study.py and checks/preview_tests.cjs copied in and the core's current folder next to it. The preview run also had the refreshed checks/core_reference (the tests' reference data). WebGL2 preview (Chromium SwiftShader, 480 x 270 and 481 x 271) and plain Python only; nothing ran in TouchDesigner.",
+ "unit_tests_on_c94e849": {
+  "summary": [
+   "Ran 77 tests in 0.302s",
+   "FAILED (failures=15, errors=2)"
+  ],
+  "failing": {
+   "test_c8_object_size_scales_the_lengths_and_is_exact_at_1": {
+    "class": "FamilySync",
+    "kind": "ERROR",
+    "message": "AttributeError: Flowsize"
+   },
+   "test_demo_sphere_fits_to_the_defaults": {
+    "class": "FitFlow",
+    "kind": "ERROR",
+    "message": "KeyError: 'flow_size'"
+   },
+   "test_g1_object_size_follows_the_family_rule": {
+    "class": "FamilyClose",
+    "kind": "FAIL",
+    "message": "AssertionError: 1.45 != 1.0 within 9 places (0.44999999999999996 difference)"
+   },
+   "test_g2_centre_line_tie_break_comes_through_the_pixel_stage": {
+    "class": "FamilyClose",
+    "kind": "FAIL",
+    "message": "AssertionError: 'vec2 screenSign(vec2 ndc, vec2 ndcStep, vec2 depthStep, mat4 proj)' not found in '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nuniform sampler2D sRefraction;\\nuniform sampler2D sReflection;\\nuniform sampler2D sBackface;\\n\\n\\n\\nuniform vec4 uGlass;      \\nuniform vec4 uBody;       \\nuni"
+   },
+   "test_g3_film_swirl_0_wording_everywhere": {
+    "class": "FamilyClose",
+    "kind": "FAIL",
+    "message": "AssertionError: '// uFilm.w = 0 gives one film thickness over the whole object, which still' not found in '// Liquid Glass Flow: GLSL MAT pixel shader for TouchDesigner (GLSL 4.60).\\n//\\n// This is the Liquid Glass pixel shader (studies/liquid-glass, the core\\n// working tree after the family-sync m"
+   },
+   "test_g6_pick_render_runs_only_the_documented_picking_block": {
+    "class": "FamilyClose",
+    "kind": "FAIL",
+    "message": "AssertionError: '#ifdef TD_PICKING_ACTIVE' unexpectedly found in '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nuniform vec4 uFlow;        \\nuniform vec4 uFlowShape;   \\nuniform vec4 uFlowWave;    \\nuniform vec4 uFlowAxis;    \\nuniform vec4 uFlowSpace;   \\nuniform vec4 uFlowGravity; \\n\\n\\nout vec3 vWorldPos;     \\nou"
+   },
+   "test_c2_vertex_shader_answers_picking_with_the_moved_surface": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: Regex didn't match: '\\\\n#ifndef TD_PICKING_ACTIVE\\\\n[\\\\s\\\\S]*\\\\n#else\\\\s+TDWritePickingValues\\\\(\\\\);[\\\\s\\\\S]*\\\\n#endif\\\\n' not found in '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nuniform vec4 uFlow;        \\nuniform vec4 uFlowShape;   \\nuniform vec4 uFlowWave;    \\nuniform vec4 uFlowAxis;    \\nuni"
+   },
+   "test_c6_offsets_follow_the_measured_screen_orientation": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: 'vec2 orient = screenSign(ndc, ndcStep, depthStep, proj);' not found in '\\n    \\n    \\n    \\n    vec3 dPdx = dFdx(vWorldPos);\\n    vec3 dPdy = dFdy(vWorldPos);\\n    TDCheckDiscard();\\n\\n    mat4 proj = uTDMats[vCamIndex].proj;\\n    bool perspective = abs(proj[2][3]) > 0.5;\\n    vec3 "
+   },
+   "test_c8_object_size_is_setup_and_never_reset": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: Tuples differ: (1.0, 'Flow fit') != (0.6896551724137931, 'Flow fit')"
+   },
+   "test_g1_readme_says_what_film_swirl_0_does": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: 'valueNoise(vObjPos * uFilm.w * worldScale() + vec3(0.0, uPhase.w, 0.0))' not found in '\\n    float swirl = valueNoise(vObjPos * uFilm.w + vec3(0.0, uPhase.w, 0.0)) * 2.0 - 1.0;\\n    return uFilm.y * (1.0 + uFilm.z * swirl);'"
+   },
+   "test_r5_pixel_stage_hygiene": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: 2 != 6"
+   },
+   "test_r5_vertex_decides_a_zero_normal_before_transforming": {
+    "class": "FamilySync",
+    "kind": "FAIL",
+    "message": "AssertionError: 'vec3 worldNormal = dot(normal, normal) > 1e-12 ? TDDeformNorm(normal) : vec3(0.0);' not found in '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nuniform vec4 uFlow;        \\nuniform vec4 uFlowShape;   \\nuniform vec4 uFlowWave;    \\nuniform vec4 uFlowAxis;    \\nuniform vec4 uFlowSpace;   \\nuniform vec4"
+   },
+   "test_comp_bounds_fallback_and_notes": {
+    "class": "FitFlow",
+    "kind": "FAIL",
+    "message": "AssertionError: 2.5 != 0.3 within 12 places (2.2 difference)"
+   },
+   "test_uses_the_rendered_sop_bounds": {
+    "class": "FitFlow",
+    "kind": "FAIL",
+    "message": "AssertionError: 2.5 != 40.0"
+   },
+   "test_core_controls_kept": {
+    "class": "Recipe",
+    "kind": "FAIL",
+    "message": "AssertionError: 1.0 != 0.6896551724137931"
+   },
+   "test_core_reference_is_the_current_core": {
+    "class": "Recipe",
+    "kind": "FAIL",
+    "message": "AssertionError: 'ff296c8fc00321dc2410742d783f99e10043e7bef5d7041aadefbf2a9709144c' != 'b317d977126c78a242b9c71f3f6c262baedb640fbc2a544a938d0994246cb7eb'"
+   },
+   "test_pixel_shader_is_current_core_plus_documented_additions": {
+    "class": "Recipe",
+    "kind": "FAIL",
+    "message": "AssertionError: Lists differ: ['-//[262 chars]amily-sync merge, on commit 6a58487) with two'[911 chars]w);'] != ['-//[262 chars]amily close, on commit c94e849) with two', '+/[906 chars]w);']"
+   }
+  },
+  "note": "All 17 red tests are new or changed in the family close. FamilyClose: test_g1, test_g2, test_g3 and test_g6 fail; test_preprocessed_helper_follows_ifdef_ifndef_and_else passes (it tests the helper only). test_core_reference_is_the_current_core fails because c94e849 still held the c94e849 core shaders."
+ },
+ "preview_tests_on_c94e849": {
+  "ok": false,
+  "results": [
+   {
+    "name": "amplitude0_matches_core",
+    "ok": false,
+    "evidence": {
+     "worst_max_difference": 241,
+     "new_rows": [
+      {
+       "preset": "aqua_jelly",
+       "mesh": "torus",
+       "comp_scale": 3,
+       "object_size": 3,
+       "max": 220,
+       "pixelsOver2": 22222
+      },
+      {
+       "preset": "oil_slick",
+       "mesh": "torus",
+       "comp_scale": 3,
+       "object_size": 3,
+       "max": 241,
+       "pixelsOver2": 23456
+      },
+      {
+       "preset": "prism_chrome",
+       "mesh": "torus",
+       "comp_scale": 3,
+       "object_size": 3,
+       "max": 205,
+       "pixelsOver2": 21775
+      },
+      {
+       "preset": "prism_chrome",
+       "mesh": "torus",
+       "odd_size_flipped_raster": "481x271",
+       "max": 62,
+       "pixelsOver2": 90
+      },
+      {
+       "preset": "chrome_type",
+       "mesh": "torus",
+       "odd_size_flipped_raster": "481x271",
+       "max": 65,
+       "pixelsOver2": 89
+      },
+      {
+       "preset": "sapphire_drop",
+       "mesh": "torus",
+       "odd_size_flipped_raster": "481x271",
+       "max": 58,
+       "pixelsOver2": 102
+      }
+     ]
+    }
+   },
+   {
+    "name": "fit_size_carries_presets_over_comp_scale",
+    "ok": false,
+    "evidence": {
+     "aqua_jelly_normal": {
+      "comp_scale_0_1": {
+       "max": 245,
+       "pixelsOver8": 28403,
+       "p99OfAllPixels": 180
+      },
+      "comp_scale_10": {
+       "max": 249,
+       "pixelsOver8": 74376,
+       "p99OfAllPixels": 245
+      }
+     },
+     "oil_slick_film": {
+      "comp_scale_0_1": {
+       "max": 255,
+       "pixelsOver8": 22961,
+       "p99OfAllPixels": 246
+      },
+      "comp_scale_10": {
+       "max": 254,
+       "pixelsOver8": 27663,
+       "p99OfAllPixels": 237
+      }
+     },
+     "aqua_jelly_final": {
+      "comp_scale_0_1": {
+       "max": 250,
+       "pixelsOver8": 27530,
+       "p99OfAllPixels": 192
+      },
+      "comp_scale_10": {
+       "max": 250,
+       "pixelsOver8": 72995,
+       "p99OfAllPixels": 250
+      }
+     },
+     "oil_slick_final": {
+      "comp_scale_0_1": {
+       "max": 250,
+       "pixelsOver8": 22764,
+       "p99OfAllPixels": 198
+      },
+      "comp_scale_10": {
+       "max": 250,
+       "pixelsOver8": 27644,
+       "p99OfAllPixels": 198
+      }
+     },
+     "prism_chrome_final": {
+      "comp_scale_0_1": {
+       "max": 250,
+       "pixelsOver8": 21786,
+       "p99OfAllPixels": 221
+      },
+      "comp_scale_10": {
+       "max": 250,
+       "pixelsOver8": 47909,
+       "p99OfAllPixels": 249
+      }
+     },
+     "frosted_ice_final": {
+      "comp_scale_0_1": {
+       "max": 250,
+       "pixelsOver8": 6845,
+       "p99OfAllPixels": 31
+      },
+      "comp_scale_10": {
+       "max": 250,
+       "pixelsOver8": 15040,
+       "p99OfAllPixels": 107
+      }
+     }
+    }
+   },
+   {
+    "name": "screen_orientation_has_no_wrong_pixels",
+    "ok": false,
+    "evidence": {
+     "sphere_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 0
+     },
+     "sphere_flipped_raster_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 1
+     },
+     "torus_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 0
+     },
+     "torus_flipped_raster_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 1
+     },
+     "knot_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 1
+     },
+     "knot_flipped_raster_480x270": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 0
+     },
+     "sphere_481x271": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 1
+     },
+     "sphere_flipped_raster_481x271": {
+      "single_sample_wrong": 2016,
+      "of_them_on_a_centre_line": 2016,
+      "multisampled_wrong": 2023
+     },
+     "torus_481x271": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 0
+     },
+     "torus_flipped_raster_481x271": {
+      "single_sample_wrong": 1932,
+      "of_them_on_a_centre_line": 1932,
+      "multisampled_wrong": 1950
+     },
+     "knot_481x271": {
+      "single_sample_wrong": 0,
+      "of_them_on_a_centre_line": 0,
+      "multisampled_wrong": 0
+     },
+     "knot_flipped_raster_481x271": {
+      "single_sample_wrong": 1998,
+      "of_them_on_a_centre_line": 1998,
+      "multisampled_wrong": 2028
+     }
+    }
+   }
+  ],
+  "note": "fit_size_carries_presets_over_comp_scale sets Object size to k x default as the delivered Fit does; on c94e849 that also scales the motion (one size for both), hence 245 to 255/255. c94e849_own_fit below runs the same cases at what c94e849's Fit sets on a COMP-scaled object (Object size unchanged)."
+ },
+ "c94e849_own_fit": {
+  "material": "c94e849",
+  "object_size": "unchanged (what that version's Fit sets on a COMP-scaled object)",
+  "cases": {
+   "aqua_jelly_normal": {
+    "comp_scale_0_1": {
+     "max": 1,
+     "pixelsOver8": 0
+    },
+    "comp_scale_10": {
+     "max": 1,
+     "pixelsOver8": 0
+    }
+   },
+   "oil_slick_film": {
+    "comp_scale_0_1": {
+     "max": 1,
+     "pixelsOver8": 0
+    },
+    "comp_scale_10": {
+     "max": 1,
+     "pixelsOver8": 0
+    }
+   },
+   "aqua_jelly_final": {
+    "comp_scale_0_1": {
+     "max": 177,
+     "pixelsOver8": 19608
+    },
+    "comp_scale_10": {
+     "max": 171,
+     "pixelsOver8": 17766
+    }
+   },
+   "oil_slick_final": {
+    "comp_scale_0_1": {
+     "max": 34,
+     "pixelsOver8": 12438
+    },
+    "comp_scale_10": {
+     "max": 30,
+     "pixelsOver8": 9609
+    }
+   },
+   "prism_chrome_final": {
+    "comp_scale_0_1": {
+     "max": 247,
+     "pixelsOver8": 20210
+    },
+    "comp_scale_10": {
+     "max": 209,
+     "pixelsOver8": 18406
+    }
+   },
+   "frosted_ice_final": {
+    "comp_scale_0_1": {
+     "max": 138,
+     "pixelsOver8": 20679
+    },
+    "comp_scale_10": {
+     "max": 183,
+     "pixelsOver8": 20157
+    }
+   }
+  }
+ },
+ "changed_preview_tests_on_c94e849": {
+  "date": "2026-11-02",
+  "scope": "Verifier fixes after the family close (review.md, FLOW-V2). The same c94e849 copy as above (its shaders, recipe, helpers and docs), rebuilt in the session scratchpad (agents/close-verify-fix/red), with today's checks/test_study.py, checks/preview_tests.cjs and checks/core_reference copied in and the core's and Lit's current folders next to it. Every preview test whose code the family close changed and that the run above did not cover: TESTS=normals_match_finite_differences,motion_matches_float64_reference,wobble_independent_of_object_scale,faceted_fallback_is_scale_free,frost_does_not_shift_the_view,frost_converges_with_samples,dispersion_converges_with_samples,backface_thickness_matches_chord,opaque_scene_matches_pre_sync,object_size_carries_presets_over,film_swirl_frequency_0_is_one_drifting_thickness node checks/preview_tests.cjs PORT. WebGL2 preview (Chromium SwiftShader, 480 x 270), 169 s. Nothing ran in TouchDesigner.",
+  "summary": {
+   "red": [
+    "normals_match_finite_differences",
+    "motion_matches_float64_reference",
+    "wobble_independent_of_object_scale",
+    "faceted_fallback_is_scale_free"
+   ],
+   "green": [
+    "frost_does_not_shift_the_view",
+    "frost_converges_with_samples",
+    "dispersion_converges_with_samples",
+    "backface_thickness_matches_chord",
+    "backface_pass_adds_no_dark_fringe",
+    "opaque_scene_matches_pre_sync",
+    "object_size_carries_presets_over",
+    "film_swirl_frequency_0_is_one_drifting_thickness"
+   ]
+  },
+  "results": [
+   {
+    "name": "normals_match_finite_differences",
+    "ok": false,
+    "why": "red: shares its block with motion_matches_float64_reference, whose float64 reference now reads Flow size (the motion's size since G1); c94e849 has no Flow size, so the reference has no size and every error is null.",
+    "evidence": {
+     "tolerance_deg": {
+      "every_case": 0.5,
+      "squeezed_chrome_type_amplitude_0_5": 1
+     },
+     "displace_along": "centre",
+     "reference": "float64 central differences of the moved surface (checks/flow_reference.cjs)",
+     "cases": {
+      "busy": {
+       "flow_time": 0.9,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "busy_rotated_nonuniform_scale": {
+       "flow_time": 0.9,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "finest_scales": {
+       "flow_time": 0.9,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "waves_own_direction": {
+       "flow_time": 1.35,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "sag_and_drip": {
+       "flow_time": 2.25,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "instance_7_variation_1": {
+       "flow_time": 0.9,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "model_x10_off_origin": {
+       "flow_time": 0.9,
+       "mean": 0.00785,
+       "p99": 0.0503,
+       "max": 0.0739,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": 0.677,
+        "under_a_quarter": 0
+       }
+      },
+      "after_24_hours": {
+       "flow_time": 38880,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "after_1_week_speed_0_9": {
+       "flow_time": 544320,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      },
+      "squeezed_chrome_type_amplitude_0_5": {
+       "flow_time": 2,
+       "mean": null,
+       "p99": null,
+       "max": null,
+       "normals_over_5_deg": 0,
+       "area_ratio": {
+        "min": null,
+        "under_a_quarter": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "motion_matches_float64_reference",
+    "ok": false,
+    "why": "red: the float64 reference reads Flow size, the motion's size since G1; c94e849 has no such control.",
+    "evidence": {
+     "tolerance": {
+      "position_object_sizes": 0.001,
+      "vflow": 0.01
+     },
+     "cases": {
+      "busy": {
+       "vertices": 8385,
+       "flow_time": 0.9,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "busy_rotated_nonuniform_scale": {
+       "vertices": 8385,
+       "flow_time": 0.9,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "finest_scales": {
+       "vertices": 8385,
+       "flow_time": 0.9,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "waves_own_direction": {
+       "vertices": 8385,
+       "flow_time": 1.35,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "sag_and_drip": {
+       "vertices": 8385,
+       "flow_time": 2.25,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "instance_7_variation_1": {
+       "vertices": 8385,
+       "flow_time": 0.9,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "model_x10_off_origin": {
+       "vertices": 8385,
+       "flow_time": 0.9,
+       "position_error_object_sizes": {
+        "mean": 4.16e-06,
+        "p99": 1.43e-05,
+        "max": 1.48e-05
+       },
+       "vflow_error": {
+        "mean": 2.77e-05,
+        "p99": 9.54e-05,
+        "max": 9.87e-05
+       }
+      },
+      "after_24_hours": {
+       "vertices": 8385,
+       "flow_time": 38880,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "after_1_week_speed_0_9": {
+       "vertices": 8385,
+       "flow_time": 544320,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      },
+      "squeezed_chrome_type_amplitude_0_5": {
+       "vertices": 8385,
+       "flow_time": 2,
+       "position_error_object_sizes": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       },
+       "vflow_error": {
+        "mean": null,
+        "p99": null,
+        "max": null
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "wobble_independent_of_object_scale",
+    "ok": false,
+    "why": "red: sets Object size to the COMP scale x the default, as Fit now sets it; on c94e849 Object size also scaled the motion.",
+    "evidence": {
+     "scale01": {
+      "max": 245,
+      "pixelsOver8": 28403,
+      "p99OfAllPixels": 180
+     },
+     "scale10": {
+      "max": 249,
+      "pixelsOver8": 74376,
+      "p99OfAllPixels": 245
+     }
+    }
+   },
+   {
+    "name": "faceted_fallback_is_scale_free",
+    "ok": false,
+    "why": "red: the same change as wobble_independent_of_object_scale.",
+    "evidence": {
+     "max": 243,
+     "pixelsOver8": 20572,
+     "p99OfAllPixels": 107
+    }
+   },
+   {
+    "name": "frost_does_not_shift_the_view",
+    "ok": true,
+    "why": "green by design: changed only to pin Object size 1 (AT_REFERENCE_SIZE), so it measures what it measured at c94e849.",
+    "evidence": [
+     {
+      "samples": 12,
+      "pixels": 10000,
+      "meanShiftPixels": 1.198
+     },
+     {
+      "samples": 24,
+      "pixels": 10000,
+      "meanShiftPixels": 0.138
+     }
+    ]
+   },
+   {
+    "name": "frost_converges_with_samples",
+    "ok": true,
+    "why": "green by design: pinned to Object size 1 (AT_REFERENCE_SIZE).",
+    "evidence": {
+     "max": 19,
+     "pixelsOver16": 118,
+     "p99OfAllPixels": 12
+    }
+   },
+   {
+    "name": "dispersion_converges_with_samples",
+    "ok": true,
+    "why": "green by design: pinned to Object size 1 (AT_REFERENCE_SIZE).",
+    "evidence": {
+     "clear_crystal_thickness_preset": {
+      "glass_pixels": 19234,
+      "mean": 0.46,
+      "max": 3,
+      "pixelsOver32": 0
+     },
+     "clear_crystal_thickness_2.5": {
+      "glass_pixels": 20503,
+      "mean": 2.02,
+      "max": 14,
+      "pixelsOver32": 0
+     },
+     "prism_chrome_thickness_preset": {
+      "glass_pixels": 19937,
+      "mean": 0.54,
+      "max": 4,
+      "pixelsOver32": 0
+     },
+     "prism_chrome_thickness_2.5": {
+      "glass_pixels": 20861,
+      "mean": 1.57,
+      "max": 10,
+      "pixelsOver32": 0
+     }
+    }
+   },
+   {
+    "name": "backface_thickness_matches_chord",
+    "ok": true,
+    "why": "green by design: pinned to Object size 1 (AT_REFERENCE_SIZE).",
+    "evidence": {
+     "camera_4_units": [
+      {
+       "x": 240,
+       "expected": 127.5,
+       "measured": 127,
+       "chord": 1.9999
+      },
+      {
+       "x": 260,
+       "expected": 123.4,
+       "measured": 123,
+       "chord": 1.9359
+      },
+      {
+       "x": 280,
+       "expected": 110.9,
+       "measured": 111,
+       "chord": 1.7397
+      },
+      {
+       "x": 295,
+       "expected": 94.5,
+       "measured": 94,
+       "chord": 1.482
+      },
+      {
+       "x": 304,
+       "expected": 80.3,
+       "measured": 80,
+       "chord": 1.2601
+      }
+     ],
+     "camera_50_units": [
+      {
+       "x": 240,
+       "expected": 255,
+       "measured": 255,
+       "chord": 1.9999
+      },
+      {
+       "x": 248,
+       "expected": 253.6,
+       "measured": 254,
+       "chord": 1.989
+      },
+      {
+       "x": 256,
+       "expected": 249.7,
+       "measured": 250,
+       "chord": 1.9585
+      },
+      {
+       "x": 264,
+       "expected": 243.2,
+       "measured": 243,
+       "chord": 1.9074
+      },
+      {
+       "x": 272,
+       "expected": 233.8,
+       "measured": 234,
+       "chord": 1.834
+      },
+      {
+       "x": 280,
+       "expected": 221.3,
+       "measured": 221,
+       "chord": 1.7354
+      },
+      {
+       "x": 288,
+       "expected": 204.9,
+       "measured": 205,
+       "chord": 1.6071
+      },
+      {
+       "x": 296,
+       "expected": 183.7,
+       "measured": 184,
+       "chord": 1.4411
+      },
+      {
+       "x": 304,
+       "expected": 155.8,
+       "measured": 156,
+       "chord": 1.2223
+      }
+     ],
+     "orthographic": [
+      {
+       "x": 240,
+       "expected": 255,
+       "measured": 255,
+       "chord": 1.9999
+      },
+      {
+       "x": 255,
+       "expected": 251.2,
+       "measured": 251,
+       "chord": 1.9701
+      },
+      {
+       "x": 270,
+       "expected": 239.9,
+       "measured": 240,
+       "chord": 1.8816
+      },
+      {
+       "x": 285,
+       "expected": 220,
+       "measured": 220,
+       "chord": 1.7256
+      },
+      {
+       "x": 300,
+       "expected": 188.8,
+       "measured": 189,
+       "chord": 1.4807
+      },
+      {
+       "x": 315,
+       "expected": 138.8,
+       "measured": 139,
+       "chord": 1.0885
+      },
+      {
+       "x": 322,
+       "expected": 101.9,
+       "measured": 102,
+       "chord": 0.7992
+      }
+     ]
+    }
+   },
+   {
+    "name": "backface_pass_adds_no_dark_fringe",
+    "ok": true,
+    "why": "not changed; it runs in the same block as backface_thickness_matches_chord, so it ran too.",
+    "evidence": {
+     "max": 0,
+     "pixelsOver2": 0
+    }
+   },
+   {
+    "name": "opaque_scene_matches_pre_sync",
+    "ok": true,
+    "why": "green by design: pinned to Object size 1 (AT_REFERENCE_SIZE).",
+    "evidence": {
+     "clear_crystal": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "prism_chrome": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "violet_gel": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "sapphire_drop": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "chrome_type": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "frosted_ice": {
+      "max": 1,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "amber_honey": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "emerald_bottle": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "rose_quartz": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "liquid_mercury": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 1,
+      "centreLineMax": 8
+     },
+     "oil_slick": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "aqua_jelly": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "prism_chrome_backface_pass": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "violet_gel_backface_pass": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "sapphire_drop_backface_pass": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     },
+     "aqua_jelly_backface_pass": {
+      "max": 0,
+      "alphaMax": 0,
+      "centreLinePixelsOver1": 0,
+      "centreLineMax": 0
+     }
+    }
+   },
+   {
+    "name": "object_size_carries_presets_over",
+    "ok": true,
+    "why": "green: changed to set both sizes to k x their defaults, as Fit now does; on c94e849 one size (default 1) did both jobs, so the same values result and the property holds there too.",
+    "evidence": {
+     "prism_chrome": {
+      "size_0_1": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      },
+      "size_10": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      }
+     },
+     "frosted_ice": {
+      "size_0_1": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      },
+      "size_10": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      }
+     },
+     "amber_honey": {
+      "size_0_1": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      },
+      "size_10": {
+       "max": 1,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      }
+     },
+     "sapphire_drop": {
+      "size_0_1": {
+       "max": 2,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      },
+      "size_10": {
+       "max": 2,
+       "pixelsOver8": 0,
+       "p99OfAllPixels": 0
+      }
+     }
+    }
+   },
+   {
+    "name": "film_swirl_frequency_0_is_one_drifting_thickness",
+    "ok": true,
+    "why": "green by design: pinned to Object size 1 (the default swirl 2.5).",
+    "evidence": {
+     "swirl_0_at_2s": {
+      "sheet_pixels": 46816,
+      "colour_range": 0,
+      "colour": [
+       243,
+       254,
+       221
+      ]
+     },
+     "swirl_0_at_30s": {
+      "sheet_pixels": 46816,
+      "colour_range": 0,
+      "colour": [
+       189,
+       218,
+       16
+      ]
+     },
+     "swirl_2_5_at_2s": {
+      "sheet_pixels": 46816,
+      "colour_range": 255,
+      "colour": [
+       0,
+       0,
+       0
+      ]
+     },
+     "swirl_0_from_2s_to_30s": {
+      "sheet_pixels": 46816,
+      "max": 205,
+      "pixels_over_2": 46816
+     },
+     "swirl_0_wobble_speed_0_from_2s_to_30s": {
+      "sheet_pixels": 46816,
+      "max": 0,
+      "pixels_over_2": 0
+     }
+    }
+   }
+  ]
+ }
+}

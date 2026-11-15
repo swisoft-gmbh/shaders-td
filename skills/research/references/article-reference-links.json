@@ -1,0 +1,3989 @@
+{
+  "scope": "Links literally present in bundled articles; links are not a claim that target contents are bundled or currently reachable.",
+  "references": [
+    {
+      "url": "http://alex-charlton.com/posts/Dithering_on_the_GPU/",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 492
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 31
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 441
+        }
+      ]
+    },
+    {
+      "url": "http://barradeau.com/blog/?p=621",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 814
+        }
+      ]
+    },
+    {
+      "url": "http://blog.hvidtfeldts.net/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "http://caffeineowl.com/graphics/2d/vectorial/bezierintro.html",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "url": "http://www.anaesthetist.com/mnm/fonts/Findex.htm#index.htm",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 349
+        }
+      ]
+    },
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 308
+        }
+      ]
+    },
+    {
+      "url": "https://27-b.com",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 790
+        }
+      ]
+    },
+    {
+      "url": "https://adamwathan.me/composing-the-uncomposable-with-css-variables/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "url": "https://alien.js.org/examples/three/shader_hologram.html",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 506
+        }
+      ]
+    },
+    {
+      "url": "https://app.spline.design/@heyvlad",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 40
+        },
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 862
+        }
+      ]
+    },
+    {
+      "url": "https://atmos.leeroy.ca/",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 628
+        }
+      ]
+    },
+    {
+      "url": "https://basement.studio/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "url": "https://blog.demofox.org/2020/05/10/ray-marching-fog-with-blue-noise/",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 495
+        }
+      ]
+    },
+    {
+      "url": "https://bradfrost.com/blog/post/design-system-versioning-single-library-or-individual-components/",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 532
+        }
+      ]
+    },
+    {
+      "url": "https://brandon.nguyen.vc/attractors/thomas/",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1131
+        }
+      ]
+    },
+    {
+      "url": "https://bsky.app/profile/hmans.dev",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 35
+        },
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 885
+        }
+      ]
+    },
+    {
+      "url": "https://bth.diva-portal.org/smash/get/diva2%3A1888104/FULLTEXT02.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1459
+        }
+      ]
+    },
+    {
+      "url": "https://calmaria.app/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "url": "https://cdn.maximeheckel.com/noises/noise1.png",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 758
+        }
+      ]
+    },
+    {
+      "url": "https://cdn.maximeheckel.com/videos/blog/atmosphere-compilation-compressed.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "url": "https://cdn.maximeheckel.com/videos/blog/blob_tracking_omer.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 289
+        }
+      ]
+    },
+    {
+      "url": "https://cdn.maximeheckel.com/videos/blog/halftone-compilation-compressed.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "url": "https://cdn.maximeheckel.com/videos/blog/shading-motion-compressed.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "url": "https://chronicles.basement.studio/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "url": "https://codesandbox.io/s/framer-motion-5-drag-to-reorder-tabs-zd2q7?from-embed",
+      "occurrences": [
+        {
+          "source_id": "articles/framer-motion-layout-animations.mdx",
+          "line": 446
+        }
+      ]
+    },
+    {
+      "url": "https://computergraphics.stackexchange.com/questions/1502/why-is-the-transposed-inverse-of-the-model-view-matrix-used-to-transform-the-nor",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 279
+        }
+      ]
+    },
+    {
+      "url": "https://config.figma.com/san-francisco/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "url": "https://core.ac.uk/download/pdf/148194268.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "url": "https://css-transitions-sandbox-narendras.vercel.app/",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 357
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/attractor.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 573
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/clouds.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/curl.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/dispersionlogo.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/dithered-blob.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 519
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/dithered-clouds.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 509
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/glass-webgpu.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/habitat-demo.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 307
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/kuwahara_tree.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/linear-finite-scene.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 447
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/moebius-demo.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/moebius-webgpu.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1333
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/overlap.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/framer-motion-layout-animations.mdx",
+          "line": 321
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/portfolio-render-target.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/post-processing-creative-medium.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/raymarching-compilation.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/release-design-system.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 647
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/retro.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/shader-moving-plane.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "url": "https://d2xl4m2ghaywko.cloudfront.net/volumetric-lighting.mp4",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "url": "https://derivative.ca/",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "url": "https://designcode.io/swiftui?promo=learnswiftui",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 594
+        }
+      ]
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_model_view_projection",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1499
+        }
+      ]
+    },
+    {
+      "url": "https://developer.nvidia.com/gpugems/gpugems2/part-ii-shading-lighting-and-shadows/chapter-16-accurate-atmospheric-scattering",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 804
+        }
+      ]
+    },
+    {
+      "url": "https://discord.com/invite/poimandres",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "url": "https://discourse.threejs.org/t/calculating-vertex-normals-after-displacement-in-the-vertex-shader/16989",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 719
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 432
+        }
+      ]
+    },
+    {
+      "url": "https://discourse.threejs.org/u/marcofugaro/summary",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 715
+        }
+      ]
+    },
+    {
+      "url": "https://discoverthreejs.com/book/first-steps/first-scene/",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 282
+        }
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 642
+        }
+      ]
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d4/d70/tutorial_anisotropic_image_segmentation_by_a_gst.html",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 40
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 693
+        }
+      ]
+    },
+    {
+      "url": "https://docs.pmnd.rs/react-postprocessing/introduction",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "url": "https://docs.pmnd.rs/react-three-fiber/api/objects#piercing-into-nested-properties",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 288
+        }
+      ]
+    },
+    {
+      "url": "https://docs.swmansion.com/TypeGPU/",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1428
+        }
+      ]
+    },
+    {
+      "url": "https://drive.google.com/file/d/1oDLiOOQMdL3RxH-znKhETN5ioHCGa354/view",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 526
+        }
+      ]
+    },
+    {
+      "url": "https://duncanleung.com/learn/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 161
+        },
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "url": "https://efecto.app/",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "url": "https://egghead.io/playlists/introduction-to-next-js-9-9c01",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "url": "https://elib.dlr.de/86477/1/Collienne_GI_VRAR_2013.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 810
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Attractor",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 568
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 838
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 624
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bicubic_interpolation",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 568
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Framebuffer_object",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 568
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gaussian_blur",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 715
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jean_Giraud",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Moir%C3%A9_pattern",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 712
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Quadratic_equation",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 629
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Refractive_index",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sine_and_cosine",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 175
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Thomas%27_cyclically_symmetric_attractor",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1196
+        }
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Trompe-l",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "url": "https://epicreact.dev/css-variables/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "url": "https://geomancer.kenny.wtf",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "url": "https://github.com",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 507
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Lunakepio#featured-projects",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/ProgressBar.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 531
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/27074d0d3c390dff3aa50c1cdf96944b98bd72e0/gatsby-theme-maximeheckel/components/TableOfContent/TableOfContent.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 518
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/3c8291d96bd9069d22bdcf26436abc75b7386a04/core/components/MDX/custom/Widgets/FramerMotionAnimatePresence.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+          "line": 341
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/4ce1571e758dc1bae6eeb1bf7607e56de1405faf/core/components/MDX/Widgets/FramerMotionLayoutAnimations/AdvanceReorderExample.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/framer-motion-layout-animations.mdx",
+          "line": 436
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/afe3cd40fb51989e52a6d2a474506ed668dbad54/core/components/MDX/Widgets/AtmosphericScattering/lut.ts",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1142
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/b5429b983bdc3cedd24a021f6f2fb932df57514e/core/components/MDX/custom/Widgets/FramerMotionAnimationLayout.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+          "line": 342
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/next/lib/mdx.ts",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 466
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/design-system",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/design-system/blob/main/.github/workflows/release.yml",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 664
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/gatsby-theme-maximeheckel",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/gatsby-theme-maximeheckel/blob/main/src/components/Button/CommandCenterButton.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 513
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/gatsby-theme-maximeheckel/blob/main/src/components/Button/LightDarkSwitcher.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 512
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/linear-vaporwave-react-three-fiber",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 715
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/MaximeHeckel/linear-vaporwave-three.js",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 715
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/N8python/caustics",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Spiri0/three.js/blob/aa60b0cca42da40b489070a135d4a23459bad59e/src/nodes/gpgpu/ComputeNode.js#L214",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1509
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1510
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Spiri0/three.js/blob/aa60b0cca42da40b489070a135d4a23459bad59e/src/renderers/webgpu/WebGPUBackend.js#L1356-L1387",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1519
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1520
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/dmnsgn/glsl-rotate",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 527
+        },
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 440
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/evanw/esbuild",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 548
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/glslify/glslify-loader",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 81
+        },
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 82
+        },
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 71
+        },
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/hughsk/glsl-noise",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 469
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/hughsk/glsl-noise/blob/master/classic/3d.glsl",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 728
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/jake-low/remark-sectionize/blob/master/index.js",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 415
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/modulz/stitches",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 183
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/5f3a718d58a01c170215a00aab95b86b686816e5/src/renderers/webgpu/nodes/WGSLNodeBuilder.js#L1118-L1133",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 952
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/9e7a65c17bc3832798103190df8f674b9acca073/examples/webgpu_mrt.html#L107",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1216
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/9e7a65c17bc3832798103190df8f674b9acca073/src/nodes/display/PassNode.js#L162",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1529
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1530
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshlambert.glsl.js",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshnormal.glsl.js",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 114
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/blob/dev/src/renderers/shaders/ShaderLib/meshphysical.glsl.js",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/pull/21358",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 604
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/pull/31402",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 984
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/mrdoob/three.js/wiki/Three.js-Shading-Language",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/patriciogonzalezvivo/lygia",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 897
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/drei#rendertexture",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/drei#usefbo",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 785
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/drei/blob/master/src/core/Fbo.tsx",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/drei?tab=readme-ov-file#caustics",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/lamina",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 541
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/lamina#writing-your-own-layers",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 551
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/lamina/blob/main/README.md",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 547
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/postprocessing/wiki/Custom-Effects",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 171
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/postprocessing/wiki/Custom-Effects#effect-attributes",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 1063
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/postprocessing/wiki/Effect-Merging",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/pmndrs/react-three-fiber",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 786
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/remarkjs/remark",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 410
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/takram-design-engineering/three-geospatial",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 46
+        },
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1156
+        }
+      ]
+    },
+    {
+      "url": "https://habitat.kenny.wtf/",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 304
+        }
+      ]
+    },
+    {
+      "url": "https://help.otoy.com/hc/en-us/articles/14458811751067-Caustics-and-the-Photon-Tracing-Kernel",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 38
+        },
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "url": "https://https://www.shadertoy.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 45
+        },
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/derivative/",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 44
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 342
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/distfunctions/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 127
+        },
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 1075
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/fog/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 842
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/intersectors/",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 595
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/menger/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 588
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/morenoise/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 727
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/normalsSDF/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 325
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/rmshadows/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 346
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/smin/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 429
+        }
+      ]
+    },
+    {
+      "url": "https://iquilezles.org/articles/warp/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 495
+        }
+      ]
+    },
+    {
+      "url": "https://itnext.io/1v1-scroll-listener-vs-intersection-observers-469a26ab9eb6",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "url": "https://leva.pmnd.rs/?path=/story/plugins-bezier--default-bezier",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 340
+        }
+      ]
+    },
+    {
+      "url": "https://linear-vaporwave-three-js.vercel.app/",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 36
+        },
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "url": "https://linear-vaporwave-three-js.vercel.app/grid",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 328
+        }
+      ]
+    },
+    {
+      "url": "https://linear.app/releases/2021-06",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 34
+        },
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 288
+        }
+      ]
+    },
+    {
+      "url": "https://lunakepio.github.io/Mario-Kart-3.js/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://maththebeautiful.com/dot-product/",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 483
+        }
+      ]
+    },
+    {
+      "url": "https://maximeheckel.com",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 55
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "url": "https://media.contentapi.ea.com/content/dam/eacom/frostbite/files/s2016-pbs-frostbite-sky-clouds-new.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 241
+        }
+      ]
+    },
+    {
+      "url": "https://medium.com/@bragg/cubic-bezier-curves-with-svg-paths-a326bb09616f",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 339
+        }
+      ]
+    },
+    {
+      "url": "https://medium.com/@evanwallace/rendering-realtime-caustics-in-webgl-2a99a29a0b2c",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 36
+        },
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 260
+        }
+      ]
+    },
+    {
+      "url": "https://medium.com/@josh.sideris/mastering-thread-calculations-in-webgpu-workgroup-size-count-and-thread-identification-6b44a87a4764",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1015
+        }
+      ]
+    },
+    {
+      "url": "https://mini.gmshaders.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 537
+        }
+      ]
+    },
+    {
+      "url": "https://mini.gmshaders.com/p/gm-shaders-mini-crt",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 32
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 535
+        }
+      ]
+    },
+    {
+      "url": "https://mofu-dev.com",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "url": "https://mofu-dev.com/blog/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "url": "https://monopo.london/",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 467
+        }
+      ]
+    },
+    {
+      "url": "https://next.junni.co.jp/",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 402
+        },
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 402
+        }
+      ]
+    },
+    {
+      "url": "https://ninedegreesbelow.com/photography/srgb-luminance.html",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 479
+        }
+      ]
+    },
+    {
+      "url": "https://offscreencanvas.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "url": "https://opencv.org/",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 644
+        }
+      ]
+    },
+    {
+      "url": "https://paper.design/",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "url": "https://paper.design/blog/retro-print-cmyk-halftone-shader",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 505
+        }
+      ]
+    },
+    {
+      "url": "https://patriciogonzalezvivo.github.io/glslGallery/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 198
+        }
+      ]
+    },
+    {
+      "url": "https://pbr-book.org/3ed-2018/Volume_Scattering/Phase_Functions",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 802
+        }
+      ]
+    },
+    {
+      "url": "https://ped.ro/writing/variant-driven-components",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 187
+        }
+      ]
+    },
+    {
+      "url": "https://piccalil.li/quick-tip/visually-hidden/",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 341
+        }
+      ]
+    },
+    {
+      "url": "https://r105.threejsfundamentals.org/threejs/lessons/threejs-rendertargets.html",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 788
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.docs.pmnd.rs/api/hooks#taking-over-the-render-loop",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1539
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.docs.pmnd.rs/tutorials/v9-migration-guide#async-gl-prop",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1479
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 49
+        },
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 646
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/attractor",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 570
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/blob-tracking-2",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 592
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/crochet",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 535
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/dithered-waves",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 495
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 501
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/dithered-waves-2",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 501
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/fluted-glass",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 648
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/lego",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 602
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/moebius",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 913
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/motion-tracking-2",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 276
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/motion-tracking-3",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 798
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/pixel-loading",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 739
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/pixel-statue",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 452
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/planet",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 627
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/portal",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 498
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/receipt",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/refraction",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 425
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/sdf3",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 552
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/sdf4",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 449
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/sdf6",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 714
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/blob",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1433
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/brush",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1434
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/caustics",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1435
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/columns",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1436
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/glass",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 45
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1437
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/gpgpu",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1438
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/infinity",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1439
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/moebius",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1440
+        }
+      ]
+    },
+    {
+      "url": "https://r3f.maximeheckel.com/webgpu/terrain-compute",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1441
+        }
+      ]
+    },
+    {
+      "url": "https://rauno.me/craft/contrasting-aesthetics",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 298
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 505
+        }
+      ]
+    },
+    {
+      "url": "https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 605
+        }
+      ]
+    },
+    {
+      "url": "https://richardmattka.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 550
+        }
+      ]
+    },
+    {
+      "url": "https://rubendv.be/posts/fwidth/",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 702
+        }
+      ]
+    },
+    {
+      "url": "https://sams-receipt.vercel.app",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "url": "https://sebh.github.io/publications/egsr2020.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 47
+        },
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 823
+        }
+      ]
+    },
+    {
+      "url": "https://semantic-release.gitbook.io/semantic-release/",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 662
+        }
+      ]
+    },
+    {
+      "url": "https://serverless.com/learn/courses/serverless-for-frontend-developers/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://serverlesshandbook.dev/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://shadertoy.com",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "url": "https://simondev.teachable.com/courses",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "url": "https://sketchfab.com/3d-models/rusty-spaceship-orange-18541ebed6ce44a9923f9b8dc30d87f5",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 917
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "https://sketchfab.com/3d-models/teenage-engineering-tp-7-4a5a271d00164d1b81bb4451a065c085",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "url": "https://sketchfab.com/3d-models/the-creation-of-adam-4d1727c7b83e4e6284bbadb63dbb537e",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://sketchfab.com/3d-models/venus-de-milo-statuestexturingchallenge-smk-2983d92ac4e744f485492580ca7629f2",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "url": "https://sketchfab.com/sousinho",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 917
+        }
+      ]
+    },
+    {
+      "url": "https://space-scene-sandbox.vercel.app/",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 37
+        },
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 885
+        }
+      ]
+    },
+    {
+      "url": "https://spline.design",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 543
+        }
+      ]
+    },
+    {
+      "url": "https://stackoverflow.com/a/43119909/2059960",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 584
+        }
+      ]
+    },
+    {
+      "url": "https://stackoverflow.com/a/53951172",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 822
+        },
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 578
+        }
+      ]
+    },
+    {
+      "url": "https://stackoverflow.com/questions/13654401/why-transform-normals-with-the-transpose-of-the-inverse-of-the-modelview-matrix",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 279
+        }
+      ]
+    },
+    {
+      "url": "https://swr.now.sh/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "url": "https://t.co/QDqIxyzflj",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 759
+        }
+      ]
+    },
+    {
+      "url": "https://tailwindcss.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "url": "https://taylorpetrick.com/portfolio/webgl/lense",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 522
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 216
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 646
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com/11/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 460
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com/13/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 44
+        },
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 629
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com/glossary/?search=fract",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 692
+        }
+      ]
+    },
+    {
+      "url": "https://thebookofshaders.com/glossary/?search=mix",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 210
+        }
+      ]
+    },
+    {
+      "url": "https://threejs-journey.com",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "url": "https://threejs-journey.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/#api/en/core/Layers",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 506
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/#api/en/materials/PointsMaterial",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 210
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/#api/en/renderers/WebGLRenderTarget",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/?q=MeshStand#api/en/materials/MeshStandardMaterial",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 347
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/?q=points#api/en/objects/Points",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 211
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/?q=post#manual/en/introduction/How-to-use-post-processing",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 545
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=Camera#api/en/cameras/Camera",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=Creat#manual/en/introduction/Creating-a-scene",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 281
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=Spotli#api/en/lights/SpotLight",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 669
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=fog#api/en/scenes/Fog",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 507
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=geometry",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 175
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=renderer#api/en/renderers/WebGLRenderer",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=scene#api/en/scenes/Scene",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=shader#api/en/materials/ShaderMaterial",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 701
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/docs/index.html?q=textureLoader#api/en/loaders/TextureLoader",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 317
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/examples/?q=depth#webgl_depth_texture",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/examples/webgpu_tsl_editor",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "url": "https://threejs.org/examples/webgpu_tsl_transpiler.html",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 151
+        },
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 507
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/0xca0a",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 263
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/5tr4n0",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 924
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/Acerola_t",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 30
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 396
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/AggArvanitakis",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/Andersonmancini",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/Cody_J_Bennett",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 971
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 465
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/FreyaHolmer",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 359
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/JoshWComeau",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 544
+        },
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/KennyPirman",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 304
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 154
+        },
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 343
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1316409998327664640",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1327647479521701889?s=20",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1491809182638432260/photo/1",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 509
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1611032902870999040",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1689294787046678529?s=20",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 927
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/MaximeHeckel/status/1730610699905143248",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/N8Programs",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 41
+        },
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 260
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 465
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 566
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/Polygon1993",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/Swizec",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/UselessGameDev",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 23
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 48
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 584
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 737
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 809
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 816
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/XorDev",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 32
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 535
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/aaroniker_me",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 511
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/acerola_t",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/active_theory/status/1721543611987148870",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 819
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/adamfuhrer",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 620
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/adamwathan",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/akella",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 550
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/arpeegee",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 15
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 37
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 58
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 943
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/aweusmeuh",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/brad_frost",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 532
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/brainFnCl",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 724
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/bruno_simon",
+      "occurrences": [
+        {
+          "source_id": "articles/vaporwave-3d-scene-with-threejs.mdx",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/darkroomdevs",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 295
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/dghez_",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 790
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/floguo",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 400
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/hahajohnx",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 312
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/iced_coffee_dev",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 48
+        },
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 43
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 616
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/iquilezles",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/jesper_vos",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 479
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/loackme_",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/martinthiemann",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/mattdesl",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 292
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/maya_ndljk",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 49
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 659
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/nansdotio",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 357
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/nicoptere",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 814
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/ore_ukonpower",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 402
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/pixelbeat",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/pixelbeat/",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 355
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/poetengineer__",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 237
+        },
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 644
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/pschroen",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 506
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/samdape",
+      "occurrences": [
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 16
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 107
+        },
+        {
+          "source_id": "articles/post-processing-as-a-creative-medium.mdx",
+          "line": 205
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/shotamatsuda",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 46
+        },
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1156
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/simonxxoo",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/stormoid",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 901
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/swyx",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/swyx/status/1247558714103496705",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/txstc55",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/txstc55/status/1686478266654130176",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "url": "https://twitter.com/winkerVSbecks",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 142
+        },
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 568
+        },
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 453
+        }
+      ]
+    },
+    {
+      "url": "https://tympanus.net/codrops/2019/10/29/real-time-multiside-refraction-in-three-steps/comment-page-1/",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 698
+        }
+      ]
+    },
+    {
+      "url": "https://tympanus.net/codrops/2022/11/29/sketchy-pencil-effect-with-three-js-post-processing/",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 49
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 659
+        }
+      ]
+    },
+    {
+      "url": "https://varun.ca/noise/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 458
+        }
+      ]
+    },
+    {
+      "url": "https://varun.ca/ray-march-sdf/",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 143
+        }
+      ]
+    },
+    {
+      "url": "https://varun.ca/three-js-particles/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+          "line": 568
+        }
+      ]
+    },
+    {
+      "url": "https://vercel.com",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "url": "https://vercel.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/framer-motion-layout-animations.mdx",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "url": "https://wallisc.github.io/rendering/2020/05/02/Volumetric-Rendering-Part-2.html",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "url": "https://wawasensei.dev/courses/react-three-fiber",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "https://webgpufundamentals.org/webgpu/lessons/webgpu-uniforms.html",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1489
+        }
+      ]
+    },
+    {
+      "url": "https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#webgpu",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1449
+        }
+      ]
+    },
+    {
+      "url": "https://www.awwwards.com/case-study-atmos.html",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 628
+        }
+      ]
+    },
+    {
+      "url": "https://www.cginternals.com/en/blog/2018-01-10-screen-aligned-quads-and-triangles.html",
+      "occurrences": [
+        {
+          "source_id": "articles/beautiful-and-mind-bending-effects-with-webgl-render-targets.mdx",
+          "line": 606
+        }
+      ]
+    },
+    {
+      "url": "https://www.chaos.com/blog/what-are-caustics-and-how-to-render-them-the-right-way",
+      "occurrences": [
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 39
+        },
+        {
+          "source_id": "articles/caustics-in-webgl.mdx",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "url": "https://www.dorian-iten.com/fresnel/",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 669
+        }
+      ]
+    },
+    {
+      "url": "https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "url": "https://www.ea.com/seed/news/egsr-2022-blue-noise",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/api/motion/animation/",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/api/motion/gestures/",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 100
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/api/motion/motionvalue/#usemotionvalue",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 225
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/api/motion/types/#spring",
+      "occurrences": [
+        {
+          "source_id": "articles/the-physics-behind-spring-animations.mdx",
+          "line": 260
+        },
+        {
+          "source_id": "articles/the-physics-behind-spring-animations.mdx",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/api/motion/types/#tween",
+      "occurrences": [
+        {
+          "source_id": "articles/guide-animations-spark-joy-framer-motion.mdx",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/docs/examples/",
+      "occurrences": [
+        {
+          "source_id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+          "line": 337
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/docs/guide-upgrade/#50",
+      "occurrences": [
+        {
+          "source_id": "articles/advanced-animation-patterns-with-framer-motion.mdx",
+          "line": 249
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/docs/introduction/",
+      "occurrences": [
+        {
+          "source_id": "articles/framer-motion-layout-animations.mdx",
+          "line": 446
+        }
+      ]
+    },
+    {
+      "url": "https://www.framer.com/motion/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "url": "https://www.gatsbyjs.com/tutorial/remark-plugin-tutorial/",
+      "occurrences": [
+        {
+          "source_id": "articles/scrollspy-demystified.mdx",
+          "line": 464
+        }
+      ]
+    },
+    {
+      "url": "https://www.guerrilla-games.com/media/News/Files/The-Real-time-Volumetric-Cloudscapes-of-Horizon-Zero-Dawn.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 42
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 878
+        }
+      ]
+    },
+    {
+      "url": "https://www.hackingwithswift.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "url": "https://www.ign.com/games/sable",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "url": "https://www.ign.com/games/synergy-2024",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "url": "https://www.instagram.com/creativecodingnyc/?hl=en",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 1025
+        }
+      ]
+    },
+    {
+      "url": "https://www.instagram.com/ojrgb/",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 306
+        }
+      ]
+    },
+    {
+      "url": "https://www.joshwcomeau.com/css/styled-components/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-power-of-composition-with-css-variables.mdx",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "url": "https://www.joshwcomeau.com/react/file-structure/",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 544
+        }
+      ]
+    },
+    {
+      "url": "https://www.khronos.org/opengl/wiki/Core_Language_(GLSL",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "url": "https://www.learnopengles.com/tag/perspective-divide/",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 1046
+        }
+      ]
+    },
+    {
+      "url": "https://www.mattdesl.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 424
+        }
+      ]
+    },
+    {
+      "url": "https://www.nasa.gov/image-article/shuttle-silhouette-2/",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "url": "https://www.npmjs.com/package/@maximeheckel/design-system",
+      "occurrences": [
+        {
+          "source_id": "articles/building-a-design-system-from-scratch.mdx",
+          "line": 644
+        }
+      ]
+    },
+    {
+      "url": "https://www.osar.fr/notes/motionblur/",
+      "occurrences": [
+        {
+          "source_id": "articles/shading-motion.mdx",
+          "line": 964
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/the-study-of-shaders-with-react-three-fiber.mdx",
+          "line": 519
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/results?query=moir%C3%A9",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 302
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/user/jackdavenport",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/3dlfWs",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/Dl2SDW",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 570
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/MdX3Rr",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 725
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/WdXGRj",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/WsfBDf",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 537
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/XlGcRh",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 607
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/XsdGDM",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/XslGRr",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/mljyzw",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 450
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/tsScDG",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "url": "https://www.shadertoy.com/view/ttXSzl",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 777
+        }
+      ]
+    },
+    {
+      "url": "https://www.swyx.io/writing/learn-in-public/",
+      "occurrences": [
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 17
+        },
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 160
+        },
+        {
+          "source_id": "articles/learning-in-public.mdx",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "url": "https://www.umsl.edu/~kangh/Papers/kang-tpcg2010.pdf",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 39
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 389
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 438
+        },
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 695
+        }
+      ]
+    },
+    {
+      "url": "https://www.unicorn.studio/",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "url": "https://www.webgamedev.com/",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/@Acerola_t",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/@TheArtofCodeIsCool/videos",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/@akella_",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/@simondev758",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/embed/qPSyN9GzuEU",
+      "occurrences": [
+        {
+          "source_id": "articles/config-2025.mdx",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8wOUe32Pt-E&ab_channel=Acerola",
+      "occurrences": [
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 30
+        },
+        {
+          "source_id": "articles/the-art-of-dithering-and-retro-shading-web.mdx",
+          "line": 396
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=9fa4uFm1eCE&ab_channel=GameDevGuide",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=BFld4EBO2RE&ab_channel=InigoQuilez",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=C_zFhWdM4ic&t=0s&ab_channel=Computerphile",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 436
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CkOwvrBzu9I",
+      "occurrences": [
+        {
+          "source_id": "articles/refraction-dispersion-and-other-shader-light-effects.mdx",
+          "line": 668
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=JMUtQcJE2Pw",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Q85l1Fenc5w",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 917
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Qj_tK_mdRc",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 40
+        },
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 616
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=SW30QX1wxTY&ab_channel=SIGGRAPHPhysicallyBasedShadingCourse",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=YJ4iyff7zbk&ab_channel=TheArtofCode",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 429
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=aVwxzDHniEw",
+      "occurrences": [
+        {
+          "source_id": "articles/cubic-bezier-from-math-to-motion.mdx",
+          "line": 359
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=afc8qabsGYg",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 550
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=chfGe0aTDjs",
+      "occurrences": [
+        {
+          "source_id": "articles/on-crafting-painterly-shaders.mdx",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dVWkPADNdJ4&ab_channel=Acerola",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=jlKNOirh66E&ab_channel=UselessGameDev",
+      "occurrences": [
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 24
+        },
+        {
+          "source_id": "articles/moebius-style-post-processing.mdx",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=kIhb5pEo_j0",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=k_L6edKHKfA",
+      "occurrences": [
+        {
+          "source_id": "articles/shaping-light-volumetric-lighting-with-post-processing-and-raymarching.mdx",
+          "line": 1050
+        }
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=lPWfIq5DzqI&t=1038s&ab_channel=KhanAcademy",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 490
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/MaximeHeckel/status/1945138535079768445",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1169
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/MaximeHeckel/status/1954197728524988842",
+      "occurrences": [
+        {
+          "source_id": "articles/field-guide-to-tsl-and-webgpu.mdx",
+          "line": 1431
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/MaximeHeckel/status/1955995059641254104",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1175
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/MaximeHeckel/status/1974499473091903901",
+      "occurrences": [
+        {
+          "source_id": "articles/on-rendering-the-sky-sunsets-and-planets.mdx",
+          "line": 1172
+        }
+      ]
+    },
+    {
+      "url": "https://youtu.be/Ff0jJyyiVyw?si=E1cO9wxf7sFLkxy5&t=95",
+      "occurrences": [
+        {
+          "source_id": "articles/painting-with-math-a-gentle-study-of-raymarching.mdx",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "url": "https://youtu.be/Qj_tK_mdRcA?si=BwpgJ_noGu78_9r8&t=399",
+      "occurrences": [
+        {
+          "source_id": "articles/real-time-cloudscapes-with-volumetric-raymarching.mdx",
+          "line": 240
+        }
+      ]
+    },
+    {
+      "url": "https://youtu.be/Xsqtg2yRl8M?si=GfhIalsr3ahkGDzz&t=136",
+      "occurrences": [
+        {
+          "source_id": "articles/shades-of-halftone.mdx",
+          "line": 722
+        }
+      ]
+    }
+  ]
+}

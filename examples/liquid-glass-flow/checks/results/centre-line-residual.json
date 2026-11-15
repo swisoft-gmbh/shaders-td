@@ -1,0 +1,238 @@
+{
+ "study": "liquid-glass-flow",
+ "what": "Final image (4x multisampled canvas), delivered material against the same material with the right orientation forced; WebGL preview (Chromium SwiftShader), not TouchDesigner.",
+ "renders": 144,
+ "changed_pixels": 8,
+ "over_2": 4,
+ "over_8": 4,
+ "over_16": 2,
+ "max": 38,
+ "max_changed_per_row": 4,
+ "worst": {
+  "row": "knot_480x270",
+  "preset": "violet_gel",
+  "pixel": [
+   239,
+   105
+  ],
+  "delivered": [
+   166,
+   148,
+   255
+  ],
+  "right_sign": [
+   139,
+   125,
+   217
+  ],
+  "max": 38
+ },
+ "rows": {
+  "torus_480x270": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "knot_480x270": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 1,
+   "over_8": 1,
+   "over_16": 1,
+   "max": 38,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "violet_gel",
+    "pixel": [
+     239,
+     105
+    ],
+    "delivered": [
+     166,
+     148,
+     255
+    ],
+    "right_sign": [
+     139,
+     125,
+     217
+    ]
+   }
+  },
+  "sphere_480x270": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "torus_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "knot_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "sphere_flipped_raster_480x270": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 2,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "clear_crystal",
+    "pixel": [
+     238,
+     52
+    ],
+    "delivered": [
+     116,
+     98,
+     91
+    ],
+    "right_sign": [
+     114,
+     97,
+     91
+    ]
+   }
+  },
+  "torus_481x271": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "knot_481x271": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  },
+  "sphere_481x271": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 1,
+   "over_8": 1,
+   "over_16": 0,
+   "max": 12,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "aqua_jelly",
+    "pixel": [
+     239,
+     49
+    ],
+    "delivered": [
+     131,
+     232,
+     233
+    ],
+    "right_sign": [
+     137,
+     244,
+     245
+    ]
+   }
+  },
+  "torus_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 1,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 1,
+   "within_4_pixels_of_a_centre_line": 1,
+   "worst": {
+    "preset": "aqua_jelly",
+    "pixel": [
+     225,
+     135
+    ],
+    "delivered": [
+     63,
+     68,
+     68
+    ],
+    "right_sign": [
+     64,
+     68,
+     68
+    ]
+   }
+  },
+  "knot_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 4,
+   "over_2": 2,
+   "over_8": 2,
+   "over_16": 1,
+   "max": 19,
+   "within_4_pixels_of_a_centre_line": 4,
+   "worst": {
+    "preset": "prism_chrome",
+    "pixel": [
+     309,
+     135
+    ],
+    "delivered": [
+     217,
+     217,
+     217
+    ],
+    "right_sign": [
+     201,
+     198,
+     214
+    ]
+   }
+  },
+  "sphere_flipped_raster_481x271": {
+   "renders": 12,
+   "changed_pixels": 0,
+   "over_2": 0,
+   "over_8": 0,
+   "over_16": 0,
+   "max": 0,
+   "within_4_pixels_of_a_centre_line": 0,
+   "worst": null
+  }
+ },
+ "errors": [],
+ "normal_raster_changed_pixels": 2,
+ "label": "WebGL preview (Chromium SwiftShader), not a TouchDesigner render",
+ "method": "The family survey's poses (twelve presets at their own poses, torus, knot and sphere, normal and flipped raster, 480 x 270 and 481 x 271, time 2), each drawn twice into the 4x multisampled canvas: with the delivered liquid_flow.frag, and with `vec2 orient = screenSign(ndc, ndcStep, depthStep, proj);` replaced by the right value for the raster (y = -1 in the flipped raster). The default demo backdrop stays on, so a wrong bend shows. Every pixel that differs is the residual's effect. Pixel coordinates count rows from the bottom (WebGL readPixels).",
+ "script": "session scratchpad agents/centre-line-residual/visibility.cjs (not part of the study)",
+ "date": "2026-11-02"
+}

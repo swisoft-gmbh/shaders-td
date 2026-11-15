@@ -1,0 +1,147 @@
+{
+  "kind": "Contact sheet of WebGL2 previews of the delivered GLSL (not a TouchDesigner capture)",
+  "layout": "4 x 3 tiles, each a 960 x 540 preview scaled to 480 x 270, caption = preset label",
+  "backdrop": "type",
+  "tiles": [
+    {
+      "preset": "clear_crystal",
+      "draw": {
+        "preset": "clear_crystal",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "prism_chrome",
+      "draw": {
+        "preset": "prism_chrome",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "violet_gel",
+      "draw": {
+        "preset": "violet_gel",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "sapphire_drop",
+      "draw": {
+        "preset": "sapphire_drop",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "chrome_type",
+      "draw": {
+        "preset": "chrome_type",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "frosted_ice",
+      "draw": {
+        "preset": "frosted_ice",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "amber_honey",
+      "draw": {
+        "preset": "amber_honey",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "emerald_bottle",
+      "draw": {
+        "preset": "emerald_bottle",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "rose_quartz",
+      "draw": {
+        "preset": "rose_quartz",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "liquid_mercury",
+      "draw": {
+        "preset": "liquid_mercury",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "oil_slick",
+      "draw": {
+        "preset": "oil_slick",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    },
+    {
+      "preset": "aqua_jelly",
+      "draw": {
+        "preset": "aqua_jelly",
+        "time": 2,
+        "mesh": "knot",
+        "overrides": {
+          "Backdrop": "type"
+        }
+      }
+    }
+  ],
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "floatTargets": true,
+  "size": [
+    960,
+    540
+  ],
+  "date": "2026-11-02T00:59:16.794Z",
+  "note": "Study > Backdrop = Type (bold type on black, ported from the Liquid Glass Prism study)."
+}

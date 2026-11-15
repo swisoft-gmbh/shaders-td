@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" font-family="Helvetica, Arial, sans-serif">
+  <title>Liquid Glass Blobs network schematic</title>
+  <defs>
+    <marker id="wire" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d9dde3"/>
+    </marker>
+    <marker id="ref" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7fb3d5"/>
+    </marker>
+    <marker id="opt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8a65d"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="660" fill="#14161a"/>
+  <text x="30" y="40" fill="#eef0f3" font-size="22" font-weight="bold">Liquid Glass Blobs: how the pieces connect</text>
+  <text x="30" y="64" fill="#9aa1ab" font-size="14">Schematic of the recipe in study.json (actual node names), not a captured TouchDesigner network.</text>
+
+  <!-- inputs column -->
+  <rect x="30" y="95" width="300" height="92" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+  <text x="46" y="121" fill="#eef0f3" font-size="16" font-weight="bold">Refraction TOP</text>
+  <text x="46" y="142" fill="#b8c0ca" font-size="13">Your scene WITHOUT the blobs, same camera.</text>
+  <text x="46" y="160" fill="#b8c0ca" font-size="13">Demo: scene = render_scene (demo_ring)</text>
+  <text x="46" y="177" fill="#b8c0ca" font-size="13">over demo_backdrop</text>
+
+  <rect x="30" y="205" width="300" height="74" rx="8" fill="#1e2630" stroke="#7fb3d5"/>
+  <text x="46" y="231" fill="#eef0f3" font-size="16" font-weight="bold">Reflection TOP</text>
+  <text x="46" y="252" fill="#b8c0ca" font-size="13">360 panorama or any flat image.</text>
+  <text x="46" y="269" fill="#b8c0ca" font-size="13">Demo: demo_env (empty = built-in studio)</text>
+
+  <rect x="30" y="297" width="300" height="92" rx="8" fill="#2a2218" stroke="#e8a65d" stroke-dasharray="6 4"/>
+  <text x="46" y="323" fill="#eef0f3" font-size="16" font-weight="bold">Layout TOP (optional)</text>
+  <text x="46" y="344" fill="#b8c0ca" font-size="13">Pixel i = blob i (x, y, z, radius), 32-bit float.</text>
+  <text x="46" y="362" fill="#b8c0ca" font-size="13">Demo: layout_table → layout_chop →</text>
+  <text x="46" y="379" fill="#b8c0ca" font-size="13">layout_top. Used when Layout = Layout TOP</text>
+
+  <!-- material -->
+  <rect x="400" y="95" width="270" height="150" rx="8" fill="#232a22" stroke="#9ccf8a" stroke-width="2"/>
+  <text x="416" y="122" fill="#eef0f3" font-size="17" font-weight="bold">material (GLSL MAT)</text>
+  <text x="416" y="144" fill="#c6d6be" font-size="13">vertex = blobs.vert</text>
+  <text x="416" y="162" fill="#c6d6be" font-size="13">pixel = blobs.frag (raymarch)</text>
+  <text x="416" y="180" fill="#c6d6be" font-size="13">Samplers: sRefraction, sReflection,</text>
+  <text x="416" y="198" fill="#c6d6be" font-size="13">sLayout; 16 vec4 uniforms</text>
+  <text x="416" y="216" fill="#c6d6be" font-size="13">Cull Face = Front Faces</text>
+  <text x="416" y="234" fill="#c6d6be" font-size="13">writes gl_FragDepth</text>
+
+  <rect x="400" y="290" width="270" height="100" rx="8" fill="#232a22" stroke="#9ccf8a" stroke-width="2"/>
+  <text x="416" y="317" fill="#eef0f3" font-size="16" font-weight="bold">blobs_geo (Geometry COMP)</text>
+  <text x="416" y="339" fill="#c6d6be" font-size="13">box: Box SOP, size 2 (-1..1)</text>
+  <text x="416" y="357" fill="#c6d6be" font-size="13">Material = material</text>
+  <text x="416" y="375" fill="#c6d6be" font-size="13">Move, scale, instance it freely</text>
+
+  <!-- render chain -->
+  <rect x="720" y="200" width="250" height="100" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+  <text x="736" y="227" fill="#eef0f3" font-size="16" font-weight="bold">render (Render TOP)</text>
+  <text x="736" y="248" fill="#b8c0ca" font-size="13">Geometry: blobs_geo demo_ring</text>
+  <text x="736" y="266" fill="#b8c0ca" font-size="13">Camera: demo_cam</text>
+  <text x="736" y="284" fill="#b8c0ca" font-size="13">depth sorts blobs and ring</text>
+
+  <rect x="720" y="345" width="125" height="60" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+  <text x="736" y="372" fill="#eef0f3" font-size="15" font-weight="bold">over</text>
+  <text x="736" y="392" fill="#b8c0ca" font-size="11">render over behind</text>
+
+  <rect x="860" y="345" width="110" height="60" rx="8" fill="#1e2630" stroke="#d9dde3"/>
+  <text x="878" y="381" fill="#eef0f3" font-size="15" font-weight="bold">out</text>
+
+  <!-- presets -->
+  <rect x="400" y="430" width="270" height="88" rx="8" fill="#26222e" stroke="#b9a2e0"/>
+  <text x="416" y="457" fill="#eef0f3" font-size="16" font-weight="bold">Presets</text>
+  <text x="416" y="478" fill="#cfc4e4" font-size="13">presets_data (presets.json), presets,</text>
+  <text x="416" y="496" fill="#cfc4e4" font-size="13">preset_exec: menu loads values;</text>
+  <text x="416" y="514" fill="#cfc4e4" font-size="13">Morph blends toward preset B</text>
+
+  <!-- wires and references -->
+  <path d="M330,141 C370,141 370,140 398,140" stroke="#7fb3d5" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+  <path d="M330,242 C370,242 370,175 398,175" stroke="#7fb3d5" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+  <path d="M330,343 C375,343 375,205 398,205" stroke="#e8a65d" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#opt)"/>
+  <path d="M525,245 L525,288" stroke="#7fb3d5" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+  <path d="M670,340 C700,340 700,265 718,265" stroke="#7fb3d5" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+  <path d="M525,430 L525,392" stroke="#b9a2e0" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+  <path d="M670,474 C690,474 690,200 672,200" stroke="#b9a2e0" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+  <path d="M845,300 L790,343" stroke="#d9dde3" stroke-width="2" fill="none" marker-end="url(#wire)"/>
+  <path d="M845,375 L858,375" stroke="#d9dde3" stroke-width="2" fill="none" marker-end="url(#wire)"/>
+  <path d="M330,104 L360,84 L700,84 L700,330 L748,343" stroke="#d9dde3" stroke-width="2" fill="none" marker-end="url(#wire)"/>
+  <text x="372" y="78" fill="#9aa1ab" font-size="12">behind (Select TOP) = the Refraction TOP, fed to over</text>
+
+  <!-- legend -->
+  <g font-size="13">
+    <line x1="30" y1="560" x2="80" y2="560" stroke="#d9dde3" stroke-width="2" marker-end="url(#wire)"/>
+    <text x="92" y="565" fill="#b8c0ca">wire: image flows (same frame)</text>
+    <line x1="30" y1="588" x2="80" y2="588" stroke="#7fb3d5" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ref)"/>
+    <text x="92" y="593" fill="#b8c0ca">parameter reference (sampler, material, geometry, camera)</text>
+    <line x1="30" y1="616" x2="80" y2="616" stroke="#e8a65d" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#opt)"/>
+    <text x="92" y="621" fill="#b8c0ca">optional data input (layout TOP is data, never a display image)</text>
+    <text x="560" y="565" fill="#9ccf8a" font-weight="bold">green = core (built strictly)</text>
+    <text x="560" y="593" fill="#b8c0ca">grey/blue = demo (built leniently; replace with your scene)</text>
+    <text x="560" y="621" fill="#b8c0ca">No feedback loops: the blobs never sample their own render.</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+[
+  {
+    "goal": "Make the mechanism independently inspectable",
+    "options": [
+      "Single final shader view",
+      "Shared source with explicit diagnostic stages"
+    ],
+    "evidence": "Bundled article progression and actual native capture/control tests",
+    "choice": "Shared source and named experiment presets",
+    "consequence": "The tutorial extracts the real implementation and links captured intermediate stages."
+  },
+  {
+    "goal": "Deliver a portable native component",
+    "options": [
+      "External GLSL files at absolute paths",
+      "Embedded source DATs plus separate editable source package"
+    ],
+    "evidence": "Source package and native export/reopen validation",
+    "choice": "Embed shader/helper/recipe text and use relative node references",
+    "consequence": "Saved component can reopen under a different parent; editable source travels alongside it."
+  }
+]

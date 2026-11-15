@@ -1,0 +1,173 @@
+[
+  {
+    "file": "blobs.vert",
+    "region": "proxy",
+    "lines": [
+      18,
+      38
+    ],
+    "sha256": "b32c679b094d7defe7b2867ec5ab65d4383c328c01c0e75d44232536a09ab46e"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "setup",
+    "lines": [
+      769,
+      804
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "march",
+    "lines": [
+      353,
+      400
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "field",
+    "lines": [
+      272,
+      337
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "layout",
+    "lines": [
+      153,
+      268
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "normal",
+    "lines": [
+      341,
+      349
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "hit",
+    "lines": [
+      808,
+      848
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "interior",
+    "lines": [
+      405,
+      434
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "through",
+    "lines": [
+      852,
+      860
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "bend",
+    "lines": [
+      438,
+      451
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "screen",
+    "lines": [
+      80,
+      149
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "dispersion",
+    "lines": [
+      455,
+      524
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "body",
+    "lines": [
+      528,
+      554
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "reflection",
+    "lines": [
+      558,
+      637
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "light",
+    "lines": [
+      641,
+      652
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "film",
+    "lines": [
+      656,
+      709
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "compose",
+    "lines": [
+      864,
+      922
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "uniforms",
+    "lines": [
+      26,
+      54
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  },
+  {
+    "file": "blobs.frag",
+    "region": "stages",
+    "lines": [
+      926,
+      944
+    ],
+    "sha256": "2fb11a089d6b915254881ec0c516a845e2db558f1319ccd3bf47566469c2fa8a"
+  }
+]

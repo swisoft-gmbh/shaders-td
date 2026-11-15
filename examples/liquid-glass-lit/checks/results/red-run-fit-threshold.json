@@ -1,0 +1,206 @@
+{
+  "what": "Family critic (low), fit threshold (2026-11-02): fit_size_carries_presets_over_comp_scale accepted up to 50 pixels over 8/255 while every case measures 1/255. The fix adds x.max <= 2 to its pass condition. These runs show the gap and that the tightened test closes it. WebGL2 preview (Chromium SwiftShader) and plain Python; nothing ran in TouchDesigner.",
+  "slip": {
+    "file": "liquid_glass_lit.frag",
+    "function": "worldScale()",
+    "from": "pow(abs(determinant(mat3(uTDMats[vCamIndex].world))), 1.0 / 3.0)",
+    "to": "pow(abs(determinant(mat3(uTDMats[vCamIndex].world))), 0.3333)",
+    "effect": "world scale 9.9977 instead of 10 at COMP scale 10, 0.10002 instead of 0.1 at 0.1",
+    "where": "scratch copy only (scratchpad agents/fit-threshold/mut), never in the delivered files",
+    "coarser_slip_0_333": "already failed the old condition in the core (film stage 34/255 on 17,440 pixels over 8/255)"
+  },
+  "preview": {
+    "delivered_shaders_with_the_fix": {
+      "source": "checks/results/preview-tests.json",
+      "passed": 36,
+      "total": 36,
+      "failed": [],
+      "old_condition": true,
+      "new_condition": true,
+      "fit_size_evidence": {
+        "aqua_jelly_normal": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "oil_slick_film": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "aqua_jelly_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "oil_slick_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "prism_chrome_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "frosted_ice_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    "slip_before_the_fix": {
+      "passed": 36,
+      "total": 36,
+      "failed": [],
+      "old_condition": true,
+      "new_condition": false,
+      "fit_size_evidence": {
+        "aqua_jelly_normal": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        },
+        "oil_slick_film": {
+          "comp_scale_0_1": {
+            "max": 4,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 2
+          },
+          "comp_scale_10": {
+            "max": 4,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 2
+          }
+        },
+        "aqua_jelly_final": {
+          "comp_scale_0_1": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 1
+          },
+          "comp_scale_10": {
+            "max": 3,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 1
+          }
+        },
+        "oil_slick_final": {
+          "comp_scale_0_1": {
+            "max": 8,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 1
+          },
+          "comp_scale_10": {
+            "max": 23,
+            "pixelsOver8": 4,
+            "p99OfAllPixels": 1
+          }
+        },
+        "prism_chrome_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 1
+          },
+          "comp_scale_10": {
+            "max": 2,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 1
+          }
+        },
+        "frosted_ice_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    "slip_with_the_fix": {
+      "passed": 35,
+      "total": 36,
+      "failed": [
+        "fit_size_carries_presets_over_comp_scale"
+      ]
+    }
+  },
+  "unit": {
+    "test": "FitThreshold.test_fit_size_test_holds_2_255_at_every_pixel",
+    "before_the_fix": {
+      "tree": "the current tree with checks/preview_tests.cjs as it was before this round (scratch: agents/fit-threshold/before2, made by revert_preview.py)",
+      "failed": [
+        "test_fit_size_test_holds_2_255_at_every_pixel"
+      ],
+      "summary": [
+        "Ran 94 tests in 0.593s",
+        "FAILED (failures=1)"
+      ]
+    },
+    "with_the_fix": {
+      "tree": "the current tree",
+      "source": "checks/results/unit-tests.txt",
+      "failed": [],
+      "summary": [
+        "Ran 94 tests in 0.650s",
+        "OK"
+      ]
+    }
+  }
+}

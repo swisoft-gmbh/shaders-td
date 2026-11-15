@@ -1,0 +1,1113 @@
+{
+  "ok": true,
+  "passed": 42,
+  "total": 42,
+  "errors": [],
+  "results": [
+    {
+      "name": "sdf_normal_matches_analytic",
+      "ok": true,
+      "claim": "For a single blob (an exact sphere), the tetrahedral field-gradient normal matches the analytic sphere normal within 0.5 degrees, also under a rotated, moved and uniformly scaled Geometry COMP, and under non-uniform scale it matches the exact ellipsoid normal (inverse transpose).",
+      "evidence": [
+        {
+          "name": "identity transform",
+          "pixels": 843,
+          "missing": 0,
+          "worstDegrees": 0.0959
+        },
+        {
+          "name": "rotated, moved, scaled 1.3",
+          "pixels": 1625,
+          "missing": 0,
+          "worstDegrees": 0.1022
+        },
+        {
+          "name": "non-uniform scale 1.6 x 0.6 x 1, rotated, moved (an ellipsoid)",
+          "pixels": 1720,
+          "missing": 0,
+          "worstDegrees": 0.2156,
+          "forwardMatrixWouldBeOffByDegrees": 48.9
+        }
+      ]
+    },
+    {
+      "name": "thickness_matches_exact_chord",
+      "ok": true,
+      "claim": "The path the interior march measures through a single blob equals the exact chord of the (refracted) ray through the sphere, within 0.005 scene units, in scene units even when the object is scaled.",
+      "evidence": [
+        {
+          "ior": 1,
+          "pixels": 499,
+          "missing": 0,
+          "worstSceneUnits": 0.00028
+        },
+        {
+          "ior": 1.5,
+          "pixels": 499,
+          "missing": 0,
+          "worstSceneUnits": 0.00058
+        },
+        {
+          "ior": 1.5,
+          "pixels": 848,
+          "missing": 0,
+          "worstSceneUnits": 0.00073
+        }
+      ]
+    },
+    {
+      "name": "lens_matches_exact_trace",
+      "ok": true,
+      "claim": "Where the glass samples the Refraction TOP matches an exact two-surface trace through a sphere (bend in, exact chord, bend out at the exact exit normal, Backdrop distance, camera projection) within 1 pixel, at IOR 1.33, 1.5 and 2.2 and under a scaled Geometry COMP.",
+      "evidence": [
+        {
+          "ior": 1.5,
+          "backdrop": 1.6,
+          "scale": 1,
+          "pixels": 1066,
+          "missing": 0,
+          "tirPixels": 0,
+          "worstErrorPixels": 0.384,
+          "oppositeSignFitsBetter": 0
+        },
+        {
+          "ior": 1.33,
+          "backdrop": 0.6,
+          "scale": 1,
+          "pixels": 1066,
+          "missing": 0,
+          "tirPixels": 0,
+          "worstErrorPixels": 0.299,
+          "oppositeSignFitsBetter": 0
+        },
+        {
+          "ior": 2.2,
+          "backdrop": 1,
+          "scale": 1,
+          "pixels": 1066,
+          "missing": 0,
+          "tirPixels": 0,
+          "worstErrorPixels": 0.37,
+          "oppositeSignFitsBetter": 0
+        },
+        {
+          "ior": 1.5,
+          "backdrop": 1.6,
+          "scale": 1.3,
+          "pixels": 1828,
+          "missing": 0,
+          "tirPixels": 0,
+          "worstErrorPixels": 0.5,
+          "oppositeSignFitsBetter": 0
+        }
+      ]
+    },
+    {
+      "name": "beer_lambert_tint_follows_measured_chord",
+      "ok": true,
+      "claim": "Through fully translucent tinted glass, each colour channel keeps exp(-(1 - glass colour) x density x chord) of the light behind, with the chord the interior march measured at that pixel: thick parts tint more than thin rims.",
+      "evidence": {
+        "density": 1.5,
+        "glass": [
+          1,
+          0.5,
+          0.25
+        ],
+        "samples": 18438,
+        "chordRange": [
+          0.003,
+          1.2
+        ],
+        "worstRelativeError": 3.036e-7
+      }
+    },
+    {
+      "name": "depth_matches_rasterized_sphere",
+      "ok": true,
+      "claim": "The depth the shader writes (camProj, 0..1) matches a rasterized sphere mesh of the same size and transform within 0.002 scene units of eye distance, and a raster sphere and a blob sphere occlude each other exactly where the analytic surfaces cross.",
+      "evidence": {
+        "d1": {
+          "label": "sphere at origin",
+          "pixels": 4128,
+          "worstEyeDistance": 0.0004238,
+          "worstDepthValue": 0.000001907
+        },
+        "d2": {
+          "label": "non-uniform scale, rotated, moved (an ellipsoid)",
+          "pixels": 5059,
+          "worstEyeDistance": 0.0004594,
+          "worstDepthValue": 0.000002682
+        },
+        "occlusion": {
+          "checked": 6128,
+          "wrong": 0,
+          "skippedNearBoundary": 204
+        }
+      }
+    },
+    {
+      "name": "any_projection_matches_raster",
+      "ok": true,
+      "claim": "With an orthographic camera and with projection matrices blended between perspective and orthographic, the blobs cover the same pixels as a rasterized sphere (away from an 8-pixel silhouette band) and write the same depth within 0.002 scene units.",
+      "evidence": [
+        {
+          "camera": {
+            "projection": "ortho"
+          },
+          "pixels": 4062,
+          "missingVersusRaster": 0,
+          "extraVersusRaster": 0,
+          "worstSceneUnits": 0.0004685
+        },
+        {
+          "camera": {
+            "projection": "blend",
+            "blend": 0.5
+          },
+          "pixels": 4100,
+          "missingVersusRaster": 0,
+          "extraVersusRaster": 0,
+          "worstSceneUnits": 0.0005421
+        },
+        {
+          "camera": {
+            "projection": "blend",
+            "blend": 0.8
+          },
+          "pixels": 4082,
+          "missingVersusRaster": 0,
+          "extraVersusRaster": 0,
+          "worstSceneUnits": 0.0003862
+        }
+      ]
+    },
+    {
+      "name": "near_plane_clips_the_blobs",
+      "ok": true,
+      "claim": "Glass nearer than the camera's near plane is not drawn (and never written at depth 0, in front of everything); glass beyond it is drawn, pixel for pixel as an exact ray from the near plane predicts.",
+      "evidence": {
+        "expectDrawn": 10031,
+        "expectClipped": 24751,
+        "wrong": 0,
+        "skippedNearBoundary": 5268,
+        "drawnAtDepthZero": 0
+      }
+    },
+    {
+      "name": "ior1_is_invisible",
+      "ok": true,
+      "claim": "With IOR 1, saturation 1 and no dispersion, frost, tint or light terms, the blobs show exactly the Refraction TOP (the ring stays correctly in front).",
+      "evidence": {
+        "max": 1,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "opacity0_is_invisible",
+      "ok": true,
+      "claim": "Opacity 0 removes the blobs entirely, reflections included.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "no_refraction_top_blends_clear",
+      "ok": true,
+      "claim": "With no Refraction TOP, clear untinted blobs with no light terms blend to the real background (alpha 0).",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "transparent_refraction_top_keeps_background",
+      "ok": true,
+      "claim": "Where the Refraction TOP is transparent, clear glass passes the background composited behind the final render later: invisible glass leaves that composite unchanged, and a clear blob over empty space has alpha 0 (not opaque black).",
+      "evidence": {
+        "versusNoBlobs": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "meanAlphaAtBlobCentre": 0
+      }
+    },
+    {
+      "name": "fog_keeps_premultiplied_alpha",
+      "ok": true,
+      "claim": "TDFog() is applied to the premultiplied glass so that fog only adds its colour in proportion to the glass's alpha: with fog on, Opacity 0 and see-through glass still leave the image unchanged, while opaque glass is fogged (stand-in fog; TouchDesigner's own fog is pending native checks).",
+      "evidence": {
+        "fogOpacity0": {
+          "max": 0,
+          "pixelsOver2": 0
+        },
+        "fogClear": {
+          "max": 0,
+          "pixelsOver2": 0
+        },
+        "fogOn": {
+          "max": 128,
+          "pixelsOver2": 58805
+        }
+      }
+    },
+    {
+      "name": "draw_order_matters_without_refraction_top",
+      "ok": true,
+      "claim": "Documents a limit rather than a feature: without a Refraction TOP, an object behind the blobs shows through the glass only if it is drawn before them, because the blobs write depth. This is why blobs_geo gets Draw Priority -1 (drawn after the default 0).",
+      "evidence": {
+        "sphereAlone": 1,
+        "sphereDrawnBeforeBlobs": 1,
+        "sphereDrawnAfterBlobs": 0.06
+      }
+    },
+    {
+      "name": "smooth_min_stays_finite_without_holes",
+      "ok": true,
+      "claim": "Across merge widths from 0 (plain union) through 0.00005 (below the zero-width guard) to 1, extreme layouts and coincident centres, no pixel is NaN or infinite, and the smooth union covers every pixel the plain union covers (no holes).",
+      "evidence": [
+        {
+          "merge": 0,
+          "covered": 34057,
+          "holesVersusPlainUnion": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": 0.00005,
+          "covered": 34057,
+          "holesVersusPlainUnion": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": 0.001,
+          "covered": 34057,
+          "holesVersusPlainUnion": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": 0.3,
+          "covered": 37988,
+          "holesVersusPlainUnion": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": 1,
+          "covered": 100994,
+          "holesVersusPlainUnion": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": "extreme (12 blobs, 6 droplets, ripple 1, stretch 2)",
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": "fractional count 2.5",
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        },
+        {
+          "merge": "coincident centres (spread 0), merge 0.5",
+          "pixelsInsideLargestSphere": 4536,
+          "holes": 0,
+          "flaggedByShader": 0,
+          "nonFiniteFinalValues": 0
+        }
+      ]
+    },
+    {
+      "name": "blobs_cut_by_the_box_have_no_holes",
+      "ok": true,
+      "claim": "A blob too big for the proxy box is cut flat by its walls instead of showing see-through holes: a single blob crossing the walls, up to the slider maxima, covers an unbroken region (no miss inside any row or column of hits) and stays finite.",
+      "evidence": [
+        {
+          "label": "capsule, radius 0.7, stretch 0.8",
+          "hits": 104605,
+          "missesInsideRuns": 0,
+          "flaggedNotFinite": 0
+        },
+        {
+          "label": "capsule, radius 0.9, stretch 0.8",
+          "hits": 152201,
+          "missesInsideRuns": 0,
+          "flaggedNotFinite": 0
+        },
+        {
+          "label": "slider maxima: radius 0.9, stretch 2, merge 1",
+          "hits": 155168,
+          "missesInsideRuns": 0,
+          "flaggedNotFinite": 0
+        },
+        {
+          "label": "slider maxima, box rotated 25/40/0",
+          "hits": 165546,
+          "missesInsideRuns": 0,
+          "flaggedNotFinite": 0
+        }
+      ]
+    },
+    {
+      "name": "samples_invariant_without_dispersion",
+      "ok": true,
+      "claim": "Without dispersion or frost, every colour sample takes the same path, so the sample count cannot change the image.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph1_equals_target",
+      "ok": true,
+      "claim": "Morph 1 toward a preset renders that preset, blob shape included.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "morph0_is_neutral",
+      "ok": true,
+      "claim": "Morph 0 leaves the current look unchanged.",
+      "evidence": {
+        "max": 0,
+        "pixelsOver2": 0
+      }
+    },
+    {
+      "name": "presets_stay_distinct",
+      "ok": true,
+      "claim": "There are twelve presets, and at t = 3 s every pair differs by a mean of at least 10/255 per channel over the whole frame, on the Checker backdrop and on the Type backdrop (the blobs cover only part of the frame).",
+      "evidence": {
+        "presets": 12,
+        "checker": {
+          "pair": [
+            "sapphire_drops",
+            "oil_slick"
+          ],
+          "meanDifference": 13.27
+        },
+        "type": {
+          "pair": [
+            "sapphire_drops",
+            "oil_slick"
+          ],
+          "meanDifference": 12.91
+        }
+      }
+    },
+    {
+      "name": "fractional_count_is_continuous",
+      "ok": true,
+      "claim": "Count changes the shape continuously: a blob starting to grow in changes nothing visible, coverage only moves along outlines, and away from edges the normal change shrinks with the step (a 4x smaller step gives at most half the change), so Count can be morphed. Merge necks are highly curved, so they react most.",
+      "evidence": {
+        "appear": {
+          "counts": [
+            3,
+            3.002
+          ],
+          "coverageFlips": 0,
+          "outlinePixels": 998,
+          "sharedEdgePixelsSkipped": 998,
+          "worstSharedNormalDegrees": 0.002
+        },
+        "big": {
+          "counts": [
+            2.998,
+            3
+          ],
+          "coverageFlips": 94,
+          "outlinePixels": 999,
+          "sharedEdgePixelsSkipped": 999,
+          "worstSharedNormalDegrees": 3.669
+        },
+        "small": {
+          "counts": [
+            2.9995,
+            3
+          ],
+          "coverageFlips": 20,
+          "outlinePixels": 999,
+          "sharedEdgePixelsSkipped": 999,
+          "worstSharedNormalDegrees": 1.196
+        }
+      }
+    },
+    {
+      "name": "layout_top_places_blobs",
+      "ok": true,
+      "claim": "With Layout = Layout TOP, blob 0 sits at the centre and radius in pixel 0 of the layout TOP (row 1 of blob_layout.tsv): its normals match a sphere of radius 0.36 at (-0.42, 0.12, 0).",
+      "evidence": {
+        "name": "blob 0 from the layout TOP",
+        "pixels": 304,
+        "missing": 0,
+        "worstDegrees": 0.1637
+      }
+    },
+    {
+      "name": "camera_inside_proxy_box",
+      "ok": true,
+      "claim": "With the camera inside the proxy box (but outside the glass) the blobs still render correctly, because the material draws the box's back faces and starts each ray at the camera.",
+      "evidence": {
+        "name": "camera at z = 0.9, inside the proxy box",
+        "pixels": 6963,
+        "missing": 0,
+        "worstDegrees": 0.1638
+      }
+    },
+    {
+      "name": "instances_follow_their_transforms",
+      "ok": true,
+      "claim": "With two instances (stand-in TDDeform applies an instance matrix), each instance draws its blob at its own transform: the vertex shader captures origin and axes through TDDeform.",
+      "evidence": [
+        {
+          "centre": [
+            -0.45,
+            0.1,
+            0
+          ],
+          "pixels": 1111,
+          "missing": 0,
+          "worstDegrees": 0.135
+        },
+        {
+          "centre": [
+            0.4,
+            -0.15,
+            0
+          ],
+          "pixels": 1107,
+          "missing": 0,
+          "worstDegrees": 0.1365
+        }
+      ]
+    },
+    {
+      "name": "finite_check_flags_nan",
+      "ok": true,
+      "claim": "Positive control: a NaN tint density turns every glass pixel of the finite-check stage red (the stage tests float bits, which fast-math compilers cannot assume away). A zero light direction and a light straight along an orthographic view stay finite.",
+      "evidence": {
+        "nanDensity": {
+          "red": 76295,
+          "green": 0
+        },
+        "lightDirectionZero": {
+          "red": 0,
+          "green": 76295
+        },
+        "lightAlongOrthographicView": {
+          "red": 0,
+          "green": 73798
+        }
+      }
+    },
+    {
+      "name": "screen_uv_matches_pixel",
+      "ok": true,
+      "claim": "screenUV() gives the pixel position over the render size (preview viewport stand-in).",
+      "evidence": {
+        "pixel": [
+          437,
+          204
+        ],
+        "measured": [
+          0.546875,
+          0.4544444680213928
+        ],
+        "expected": [
+          0.546875,
+          0.45444444444444443
+        ]
+      }
+    },
+    {
+      "name": "morph_frame_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "One frame of a 100-frame A/B morph (Morph 0.50 to 0.51 in 1/60 s, Prism Clear to Lavender Gel) changes the image no more after an hour than after 3 s: the blob drift, ripple and film phases are added up frame by frame, so a changing Speed never throws the layout.",
+      "evidence": {
+        "t3": {
+          "max": 251,
+          "p99": 71
+        },
+        "t3600": {
+          "max": 251,
+          "p99": 70
+        }
+      }
+    },
+    {
+      "name": "speed_change_is_smooth_after_an_hour",
+      "ok": true,
+      "claim": "After an hour, nudging Speed from 0.35 to 0.36 changes one frame of Sapphire Drops (droplets and ripples on) about as much as one frame of motion at a fixed speed does.",
+      "evidence": {
+        "steady": {
+          "max": 201,
+          "p99": 5
+        },
+        "nudged": {
+          "max": 201,
+          "p99": 5
+        }
+      }
+    },
+    {
+      "name": "drift_wraps_without_a_jump",
+      "ok": true,
+      "claim": "Shifting a drift phase by its wrap period leaves the shape and the film unchanged (normal and film stages: at most 5 outline pixels over 2/255, where float rounding of the phase moves an edge), and changes the final image less than one frame of motion does: the layout's wave speeds are whole multiples of 1/128 (so 256 pi of phase is whole turns), the ripple turns whole after 20 pi, and the film noise repeats every 256 units.",
+      "evidence": {
+        "layout": {
+          "normalStage": {
+            "max": 76,
+            "pixelsOver2": 1
+          },
+          "filmStage": {
+            "max": 110,
+            "pixelsOver2": 1
+          },
+          "finalImage": {
+            "max": 65,
+            "p99": 0
+          }
+        },
+        "ripple": {
+          "normalStage": {
+            "max": 1,
+            "pixelsOver2": 0
+          },
+          "filmStage": {
+            "max": 1,
+            "pixelsOver2": 0
+          },
+          "finalImage": {
+            "max": 60,
+            "p99": 0
+          }
+        },
+        "film": {
+          "normalStage": {
+            "max": 0,
+            "pixelsOver2": 0
+          },
+          "filmStage": {
+            "max": 1,
+            "pixelsOver2": 0
+          },
+          "finalImage": {
+            "max": 1,
+            "p99": 0
+          }
+        },
+        "oneFrameOfMotion": {
+          "max": 243,
+          "p99": 12
+        }
+      }
+    },
+    {
+      "name": "rim_chords_stay_physical",
+      "ok": true,
+      "claim": "At the silhouette of a sphere, the measured path is never shorter than 80 % of the grazing chord 2R sqrt(1 - 1/IOR^2): rim normals are laid into the view plane, not flipped (a flipped normal bent the ray straight back out, a path near 0).",
+      "evidence": {
+        "ior_1.55": {
+          "hits": 43020,
+          "grazingChord": 0.9169,
+          "shortestChord": 0.8462,
+          "pixelsBelow80pc": 0
+        },
+        "ior_1.2": {
+          "hits": 43020,
+          "grazingChord": 0.6633,
+          "shortestChord": 0.5705,
+          "pixelsBelow80pc": 0
+        }
+      }
+    },
+    {
+      "name": "frost_does_not_shift_the_view",
+      "ok": true,
+      "claim": "At Frost 1 (a disc of about 0.25 scene units, some 55 pixels in radius here), the frosted view stays centred on the unfrosted one: the mean shift is under 5 pixels at 12 samples and under 1 pixel at 24 (R2 disc points; the golden-angle spiral used before put every point on one arm and shifted the view by 10 to 12 pixels).",
+      "evidence": [
+        {
+          "samples": 12,
+          "pixels": 14400,
+          "meanShiftPixels": 3.919
+        },
+        {
+          "samples": 24,
+          "pixels": 14400,
+          "meanShiftPixels": 0.382
+        }
+      ]
+    },
+    {
+      "name": "frost_converges_with_samples",
+      "ok": true,
+      "claim": "Frosted Milk's view through the glass at the default 12 samples is within a mean 4.5/255 (99th percentile 18/255) of the same view at 32 samples, over the pixels that differ. (The core's max <= 16 does not hold here: the frost passes through a thick lens, and a few pixels differ by up to 38/255 with either disc.)",
+      "evidence": {
+        "pixelsThatDiffer": 85165,
+        "mean": 3.72,
+        "p99": 17,
+        "max": 38
+      }
+    },
+    {
+      "name": "dispersion_converges_with_samples",
+      "ok": true,
+      "claim": "With Dispersion 1, the rainbow at the default 12 samples is within a mean 8/255 of a 64-sample reference on every pixel the rainbow changes (Prism Clear and Type Lens, refraction stage), and 24 samples come closer still. decisions.json records the same measurement without the fan-gap level.",
+      "evidence": {
+        "prism_clear": {
+          "samples_12": {
+            "rainbowPixels": 45509,
+            "meanError": 7.3,
+            "over32": 1345
+          },
+          "samples_24": {
+            "rainbowPixels": 45509,
+            "meanError": 2.98,
+            "over32": 41
+          }
+        },
+        "type_lens": {
+          "samples_12": {
+            "rainbowPixels": 52077,
+            "meanError": 6.28,
+            "over32": 1271
+          },
+          "samples_24": {
+            "rainbowPixels": 52077,
+            "meanError": 2.68,
+            "over32": 35
+          }
+        }
+      }
+    },
+    {
+      "name": "srgb_colour_mode_decodes_colours",
+      "ok": true,
+      "claim": "With Colour parameters = sRGB, colours typed in sRGB render exactly like their linear values typed with As typed (within 1/255), and differ clearly from the same numbers as typed.",
+      "evidence": {
+        "srgbVersusLinearTyped": {
+          "max": 1,
+          "pixelsOver2": 0
+        },
+        "srgbVersusAsTyped": {
+          "max": 124,
+          "pixelsOver2": 58518
+        }
+      }
+    },
+    {
+      "name": "energy_conserving_mirror_is_pure_reflection",
+      "ok": true,
+      "claim": "Energy conserving on, Mirror 1, no highlights: the glass shows only its reflection (within 1/255 of the reflection stage); with it off, the see-through image still adds on top (Heckel's additive default).",
+      "evidence": {
+        "pixels": 65933,
+        "conservingVersusReflection": 0,
+        "withoutConservingVersusReflection": 293.9
+      }
+    },
+    {
+      "name": "colour_is_capped_for_half_float",
+      "ok": true,
+      "claim": "A huge rim colour (1,000,000) reaches the output as at most 1024 (half float tops out at 65,504); alpha is never touched.",
+      "evidence": {
+        "largestColour": 1024,
+        "largestAlpha": 1
+      }
+    },
+    {
+      "name": "bends_follow_screen_orientation",
+      "ok": true,
+      "claim": "A build whose raster runs screen y the other way (emulated) bends light the same way: every lookup through an off-centre sphere lands on the mirror of its normal position within 0.5 pixel, and the default Prism Clear image is its mirror (at most 50 pixels differ by more than 8/255).",
+      "evidence": {
+        "lens": {
+          "pixels": 43156,
+          "bentMoreThan5px": 43133,
+          "flippedRasterWorstPx": 0.3,
+          "upsideDownInputWithFlipVWorstPx": 0
+        },
+        "defaultImageFlippedRaster": {
+          "max": 47,
+          "pixelsOver8": 3
+        }
+      }
+    },
+    {
+      "name": "flip_v_corrects_upside_down_inputs",
+      "ok": true,
+      "claim": "If the Refraction TOP arrives upside down, Flip V restores every lookup within 0.5 pixel: it flips the screen UV and the measured vertical direction of the bends together.",
+      "evidence": {
+        "pixels": 43156,
+        "bentMoreThan5px": 43133,
+        "flippedRasterWorstPx": 0.3,
+        "upsideDownInputWithFlipVWorstPx": 0
+      }
+    },
+    {
+      "name": "screen_orientation_has_no_wrong_pixels",
+      "ok": true,
+      "claim": "The measured screen orientation is right on every blob pixel of the twelve presets, in the default view and with the camera inside the box, and of twelve poses of a blob cut by the box walls, in a normal and a flipped raster, at 480 x 270 and at the odd size 481 x 271: one sample per pixel, 0 wrong. Four samples per pixel (like an antialiased Render TOP): at most 20 wrong per row of twelve renders, the family's threshold (Liquid Glass Lit and the core study), measured 0 here: the blobs' own silhouette is computed per pixel inside the box faces, so only glass at the box's outline is partly covered (318 to 446 pixels per row in the cut poses). screenSign() compares the pixel's projected position with its raster position and only on a centre line of an odd-sized render takes the sign of the screen derivatives; the core study took the same tie-break in the family close (G2). The comparison alone, with +1 on ties, is wrong on the whole centre row at 481 x 271 in a flipped raster (1,494 default-view and 1,242 inside-the-box pixels).",
+      "evidence": {
+        "default_view_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 257812,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 276673,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "default_view_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 257812,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 276673,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "camera_inside_box_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 351804,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "camera_inside_box_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 351804,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 351804,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "box_cut_poses_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 695050,
+            "partly_covered_pixels": 446,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "box_cut_poses_flipped_raster_480x270": {
+          "size": [
+            480,
+            270
+          ],
+          "renders": 12,
+          "blob_pixels": 695050,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 695050,
+            "partly_covered_pixels": 425,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "default_view_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 258739,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 277704,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "default_view_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 258723,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 277704,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "camera_inside_box_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 353907,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "camera_inside_box_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 353907,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 353907,
+            "partly_covered_pixels": 0,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "box_cut_poses_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 698404,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 698409,
+            "partly_covered_pixels": 323,
+            "wrong_sign_pixels": 0
+          }
+        },
+        "box_cut_poses_flipped_raster_481x271": {
+          "size": [
+            481,
+            271
+          ],
+          "renders": 12,
+          "blob_pixels": 698404,
+          "wrong_sign_pixels": 0,
+          "of_them_on_a_centre_line": 0,
+          "multisampled": {
+            "glass_pixels": 698409,
+            "partly_covered_pixels": 318,
+            "wrong_sign_pixels": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "object_size_carries_presets",
+      "ok": true,
+      "claim": "Sapphire Drops and Frosted Milk on blobs scaled 3x and seen from 3x the distance, with the Object size Fit sets there (3 x the demo box's 1 / 1.45), match the original render on all but at most 50 pixels (over 2/255, where float rounding moves a refracted edge); left at the default Object size the same scene differs on more than 20,000 pixels.",
+      "evidence": {
+        "sapphire_drops_object_size_fit": {
+          "max": 44,
+          "pixelsOver2": 9
+        },
+        "sapphire_drops_object_size_default": {
+          "max": 250,
+          "pixelsOver2": 56202
+        },
+        "frosted_milk_object_size_fit": {
+          "max": 18,
+          "pixelsOver2": 12
+        },
+        "frosted_milk_object_size_default": {
+          "max": 185,
+          "pixelsOver2": 86296
+        }
+      }
+    },
+    {
+      "name": "fit_size_carries_presets_over_comp_scale",
+      "ok": true,
+      "claim": "A preset looks the same on blobs_geo scaled 0.1 or 10 by its Geometry COMP, with the Object size Fit sets (the scale x 1 / 1.45) and the camera moved with it: the ripples (normal stage), the film bands (film stage) and the final image, at most 50 pixels over 2/255. Ported from Liquid Glass Lit; the c94e849 blobs passed it too (Object size = scale then), because the box route keeps the shape and the film in box units.",
+      "evidence": {
+        "aqua_jelly_normal": {
+          "comp_scale_0.1": {
+            "max": 1,
+            "pixelsOver2": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver2": 0
+          }
+        },
+        "oil_slick_film": {
+          "comp_scale_0.1": {
+            "max": 1,
+            "pixelsOver2": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver2": 0
+          }
+        },
+        "aqua_jelly_final": {
+          "comp_scale_0.1": {
+            "max": 24,
+            "pixelsOver2": 3
+          },
+          "comp_scale_10": {
+            "max": 34,
+            "pixelsOver2": 4
+          }
+        },
+        "oil_slick_final": {
+          "comp_scale_0.1": {
+            "max": 2,
+            "pixelsOver2": 0
+          },
+          "comp_scale_10": {
+            "max": 3,
+            "pixelsOver2": 1
+          }
+        },
+        "sapphire_drops_final": {
+          "comp_scale_0.1": {
+            "max": 66,
+            "pixelsOver2": 10
+          },
+          "comp_scale_10": {
+            "max": 66,
+            "pixelsOver2": 8
+          }
+        },
+        "frosted_milk_final": {
+          "comp_scale_0.1": {
+            "max": 20,
+            "pixelsOver2": 14
+          },
+          "comp_scale_10": {
+            "max": 20,
+            "pixelsOver2": 15
+          }
+        }
+      }
+    },
+    {
+      "name": "comp_scale_at_default_object_size_gives_k_times_the_film_bands",
+      "ok": true,
+      "claim": "blobs_geo scaled k by its Geometry COMP but left at the default Object size shows k times as many film bands: at least 4 times the unscaled count for k = 10, at most 0.4 times for k = 0.1; with the Object size Fit sets (10 x 1 / 1.45) the count is the unscaled one within 2%. The ripples, part of the shape, keep the unscaled count within 2% in all three cases. Oil Slick film stage and Aqua Jelly normal stage, camera moved with the scale. On c94e849 the film stayed in box units (ratio 1 everywhere).",
+      "evidence": {
+        "film": {
+          "unscaled": {
+            "glass_pairs": 55897,
+            "per_1000": 29.14
+          },
+          "comp_10_default_size": {
+            "glass_pairs": 55897,
+            "per_1000": 220.39
+          },
+          "comp_0_1_default_size": {
+            "glass_pairs": 55897,
+            "per_1000": 0
+          },
+          "comp_10_fit_size": {
+            "glass_pairs": 55897,
+            "per_1000": 29.14
+          },
+          "ratio_comp_10_default_size": 7.563,
+          "ratio_comp_0_1_default_size": 0,
+          "ratio_comp_10_fit_size": 1
+        },
+        "ripples": {
+          "unscaled": {
+            "glass_pairs": 46684,
+            "per_1000": 16.34
+          },
+          "comp_10_default_size": {
+            "glass_pairs": 46684,
+            "per_1000": 16.39
+          },
+          "comp_0_1_default_size": {
+            "glass_pairs": 46684,
+            "per_1000": 16.39
+          },
+          "comp_10_fit_size": {
+            "glass_pairs": 46684,
+            "per_1000": 16.39
+          },
+          "ratio_comp_10_default_size": 1.003,
+          "ratio_comp_0_1_default_size": 1.003,
+          "ratio_comp_10_fit_size": 1.003
+        }
+      }
+    },
+    {
+      "name": "normals_hold_at_any_object_scale",
+      "ok": true,
+      "claim": "One sphere in blobs_geo scaled to 0.001 and to 20,000 (camera distance, near and far plane scaled the same, and the Object size Fit sets there: the scale x the demo box's 1 / 1.45) gives the normal stage and the refraction stage of scale 1 within 0.001 on every pixel: the transformed normals and the direction inside the glass are normalised without a fixed length threshold. The scale-1 reference is the demo's own scene: it equals the render at the default Object size within 1e-6 (close verify CV3; with Object size = the scale it ran with a Backdrop distance 1.45 times the demo's).",
+      "evidence": {
+        "normal_scale_1_against_the_demo": {
+          "worstDifference": 0
+        },
+        "normal_scale_0.001": {
+          "pixels": 43020,
+          "missing": 0,
+          "worstDifference": 0.00001,
+          "pixelsReadingPlusY": 0
+        },
+        "normal_scale_20000": {
+          "pixels": 43020,
+          "missing": 0,
+          "worstDifference": 0.00001,
+          "pixelsReadingPlusY": 0
+        },
+        "refraction_scale_1_against_the_demo": {
+          "worstDifference": 0
+        },
+        "refraction_scale_0.001": {
+          "pixels": 43020,
+          "missing": 0,
+          "worstDifference": 0.00005
+        },
+        "refraction_scale_20000": {
+          "pixels": 43020,
+          "missing": 0,
+          "worstDifference": 0.00005
+        }
+      }
+    }
+  ],
+  "scope": "Shader maths and study.json bindings in WebGL2 (SwiftShader). Not a TouchDesigner render."
+}

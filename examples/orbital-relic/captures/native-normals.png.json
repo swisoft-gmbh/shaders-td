@@ -1,0 +1,29 @@
+{
+  "time_unix": 1792514836.361847,
+  "build": "2025.33230",
+  "version": "099",
+  "platform": "macOS-15.8.1-arm64-arm-64bit",
+  "component": "/project1/mh_five_mechanisms/orbital_relic",
+  "resolution": [
+    512,
+    512
+  ],
+  "parameters": {
+    "Pause": true,
+    "Time": 2.0,
+    "Step": 0.016666666666666666,
+    "Blend": 0.23,
+    "Turn": 0.4,
+    "Budget": 128.0,
+    "Single": false,
+    "Stage": "normals"
+  },
+  "errors": "",
+  "warnings": "",
+  "compile_reports": {
+    "info_surface": "Vertex Shader Compile Results:\n\nCompiled Successfully\n\n=============\nPixel Shader Compile Results:\n\nCompiled Successfully\n"
+  },
+  "scope": "Current cook and compile diagnostics; not visual acceptance or performance.",
+  "capture": "native-normals.png",
+  "experiment": "normals"
+}

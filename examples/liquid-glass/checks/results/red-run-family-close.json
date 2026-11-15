@@ -1,0 +1,225 @@
+{
+  "scope": "Family close (2026-11-02): the new and changed tests run on this study as it was at commit c94e849 (the shaders, recipe and docs of c94e849; the new checks/test_study.py, checks/preview_tests.cjs and checks/preview/ copied in). WebGL2 preview (Chromium SwiftShader) and plain Python only; nothing ran in TouchDesigner.",
+  "unit_tests_on_c94e849": {
+    "summary": [
+      "Ran 62 tests in 0.319s",
+      "FAILED (failures=9, errors=1)"
+    ],
+    "new_tests_failing": {
+      "test_g1_object_size_follows_the_family_rule": "KeyError: 'worldScale'",
+      "test_g2_centre_line_ties_use_the_guarded_derivative": "AssertionError: 'vec2 screenSign(vec2 ndc, vec2 ndcStep, vec2 depthStep, mat4 proj)' not found in '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\nuniform sampler2D sRefraction;\\nuniform sampler2D sReflection;\\nuniform sampler2D sBackface;\\n\\n\\n\\nuniform vec4 uGlass;      \\nuniform vec4 uBody;       \\nuniform vec4 uOptics;     \\nuniform vec4 uReflect;    \\nuniform vec4 uEnv;        \\nuniform vec4 uSurface;    \\nuni",
+      "test_g3_docs_say_what_film_swirl_0_does": "AssertionError: '0 = one film thickness over the whole object, no swirl; Wobble speed 0 stops the drift' not found in '| `uFilm` | iridescence | film thickness (nm) | film variation | film swirl frequency (2.5 / size; 0 freezes the swirl) |'",
+      "test_g4_occlusion_claim_has_a_preview_test": "AssertionError: 'render_pass_keeps_foreground_in_front' not found in \"## Use it on your own objects\\n\\nThe material needs to see what is behind the glass. So you render your scene once without the glass and hand that image to the material. Then you draw the glass into that same render, so objects in front of the glass still cover it.\\n\\n1. **Scene without glass.** Make a Render TOP (here `render_s",
+      "test_g5_c3_record_covers_the_quarter_gap": "AssertionError: 'quarter' not found in \"Keep mip 0 for dispersion (6a58487); fan-gap level (each sample reads a level as wide as the screen gap between neighbouring colour samples, max with the frost gap); Prism's isotropic footprintLod (not tried: round-2 B7 measured it worse).\"",
+      "test_g6_pick_render_runs_only_the_documented_picking_block": "AssertionError: '#ifdef TD_PICKING_ACTIVE' unexpectedly found in '\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vObjPos;       \\nflat out int vCamIndex; \\n\\nvoid main()\\n{\\n    \\n    vObjPos = TDPos();\\n    vec4 world = TDDeform(vObjPos);\\n    vWorldPos = world.xyz;\\n    \\n    \\n    vec3 objNormal = TDNormal();\\n    vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDefo"
+    },
+    "changed_tests_failing": {
+      "test_r5_pixel_stage_hygiene": "AssertionError: 2 != 6",
+      "test_c2_vertex_shader_answers_picking": "AssertionError: Regex didn't match: '\\\\n#ifndef TD_PICKING_ACTIVE\\\\n[\\\\s\\\\S]*\\\\n#else\\\\s+TDWritePickingValues\\\\(\\\\);\\\\s+#endif\\\\n' not found in '\\n\\n\\n\\n\\nout vec3 vWorldPos;     \\nout vec3 vWorldNormal;  \\nout vec3 vObjPos;       \\nflat out int vCamIndex; \\n\\nvoid main()\\n{\\n    \\n    vObjPos = TDPos();\\n    vec4 world = TDDeform(vObjPos);\\n    vWorldPos = world.xyz;\\n    \\n    \\n    vec3 objNorm",
+      "test_c6_offsets_follow_the_measured_screen_orientation": "AssertionError: 'vec2 orient = screenSign(ndc, ndcStep, depthStep, proj);' not found in '\\n    \\n    \\n    \\n    vec3 dPdx = dFdx(vWorldPos);\\n    vec3 dPdy = dFdy(vWorldPos);\\n    TDCheckDiscard();\\n\\n    mat4 proj = uTDMats[vCamIndex].proj;\\n    bool perspective = abs(proj[2][3]) > 0.5;\\n    vec3 camPoint = (uTDMats[vCamIndex].cam * vec4(vWorldPos, 1.0)).xyz;  \\n    vec2 orient = screenSign(camP",
+      "test_c8_object_size_scales_the_lengths_and_is_exact_at_1": "AssertionError: 'valueNoise(vObjPos * uFilm.w * worldScale() + ' not found in '// Liquid Glass: GLSL MAT pixel shader for TouchDesigner (GLSL 4.60).\\n//\\n// An original material for any 3D object. The refraction, dispersion,\\n// saturation, specular, fresnel and back-face ideas follow Maxime Heckel,\\n// \"Refraction, dispersion, and other shader light effects\" (2023),\\n// https://blog.maximeheckel."
+    },
+    "note": "All six new FamilyClose tests fail (test_preprocessed_helper_follows_ifdef_ifndef_and_else tests the helper and passes). The four changed tests fail because their expectations moved on purpose: test_c2_* (the documented picking form), test_c6_* (the new screenSign() call), test_c8_* (the film lookup times worldScale()), test_r5_pixel_stage_hygiene (six derivatives, worldScale())."
+  },
+  "preview_tests_on_c94e849": {
+    "ok": false,
+    "tests": 34,
+    "failing": {
+      "wobble_independent_of_object_scale": {
+        "scale01": {
+          "max": 82,
+          "pixelsOver8": 81761,
+          "p99OfAllPixels": 43
+        },
+        "scale10": {
+          "max": 55,
+          "pixelsOver8": 81843,
+          "p99OfAllPixels": 37
+        }
+      },
+      "screen_orientation_has_no_wrong_pixels": {
+        "torus_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "torus_flipped_raster_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 1
+        },
+        "knot_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "knot_flipped_raster_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 1
+        },
+        "sphere_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "sphere_flipped_raster_480x270": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 1
+        },
+        "torus_481x271": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "torus_flipped_raster_481x271": {
+          "single_sample_wrong": 1480,
+          "multisampled_wrong": 1497
+        },
+        "knot_481x271": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "knot_flipped_raster_481x271": {
+          "single_sample_wrong": 1549,
+          "multisampled_wrong": 1579
+        },
+        "sphere_481x271": {
+          "single_sample_wrong": 0,
+          "multisampled_wrong": 0
+        },
+        "sphere_flipped_raster_481x271": {
+          "single_sample_wrong": 1596,
+          "multisampled_wrong": 1621
+        }
+      },
+      "fit_size_carries_presets_over_comp_scale": {
+        "aqua_jelly_normal": {
+          "comp_scale_0_1": {
+            "max": 82,
+            "pixelsOver8": 81761,
+            "p99OfAllPixels": 43
+          },
+          "comp_scale_10": {
+            "max": 55,
+            "pixelsOver8": 81843,
+            "p99OfAllPixels": 37
+          }
+        },
+        "oil_slick_film": {
+          "comp_scale_0_1": {
+            "max": 255,
+            "pixelsOver8": 93644,
+            "p99OfAllPixels": 247
+          },
+          "comp_scale_10": {
+            "max": 255,
+            "pixelsOver8": 94099,
+            "p99OfAllPixels": 247
+          }
+        },
+        "aqua_jelly_final": {
+          "comp_scale_0_1": {
+            "max": 227,
+            "pixelsOver8": 63912,
+            "p99OfAllPixels": 128
+          },
+          "comp_scale_10": {
+            "max": 199,
+            "pixelsOver8": 60069,
+            "p99OfAllPixels": 117
+          }
+        },
+        "oil_slick_final": {
+          "comp_scale_0_1": {
+            "max": 247,
+            "pixelsOver8": 90287,
+            "p99OfAllPixels": 195
+          },
+          "comp_scale_10": {
+            "max": 236,
+            "pixelsOver8": 92446,
+            "p99OfAllPixels": 194
+          }
+        },
+        "prism_chrome_final": {
+          "comp_scale_0_1": {
+            "max": 241,
+            "pixelsOver8": 66459,
+            "p99OfAllPixels": 83
+          },
+          "comp_scale_10": {
+            "max": 247,
+            "pixelsOver8": 73875,
+            "p99OfAllPixels": 79
+          }
+        },
+        "frosted_ice_final": {
+          "comp_scale_0_1": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          },
+          "comp_scale_10": {
+            "max": 1,
+            "pixelsOver8": 0,
+            "p99OfAllPixels": 0
+          }
+        }
+      }
+    },
+    "passing_by_design": {
+      "render_pass_keeps_foreground_in_front": {
+        "evidence": {
+          "occluder_pixels_over_glass": 7798,
+          "render_pass_max_diff": 1,
+          "over_top_max_diff": 246,
+          "over_top_pixels_over_8": 7798
+        },
+        "why": "It tests the README's route, which the c94e849 material already supported (it writes depth). Its red runs: the unit test test_g4_occlusion_claim_has_a_preview_test fails on c94e849, and the near-plane mutation below fails the test."
+      },
+      "film_swirl_frequency_0_is_one_drifting_thickness": {
+        "evidence": {
+          "swirl_2_5_at_2s": {
+            "sheet_pixels": 129600,
+            "colour_range_255": 255,
+            "colour_255": [
+              0,
+              0,
+              0
+            ]
+          },
+          "swirl_0_at_2s": {
+            "sheet_pixels": 129600,
+            "colour_range_255": 0,
+            "colour_255": [
+              243,
+              254,
+              221
+            ]
+          },
+          "swirl_0_at_30s": {
+            "sheet_pixels": 129600,
+            "colour_range_255": 0,
+            "colour_255": [
+              189,
+              218,
+              16
+            ]
+          },
+          "swirl_0_from_2s_to_30s": {
+            "max": 205,
+            "pixels_over_2": 129600
+          },
+          "swirl_0_speed_0_from_2s_to_30s": {
+            "max": 0,
+            "pixels_over_2": 0
+          }
+        },
+        "why": "It measures what the corrected docs now say; the c94e849 shader already behaved this way and only its docs were wrong. Its red run is the unit test test_g3_docs_say_what_film_swirl_0_does."
+      }
+    }
+  },
+  "mutation_render_pass": {
+    "change": "liquid_glass.vert: gl_Position.z = -gl_Position.w after the projection (the glass at the near plane), delivered shaders otherwise",
+    "result": {
+      "occluder_pixels_over_glass": 7798,
+      "render_pass_max_diff": 246
+    },
+    "expect": "render_pass_max_diff over 2: the test fails"
+  }
+}

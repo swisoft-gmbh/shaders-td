@@ -1,0 +1,43 @@
+{
+  "research": {
+    "status": "completed",
+    "skill": "shader-research",
+    "outputs": [
+      "research.md",
+      "sources.json",
+      "brief.md",
+      "decisions.json"
+    ]
+  },
+  "build": {
+    "status": "completed",
+    "skill": "shader-build",
+    "outputs": [
+      "study.json",
+      "build.py",
+      "experiments.json",
+      "captures/"
+    ],
+    "native_evidence": "../../validation/five-mechanisms/tidal-tests.json"
+  },
+  "explain": {
+    "status": "completed",
+    "skill": "shader-explain",
+    "outputs": [
+      "article.source.md",
+      "article.md",
+      "article-plan.json",
+      "article-snippets.json",
+      "figures/network.svg"
+    ]
+  },
+  "review": {
+    "status": "completed",
+    "skill": "shader-review",
+    "outputs": [
+      "review.md",
+      "validation.json"
+    ],
+    "native_export_evidence": "../../validation/five-mechanisms/export-reopen.json"
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "note": "This study's earlier rounds (build, independent review, audit rounds 2 and 3) are recorded in review.md; this file starts with the family sync.",
+  "family_sync": {
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "C1 to C9 from liquid-glass-flow, -blobs, -prism and -lit at commit 6a58487; C3 measured and rejected",
+    "outputs": [
+      "liquid_glass.frag",
+      "liquid_glass.vert",
+      "backdrop.frag",
+      "study.json",
+      "builder.py",
+      "native.py",
+      "preset_exec.py",
+      "experiments.json",
+      "checks/compile_glsl.py",
+      "checks/preview/preview.js",
+      "checks/preview/index.html",
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/reference/",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-plan.json",
+      "article-snippets.json",
+      "decisions.json",
+      "validation.json",
+      "sources.json",
+      "co-design.json",
+      "research.md",
+      "review.md",
+      "captures/presets-sheet.png",
+      "captures/presets-sheet-type.png",
+      "captures/preview-type_backdrop.png"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (TouchDesigner API facts).",
+        "Step 1: corpus.py verify (393 files, no errors).",
+        "Step 5: re-read the official pages for every API fact the sync relies on, on 2026-11-02: Write a GLSL MAT (picking, multiple render targets, TDFog, TDDither), Render TOP and Render Pass TOP (dither, Advanced page, default not stated), SOP Class (bounds), GeometryCOMP Class (bounds), ObjectCOMP Class (worldTransform), Matrix Class (determinant).",
+        "Step 4: each member mechanism recorded with file, lines, sha256 and commit 6a58487 in sources.json."
+      ],
+      "shader-build": [
+        "Read SKILL.md: kept the recipe, builder and preview evaluator consistent; no TouchDesigner host, so native steps stay pending.",
+        "Foundation: alpha association stated (premultiplied Refraction TOP alpha now read), UV orientation measured per pixel, colour buffers declared.",
+        "Mechanism and Challenge: each item applied alone, with a red test on the 6a58487 code and a green run after; C3 measured against 64- and 128-sample references and rejected; C6's derivative form tried first and replaced after it changed 2 to 5 silhouette pixels.",
+        "Native delivery: lenient Dither setting reported as a 'dither' build warning; Info DATs on renders; inspect() reports render_diagnostics; fit_glass() behind a pulse; demo backdrop uniform bound leniently.",
+        "Measure: no GPU timing (performance pending); the fan-gap level would have cost two extra refract() per pixel.",
+        "Teach: new experiment type_backdrop with a labelled WebGL preview."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Changed sections rewritten from the actual source: screen orientation (Make the object see-through), dispersion samples (Split the colours), the covered formula and fog (Give the glass its own colour), Object size in the patterns (Make it liquid), a new teaching section Use it in your own scene (question, picking excerpt, type_backdrop experiment), Limits and Credits.",
+        "article.py render and check (10 sections, 15 excerpts); images labelled as WebGL previews."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md.",
+        "Step 1 source truth, step 2 check_study.py, step 5 geometry (object size against Geometry COMP scale, screen orientation, transparent scenes), step 6 article.py check, step 8 report (review.md > Family sync).",
+        "Steps 3 and 7 impossible without TouchDesigner: new native checks listed in validation.json.",
+        "Changed test expectation reported with before and after (reset list gains Backdrop); every committed capture re-rendered and compared (max difference 0)."
+      ]
+    }
+  },
+  "family_sync_verifier_fixes": {
+    "part_of": "family sync",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "V1 (back-face pass broke C1's transparent scenes), V2 (README uniform table cut in two), V3 (tutorial dispersion claim without its thickness condition), from the independent check of the family sync",
+    "outputs": [
+      "liquid_glass.frag",
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-snippets.json",
+      "decisions.json",
+      "validation.json",
+      "sources.json",
+      "co-design.json",
+      "review.md",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md. No new TouchDesigner API fact: the fix uses only the sampler and alpha conventions already recorded (Render TOP background alpha, premultiplied output). Dither wording keeps the Render TOP Advanced page already cited."
+      ],
+      "shader-build": [
+        "Read SKILL.md. Foundation: alpha association restated for the back-face branch (coverage from the Refraction TOP, distance stays in the back-face pass's alpha).",
+        "Challenge: the defect isolated at fixed conditions (invisible Clear Crystal, alpha-0 scene, time 2) with the Back-face pass the only varied control; baseline kept (pass off, and 6a58487 over the opaque scene).",
+        "Native delivery unchanged: no recipe or builder change; the native transparent-scene check now includes the back-face pass."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Step 4: article.py render regenerated the dispersion excerpt (sampleBehind changed) and article.md; no excerpt edited by hand.",
+        "Step 6/7: the compose paragraph and Limits rewritten from the actual source; the dispersion claim now states both measured bounds of its cited test; article.py check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md.",
+        "Step 2: check_study.py. Step 6: article.py check. Step 8: each issue reproduced, fixed with the smallest change, a test that fails without the fix, report in review.md > Family sync > Fixes after the independent check.",
+        "Tests tightened, none weakened: two preview tests gained cases, one gained a measured row; four unit tests added. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_sync_gap_fix": {
+    "part_of": "family sync",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "G (low): the core's unit tests lacked the R3, R5 and R9 source and recipe guards every member added; ported from liquid-glass-flow",
+    "outputs": [
+      "checks/test_study.py",
+      "checks/results/audit-guards-red-run.json",
+      "checks/results/",
+      "README.md",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md. No new TouchDesigner API fact: the guards pin facts already recorded (sampler filter and extend parameters, Par menus, scriptErrors, Info DAT diagnostics)."
+      ],
+      "shader-build": [
+        "Read SKILL.md. Native delivery: lenient settings were already reported by category; a test now checks every category the builder writes has a printed note.",
+        "Challenge: each guarded fix undone alone at fixed conditions (26 single-fix copies), baseline kept (the unmutated study, a6f95c6 and 6a58487)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Steps 4 and 7: no source excerpt changed; article.py render and check rerun. The tutorial is unaffected."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md.",
+        "Step 2: check_study.py. Step 6: article.py check. Step 8: the gap reproduced (24 of 26 single-fix reverts passed the 42 unit tests), nine guards added, each red on its mutation and all nine red on a6f95c6; report in review.md > Family sync > Guard tests for audit rounds 2 and 3.",
+        "Review criteria Numerics (ordered smoothing edges, finite outputs) and Host (diagnostics) now have unit tests. No test weakened or changed. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_names_fix": {
+    "part_of": "family sync",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "Family names (verifier, low): one name per thing across the five members (Fit pulse, Demo backdrop menu).",
+    "change": "Docs only here: README and tutorial say Demo backdrop (the label) instead of Backdrop; README gains Names across the family, the one list of the family's names; the Inputs table names `Fitglass` and links to it.",
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Page class: custom parameters have a name and a label).",
+        "Step 5: re-read the Par Class page on docs.derivative.ca (modified 2026-08-19, read 2026-11-02) for pulse(); whether a scripted pulse fires the Parameter Execute callback is not stated there, so it is a pending native check."
+      ],
+      "shader-build": [
+        "Read SKILL.md: recipe (study.json), callback (preset_exec.py) and helpers kept consistent; parameter names and labels are the native delivery surface, so they were changed in the recipe, never in a built network.",
+        "Challenge: the divergence was reproduced first by a script over the five study.json files (three Fit names, two label heads, two backdrop classes).",
+        "No TouchDesigner host: native checks of the renamed pulse and labels stay pending (validation.json, family_names)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one name per thing in the tutorial; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host: valid parameter names and menus; Teaching: matching presets and docs).",
+        "Steps 2, 6 and 8: check_study.py, article.py check, review.md (Family names). Red run before the fix: checks/results/red-run-family-names.json. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close": {
+    "part_of": "family sync",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "This study's share of the family gaps found after the two-way sync (c94e849): G1 Object size as the object's world size for the ripple and film lookups (the family rule) and Fit's docstring; G2 the centre-line tie-break of the screen orientation and the corrected C6 record; G3 the film swirl 0 wording; G4 a preview test of the occlusion claim; G5 the quarter gap in the C3 record; G6 the documented picking form.",
+    "outputs": [
+      "liquid_glass.frag",
+      "liquid_glass.vert",
+      "native.py",
+      "study.json",
+      "checks/preview/preview.js",
+      "checks/preview/index.html",
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/results/red-run-family-close.json",
+      "checks/results/family-close-measurements.json",
+      "checks/results/",
+      "captures/review-family-close-occluder.png",
+      "captures/review-family-close-comp-scale.png",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "decisions.json",
+      "validation.json",
+      "review.md",
+      "co-design.json",
+      "sources.json",
+      "workflow.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Write a GLSL MAT: picking, material helpers).",
+        "Step 5: re-read Write a GLSL MAT, Picking on docs.derivative.ca (modified 2026-08-05, read 2026-11-02): '#ifndef TD_PICKING_ACTIVE ... #else TDWritePickingValues(); #endif', only the #else block runs while picking. The family rule's worldTransform reading comes from Liquid Glass Lit's record (ObjectCOMP Class); not re-read here.",
+        "Separated sources: Derivative's page (API fact), the members' records and code (family synthesis), this round's preview measurements (new experiments)."
+      ],
+      "shader-build": [
+        "Read SKILL.md: changes made in the delivered GLSL, recipe text and helpers the builder embeds, never in a built network.",
+        "Challenge: every gap reproduced first on a copy of c94e849 (preview surveys and red runs), with the baseline kept.",
+        "Measure: renderer (Chromium SwiftShader), sizes (960 x 540, 480 x 270, 481 x 271) and sample counts stated; no performance claim.",
+        "No TouchDesigner host: native checks pending (validation.json, family_close)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Steps 4 and 7: article.py render regenerated the changed excerpts (uniforms, screen, setup, liquid, film, transforms, picking) and check passes; the vertex excerpts re-cut so 'Make the object see-through' shows what the pixel stage receives and 'Use it in your own scene' shows main() with the picking branch.",
+        "Step 6: the new decisions follow goal, options, evidence, choice, consequence; claims in README and tutorial name their tests."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host, Numerics, Geometry, Teaching).",
+        "Steps 2, 5, 6 and 8: check_study.py, orientation under a flipped raster and scaled COMPs, article.py check, review.md (Family close) with red runs on c94e849 (checks/results/red-run-family-close.json). Steps 3 and 7 impossible without TouchDesigner.",
+        "Captures: all 28 single captures re-rendered bit-identical to the committed files and all 24 contact-sheet tiles bit-identical to c94e849, so none was replaced; two new review images labelled as WebGL previews."
+      ]
+    }
+  },
+  "family_close_verifier_fixes": {
+    "part_of": "family close",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "A family critic's five findings on the family close records: V1 the direction of the deliberate G1 look change (k times as many ripples and film bands at Object size 1 on a COMP scale k) and the merge-risk sentence; V2 that a core-only merge turns Liquid Glass Flow's check suite red (test_core_reference_is_the_current_core); V3 the Object size bullet in Names across the family; V4 what a pick render runs (header, test_g6's pinned phrase) and 'the same values in a different order' in G6; V5 like-for-like dispersion numbers in C3. Flow's folder is unchanged: its refresh needs Flow's own units decision (review.md, Verifier fixes after the family close).",
+    "outputs": [
+      "liquid_glass.vert (two comments)",
+      "checks/test_study.py",
+      "checks/preview_tests.cjs",
+      "checks/results/red-run-family-close-verifier.json",
+      "checks/results/family-close-measurements.json",
+      "checks/results/",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-snippets.json",
+      "decisions.json",
+      "validation.json",
+      "review.md",
+      "co-design.json",
+      "workflow.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Write a GLSL MAT: picking).",
+        "Step 5: the picking statement checked against G6's quote of Write a GLSL MAT ('only the code inside the #else block is executed' describes the branch) and against test_g6's preprocessed pick render (4 statements, 3 of them before the branch); no new web reading needed.",
+        "Separated sources: Derivative's page (API fact), the members' records (Blobs' and Lit's C3 numbers, Lit's README table), this round's scratch measurements (new experiments)."
+      ],
+      "shader-build": [
+        "Read SKILL.md.",
+        "Challenge: each finding reproduced first on scratch copies of c94e849 and of the family close as first delivered (the critic's ripple probe, Flow's unit suite, a scratch Flow refresh), with the baselines kept.",
+        "Measure: renderer (Chromium SwiftShader), sizes (960 x 540; Flow 480 x 270) and metrics stated (pattern detail per 1000 glass pixels; Blobs' rainbow-pixel metric); no performance claim.",
+        "No TouchDesigner host: native checks pending (validation.json, family_close)."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md.",
+        "Steps 4 and 7: article.py render regenerated the picking excerpt (corrected #else comment) and the tutorial's picking sentence; check passes.",
+        "Step 6: the corrected records keep goal, options, evidence, choice, consequence; each corrected claim names its test."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Teaching, Geometry, Host).",
+        "Steps 2, 5, 6 and 8: check_study.py, the pattern count under a COMP scale, article.py check, review.md (Verifier fixes after the family close) with red runs (checks/results/red-run-family-close-verifier.json). Steps 3 and 7 impossible without TouchDesigner.",
+        "Captures: no shader behaviour changed (comments only), so no capture was replaced."
+      ]
+    }
+  },
+  "family_close_second_verifier_pass": {
+    "part_of": "family close",
+    "status": "completed (outside TouchDesigner; native checks pending)",
+    "date": "2026-11-02",
+    "items": "CORE-V1: README Names across the family after Flow's and Prism's family closes (the Flow row's What Fit sets and its count; the Object size bullet's list of members that follow the family rule). Found here: the FamilyClose docstring's overclaim, the same as Flow's FLOW-V2. The family close's Not done here paragraph gains an update note. Flow's matching record fixes (FLOW-V1 to FLOW-V3) are in Flow's workflow.json (family_close_verifier_fixes).",
+    "outputs": [
+      "README.md",
+      "review.md",
+      "validation.json",
+      "decisions.json",
+      "co-design.json",
+      "workflow.json",
+      "checks/test_study.py",
+      "checks/results/red-run-family-close-verifier.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no new TouchDesigner API fact needed; the members' Fit code runs against a fake td module, as their own unit tests do."
+      ],
+      "shader-build": [
+        "Read SKILL.md (Challenge, Measure).",
+        "Challenge: reproduced first with each mesh member's own Fit on the demo torus in a Geometry COMP scaled 0.1, 1, 3 and 10 (scratchpad agents/close-verify-fix/members.py), and with today's tests on a copy whose README lines and docstring were reverted.",
+        "Measure: plain Python only; no renders, no performance claim. No shader, recipe or builder change."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one name per thing (Flow size and Object size as Flow's label names them); no tutorial excerpt changed; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host criterion: parameter names and labels read from each member's study.json; Teaching criterion: docs tied to tests).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Second verifier pass after Flow's and Prism's closes). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_critic_fixes": {
+    "part_of": "family close (critic fixes)",
+    "status": "completed (outside TouchDesigner; native label check pending)",
+    "date": "2026-11-02",
+    "items": "PV3 (the Names across the family bullet: already fixed by CORE-V1, verified) and PV4 (Thickness and Object size labels in one family wording). PV1, PV2 and Prism's note are in Prism's workflow.json; Flow's label in Flow's.",
+    "outputs": [
+      "study.json",
+      "review.md",
+      "validation.json",
+      "decisions.json",
+      "co-design.json",
+      "workflow.json",
+      "checks/test_study.py",
+      "checks/results/red-run-family-close-critic.json",
+      "checks/results/",
+      "../liquid-glass-flow/checks/core_reference/study.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Page class: custom parameter labels are set per parameter; the running build is authoritative): no new TouchDesigner API fact needed."
+      ],
+      "shader-build": [
+        "Read SKILL.md (Challenge, Measure). Changes land in the recipe (study.json labels) and records, never in a built network.",
+        "Challenge: each finding reproduced on the current files, with a scratch copy kept as the baseline (scratchpad agents/family-pv-fix/pre). Measure: no renders needed; no shader, preset or uniform expression changed."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one name per thing (one Object size wording); no tutorial excerpt changed; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Host criterion: parameter labels; Teaching criterion: docs tied to tests).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Family close critic fixes). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_critic_native_and_object_size": {
+    "part_of": "family close (family critic: native runs and one Object size)",
+    "status": "completed outside TouchDesigner; native runs and the rule change pending",
+    "date": "2026-11-02",
+    "items": "Critic issue 1 (high): no family close result ran in TouchDesigner; not fixable here, native list and record template added. Critic issue 2 (medium): one Object size per component; measured, documented and tested; the rule change waits for the user's decision.",
+    "outputs": [
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "article-snippets.json",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json",
+      "checks/test_study.py",
+      "checks/results/red-run-family-critic.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Write a GLSL MAT: TDDeform and instancing; the running build is authoritative). New API fact checked on docs.derivative.ca/App_Class (2026-11-02): the App class has build, version, osName and osVersion but no GPU member, so the native record takes the GPU by hand."
+      ],
+      "shader-build": [
+        "Read SKILL.md. Challenge: both issues reproduced at fixed conditions with this study's own Fit code on fake objects (scratchpad agents/critic-fit-native/fit_limits.py); baseline kept. Measure: no renders needed, because no shader, preset or uniform expression changed. Native execution marked pending, as the build mode requires when no host is connected."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md: one Limits point added in the article's own words, no code excerpt changed; article.py render and check rerun."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Geometry: instancing and scale; Teaching: docs tied to tests; Host: build, OS, GPU and Info DAT output).",
+        "Steps 2 (check_study.py), 6 (article.py render and check) and 8 (review.md, Family critic: native runs and one Object size; claims limited to what ran). Steps 3, 5 (native part) and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_tutorial_pointer": {
+    "part_of": "family close (family critic: the tutorial's pointer to main())",
+    "status": "completed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "items": "Family critic (low): article.source.md line 32 said main() 'comes back in the last section'; the picking excerpt is in 'Use it in your own scene', with Limits and Credits after it (Lit's LIT-CV1). Found while reproducing and fixed: 'The back-face pass (last section)' and 'the plain bend from the last section'. Counts corrected: README and review.md unit tests now 72.",
+    "outputs": [
+      "article.source.md",
+      "article.md",
+      "README.md",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json",
+      "checks/test_study.py",
+      "checks/results/red-run-family-critic-pointer.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no TouchDesigner API fact touched in this round, so no new docs lookup."
+      ],
+      "shader-build": [
+        "Read SKILL.md (Challenge, Measure). Challenge: reproduced on the current files with the new test first (red: 1 of 72, the other 71 pass); baseline copy kept (scratchpad agents/core-main-pointer/pre). Measure: no renders needed; no shader, preset or uniform expression changed, so no capture changed."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md. Step 4: article.py render; generated excerpts not edited by hand (article-snippets.json unchanged). Step 7: article.py check. Teaching contract: excerpts sit in the section that teaches them, and a pointer to one uses that section's heading (one name per thing)."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md (Teaching criterion: correct article/code pairing).",
+        "Steps 2 (check_study.py), 6 (article.py render and check; the pointer names the section that holds the code) and 8 (review.md, Family critic: the tutorial's pointer to main()). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_fit_threshold": {
+    "part_of": "family close (family critic: the COMP-scale test's threshold)",
+    "status": "completed (outside TouchDesigner)",
+    "date": "2026-11-02",
+    "items": "Family critic (low): fit_size_carries_presets_over_comp_scale accepted up to 50 pixels over 8/255, while every case here measures 1/255. It now also holds 2/255 at every pixel; the family's shared clause (at most 50 pixels over 8/255) stays. Prism (15/255) and Blobs (66/255, 15 pixels over 2/255) keep their own recorded bounds.",
+    "change": "checks/preview_tests.cjs: the pass condition adds x.max <= 2, the claim says 2/255 (measured 1/255). checks/test_study.py: FitThreshold (1 test). Unit suite 73 tests (72 before); preview suite unchanged. No shader, preset, uniform expression, recipe value or capture changed.",
+    "outputs": [
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/results/red-run-fit-threshold.json",
+      "checks/results/",
+      "README.md",
+      "review.md",
+      "decisions.json",
+      "validation.json",
+      "co-design.json",
+      "workflow.json"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md: no TouchDesigner API fact touched, so no new docs lookup."
+      ],
+      "shader-build": [
+        "Read SKILL.md in full. Challenge: the gap reproduced at fixed conditions before any change, with a deliberate slip (worldScale() exponent 0.3333) on a scratch copy (scratchpad agents/fit-threshold/mut); baseline kept (scratchpad agents/fit-threshold/before). Measure: no render of the delivered files needed; no shader, preset or uniform expression changed, so no capture changed. No TouchDesigner host: native checks stay pending."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md in full. Steps 4 and 7: article.py render and check; no excerpt changed, and test claims stay honest (measured 1/255, held to 2/255)."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md in full: Numerics and Teaching criteria (a test's claim matches what it checks; tests not inflated into claims of native correctness).",
+        "Step 2: check_study.py. Step 6: article.py render and check. Step 8: review.md, Family critic: the COMP-scale test's threshold, with red runs. Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  },
+  "family_close_centre_line_residual": {
+    "part_of": "family close (family critic: the antialiased centre-line residual)",
+    "status": "completed outside TouchDesigner; native check pending",
+    "date": "2026-11-02",
+    "items": "Family critic (low): a few multisampled silhouette pixels near a centre line still take the wrong orientation sign (up to 8 per row of twelve renders); the centroid fix (Lit's form (e)) needs a centroid varying no TouchDesigner build has run. Kept as a family open question with a native check; no shader changed.",
+    "change": "co-design.json: the family's open question (same words in the core, Flow, Lit and Prism) and an answers entry. validation.json: family_close.native_run check centre_line_residual, family_close.centre_line_residual, unit and preview scopes. decisions.json: the decision. checks/preview_tests.cjs: at most 10 wrong multisampled pixels per row (20 before). checks/test_study.py: CentreLineResidual (2 tests); _critic_native_run_test expects five native checks. README, tutorial, review.md, sources.json. Unit suite 75 tests (73 before). No shader, preset, uniform expression or capture changed.",
+    "outputs": [
+      "co-design.json",
+      "validation.json",
+      "decisions.json",
+      "README.md",
+      "article.source.md",
+      "article.md",
+      "review.md",
+      "sources.json",
+      "workflow.json",
+      "checks/preview_tests.cjs",
+      "checks/test_study.py",
+      "checks/results/centre-line-residual.json",
+      "checks/results/red-run-centre-line-residual.json",
+      "checks/results/"
+    ],
+    "skills": {
+      "shader-research": [
+        "Read SKILL.md and references/native-api.md (Render TOP: record antialiasing with captures). New API facts checked on docs.derivative.ca on 2026-11-02 for the native check: Render TOP Anti-Alias (antialias, aa4) and Override Material (overridemat); Composite TOP Operation Difference (operand, difference); Analyze TOP Operation Maximum in RGB (op, maxrgb). Recorded in sources.json."
+      ],
+      "shader-build": [
+        "Read SKILL.md in full. Inspect before choosing: no TouchDesigner host here, so native execution stays pending and the native check is written as a recipe. Challenge: the residual reproduced at fixed conditions (the survey's 144 renders) with the baseline kept, and its effect on the final image isolated by forcing the orientation on a scratch copy (visibility.cjs). Measure: no timing; every image labelled a WebGL preview. The centroid variant only compiled in glslang on a scratch copy of Lit, not adopted."
+      ],
+      "shader-explain": [
+        "Read SKILL.md and references/teaching-contract.md in full. Steps 4, 6 and 7: the limitation stated in the tutorial in plain words with its preview numbers and its open status; the decision written as goal, options, evidence, choice, consequence; article.py render and check; no code excerpt changed."
+      ],
+      "shader-review": [
+        "Read SKILL.md and references/review.md in full: Geometry (antialiasing, orientation at odd sizes), Numerics, Teaching (limitations explicit, claims match tests) and Host criteria.",
+        "Steps 2 (check_study.py), 5 (orientation in both rasters, single-sample and multisampled), 6 (article.py render and check) and 8 (review.md, Family critic: the antialiased centre-line residual; red runs and mutations). Steps 3 and 7 impossible without TouchDesigner."
+      ]
+    }
+  }
+}

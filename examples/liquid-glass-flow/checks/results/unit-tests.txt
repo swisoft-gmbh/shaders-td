@@ -1,0 +1,102 @@
+test_build_runs_and_wires_everything (__main__.BuilderDryRun.test_build_runs_and_wires_everything) ... ok
+test_records_match_the_preview_measurements (__main__.CentreLineResidual.test_records_match_the_preview_measurements) ... ok
+test_residual_is_an_open_family_question_with_a_native_check (__main__.CentreLineResidual.test_residual_is_an_open_family_question_with_a_native_check) ... ok
+test_g1_object_size_follows_the_family_rule (__main__.FamilyClose.test_g1_object_size_follows_the_family_rule) ... ok
+test_g2_centre_line_tie_break_comes_through_the_pixel_stage (__main__.FamilyClose.test_g2_centre_line_tie_break_comes_through_the_pixel_stage) ... ok
+test_g3_film_swirl_0_wording_everywhere (__main__.FamilyClose.test_g3_film_swirl_0_wording_everywhere) ... ok
+test_g6_pick_render_runs_only_the_documented_picking_block (__main__.FamilyClose.test_g6_pick_render_runs_only_the_documented_picking_block) ... ok
+test_preprocessed_helper_follows_ifdef_ifndef_and_else (__main__.FamilyClose.test_preprocessed_helper_follows_ifdef_ifndef_and_else) ... ok
+test_pv4_labels_say_what_object_size_does (__main__.FamilyCloseCritic.test_pv4_labels_say_what_object_size_does) ... ok
+test_v1_fit_checklists_match_what_fit_flow_returns (__main__.FamilyCloseVerifier.test_v1_fit_checklists_match_what_fit_flow_returns) ... ok
+test_v2_red_run_claims_match_the_record (__main__.FamilyCloseVerifier.test_v2_red_run_claims_match_the_record) ... ok
+test_v3_not_done_paragraph_matches_the_family_records (__main__.FamilyCloseVerifier.test_v3_not_done_paragraph_matches_the_family_records) ... ok
+test_native_family_list_waits_for_a_recorded_run (__main__.FamilyCritic.test_native_family_list_waits_for_a_recorded_run) ... ok
+test_one_object_size_setups_are_measured_and_documented (__main__.FamilyCritic.test_one_object_size_setups_are_measured_and_documented) ... ok
+test_demo_backdrop_menu_has_the_family_label_and_experiments_reset_it (__main__.FamilyNames.test_demo_backdrop_menu_has_the_family_label_and_experiments_reset_it) ... ok
+test_docs_use_the_family_names (__main__.FamilyNames.test_docs_use_the_family_names) ... ok
+test_fit_pulse_has_the_family_name_and_label (__main__.FamilyNames.test_fit_pulse_has_the_family_name_and_label) ... ok
+test_c1_transmitted_returns_the_scene_alpha (__main__.FamilySync.test_c1_transmitted_returns_the_scene_alpha) ... ok
+test_c2_extra_colour_buffers_get_zeros (__main__.FamilySync.test_c2_extra_colour_buffers_get_zeros) ... ok
+test_c2_vertex_shader_answers_picking_with_the_moved_surface (__main__.FamilySync.test_c2_vertex_shader_answers_picking_with_the_moved_surface) ... ok
+test_c4_renders_switch_dither_off (__main__.FamilySync.test_c4_renders_switch_dither_off) ... ok
+test_c4_shaders_never_dither (__main__.FamilySync.test_c4_shaders_never_dither) ... ok
+test_c5_colour_is_capped_before_output_alpha_is_not (__main__.FamilySync.test_c5_colour_is_capped_before_output_alpha_is_not) ... ok
+test_c5_every_render_gets_an_info_dat (__main__.FamilySync.test_c5_every_render_gets_an_info_dat) ... ok
+test_c5_normalize_never_sees_a_zero_vector (__main__.FamilySync.test_c5_normalize_never_sees_a_zero_vector) ... ok
+test_c5_render_diagnostics_reports_the_renders_that_draw_the_glass (__main__.FamilySync.test_c5_render_diagnostics_reports_the_renders_that_draw_the_glass) ... ok
+test_c6_offsets_follow_the_measured_screen_orientation (__main__.FamilySync.test_c6_offsets_follow_the_measured_screen_orientation) ... ok
+test_c7_fog_on_the_front_pass_only (__main__.FamilySync.test_c7_fog_on_the_front_pass_only) ... ok
+test_c8_object_size_is_setup_and_never_reset (__main__.FamilySync.test_c8_object_size_is_setup_and_never_reset) ... ok
+test_c8_object_size_scales_the_lengths_and_is_exact_at_1 (__main__.FamilySync.test_c8_object_size_scales_the_lengths_and_is_exact_at_1) ... ok
+test_c9_backdrop_menu_reaches_the_demo_backdrop (__main__.FamilySync.test_c9_backdrop_menu_reaches_the_demo_backdrop) ... ok
+test_g1_readme_says_what_film_swirl_0_does (__main__.FamilySync.test_g1_readme_says_what_film_swirl_0_does) ... ok
+test_r1_no_node_expression_reads_absolute_time (__main__.FamilySync.test_r1_no_node_expression_reads_absolute_time) ... ok
+test_r1_pixel_noise_lattice_repeats_every_256 (__main__.FamilySync.test_r1_pixel_noise_lattice_repeats_every_256) ... ok
+test_r2_occlusion_claim_has_a_preview_test (__main__.FamilySync.test_r2_occlusion_claim_has_a_preview_test) ... ok
+test_r2_readme_draws_the_glass_with_a_render_pass_top (__main__.FamilySync.test_r2_readme_draws_the_glass_with_a_render_pass_top) ... ok
+test_r3_build_warnings_are_categorized (__main__.FamilySync.test_r3_build_warnings_are_categorized) ... ok
+test_r3_inputs_are_constant_paths_to_the_demo (__main__.FamilySync.test_r3_inputs_are_constant_paths_to_the_demo) ... ok
+test_r5_atan_only_through_azimuth (__main__.FamilySync.test_r5_atan_only_through_azimuth) ... ok
+test_r5_pixel_stage_hygiene (__main__.FamilySync.test_r5_pixel_stage_hygiene) ... ok
+test_r5_smoothstep_edges_increase (__main__.FamilySync.test_r5_smoothstep_edges_increase) ... ok
+test_r5_vertex_decides_a_zero_normal_before_transforming (__main__.FamilySync.test_r5_vertex_decides_a_zero_normal_before_transforming) ... ok
+test_r6_flat_image_blur_widens_with_the_warp (__main__.FamilySync.test_r6_flat_image_blur_widens_with_the_warp) ... ok
+test_r6_frost_disc_centre_stays_near_the_middle (__main__.FamilySync.test_r6_frost_disc_centre_stays_near_the_middle) ... ok
+test_r7_back_face_pass_is_32_bit_and_read_texel_by_texel (__main__.FamilySync.test_r7_back_face_pass_is_32_bit_and_read_texel_by_texel) ... ok
+test_r8_colour_parameters_and_energy_conserving (__main__.FamilySync.test_r8_colour_parameters_and_energy_conserving) ... ok
+test_r9_inspect_reports_script_and_blocking_errors (__main__.FamilySync.test_r9_inspect_reports_script_and_blocking_errors) ... ok
+test_r9_sampler_extend_modes_and_menu_uniforms (__main__.FamilySync.test_r9_sampler_extend_modes_and_menu_uniforms) ... ok
+test_comp_bounds_fallback_and_notes (__main__.FitFlow.test_comp_bounds_fallback_and_notes) ... ok
+test_demo_sphere_fits_to_the_defaults (__main__.FitFlow.test_demo_sphere_fits_to_the_defaults) ... ok
+test_uses_the_rendered_sop_bounds (__main__.FitFlow.test_uses_the_rendered_sop_bounds) ... ok
+test_decisions_that_size_the_motion_by_object_size_are_superseded (__main__.FitHelperName.test_decisions_that_size_the_motion_by_object_size_are_superseded) ... ok
+test_every_member_calls_its_fit_fit_glass (__main__.FitHelperName.test_every_member_calls_its_fit_fit_glass) ... ok
+test_fit_helper_is_fit_glass_and_the_old_name_is_an_alias (__main__.FitHelperName.test_fit_helper_is_fit_glass_and_the_old_name_is_an_alias) ... ok
+test_fit_size_test_holds_2_255_at_every_pixel (__main__.FitThreshold.test_fit_size_test_holds_2_255_at_every_pixel) ... ok
+test_code_stays_as_delivered_until_answered (__main__.LookDecisions.test_code_stays_as_delivered_until_answered) ... ok
+test_look_decisions_wait_for_the_user (__main__.LookDecisions.test_look_decisions_wait_for_the_user) ... ok
+test_each_experiment_alone_gives_defaults_preset_and_overrides (__main__.NativeApply.test_each_experiment_alone_gives_defaults_preset_and_overrides) ... ok
+test_no_experiment_sets_a_setup_control (__main__.NativeApply.test_no_experiment_sets_a_setup_control) ... ok
+test_order_does_not_matter (__main__.NativeApply.test_order_does_not_matter) ... ok
+test_reset_controls_are_the_documented_ones (__main__.NativeApply.test_reset_controls_are_the_documented_ones) ... ok
+test_scene_inputs_and_flow_fit_survive (__main__.NativeApply.test_scene_inputs_and_flow_fit_survive) ... ok
+test_choosing_a_preset_loads_look_and_motion (__main__.PresetCallback.test_choosing_a_preset_loads_look_and_motion) ... ok
+test_custom_changes_nothing (__main__.PresetCallback.test_custom_changes_nothing) ... ok
+test_fit_pulse_runs_fit_glass (__main__.PresetCallback.test_fit_pulse_runs_fit_glass) ... {}
+ok
+test_a_still_look_never_reads_the_clock (__main__.PresetModule.test_a_still_look_never_reads_the_clock) ... ok
+test_apply_writes_every_preset_value (__main__.PresetModule.test_apply_writes_every_preset_value) ... ok
+test_custom_changes_nothing (__main__.PresetModule.test_custom_changes_nothing) ... ok
+test_decode_colours (__main__.PresetModule.test_decode_colours) ... ok
+test_demo_spin_is_integrated (__main__.PresetModule.test_demo_spin_is_integrated) ... ok
+test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump (__main__.PresetModule.test_drift_is_the_same_within_a_frame_and_resumes_without_a_jump) ... ok
+test_flow_time_is_flow_speed_added_up_and_wrapped (__main__.PresetModule.test_flow_time_is_flow_speed_added_up_and_wrapped) ... ok
+test_flow_wrap_is_a_whole_number_of_every_drift (__main__.PresetModule.test_flow_wrap_is_a_whole_number_of_every_drift)
+Every drift rate in liquid_flow.vert times the wrap is a whole number of noise repeats (256 cells). ... ok
+test_menu_follows_the_evaluated_value (__main__.PresetModule.test_menu_follows_the_evaluated_value) ... ok
+test_morph_endpoints_and_midpoint_include_motion (__main__.PresetModule.test_morph_endpoints_and_midpoint_include_motion) ... ok
+test_motion_stays_smooth_through_morph_and_speed_changes_after_an_hour (__main__.PresetModule.test_motion_stays_smooth_through_morph_and_speed_changes_after_an_hour) ... ok
+test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero (__main__.PresetModule.test_phase_is_wrapped_double_precision_and_holds_when_speed_is_zero) ... ok
+test_two_components_keep_their_own_motion (__main__.PresetModule.test_two_components_keep_their_own_motion) ... ok
+test_both_materials_share_bindings_except_pass_and_back_sampler (__main__.Recipe.test_both_materials_share_bindings_except_pass_and_back_sampler) ... ok
+test_control_defaults_are_the_default_preset (__main__.Recipe.test_control_defaults_are_the_default_preset) ... ok
+test_core_controls_kept (__main__.Recipe.test_core_controls_kept)
+Every core control still exists with the same name, type, range and default (Fitglass too, since the family names fix). ... ok
+test_core_looks_unchanged (__main__.Recipe.test_core_looks_unchanged)
+The 12 core presets keep working: same names, order and look values. ... ok
+test_core_reference_is_the_current_core (__main__.Recipe.test_core_reference_is_the_current_core) ... ok
+test_every_preset_value_reaches_a_morphed_uniform (__main__.Recipe.test_every_preset_value_reaches_a_morphed_uniform)
+Through u() directly, or Flow speed through flow_time(), which integrates u(Flowspeed). ... ok
+test_experiments_use_real_presets_and_previews (__main__.Recipe.test_experiments_use_real_presets_and_previews) ... ok
+test_menus_offer_every_preset (__main__.Recipe.test_menus_offer_every_preset) ... ok
+test_no_version_directive_and_swizzle (__main__.Recipe.test_no_version_directive_and_swizzle) ... ok
+test_pixel_shader_is_current_core_plus_documented_additions (__main__.Recipe.test_pixel_shader_is_current_core_plus_documented_additions)
+Every removed and every added line, compared with the documented list. ... ok
+test_preset_keys_are_controls (__main__.Recipe.test_preset_keys_are_controls) ... ok
+test_shader_direction_menu_matches_shader (__main__.Recipe.test_shader_direction_menu_matches_shader) ... ok
+test_twelve_complete_presets (__main__.Recipe.test_twelve_complete_presets) ... ok
+
+----------------------------------------------------------------------
+Ran 91 tests in 0.324s
+
+OK

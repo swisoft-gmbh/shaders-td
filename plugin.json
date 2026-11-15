@@ -1,0 +1,56 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "plugins@swisoft.ch",
+    "name": "Swisoft GmbH"
+  },
+  "description": "Research, build, explain and review original TouchDesigner shaders, with Maxime Heckel's published articles as the knowledge base.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "brandColor": "#C4300A",
+        "brandColorDark": "#C4300A",
+        "capabilities": [],
+        "category": "Developer Tools",
+        "composerIcon": "./assets/icon-light.png",
+        "composerIconDark": "./assets/icon-dark.png",
+        "defaultPrompt": [
+          "Build an original TouchDesigner shader and a tutorial for it.",
+          "Find techniques for my TouchDesigner idea and compare native routes.",
+          "Review my TouchDesigner network, GLSL and tutorial."
+        ],
+        "developerName": "Swisoft GmbH",
+        "displayName": "Shaders for TouchDesigner",
+        "logo": "./assets/icon-light.png",
+        "logoDark": "./assets/icon-dark.png",
+        "longDescription": "Four skills (research, build, explain, review) help you design an original TouchDesigner shader, its GLSL and network recipe, and a tutorial for it. Works in chat hosts and coding agents. Includes a reference library, eight example studies with real .tox exports, and five liquid-glass studies checked only by glslang compiles, WebGL2 previews and unit tests (not yet run in TouchDesigner, no .tox). Downloads need the host's file tools; otherwise the complete source comes in the chat. Rendering and saving a new .tox need TouchDesigner. Free for non-commercial use (CC BY-NC 4.0): a study started from one of its seeds stays non-commercial and carries a credit. Not a fine-tuned model. Knowledge base: Maxime Heckel's published shader articles and open-source code (blog.maximeheckel.com). This toolkit is built on his work and credits it throughout. It is independent: not affiliated with, sponsored or endorsed by Maxime Heckel.",
+        "shortDescription": "TouchDesigner shader toolkit",
+        "websiteURL": "https://marcoleder.ch/shaders-td/",
+        "supportURL": "https://marcoleder.ch/shaders-td/#support",
+        "privacyPolicyURL": "https://marcoleder.ch/shaders-td/#privacy",
+        "termsOfServiceURL": "https://marcoleder.ch/shaders-td/#terms"
+      },
+      "requires_local_executor": false,
+      "review": {
+        "commerce": false,
+        "commerce_description": "This plugin is free and involves no purchases."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "First public release of Shaders for TouchDesigner: research, build, explain and review original TouchDesigner shaders, with Maxime Heckel's published articles as the knowledge base. Published by Swisoft GmbH. Free for non-commercial use, licensed CC BY-NC 4.0 AND MIT (see NOTICE.md). Not affiliated with or endorsed by Maxime Heckel or Derivative."
+      }
+    }
+  },
+  "homepage": "https://marcoleder.ch/shaders-td/",
+  "keywords": [
+    "TouchDesigner",
+    "GLSL",
+    "shaders",
+    "tutorials",
+    "creative coding"
+  ],
+  "license": "CC-BY-NC-4.0 AND MIT",
+  "name": "shaders-td",
+  "repository": "https://github.com/swisoft-gmbh/shaders-td",
+  "version": "1.0.0"
+}

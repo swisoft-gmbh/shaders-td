@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "Where should the pattern live?",
+    "question": "Where should the pattern live?",
+    "snippets": [
+      [
+        "vertex.vert",
+        "transforms"
+      ]
+    ],
+    "experiments": [
+      "field"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "How do we draw contours over a surface?",
+    "question": "How do we draw contours over a surface?",
+    "snippets": [
+      [
+        "pixel.frag",
+        "field"
+      ]
+    ],
+    "experiments": [
+      "field"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Which normal matches the light?",
+    "question": "Which normal matches the light?",
+    "snippets": [
+      [
+        "pixel.frag",
+        "normal"
+      ]
+    ],
+    "experiments": [
+      "normal"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "What happens when we stretch the object?",
+    "question": "What happens when we stretch the object?",
+    "snippets": [
+      [
+        "pixel.frag",
+        "normal"
+      ]
+    ],
+    "experiments": [
+      "stretch"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "What does the final composition add?",
+    "question": "What does the final composition add?",
+    "snippets": [
+      [
+        "pixel.frag",
+        "compose"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

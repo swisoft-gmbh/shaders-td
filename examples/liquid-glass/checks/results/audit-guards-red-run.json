@@ -1,0 +1,316 @@
+{
+  "date": "2026-11-02",
+  "scope": "Unit tests only (python3 checks/test_study.py); no GPU, no TouchDesigner.",
+  "method": "Each mutation copies the study, makes the one text replacement shown (an audit-round fix put back to its a6f95c6 form, or an equivalent regression) and runs the whole unit suite. '(control)' rows were already guarded before this round.",
+  "unmutated": {
+    "failing_42_test_suite": [],
+    "failing_51_test_suite": []
+  },
+  "mutations": [
+    {
+      "id": "r5_env_smoothstep_reversed",
+      "label": "R5",
+      "file": "env.frag",
+      "replace": "c += vec3(0.06) * smoothstep(0.0, 0.7, -el);",
+      "with": "c += vec3(0.06) * smoothstep(0.0, -0.7, el);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_smoothstep_edges_increase"
+      ]
+    },
+    {
+      "id": "r5_frag_smoothstep_reversed",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "c += vec3(0.06) * smoothstep(0.0, 0.7, -el);",
+      "with": "c += vec3(0.06) * smoothstep(0.0, -0.7, el);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_smoothstep_edges_increase"
+      ]
+    },
+    {
+      "id": "r5_band_soft_zero",
+      "label": "R5",
+      "file": "env.frag",
+      "replace": "band(d.y, 0.1, 0.25, 0.2)",
+      "with": "band(d.y, 0.1, 0.25, 0.0)",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_smoothstep_edges_increase"
+      ]
+    },
+    {
+      "id": "r5_backdrop_smoothstep_reversed (control)",
+      "label": "R5",
+      "file": "backdrop.frag",
+      "replace": "c = mix(c, vec3(1.0), 1.0 - smoothstep(-px, px, ring));",
+      "with": "c = mix(c, vec3(1.0), smoothstep(px, -px, ring));",
+      "failing_42_test_suite": [
+        "test_c9_backdrop_menu_reaches_the_demo_backdrop"
+      ],
+      "failing_51_test_suite": [
+        "test_c9_backdrop_menu_reaches_the_demo_backdrop",
+        "test_r5_smoothstep_edges_increase"
+      ]
+    },
+    {
+      "id": "r5_frag_atan_in_panorama",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "float u = azimuth(d) / (2.0 * LG_PI);",
+      "with": "float u = atan(d.z, d.x) / (2.0 * LG_PI);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_atan_only_through_azimuth"
+      ]
+    },
+    {
+      "id": "r5_env_atan_in_gels",
+      "label": "R5",
+      "file": "env.frag",
+      "replace": "band(angleDelta(azimuth(d), -0.7)",
+      "with": "band(angleDelta(atan(d.z, d.x), -0.7)",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_atan_only_through_azimuth"
+      ]
+    },
+    {
+      "id": "r5_azimuth_unguarded",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "return dot(d.xz, d.xz) > 1e-12 ? atan(d.z, d.x) : 0.0;",
+      "with": "return atan(d.z, d.x);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_atan_only_through_azimuth"
+      ]
+    },
+    {
+      "id": "r5_sample_ior_unclamped",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "float ior = max(uOptics.x + spread * (w - 0.5), 1.0);",
+      "with": "float ior = uOptics.x + spread * (w - 0.5);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_sample_ior_at_least_1_and_f0_squared"
+      ]
+    },
+    {
+      "id": "r5_f0_through_pow",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "float reflectance = mix(mix(r0 * r0, 1.0, fresnel), 1.0, uSurface.x);",
+      "with": "float reflectance = mix(mix(pow(r0, 2.0), 1.0, fresnel), 1.0, uSurface.x);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_sample_ior_at_least_1_and_f0_squared"
+      ]
+    },
+    {
+      "id": "r5_derivatives_in_branch",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "n = cross(dPdx, dPdy);",
+      "with": "n = cross(dFdx(vWorldPos), dFdy(vWorldPos));",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_pixel_stage_hygiene"
+      ]
+    },
+    {
+      "id": "r5_absolute_threshold",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "n = l2 > 1e-12 * dot(dPdx, dPdx) * dot(dPdy, dPdy) ? n * inversesqrt(l2) : -eye;",
+      "with": "n = l2 > 1e-12 ? n * inversesqrt(l2) : -eye;",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_pixel_stage_hygiene"
+      ]
+    },
+    {
+      "id": "r5_discard_before_derivatives",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "    vec3 dPdx = dFdx(vWorldPos);\n    vec3 dPdy = dFdy(vWorldPos);\n    TDCheckDiscard();",
+      "with": "    TDCheckDiscard();\n    vec3 dPdx = dFdx(vWorldPos);\n    vec3 dPdy = dFdy(vWorldPos);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_pixel_stage_hygiene"
+      ]
+    },
+    {
+      "id": "r5_no_face_camera_after_wobble",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "vec3 n = faceCamera(wobbleNormal(facingNormal(eye, dPdx, dPdy)), eye);",
+      "with": "vec3 n = wobbleNormal(facingNormal(eye, dPdx, dPdy));",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_pixel_stage_hygiene"
+      ]
+    },
+    {
+      "id": "r5_wobble_ignores_comp_scale",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "slope = uTDMats[vCamIndex].worldForNormals * slope * scale;",
+      "with": "slope = uTDMats[vCamIndex].worldForNormals * slope;",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_pixel_stage_hygiene"
+      ]
+    },
+    {
+      "id": "r5_vertex_transforms_zero_normal",
+      "label": "R5",
+      "file": "liquid_glass.vert",
+      "replace": "vWorldNormal = dot(objNormal, objNormal) > 1e-12 ? TDDeformNorm(objNormal) : vec3(0.0);",
+      "with": "vWorldNormal = TDDeformNorm(objNormal);",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r5_vertex_decides_a_zero_normal_before_transforming"
+      ]
+    },
+    {
+      "id": "r5_light_unguarded (control)",
+      "label": "R5",
+      "file": "liquid_glass.frag",
+      "replace": "vec3 lightDir = safeNormalize(uLight.xyz, vec3(0.0, 1.0, 0.0));",
+      "with": "vec3 lightDir = normalize(uLight.xyz);",
+      "failing_42_test_suite": [
+        "test_c5_normalize_never_sees_a_zero_vector"
+      ],
+      "failing_51_test_suite": [
+        "test_c5_normalize_never_sees_a_zero_vector"
+      ]
+    },
+    {
+      "id": "r3_inputs_in_expression_mode",
+      "label": "R3",
+      "file": "study.json",
+      "replace": "\"demo_target\": \"demo_backdrop\"",
+      "with": "\"demo_target\": \"demo_backdrop\",\n      \"expression\": \"me.op('demo_backdrop')\"",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r3_inputs_are_constant_paths_to_the_demo"
+      ]
+    },
+    {
+      "id": "r3_no_reset_to_default",
+      "label": "R3",
+      "file": "builder.py",
+      "replace": "                par.default = path\n",
+      "with": "",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r3_inputs_are_constant_paths_to_the_demo"
+      ]
+    },
+    {
+      "id": "r3_accepts_paths_leaving_the_component",
+      "label": "R3",
+      "file": "builder.py",
+      "replace": "            portable = not path.startswith((\"/\", \"..\")) and component.name not in path.split(\"/\")",
+      "with": "            portable = True",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r3_inputs_are_constant_paths_to_the_demo"
+      ]
+    },
+    {
+      "id": "r3_uncategorized_warning",
+      "label": "R3",
+      "file": "builder.py",
+      "replace": "warnings.append(f\"{category}: {error}\")",
+      "with": "warnings.append(str(error))",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r3_build_warnings_are_categorized"
+      ]
+    },
+    {
+      "id": "r3_category_without_note",
+      "label": "R3",
+      "file": "builder.py",
+      "replace": "attempt(False, warnings, \"dither\" if name == \"dither\" else category",
+      "with": "attempt(False, warnings, \"render\" if name == \"dither\" else category",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r3_build_warnings_are_categorized"
+      ]
+    },
+    {
+      "id": "r9_no_extend_modes",
+      "label": "R9",
+      "file": "study.json",
+      "replace": "\"extendu\": \"mirror\",\n          \"extendv\": \"mirror\",\n",
+      "with": "",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r9_sampler_extend_modes_and_menu_uniforms"
+      ]
+    },
+    {
+      "id": "r9_menuindex_back",
+      "label": "R9",
+      "file": "study.json",
+      "replace": "op('presets').module.menu(parent().par.Reflectmode)",
+      "with": "parent().par.Reflectmode.menuIndex",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r9_sampler_extend_modes_and_menu_uniforms"
+      ]
+    },
+    {
+      "id": "r9_no_script_errors",
+      "label": "R9",
+      "file": "native.py",
+      "replace": "        \"script_errors\": component.scriptErrors(recurse=True) if hasattr(component, \"scriptErrors\") else \"\",\n",
+      "with": "",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r9_inspect_reports_script_and_blocking_errors"
+      ]
+    },
+    {
+      "id": "r9_blocking_ignores_backface",
+      "label": "R9",
+      "file": "native.py",
+      "replace": "        names += [\"material_back\", *BACKFACE_NODES]\n",
+      "with": "        pass\n",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r9_inspect_reports_script_and_blocking_errors"
+      ]
+    },
+    {
+      "id": "r9_capture_ignores_blocking",
+      "label": "R9",
+      "file": "native.py",
+      "replace": "        raise RuntimeError(report[\"blocking_errors\"])",
+      "with": "        print(report[\"blocking_errors\"])",
+      "failing_42_test_suite": [],
+      "failing_51_test_suite": [
+        "test_r9_inspect_reports_script_and_blocking_errors"
+      ]
+    }
+  ],
+  "history": {
+    "a6f95c6": {
+      "note": "core before audit rounds 2 and 3",
+      "AuditGuards_failing": 9,
+      "of": 9,
+      "reasons": "no WARNING_NOTES; no script_errors in inspect(); Inputs fields in expression mode; atan outside azimuth(); dFdx inside facingNormal; IOR per sample not clamped; smoothstep(0.0, -0.7, el); TDDeformNorm(TDNormal()); no sampler extend modes"
+    },
+    "6a58487": {
+      "note": "core after rounds 2 and 3, before the family sync",
+      "AuditGuards_failing": 3,
+      "of": 9,
+      "reasons": "only assertions that pin family-sync additions: the 'dither' warning category (C4), the render_diagnostics key in inspect() (C5) and the Backdrop menu uniform (C9). The R3, R5 and R9 content passes."
+    }
+  }
+}

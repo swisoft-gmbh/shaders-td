@@ -1,0 +1,74 @@
+[
+  {
+    "heading": "Move a surface before shading it",
+    "question": "Move a surface before shading it?",
+    "snippets": [
+      [
+        "vertex.vert",
+        "displacement"
+      ]
+    ],
+    "experiments": [
+      "flat"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Use a varying to expose displacement",
+    "question": "Use a varying to expose displacement?",
+    "snippets": [
+      [
+        "vertex.vert",
+        "displacement"
+      ]
+    ],
+    "experiments": [
+      "displacement"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "A moved vertex needs a moved normal",
+    "question": "A moved vertex needs a moved normal?",
+    "snippets": [
+      [
+        "vertex.vert",
+        "jacobian"
+      ]
+    ],
+    "experiments": [
+      "wrong"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Keep the normal in the lighting space",
+    "question": "Keep the normal in the lighting space?",
+    "snippets": [
+      [
+        "vertex.vert",
+        "transforms"
+      ]
+    ],
+    "experiments": [
+      "normals"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "A foil-like response with explicit limits",
+    "question": "A foil-like response with explicit limits?",
+    "snippets": [
+      [
+        "pixel.frag",
+        "lighting"
+      ]
+    ],
+    "experiments": [
+      "final"
+    ],
+    "figures": []
+  }
+]

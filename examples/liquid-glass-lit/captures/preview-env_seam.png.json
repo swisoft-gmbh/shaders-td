@@ -1,0 +1,21 @@
+{
+  "kind": "WebGL2 preview of the delivered GLSL (not a TouchDesigner capture)",
+  "draw": {
+    "preset": "chrome_type",
+    "time": 2,
+    "overrides": {
+      "Stage": "environment",
+      "Demolights": "none",
+      "Demoenv": true,
+      "Roughness": 0.7,
+      "Demoenvrotate": 90
+    }
+  },
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "floatTargets": true,
+  "size": [
+    960,
+    540
+  ],
+  "date": "2026-11-02T03:18:31.415Z"
+}

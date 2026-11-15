@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" font-family="Helvetica, Arial, sans-serif">
+  <title>Light through two surfaces</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#eef0f3"/>
+    </marker>
+    <marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff5a4e"/>
+    </marker>
+    <marker id="violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9b7bff"/>
+    </marker>
+    <marker id="normal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7fb3d5"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="560" fill="#14161a"/>
+  <text x="30" y="38" fill="#eef0f3" font-size="21" font-weight="bold">Light through two surfaces (schematic, not to scale)</text>
+  <text x="30" y="60" fill="#9aa1ab" font-size="13">Traced backwards from the camera, as the shader does. Blue arrows are outward surface normals.</text>
+
+  <!-- panel 1: enter, cross, leave -->
+  <ellipse cx="330" cy="300" rx="110" ry="160" fill="#22303d" stroke="#d9dde3" stroke-width="1.5"/>
+  <circle cx="321" cy="259" r="95" fill="none" stroke="#e8a65d" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="120" y="480" fill="#e8a65d" font-size="13">Without the back-face pass: a ball of diameter Thickness,</text>
+  <text x="120" y="497" fill="#e8a65d" font-size="13">touching the surface with the same normal, gives the exit.</text>
+
+  <text x="28" y="240" fill="#eef0f3" font-size="14">camera</text>
+  <path d="M40 250 L 229 230" stroke="#eef0f3" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M231 230 L 195 218" stroke="#7fb3d5" stroke-width="2" fill="none" marker-end="url(#normal)"/>
+  <text x="150" y="205" fill="#7fb3d5" font-size="13">n (near side)</text>
+  <path d="M231 230 L 437 290" stroke="#eef0f3" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="262" y="395" fill="#eef0f3" font-size="13">1. enter:</text>
+  <text x="262" y="413" fill="#eef0f3" font-size="13">refract(eye, n, 1 / n)</text>
+  <path d="M440 290 L 478 289" stroke="#7fb3d5" stroke-width="2" fill="none" marker-end="url(#normal)"/>
+  <text x="446" y="318" fill="#7fb3d5" font-size="13">far-side normal</text>
+  <text x="446" y="334" fill="#7fb3d5" font-size="13">(measured or estimated)</text>
+
+  <path d="M440 290 L 636 262" stroke="#ff5a4e" stroke-width="2" fill="none" marker-end="url(#red)"/>
+  <path d="M440 290 L 636 236" stroke="#9b7bff" stroke-width="2" fill="none" marker-end="url(#violet)"/>
+  <text x="470" y="226" fill="#eef0f3" font-size="13">2. leave: Snell's law per colour.</text>
+  <text x="470" y="244" fill="#9b7bff" font-size="13">violet bends more</text>
+  <text x="590" y="285" fill="#ff5a4e" font-size="13">red</text>
+
+  <line x1="640" y1="120" x2="640" y2="460" stroke="#d9dde3" stroke-width="3"/>
+  <text x="452" y="112" fill="#d9dde3" font-size="13">scene behind (Refraction TOP)</text>
+  <line x1="440" y1="400" x2="640" y2="400" stroke="#9aa1ab" stroke-width="1"/>
+  <text x="482" y="420" fill="#9aa1ab" font-size="13">Scene depth (scene units)</text>
+  <line x1="440" y1="394" x2="440" y2="406" stroke="#9aa1ab"/>
+  <line x1="640" y1="394" x2="640" y2="406" stroke="#9aa1ab"/>
+
+  <!-- panel 2: trapped light -->
+  <line x1="690" y1="90" x2="690" y2="530" stroke="#2a2c31" stroke-width="2"/>
+  <polygon points="760,190 760,460 1030,460" fill="#22303d" stroke="#d9dde3" stroke-width="1.5"/>
+  <text x="712" y="150" fill="#eef0f3" font-size="15" font-weight="bold">Past the critical angle the far side is a mirror</text>
+  <text x="712" y="170" fill="#b8c0ca" font-size="13">critical angle: sin(angle) = 1 / n  (45 degrees at n = 1.414)</text>
+  <path d="M705 300 L 868 300" stroke="#eef0f3" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M870 300 L 905 265" stroke="#7fb3d5" stroke-width="2" fill="none" marker-end="url(#normal)"/>
+  <text x="912" y="262" fill="#7fb3d5" font-size="13">far-side normal</text>
+  <path d="M870 300 L 870 455" stroke="#eef0f3" stroke-width="2" stroke-dasharray="7 5" fill="none" marker-end="url(#arrow)"/>
+  <text x="935" y="350" fill="#eef0f3" font-size="13">3. trapped: share = 1,</text>
+  <text x="935" y="368" fill="#eef0f3" font-size="13">one mirror bounce, then</text>
+  <text x="935" y="386" fill="#eef0f3" font-size="13">read the scene (or the</text>
+  <text x="935" y="404" fill="#eef0f3" font-size="13">environment) that way</text>
+  <text x="834" y="292" fill="#e8a65d" font-size="13">45</text>
+  <text x="712" y="500" fill="#b8c0ca" font-size="13">Below the critical angle the Fresnel equations split the light:</text>
+  <text x="712" y="518" fill="#b8c0ca" font-size="13">most leaves, a share is reflected. The share reaches 1 smoothly.</text>
+</svg>

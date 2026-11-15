@@ -1,0 +1,38 @@
+[
+  {
+    "source_id": "articles/the-magical-world-of-particles-with-react-three-fiber-and-shaders.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/",
+    "lines": [
+      588,
+      605
+    ],
+    "sha256": "553692df5fdec53531f65d3aa3e0590a35bae81420b23b6849cc5e46af6ee388",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Published mechanism and teaching progression",
+    "adaptation": "Keep RG as concentrations and A as validity, implement periodic bilinear sampling explicitly, backtrace with a midpoint step, and expose decay in inverse seconds and step in simulated seconds per cook."
+  },
+  {
+    "source_id": "blog/core/components/MDX/Widgets/ParticlesReactThreeFiber/curlFBO.ts",
+    "source_url": "https://github.com/MaximeHeckel/blog.maximeheckel.com/blob/9837a4106e226c7c35775e44456a0250f1b894e5/core/components/MDX/Widgets/ParticlesReactThreeFiber/curlFBO.ts",
+    "lines": [
+      1,
+      403
+    ],
+    "sha256": "b12e49d6191ce6307153e350d696cda723ab505fbf66ca54872390141404e84d",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Matching archived implementation",
+    "adaptation": "Keep RG as concentrations and A as validity, implement periodic bilinear sampling explicitly, backtrace with a midpoint step, and expose decay in inverse seconds and step in simulated seconds per cook."
+  },
+  {
+    "source_id": "articles/shading-motion.mdx",
+    "source_url": "https://blog.maximeheckel.com/posts/shading-motion/",
+    "lines": [
+      58,
+      157
+    ],
+    "sha256": "bf8a78485a4638bf1c538084a77193903d843923613bebbd81e0faea55c00d9d",
+    "commit": "9837a4106e226c7c35775e44456a0250f1b894e5",
+    "role": "Explicit historical state swapping and decay context",
+    "adaptation": "Concentrations and transport replace luminance differences and motion trails."
+  }
+]

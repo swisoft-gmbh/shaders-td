@@ -1,0 +1,47 @@
+[
+  {
+    "file": "vertex.vert",
+    "region": "transforms",
+    "lines": [
+      4,
+      9
+    ],
+    "sha256": "4fbd3b67d73125d966713c4627357dea79b3922cd1a354df44e2dafbbd783576"
+  },
+  {
+    "file": "pixel.frag",
+    "region": "field",
+    "lines": [
+      8,
+      14
+    ],
+    "sha256": "3848fd9bdc840da39b0d234b6d09bce12de25f6b15ea3d8f64890c93f73281f4"
+  },
+  {
+    "file": "pixel.frag",
+    "region": "normal",
+    "lines": [
+      17,
+      20
+    ],
+    "sha256": "3848fd9bdc840da39b0d234b6d09bce12de25f6b15ea3d8f64890c93f73281f4"
+  },
+  {
+    "file": "pixel.frag",
+    "region": "normal",
+    "lines": [
+      17,
+      20
+    ],
+    "sha256": "3848fd9bdc840da39b0d234b6d09bce12de25f6b15ea3d8f64890c93f73281f4"
+  },
+  {
+    "file": "pixel.frag",
+    "region": "compose",
+    "lines": [
+      23,
+      30
+    ],
+    "sha256": "3848fd9bdc840da39b0d234b6d09bce12de25f6b15ea3d8f64890c93f73281f4"
+  }
+]

@@ -1,0 +1,92 @@
+{
+ "what": "Red runs for the family critic's centre-line residual round. Unit tests only; no TouchDesigner.",
+ "date": "2026-11-02",
+ "pre_round_records": {
+  "how": "A scratch copy of this study and its three siblings with this round's test file and every other file as it was before the round (records, README, tutorial, preview test with the bound of 20; no checks/results/centre-line-residual.json). Shaders are the same in both.",
+  "ran": 96,
+  "failed": [
+   "test_records_match_the_preview_measurements",
+   "test_residual_is_an_open_family_question_with_a_native_check",
+   "test_docs_state_the_suite_sizes",
+   "test_native_family_list_waits_for_a_recorded_run"
+  ],
+  "skipped": 0,
+  "note": "test_native_family_list_waits_for_a_recorded_run fails because the list has four checks, not five. test_docs_state_the_suite_sizes fails because the old docs say 94 unit tests."
+ },
+ "c94e849": {
+  "how": "git archive c94e849 of the four studies, with this round's test file; only the class CentreLineResidual run.",
+  "failed": [
+   "test_records_match_the_preview_measurements",
+   "test_residual_is_an_open_family_question_with_a_native_check"
+  ]
+ },
+ "mutations": {
+  "how": "One change at a time on scratch copies of the four current studies (captures left out); only CentreLineResidual run in the study named.",
+  "results": {
+   "unchanged copy": {
+    "study": "liquid-glass",
+    "failed": []
+   },
+   "preview bound back to 20 (core)": {
+    "study": "liquid-glass",
+    "failed": [
+     "test_records_match_the_preview_measurements"
+    ]
+   },
+   "a centroid output in Lit's vertex shader (Lit)": {
+    "study": "liquid-glass-lit",
+    "failed": [
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   },
+   "the orientation line renamed in the core shader (core)": {
+    "study": "liquid-glass",
+    "failed": [
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   },
+   "Prism's question reworded (checked from the core)": {
+    "study": "liquid-glass",
+    "failed": [
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   },
+   "the native check dropped (Flow)": {
+    "study": "liquid-glass-flow",
+    "failed": [
+     "test_records_match_the_preview_measurements",
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   },
+   "recorded maximum off by one (Prism)": {
+    "study": "liquid-glass-prism",
+    "failed": [
+     "test_records_match_the_preview_measurements"
+    ]
+   },
+   "final-image record off (Lit)": {
+    "study": "liquid-glass-lit",
+    "failed": [
+     "test_records_match_the_preview_measurements"
+    ]
+   },
+   "README pending list without the residual (core)": {
+    "study": "liquid-glass",
+    "failed": [
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   },
+   "decision status says adopted (Flow)": {
+    "study": "liquid-glass-flow",
+    "failed": [
+     "test_residual_is_an_open_family_question_with_a_native_check"
+    ]
+   }
+  }
+ },
+ "current": {
+  "failed": []
+ },
+ "preview_bound": "screen_orientation_has_no_wrong_pixels allows at most 10 wrong multisampled pixels per row (20 before). No shader changed, so the preview test passes before and after; the bound is not a red test. It keeps the range the open question states.",
+ "scratch": "session scratchpad agents/centre-line-residual (mutations.py, red-pre2/, c94e849/)"
+}

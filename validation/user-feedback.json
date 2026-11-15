@@ -1,0 +1,8 @@
+{
+  "source": "User report from the open native example viewers",
+  "quote": "two of them are not moving, the third is, all visible tho",
+  "confirmed": "All three outputs visible; one output moving.",
+  "interpretation": "Consistent with saved defaults: the two contour studies are paused and Phosphor Memory animates. The user did not identify the moving study by name.",
+  "followup": "Contour Loom and Contour Material preview Pause controls were set to False; saved teaching presets remain fixed-time.",
+  "scope": "Visibility report only. No shader aesthetic approval, tutorial acceptance, or confirmation of the subsequently unpaused previews."
+}

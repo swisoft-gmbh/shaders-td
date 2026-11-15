@@ -1,0 +1,109 @@
+{
+ "what": "Close verify fixes (BLOBS-CV1 to CV4, LIT-CV5) for Liquid Glass Blobs: the new unit tests run against the working tree as the family close left it (docs not yet changed), and normals_hold_at_any_object_scale run alone with its old Object size (the scale) and its new one (the scale x the demo box's 1 / 1.45). The preview runs used a copy of preview_tests.cjs cut down to that one test, served from this study.",
+ "date": "2026-11-02",
+ "unit_tests_before_the_doc_fixes": {
+  "ran": 4,
+  "result": "FAILED (failures=5)",
+  "failing": [
+   {
+    "test": "test_cv1_old_components_keep_their_own_copies",
+    "subtest": "decisions.json",
+    "reason": "'keep Object size 1 until Fit' found in Family close G1's consequence"
+   },
+   {
+    "test": "test_cv1_old_components_keep_their_own_copies",
+    "subtest": "review.md",
+    "reason": "'keep Object size 1 until Fit' found in Family close > Visible changes"
+   },
+   {
+    "test": "test_cv2_verified_film_claim_is_what_the_test_measured",
+    "reason": "README Verified here said 'ten times as many film bands'; no 'about 7.6 times the film band detail' (ratio 7.563 in preview-tests.json)"
+   },
+   {
+    "test": "test_cv4_g1_status_names_the_red_tests_and_the_guards",
+    "reason": "'test_g1_*' found in Family close G1's status"
+   },
+   {
+    "test": "test_cv5_pointers_to_the_family_rule_name_keys_that_exist",
+    "reason": "review.md named family_rule.members_2026_11_02, not members_family_close"
+   }
+  ]
+ },
+ "preview_normals_hold_at_any_object_scale": {
+  "before_objectsize_equals_scale": {
+   "ok": false,
+   "evidence": {
+    "normal_scale_1_against_the_demo": {
+     "worstDifference": 0
+    },
+    "normal_scale_0.001": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 1e-05,
+     "pixelsReadingPlusY": 0
+    },
+    "normal_scale_20000": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 1e-05,
+     "pixelsReadingPlusY": 0
+    },
+    "refraction_scale_1_against_the_demo": {
+     "worstDifference": 0.386282
+    },
+    "refraction_scale_0.001": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 8e-05
+    },
+    "refraction_scale_20000": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 9e-05
+    }
+   }
+  },
+  "after_objectsize_is_fits": {
+   "ok": true,
+   "evidence": {
+    "normal_scale_1_against_the_demo": {
+     "worstDifference": 0
+    },
+    "normal_scale_0.001": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 1e-05,
+     "pixelsReadingPlusY": 0
+    },
+    "normal_scale_20000": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 1e-05,
+     "pixelsReadingPlusY": 0
+    },
+    "refraction_scale_1_against_the_demo": {
+     "worstDifference": 0
+    },
+    "refraction_scale_0.001": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 5e-05
+    },
+    "refraction_scale_20000": {
+     "pixels": 43020,
+     "missing": 0,
+     "worstDifference": 5e-05
+    }
+   }
+  },
+  "c94e849_committed": {
+   "normal_scale_0.001": 1e-05,
+   "normal_scale_20000": 1e-05,
+   "refraction_scale_0.001": 5e-05,
+   "refraction_scale_20000": 5e-05
+  },
+  "note": "Before: the scale-1 reference ran at Object size 1, a Backdrop distance 1.45 times the demo's, so its refraction stage differs from the demo's render by 0.386 and the new comparison fails. After: 0, and the refraction differences over scale are c94e849's 5e-5 again."
+ },
+ "lit_cv5": "Lit's side was already fixed by its own close verify (LIT-CV3): liquid-glass-lit/checks/test_study.py test_cv3_rule_record_covers_blobs passes on 2026-11-02 (1 test, OK). Only this study's pointer was wrong.",
+ "after": "checks/results/unit-tests.txt (75 tests, OK) and checks/results/preview-tests.json (42 of 42)."
+}

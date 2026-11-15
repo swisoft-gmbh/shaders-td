@@ -1,0 +1,56 @@
+[
+  {
+    "file": "source.frag",
+    "region": "source",
+    "lines": [
+      4,
+      13
+    ],
+    "sha256": "08d5cb738af780ae4728c34bf1ab7157569e871c749569c58e33773c37e0f1bf"
+  },
+  {
+    "file": "state.frag",
+    "region": "initialize",
+    "lines": [
+      9,
+      17
+    ],
+    "sha256": "c0a9c28fefca7fd4c156fa727e24efc4e4f472264e6b6a53c5282b04f6a5a0c8"
+  },
+  {
+    "file": "state.frag",
+    "region": "motion",
+    "lines": [
+      20,
+      22
+    ],
+    "sha256": "c0a9c28fefca7fd4c156fa727e24efc4e4f472264e6b6a53c5282b04f6a5a0c8"
+  },
+  {
+    "file": "state.frag",
+    "region": "decay",
+    "lines": [
+      25,
+      28
+    ],
+    "sha256": "c0a9c28fefca7fd4c156fa727e24efc4e4f472264e6b6a53c5282b04f6a5a0c8"
+  },
+  {
+    "file": "display.frag",
+    "region": "representation",
+    "lines": [
+      8,
+      16
+    ],
+    "sha256": "14a6b0ad57836458ba7782895755cecf0f25a90e87c6e658138832381e1959c8"
+  },
+  {
+    "file": "display.frag",
+    "region": "diagnostics",
+    "lines": [
+      19,
+      23
+    ],
+    "sha256": "14a6b0ad57836458ba7782895755cecf0f25a90e87c6e658138832381e1959c8"
+  }
+]

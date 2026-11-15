@@ -1,0 +1,167 @@
+[
+  {
+    "heading": "Make the object see-through",
+    "question": "How can an object show what is behind it, when a shader only knows its own surface?",
+    "snippets": [
+      [
+        "liquid_prism.vert",
+        "transforms"
+      ],
+      [
+        "liquid_prism.frag",
+        "screen"
+      ]
+    ],
+    "experiments": [
+      "see_through"
+    ],
+    "figures": [
+      "figures/network.svg"
+    ]
+  },
+  {
+    "heading": "Bend twice: in and out",
+    "question": "What does light do when it bends going into the glass and again coming out?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "interfaces"
+      ],
+      [
+        "liquid_prism.frag",
+        "setup"
+      ],
+      [
+        "liquid_prism.frag",
+        "surface"
+      ]
+    ],
+    "experiments": [
+      "bend_twice",
+      "scene_depth"
+    ],
+    "figures": [
+      "figures/two-surfaces.svg"
+    ]
+  },
+  {
+    "heading": "Guess the far side",
+    "question": "Without seeing the back of the object, where does the shader think light leaves?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "exit"
+      ]
+    ],
+    "experiments": [
+      "exit_ball",
+      "exit_flat"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Measure the far side",
+    "question": "How can the shader see the back of the object, and what does it store?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "backnormal"
+      ],
+      [
+        "liquid_prism.frag",
+        "backpass"
+      ]
+    ],
+    "experiments": [
+      "backface",
+      "backface_path"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Trapped light",
+    "question": "When does light fail to leave the glass?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "diagnostics"
+      ]
+    ],
+    "experiments": [
+      "critical_low",
+      "critical_high",
+      "exit_tilt"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "One bounce inside",
+    "question": "Where does trapped light go, and what do we see there?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "bounce"
+      ]
+    ],
+    "experiments": [
+      "bounce"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "A rainbow through both surfaces",
+    "question": "Why does each colour leave at a different angle, and in which order?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "spectrum"
+      ],
+      [
+        "liquid_prism.frag",
+        "sliceexit"
+      ],
+      [
+        "liquid_prism.frag",
+        "trace"
+      ]
+    ],
+    "experiments": [
+      "dispersion",
+      "deviation"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Focused light",
+    "question": "Where does the glass gather light into a bright spot?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "caustic"
+      ]
+    ],
+    "experiments": [
+      "caustic"
+    ],
+    "figures": []
+  },
+  {
+    "heading": "Put it together: twelve looks and a morph",
+    "question": "How do the pieces combine, and how do presets reach the shader?",
+    "snippets": [
+      [
+        "liquid_prism.frag",
+        "compose"
+      ],
+      [
+        "liquid_prism.frag",
+        "uniforms"
+      ]
+    ],
+    "experiments": [
+      "morph",
+      "final"
+    ],
+    "figures": []
+  }
+]
