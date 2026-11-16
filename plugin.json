@@ -37,7 +37,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "First public release of Shaders for TouchDesigner: research, build, explain and review original TouchDesigner shaders, with Maxime Heckel's published articles as the knowledge base. Published by Swisoft GmbH. Free for non-commercial use, licensed CC BY-NC 4.0 AND MIT (see NOTICE.md). Not affiliated with or endorsed by Maxime Heckel or Derivative."
+        "release_notes": "Fixes a warning in Claude organization plugin sync. The Claude manifest (.claude-plugin/plugin.json) no longer sets icon, supportUrl, privacyPolicyUrl or termsOfServiceUrl, fields the sync does not recognize. Claude Code never read them. Skills, examples and study downloads are unchanged from 1.0.0. Published by Swisoft GmbH. Free for non-commercial use, licensed CC BY-NC 4.0 AND MIT (see NOTICE.md). Not affiliated with or endorsed by Maxime Heckel or Derivative."
       }
     }
   },
@@ -52,5 +52,5 @@
   "license": "CC-BY-NC-4.0 AND MIT",
   "name": "shaders-td",
   "repository": "https://github.com/swisoft-gmbh/shaders-td",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
